@@ -8,12 +8,12 @@
     '.provider-confirm{margin-top:12px;padding:14px;border-radius:12px;background:var(--bg-3);border:1px solid var(--border);font-size:.78rem}' +
     '.provider-confirm-title{font-size:.69rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-2);font-weight:700;margin-bottom:10px}' +
     '.intel-grid{display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:9px}' +
-    '@media(min-width:560px){.intel-grid{grid-template-columns:repeat(2,1fr)}}' +
-    '@media(min-width:980px){.intel-grid{grid-template-columns:repeat(4,1fr)}}' +
+    '@media(min-width:560px){.intel-grid{grid-template-columns:repeat(2,1fr)}.actionability-card{grid-column:1/-1}}' +
+    '@media(min-width:980px){.intel-grid{grid-template-columns:repeat(3,1fr)}.actionability-card{grid-column:1/-1}}' +
     '.intel-card{border:1px solid var(--border);border-radius:10px;padding:10px;background:rgba(7,11,20,.28)}' +
     '.intel-card.actionability-card{border-color:rgba(47,211,238,.48);background:rgba(47,211,238,.06)}' +
     '.intel-card .k{font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted-2);margin-bottom:4px}' +
-    '.intel-card .v{font-size:.98rem;font-weight:800;color:var(--text)}' +
+    '.intel-card .v{font-size:.98rem;font-weight:800;color:var(--text)}.actionability-card .v{font-size:1.12rem;line-height:1.3}.actionability-card .v .provider-badge{display:flex;width:max-content;margin:6px 0 0}' +
     '.intel-card .s{font-size:.65rem;color:var(--muted);margin-top:2px;line-height:1.45}' +
     '.provider-badge{display:inline-flex;align-items:center;border-radius:999px;padding:3px 7px;font-size:.6rem;font-weight:800;letter-spacing:.05em;margin-left:5px;vertical-align:1px}' +
     '.provider-high{background:var(--green-dim);color:var(--green)}' +
@@ -21,10 +21,10 @@
     '.provider-low{background:var(--red-dim);color:var(--red)}' +
     '.provider-unavailable{background:rgba(148,163,184,.08);color:var(--muted)}' +
     '.action-gates{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin:8px 0 10px}' +
-    '@media(min-width:760px){.action-gates{grid-template-columns:repeat(4,1fr)}}' +
+    '@media(min-width:760px){.action-gates{grid-template-columns:repeat(2,1fr)}}' +
     '.action-gate{display:flex;align-items:center;justify-content:space-between;gap:6px;border:1px solid var(--border);border-radius:8px;padding:7px 8px;background:rgba(7,11,20,.22)}' +
     '.action-gate .gk{font-size:.58rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted-2)}' +
-    '.action-gate .gv{font-size:.64rem;font-weight:800;color:var(--text);text-align:right}' +
+    '.action-gate .gv{font-size:.64rem;font-weight:800;color:var(--text);text-align:right;line-height:1.25}' +
     '.regime-panel{display:flex;gap:10px;align-items:flex-start;justify-content:space-between;margin:10px 0;padding:11px 12px;border:1px solid var(--border);border-radius:10px;background:rgba(7,11,20,.25)}' +
     '.regime-panel.regime-good{border-color:rgba(59,214,154,.35);background:rgba(59,214,154,.05)}' +
     '.regime-panel.regime-warn{border-color:rgba(240,163,47,.35);background:rgba(240,163,47,.05)}' +
@@ -54,7 +54,7 @@
       '<div class="action-gate"><span class="gk">Pair</span><span class="gv" id="gate-pair">—</span></div>' +
       '<div class="action-gate"><span class="gk">Data</span><span class="gv" id="gate-data">—</span></div>' +
     '</div>' +
-    '<div class="regime-panel" id="regime-panel"><div><div class="regime-k">Regime Sinyal</div><div class="regime-v" id="regime-name">—</div><div class="regime-s" id="regime-note">Memeriksa guardrail hasil riset Tahap 2…</div></div><div class="regime-status" id="regime-status">—</div></div>' +
+    '<div class="regime-panel" id="regime-panel"><div><div class="regime-k">Regime Pasar</div><div class="regime-v" id="regime-name">—</div><div class="regime-s" id="regime-note">Memeriksa guardrail kondisi pasar…</div></div><div class="regime-status" id="regime-status">—</div></div>' +
     '<div class="provider-line" id="provider-confirm-line">Memeriksa konfirmasi lintas penyedia…</div>' +
     '<div class="provider-note" id="provider-confirm-note">ECB tetap menjadi sumber acuan utama Kekuatan Mata Uang.</div>';
   var reversal=document.getElementById('reversal-box');
@@ -71,14 +71,14 @@
   function actionabilityLabel(state){return state==='ACTIONABLE'?'LAYAK DIEVALUASI':state==='SELECTIVE'?'SELEKTIF':state==='FILTERED'?'TERFILTER':'TIDAK TERSEDIA';}
   function decisionLabel(state){return state==='EVALUATE_SETUP'?'LANJUT EVALUASI SETUP':state==='REVIEW_SELECTIVELY'?'TINJAU SELEKTIF':state==='DEPRIORITIZE'?'DEPRIORITASKAN':'TIDAK TERSEDIA';}
   function pairConfidenceLabel(state){return state==='HIGH'?'TINGGI':state==='MODERATE_HIGH'?'SEDANG–TINGGI':state==='MODERATE'?'SEDANG':state==='LOW'?'RENDAH':'—';}
-  function limiterLabel(state){return ({EVIDENCE_QUALITY:'Kualitas bukti',REGIME_GUARDRAIL:'Regime',PAIR_READINESS:'Kesiapan pair',DATA_READINESS:'Kesiapan data'})[state]||'—';}
+  function limiterLabel(state){return ({EVIDENCE_QUALITY:'Bukti',REGIME_GUARDRAIL:'Regime',PAIR_READINESS:'Pair',DATA_READINESS:'Data'})[state]||'—';}
   function yesNo(pass){return pass?'LOLOS':'BATAS';}
   function fmtScore(n){var v=Number(n);return Number.isFinite(v)?v.toFixed(1).replace('.',','):'—';}
   function percentileLabel(n){var v=Math.round(Number(n));return Number.isFinite(v)?'Persentil ke-'+v:'—';}
   function percentileShort(n){var v=Math.round(Number(n));return Number.isFinite(v)?'P'+v:'—';}
   function snap(data,tf){return data&&data.strength_timeframes&&data.strength_timeframes[tf];}
   function regimeLabel(regime){return ({CONFIRMED_TREND:'TREN TERKONFIRMASI',EXTREME_SEPARATION:'SEPARASI EKSTREM',PROVIDER_DIVERGENCE:'DIVERGENSI PENYEDIA',LOW_ALIGNMENT:'KESELARASAN RENDAH',LOW_SEPARATION:'SEPARASI RENDAH',NORMAL:'NORMAL',INSUFFICIENT_DATA:'DATA BELUM CUKUP'})[regime]||String(regime||'—').replace(/_/g,' ');}
-  function regimeNote(regime){return ({CONFIRMED_TREND:'Bukti lintas penyedia dan multi-timeframe kuat; persentil berada di zona continuation yang tidak ekstrem.',EXTREME_SEPARATION:'Kesenjangan kekuatan sangat ekstrem; risiko exhaustion / mean reversion meningkat.',PROVIDER_DIVERGENCE:'Konfirmasi lintas penyedia lemah. Sinyal ECB tetap acuan, tetapi actionability dibatasi.',LOW_ALIGNMENT:'Harian, Mingguan, dan Bulanan belum cukup selaras untuk mendukung continuation.',LOW_SEPARATION:'Kesenjangan historis terlalu rendah untuk mendukung continuation yang kuat.',NORMAL:'Tidak ada kondisi ekstrem, tetapi kualitas bukti belum memenuhi syarat Tren Terkonfirmasi.',INSUFFICIENT_DATA:'Salah satu komponen regime belum tersedia.'})[regime]||'Regime belum tersedia.';}
+  function regimeNote(regime){return ({CONFIRMED_TREND:'Bukti lintas penyedia dan multi-timeframe kuat; persentil berada di zona kelanjutan tren yang tidak ekstrem.',EXTREME_SEPARATION:'Kesenjangan kekuatan sangat ekstrem; risiko kelelahan tren atau mean reversion meningkat.',PROVIDER_DIVERGENCE:'Konfirmasi lintas penyedia lemah. Sinyal ECB tetap acuan, tetapi Actionability dibatasi.',LOW_ALIGNMENT:'Harian, Mingguan, dan Bulanan belum cukup selaras untuk mendukung kelanjutan tren.',LOW_SEPARATION:'Kesenjangan historis terlalu rendah untuk mendukung kelanjutan tren yang kuat.',NORMAL:'Tidak ada kondisi ekstrem, tetapi kualitas bukti belum memenuhi syarat Tren Terkonfirmasi.',INSUFFICIENT_DATA:'Salah satu komponen regime belum tersedia.'})[regime]||'Regime belum tersedia.';}
 
   function renderGate(id,gate,detail){
     var el=document.getElementById(id);
@@ -105,14 +105,14 @@
       var pairReady=actionability.dimensions&&actionability.dimensions.pair_readiness;
       var align=pairReady&&pairReady.alignment;
       var alignText=align&&Number.isFinite(Number(align.aligned_count))?align.aligned_count+'/'+align.available_timeframes+' TF':'—';
-      actionabilityState.textContent=decisionLabel(actionability.decision)+' · Pair '+alignText+' · Pembatas '+limiterLabel(actionability.primary_limiter);
+      actionabilityState.textContent='Pair '+alignText+' · Pembatas: '+limiterLabel(actionability.primary_limiter);
 
       var gates=actionability.gates||{};
       renderGate('gate-evidence',gates.evidence,fmtScore(gates.evidence&&gates.evidence.score));
-      renderGate('gate-regime',gates.regime,regimeLabel(gates.regime&&gates.regime.code));
+      renderGate('gate-regime',gates.regime,({CONFIRMED_TREND:'TREND',EXTREME_SEPARATION:'EKSTREM',PROVIDER_DIVERGENCE:'DIVERGENSI',LOW_ALIGNMENT:'ALIGNMENT RENDAH',LOW_SEPARATION:'SEPARASI RENDAH',NORMAL:'NORMAL',INSUFFICIENT_DATA:'DATA KURANG'})[gates.regime&&gates.regime.code]||'—');
       renderGate('gate-pair',gates.pair,alignText);
       var dg=gates.data;
-      var dataText=dg&&Number.isFinite(Number(dg.business_day_age))?'usia '+dg.business_day_age+'h kerja':'—';
+      var dataText=dg&&Number.isFinite(Number(dg.business_day_age))?dg.business_day_age+' hari kerja':'—';
       renderGate('gate-data',dg,dataText);
     }else{
       actionabilityScore.textContent='—';
@@ -154,7 +154,7 @@
       regimeName.textContent=regimeLabel(regimeCode);
       regimeNoteEl.textContent=regimeNote(regimeCode);
       var status=String(regime.continuation_status||'UNAVAILABLE');
-      var statusText=status==='SUPPORTED'?'MENDUKUNG CONTINUATION':status==='NEUTRAL'?'NETRAL':status==='FILTERED'?'TERFILTER':'TIDAK TERSEDIA';
+      var statusText=status==='SUPPORTED'?'MENDUKUNG KELANJUTAN TREN':status==='NEUTRAL'?'NETRAL':status==='FILTERED'?'TERFILTER':'TIDAK TERSEDIA';
       var statusClass=status==='SUPPORTED'?'provider-high':status==='NEUTRAL'?'provider-moderate':status==='FILTERED'?'provider-low':'provider-unavailable';
       regimeStatus.innerHTML='<span class="provider-badge '+statusClass+'">'+esc(statusText)+'</span>';
       regimePanel.className='regime-panel '+(status==='SUPPORTED'?'regime-good':status==='FILTERED'?'regime-bad':'regime-warn');
@@ -171,7 +171,7 @@
   }
 
   function load(){
-    fetch('./data/currency-strength.json?v=f113f8de7f',{headers:{Accept:'application/json'},cache:'no-store'})
+    fetch('./data/currency-strength.json?v=a404f0f232',{headers:{Accept:'application/json'},cache:'no-store'})
       .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
       .then(function(payload){latest=payload&&payload.data?payload.data:payload;render();})
       .catch(function(){document.getElementById('actionability-score').textContent='—';document.getElementById('provider-score').textContent='—';document.getElementById('mtf-score').textContent='—';document.getElementById('strength-percentile').textContent='—';document.getElementById('regime-name').textContent='—';document.getElementById('provider-confirm-line').textContent='Intelijen Kekuatan Mata Uang tidak dapat dimuat.';});

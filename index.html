@@ -119,7 +119,7 @@
   .status-pill{display:inline-flex;align-items:center;border-radius:999px;padding:4px 8px;font-size:.69rem;font-weight:700;letter-spacing:.05em}.status-strong{background:var(--green-dim);color:var(--green)}.status-weak{background:var(--red-dim);color:var(--red)}.status-mid{background:rgba(148,163,184,.08);color:var(--muted)}
   .pair-code{font-size:1.45rem;font-weight:800;letter-spacing:.02em;margin:6px 0 16px}.pair-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}.pair-metric{background:var(--bg-3);border:1px solid var(--border);border-radius:12px;padding:14px}.pair-metric .k{font-size:.7rem;color:var(--muted-2);text-transform:uppercase;letter-spacing:.08em}.pair-metric .v{font-size:1rem;font-weight:700;margin-top:4px}
   .bias-buy{color:var(--green)}.bias-sell{color:var(--red)}.bias-wait{color:var(--amber)}
-  .reversal-box{margin-top:12px;padding:13px 14px;border-radius:12px;background:var(--amber-dim);border:1px solid rgba(240,163,47,.24);color:var(--amber);font-size:.82rem;line-height:1.5}
+  .reversal-box{margin-top:12px;padding:12px 14px;border-radius:12px;background:rgba(240,163,47,.055);border:1px solid rgba(240,163,47,.18);color:var(--muted);font-size:.78rem;line-height:1.5}
   .live-foot{padding:14px 22px;border-top:1px solid var(--border);font-size:.78rem;color:var(--muted-2);display:flex;gap:8px;align-items:flex-start}.live-foot b{color:var(--muted);font-weight:600}
 </style>
 </head>
@@ -581,7 +581,7 @@
   // Daily / Weekly / Monthly Frankfurter reference-rate analytics.
   // ============================================================
   (function(){
-    var endpoint = './data/currency-strength.json?v=f113f8de7f';
+    var endpoint = './data/currency-strength.json?v=a404f0f232';
     var body = document.getElementById('strength-body');
     var dot = document.getElementById('live-dot');
     var title = document.getElementById('live-status-title');
@@ -720,19 +720,19 @@
 
       var rb = document.getElementById('reversal-box');
       if(activeTf !== 'daily'){
-        rb.textContent = 'Kekuatan '+tfLabel(activeTf).toLowerCase()+' dihitung hingga periode terkini. Probabilitas pembalikan saat ini masih dimodelkan dari riwayat harian.';
+        rb.textContent = 'Kekuatan '+tfLabel(activeTf).toLowerCase()+' dihitung hingga periode terkini. Indikator risiko reversal masih berbasis riwayat harian dan bukan probabilitas profit.';
       } else {
         var rev = data.reversal_intelligence || {};
         if(rev.warning){
           rb.textContent = rev.warning;
         } else if(Number(data.next_day_prediction && data.next_day_prediction.history_sessions_used) === 0){
-          rb.textContent = 'Riwayat prediksi masih dibangun. Peringkat terkuat/terlemah sudah tersedia, tetapi probabilitas pembalikan belum cukup matang secara statistik.';
+          rb.textContent = 'Riwayat reversal masih dibangun. Peringkat terkuat/terlemah sudah tersedia, tetapi indikator risiko reversal belum cukup matang secara statistik.';
         } else if(rev.current_weak && Number.isFinite(Number(rev.weak_to_strong_probability))){
-          rb.textContent = 'Probabilitas '+rev.current_weak+' melemah → menguat: '+Number(rev.weak_to_strong_probability).toFixed(2)+'%.';
+          var reversalRisk=Number(rev.weak_to_strong_probability); var reversalBand=reversalRisk<25?'RENDAH':reversalRisk<50?'RENDAH–SEDANG':reversalRisk<75?'SEDANG–TINGGI':'TINGGI'; rb.textContent='Indikator Risiko Reversal · '+rev.current_weak+' berbalik menguat: '+reversalRisk.toFixed(1).replace('.',',')+'/100 · '+reversalBand+'.';
         } else if(rev.current_weak && Number.isFinite(Number(rev.reversal_to_strong_probability))){
-          rb.textContent = 'Probabilitas pembalikan '+rev.current_weak+' → menguat: '+Number(rev.reversal_to_strong_probability).toFixed(2)+'%.';
+          var reversalRisk=Number(rev.reversal_to_strong_probability); var reversalBand=reversalRisk<25?'RENDAH':reversalRisk<50?'RENDAH–SEDANG':reversalRisk<75?'SEDANG–TINGGI':'TINGGI'; rb.textContent='Indikator Risiko Reversal · '+rev.current_weak+' berbalik menguat: '+reversalRisk.toFixed(1).replace('.',',')+'/100 · '+reversalBand+'.';
         } else {
-          rb.textContent = 'Belum ada peringatan pembalikan yang cukup matang pada snapshot harian terbaru.';
+          rb.textContent = 'Belum ada indikator risiko reversal yang cukup matang pada snapshot harian terbaru.';
         }
       }
     }
@@ -847,7 +847,7 @@
     });
   })();
 </script>
-<script src="currency-strength-history.js?v=f113f8de7f"></script>
-<script src="provider-confirmation.js?v=f113f8de7f"></script>
+<script src="currency-strength-history.js?v=a404f0f232"></script>
+<script src="provider-confirmation.js?v=a404f0f232"></script>
 </body>
 </html>
