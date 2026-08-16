@@ -26,29 +26,32 @@
   box.id='provider-confirmation';
   box.className='provider-confirm';
   box.innerHTML=
-    '<div class="provider-confirm-title">Currency Strength Intelligence</div>' +
+    '<div class="provider-confirm-title">Intelijen Kekuatan Mata Uang</div>' +
     '<div class="intel-grid">' +
-      '<div class="intel-card"><div class="k">Provider Agreement</div><div class="v" id="provider-score">—</div><div class="s" id="provider-state">Loading…</div></div>' +
-      '<div class="intel-card"><div class="k">MTF Alignment</div><div class="v" id="mtf-score">—</div><div class="s" id="mtf-state">Daily · Weekly · Monthly</div></div>' +
-      '<div class="intel-card"><div class="k">Strength Percentile</div><div class="v" id="strength-percentile">—</div><div class="s" id="strength-percentile-sub">Historical context</div></div>' +
+      '<div class="intel-card"><div class="k">Keselarasan Penyedia</div><div class="v" id="provider-score">—</div><div class="s" id="provider-state">Memuat…</div></div>' +
+      '<div class="intel-card"><div class="k">Keselarasan Multi-Timeframe</div><div class="v" id="mtf-score">—</div><div class="s" id="mtf-state">Harian · Mingguan · Bulanan</div></div>' +
+      '<div class="intel-card"><div class="k">Persentil Kekuatan</div><div class="v" id="strength-percentile">—</div><div class="s" id="strength-percentile-sub">Konteks historis</div></div>' +
     '</div>' +
-    '<div class="provider-line" id="provider-confirm-line">Checking cross-provider confirmation…</div>' +
-    '<div class="provider-note" id="provider-confirm-note">ECB remains the canonical Currency Strength source.</div>';
+    '<div class="provider-line" id="provider-confirm-line">Memeriksa konfirmasi lintas penyedia…</div>' +
+    '<div class="provider-note" id="provider-confirm-note">ECB tetap menjadi sumber acuan utama Kekuatan Mata Uang.</div>';
   var reversal=document.getElementById('reversal-box');
   if(reversal) reversal.insertAdjacentElement('afterend',box); else pairPanel.appendChild(box);
 
   var activeTf='daily';
   var latest=null;
 
-  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
-  function tfLabel(tf){return tf==='weekly'?'Weekly':tf==='monthly'?'Monthly':'Daily';}
+  function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c];});}
+  function tfLabel(tf){return tf==='weekly'?'Mingguan':tf==='monthly'?'Bulanan':'Harian';}
   function stateClass(state){return state==='HIGH'?'provider-high':state==='MODERATE'?'provider-moderate':state==='LOW'?'provider-low':'provider-unavailable';}
-  function ordinal(n){
+  function stateLabel(state){return state==='HIGH'?'TINGGI':state==='MODERATE'?'SEDANG':state==='LOW'?'RENDAH':'TIDAK TERSEDIA';}
+  function percentileLabel(n){
     var v=Math.round(Number(n));
     if(!Number.isFinite(v)) return '—';
-    var mod100=v%100;
-    var suffix=(mod100>=11&&mod100<=13)?'th':(v%10===1?'st':v%10===2?'nd':v%10===3?'rd':'th');
-    return v+suffix;
+    return 'Persentil ke-'+v;
+  }
+  function percentileShort(n){
+    var v=Math.round(Number(n));
+    return Number.isFinite(v)?'P'+v:'—';
   }
   function snap(data,tf){return data&&data.strength_timeframes&&data.strength_timeframes[tf];}
 
@@ -62,48 +65,48 @@
     var providerState=document.getElementById('provider-state');
     if(entry&&entry.available!==false&&Number.isFinite(Number(entry.agreement_score))){
       var state=String(entry.agreement||'LOW').toUpperCase();
-      providerScore.innerHTML=Number(entry.agreement_score).toFixed(1)+'/100 <span class="provider-badge '+stateClass(state)+'">'+esc(state)+'</span>';
-      providerState.textContent=tfLabel(activeTf)+' cross-provider confirmation';
+      providerScore.innerHTML=Number(entry.agreement_score).toFixed(1)+'/100 <span class="provider-badge '+stateClass(state)+'">'+esc(stateLabel(state))+'</span>';
+      providerState.textContent='Konfirmasi lintas penyedia · '+tfLabel(activeTf);
     }else{
       providerScore.textContent='—';
-      providerState.textContent='Confirmation unavailable';
+      providerState.textContent='Konfirmasi penyedia tidak tersedia';
     }
 
     var mtfScore=document.getElementById('mtf-score');
     var mtfState=document.getElementById('mtf-state');
     if(mtf&&Number.isFinite(Number(mtf.score))){
       var mtfStatus=String(mtf.state||'LOW').toUpperCase();
-      mtfScore.innerHTML=Number(mtf.score).toFixed(1)+'/100 <span class="provider-badge '+stateClass(mtfStatus)+'">'+esc(mtfStatus)+'</span>';
+      mtfScore.innerHTML=Number(mtf.score).toFixed(1)+'/100 <span class="provider-badge '+stateClass(mtfStatus)+'">'+esc(stateLabel(mtfStatus))+'</span>';
       var leaders=mtf.timeframe_leaders||{};
-      mtfState.textContent='D '+((leaders.daily&&leaders.daily.strongest)||'—')+' · W '+((leaders.weekly&&leaders.weekly.strongest)||'—')+' · M '+((leaders.monthly&&leaders.monthly.strongest)||'—');
+      mtfState.textContent='H '+((leaders.daily&&leaders.daily.strongest)||'—')+' · M '+((leaders.weekly&&leaders.weekly.strongest)||'—')+' · B '+((leaders.monthly&&leaders.monthly.strongest)||'—');
     }else{
       mtfScore.textContent='—';
-      mtfState.textContent='MTF analytics unavailable';
+      mtfState.textContent='Analitik multi-timeframe tidak tersedia';
     }
 
     var percentile=document.getElementById('strength-percentile');
     var percentileSub=document.getElementById('strength-percentile-sub');
     if(pct&&Number.isFinite(Number(pct.gap_percentile))){
-      percentile.textContent=ordinal(pct.gap_percentile)+' pct';
+      percentile.textContent=percentileLabel(pct.gap_percentile);
       var st=pct.strongest||{}, wk=pct.weakest||{};
-      percentileSub.textContent=(st.currency||'—')+' '+ordinal(st.directional_percentile)+' · '+(wk.currency||'—')+' '+ordinal(wk.directional_percentile);
+      percentileSub.textContent=(st.currency||'—')+' '+percentileShort(st.directional_percentile)+' · '+(wk.currency||'—')+' '+percentileShort(wk.directional_percentile);
     }else{
       percentile.textContent='—';
-      percentileSub.textContent='Not enough historical samples';
+      percentileSub.textContent='Sampel historis belum mencukupi';
     }
 
     var line=document.getElementById('provider-confirm-line');
     var note=document.getElementById('provider-confirm-note');
     if(!entry||entry.available===false){
-      line.textContent='No aligned blended-provider confirmation is available for '+tfLabel(activeTf)+'.';
-      note.textContent='ECB remains canonical; primary strength and history are unchanged.';
+      line.textContent='Konfirmasi penyedia gabungan yang selaras tanggal belum tersedia untuk timeframe '+tfLabel(activeTf)+'.';
+      note.textContent='ECB tetap menjadi acuan utama; skor kekuatan dan riwayat utama tidak berubah.';
       return;
     }
     var p=entry.primary||{}, c=entry.confirmation||{};
     var rho=Number(entry.rank_correlation);
-    line.innerHTML='<b>'+esc(tfLabel(activeTf))+'</b> · ECB '+esc((p.strongest||'—')+'/'+(p.weakest||'—'))+' · Blended '+esc((c.strongest||'—')+'/'+(c.weakest||'—'))+(Number.isFinite(rho)?' · Rank corr '+rho.toFixed(2):'');
+    line.innerHTML='<b>'+esc(tfLabel(activeTf))+'</b> · ECB '+esc((p.strongest||'—')+'/'+(p.weakest||'—'))+' · Gabungan '+esc((c.strongest||'—')+'/'+(c.weakest||'—'))+(Number.isFinite(rho)?' · Korelasi peringkat '+rho.toFixed(2):'');
     var adjustment=entry.confidence_adjustment||'NONE';
-    note.textContent=adjustment==='NONE'?'Cross-provider evidence supports the ECB view.':adjustment==='CAUTION'?'Partial provider divergence detected; interpret confidence with caution.':'Material provider divergence detected; reduce reliance on the strength signal until other agents confirm it.';
+    note.textContent=adjustment==='NONE'?'Bukti lintas penyedia mendukung pandangan ECB.':adjustment==='CAUTION'?'Terdapat sebagian perbedaan antarpenyedia; interpretasikan tingkat keyakinan dengan hati-hati.':'Terdapat perbedaan material antarpenyedia; kurangi ketergantungan pada sinyal kekuatan sampai agen lain memberikan konfirmasi.';
   }
 
   function load(){
@@ -114,7 +117,7 @@
         document.getElementById('provider-score').textContent='—';
         document.getElementById('mtf-score').textContent='—';
         document.getElementById('strength-percentile').textContent='—';
-        document.getElementById('provider-confirm-line').textContent='Currency Strength Intelligence could not be loaded.';
+        document.getElementById('provider-confirm-line').textContent='Intelijen Kekuatan Mata Uang tidak dapat dimuat.';
       });
   }
 

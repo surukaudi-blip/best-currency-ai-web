@@ -37,31 +37,31 @@
   section.innerHTML =
     '<div class="container">' +
       '<div class="section-head center">' +
-        '<div class="kicker">Currency Strength Story</div>' +
-        '<h2>Currency Strength History</h2>' +
-        '<p class="lead">See how all eight currencies move through the ranking over Daily, Weekly, and Monthly periods — not only who is strongest today.</p>' +
+        '<div class="kicker">Kisah Kekuatan Mata Uang</div>' +
+        '<h2>Riwayat Kekuatan Mata Uang</h2>' +
+        '<p class="lead">Lihat bagaimana delapan mata uang bergerak dalam peringkat Harian, Mingguan, dan Bulanan — bukan hanya siapa yang terkuat hari ini.</p>' +
       '</div>' +
       '<div class="history-shell">' +
         '<div class="history-top">' +
-          '<div><h3>Rank journey · 8 currencies</h3><p id="history-sub">Loading ECB reference-rate analytics via Frankfurter…</p></div>' +
+          '<div><h3>Perjalanan peringkat · 8 mata uang</h3><p id="history-sub">Memuat analitik kurs referensi ECB melalui Frankfurter…</p></div>' +
           '<div class="history-tabs">' +
-            '<button type="button" class="history-tab active" data-history-tf="daily">Daily</button>' +
-            '<button type="button" class="history-tab" data-history-tf="weekly">Weekly</button>' +
-            '<button type="button" class="history-tab" data-history-tf="monthly">Monthly</button>' +
+            '<button type="button" class="history-tab active" data-history-tf="daily">Harian</button>' +
+            '<button type="button" class="history-tab" data-history-tf="weekly">Mingguan</button>' +
+            '<button type="button" class="history-tab" data-history-tf="monthly">Bulanan</button>' +
           '</div>' +
         '</div>' +
         '<div class="history-grid">' +
           '<div class="history-chart-panel">' +
-            '<div class="history-panel-title"><h4>Ranking evolution</h4><span id="history-range">—</span></div>' +
-            '<div class="rank-chart-wrap" id="history-chart-wrap"><div class="history-empty">Loading chart…</div></div>' +
+            '<div class="history-panel-title"><h4>Perkembangan peringkat</h4><span id="history-range">—</span></div>' +
+            '<div class="rank-chart-wrap" id="history-chart-wrap"><div class="history-empty">Memuat grafik…</div></div>' +
             '<div class="history-legend" id="history-legend"></div>' +
           '</div>' +
           '<div class="history-table-panel">' +
-            '<div class="history-panel-title"><h4>Strongest / Weakest history</h4><span id="history-count">—</span></div>' +
-            '<div class="history-table-wrap" id="history-table-wrap"><div class="history-empty">Loading history…</div></div>' +
+            '<div class="history-panel-title"><h4>Riwayat terkuat / terlemah</h4><span id="history-count">—</span></div>' +
+            '<div class="history-table-wrap" id="history-table-wrap"><div class="history-empty">Memuat riwayat…</div></div>' +
           '</div>' +
         '</div>' +
-        '<div class="history-meta" id="history-meta">Historical strength is calculated from ECB reference rates via Frankfurter.</div>' +
+        '<div class="history-meta" id="history-meta">Kekuatan historis dihitung dari kurs referensi ECB melalui Frankfurter.</div>' +
       '</div>' +
     '</div>';
   liveSection.insertAdjacentElement('afterend', section);
@@ -72,7 +72,7 @@
     jump.id = 'history-jump';
     jump.className = 'btn btn-ghost btn-sm';
     jump.href = '#strength-history';
-    jump.textContent = 'View history';
+    jump.textContent = 'Lihat riwayat';
     liveActions.appendChild(jump);
   }
 
@@ -85,7 +85,7 @@
 
   function esc(s){
     return String(s == null ? '' : s).replace(/[&<>"']/g,function(c){
-      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c];
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
     });
   }
 
@@ -93,8 +93,12 @@
     if(!s) return '—';
     var d = new Date(String(s).slice(0,10)+'T12:00:00Z');
     if(isNaN(d.getTime())) return String(s);
-    return d.toLocaleDateString(undefined,{day:'numeric',month:'short'});
+    return d.toLocaleDateString('id-ID',{day:'numeric',month:'short'});
   }
+
+  function tfLabel(tf){return tf==='weekly'?'Mingguan':tf==='monthly'?'Bulanan':'Harian';}
+  function biasLabel(bias){return bias==='BUY'?'BELI':bias==='SELL'?'JUAL':bias==='WAIT'?'TUNGGU':bias||'—';}
+  function pairLabel(pair){return pair&&pair.length===6?pair.slice(0,3)+' / '+pair.slice(3,6):(pair||'—');}
 
   function periodLabel(row, tf){
     if(tf === 'daily') return shortDate(row.to_date);
@@ -106,7 +110,7 @@
     var wrap = document.getElementById('history-chart-wrap');
     var legend = document.getElementById('history-legend');
     if(!rows.length){
-      wrap.innerHTML = '<div class="history-empty">History is not available yet. Run the ECB history refresh function once after deployment.</div>';
+      wrap.innerHTML = '<div class="history-empty">Riwayat belum tersedia untuk timeframe ini.</div>';
       legend.innerHTML = '';
       return;
     }
@@ -118,7 +122,7 @@
     function x(i){return left+i*xStep;}
     function y(rank){return top+((rank-1)/7)*plotH;}
 
-    var svg = '<svg class="rank-chart" viewBox="0 0 '+width+' '+height+'" role="img" aria-label="Currency ranking history">';
+    var svg = '<svg class="rank-chart" viewBox="0 0 '+width+' '+height+'" role="img" aria-label="Riwayat peringkat mata uang">';
     for(var r=1;r<=8;r++){
       var yy=y(r);
       svg += '<line x1="'+left+'" y1="'+yy+'" x2="'+(width-right)+'" y2="'+yy+'" stroke="rgba(148,163,184,.15)" stroke-width="1" />';
@@ -155,19 +159,19 @@
   function renderTable(rows){
     var wrap=document.getElementById('history-table-wrap');
     if(!rows.length){
-      wrap.innerHTML='<div class="history-empty">No stored ECB history for this timeframe yet.</div>';
+      wrap.innerHTML='<div class="history-empty">Belum ada riwayat ECB tersimpan untuk timeframe ini.</div>';
       return;
     }
     var shown=rows.slice(0,12);
-    wrap.innerHTML='<table class="history-table"><thead><tr><th>Period</th><th>Strongest</th><th>Weakest</th><th>Pair</th><th>Bias</th><th>Gap</th></tr></thead><tbody>' +
+    wrap.innerHTML='<table class="history-table"><thead><tr><th>Periode</th><th>Terkuat</th><th>Terlemah</th><th>Pasangan</th><th>Bias</th><th>Selisih</th></tr></thead><tbody>' +
       shown.map(function(row){
         var p=row.pair_analysis||{};
         return '<tr>' +
           '<td>'+esc(periodLabel(row,activeTf))+'</td>' +
           '<td class="history-strong">'+esc(row.strongest_currency||'—')+'</td>' +
           '<td class="history-weak">'+esc(row.weakest_currency||'—')+'</td>' +
-          '<td>'+esc(p.pair||'—')+'</td>' +
-          '<td>'+esc(p.bias||'—')+'</td>' +
+          '<td>'+esc(pairLabel(p.pair))+'</td>' +
+          '<td>'+esc(biasLabel(p.bias))+'</td>' +
           '<td>'+((Number.isFinite(Number(p.strength_difference)))?(Number(p.strength_difference)>0?'+':'')+Number(p.strength_difference).toFixed(3):'—')+'</td>' +
         '</tr>';
       }).join('') + '</tbody></table>';
@@ -178,9 +182,9 @@
     var rows=Array.isArray(historyData[activeTf])?historyData[activeTf]:[];
     var currencies=historyData.currencies||['USD','EUR','GBP','JPY','CHF','CAD','AUD','NZD'];
     document.querySelectorAll('.history-tab').forEach(function(btn){btn.classList.toggle('active',btn.getAttribute('data-history-tf')===activeTf);});
-    document.getElementById('history-count').textContent=rows.length+' periods';
+    document.getElementById('history-count').textContent=rows.length+' periode';
     var authority=historyData.provider_authority||'ECB';
-    document.getElementById('history-sub').textContent=authority+' reference-rate ranking via Frankfurter · '+activeTf.toUpperCase();
+    document.getElementById('history-sub').textContent='Peringkat kurs referensi '+authority+' melalui Frankfurter · '+tfLabel(activeTf);
     if(rows.length){
       var oldest=rows[rows.length-1], newest=rows[0];
       document.getElementById('history-range').textContent=shortDate(oldest.from_date)+' → '+shortDate(newest.to_date);
@@ -190,7 +194,7 @@
     renderChart(rows,currencies);
     renderTable(rows);
     var ts=historyData.generated_at;
-    document.getElementById('history-meta').textContent='Source: '+(historyData.source||'Frankfurter')+' · Authority: '+authority+' · '+(ts?'History generated '+new Date(ts).toLocaleString():'History builder has not run yet')+' · Reference-rate analytics, not executable quotes.';
+    document.getElementById('history-meta').textContent='Sumber: '+(historyData.source||'Frankfurter')+' · Otoritas: '+authority+' · '+(ts?'Riwayat dibuat '+new Date(ts).toLocaleString('id-ID'):'Pembangun riwayat belum dijalankan')+' · Analitik kurs referensi, bukan harga transaksi langsung.';
   }
 
   section.addEventListener('click',function(e){
@@ -204,8 +208,8 @@
     .then(function(r){if(!r.ok) throw new Error('HTTP '+r.status);return r.json();})
     .then(function(payload){historyData=payload&&payload.data?payload.data:payload;render();})
     .catch(function(){
-      document.getElementById('history-sub').textContent='ECB static history data is not available yet.';
-      document.getElementById('history-chart-wrap').innerHTML='<div class="history-empty">Wait for the next scheduled GitHub data update, then refresh.</div>';
-      document.getElementById('history-table-wrap').innerHTML='<div class="history-empty">Waiting for ECB history data.</div>';
+      document.getElementById('history-sub').textContent='Data riwayat ECB belum tersedia.';
+      document.getElementById('history-chart-wrap').innerHTML='<div class="history-empty">Tunggu pembaruan data berikutnya, lalu muat ulang.</div>';
+      document.getElementById('history-table-wrap').innerHTML='<div class="history-empty">Menunggu data riwayat ECB.</div>';
     });
 })();
