@@ -10,8 +10,8 @@
     "provider_name": "European Central Bank",
     "provider_url": "api.frankfurter.dev",
     "module": "Currency Strength Agent",
-    "received_at": "2026-08-16T17:54:38.439Z",
-    "generated_at": "2026-08-16T17:54:38.439Z",
+    "received_at": "2026-08-16T17:59:45.605Z",
+    "generated_at": "2026-08-16T17:59:45.605Z",
     "data_updated_at": "2026-08-14",
     "session_date": "2026-08-14",
     "comparison_date": "2026-08-13",
@@ -906,6 +906,164 @@
       "weak_continuation_probability": 59.66,
       "weak_to_strong_probability": 31.03
     },
-    "notice": "ECB-only remains canonical. Blended multi-provider is confirmation only. Percentiles are historical context, not probabilities of profit. Reference rates are not real-time executable trading quotes."
+    "notice": "ECB-only remains canonical. Blended multi-provider is confirmation only. Percentiles are historical context, not probabilities of profit. Reference rates are not real-time executable trading quotes.",
+    "composite_currency_strength_confidence": {
+      "role": "signal_quality_summary",
+      "primary_timeframe": "daily",
+      "weights": {
+        "provider_agreement": 0.4,
+        "mtf_alignment": 0.35,
+        "strength_percentile": 0.25
+      },
+      "thresholds": {
+        "high": 80,
+        "moderate": 60,
+        "low": 0
+      },
+      "note": "Composite Currency Strength Confidence summarizes evidence quality only. It does not estimate win rate, expected return, or trading profitability.",
+      "timeframes": {
+        "daily": {
+          "timeframe": "daily",
+          "score": 87.5,
+          "state": "HIGH",
+          "methodology": "Composite signal-quality score: 40% Provider Agreement + 35% Multi-Timeframe Alignment + 25% cross-currency Strength Percentile. Missing components are excluded and remaining weights are normalized. This is an operational quality score, not a probability of profit.",
+          "components": {
+            "provider_agreement": {
+              "score": 97.5,
+              "base_weight": 0.4,
+              "available": true
+            },
+            "mtf_alignment": {
+              "score": 80.8,
+              "base_weight": 0.35,
+              "available": true
+            },
+            "strength_percentile": {
+              "score": 80.8,
+              "base_weight": 0.25,
+              "metric": "cross_currency_gap_percentile",
+              "sample_size": 60,
+              "available": true
+            }
+          },
+          "effective_weight_sum": 1,
+          "data_completeness": 100,
+          "signal": {
+            "pair": "NZDUSD",
+            "bias": "BUY",
+            "strongest": "NZD",
+            "weakest": "USD"
+          },
+          "warnings": []
+        },
+        "weekly": {
+          "timeframe": "weekly",
+          "score": 47.7,
+          "state": "LOW",
+          "methodology": "Composite signal-quality score: 40% Provider Agreement + 35% Multi-Timeframe Alignment + 25% cross-currency Strength Percentile. Missing components are excluded and remaining weights are normalized. This is an operational quality score, not a probability of profit.",
+          "components": {
+            "provider_agreement": {
+              "score": 48.6,
+              "base_weight": 0.4,
+              "available": true
+            },
+            "mtf_alignment": {
+              "score": 80.8,
+              "base_weight": 0.35,
+              "available": true
+            },
+            "strength_percentile": {
+              "score": 0,
+              "base_weight": 0.25,
+              "metric": "cross_currency_gap_percentile",
+              "sample_size": 16,
+              "available": true
+            }
+          },
+          "effective_weight_sum": 1,
+          "data_completeness": 100,
+          "signal": {
+            "pair": "CADCHF",
+            "bias": "BUY",
+            "strongest": "CAD",
+            "weakest": "CHF"
+          },
+          "warnings": [
+            "LOW_PROVIDER_AGREEMENT",
+            "LOW_HISTORICAL_SEPARATION"
+          ]
+        },
+        "monthly": {
+          "timeframe": "monthly",
+          "score": 67.3,
+          "state": "MODERATE",
+          "methodology": "Composite signal-quality score: 40% Provider Agreement + 35% Multi-Timeframe Alignment + 25% cross-currency Strength Percentile. Missing components are excluded and remaining weights are normalized. This is an operational quality score, not a probability of profit.",
+          "components": {
+            "provider_agreement": {
+              "score": 97.5,
+              "base_weight": 0.4,
+              "available": true
+            },
+            "mtf_alignment": {
+              "score": 80.8,
+              "base_weight": 0.35,
+              "available": true
+            },
+            "strength_percentile": {
+              "score": 0,
+              "base_weight": 0.25,
+              "metric": "cross_currency_gap_percentile",
+              "sample_size": 6,
+              "available": true
+            }
+          },
+          "effective_weight_sum": 1,
+          "data_completeness": 100,
+          "signal": {
+            "pair": "CADJPY",
+            "bias": "BUY",
+            "strongest": "CAD",
+            "weakest": "JPY"
+          },
+          "warnings": [
+            "LOW_HISTORICAL_SEPARATION"
+          ]
+        }
+      },
+      "current": {
+        "timeframe": "daily",
+        "score": 87.5,
+        "state": "HIGH",
+        "methodology": "Composite signal-quality score: 40% Provider Agreement + 35% Multi-Timeframe Alignment + 25% cross-currency Strength Percentile. Missing components are excluded and remaining weights are normalized. This is an operational quality score, not a probability of profit.",
+        "components": {
+          "provider_agreement": {
+            "score": 97.5,
+            "base_weight": 0.4,
+            "available": true
+          },
+          "mtf_alignment": {
+            "score": 80.8,
+            "base_weight": 0.35,
+            "available": true
+          },
+          "strength_percentile": {
+            "score": 80.8,
+            "base_weight": 0.25,
+            "metric": "cross_currency_gap_percentile",
+            "sample_size": 60,
+            "available": true
+          }
+        },
+        "effective_weight_sum": 1,
+        "data_completeness": 100,
+        "signal": {
+          "pair": "NZDUSD",
+          "bias": "BUY",
+          "strongest": "NZD",
+          "weakest": "USD"
+        },
+        "warnings": []
+      }
+    }
   }
 }

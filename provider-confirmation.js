@@ -8,11 +8,13 @@
     '.provider-confirm{margin-top:12px;padding:14px;border-radius:12px;background:var(--bg-3);border:1px solid var(--border);font-size:.78rem}' +
     '.provider-confirm-title{font-size:.69rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-2);font-weight:700;margin-bottom:10px}' +
     '.intel-grid{display:grid;grid-template-columns:1fr;gap:8px;margin-bottom:10px}' +
-    '@media(min-width:560px){.intel-grid{grid-template-columns:repeat(3,1fr)}}' +
+    '@media(min-width:560px){.intel-grid{grid-template-columns:repeat(2,1fr)}}' +
+    '@media(min-width:980px){.intel-grid{grid-template-columns:repeat(4,1fr)}}' +
     '.intel-card{border:1px solid var(--border);border-radius:10px;padding:10px;background:rgba(7,11,20,.28)}' +
+    '.intel-card.composite-card{border-color:rgba(47,211,238,.35);background:rgba(47,211,238,.04)}' +
     '.intel-card .k{font-size:.62rem;text-transform:uppercase;letter-spacing:.07em;color:var(--muted-2);margin-bottom:4px}' +
     '.intel-card .v{font-size:.98rem;font-weight:800;color:var(--text)}' +
-    '.intel-card .s{font-size:.65rem;color:var(--muted);margin-top:2px}' +
+    '.intel-card .s{font-size:.65rem;color:var(--muted);margin-top:2px;line-height:1.45}' +
     '.provider-badge{display:inline-flex;align-items:center;border-radius:999px;padding:3px 7px;font-size:.6rem;font-weight:800;letter-spacing:.05em;margin-left:5px;vertical-align:1px}' +
     '.provider-high{background:var(--green-dim);color:var(--green)}' +
     '.provider-moderate{background:var(--amber-dim);color:var(--amber)}' +
@@ -28,6 +30,7 @@
   box.innerHTML=
     '<div class="provider-confirm-title">Intelijen Kekuatan Mata Uang</div>' +
     '<div class="intel-grid">' +
+      '<div class="intel-card composite-card"><div class="k">Keyakinan Komposit</div><div class="v" id="composite-score">—</div><div class="s" id="composite-state">Memuat kualitas sinyal…</div></div>' +
       '<div class="intel-card"><div class="k">Keselarasan Penyedia</div><div class="v" id="provider-score">—</div><div class="s" id="provider-state">Memuat…</div></div>' +
       '<div class="intel-card"><div class="k">Keselarasan Multi-Timeframe</div><div class="v" id="mtf-score">—</div><div class="s" id="mtf-state">Harian · Mingguan · Bulanan</div></div>' +
       '<div class="intel-card"><div class="k">Persentil Kekuatan</div><div class="v" id="strength-percentile">—</div><div class="s" id="strength-percentile-sub">Konteks historis</div></div>' +
@@ -53,6 +56,10 @@
     var v=Math.round(Number(n));
     return Number.isFinite(v)?'P'+v:'—';
   }
+  function fmtScore(n){
+    var v=Number(n);
+    return Number.isFinite(v)?v.toFixed(1).replace('.',','):'—';
+  }
   function snap(data,tf){return data&&data.strength_timeframes&&data.strength_timeframes[tf];}
 
   function render(){
@@ -60,12 +67,25 @@
     var mtf=latest&&latest.multi_timeframe_alignment;
     var active=snap(latest,activeTf);
     var pct=active&&active.strength_percentile;
+    var composite=latest&&latest.composite_currency_strength_confidence&&latest.composite_currency_strength_confidence.timeframes&&latest.composite_currency_strength_confidence.timeframes[activeTf];
+
+    var compositeScore=document.getElementById('composite-score');
+    var compositeState=document.getElementById('composite-state');
+    if(composite&&Number.isFinite(Number(composite.score))){
+      var compositeStatus=String(composite.state||'LOW').toUpperCase();
+      compositeScore.innerHTML=fmtScore(composite.score)+'/100 <span class="provider-badge '+stateClass(compositeStatus)+'">'+esc(stateLabel(compositeStatus))+'</span>';
+      var cc=composite.components||{};
+      compositeState.textContent='Penyedia '+fmtScore(cc.provider_agreement&&cc.provider_agreement.score)+' · MTF '+fmtScore(cc.mtf_alignment&&cc.mtf_alignment.score)+' · Persentil '+fmtScore(cc.strength_percentile&&cc.strength_percentile.score);
+    }else{
+      compositeScore.textContent='—';
+      compositeState.textContent='Skor kualitas sinyal gabungan belum tersedia';
+    }
 
     var providerScore=document.getElementById('provider-score');
     var providerState=document.getElementById('provider-state');
     if(entry&&entry.available!==false&&Number.isFinite(Number(entry.agreement_score))){
       var state=String(entry.agreement||'LOW').toUpperCase();
-      providerScore.innerHTML=Number(entry.agreement_score).toFixed(1)+'/100 <span class="provider-badge '+stateClass(state)+'">'+esc(stateLabel(state))+'</span>';
+      providerScore.innerHTML=fmtScore(entry.agreement_score)+'/100 <span class="provider-badge '+stateClass(state)+'">'+esc(stateLabel(state))+'</span>';
       providerState.textContent='Konfirmasi lintas penyedia · '+tfLabel(activeTf);
     }else{
       providerScore.textContent='—';
@@ -76,7 +96,7 @@
     var mtfState=document.getElementById('mtf-state');
     if(mtf&&Number.isFinite(Number(mtf.score))){
       var mtfStatus=String(mtf.state||'LOW').toUpperCase();
-      mtfScore.innerHTML=Number(mtf.score).toFixed(1)+'/100 <span class="provider-badge '+stateClass(mtfStatus)+'">'+esc(stateLabel(mtfStatus))+'</span>';
+      mtfScore.innerHTML=fmtScore(mtf.score)+'/100 <span class="provider-badge '+stateClass(mtfStatus)+'">'+esc(stateLabel(mtfStatus))+'</span>';
       var leaders=mtf.timeframe_leaders||{};
       mtfState.textContent='H '+((leaders.daily&&leaders.daily.strongest)||'—')+' · M '+((leaders.weekly&&leaders.weekly.strongest)||'—')+' · B '+((leaders.monthly&&leaders.monthly.strongest)||'—');
     }else{
@@ -104,7 +124,7 @@
     }
     var p=entry.primary||{}, c=entry.confirmation||{};
     var rho=Number(entry.rank_correlation);
-    line.innerHTML='<b>'+esc(tfLabel(activeTf))+'</b> · ECB '+esc((p.strongest||'—')+'/'+(p.weakest||'—'))+' · Gabungan '+esc((c.strongest||'—')+'/'+(c.weakest||'—'))+(Number.isFinite(rho)?' · Korelasi peringkat '+rho.toFixed(2):'');
+    line.innerHTML='<b>'+esc(tfLabel(activeTf))+'</b> · ECB '+esc((p.strongest||'—')+'/'+(p.weakest||'—'))+' · Gabungan '+esc((c.strongest||'—')+'/'+(c.weakest||'—'))+(Number.isFinite(rho)?' · Korelasi peringkat '+rho.toFixed(2).replace('.',','):'');
     var adjustment=entry.confidence_adjustment||'NONE';
     note.textContent=adjustment==='NONE'?'Bukti lintas penyedia mendukung pandangan ECB.':adjustment==='CAUTION'?'Terdapat sebagian perbedaan antarpenyedia; interpretasikan tingkat keyakinan dengan hati-hati.':'Terdapat perbedaan material antarpenyedia; kurangi ketergantungan pada sinyal kekuatan sampai agen lain memberikan konfirmasi.';
   }
@@ -114,6 +134,7 @@
       .then(function(r){if(!r.ok) throw new Error('HTTP '+r.status);return r.json();})
       .then(function(payload){latest=payload&&payload.data?payload.data:payload;render();})
       .catch(function(){
+        document.getElementById('composite-score').textContent='—';
         document.getElementById('provider-score').textContent='—';
         document.getElementById('mtf-score').textContent='—';
         document.getElementById('strength-percentile').textContent='—';
