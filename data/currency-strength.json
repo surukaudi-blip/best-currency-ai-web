@@ -10,8 +10,8 @@
     "provider_name": "European Central Bank",
     "provider_url": "api.frankfurter.dev",
     "module": "Currency Strength Agent",
-    "received_at": "2026-08-16T18:06:21.412Z",
-    "generated_at": "2026-08-16T18:06:21.412Z",
+    "received_at": "2026-08-16T19:17:07.441Z",
+    "generated_at": "2026-08-16T19:17:07.441Z",
     "data_updated_at": "2026-08-14",
     "session_date": "2026-08-14",
     "comparison_date": "2026-08-13",
@@ -908,7 +908,8 @@
     },
     "notice": "ECB-only remains canonical. Blended multi-provider is confirmation only. Percentiles are historical context, not probabilities of profit. Reference rates are not real-time executable trading quotes.",
     "composite_currency_strength_confidence": {
-      "role": "signal_quality_summary",
+      "role": "internal_evidence_quality",
+      "ui_role": "supporting_component_for_actionability",
       "primary_timeframe": "daily",
       "weights": {
         "provider_agreement": 0.4,
@@ -920,13 +921,13 @@
         "moderate": 60,
         "low": 0
       },
-      "note": "Composite Currency Strength Confidence summarizes evidence quality only. It does not estimate win rate, expected return, or trading profitability.",
+      "note": "Composite is retained for evidence quality, auditability, and backtesting. The primary UI decision layer is Actionability Score.",
       "timeframes": {
         "daily": {
           "timeframe": "daily",
           "score": 87.5,
           "state": "HIGH",
-          "methodology": "Composite signal-quality score: 40% Provider Agreement + 35% Multi-Timeframe Alignment + 25% cross-currency Strength Percentile. Missing components are excluded and remaining weights are normalized. This is an operational quality score, not a probability of profit.",
+          "methodology": "Evidence-quality score: 40% Provider Agreement + 35% Multi-Timeframe Alignment + 25% cross-currency Strength Percentile. Missing components are excluded and remaining weights are normalized. This is not a probability of profit.",
           "components": {
             "provider_agreement": {
               "score": 97.5,
@@ -943,6 +944,7 @@
               "base_weight": 0.25,
               "metric": "cross_currency_gap_percentile",
               "sample_size": 60,
+              "lookback_periods": 60,
               "available": true
             }
           },
@@ -954,13 +956,19 @@
             "strongest": "NZD",
             "weakest": "USD"
           },
-          "warnings": []
+          "warnings": [],
+          "regime": {
+            "regime": "CONFIRMED_TREND",
+            "guardrail_pass": true,
+            "continuation_status": "SUPPORTED",
+            "reason": "Composite is HIGH while provider and multi-timeframe confirmation are both strong, without extreme or weak separation."
+          }
         },
         "weekly": {
           "timeframe": "weekly",
           "score": 47.7,
           "state": "LOW",
-          "methodology": "Composite signal-quality score: 40% Provider Agreement + 35% Multi-Timeframe Alignment + 25% cross-currency Strength Percentile. Missing components are excluded and remaining weights are normalized. This is an operational quality score, not a probability of profit.",
+          "methodology": "Evidence-quality score: 40% Provider Agreement + 35% Multi-Timeframe Alignment + 25% cross-currency Strength Percentile. Missing components are excluded and remaining weights are normalized. This is not a probability of profit.",
           "components": {
             "provider_agreement": {
               "score": 48.6,
@@ -977,6 +985,7 @@
               "base_weight": 0.25,
               "metric": "cross_currency_gap_percentile",
               "sample_size": 16,
+              "lookback_periods": 16,
               "available": true
             }
           },
@@ -991,13 +1000,19 @@
           "warnings": [
             "LOW_PROVIDER_AGREEMENT",
             "LOW_HISTORICAL_SEPARATION"
-          ]
+          ],
+          "regime": {
+            "regime": "PROVIDER_DIVERGENCE",
+            "guardrail_pass": false,
+            "continuation_status": "FILTERED",
+            "reason": "Provider Agreement is below 60, so cross-provider confirmation is weak."
+          }
         },
         "monthly": {
           "timeframe": "monthly",
           "score": 67.3,
           "state": "MODERATE",
-          "methodology": "Composite signal-quality score: 40% Provider Agreement + 35% Multi-Timeframe Alignment + 25% cross-currency Strength Percentile. Missing components are excluded and remaining weights are normalized. This is an operational quality score, not a probability of profit.",
+          "methodology": "Evidence-quality score: 40% Provider Agreement + 35% Multi-Timeframe Alignment + 25% cross-currency Strength Percentile. Missing components are excluded and remaining weights are normalized. This is not a probability of profit.",
           "components": {
             "provider_agreement": {
               "score": 97.5,
@@ -1014,6 +1029,7 @@
               "base_weight": 0.25,
               "metric": "cross_currency_gap_percentile",
               "sample_size": 6,
+              "lookback_periods": 6,
               "available": true
             }
           },
@@ -1027,14 +1043,20 @@
           },
           "warnings": [
             "LOW_HISTORICAL_SEPARATION"
-          ]
+          ],
+          "regime": {
+            "regime": "LOW_SEPARATION",
+            "guardrail_pass": false,
+            "continuation_status": "FILTERED",
+            "reason": "Strength gap percentile is below 20, indicating weak historical separation."
+          }
         }
       },
       "current": {
         "timeframe": "daily",
         "score": 87.5,
         "state": "HIGH",
-        "methodology": "Composite signal-quality score: 40% Provider Agreement + 35% Multi-Timeframe Alignment + 25% cross-currency Strength Percentile. Missing components are excluded and remaining weights are normalized. This is an operational quality score, not a probability of profit.",
+        "methodology": "Evidence-quality score: 40% Provider Agreement + 35% Multi-Timeframe Alignment + 25% cross-currency Strength Percentile. Missing components are excluded and remaining weights are normalized. This is not a probability of profit.",
         "components": {
           "provider_agreement": {
             "score": 97.5,
@@ -1051,6 +1073,7 @@
             "base_weight": 0.25,
             "metric": "cross_currency_gap_percentile",
             "sample_size": 60,
+            "lookback_periods": 60,
             "available": true
           }
         },
@@ -1062,7 +1085,510 @@
           "strongest": "NZD",
           "weakest": "USD"
         },
-        "warnings": []
+        "warnings": [],
+        "regime": {
+          "regime": "CONFIRMED_TREND",
+          "guardrail_pass": true,
+          "continuation_status": "SUPPORTED",
+          "reason": "Composite is HIGH while provider and multi-timeframe confirmation are both strong, without extreme or weak separation."
+        }
+      }
+    },
+    "currency_strength_regime": {
+      "role": "stage2_regime_guardrail",
+      "evidence_source": "Backtest Stage 2 walk-forward out-of-sample regime analysis",
+      "thresholds": {
+        "provider_min": 60,
+        "mtf_min": 60,
+        "percentile_min": 20,
+        "percentile_extreme": 95,
+        "composite_high": 80,
+        "confirmed_provider": 80,
+        "confirmed_mtf": 80
+      },
+      "methodology": "Fixed guardrail: reject Provider Agreement <60, MTF Alignment <60, Strength Percentile <20, or Strength Percentile >=95. CONFIRMED_TREND additionally requires Composite >=80, Provider >=80, and MTF >=80. The guardrail filters continuation confidence; it does not reverse the canonical ECB signal.",
+      "timeframes": {
+        "daily": {
+          "regime": "CONFIRMED_TREND",
+          "guardrail_pass": true,
+          "continuation_status": "SUPPORTED",
+          "reason": "Composite is HIGH while provider and multi-timeframe confirmation are both strong, without extreme or weak separation."
+        },
+        "weekly": {
+          "regime": "PROVIDER_DIVERGENCE",
+          "guardrail_pass": false,
+          "continuation_status": "FILTERED",
+          "reason": "Provider Agreement is below 60, so cross-provider confirmation is weak."
+        },
+        "monthly": {
+          "regime": "LOW_SEPARATION",
+          "guardrail_pass": false,
+          "continuation_status": "FILTERED",
+          "reason": "Strength gap percentile is below 20, indicating weak historical separation."
+        }
+      },
+      "current": {
+        "regime": "CONFIRMED_TREND",
+        "guardrail_pass": true,
+        "continuation_status": "SUPPORTED",
+        "reason": "Composite is HIGH while provider and multi-timeframe confirmation are both strong, without extreme or weak separation."
+      }
+    },
+    "actionability_score": {
+      "version": "1.1",
+      "role": "primary_operational_signal_score",
+      "scope": "continuation_readiness",
+      "primary_timeframe": "daily",
+      "thresholds": {
+        "actionable": 80,
+        "selective": 60,
+        "filtered": 0
+      },
+      "state_meaning": {
+        "ACTIONABLE": "Evidence and operational guardrails are strong enough for further setup evaluation.",
+        "SELECTIVE": "The signal can be reviewed selectively, but one or more layers limit readiness.",
+        "FILTERED": "The signal is deprioritized by evidence quality or a guardrail.",
+        "UNAVAILABLE": "Required inputs are incomplete."
+      },
+      "decision_meaning": {
+        "EVALUATE_SETUP": "Continue to downstream setup/risk agents; this is not an execution instruction.",
+        "REVIEW_SELECTIVELY": "Keep under review with reduced priority until limiting evidence improves.",
+        "DEPRIORITIZE": "Do not prioritize continuation analysis while a limiting guardrail remains active.",
+        "UNAVAILABLE": "Required inputs are incomplete."
+      },
+      "architecture": [
+        "evidence_quality",
+        "regime_guardrail",
+        "pair_readiness",
+        "data_readiness"
+      ],
+      "regime_ceilings": {
+        "CONFIRMED_TREND": 100,
+        "NORMAL": 79,
+        "EXTREME_SEPARATION": 55,
+        "PROVIDER_DIVERGENCE": 50,
+        "LOW_ALIGNMENT": 55,
+        "LOW_SEPARATION": 55,
+        "INSUFFICIENT_DATA": 0
+      },
+      "pair_confidence_ceilings": {
+        "HIGH": 100,
+        "MODERATE_HIGH": 85,
+        "MODERATE": 70,
+        "LOW": 55
+      },
+      "note": "Actionability is the primary operational layer. Composite remains underneath as evidence quality. Actionability does not estimate win rate or profitability and does not itself issue an execution instruction.",
+      "research_status": "V1_1_RETROSPECTIVE_DIAGNOSTIC_COMPLETED_FRESH_OOS_PENDING",
+      "research_reference": "backtest/actionability-v1-1-backtest.md",
+      "refinement_note": "Actionability v1.1 retrospective diagnostic is complete. Pair-specific D/W/M alignment improved ACTIONABLE selection slightly versus v1.0, while Data Readiness remains primarily an operational safety layer. Fresh future out-of-sample validation is still pending.",
+      "timeframes": {
+        "daily": {
+          "timeframe": "daily",
+          "score": 87.5,
+          "state": "ACTIONABLE",
+          "decision": "EVALUATE_SETUP",
+          "scope": "continuation_readiness",
+          "base_evidence_score": 87.5,
+          "methodology": "Actionability Score is the minimum of four interpretable ceilings: evidence quality, regime guardrail, pair readiness, and data readiness. Pair readiness now requires pair-specific Daily/Weekly/Monthly directional alignment; data readiness also checks evidence completeness, historical percentile sample adequacy, and business-day freshness. The score does not reverse the canonical ECB bias and is not a probability of profit.",
+          "dimensions": {
+            "evidence_quality": {
+              "score": 87.5,
+              "state": "HIGH",
+              "source": "Composite Currency Strength Confidence"
+            },
+            "regime_guardrail": {
+              "code": "CONFIRMED_TREND",
+              "pass": true,
+              "continuation_status": "SUPPORTED",
+              "ceiling": 100
+            },
+            "pair_readiness": {
+              "pair": "NZDUSD",
+              "confidence": "HIGH",
+              "bias": "BUY",
+              "confidence_ceiling": 100,
+              "alignment": {
+                "pair": "NZDUSD",
+                "active_bias": "BUY",
+                "directions": {
+                  "daily": "BUY",
+                  "weekly": "BUY",
+                  "monthly": "BUY"
+                },
+                "aligned_count": 3,
+                "available_timeframes": 3,
+                "all_three_aligned": true,
+                "ceiling": 100
+              },
+              "ceiling": 100
+            },
+            "data_readiness": {
+              "completeness_percent": 100,
+              "completeness_ceiling": 100,
+              "history_sample_size": 60,
+              "history_sample_target": 60,
+              "history_sample_ratio_percent": 100,
+              "history_ceiling": 100,
+              "business_day_age": 0,
+              "freshness_ceiling": 100,
+              "ceiling": 100
+            }
+          },
+          "gates": {
+            "evidence": {
+              "pass": true,
+              "score": 87.5,
+              "threshold": 80
+            },
+            "regime": {
+              "pass": true,
+              "code": "CONFIRMED_TREND",
+              "ceiling": 100
+            },
+            "pair": {
+              "pass": true,
+              "confidence": "HIGH",
+              "bias": "BUY",
+              "confidence_ceiling": 100,
+              "alignment_ceiling": 100,
+              "ceiling": 100
+            },
+            "data": {
+              "pass": true,
+              "completeness_percent": 100,
+              "history_sample_ratio_percent": 100,
+              "business_day_age": 0,
+              "ceiling": 100
+            }
+          },
+          "score_candidates": {
+            "evidence_quality": 87.5,
+            "regime_guardrail": 100,
+            "pair_readiness": 100,
+            "data_readiness": 100
+          },
+          "primary_limiter": "EVIDENCE_QUALITY",
+          "limiting_factors": [
+            "EVIDENCE_QUALITY"
+          ],
+          "constraints": [],
+          "reason": "Evidence quality and all operational guardrails support evaluation of the signal.",
+          "signal": {
+            "pair": "NZDUSD",
+            "bias": "BUY",
+            "strongest": "NZD",
+            "weakest": "USD"
+          }
+        },
+        "weekly": {
+          "timeframe": "weekly",
+          "score": 47.7,
+          "state": "FILTERED",
+          "decision": "DEPRIORITIZE",
+          "scope": "continuation_readiness",
+          "base_evidence_score": 47.7,
+          "methodology": "Actionability Score is the minimum of four interpretable ceilings: evidence quality, regime guardrail, pair readiness, and data readiness. Pair readiness now requires pair-specific Daily/Weekly/Monthly directional alignment; data readiness also checks evidence completeness, historical percentile sample adequacy, and business-day freshness. The score does not reverse the canonical ECB bias and is not a probability of profit.",
+          "dimensions": {
+            "evidence_quality": {
+              "score": 47.7,
+              "state": "LOW",
+              "source": "Composite Currency Strength Confidence"
+            },
+            "regime_guardrail": {
+              "code": "PROVIDER_DIVERGENCE",
+              "pass": false,
+              "continuation_status": "FILTERED",
+              "ceiling": 50
+            },
+            "pair_readiness": {
+              "pair": "CADCHF",
+              "confidence": "HIGH",
+              "bias": "BUY",
+              "confidence_ceiling": 100,
+              "alignment": {
+                "pair": "CADCHF",
+                "active_bias": "BUY",
+                "directions": {
+                  "daily": "BUY",
+                  "weekly": "BUY",
+                  "monthly": "BUY"
+                },
+                "aligned_count": 3,
+                "available_timeframes": 3,
+                "all_three_aligned": true,
+                "ceiling": 100
+              },
+              "ceiling": 100
+            },
+            "data_readiness": {
+              "completeness_percent": 100,
+              "completeness_ceiling": 100,
+              "history_sample_size": 16,
+              "history_sample_target": 16,
+              "history_sample_ratio_percent": 100,
+              "history_ceiling": 100,
+              "business_day_age": 0,
+              "freshness_ceiling": 100,
+              "ceiling": 100
+            }
+          },
+          "gates": {
+            "evidence": {
+              "pass": false,
+              "score": 47.7,
+              "threshold": 80
+            },
+            "regime": {
+              "pass": false,
+              "code": "PROVIDER_DIVERGENCE",
+              "ceiling": 50
+            },
+            "pair": {
+              "pass": true,
+              "confidence": "HIGH",
+              "bias": "BUY",
+              "confidence_ceiling": 100,
+              "alignment_ceiling": 100,
+              "ceiling": 100
+            },
+            "data": {
+              "pass": true,
+              "completeness_percent": 100,
+              "history_sample_ratio_percent": 100,
+              "business_day_age": 0,
+              "ceiling": 100
+            }
+          },
+          "score_candidates": {
+            "evidence_quality": 47.7,
+            "regime_guardrail": 50,
+            "pair_readiness": 100,
+            "data_readiness": 100
+          },
+          "primary_limiter": "EVIDENCE_QUALITY",
+          "limiting_factors": [
+            "EVIDENCE_QUALITY"
+          ],
+          "constraints": [
+            "EVIDENCE_BELOW_ACTIONABLE_THRESHOLD"
+          ],
+          "reason": "The signal is filtered from actionability by evidence quality or an operational guardrail; the canonical ECB strength signal itself is not reversed.",
+          "signal": {
+            "pair": "CADCHF",
+            "bias": "BUY",
+            "strongest": "CAD",
+            "weakest": "CHF"
+          }
+        },
+        "monthly": {
+          "timeframe": "monthly",
+          "score": 55,
+          "state": "FILTERED",
+          "decision": "DEPRIORITIZE",
+          "scope": "continuation_readiness",
+          "base_evidence_score": 67.3,
+          "methodology": "Actionability Score is the minimum of four interpretable ceilings: evidence quality, regime guardrail, pair readiness, and data readiness. Pair readiness now requires pair-specific Daily/Weekly/Monthly directional alignment; data readiness also checks evidence completeness, historical percentile sample adequacy, and business-day freshness. The score does not reverse the canonical ECB bias and is not a probability of profit.",
+          "dimensions": {
+            "evidence_quality": {
+              "score": 67.3,
+              "state": "MODERATE",
+              "source": "Composite Currency Strength Confidence"
+            },
+            "regime_guardrail": {
+              "code": "LOW_SEPARATION",
+              "pass": false,
+              "continuation_status": "FILTERED",
+              "ceiling": 55
+            },
+            "pair_readiness": {
+              "pair": "CADJPY",
+              "confidence": "HIGH",
+              "bias": "BUY",
+              "confidence_ceiling": 100,
+              "alignment": {
+                "pair": "CADJPY",
+                "active_bias": "BUY",
+                "directions": {
+                  "daily": "BUY",
+                  "weekly": "BUY",
+                  "monthly": "BUY"
+                },
+                "aligned_count": 3,
+                "available_timeframes": 3,
+                "all_three_aligned": true,
+                "ceiling": 100
+              },
+              "ceiling": 100
+            },
+            "data_readiness": {
+              "completeness_percent": 100,
+              "completeness_ceiling": 100,
+              "history_sample_size": 6,
+              "history_sample_target": 6,
+              "history_sample_ratio_percent": 100,
+              "history_ceiling": 100,
+              "business_day_age": 0,
+              "freshness_ceiling": 100,
+              "ceiling": 100
+            }
+          },
+          "gates": {
+            "evidence": {
+              "pass": false,
+              "score": 67.3,
+              "threshold": 80
+            },
+            "regime": {
+              "pass": false,
+              "code": "LOW_SEPARATION",
+              "ceiling": 55
+            },
+            "pair": {
+              "pass": true,
+              "confidence": "HIGH",
+              "bias": "BUY",
+              "confidence_ceiling": 100,
+              "alignment_ceiling": 100,
+              "ceiling": 100
+            },
+            "data": {
+              "pass": true,
+              "completeness_percent": 100,
+              "history_sample_ratio_percent": 100,
+              "business_day_age": 0,
+              "ceiling": 100
+            }
+          },
+          "score_candidates": {
+            "evidence_quality": 67.3,
+            "regime_guardrail": 55,
+            "pair_readiness": 100,
+            "data_readiness": 100
+          },
+          "primary_limiter": "REGIME_GUARDRAIL",
+          "limiting_factors": [
+            "REGIME_GUARDRAIL"
+          ],
+          "constraints": [
+            "REGIME_LOW_SEPARATION",
+            "EVIDENCE_BELOW_ACTIONABLE_THRESHOLD"
+          ],
+          "reason": "The signal is filtered from actionability by evidence quality or an operational guardrail; the canonical ECB strength signal itself is not reversed.",
+          "signal": {
+            "pair": "CADJPY",
+            "bias": "BUY",
+            "strongest": "CAD",
+            "weakest": "JPY"
+          }
+        }
+      },
+      "current": {
+        "timeframe": "daily",
+        "score": 87.5,
+        "state": "ACTIONABLE",
+        "decision": "EVALUATE_SETUP",
+        "scope": "continuation_readiness",
+        "base_evidence_score": 87.5,
+        "methodology": "Actionability Score is the minimum of four interpretable ceilings: evidence quality, regime guardrail, pair readiness, and data readiness. Pair readiness now requires pair-specific Daily/Weekly/Monthly directional alignment; data readiness also checks evidence completeness, historical percentile sample adequacy, and business-day freshness. The score does not reverse the canonical ECB bias and is not a probability of profit.",
+        "dimensions": {
+          "evidence_quality": {
+            "score": 87.5,
+            "state": "HIGH",
+            "source": "Composite Currency Strength Confidence"
+          },
+          "regime_guardrail": {
+            "code": "CONFIRMED_TREND",
+            "pass": true,
+            "continuation_status": "SUPPORTED",
+            "ceiling": 100
+          },
+          "pair_readiness": {
+            "pair": "NZDUSD",
+            "confidence": "HIGH",
+            "bias": "BUY",
+            "confidence_ceiling": 100,
+            "alignment": {
+              "pair": "NZDUSD",
+              "active_bias": "BUY",
+              "directions": {
+                "daily": "BUY",
+                "weekly": "BUY",
+                "monthly": "BUY"
+              },
+              "aligned_count": 3,
+              "available_timeframes": 3,
+              "all_three_aligned": true,
+              "ceiling": 100
+            },
+            "ceiling": 100
+          },
+          "data_readiness": {
+            "completeness_percent": 100,
+            "completeness_ceiling": 100,
+            "history_sample_size": 60,
+            "history_sample_target": 60,
+            "history_sample_ratio_percent": 100,
+            "history_ceiling": 100,
+            "business_day_age": 0,
+            "freshness_ceiling": 100,
+            "ceiling": 100
+          }
+        },
+        "gates": {
+          "evidence": {
+            "pass": true,
+            "score": 87.5,
+            "threshold": 80
+          },
+          "regime": {
+            "pass": true,
+            "code": "CONFIRMED_TREND",
+            "ceiling": 100
+          },
+          "pair": {
+            "pass": true,
+            "confidence": "HIGH",
+            "bias": "BUY",
+            "confidence_ceiling": 100,
+            "alignment_ceiling": 100,
+            "ceiling": 100
+          },
+          "data": {
+            "pass": true,
+            "completeness_percent": 100,
+            "history_sample_ratio_percent": 100,
+            "business_day_age": 0,
+            "ceiling": 100
+          }
+        },
+        "score_candidates": {
+          "evidence_quality": 87.5,
+          "regime_guardrail": 100,
+          "pair_readiness": 100,
+          "data_readiness": 100
+        },
+        "primary_limiter": "EVIDENCE_QUALITY",
+        "limiting_factors": [
+          "EVIDENCE_QUALITY"
+        ],
+        "constraints": [],
+        "reason": "Evidence quality and all operational guardrails support evaluation of the signal.",
+        "signal": {
+          "pair": "NZDUSD",
+          "bias": "BUY",
+          "strongest": "NZD",
+          "weakest": "USD"
+        }
+      },
+      "research_summary": {
+        "validation_type": "retrospective_diagnostic",
+        "observations": 510,
+        "period_start": "2024-08-14",
+        "period_end": "2026-08-13",
+        "actionable_count": 50,
+        "actionable_hit_rate_percent": 60,
+        "actionable_avg_directional_return_percent": 0.1151,
+        "fresh_out_of_sample_status": "PENDING"
       }
     }
   }
