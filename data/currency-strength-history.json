@@ -1,0 +1,5383 @@
+{
+  "ok": true,
+  "data": {
+    "generated_at": "2026-08-16T17:24:24.715Z",
+    "source": "Frankfurter",
+    "provider_authority": "ECB",
+    "provider_name": "European Central Bank",
+    "delivery": "GitHub Pages static JSON",
+    "methodology": "ECB-only working-day reference rates via Frankfurter. No blended-provider observations are used in canonical history.",
+    "currencies": [
+      "USD",
+      "EUR",
+      "GBP",
+      "JPY",
+      "CHF",
+      "CAD",
+      "AUD",
+      "NZD"
+    ],
+    "daily": [
+      {
+        "period_key": "2026-08-14",
+        "timeframe": "daily",
+        "from_date": "2026-08-13",
+        "to_date": "2026-08-14",
+        "currency_strength": {
+          "USD": -2.64633,
+          "EUR": 0.285704,
+          "GBP": 0.332999,
+          "JPY": 0.200841,
+          "CHF": 0.104597,
+          "CAD": 0.530504,
+          "AUD": 0.432011,
+          "NZD": 0.759673
+        },
+        "ranking": [
+          "NZD",
+          "CAD",
+          "AUD",
+          "GBP",
+          "EUR",
+          "JPY",
+          "CHF",
+          "USD"
+        ],
+        "strongest_currency": "NZD",
+        "strongest_score": 0.759673,
+        "weakest_currency": "USD",
+        "weakest_score": -2.64633,
+        "pair_analysis": {
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": 3.406,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 3.406,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": -3.177,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.933
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 3.078,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.904
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 2.979,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.875
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": 2.932,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.861
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.681,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 3.406
+        },
+        "pair_returns": {
+          "EURUSD": 0.285704,
+          "GBPUSD": 0.332999,
+          "AUDUSD": 0.432011,
+          "NZDUSD": 0.759673,
+          "USDJPY": -0.200841,
+          "USDCHF": -0.104597,
+          "USDCAD": -0.530504
+        }
+      },
+      {
+        "period_key": "2026-08-13",
+        "timeframe": "daily",
+        "from_date": "2026-08-12",
+        "to_date": "2026-08-13",
+        "currency_strength": {
+          "USD": 1.502741,
+          "EUR": -0.094579,
+          "GBP": -0.249595,
+          "JPY": -0.150858,
+          "CHF": -0.170106,
+          "CAD": -0.165159,
+          "AUD": -0.275016,
+          "NZD": -0.397428
+        },
+        "ranking": [
+          "USD",
+          "EUR",
+          "JPY",
+          "CAD",
+          "CHF",
+          "GBP",
+          "AUD",
+          "NZD"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 1.502741,
+        "weakest_currency": "NZD",
+        "weakest_score": -0.397428,
+        "pair_analysis": {
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": -1.9,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -1.9,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": -1.778,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.936
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": -1.752,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.922
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 1.673,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.88
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": 1.668,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.878
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.38,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 1.9
+        },
+        "pair_returns": {
+          "EURUSD": -0.094579,
+          "GBPUSD": -0.249595,
+          "AUDUSD": -0.275016,
+          "NZDUSD": -0.397428,
+          "USDJPY": 0.150858,
+          "USDCHF": 0.170106,
+          "USDCAD": 0.165159
+        }
+      },
+      {
+        "period_key": "2026-08-12",
+        "timeframe": "daily",
+        "from_date": "2026-08-11",
+        "to_date": "2026-08-12",
+        "currency_strength": {
+          "USD": -0.163645,
+          "EUR": 0.042716,
+          "GBP": 0.189356,
+          "JPY": 0.069095,
+          "CHF": -0.117239,
+          "CAD": 0.086096,
+          "AUD": 0.098996,
+          "NZD": -0.205375
+        },
+        "ranking": [
+          "GBP",
+          "AUD",
+          "CAD",
+          "JPY",
+          "EUR",
+          "CHF",
+          "USD",
+          "NZD"
+        ],
+        "strongest_currency": "GBP",
+        "strongest_score": 0.189356,
+        "weakest_currency": "NZD",
+        "weakest_score": -0.205375,
+        "pair_analysis": {
+          "pair": "GBPNZD",
+          "base": "GBP",
+          "quote": "NZD",
+          "strength_difference": 0.395,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "GBPNZD",
+            "base": "GBP",
+            "quote": "NZD",
+            "strength_difference": 0.395,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 0.353,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.894
+          },
+          {
+            "pair": "GBPCHF",
+            "base": "GBP",
+            "quote": "CHF",
+            "strength_difference": 0.307,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.777
+          },
+          {
+            "pair": "AUDNZD",
+            "base": "AUD",
+            "quote": "NZD",
+            "strength_difference": 0.304,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.771
+          },
+          {
+            "pair": "NZDCAD",
+            "base": "NZD",
+            "quote": "CAD",
+            "strength_difference": -0.291,
+            "bias": "SELL",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.738
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.079,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 0.395
+        },
+        "pair_returns": {
+          "EURUSD": 0.042716,
+          "GBPUSD": 0.189356,
+          "AUDUSD": 0.098996,
+          "NZDUSD": -0.205375,
+          "USDJPY": -0.069095,
+          "USDCHF": 0.117239,
+          "USDCAD": -0.086096
+        }
+      },
+      {
+        "period_key": "2026-08-11",
+        "timeframe": "daily",
+        "from_date": "2026-08-10",
+        "to_date": "2026-08-11",
+        "currency_strength": {
+          "USD": 0.92899,
+          "EUR": -0.129248,
+          "GBP": -0.03375,
+          "JPY": -0.353001,
+          "CHF": -0.24743,
+          "CAD": 0.014347,
+          "AUD": 0.014128,
+          "NZD": -0.194038
+        },
+        "ranking": [
+          "USD",
+          "CAD",
+          "AUD",
+          "GBP",
+          "EUR",
+          "NZD",
+          "CHF",
+          "JPY"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 0.92899,
+        "weakest_currency": "JPY",
+        "weakest_score": -0.353001,
+        "pair_analysis": {
+          "pair": "USDJPY",
+          "base": "USD",
+          "quote": "JPY",
+          "strength_difference": 1.282,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 1.282,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 1.176,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.918
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -1.123,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.876
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": -1.058,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.825
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": -0.963,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.751
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.256,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 1.282
+        },
+        "pair_returns": {
+          "EURUSD": -0.129248,
+          "GBPUSD": -0.03375,
+          "AUDUSD": 0.014128,
+          "NZDUSD": -0.194038,
+          "USDJPY": 0.353001,
+          "USDCHF": 0.24743,
+          "USDCAD": -0.014347
+        }
+      },
+      {
+        "period_key": "2026-08-10",
+        "timeframe": "daily",
+        "from_date": "2026-08-07",
+        "to_date": "2026-08-10",
+        "currency_strength": {
+          "USD": -1.805988,
+          "EUR": 0.173324,
+          "GBP": 0.407833,
+          "JPY": -0.189466,
+          "CHF": 0.24805,
+          "CAD": 0.499643,
+          "AUD": 0.324905,
+          "NZD": 0.341699
+        },
+        "ranking": [
+          "CAD",
+          "GBP",
+          "NZD",
+          "AUD",
+          "CHF",
+          "EUR",
+          "JPY",
+          "USD"
+        ],
+        "strongest_currency": "CAD",
+        "strongest_score": 0.499643,
+        "weakest_currency": "USD",
+        "weakest_score": -1.805988,
+        "pair_analysis": {
+          "pair": "USDCAD",
+          "base": "USD",
+          "quote": "CAD",
+          "strength_difference": -2.306,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": -2.306,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 2.214,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.96
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 2.148,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.931
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 2.131,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.924
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": -2.054,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.891
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.461,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 2.306
+        },
+        "pair_returns": {
+          "EURUSD": 0.173324,
+          "GBPUSD": 0.407833,
+          "AUDUSD": 0.324905,
+          "NZDUSD": 0.341699,
+          "USDJPY": 0.189466,
+          "USDCHF": -0.24805,
+          "USDCAD": -0.499643
+        }
+      },
+      {
+        "period_key": "2026-08-07",
+        "timeframe": "daily",
+        "from_date": "2026-08-06",
+        "to_date": "2026-08-07",
+        "currency_strength": {
+          "USD": 0.899868,
+          "EUR": -0.061135,
+          "GBP": -0.130461,
+          "JPY": -0.323132,
+          "CHF": -0.071628,
+          "CAD": -0.085727,
+          "AUD": -0.028161,
+          "NZD": -0.199624
+        },
+        "ranking": [
+          "USD",
+          "AUD",
+          "EUR",
+          "CHF",
+          "CAD",
+          "GBP",
+          "NZD",
+          "JPY"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 0.899868,
+        "weakest_currency": "JPY",
+        "weakest_score": -0.323132,
+        "pair_analysis": {
+          "pair": "USDJPY",
+          "base": "USD",
+          "quote": "JPY",
+          "strength_difference": 1.223,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 1.223,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -1.099,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.899
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": -1.03,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.842
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": 0.986,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.806
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 0.971,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.794
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.245,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 1.223
+        },
+        "pair_returns": {
+          "EURUSD": -0.061135,
+          "GBPUSD": -0.130461,
+          "AUDUSD": -0.028161,
+          "NZDUSD": -0.199624,
+          "USDJPY": 0.323132,
+          "USDCHF": 0.071628,
+          "USDCAD": 0.085727
+        }
+      },
+      {
+        "period_key": "2026-08-06",
+        "timeframe": "daily",
+        "from_date": "2026-08-05",
+        "to_date": "2026-08-06",
+        "currency_strength": {
+          "USD": 0.036413,
+          "EUR": -0.103878,
+          "GBP": -0.086189,
+          "JPY": -0.152294,
+          "CHF": -0.114984,
+          "CAD": 0.348829,
+          "AUD": -0.133803,
+          "NZD": 0.205907
+        },
+        "ranking": [
+          "CAD",
+          "NZD",
+          "USD",
+          "GBP",
+          "EUR",
+          "CHF",
+          "AUD",
+          "JPY"
+        ],
+        "strongest_currency": "CAD",
+        "strongest_score": 0.348829,
+        "weakest_currency": "JPY",
+        "weakest_score": -0.152294,
+        "pair_analysis": {
+          "pair": "CADJPY",
+          "base": "CAD",
+          "quote": "JPY",
+          "strength_difference": 0.501,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "CADJPY",
+            "base": "CAD",
+            "quote": "JPY",
+            "strength_difference": 0.501,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "AUDCAD",
+            "base": "AUD",
+            "quote": "CAD",
+            "strength_difference": -0.483,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.963
+          },
+          {
+            "pair": "CADCHF",
+            "base": "CAD",
+            "quote": "CHF",
+            "strength_difference": 0.464,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.926
+          },
+          {
+            "pair": "EURCAD",
+            "base": "EUR",
+            "quote": "CAD",
+            "strength_difference": -0.453,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.903
+          },
+          {
+            "pair": "GBPCAD",
+            "base": "GBP",
+            "quote": "CAD",
+            "strength_difference": -0.435,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.868
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.1,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 0.501
+        },
+        "pair_returns": {
+          "EURUSD": -0.103878,
+          "GBPUSD": -0.086189,
+          "AUDUSD": -0.133803,
+          "NZDUSD": 0.205907,
+          "USDJPY": 0.152294,
+          "USDCHF": 0.114984,
+          "USDCAD": -0.348829
+        }
+      },
+      {
+        "period_key": "2026-08-05",
+        "timeframe": "daily",
+        "from_date": "2026-08-04",
+        "to_date": "2026-08-05",
+        "currency_strength": {
+          "USD": -0.681305,
+          "EUR": 0.338533,
+          "GBP": 0.243965,
+          "JPY": -0.114351,
+          "CHF": 0.059311,
+          "CAD": 0.099566,
+          "AUD": 0.289119,
+          "NZD": -0.234838
+        },
+        "ranking": [
+          "EUR",
+          "AUD",
+          "GBP",
+          "CAD",
+          "CHF",
+          "JPY",
+          "NZD",
+          "USD"
+        ],
+        "strongest_currency": "EUR",
+        "strongest_score": 0.338533,
+        "weakest_currency": "USD",
+        "weakest_score": -0.681305,
+        "pair_analysis": {
+          "pair": "EURUSD",
+          "base": "EUR",
+          "quote": "USD",
+          "strength_difference": 1.02,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": 1.02,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 0.97,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.952
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 0.925,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.907
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": -0.781,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.766
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": -0.741,
+            "bias": "SELL",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.726
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.204,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 1.02
+        },
+        "pair_returns": {
+          "EURUSD": 0.338533,
+          "GBPUSD": 0.243965,
+          "AUDUSD": 0.289119,
+          "NZDUSD": -0.234838,
+          "USDJPY": 0.114351,
+          "USDCHF": -0.059311,
+          "USDCAD": -0.099566
+        }
+      },
+      {
+        "period_key": "2026-08-04",
+        "timeframe": "daily",
+        "from_date": "2026-08-03",
+        "to_date": "2026-08-04",
+        "currency_strength": {
+          "USD": 0.688084,
+          "EUR": -0.172725,
+          "GBP": -0.180175,
+          "JPY": -0.465918,
+          "CHF": -0.162133,
+          "CAD": -0.235244,
+          "AUD": 0.351568,
+          "NZD": 0.176543
+        },
+        "ranking": [
+          "USD",
+          "AUD",
+          "NZD",
+          "CHF",
+          "EUR",
+          "GBP",
+          "CAD",
+          "JPY"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 0.688084,
+        "weakest_currency": "JPY",
+        "weakest_score": -0.465918,
+        "pair_analysis": {
+          "pair": "USDJPY",
+          "base": "USD",
+          "quote": "JPY",
+          "strength_difference": 1.154,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 1.154,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": 0.923,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.8
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": -0.868,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.752
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": -0.861,
+            "bias": "SELL",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.746
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 0.85,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.737
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.231,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 1.154
+        },
+        "pair_returns": {
+          "EURUSD": -0.172725,
+          "GBPUSD": -0.180175,
+          "AUDUSD": 0.351568,
+          "NZDUSD": 0.176543,
+          "USDJPY": 0.465918,
+          "USDCHF": 0.162133,
+          "USDCAD": 0.235244
+        }
+      },
+      {
+        "period_key": "2026-08-03",
+        "timeframe": "daily",
+        "from_date": "2026-07-31",
+        "to_date": "2026-08-03",
+        "currency_strength": {
+          "USD": -3.407213,
+          "EUR": 0.434868,
+          "GBP": 0.363695,
+          "JPY": 2.221667,
+          "CHF": 0.261696,
+          "CAD": 0.092586,
+          "AUD": -0.161155,
+          "NZD": 0.193855
+        },
+        "ranking": [
+          "JPY",
+          "EUR",
+          "GBP",
+          "CHF",
+          "NZD",
+          "CAD",
+          "AUD",
+          "USD"
+        ],
+        "strongest_currency": "JPY",
+        "strongest_score": 2.221667,
+        "weakest_currency": "USD",
+        "weakest_score": -3.407213,
+        "pair_analysis": {
+          "pair": "USDJPY",
+          "base": "USD",
+          "quote": "JPY",
+          "strength_difference": -5.629,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": -5.629,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": 3.842,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.683
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 3.771,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.67
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": -3.669,
+            "bias": "SELL",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.652
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 3.601,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.64
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 1.126,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 5.629
+        },
+        "pair_returns": {
+          "EURUSD": 0.434868,
+          "GBPUSD": 0.363695,
+          "AUDUSD": -0.161155,
+          "NZDUSD": 0.193855,
+          "USDJPY": -2.221667,
+          "USDCHF": -0.261696,
+          "USDCAD": -0.092586
+        }
+      },
+      {
+        "period_key": "2026-07-31",
+        "timeframe": "daily",
+        "from_date": "2026-07-30",
+        "to_date": "2026-07-31",
+        "currency_strength": {
+          "USD": -3.212031,
+          "EUR": 0.078098,
+          "GBP": 0.245611,
+          "JPY": 1.657052,
+          "CHF": 0.29293,
+          "CAD": 0.035597,
+          "AUD": 0.533371,
+          "NZD": 0.369371
+        },
+        "ranking": [
+          "JPY",
+          "AUD",
+          "NZD",
+          "CHF",
+          "GBP",
+          "EUR",
+          "CAD",
+          "USD"
+        ],
+        "strongest_currency": "JPY",
+        "strongest_score": 1.657052,
+        "weakest_currency": "USD",
+        "weakest_score": -3.212031,
+        "pair_analysis": {
+          "pair": "USDJPY",
+          "base": "USD",
+          "quote": "JPY",
+          "strength_difference": -4.869,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": -4.869,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 3.745,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.769
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 3.581,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.736
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": -3.505,
+            "bias": "SELL",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.72
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 3.458,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.71
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.974,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 4.869
+        },
+        "pair_returns": {
+          "EURUSD": 0.078098,
+          "GBPUSD": 0.245611,
+          "AUDUSD": 0.533371,
+          "NZDUSD": 0.369371,
+          "USDJPY": -1.657052,
+          "USDCHF": -0.29293,
+          "USDCAD": -0.035597
+        }
+      },
+      {
+        "period_key": "2026-07-30",
+        "timeframe": "daily",
+        "from_date": "2026-07-29",
+        "to_date": "2026-07-30",
+        "currency_strength": {
+          "USD": -5.138886,
+          "EUR": 0.84349,
+          "GBP": 0.748417,
+          "JPY": 0.452102,
+          "CHF": 0.921906,
+          "CAD": 0.418291,
+          "AUD": 0.586387,
+          "NZD": 1.168293
+        },
+        "ranking": [
+          "NZD",
+          "CHF",
+          "EUR",
+          "GBP",
+          "AUD",
+          "JPY",
+          "CAD",
+          "USD"
+        ],
+        "strongest_currency": "NZD",
+        "strongest_score": 1.168293,
+        "weakest_currency": "USD",
+        "weakest_score": -5.138886,
+        "pair_analysis": {
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": 6.307,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 6.307,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": -6.061,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.961
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": 5.982,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.949
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 5.887,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.933
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 5.725,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.908
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 1.261,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 6.307
+        },
+        "pair_returns": {
+          "EURUSD": 0.84349,
+          "GBPUSD": 0.748417,
+          "AUDUSD": 0.586387,
+          "NZDUSD": 1.168293,
+          "USDJPY": -0.452102,
+          "USDCHF": -0.921906,
+          "USDCAD": -0.418291
+        }
+      },
+      {
+        "period_key": "2026-07-29",
+        "timeframe": "daily",
+        "from_date": "2026-07-28",
+        "to_date": "2026-07-29",
+        "currency_strength": {
+          "USD": 0.107966,
+          "EUR": 0.114939,
+          "GBP": 0.015947,
+          "JPY": 0.140321,
+          "CHF": -0.025615,
+          "CAD": 0.021265,
+          "AUD": -0.409466,
+          "NZD": 0.034644
+        },
+        "ranking": [
+          "JPY",
+          "EUR",
+          "USD",
+          "NZD",
+          "CAD",
+          "GBP",
+          "CHF",
+          "AUD"
+        ],
+        "strongest_currency": "JPY",
+        "strongest_score": 0.140321,
+        "weakest_currency": "AUD",
+        "weakest_score": -0.409466,
+        "pair_analysis": {
+          "pair": "AUDJPY",
+          "base": "AUD",
+          "quote": "JPY",
+          "strength_difference": -0.55,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "AUDJPY",
+            "base": "AUD",
+            "quote": "JPY",
+            "strength_difference": -0.55,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "EURAUD",
+            "base": "EUR",
+            "quote": "AUD",
+            "strength_difference": 0.524,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.954
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": -0.517,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.941
+          },
+          {
+            "pair": "AUDNZD",
+            "base": "AUD",
+            "quote": "NZD",
+            "strength_difference": -0.444,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.808
+          },
+          {
+            "pair": "AUDCAD",
+            "base": "AUD",
+            "quote": "CAD",
+            "strength_difference": -0.431,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.783
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.11,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 0.55
+        },
+        "pair_returns": {
+          "EURUSD": 0.114939,
+          "GBPUSD": 0.015947,
+          "AUDUSD": -0.409466,
+          "NZDUSD": 0.034644,
+          "USDJPY": -0.140321,
+          "USDCHF": 0.025615,
+          "USDCAD": -0.021265
+        }
+      },
+      {
+        "period_key": "2026-07-28",
+        "timeframe": "daily",
+        "from_date": "2026-07-27",
+        "to_date": "2026-07-28",
+        "currency_strength": {
+          "USD": 1.959729,
+          "EUR": -0.193239,
+          "GBP": -0.22322,
+          "JPY": -0.164996,
+          "CHF": -0.57166,
+          "CAD": -0.021269,
+          "AUD": -0.439024,
+          "NZD": -0.34632
+        },
+        "ranking": [
+          "USD",
+          "CAD",
+          "JPY",
+          "EUR",
+          "GBP",
+          "NZD",
+          "AUD",
+          "CHF"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 1.959729,
+        "weakest_currency": "CHF",
+        "weakest_score": -0.57166,
+        "pair_analysis": {
+          "pair": "USDCHF",
+          "base": "USD",
+          "quote": "CHF",
+          "strength_difference": 2.531,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 2.531,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": -2.399,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.948
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -2.306,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.911
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": -2.183,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.862
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": -2.153,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.851
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.506,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 2.531
+        },
+        "pair_returns": {
+          "EURUSD": -0.193239,
+          "GBPUSD": -0.22322,
+          "AUDUSD": -0.439024,
+          "NZDUSD": -0.34632,
+          "USDJPY": 0.164996,
+          "USDCHF": 0.57166,
+          "USDCAD": 0.021269
+        }
+      },
+      {
+        "period_key": "2026-07-27",
+        "timeframe": "daily",
+        "from_date": "2026-07-24",
+        "to_date": "2026-07-27",
+        "currency_strength": {
+          "USD": -0.555232,
+          "EUR": 0.105918,
+          "GBP": -0.054598,
+          "JPY": 0.109877,
+          "CHF": 0.298431,
+          "CAD": -0.134886,
+          "AUD": 0.160986,
+          "NZD": 0.069505
+        },
+        "ranking": [
+          "CHF",
+          "AUD",
+          "JPY",
+          "EUR",
+          "NZD",
+          "GBP",
+          "CAD",
+          "USD"
+        ],
+        "strongest_currency": "CHF",
+        "strongest_score": 0.298431,
+        "weakest_currency": "USD",
+        "weakest_score": -0.555232,
+        "pair_analysis": {
+          "pair": "USDCHF",
+          "base": "USD",
+          "quote": "CHF",
+          "strength_difference": -0.854,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": -0.854,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 0.716,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.839
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": -0.665,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.779
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": 0.661,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.774
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 0.625,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.732
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.171,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 0.854
+        },
+        "pair_returns": {
+          "EURUSD": 0.105918,
+          "GBPUSD": -0.054598,
+          "AUDUSD": 0.160986,
+          "NZDUSD": 0.069505,
+          "USDJPY": -0.109877,
+          "USDCHF": -0.298431,
+          "USDCAD": 0.134886
+        }
+      },
+      {
+        "period_key": "2026-07-24",
+        "timeframe": "daily",
+        "from_date": "2026-07-23",
+        "to_date": "2026-07-24",
+        "currency_strength": {
+          "USD": 0.879696,
+          "EUR": -0.131973,
+          "GBP": -0.213183,
+          "JPY": -0.214107,
+          "CHF": -0.207128,
+          "CAD": -0.078153,
+          "AUD": -0.069881,
+          "NZD": 0.034728
+        },
+        "ranking": [
+          "USD",
+          "NZD",
+          "AUD",
+          "CAD",
+          "EUR",
+          "CHF",
+          "GBP",
+          "JPY"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 0.879696,
+        "weakest_currency": "JPY",
+        "weakest_score": -0.214107,
+        "pair_analysis": {
+          "pair": "USDJPY",
+          "base": "USD",
+          "quote": "JPY",
+          "strength_difference": 1.094,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 1.094,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": -1.093,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.999
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 1.087,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.994
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": -1.012,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.925
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": 0.958,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.876
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.219,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 1.094
+        },
+        "pair_returns": {
+          "EURUSD": -0.131973,
+          "GBPUSD": -0.213183,
+          "AUDUSD": -0.069881,
+          "NZDUSD": 0.034728,
+          "USDJPY": 0.214107,
+          "USDCHF": 0.207128,
+          "USDCAD": 0.078153
+        }
+      },
+      {
+        "period_key": "2026-07-23",
+        "timeframe": "daily",
+        "from_date": "2026-07-22",
+        "to_date": "2026-07-23",
+        "currency_strength": {
+          "USD": 1.403774,
+          "EUR": -0.140121,
+          "GBP": -0.11483,
+          "JPY": -0.245293,
+          "CHF": -0.432048,
+          "CAD": 0.085185,
+          "AUD": -0.006993,
+          "NZD": -0.549673
+        },
+        "ranking": [
+          "USD",
+          "CAD",
+          "AUD",
+          "GBP",
+          "EUR",
+          "JPY",
+          "CHF",
+          "NZD"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 1.403774,
+        "weakest_currency": "NZD",
+        "weakest_score": -0.549673,
+        "pair_analysis": {
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": -1.953,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -1.953,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 1.836,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.94
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 1.649,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.844
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": -1.544,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.79
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": -1.519,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.777
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.391,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 1.953
+        },
+        "pair_returns": {
+          "EURUSD": -0.140121,
+          "GBPUSD": -0.11483,
+          "AUDUSD": -0.006993,
+          "NZDUSD": -0.549673,
+          "USDJPY": 0.245293,
+          "USDCHF": 0.432048,
+          "USDCAD": -0.085185
+        }
+      },
+      {
+        "period_key": "2026-07-22",
+        "timeframe": "daily",
+        "from_date": "2026-07-21",
+        "to_date": "2026-07-22",
+        "currency_strength": {
+          "USD": 1.600017,
+          "EUR": -0.087841,
+          "GBP": -0.245966,
+          "JPY": -0.202777,
+          "CHF": -0.184977,
+          "CAD": -0.099481,
+          "AUD": -0.307714,
+          "NZD": -0.471259
+        },
+        "ranking": [
+          "USD",
+          "EUR",
+          "CAD",
+          "CHF",
+          "JPY",
+          "GBP",
+          "AUD",
+          "NZD"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 1.600017,
+        "weakest_currency": "NZD",
+        "weakest_score": -0.471259,
+        "pair_analysis": {
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": -2.071,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -2.071,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": -1.908,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.921
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": -1.846,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.891
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 1.803,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.87
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 1.785,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.862
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.414,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 2.071
+        },
+        "pair_returns": {
+          "EURUSD": -0.087841,
+          "GBPUSD": -0.245966,
+          "AUDUSD": -0.307714,
+          "NZDUSD": -0.471259,
+          "USDJPY": 0.202777,
+          "USDCHF": 0.184977,
+          "USDCAD": 0.099481
+        }
+      },
+      {
+        "period_key": "2026-07-21",
+        "timeframe": "daily",
+        "from_date": "2026-07-20",
+        "to_date": "2026-07-21",
+        "currency_strength": {
+          "USD": 1.36594,
+          "EUR": -0.06965,
+          "GBP": -0.440883,
+          "JPY": -0.221702,
+          "CHF": -0.319177,
+          "CAD": -0.299337,
+          "AUD": 0.119256,
+          "NZD": -0.134448
+        },
+        "ranking": [
+          "USD",
+          "AUD",
+          "EUR",
+          "NZD",
+          "JPY",
+          "CAD",
+          "CHF",
+          "GBP"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 1.36594,
+        "weakest_currency": "GBP",
+        "weakest_score": -0.440883,
+        "pair_analysis": {
+          "pair": "GBPUSD",
+          "base": "GBP",
+          "quote": "USD",
+          "strength_difference": -1.807,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": -1.807,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 1.685,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.933
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": 1.665,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.922
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 1.588,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.879
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -1.5,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.83
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.361,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 1.807
+        },
+        "pair_returns": {
+          "EURUSD": -0.06965,
+          "GBPUSD": -0.440883,
+          "AUDUSD": 0.119256,
+          "NZDUSD": -0.134448,
+          "USDJPY": 0.221702,
+          "USDCHF": 0.319177,
+          "USDCAD": 0.299337
+        }
+      },
+      {
+        "period_key": "2026-07-20",
+        "timeframe": "daily",
+        "from_date": "2026-07-17",
+        "to_date": "2026-07-20",
+        "currency_strength": {
+          "USD": -0.679132,
+          "EUR": -0.078839,
+          "GBP": 0.16825,
+          "JPY": -0.018479,
+          "CHF": -0.164808,
+          "CAD": -0.057049,
+          "AUD": 0.455437,
+          "NZD": 0.37462
+        },
+        "ranking": [
+          "AUD",
+          "NZD",
+          "GBP",
+          "JPY",
+          "CAD",
+          "EUR",
+          "CHF",
+          "USD"
+        ],
+        "strongest_currency": "AUD",
+        "strongest_score": 0.455437,
+        "weakest_currency": "USD",
+        "weakest_score": -0.679132,
+        "pair_analysis": {
+          "pair": "AUDUSD",
+          "base": "AUD",
+          "quote": "USD",
+          "strength_difference": 1.135,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 1.135,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 1.054,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.929
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 0.847,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.747
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": -0.661,
+            "bias": "SELL",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.582
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": -0.622,
+            "bias": "SELL",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.548
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.227,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 1.135
+        },
+        "pair_returns": {
+          "EURUSD": -0.078839,
+          "GBPUSD": 0.16825,
+          "AUDUSD": 0.455437,
+          "NZDUSD": 0.37462,
+          "USDJPY": 0.018479,
+          "USDCHF": 0.164808,
+          "USDCAD": 0.057049
+        }
+      },
+      {
+        "period_key": "2026-07-17",
+        "timeframe": "daily",
+        "from_date": "2026-07-16",
+        "to_date": "2026-07-17",
+        "currency_strength": {
+          "USD": 1.824761,
+          "EUR": -0.279013,
+          "GBP": -0.542872,
+          "JPY": -0.092478,
+          "CHF": -0.042149,
+          "CAD": 0.01426,
+          "AUD": -0.474297,
+          "NZD": -0.408211
+        },
+        "ranking": [
+          "USD",
+          "CAD",
+          "CHF",
+          "JPY",
+          "EUR",
+          "NZD",
+          "AUD",
+          "GBP"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 1.824761,
+        "weakest_currency": "GBP",
+        "weakest_score": -0.542872,
+        "pair_analysis": {
+          "pair": "GBPUSD",
+          "base": "GBP",
+          "quote": "USD",
+          "strength_difference": -2.368,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": -2.368,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": -2.299,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.971
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -2.233,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.943
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": -2.104,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.889
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 1.917,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.81
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.474,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 2.368
+        },
+        "pair_returns": {
+          "EURUSD": -0.279013,
+          "GBPUSD": -0.542872,
+          "AUDUSD": -0.474297,
+          "NZDUSD": -0.408211,
+          "USDJPY": 0.092478,
+          "USDCHF": 0.042149,
+          "USDCAD": -0.01426
+        }
+      },
+      {
+        "period_key": "2026-07-16",
+        "timeframe": "daily",
+        "from_date": "2026-07-15",
+        "to_date": "2026-07-16",
+        "currency_strength": {
+          "USD": -3.41783,
+          "EUR": 0.534361,
+          "GBP": 0.795785,
+          "JPY": 0.117002,
+          "CHF": 0.596426,
+          "CAD": 0.34816,
+          "AUD": 0.364426,
+          "NZD": 0.66167
+        },
+        "ranking": [
+          "GBP",
+          "NZD",
+          "CHF",
+          "EUR",
+          "AUD",
+          "CAD",
+          "JPY",
+          "USD"
+        ],
+        "strongest_currency": "GBP",
+        "strongest_score": 0.795785,
+        "weakest_currency": "USD",
+        "weakest_score": -3.41783,
+        "pair_analysis": {
+          "pair": "GBPUSD",
+          "base": "GBP",
+          "quote": "USD",
+          "strength_difference": 4.214,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 4.214,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 4.079,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.968
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": -4.014,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.953
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": 3.952,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.938
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 3.782,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.898
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.843,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 4.214
+        },
+        "pair_returns": {
+          "EURUSD": 0.534361,
+          "GBPUSD": 0.795785,
+          "AUDUSD": 0.364426,
+          "NZDUSD": 0.66167,
+          "USDJPY": -0.117002,
+          "USDCHF": -0.596426,
+          "USDCAD": -0.34816
+        }
+      },
+      {
+        "period_key": "2026-07-15",
+        "timeframe": "daily",
+        "from_date": "2026-07-14",
+        "to_date": "2026-07-15",
+        "currency_strength": {
+          "USD": -1.209384,
+          "EUR": 0.009125,
+          "GBP": 0.151466,
+          "JPY": -0.104796,
+          "CHF": 0.019713,
+          "CAD": 0.269274,
+          "AUD": 0.579568,
+          "NZD": 0.285033
+        },
+        "ranking": [
+          "AUD",
+          "NZD",
+          "CAD",
+          "GBP",
+          "CHF",
+          "EUR",
+          "JPY",
+          "USD"
+        ],
+        "strongest_currency": "AUD",
+        "strongest_score": 0.579568,
+        "weakest_currency": "USD",
+        "weakest_score": -1.209384,
+        "pair_analysis": {
+          "pair": "AUDUSD",
+          "base": "AUD",
+          "quote": "USD",
+          "strength_difference": 1.789,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 1.789,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 1.494,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.835
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": -1.479,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.827
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 1.361,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.761
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": -1.229,
+            "bias": "SELL",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.687
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.358,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 1.789
+        },
+        "pair_returns": {
+          "EURUSD": 0.009125,
+          "GBPUSD": 0.151466,
+          "AUDUSD": 0.579568,
+          "NZDUSD": 0.285033,
+          "USDJPY": 0.104796,
+          "USDCHF": -0.019713,
+          "USDCAD": -0.269274
+        }
+      },
+      {
+        "period_key": "2026-07-14",
+        "timeframe": "daily",
+        "from_date": "2026-07-13",
+        "to_date": "2026-07-14",
+        "currency_strength": {
+          "USD": -0.082082,
+          "EUR": -0.166513,
+          "GBP": -0.030783,
+          "JPY": -0.04934,
+          "CHF": -0.209887,
+          "CAD": 0.162717,
+          "AUD": -0.006943,
+          "NZD": 0.382831
+        },
+        "ranking": [
+          "NZD",
+          "CAD",
+          "AUD",
+          "GBP",
+          "JPY",
+          "USD",
+          "EUR",
+          "CHF"
+        ],
+        "strongest_currency": "NZD",
+        "strongest_score": 0.382831,
+        "weakest_currency": "CHF",
+        "weakest_score": -0.209887,
+        "pair_analysis": {
+          "pair": "NZDCHF",
+          "base": "NZD",
+          "quote": "CHF",
+          "strength_difference": 0.593,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDCHF",
+            "base": "NZD",
+            "quote": "CHF",
+            "strength_difference": 0.593,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "EURNZD",
+            "base": "EUR",
+            "quote": "NZD",
+            "strength_difference": -0.549,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.927
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 0.465,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.784
+          },
+          {
+            "pair": "NZDJPY",
+            "base": "NZD",
+            "quote": "JPY",
+            "strength_difference": 0.432,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.729
+          },
+          {
+            "pair": "GBPNZD",
+            "base": "GBP",
+            "quote": "NZD",
+            "strength_difference": -0.414,
+            "bias": "SELL",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.698
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.119,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 0.593
+        },
+        "pair_returns": {
+          "EURUSD": -0.166513,
+          "GBPUSD": -0.030783,
+          "AUDUSD": -0.006943,
+          "NZDUSD": 0.382831,
+          "USDJPY": 0.04934,
+          "USDCHF": 0.209887,
+          "USDCAD": -0.162717
+        }
+      },
+      {
+        "period_key": "2026-07-13",
+        "timeframe": "daily",
+        "from_date": "2026-07-10",
+        "to_date": "2026-07-13",
+        "currency_strength": {
+          "USD": 0.687064,
+          "EUR": -0.05255,
+          "GBP": -0.258388,
+          "JPY": -0.166801,
+          "CHF": -0.377985,
+          "CAD": 0.127182,
+          "AUD": -0.097202,
+          "NZD": 0.13868
+        },
+        "ranking": [
+          "USD",
+          "NZD",
+          "CAD",
+          "EUR",
+          "AUD",
+          "JPY",
+          "GBP",
+          "CHF"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 0.687064,
+        "weakest_currency": "CHF",
+        "weakest_score": -0.377985,
+        "pair_analysis": {
+          "pair": "USDCHF",
+          "base": "USD",
+          "quote": "CHF",
+          "strength_difference": 1.065,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 1.065,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": -0.945,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.888
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 0.854,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.802
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": -0.784,
+            "bias": "SELL",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.736
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": -0.74,
+            "bias": "SELL",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.694
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.213,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 1.065
+        },
+        "pair_returns": {
+          "EURUSD": -0.05255,
+          "GBPUSD": -0.258388,
+          "AUDUSD": -0.097202,
+          "NZDUSD": 0.13868,
+          "USDJPY": 0.166801,
+          "USDCHF": 0.377985,
+          "USDCAD": -0.127182
+        }
+      },
+      {
+        "period_key": "2026-07-10",
+        "timeframe": "daily",
+        "from_date": "2026-07-09",
+        "to_date": "2026-07-10",
+        "currency_strength": {
+          "USD": -1.251284,
+          "EUR": -0.043434,
+          "GBP": 0.20134,
+          "JPY": 0.332492,
+          "CHF": 0,
+          "CAD": 0.112923,
+          "AUD": 0.145945,
+          "NZD": 0.50202
+        },
+        "ranking": [
+          "NZD",
+          "JPY",
+          "GBP",
+          "AUD",
+          "CAD",
+          "CHF",
+          "EUR",
+          "USD"
+        ],
+        "strongest_currency": "NZD",
+        "strongest_score": 0.50202,
+        "weakest_currency": "USD",
+        "weakest_score": -1.251284,
+        "pair_analysis": {
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": 1.753,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 1.753,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": -1.584,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.903
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 1.453,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.829
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 1.397,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.797
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": -1.364,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.778
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.351,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 1.753
+        },
+        "pair_returns": {
+          "EURUSD": -0.043434,
+          "GBPUSD": 0.20134,
+          "AUDUSD": 0.145945,
+          "NZDUSD": 0.50202,
+          "USDJPY": -0.332492,
+          "USDCHF": 0,
+          "USDCAD": -0.112923
+        }
+      },
+      {
+        "period_key": "2026-07-09",
+        "timeframe": "daily",
+        "from_date": "2026-07-08",
+        "to_date": "2026-07-09",
+        "currency_strength": {
+          "USD": -2.015467,
+          "EUR": 0.272152,
+          "GBP": 0.356325,
+          "JPY": 0.049234,
+          "CHF": 0.216407,
+          "CAD": 0.105753,
+          "AUD": 0.229008,
+          "NZD": 0.786588
+        },
+        "ranking": [
+          "NZD",
+          "GBP",
+          "EUR",
+          "AUD",
+          "CHF",
+          "CAD",
+          "JPY",
+          "USD"
+        ],
+        "strongest_currency": "NZD",
+        "strongest_score": 0.786588,
+        "weakest_currency": "USD",
+        "weakest_score": -2.015467,
+        "pair_analysis": {
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": 2.802,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 2.802,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 2.372,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.846
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": 2.288,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.816
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 2.244,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.801
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": -2.232,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.797
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.56,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 2.802
+        },
+        "pair_returns": {
+          "EURUSD": 0.272152,
+          "GBPUSD": 0.356325,
+          "AUDUSD": 0.229008,
+          "NZDUSD": 0.786588,
+          "USDJPY": -0.049234,
+          "USDCHF": -0.216407,
+          "USDCAD": -0.105753
+        }
+      },
+      {
+        "period_key": "2026-07-08",
+        "timeframe": "daily",
+        "from_date": "2026-07-07",
+        "to_date": "2026-07-08",
+        "currency_strength": {
+          "USD": 1.220153,
+          "EUR": -0.254308,
+          "GBP": -0.281645,
+          "JPY": -0.370622,
+          "CHF": -0.297671,
+          "CAD": 0.239133,
+          "AUD": -0.346188,
+          "NZD": 0.091147
+        },
+        "ranking": [
+          "USD",
+          "CAD",
+          "NZD",
+          "EUR",
+          "GBP",
+          "CHF",
+          "AUD",
+          "JPY"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 1.220153,
+        "weakest_currency": "JPY",
+        "weakest_score": -0.370622,
+        "pair_analysis": {
+          "pair": "USDJPY",
+          "base": "USD",
+          "quote": "JPY",
+          "strength_difference": 1.591,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 1.591,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": -1.566,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.985
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 1.518,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.954
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": -1.502,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.944
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": -1.474,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.927
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.318,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 1.591
+        },
+        "pair_returns": {
+          "EURUSD": -0.254308,
+          "GBPUSD": -0.281645,
+          "AUDUSD": -0.346188,
+          "NZDUSD": 0.091147,
+          "USDJPY": 0.370622,
+          "USDCHF": 0.297671,
+          "USDCAD": -0.239133
+        }
+      },
+      {
+        "period_key": "2026-07-07",
+        "timeframe": "daily",
+        "from_date": "2026-07-06",
+        "to_date": "2026-07-07",
+        "currency_strength": {
+          "USD": -1.057736,
+          "EUR": 0.157776,
+          "GBP": 0.306535,
+          "JPY": 0.277196,
+          "CHF": -0.027294,
+          "CAD": 0.035154,
+          "AUD": 0.194539,
+          "NZD": 0.11383
+        },
+        "ranking": [
+          "GBP",
+          "JPY",
+          "AUD",
+          "EUR",
+          "NZD",
+          "CAD",
+          "CHF",
+          "USD"
+        ],
+        "strongest_currency": "GBP",
+        "strongest_score": 0.306535,
+        "weakest_currency": "USD",
+        "weakest_score": -1.057736,
+        "pair_analysis": {
+          "pair": "GBPUSD",
+          "base": "GBP",
+          "quote": "USD",
+          "strength_difference": 1.364,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 1.364,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": -1.335,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.978
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 1.252,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.918
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": 1.216,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.891
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 1.172,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.859
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.273,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 1.364
+        },
+        "pair_returns": {
+          "EURUSD": 0.157776,
+          "GBPUSD": 0.306535,
+          "AUDUSD": 0.194539,
+          "NZDUSD": 0.11383,
+          "USDJPY": -0.277196,
+          "USDCHF": 0.027294,
+          "USDCAD": -0.035154
+        }
+      },
+      {
+        "period_key": "2026-07-06",
+        "timeframe": "daily",
+        "from_date": "2026-07-03",
+        "to_date": "2026-07-06",
+        "currency_strength": {
+          "USD": 2.151847,
+          "EUR": -0.287658,
+          "GBP": -0.076066,
+          "JPY": -0.738442,
+          "CHF": -0.40859,
+          "CAD": -0.147866,
+          "AUD": -0.055475,
+          "NZD": -0.437749
+        },
+        "ranking": [
+          "USD",
+          "AUD",
+          "GBP",
+          "CAD",
+          "EUR",
+          "CHF",
+          "NZD",
+          "JPY"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 2.151847,
+        "weakest_currency": "JPY",
+        "weakest_score": -0.738442,
+        "pair_analysis": {
+          "pair": "USDJPY",
+          "base": "USD",
+          "quote": "JPY",
+          "strength_difference": 2.89,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 2.89,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -2.59,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.896
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 2.56,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.886
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": -2.44,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.844
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": 2.3,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.796
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.578,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 2.89
+        },
+        "pair_returns": {
+          "EURUSD": -0.287658,
+          "GBPUSD": -0.076066,
+          "AUDUSD": -0.055475,
+          "NZDUSD": -0.437749,
+          "USDJPY": 0.738442,
+          "USDCHF": 0.40859,
+          "USDCAD": 0.147866
+        }
+      }
+    ],
+    "weekly": [
+      {
+        "period_key": "2026-W33",
+        "timeframe": "weekly",
+        "from_date": "2026-08-10",
+        "to_date": "2026-08-14",
+        "currency_strength": {
+          "USD": -0.372769,
+          "EUR": 0.104103,
+          "GBP": 0.238243,
+          "JPY": -0.233232,
+          "CHF": -0.430528,
+          "CAD": 0.466284,
+          "AUD": 0.269122,
+          "NZD": -0.041223
+        },
+        "ranking": [
+          "CAD",
+          "AUD",
+          "GBP",
+          "EUR",
+          "NZD",
+          "JPY",
+          "USD",
+          "CHF"
+        ],
+        "strongest_currency": "CAD",
+        "strongest_score": 0.466284,
+        "weakest_currency": "CHF",
+        "weakest_score": -0.430528,
+        "pair_analysis": {
+          "pair": "CADCHF",
+          "base": "CAD",
+          "quote": "CHF",
+          "strength_difference": 0.897,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "CADCHF",
+            "base": "CAD",
+            "quote": "CHF",
+            "strength_difference": 0.897,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": -0.839,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.936
+          },
+          {
+            "pair": "AUDCHF",
+            "base": "AUD",
+            "quote": "CHF",
+            "strength_difference": 0.7,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.78
+          },
+          {
+            "pair": "CADJPY",
+            "base": "CAD",
+            "quote": "JPY",
+            "strength_difference": 0.7,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.78
+          },
+          {
+            "pair": "GBPCHF",
+            "base": "GBP",
+            "quote": "CHF",
+            "strength_difference": 0.669,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.746
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "weekly",
+          "wait_threshold": 0.179,
+          "absolute_floor": 0.02,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 0.897
+        },
+        "pair_returns": {
+          "EURUSD": 0.104103,
+          "GBPUSD": 0.238243,
+          "AUDUSD": 0.269122,
+          "NZDUSD": -0.041223,
+          "USDJPY": 0.233232,
+          "USDCHF": 0.430528,
+          "USDCAD": -0.466284
+        }
+      },
+      {
+        "period_key": "2026-W32",
+        "timeframe": "weekly",
+        "from_date": "2026-08-03",
+        "to_date": "2026-08-07",
+        "currency_strength": {
+          "USD": 0.948209,
+          "EUR": 0,
+          "GBP": -0.153325,
+          "JPY": -1.059484,
+          "CHF": -0.289611,
+          "CAD": 0.128315,
+          "AUD": 0.478738,
+          "NZD": -0.052842
+        },
+        "ranking": [
+          "USD",
+          "AUD",
+          "CAD",
+          "EUR",
+          "NZD",
+          "GBP",
+          "CHF",
+          "JPY"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 0.948209,
+        "weakest_currency": "JPY",
+        "weakest_score": -1.059484,
+        "pair_analysis": {
+          "pair": "USDJPY",
+          "base": "USD",
+          "quote": "JPY",
+          "strength_difference": 2.008,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 2.008,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "AUDJPY",
+            "base": "AUD",
+            "quote": "JPY",
+            "strength_difference": 1.538,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.766
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 1.238,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.617
+          },
+          {
+            "pair": "CADJPY",
+            "base": "CAD",
+            "quote": "JPY",
+            "strength_difference": 1.188,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.592
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": -1.102,
+            "bias": "SELL",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.549
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "weekly",
+          "wait_threshold": 0.402,
+          "absolute_floor": 0.02,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 2.008
+        },
+        "pair_returns": {
+          "EURUSD": 0,
+          "GBPUSD": -0.153325,
+          "AUDUSD": 0.478738,
+          "NZDUSD": -0.052842,
+          "USDJPY": 1.059484,
+          "USDCHF": 0.289611,
+          "USDCAD": -0.128315
+        }
+      },
+      {
+        "period_key": "2026-W31",
+        "timeframe": "weekly",
+        "from_date": "2026-07-27",
+        "to_date": "2026-07-31",
+        "currency_strength": {
+          "USD": -6.274981,
+          "EUR": 0.843,
+          "GBP": 0.786493,
+          "JPY": 2.077732,
+          "CHF": 0.621956,
+          "CAD": 0.45374,
+          "AUD": 0.266685,
+          "NZD": 1.225375
+        },
+        "ranking": [
+          "JPY",
+          "NZD",
+          "EUR",
+          "GBP",
+          "CHF",
+          "CAD",
+          "AUD",
+          "USD"
+        ],
+        "strongest_currency": "JPY",
+        "strongest_score": 2.077732,
+        "weakest_currency": "USD",
+        "weakest_score": -6.274981,
+        "pair_analysis": {
+          "pair": "USDJPY",
+          "base": "USD",
+          "quote": "JPY",
+          "strength_difference": -8.353,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": -8.353,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 7.5,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.898
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": 7.118,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.852
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 7.061,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.845
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": -6.897,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.826
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "weekly",
+          "wait_threshold": 1.671,
+          "absolute_floor": 0.02,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 8.353
+        },
+        "pair_returns": {
+          "EURUSD": 0.843,
+          "GBPUSD": 0.786493,
+          "AUDUSD": 0.266685,
+          "NZDUSD": 1.225375,
+          "USDJPY": -2.077732,
+          "USDCHF": -0.621956,
+          "USDCAD": -0.45374
+        }
+      },
+      {
+        "period_key": "2026-W30",
+        "timeframe": "weekly",
+        "from_date": "2026-07-20",
+        "to_date": "2026-07-24",
+        "currency_strength": {
+          "USD": 5.249681,
+          "EUR": -0.428911,
+          "GBP": -1.011285,
+          "JPY": -0.886809,
+          "CHF": -1.148046,
+          "CAD": -0.391989,
+          "AUD": -0.265549,
+          "NZD": -1.117092
+        },
+        "ranking": [
+          "USD",
+          "AUD",
+          "CAD",
+          "EUR",
+          "JPY",
+          "GBP",
+          "NZD",
+          "CHF"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 5.249681,
+        "weakest_currency": "CHF",
+        "weakest_score": -1.148046,
+        "pair_analysis": {
+          "pair": "USDCHF",
+          "base": "USD",
+          "quote": "CHF",
+          "strength_difference": 6.398,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 6.398,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -6.367,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.995
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": -6.261,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.979
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 6.136,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.959
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": -5.679,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.888
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "weekly",
+          "wait_threshold": 1.28,
+          "absolute_floor": 0.02,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 6.398
+        },
+        "pair_returns": {
+          "EURUSD": -0.428911,
+          "GBPUSD": -1.011285,
+          "AUDUSD": -0.265549,
+          "NZDUSD": -1.117092,
+          "USDJPY": 0.886809,
+          "USDCHF": 1.148046,
+          "USDCAD": 0.391989
+        }
+      },
+      {
+        "period_key": "2026-W29",
+        "timeframe": "weekly",
+        "from_date": "2026-07-13",
+        "to_date": "2026-07-17",
+        "currency_strength": {
+          "USD": -2.875613,
+          "EUR": 0.096054,
+          "GBP": 0.369529,
+          "JPY": -0.129518,
+          "CHF": 0.36545,
+          "CAD": 0.792359,
+          "AUD": 0.460347,
+          "NZD": 0.92139
+        },
+        "ranking": [
+          "NZD",
+          "CAD",
+          "AUD",
+          "GBP",
+          "CHF",
+          "EUR",
+          "JPY",
+          "USD"
+        ],
+        "strongest_currency": "NZD",
+        "strongest_score": 0.92139,
+        "weakest_currency": "USD",
+        "weakest_score": -2.875613,
+        "pair_analysis": {
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": 3.797,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 3.797,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": -3.668,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.966
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 3.336,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.879
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 3.245,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.855
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": -3.241,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.854
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "weekly",
+          "wait_threshold": 0.759,
+          "absolute_floor": 0.02,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 3.797
+        },
+        "pair_returns": {
+          "EURUSD": 0.096054,
+          "GBPUSD": 0.369529,
+          "AUDUSD": 0.460347,
+          "NZDUSD": 0.92139,
+          "USDJPY": 0.129518,
+          "USDCHF": -0.36545,
+          "USDCAD": -0.792359
+        }
+      },
+      {
+        "period_key": "2026-W28",
+        "timeframe": "weekly",
+        "from_date": "2026-07-06",
+        "to_date": "2026-07-10",
+        "currency_strength": {
+          "USD": -3.11041,
+          "EUR": 0.131445,
+          "GBP": 0.582543,
+          "JPY": 0.289516,
+          "CHF": -0.107935,
+          "CAD": 0.492161,
+          "AUD": 0.222392,
+          "NZD": 1.500289
+        },
+        "ranking": [
+          "NZD",
+          "GBP",
+          "CAD",
+          "JPY",
+          "AUD",
+          "EUR",
+          "CHF",
+          "USD"
+        ],
+        "strongest_currency": "NZD",
+        "strongest_score": 1.500289,
+        "weakest_currency": "USD",
+        "weakest_score": -3.11041,
+        "pair_analysis": {
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": 4.611,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 4.611,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 3.693,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.801
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": -3.603,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.781
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": -3.4,
+            "bias": "SELL",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.737
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 3.333,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.723
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "weekly",
+          "wait_threshold": 0.922,
+          "absolute_floor": 0.02,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 4.611
+        },
+        "pair_returns": {
+          "EURUSD": 0.131445,
+          "GBPUSD": 0.582543,
+          "AUDUSD": 0.222392,
+          "NZDUSD": 1.500289,
+          "USDJPY": -0.289516,
+          "USDCHF": 0.107935,
+          "USDCAD": -0.492161
+        }
+      },
+      {
+        "period_key": "2026-W27",
+        "timeframe": "weekly",
+        "from_date": "2026-06-29",
+        "to_date": "2026-07-03",
+        "currency_strength": {
+          "USD": -4.033808,
+          "EUR": 0.367479,
+          "GBP": 0.946874,
+          "JPY": 0.438651,
+          "CHF": 0.712413,
+          "CAD": 0.014081,
+          "AUD": 0.555054,
+          "NZD": 0.999258
+        },
+        "ranking": [
+          "NZD",
+          "GBP",
+          "CHF",
+          "AUD",
+          "JPY",
+          "EUR",
+          "CAD",
+          "USD"
+        ],
+        "strongest_currency": "NZD",
+        "strongest_score": 0.999258,
+        "weakest_currency": "USD",
+        "weakest_score": -4.033808,
+        "pair_analysis": {
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": 5.033,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 5.033,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 4.981,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.99
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": -4.746,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.943
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 4.589,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.912
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": -4.472,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.889
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "weekly",
+          "wait_threshold": 1.007,
+          "absolute_floor": 0.02,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 5.033
+        },
+        "pair_returns": {
+          "EURUSD": 0.367479,
+          "GBPUSD": 0.946874,
+          "AUDUSD": 0.555054,
+          "NZDUSD": 0.999258,
+          "USDJPY": -0.438651,
+          "USDCHF": -0.712413,
+          "USDCAD": -0.014081
+        }
+      },
+      {
+        "period_key": "2026-W26",
+        "timeframe": "weekly",
+        "from_date": "2026-06-22",
+        "to_date": "2026-06-26",
+        "currency_strength": {
+          "USD": 3.769554,
+          "EUR": -0.47998,
+          "GBP": -0.232638,
+          "JPY": 0.080356,
+          "CHF": -0.059402,
+          "CAD": -0.148295,
+          "AUD": -1.511596,
+          "NZD": -1.417999
+        },
+        "ranking": [
+          "USD",
+          "JPY",
+          "CHF",
+          "CAD",
+          "GBP",
+          "EUR",
+          "NZD",
+          "AUD"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 3.769554,
+        "weakest_currency": "AUD",
+        "weakest_score": -1.511596,
+        "pair_analysis": {
+          "pair": "AUDUSD",
+          "base": "AUD",
+          "quote": "USD",
+          "strength_difference": -5.281,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": -5.281,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -5.188,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.982
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": -4.25,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.805
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": -4.002,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.758
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": 3.918,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.742
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "weekly",
+          "wait_threshold": 1.056,
+          "absolute_floor": 0.02,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 5.281
+        },
+        "pair_returns": {
+          "EURUSD": -0.47998,
+          "GBPUSD": -0.232638,
+          "AUDUSD": -1.511596,
+          "NZDUSD": -1.417999,
+          "USDJPY": -0.080356,
+          "USDCHF": 0.059402,
+          "USDCAD": 0.148295
+        }
+      },
+      {
+        "period_key": "2026-W25",
+        "timeframe": "weekly",
+        "from_date": "2026-06-15",
+        "to_date": "2026-06-19",
+        "currency_strength": {
+          "USD": 8.47676,
+          "EUR": -1.206325,
+          "GBP": -1.400082,
+          "JPY": -0.649229,
+          "CHF": -1.616561,
+          "CAD": -1.223088,
+          "AUD": -0.750509,
+          "NZD": -1.630965
+        },
+        "ranking": [
+          "USD",
+          "JPY",
+          "AUD",
+          "EUR",
+          "CAD",
+          "GBP",
+          "CHF",
+          "NZD"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 8.47676,
+        "weakest_currency": "NZD",
+        "weakest_score": -1.630965,
+        "pair_analysis": {
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": -10.108,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -10.108,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 10.093,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.999
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": -9.877,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.977
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": 9.7,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.96
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": -9.683,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.958
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "weekly",
+          "wait_threshold": 2.022,
+          "absolute_floor": 0.02,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 10.108
+        },
+        "pair_returns": {
+          "EURUSD": -1.206325,
+          "GBPUSD": -1.400082,
+          "AUDUSD": -0.750509,
+          "NZDUSD": -1.630965,
+          "USDJPY": 0.649229,
+          "USDCHF": 1.616561,
+          "USDCAD": 1.223088
+        }
+      },
+      {
+        "period_key": "2026-W24",
+        "timeframe": "weekly",
+        "from_date": "2026-06-08",
+        "to_date": "2026-06-12",
+        "currency_strength": {
+          "USD": 0.751953,
+          "EUR": 0.233653,
+          "GBP": 0.297535,
+          "JPY": -0.143777,
+          "CHF": -0.092953,
+          "CAD": -0.365932,
+          "AUD": -0.569821,
+          "NZD": -0.110658
+        },
+        "ranking": [
+          "USD",
+          "GBP",
+          "EUR",
+          "CHF",
+          "NZD",
+          "JPY",
+          "CAD",
+          "AUD"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 0.751953,
+        "weakest_currency": "AUD",
+        "weakest_score": -0.569821,
+        "pair_analysis": {
+          "pair": "AUDUSD",
+          "base": "AUD",
+          "quote": "USD",
+          "strength_difference": -1.322,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": -1.322,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": 1.118,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.846
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 0.896,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.678
+          },
+          {
+            "pair": "GBPAUD",
+            "base": "GBP",
+            "quote": "AUD",
+            "strength_difference": 0.867,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.656
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -0.863,
+            "bias": "SELL",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.653
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "weekly",
+          "wait_threshold": 0.264,
+          "absolute_floor": 0.02,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 1.322
+        },
+        "pair_returns": {
+          "EURUSD": 0.233653,
+          "GBPUSD": 0.297535,
+          "AUDUSD": -0.569821,
+          "NZDUSD": -0.110658,
+          "USDJPY": 0.143777,
+          "USDCHF": 0.092953,
+          "USDCAD": 0.365932
+        }
+      },
+      {
+        "period_key": "2026-W23",
+        "timeframe": "weekly",
+        "from_date": "2026-06-01",
+        "to_date": "2026-06-05",
+        "currency_strength": {
+          "USD": 2.965201,
+          "EUR": -0.05238,
+          "GBP": 0.017507,
+          "JPY": -0.231989,
+          "CHF": -0.566478,
+          "CAD": -0.375994,
+          "AUD": -0.457012,
+          "NZD": -1.298854
+        },
+        "ranking": [
+          "USD",
+          "GBP",
+          "EUR",
+          "JPY",
+          "CAD",
+          "AUD",
+          "CHF",
+          "NZD"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 2.965201,
+        "weakest_currency": "NZD",
+        "weakest_score": -1.298854,
+        "pair_analysis": {
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": -4.264,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -4.264,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 3.532,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.828
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": -3.422,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.803
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": 3.341,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.784
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 3.197,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.75
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "weekly",
+          "wait_threshold": 0.853,
+          "absolute_floor": 0.02,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 4.264
+        },
+        "pair_returns": {
+          "EURUSD": -0.05238,
+          "GBPUSD": 0.017507,
+          "AUDUSD": -0.457012,
+          "NZDUSD": -1.298854,
+          "USDJPY": 0.231989,
+          "USDCHF": 0.566478,
+          "USDCAD": 0.375994
+        }
+      },
+      {
+        "period_key": "2026-W22",
+        "timeframe": "weekly",
+        "from_date": "2026-05-25",
+        "to_date": "2026-05-29",
+        "currency_strength": {
+          "USD": -0.916917,
+          "EUR": 0.009315,
+          "GBP": -0.531693,
+          "JPY": -0.213931,
+          "CHF": -0.122841,
+          "CAD": 0.057916,
+          "AUD": 0.021513,
+          "NZD": 1.696637
+        },
+        "ranking": [
+          "NZD",
+          "CAD",
+          "AUD",
+          "EUR",
+          "CHF",
+          "JPY",
+          "GBP",
+          "USD"
+        ],
+        "strongest_currency": "NZD",
+        "strongest_score": 1.696637,
+        "weakest_currency": "USD",
+        "weakest_score": -0.916917,
+        "pair_analysis": {
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": 2.614,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 2.614,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "GBPNZD",
+            "base": "GBP",
+            "quote": "NZD",
+            "strength_difference": -2.228,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.853
+          },
+          {
+            "pair": "NZDJPY",
+            "base": "NZD",
+            "quote": "JPY",
+            "strength_difference": 1.911,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.731
+          },
+          {
+            "pair": "NZDCHF",
+            "base": "NZD",
+            "quote": "CHF",
+            "strength_difference": 1.819,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.696
+          },
+          {
+            "pair": "EURNZD",
+            "base": "EUR",
+            "quote": "NZD",
+            "strength_difference": -1.687,
+            "bias": "SELL",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.646
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "weekly",
+          "wait_threshold": 0.523,
+          "absolute_floor": 0.02,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 2.614
+        },
+        "pair_returns": {
+          "EURUSD": 0.009315,
+          "GBPUSD": -0.531693,
+          "AUDUSD": 0.021513,
+          "NZDUSD": 1.696637,
+          "USDJPY": 0.213931,
+          "USDCHF": 0.122841,
+          "USDCAD": -0.057916
+        }
+      },
+      {
+        "period_key": "2026-W21",
+        "timeframe": "weekly",
+        "from_date": "2026-05-18",
+        "to_date": "2026-05-22",
+        "currency_strength": {
+          "USD": 1.944963,
+          "EUR": -0.454524,
+          "GBP": 0.23883,
+          "JPY": -0.23934,
+          "CHF": -0.182159,
+          "CAD": -0.436649,
+          "AUD": -0.619526,
+          "NZD": -0.251594
+        },
+        "ranking": [
+          "USD",
+          "GBP",
+          "CHF",
+          "JPY",
+          "NZD",
+          "CAD",
+          "EUR",
+          "AUD"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 1.944963,
+        "weakest_currency": "AUD",
+        "weakest_score": -0.619526,
+        "pair_analysis": {
+          "pair": "AUDUSD",
+          "base": "AUD",
+          "quote": "USD",
+          "strength_difference": -2.564,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": -2.564,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": -2.399,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.936
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": 2.382,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.929
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -2.197,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.857
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 2.184,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.852
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "weekly",
+          "wait_threshold": 0.513,
+          "absolute_floor": 0.02,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 2.564
+        },
+        "pair_returns": {
+          "EURUSD": -0.454524,
+          "GBPUSD": 0.23883,
+          "AUDUSD": -0.619526,
+          "NZDUSD": -0.251594,
+          "USDJPY": 0.23934,
+          "USDCHF": 0.182159,
+          "USDCAD": 0.436649
+        }
+      },
+      {
+        "period_key": "2026-W20",
+        "timeframe": "weekly",
+        "from_date": "2026-05-11",
+        "to_date": "2026-05-15",
+        "currency_strength": {
+          "USD": 8.523516,
+          "EUR": -1.163967,
+          "GBP": -1.801982,
+          "JPY": -0.897289,
+          "CHF": -0.968106,
+          "CAD": -0.651204,
+          "AUD": -1.26537,
+          "NZD": -1.775597
+        },
+        "ranking": [
+          "USD",
+          "CAD",
+          "JPY",
+          "CHF",
+          "EUR",
+          "AUD",
+          "NZD",
+          "GBP"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 8.523516,
+        "weakest_currency": "GBP",
+        "weakest_score": -1.801982,
+        "pair_analysis": {
+          "pair": "GBPUSD",
+          "base": "GBP",
+          "quote": "USD",
+          "strength_difference": -10.325,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": -10.325,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -10.299,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.997
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": -9.789,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.948
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": -9.687,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.938
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 9.492,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.919
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "weekly",
+          "wait_threshold": 2.065,
+          "absolute_floor": 0.02,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 10.325
+        },
+        "pair_returns": {
+          "EURUSD": -1.163967,
+          "GBPUSD": -1.801982,
+          "AUDUSD": -1.26537,
+          "NZDUSD": -1.775597,
+          "USDJPY": 0.897289,
+          "USDCHF": 0.968106,
+          "USDCAD": 0.651204
+        }
+      },
+      {
+        "period_key": "2026-W19",
+        "timeframe": "weekly",
+        "from_date": "2026-05-04",
+        "to_date": "2026-05-08",
+        "currency_strength": {
+          "USD": -3.526414,
+          "EUR": 0.521011,
+          "GBP": 0.460039,
+          "JPY": 0.229124,
+          "CHF": 0.702788,
+          "CAD": -0.315828,
+          "AUD": 0.701627,
+          "NZD": 1.227652
+        },
+        "ranking": [
+          "NZD",
+          "CHF",
+          "AUD",
+          "EUR",
+          "GBP",
+          "JPY",
+          "CAD",
+          "USD"
+        ],
+        "strongest_currency": "NZD",
+        "strongest_score": 1.227652,
+        "weakest_currency": "USD",
+        "weakest_score": -3.526414,
+        "pair_analysis": {
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": 4.754,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 4.754,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": -4.229,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.89
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 4.228,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.889
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": 4.047,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.851
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 3.986,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.839
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "weekly",
+          "wait_threshold": 0.951,
+          "absolute_floor": 0.02,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 4.754
+        },
+        "pair_returns": {
+          "EURUSD": 0.521011,
+          "GBPUSD": 0.460039,
+          "AUDUSD": 0.701627,
+          "NZDUSD": 1.227652,
+          "USDJPY": -0.229124,
+          "USDCHF": -0.702788,
+          "USDCAD": 0.315828
+        }
+      },
+      {
+        "period_key": "2026-W18",
+        "timeframe": "weekly",
+        "from_date": "2026-04-27",
+        "to_date": "2026-04-30",
+        "currency_strength": {
+          "USD": 1.404858,
+          "EUR": -0.39904,
+          "GBP": -0.452544,
+          "JPY": 1.664468,
+          "CHF": -0.183697,
+          "CAD": -0.5,
+          "AUD": -0.607577,
+          "NZD": -0.926469
+        },
+        "ranking": [
+          "JPY",
+          "USD",
+          "CHF",
+          "EUR",
+          "GBP",
+          "CAD",
+          "AUD",
+          "NZD"
+        ],
+        "strongest_currency": "JPY",
+        "strongest_score": 1.664468,
+        "weakest_currency": "NZD",
+        "weakest_score": -0.926469,
+        "pair_analysis": {
+          "pair": "NZDJPY",
+          "base": "NZD",
+          "quote": "JPY",
+          "strength_difference": -2.591,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDJPY",
+            "base": "NZD",
+            "quote": "JPY",
+            "strength_difference": -2.591,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -2.331,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.9
+          },
+          {
+            "pair": "AUDJPY",
+            "base": "AUD",
+            "quote": "JPY",
+            "strength_difference": -2.272,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.877
+          },
+          {
+            "pair": "CADJPY",
+            "base": "CAD",
+            "quote": "JPY",
+            "strength_difference": -2.164,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.835
+          },
+          {
+            "pair": "GBPJPY",
+            "base": "GBP",
+            "quote": "JPY",
+            "strength_difference": -2.117,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.817
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "weekly",
+          "wait_threshold": 0.518,
+          "absolute_floor": 0.02,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 2.591
+        },
+        "pair_returns": {
+          "EURUSD": -0.39904,
+          "GBPUSD": -0.452544,
+          "AUDUSD": -0.607577,
+          "NZDUSD": -0.926469,
+          "USDJPY": -1.664468,
+          "USDCHF": 0.183697,
+          "USDCAD": 0.5
+        }
+      }
+    ],
+    "monthly": [
+      {
+        "period_key": "2026-08",
+        "timeframe": "monthly",
+        "from_date": "2026-08-03",
+        "to_date": "2026-08-14",
+        "currency_strength": {
+          "USD": -1.226183,
+          "EUR": 0.277607,
+          "GBP": 0.492731,
+          "JPY": -1.487107,
+          "CHF": -0.471546,
+          "CAD": 1.090676,
+          "AUD": 1.076487,
+          "NZD": 0.247335
+        },
+        "ranking": [
+          "CAD",
+          "AUD",
+          "GBP",
+          "EUR",
+          "NZD",
+          "CHF",
+          "USD",
+          "JPY"
+        ],
+        "strongest_currency": "CAD",
+        "strongest_score": 1.090676,
+        "weakest_currency": "JPY",
+        "weakest_score": -1.487107,
+        "pair_analysis": {
+          "pair": "CADJPY",
+          "base": "CAD",
+          "quote": "JPY",
+          "strength_difference": 2.578,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "CADJPY",
+            "base": "CAD",
+            "quote": "JPY",
+            "strength_difference": 2.578,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "AUDJPY",
+            "base": "AUD",
+            "quote": "JPY",
+            "strength_difference": 2.564,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.994
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": -2.317,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.899
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 2.303,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.893
+          },
+          {
+            "pair": "GBPJPY",
+            "base": "GBP",
+            "quote": "JPY",
+            "strength_difference": 1.98,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.768
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "monthly",
+          "wait_threshold": 0.516,
+          "absolute_floor": 0.05,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 2.578
+        },
+        "pair_returns": {
+          "EURUSD": 0.277607,
+          "GBPUSD": 0.492731,
+          "AUDUSD": 1.076487,
+          "NZDUSD": 0.247335,
+          "USDJPY": 1.487107,
+          "USDCHF": 0.471546,
+          "USDCAD": -1.090676
+        }
+      },
+      {
+        "period_key": "2026-07",
+        "timeframe": "monthly",
+        "from_date": "2026-07-01",
+        "to_date": "2026-07-31",
+        "currency_strength": {
+          "USD": -10.416213,
+          "EUR": 0.895831,
+          "GBP": 1.368981,
+          "JPY": 1.518038,
+          "CHF": 0.136833,
+          "CAD": 1.286558,
+          "AUD": 1.838726,
+          "NZD": 3.371248
+        },
+        "ranking": [
+          "NZD",
+          "AUD",
+          "JPY",
+          "GBP",
+          "CAD",
+          "EUR",
+          "CHF",
+          "USD"
+        ],
+        "strongest_currency": "NZD",
+        "strongest_score": 3.371248,
+        "weakest_currency": "USD",
+        "weakest_score": -10.416213,
+        "pair_analysis": {
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": 13.787,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 13.787,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 12.255,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.889
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": -11.934,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.866
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 11.785,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.855
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": -11.703,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.849
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "monthly",
+          "wait_threshold": 2.757,
+          "absolute_floor": 0.05,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 13.787
+        },
+        "pair_returns": {
+          "EURUSD": 0.895831,
+          "GBPUSD": 1.368981,
+          "AUDUSD": 1.838726,
+          "NZDUSD": 3.371248,
+          "USDJPY": -1.518038,
+          "USDCHF": -0.136833,
+          "USDCAD": -1.286558
+        }
+      },
+      {
+        "period_key": "2026-06",
+        "timeframe": "monthly",
+        "from_date": "2026-06-01",
+        "to_date": "2026-06-30",
+        "currency_strength": {
+          "USD": 21.005786,
+          "EUR": -2.163733,
+          "GBP": -1.807364,
+          "JPY": -1.849646,
+          "CHF": -3.286595,
+          "CAD": -2.935647,
+          "AUD": -3.99449,
+          "NZD": -4.968311
+        },
+        "ranking": [
+          "USD",
+          "GBP",
+          "JPY",
+          "EUR",
+          "CAD",
+          "CHF",
+          "AUD",
+          "NZD"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 21.005786,
+        "weakest_currency": "NZD",
+        "weakest_score": -4.968311,
+        "pair_analysis": {
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": -25.974,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -25.974,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": -25,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.963
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 24.292,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.935
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": 23.941,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.922
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": -23.17,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.892
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "monthly",
+          "wait_threshold": 5.195,
+          "absolute_floor": 0.05,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 25.974
+        },
+        "pair_returns": {
+          "EURUSD": -2.163733,
+          "GBPUSD": -1.807364,
+          "AUDUSD": -3.99449,
+          "NZDUSD": -4.968311,
+          "USDJPY": 1.849646,
+          "USDCHF": 3.286595,
+          "USDCAD": 2.935647
+        }
+      },
+      {
+        "period_key": "2026-05",
+        "timeframe": "monthly",
+        "from_date": "2026-05-04",
+        "to_date": "2026-05-29",
+        "currency_strength": {
+          "USD": 2.631073,
+          "EUR": -0.478569,
+          "GBP": -0.89824,
+          "JPY": -1.368381,
+          "CHF": 0.198975,
+          "CAD": -1.39552,
+          "AUD": -0.164934,
+          "NZD": 1.475596
+        },
+        "ranking": [
+          "USD",
+          "NZD",
+          "CHF",
+          "AUD",
+          "EUR",
+          "GBP",
+          "JPY",
+          "CAD"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 2.631073,
+        "weakest_currency": "CAD",
+        "weakest_score": -1.39552,
+        "pair_analysis": {
+          "pair": "USDCAD",
+          "base": "USD",
+          "quote": "CAD",
+          "strength_difference": 4.027,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": 4.027,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 3.999,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.993
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": -3.529,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.877
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": -3.11,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.772
+          },
+          {
+            "pair": "NZDCAD",
+            "base": "NZD",
+            "quote": "CAD",
+            "strength_difference": 2.871,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.713
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "monthly",
+          "wait_threshold": 0.805,
+          "absolute_floor": 0.05,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 4.027
+        },
+        "pair_returns": {
+          "EURUSD": -0.478569,
+          "GBPUSD": -0.89824,
+          "AUDUSD": -0.164934,
+          "NZDUSD": 1.475596,
+          "USDJPY": 1.368381,
+          "USDCHF": -0.198975,
+          "USDCAD": 1.39552
+        }
+      },
+      {
+        "period_key": "2026-04",
+        "timeframe": "monthly",
+        "from_date": "2026-04-01",
+        "to_date": "2026-04-30",
+        "currency_strength": {
+          "USD": -10.184522,
+          "EUR": 0.836698,
+          "GBP": 1.403561,
+          "JPY": 1.111673,
+          "CHF": 0.839657,
+          "CAD": 1.626601,
+          "AUD": 2.794853,
+          "NZD": 1.571479
+        },
+        "ranking": [
+          "AUD",
+          "CAD",
+          "NZD",
+          "GBP",
+          "JPY",
+          "CHF",
+          "EUR",
+          "USD"
+        ],
+        "strongest_currency": "AUD",
+        "strongest_score": 2.794853,
+        "weakest_currency": "USD",
+        "weakest_score": -10.184522,
+        "pair_analysis": {
+          "pair": "AUDUSD",
+          "base": "AUD",
+          "quote": "USD",
+          "strength_difference": 12.979,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 12.979,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": -11.811,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.91
+          },
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 11.756,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.906
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 11.588,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.893
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": -11.296,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.87
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "monthly",
+          "wait_threshold": 2.596,
+          "absolute_floor": 0.05,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 12.979
+        },
+        "pair_returns": {
+          "EURUSD": 0.836698,
+          "GBPUSD": 1.403561,
+          "AUDUSD": 2.794853,
+          "NZDUSD": 1.571479,
+          "USDJPY": -1.111673,
+          "USDCHF": -0.839657,
+          "USDCAD": -1.626601
+        }
+      },
+      {
+        "period_key": "2026-03",
+        "timeframe": "monthly",
+        "from_date": "2026-03-02",
+        "to_date": "2026-03-31",
+        "currency_strength": {
+          "USD": 14.438666,
+          "EUR": -1.709746,
+          "GBP": -1.079184,
+          "JPY": -1.302001,
+          "CHF": -2.599569,
+          "CAD": -1.938552,
+          "AUD": -2.37636,
+          "NZD": -3.433255
+        },
+        "ranking": [
+          "USD",
+          "GBP",
+          "JPY",
+          "EUR",
+          "CAD",
+          "AUD",
+          "CHF",
+          "NZD"
+        ],
+        "strongest_currency": "USD",
+        "strongest_score": 14.438666,
+        "weakest_currency": "NZD",
+        "weakest_score": -3.433255,
+        "pair_analysis": {
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": -17.872,
+          "bias": "SELL",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -17.872,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDCHF",
+            "base": "USD",
+            "quote": "CHF",
+            "strength_difference": 17.038,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.953
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": -16.815,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.941
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": 16.377,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.916
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": -16.148,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.904
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "monthly",
+          "wait_threshold": 3.574,
+          "absolute_floor": 0.05,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 17.872
+        },
+        "pair_returns": {
+          "EURUSD": -1.709746,
+          "GBPUSD": -1.079184,
+          "AUDUSD": -2.37636,
+          "NZDUSD": -3.433255,
+          "USDJPY": 1.302001,
+          "USDCHF": 2.599569,
+          "USDCAD": 1.938552
+        }
+      }
+    ]
+  }
+}

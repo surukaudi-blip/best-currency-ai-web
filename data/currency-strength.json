@@ -1,0 +1,911 @@
+{
+  "ok": true,
+  "data": {
+    "live": true,
+    "realtime": false,
+    "delivery": "GitHub Pages static JSON",
+    "source": "Backend FX Reference Feed",
+    "data_provider": "Frankfurter",
+    "provider_authority": "ECB",
+    "provider_name": "European Central Bank",
+    "provider_url": "api.frankfurter.dev",
+    "module": "Currency Strength Agent",
+    "received_at": "2026-08-16T17:24:24.715Z",
+    "generated_at": "2026-08-16T17:24:24.715Z",
+    "data_updated_at": "2026-08-14",
+    "session_date": "2026-08-14",
+    "comparison_date": "2026-08-13",
+    "timeframe": "1D",
+    "data_frequency": "ECB working-day reference rates",
+    "methodology": "Primary Currency Strength uses ECB-only reference rates via Frankfurter. Multi-provider data is confirmation only. Multi-Timeframe Alignment compares Daily/Weekly/Monthly ECB rankings, while Strength Percentile compares the current ECB score with prior same-timeframe ECB observations.",
+    "strength_timeframes": {
+      "daily": {
+        "timeframe": "daily",
+        "from_date": "2026-08-13",
+        "to_date": "2026-08-14",
+        "currency_strength": {
+          "USD": -2.64633,
+          "EUR": 0.285704,
+          "GBP": 0.332999,
+          "JPY": 0.200841,
+          "CHF": 0.104597,
+          "CAD": 0.530504,
+          "AUD": 0.432011,
+          "NZD": 0.759673
+        },
+        "ranking": [
+          "NZD",
+          "CAD",
+          "AUD",
+          "GBP",
+          "EUR",
+          "JPY",
+          "CHF",
+          "USD"
+        ],
+        "strongest_currency": "NZD",
+        "strongest_score": 0.759673,
+        "weakest_currency": "USD",
+        "weakest_score": -2.64633,
+        "pair_analysis": {
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": 3.406,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": 3.406,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": -3.177,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.933
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 3.078,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.904
+          },
+          {
+            "pair": "GBPUSD",
+            "base": "GBP",
+            "quote": "USD",
+            "strength_difference": 2.979,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.875
+          },
+          {
+            "pair": "EURUSD",
+            "base": "EUR",
+            "quote": "USD",
+            "strength_difference": 2.932,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.861
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "daily",
+          "wait_threshold": 0.681,
+          "absolute_floor": 0.005,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 3.406
+        },
+        "pair_returns": {
+          "EURUSD": 0.285704,
+          "GBPUSD": 0.332999,
+          "AUDUSD": 0.432011,
+          "NZDUSD": 0.759673,
+          "USDJPY": -0.200841,
+          "USDCHF": -0.104597,
+          "USDCAD": -0.530504
+        },
+        "strength_percentile": {
+          "methodology": "Current ECB strength is ranked against prior same-timeframe ECB observations; directional percentile uses signed score, magnitude percentile uses absolute score.",
+          "sample_size": 60,
+          "lookback_periods": 60,
+          "currency_percentiles": {
+            "USD": {
+              "directional_percentile": 11.7,
+              "magnitude_percentile": 81.7
+            },
+            "EUR": {
+              "directional_percentile": 85,
+              "magnitude_percentile": 73.3
+            },
+            "GBP": {
+              "directional_percentile": 85,
+              "magnitude_percentile": 76.7
+            },
+            "JPY": {
+              "directional_percentile": 86.7,
+              "magnitude_percentile": 65
+            },
+            "CHF": {
+              "directional_percentile": 71.7,
+              "magnitude_percentile": 20
+            },
+            "CAD": {
+              "directional_percentile": 100,
+              "magnitude_percentile": 98.3
+            },
+            "AUD": {
+              "directional_percentile": 85,
+              "magnitude_percentile": 71.7
+            },
+            "NZD": {
+              "directional_percentile": 95,
+              "magnitude_percentile": 90
+            }
+          },
+          "strongest": {
+            "currency": "NZD",
+            "score": 0.759673,
+            "directional_percentile": 95,
+            "magnitude_percentile": 90
+          },
+          "weakest": {
+            "currency": "USD",
+            "score": -2.64633,
+            "directional_percentile": 11.7,
+            "magnitude_percentile": 81.7
+          },
+          "cross_currency_gap": 3.406,
+          "gap_percentile": 80.8
+        }
+      },
+      "weekly": {
+        "timeframe": "weekly",
+        "from_date": "2026-08-10",
+        "to_date": "2026-08-14",
+        "currency_strength": {
+          "USD": -0.372769,
+          "EUR": 0.104103,
+          "GBP": 0.238243,
+          "JPY": -0.233232,
+          "CHF": -0.430528,
+          "CAD": 0.466284,
+          "AUD": 0.269122,
+          "NZD": -0.041223
+        },
+        "ranking": [
+          "CAD",
+          "AUD",
+          "GBP",
+          "EUR",
+          "NZD",
+          "JPY",
+          "USD",
+          "CHF"
+        ],
+        "strongest_currency": "CAD",
+        "strongest_score": 0.466284,
+        "weakest_currency": "CHF",
+        "weakest_score": -0.430528,
+        "pair_analysis": {
+          "pair": "CADCHF",
+          "base": "CAD",
+          "quote": "CHF",
+          "strength_difference": 0.897,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "CADCHF",
+            "base": "CAD",
+            "quote": "CHF",
+            "strength_difference": 0.897,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": -0.839,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.936
+          },
+          {
+            "pair": "AUDCHF",
+            "base": "AUD",
+            "quote": "CHF",
+            "strength_difference": 0.7,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.78
+          },
+          {
+            "pair": "CADJPY",
+            "base": "CAD",
+            "quote": "JPY",
+            "strength_difference": 0.7,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.78
+          },
+          {
+            "pair": "GBPCHF",
+            "base": "GBP",
+            "quote": "CHF",
+            "strength_difference": 0.669,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.746
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "weekly",
+          "wait_threshold": 0.179,
+          "absolute_floor": 0.02,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 0.897
+        },
+        "pair_returns": {
+          "EURUSD": 0.104103,
+          "GBPUSD": 0.238243,
+          "AUDUSD": 0.269122,
+          "NZDUSD": -0.041223,
+          "USDJPY": 0.233232,
+          "USDCHF": 0.430528,
+          "USDCAD": -0.466284
+        },
+        "strength_percentile": {
+          "methodology": "Current ECB strength is ranked against prior same-timeframe ECB observations; directional percentile uses signed score, magnitude percentile uses absolute score.",
+          "sample_size": 16,
+          "lookback_periods": 16,
+          "currency_percentiles": {
+            "USD": {
+              "directional_percentile": 37.5,
+              "magnitude_percentile": 0
+            },
+            "EUR": {
+              "directional_percentile": 68.8,
+              "magnitude_percentile": 25
+            },
+            "GBP": {
+              "directional_percentile": 56.3,
+              "magnitude_percentile": 25
+            },
+            "JPY": {
+              "directional_percentile": 37.5,
+              "magnitude_percentile": 37.5
+            },
+            "CHF": {
+              "directional_percentile": 31.3,
+              "magnitude_percentile": 50
+            },
+            "CAD": {
+              "directional_percentile": 87.5,
+              "magnitude_percentile": 68.8
+            },
+            "AUD": {
+              "directional_percentile": 75,
+              "magnitude_percentile": 31.3
+            },
+            "NZD": {
+              "directional_percentile": 62.5,
+              "magnitude_percentile": 0
+            }
+          },
+          "strongest": {
+            "currency": "CAD",
+            "score": 0.466284,
+            "directional_percentile": 87.5,
+            "magnitude_percentile": 68.8
+          },
+          "weakest": {
+            "currency": "CHF",
+            "score": -0.430528,
+            "directional_percentile": 31.3,
+            "magnitude_percentile": 50
+          },
+          "cross_currency_gap": 0.897,
+          "gap_percentile": 0
+        }
+      },
+      "monthly": {
+        "timeframe": "monthly",
+        "from_date": "2026-08-03",
+        "to_date": "2026-08-14",
+        "currency_strength": {
+          "USD": -1.226183,
+          "EUR": 0.277607,
+          "GBP": 0.492731,
+          "JPY": -1.487107,
+          "CHF": -0.471546,
+          "CAD": 1.090676,
+          "AUD": 1.076487,
+          "NZD": 0.247335
+        },
+        "ranking": [
+          "CAD",
+          "AUD",
+          "GBP",
+          "EUR",
+          "NZD",
+          "CHF",
+          "USD",
+          "JPY"
+        ],
+        "strongest_currency": "CAD",
+        "strongest_score": 1.090676,
+        "weakest_currency": "JPY",
+        "weakest_score": -1.487107,
+        "pair_analysis": {
+          "pair": "CADJPY",
+          "base": "CAD",
+          "quote": "JPY",
+          "strength_difference": 2.578,
+          "bias": "BUY",
+          "confidence": "HIGH",
+          "relative_strength": 1
+        },
+        "top_pair_opportunities": [
+          {
+            "pair": "CADJPY",
+            "base": "CAD",
+            "quote": "JPY",
+            "strength_difference": 2.578,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 1
+          },
+          {
+            "pair": "AUDJPY",
+            "base": "AUD",
+            "quote": "JPY",
+            "strength_difference": 2.564,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.994
+          },
+          {
+            "pair": "USDCAD",
+            "base": "USD",
+            "quote": "CAD",
+            "strength_difference": -2.317,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.899
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": 2.303,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.893
+          },
+          {
+            "pair": "GBPJPY",
+            "base": "GBP",
+            "quote": "JPY",
+            "strength_difference": 1.98,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.768
+          }
+        ],
+        "pair_threshold": {
+          "method": "dynamic_cross_sectional",
+          "timeframe": "monthly",
+          "wait_threshold": 0.516,
+          "absolute_floor": 0.05,
+          "relative_fraction": 0.2,
+          "max_cross_currency_gap": 2.578
+        },
+        "pair_returns": {
+          "EURUSD": 0.277607,
+          "GBPUSD": 0.492731,
+          "AUDUSD": 1.076487,
+          "NZDUSD": 0.247335,
+          "USDJPY": 1.487107,
+          "USDCHF": 0.471546,
+          "USDCAD": -1.090676
+        },
+        "strength_percentile": {
+          "methodology": "Current ECB strength is ranked against prior same-timeframe ECB observations; directional percentile uses signed score, magnitude percentile uses absolute score.",
+          "sample_size": 6,
+          "lookback_periods": 6,
+          "currency_percentiles": {
+            "USD": {
+              "directional_percentile": 33.3,
+              "magnitude_percentile": 16.7
+            },
+            "EUR": {
+              "directional_percentile": 66.7,
+              "magnitude_percentile": 0
+            },
+            "GBP": {
+              "directional_percentile": 66.7,
+              "magnitude_percentile": 0
+            },
+            "JPY": {
+              "directional_percentile": 16.7,
+              "magnitude_percentile": 66.7
+            },
+            "CHF": {
+              "directional_percentile": 33.3,
+              "magnitude_percentile": 33.3
+            },
+            "CAD": {
+              "directional_percentile": 66.7,
+              "magnitude_percentile": 16.7
+            },
+            "AUD": {
+              "directional_percentile": 50,
+              "magnitude_percentile": 16.7
+            },
+            "NZD": {
+              "directional_percentile": 50,
+              "magnitude_percentile": 0
+            }
+          },
+          "strongest": {
+            "currency": "CAD",
+            "score": 1.090676,
+            "directional_percentile": 66.7,
+            "magnitude_percentile": 16.7
+          },
+          "weakest": {
+            "currency": "JPY",
+            "score": -1.487107,
+            "directional_percentile": 16.7,
+            "magnitude_percentile": 66.7
+          },
+          "cross_currency_gap": 2.578,
+          "gap_percentile": 0
+        }
+      }
+    },
+    "multi_timeframe_alignment": {
+      "score": 80.8,
+      "state": "HIGH",
+      "methodology": "55% pairwise rank alignment + 25% currency direction consensus + 10% strongest consensus + 10% weakest consensus across Daily, Weekly and Monthly ECB strength.",
+      "rank_alignment_score": 88.9,
+      "direction_alignment_score": 87.5,
+      "pairwise_rank_correlation": {
+        "daily_weekly": 0.738,
+        "daily_monthly": 0.69,
+        "weekly_monthly": 0.905
+      },
+      "strongest_consensus": {
+        "currency": "CAD",
+        "count": 2
+      },
+      "weakest_consensus": {
+        "currency": null,
+        "count": 1
+      },
+      "timeframe_leaders": {
+        "daily": {
+          "strongest": "NZD",
+          "weakest": "USD"
+        },
+        "weekly": {
+          "strongest": "CAD",
+          "weakest": "CHF"
+        },
+        "monthly": {
+          "strongest": "CAD",
+          "weakest": "JPY"
+        }
+      },
+      "daily_pair_alignment": {
+        "pair": "NZDUSD",
+        "directions": {
+          "daily": "BUY",
+          "weekly": "BUY",
+          "monthly": "BUY"
+        },
+        "all_three_aligned": true,
+        "aligned_timeframes": 3
+      },
+      "currencies": {
+        "USD": {
+          "daily_rank": 8,
+          "weekly_rank": 7,
+          "monthly_rank": 7,
+          "average_rank": 7.33,
+          "rank_spread": 1,
+          "direction_consensus": 1,
+          "direction_state": "ALIGNED"
+        },
+        "EUR": {
+          "daily_rank": 5,
+          "weekly_rank": 4,
+          "monthly_rank": 4,
+          "average_rank": 4.33,
+          "rank_spread": 1,
+          "direction_consensus": 1,
+          "direction_state": "ALIGNED"
+        },
+        "GBP": {
+          "daily_rank": 4,
+          "weekly_rank": 3,
+          "monthly_rank": 3,
+          "average_rank": 3.33,
+          "rank_spread": 1,
+          "direction_consensus": 1,
+          "direction_state": "ALIGNED"
+        },
+        "JPY": {
+          "daily_rank": 6,
+          "weekly_rank": 6,
+          "monthly_rank": 8,
+          "average_rank": 6.67,
+          "rank_spread": 2,
+          "direction_consensus": 0.667,
+          "direction_state": "PARTIAL"
+        },
+        "CHF": {
+          "daily_rank": 7,
+          "weekly_rank": 8,
+          "monthly_rank": 6,
+          "average_rank": 7,
+          "rank_spread": 2,
+          "direction_consensus": 0.667,
+          "direction_state": "PARTIAL"
+        },
+        "CAD": {
+          "daily_rank": 2,
+          "weekly_rank": 1,
+          "monthly_rank": 1,
+          "average_rank": 1.33,
+          "rank_spread": 1,
+          "direction_consensus": 1,
+          "direction_state": "ALIGNED"
+        },
+        "AUD": {
+          "daily_rank": 3,
+          "weekly_rank": 2,
+          "monthly_rank": 2,
+          "average_rank": 2.33,
+          "rank_spread": 1,
+          "direction_consensus": 1,
+          "direction_state": "ALIGNED"
+        },
+        "NZD": {
+          "daily_rank": 1,
+          "weekly_rank": 5,
+          "monthly_rank": 5,
+          "average_rank": 3.67,
+          "rank_spread": 4,
+          "direction_consensus": 0.667,
+          "direction_state": "PARTIAL"
+        }
+      }
+    },
+    "confirmation_layer": {
+      "role": "secondary_validation",
+      "primary_source": "ECB-only via Frankfurter",
+      "confirmation_source": "Frankfurter blended multi-provider",
+      "date_alignment": "Confirmation snapshots use the exact ECB period start/end dates.",
+      "scoring_method": "40% ranking + 20% score direction + 15% strongest + 15% weakest + 5% primary pair + 5% pair bias.",
+      "provider_error": null,
+      "timeframes": {
+        "daily": {
+          "available": true,
+          "agreement": "HIGH",
+          "agreement_score": 97.5,
+          "confidence_adjustment": "NONE",
+          "rank_correlation": 1,
+          "rank_agreement_score": 1,
+          "direction_agreement": 0.875,
+          "strongest_match": true,
+          "weakest_match": true,
+          "pair_match": true,
+          "bias_match": true,
+          "score_components": {
+            "ranking_weight": 0.4,
+            "direction_weight": 0.2,
+            "strongest_weight": 0.15,
+            "weakest_weight": 0.15,
+            "pair_weight": 0.05,
+            "bias_weight": 0.05
+          },
+          "primary": {
+            "strongest": "NZD",
+            "weakest": "USD",
+            "pair": "NZDUSD",
+            "bias": "BUY"
+          },
+          "confirmation": {
+            "strongest": "NZD",
+            "weakest": "USD",
+            "pair": "NZDUSD",
+            "bias": "BUY"
+          }
+        },
+        "weekly": {
+          "available": true,
+          "agreement": "LOW",
+          "agreement_score": 48.6,
+          "confidence_adjustment": "REDUCE",
+          "rank_correlation": 0.429,
+          "rank_agreement_score": 0.714,
+          "direction_agreement": 0.75,
+          "strongest_match": false,
+          "weakest_match": false,
+          "pair_match": false,
+          "bias_match": true,
+          "score_components": {
+            "ranking_weight": 0.4,
+            "direction_weight": 0.2,
+            "strongest_weight": 0.15,
+            "weakest_weight": 0.15,
+            "pair_weight": 0.05,
+            "bias_weight": 0.05
+          },
+          "primary": {
+            "strongest": "CAD",
+            "weakest": "CHF",
+            "pair": "CADCHF",
+            "bias": "BUY"
+          },
+          "confirmation": {
+            "strongest": "USD",
+            "weakest": "JPY",
+            "pair": "USDJPY",
+            "bias": "BUY"
+          }
+        },
+        "monthly": {
+          "available": true,
+          "agreement": "HIGH",
+          "agreement_score": 97.5,
+          "confidence_adjustment": "NONE",
+          "rank_correlation": 1,
+          "rank_agreement_score": 1,
+          "direction_agreement": 0.875,
+          "strongest_match": true,
+          "weakest_match": true,
+          "pair_match": true,
+          "bias_match": true,
+          "score_components": {
+            "ranking_weight": 0.4,
+            "direction_weight": 0.2,
+            "strongest_weight": 0.15,
+            "weakest_weight": 0.15,
+            "pair_weight": 0.05,
+            "bias_weight": 0.05
+          },
+          "primary": {
+            "strongest": "CAD",
+            "weakest": "JPY",
+            "pair": "CADJPY",
+            "bias": "BUY"
+          },
+          "confirmation": {
+            "strongest": "CAD",
+            "weakest": "JPY",
+            "pair": "CADJPY",
+            "bias": "BUY"
+          }
+        }
+      }
+    },
+    "currency_strength": {
+      "USD": -2.64633,
+      "EUR": 0.285704,
+      "GBP": 0.332999,
+      "JPY": 0.200841,
+      "CHF": 0.104597,
+      "CAD": 0.530504,
+      "AUD": 0.432011,
+      "NZD": 0.759673
+    },
+    "ranking": [
+      "NZD",
+      "CAD",
+      "AUD",
+      "GBP",
+      "EUR",
+      "JPY",
+      "CHF",
+      "USD"
+    ],
+    "strongest_currency": "NZD",
+    "weakest_currency": "USD",
+    "pair_analysis": {
+      "pair": "NZDUSD",
+      "base": "NZD",
+      "quote": "USD",
+      "strength_difference": 3.406,
+      "bias": "BUY",
+      "confidence": "HIGH",
+      "relative_strength": 1
+    },
+    "top_pair_opportunities": [
+      {
+        "pair": "NZDUSD",
+        "base": "NZD",
+        "quote": "USD",
+        "strength_difference": 3.406,
+        "bias": "BUY",
+        "confidence": "HIGH",
+        "relative_strength": 1
+      },
+      {
+        "pair": "USDCAD",
+        "base": "USD",
+        "quote": "CAD",
+        "strength_difference": -3.177,
+        "bias": "SELL",
+        "confidence": "HIGH",
+        "relative_strength": 0.933
+      },
+      {
+        "pair": "AUDUSD",
+        "base": "AUD",
+        "quote": "USD",
+        "strength_difference": 3.078,
+        "bias": "BUY",
+        "confidence": "HIGH",
+        "relative_strength": 0.904
+      },
+      {
+        "pair": "GBPUSD",
+        "base": "GBP",
+        "quote": "USD",
+        "strength_difference": 2.979,
+        "bias": "BUY",
+        "confidence": "HIGH",
+        "relative_strength": 0.875
+      },
+      {
+        "pair": "EURUSD",
+        "base": "EUR",
+        "quote": "USD",
+        "strength_difference": 2.932,
+        "bias": "BUY",
+        "confidence": "HIGH",
+        "relative_strength": 0.861
+      }
+    ],
+    "pair_threshold": {
+      "method": "dynamic_cross_sectional",
+      "timeframe": "daily",
+      "wait_threshold": 0.681,
+      "absolute_floor": 0.005,
+      "relative_fraction": 0.2,
+      "max_cross_currency_gap": 3.406
+    },
+    "pair_returns": {
+      "EURUSD": 0.285704,
+      "GBPUSD": 0.332999,
+      "AUDUSD": 0.432011,
+      "NZDUSD": 0.759673,
+      "USDJPY": -0.200841,
+      "USDCHF": -0.104597,
+      "USDCAD": -0.530504
+    },
+    "strength_percentile": {
+      "methodology": "Current ECB strength is ranked against prior same-timeframe ECB observations; directional percentile uses signed score, magnitude percentile uses absolute score.",
+      "sample_size": 60,
+      "lookback_periods": 60,
+      "currency_percentiles": {
+        "USD": {
+          "directional_percentile": 11.7,
+          "magnitude_percentile": 81.7
+        },
+        "EUR": {
+          "directional_percentile": 85,
+          "magnitude_percentile": 73.3
+        },
+        "GBP": {
+          "directional_percentile": 85,
+          "magnitude_percentile": 76.7
+        },
+        "JPY": {
+          "directional_percentile": 86.7,
+          "magnitude_percentile": 65
+        },
+        "CHF": {
+          "directional_percentile": 71.7,
+          "magnitude_percentile": 20
+        },
+        "CAD": {
+          "directional_percentile": 100,
+          "magnitude_percentile": 98.3
+        },
+        "AUD": {
+          "directional_percentile": 85,
+          "magnitude_percentile": 71.7
+        },
+        "NZD": {
+          "directional_percentile": 95,
+          "magnitude_percentile": 90
+        }
+      },
+      "strongest": {
+        "currency": "NZD",
+        "score": 0.759673,
+        "directional_percentile": 95,
+        "magnitude_percentile": 90
+      },
+      "weakest": {
+        "currency": "USD",
+        "score": -2.64633,
+        "directional_percentile": 11.7,
+        "magnitude_percentile": 81.7
+      },
+      "cross_currency_gap": 3.406,
+      "gap_percentile": 80.8
+    },
+    "next_day_prediction": {
+      "strongest_candidates": [
+        {
+          "currency": "USD",
+          "probability": 31.03
+        },
+        {
+          "currency": "NZD",
+          "probability": 13.99
+        },
+        {
+          "currency": "CAD",
+          "probability": 13.81
+        }
+      ],
+      "weakest_candidates": [
+        {
+          "currency": "USD",
+          "probability": 59.66
+        },
+        {
+          "currency": "JPY",
+          "probability": 15.52
+        },
+        {
+          "currency": "NZD",
+          "probability": 12.41
+        }
+      ],
+      "model": "frequency_plus_momentum",
+      "weights": {
+        "frequency": 0.45,
+        "momentum": 0.55
+      },
+      "history_sessions_used": 20,
+      "history_source": "ECB-only static backfill"
+    },
+    "reversal_intelligence": {
+      "timeframe": "daily",
+      "current_strong": "NZD",
+      "current_weak": "USD",
+      "strong_continuation_probability": 13.99,
+      "strong_to_weak_probability": 12.41,
+      "weak_continuation_probability": 59.66,
+      "weak_to_strong_probability": 31.03
+    },
+    "notice": "ECB-only remains canonical. Blended multi-provider is confirmation only. Percentiles are historical context, not probabilities of profit. Reference rates are not real-time executable trading quotes."
+  }
+}
