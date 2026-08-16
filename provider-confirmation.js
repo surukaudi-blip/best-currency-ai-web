@@ -130,7 +130,7 @@
   }
 
   function load(){
-    fetch('./data/currency-strength.json',{headers:{Accept:'application/json'},cache:'no-store'})
+    fetch('./data/currency-strength.json?v=af86b14ceb',{headers:{Accept:'application/json'},cache:'no-store'})
       .then(function(r){if(!r.ok) throw new Error('HTTP '+r.status);return r.json();})
       .then(function(payload){latest=payload&&payload.data?payload.data:payload;render();})
       .catch(function(){
