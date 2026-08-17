@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T02:42:54.470Z",
+  "generated_at": "2026-08-17T02:50:17.833Z",
   "pair": "NZDUSD",
   "canonical_bias": "BUY",
   "macro_yield": {
@@ -7,7 +7,7 @@
     "direction": "OPPOSES",
     "score": 16.7,
     "provider": "FRED (OECD / Federal Reserve source series)",
-    "updated_at": "2026-08-17T02:42:12.070Z",
+    "updated_at": "2026-08-17T02:49:20.939Z",
     "evidence": [
       "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
       "10Y spread momentum: -0.210 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
@@ -53,7 +53,7 @@
     "direction": "SUPPORTS",
     "score": 87.5,
     "provider": "FRED (Federal Reserve / EIA source series)",
-    "updated_at": "2026-08-17T02:42:12.266Z",
+    "updated_at": "2026-08-17T02:49:21.153Z",
     "evidence": [
       "NFCI: level -0.5490 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
       "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
@@ -111,10 +111,10 @@
     "direction": "NEUTRAL",
     "score": 51.9,
     "provider": "GDELT DOC 2.0 + Google News RSS fallback",
-    "updated_at": "2026-08-17T02:42:54.470Z",
+    "updated_at": "2026-08-17T02:50:17.833Z",
     "evidence": [
       "Headline-stance differential NZDUSD BUY: 0.039 after directional-headline reliability 25% => NEUTRAL.",
-      "NZD: 1 supportive vs 0 opposing directional headline(s); balance 1 from 8 recent articles via GDELT DOC 2.0.",
+      "NZD: 1 supportive vs 0 opposing directional headline(s); balance 1 from 7 recent articles via GDELT DOC 2.0.",
       "USD: 12 supportive vs 1 opposing directional headline(s); balance 0.846 from 40 recent articles via Google News RSS fallback.",
       "High-impact headline risk: HIGH; 4 relevant headline(s) detected within 24h."
     ],
@@ -188,7 +188,7 @@
         "currency": "NZD",
         "query": "(\"New Zealand dollar\" OR \"Reserve Bank of New Zealand\" OR RBNZ) (inflation OR \"interest rate\" OR rates OR economy OR growth OR employment OR monetary OR \"central bank\") sourcelang:english",
         "latest_seen_at": "2026-08-16T22:45:00.000Z",
-        "article_count": 8,
+        "article_count": 7,
         "supportive_headline_count": 1,
         "opposing_headline_count": 0,
         "classified_headline_count": 1

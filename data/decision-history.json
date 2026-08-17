@@ -1,0 +1,131 @@
+{
+  "schema_version": "1.0",
+  "status": "DECISION_HISTORY_COLLECTION_ACTIVE",
+  "started_at": "2026-08-17T02:50:18.076Z",
+  "updated_at": "2026-08-17T02:50:18.076Z",
+  "policy": {
+    "start_policy": "prospective_only_no_historical_backfill",
+    "capture_policy": "one_immutable_snapshot_per_complete_ecb_session",
+    "mutation_policy": "append_only_existing_snapshots_never_replaced",
+    "purpose": "audit_explainability_and_intelligence_transition_history",
+    "frozen_model_policy": "timeline_does_not_modify_currency_strength_actionability_risk_counter_thesis_or_final_reasoner"
+  },
+  "summary": {
+    "captured": 1,
+    "first_session": "2026-08-14",
+    "last_session": "2026-08-14",
+    "buy_count": 1,
+    "sell_count": 0,
+    "risk_states": {
+      "MODERATE": 1
+    },
+    "final_statuses": {
+      "MIXED_CONTEXT": 1
+    },
+    "decisions": {
+      "REVIEW_SELECTIVELY": 1
+    }
+  },
+  "entries": [
+    {
+      "id": "DECISION-0001-2026-08-14",
+      "captured_at": "2026-08-17T02:50:18.076Z",
+      "snapshot": {
+        "session_date": "2026-08-14",
+        "pair": "NZDUSD",
+        "canonical_bias": "BUY",
+        "currency_strength": {
+          "strongest_currency": "NZD",
+          "weakest_currency": "USD",
+          "strength_difference": 3.406,
+          "provider_agreement": 97.5,
+          "multi_timeframe_alignment": 80.8
+        },
+        "actionability": {
+          "version": "1.1",
+          "score": 87.5,
+          "state": "ACTIONABLE",
+          "decision": "EVALUATE_SETUP",
+          "primary_limiter": "EVIDENCE_QUALITY",
+          "regime": "CONFIRMED_TREND"
+        },
+        "context": {
+          "macro_yield": {
+            "available": true,
+            "state": "OPPOSES",
+            "score": 16.7,
+            "provider": "FRED (OECD / Federal Reserve source series)"
+          },
+          "cross_market": {
+            "available": true,
+            "state": "SUPPORTS",
+            "score": 87.5,
+            "provider": "FRED (Federal Reserve / EIA source series)"
+          },
+          "news": {
+            "available": true,
+            "state": "NEUTRAL",
+            "score": 51.9,
+            "provider": "GDELT DOC 2.0 + Google News RSS fallback",
+            "event_risk": "HIGH"
+          },
+          "coverage_percent": 100,
+          "counts": {
+            "supports": 1,
+            "opposes": 1,
+            "mixed_or_neutral": 1,
+            "available": 3,
+            "expected": 3
+          }
+        },
+        "risk": {
+          "version": "0.2",
+          "score": 48.4,
+          "state": "MODERATE",
+          "primary_driver": {
+            "key": "context_opposition",
+            "label": "Context Opposition",
+            "contribution": 13.3
+          }
+        },
+        "counter_thesis": {
+          "version": "0.2",
+          "state": "ACTIVE",
+          "challenge_level": "HIGH",
+          "primary_objection_source": "macro_yield",
+          "primary_objection_severity": "HIGH",
+          "triggered_conditions": [
+            "context_dispersion_60",
+            "high_event_risk"
+          ]
+        },
+        "final_reasoner": {
+          "version": "0.2",
+          "explainability_version": "0.2",
+          "decision_logic_version": "0.1_frozen",
+          "status": "MIXED_CONTEXT",
+          "outlook": "MIXED",
+          "decision": "REVIEW_SELECTIVELY",
+          "key_risk": {
+            "key": "context_opposition",
+            "label": "Context Opposition",
+            "contribution": 13.3
+          },
+          "active_invalidation_triggers": [
+            "context_dispersion_60",
+            "high_event_risk"
+          ],
+          "final_assessment": "NZDUSD BUY has Actionability 87.5/100 with regime CONFIRMED_TREND, but contextual evidence is not one-sided. Supports: Cross-Market. Opposes: Macro & Yield. Mixed/neutral: News. Risk v0.2 MODERATE at 48.4/100. Primary challenge: Macro & Yield explicitly opposes the NZDUSD BUY setup at 16.7/100. Decision remains REVIEW_SELECTIVELY."
+        }
+      },
+      "snapshot_hash": "de702fe84b65a0c46e3550d0372047f84da918e1a5e4ba420a6f70279f28944c",
+      "changes_vs_previous": [
+        {
+          "key": "collection_start",
+          "label": "Timeline dimulai",
+          "detail": "Snapshot pertama Decision History direkam."
+        }
+      ]
+    }
+  ]
+}
