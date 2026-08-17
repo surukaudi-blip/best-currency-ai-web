@@ -35,10 +35,10 @@
       '<div class="intel-stage"><div class="stage-k">02 · Cross-Market</div><div class="stage-v" id="intel-cross-v">—</div><div class="stage-s" id="intel-cross-s">Memeriksa konfirmasi lintas pasar…</div></div>' +
       '<div class="intel-stage"><div class="stage-k">03 · News</div><div class="stage-v" id="intel-news-v">—</div><div class="stage-s" id="intel-news-s">Memeriksa bukti berita…</div><div class="stage-meta" id="intel-news-meta"></div></div>' +
       '<div class="intel-stage"><div class="stage-k">04 · Risk</div><div class="stage-v" id="intel-risk-v">—</div><div class="stage-s" id="intel-risk-s">Mengukur risiko kontekstual…</div><div class="stage-meta" id="intel-risk-meta"></div></div>' +
-      '<div class="intel-stage"><div class="stage-k">05 · Counter-Thesis</div><div class="stage-v" id="intel-counter-v">—</div><div class="stage-s" id="intel-counter-s">Mencari bukti yang menentang setup…</div></div>' +
+      '<div class="intel-stage"><div class="stage-k">05 · Counter-Thesis</div><div class="stage-v" id="intel-counter-v">—</div><div class="stage-s" id="intel-counter-s">Mencari bukti yang menentang setup…</div><div class="stage-meta" id="intel-counter-meta"></div></div>' +
       '<div class="intel-stage final-stage"><div class="stage-k">06 · Final Reasoner</div><div class="stage-v" id="intel-final-v">—</div><div class="stage-s" id="intel-final-s">Menunggu seluruh bukti yang diperlukan…</div><div class="stage-meta" id="intel-final-meta"></div></div>' +
     '</div>' +
-    '<div class="intel-layer-foot">Fail-closed: Macro & Yield, Cross-Market, dan News tidak akan diisi dengan asumsi. Risk adalah indeks risiko keputusan kontekstual, bukan probabilitas rugi. Final Reasoner hanya membentuk outlook ketika bukti yang diperlukan tersedia.</div>';
+    '<div class="intel-layer-foot">Fail-closed: Macro & Yield, Cross-Market, dan News tidak diisi dengan asumsi. Risk v0.2 tetap dibekukan selama Fresh OOS. Counter-Thesis adalah adversarial review, bukan probabilitas rugi dan tidak membalik sinyal ECB. Final Reasoner tetap memakai logika keputusan yang sama.</div>';
 
   var anchor=document.getElementById('provider-confirmation');
   if(anchor) anchor.insertAdjacentElement('afterend',box); else pairPanel.appendChild(box);
@@ -51,6 +51,13 @@
     if(s==='OPPOSES'||s==='HIGH'||s==='CONTEXT_CONTRADICTED'||s==='RISK_CONSTRAINED') return badge(s==='OPPOSES'?'MENENTANG':s==='HIGH'?'RISIKO TINGGI':'TERBATAS','intel-layer-bad');
     if(s==='MIXED'||s==='NEUTRAL'||s==='MODERATE'||s==='ACTIVE'||s==='LIMITED'||s==='MIXED_CONTEXT') return badge(s==='MODERATE'?'RISIKO SEDANG':s==='ACTIVE'?'AKTIF':s==='LIMITED'?'TERBATAS':'CAMPURAN','intel-layer-warn');
     return badge('MENUNGGU DATA','intel-layer-muted');
+  }
+  function challengeBadge(level){
+    var l=String(level||'').toUpperCase();
+    if(l==='HIGH') return badge('TANTANGAN TINGGI','intel-layer-bad');
+    if(l==='MODERATE') return badge('TANTANGAN SEDANG','intel-layer-warn');
+    if(l==='LOW') return badge('TANTANGAN RENDAH','intel-layer-ok');
+    return '';
   }
   function firstText(arr,fallback){return Array.isArray(arr)&&arr.length?String(arr[0]):fallback;}
   function fmtScore(n){return Number.isFinite(Number(n))?Number(n).toFixed(1).replace('.',','):null;}
@@ -72,6 +79,13 @@
       context_dispersion:'Konflik antar-konteks',news_event:'Event berita',reversal:'Risiko reversal',data_uncertainty:'Ketidakpastian data'
     };
     return map[key]||key||'Risiko';
+  }
+  function counterSourceLabel(key){
+    var map={
+      macro_yield:'Macro & Yield',cross_market:'Cross-Market',news:'News',risk:'Risk',regime:'Regime',actionability:'Actionability',
+      reversal_intelligence:'Reversal', 'risk.context_dispersion':'Konflik konteks', counter_thesis:'Counter-Thesis'
+    };
+    return map[key]||key||'—';
   }
   function render(data){
     var intel=data&&data.intelligence_layer;
@@ -109,8 +123,16 @@
     var counter=layers.counter_thesis||{};
     var cv=document.getElementById('intel-counter-v');
     var cs=document.getElementById('intel-counter-s');
-    if(cv) cv.innerHTML=stateBadge(counter.state);
-    if(cs) cs.textContent=firstText(counter.objections,counter.note||'Counter-thesis belum tersedia.');
+    var cm=document.getElementById('intel-counter-meta');
+    if(cv) cv.innerHTML=stateBadge(counter.state)+(counter.challenge_level?' '+challengeBadge(counter.challenge_level):'');
+    var primary=counter.primary_objection&&counter.primary_objection.statement?counter.primary_objection.statement:null;
+    if(cs) cs.textContent=primary||firstText(counter.objections,counter.note||'Counter-thesis belum tersedia.');
+    if(cm){
+      var nObj=Array.isArray(counter.structured_objections)?counter.structured_objections.length:Array.isArray(counter.objections)?counter.objections.length:0;
+      var source=counter.primary_objection&&counter.primary_objection.source_layer?counterSourceLabel(counter.primary_objection.source_layer):'—';
+      var triggered=Array.isArray(counter.triggered_conditions)?counter.triggered_conditions.length:0;
+      cm.textContent='Utama · '+source+' · '+nObj+' keberatan'+(triggered?' · '+triggered+' trigger aktif':'')+(counter.version?' · v'+counter.version:'');
+    }
 
     var finalR=layers.final_reasoner||{};
     var fv=document.getElementById('intel-final-v');
@@ -121,7 +143,7 @@
       fv.innerHTML=esc(finalLabel)+' '+stateBadge(finalR.status);
     }
     if(fs) fs.textContent=finalR.explanation||'Final Reasoner belum tersedia.';
-    if(fm) fm.textContent=(finalR.pair||'—')+' · Bias ECB '+(finalR.canonical_bias||'—')+' · Cakupan konteks '+(Number.isFinite(Number(finalR.contextual_coverage_percent))?finalR.contextual_coverage_percent:'0')+'%'+(finalR.risk_version?' · Risk v'+finalR.risk_version:'');
+    if(fm) fm.textContent=(finalR.pair||'—')+' · Bias ECB '+(finalR.canonical_bias||'—')+' · Cakupan konteks '+(Number.isFinite(Number(finalR.contextual_coverage_percent))?finalR.contextual_coverage_percent:'0')+'%'+(finalR.risk_version?' · Risk v'+finalR.risk_version:'')+(finalR.counter_thesis_version?' · CT v'+finalR.counter_thesis_version:'');
 
     var readiness=document.getElementById('intel-readiness');
     var state=String(intel.readiness&&intel.readiness.state||'WAITING_FOR_CONTEXT_PROVIDERS');
@@ -133,7 +155,7 @@
   }
 
   function load(){
-    fetch('./data/currency-strength.json?v=d921873e6d',{headers:{Accept:'application/json'},cache:'no-store'})
+    fetch('./data/currency-strength.json?v=ca9382eb73',{headers:{Accept:'application/json'},cache:'no-store'})
       .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
       .then(function(payload){render(payload&&payload.data?payload.data:payload);})
       .catch(function(){var el=document.getElementById('intel-readiness');if(el){el.className='intel-layer-badge intel-layer-bad';el.textContent='GAGAL MEMUAT';}});

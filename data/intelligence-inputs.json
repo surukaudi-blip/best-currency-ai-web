@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T01:19:55.370Z",
+  "generated_at": "2026-08-17T02:17:45.522Z",
   "pair": "NZDUSD",
   "canonical_bias": "BUY",
   "macro_yield": {
@@ -7,7 +7,7 @@
     "direction": "OPPOSES",
     "score": 16.7,
     "provider": "FRED (OECD / Federal Reserve source series)",
-    "updated_at": "2026-08-17T01:19:18.049Z",
+    "updated_at": "2026-08-17T02:16:55.559Z",
     "evidence": [
       "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
       "10Y spread momentum: -0.210 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
@@ -53,7 +53,7 @@
     "direction": "SUPPORTS",
     "score": 87.5,
     "provider": "FRED (Federal Reserve / EIA source series)",
-    "updated_at": "2026-08-17T01:19:18.240Z",
+    "updated_at": "2026-08-17T02:16:55.868Z",
     "evidence": [
       "NFCI: level -0.5490 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
       "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
@@ -108,18 +108,26 @@
   },
   "news": {
     "available": true,
-    "direction": "NEUTRAL",
-    "score": 51.9,
-    "provider": "GDELT DOC 2.0 + Google News RSS fallback",
-    "updated_at": "2026-08-17T01:19:55.370Z",
+    "direction": "MIXED",
+    "score": 43.4,
+    "provider": "Google News RSS fallback",
+    "updated_at": "2026-08-17T02:17:45.522Z",
     "evidence": [
-      "Headline-stance differential NZDUSD BUY: 0.039 after directional-headline reliability 25% => NEUTRAL.",
-      "NZD: 1 supportive vs 0 opposing directional headline(s); balance 1 from 12 recent articles via GDELT DOC 2.0.",
+      "Headline-stance differential NZDUSD BUY: -0.132 after directional-headline reliability 100% => MIXED.",
+      "NZD: 6 supportive vs 1 opposing directional headline(s); balance 0.714 from 27 recent articles via Google News RSS fallback.",
       "USD: 12 supportive vs 1 opposing directional headline(s); balance 0.846 from 40 recent articles via Google News RSS fallback.",
-      "High-impact headline risk: HIGH; 3 relevant headline(s) detected within 24h."
+      "High-impact headline risk: HIGH; 4 relevant headline(s) detected within 24h."
     ],
     "missing_evidence": [],
     "headlines": [
+      {
+        "title": "Audinate Group Sees FY27 US Dollar Gross Profit Growth In Line With Or Slightly Ahead Of Rate In FY26 - TradingView",
+        "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQWXNUY2g5WEJFVjMxZ193a29OTHpzVURRb3Rkc2pHMl9aWnJDMm5COHFtY0tXTUVIYV9wQXFyU3ZYYVBjdGJhbXVIS3JuRmxMS01iNWZueFpOaUVqSkV4SWNfU2dNNERhekZrME16ZTlmSllJWmttTk96RjhkMzhSQVdWV1V4RzItRGNTOS1EM0lXeFd5c1FKZTZvNGdEOTNxaWRTQmJ6VWFQdE9pZERTTklrQnNlVy1xZW9BeDkzX296dE5GSDhCU2VlMVVveEpxS1RSX3p6bXR4SE1Md2F0b0lrNkE1R3dFRWdER0UwMmExbVNOaUZEWDhaSmxnVFZl?oc=5",
+        "domain": "TradingView",
+        "sourcecountry": null,
+        "language": "English",
+        "seen_at": "2026-08-17T02:01:00.000Z"
+      },
       {
         "title": "S&P 500 Hits Record High August 2026: Inflation Cools & AI Stocks Rally - Intellectia AI",
         "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1LNXNhSVh1ZV9zU3BUQnQxV1RlZldsVEpJSVRXN0R3ZFZiT0ZKeW9scFRLT0RZVWlFQUtqbUVJQjVYYzNrNlpQM2JQVGphZGMtbFlIVWRUM1djQ0syZlVubnlZR2RaVy16OEVfcw?oc=5",
@@ -145,67 +153,59 @@
         "seen_at": "2026-08-16T09:03:00.000Z"
       },
       {
-        "title": "THINK Ahead: UK inflation and labour market data plus July Fed minutes - ING THINK economic and financial analysis | ING THINK",
-        "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9wemNJRDdIM2I0OE0zSTlJdzJ0RUdXSkE5ajM1b2JLN2stbEhiazZ1aDhJUXotcGV4MmFPbGhpWUdzVzFyNDRwRGhNbWxVNlliZU00WERfWURtTkgta0FZ?oc=5",
-        "domain": "ING THINK economic and financial analysis | ING THINK",
+        "title": "Germany’s Wholesale Price Inflation Slows in July, Missing Forecasts - CryptoRank",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE0yTzVJMHg4RGZWbXhjZndUbVl0T2lUT0dDOEo0TDRmYkIxMW13bnVldjJnV05MQ0dOY1d0dFJhMlZuS01xSlB5b0J2VzRXT2tUMGNfLTZkUlNiZENGRTVHei1fQV9uOWJUcndCU0hqOHZXdXRpMTBqWlEyWjE?oc=5",
+        "domain": "CryptoRank",
         "sourcecountry": null,
         "language": "English",
-        "seen_at": "2026-08-15T07:15:39.000Z"
+        "seen_at": "2026-08-15T04:23:42.000Z"
       },
       {
-        "title": "Cooler inflation data may force Warsh's divided Fed to hold the line on rates - Reuters",
-        "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQbDJaOWp0UVZZRVd3MUp5UGNUVk1EOXNybWFfeXRKR2FQYzJsUnJCN3VEU1I2bldJWHFodHlUWXQxcUdzXzVtaTN4RmEyaHlwREhvdVpialZycTYyaFozME5kWWV3MGFqT1hGS00zTnMyQmVDZkZXZTFvT0VGR0RSMU1FMnBiT3dyZFlSQmx5RDRXX0JsZ1dPMy1KOTNteGVOaVJRemdUaDhtWkpmRndEeQ?oc=5",
-        "domain": "Reuters",
+        "title": "France Inflation Holds at 2.4% in July, Matching Forecasts - CryptoRank",
+        "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE93anZBc0pOejNJTjZ3N1BQWk9fSFhmWG5WNE56b25GRlBoQU1HOHN1Zk9nTjhuYkkzNHp5YTRTOWJPX1hDLVFaMjZmZzQwX2JtcE1tWDd4TDdMVjRIMTJ4NlE2WU5XT1ZlVk9FeDhaenp6Zw?oc=5",
+        "domain": "CryptoRank",
         "sourcecountry": null,
         "language": "English",
-        "seen_at": "2026-08-14T10:59:51.000Z"
+        "seen_at": "2026-08-15T03:35:59.000Z"
       },
       {
-        "title": "New Zealand central bank maintains loan - to - value ratio settings - Xinhua",
-        "url": "https://english.news.cn/20260814/4e04a23ab8364b7682d6eaded0a08fbd/c.html",
-        "domain": "english.news.cn",
+        "title": "Markets Shift Focus From Inflation to Growth Risks: What Investors Need to Know - CryptoRank",
+        "url": "https://news.google.com/rss/articles/CBMiggFBVV95cUxPLWlWWXd3WUlLOEZucXJ2MHBPOThaTk1UcU5zR1dkSWhTTjczNG9sSW1zWUVsS09fb3VqY09mdEtMa24tVzh5Z0xkUUZjajlHM1JRMWJHTVY1MlBzWjQ1ZTdOMjBaRnNPQ1lPelBjbUNqX0VHZVBBdXMxR1BMZ3dlbG1n?oc=5",
+        "domain": "CryptoRank",
         "sourcecountry": null,
         "language": "English",
-        "seen_at": "2026-08-14T07:15:00.000Z"
+        "seen_at": "2026-08-15T02:58:54.000Z"
       },
       {
-        "title": "Gold rises on weaker dollar as inflation data cements rate-hold bets - CNBC",
-        "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOVWxidENoLWdvdmlvbHp3RHdjdTN1RmFDc1RoVUVIVTFxQVFmNnJLRE0wUHlkcEhEQkIxbEpfQkR5VEZjdURzdThqenduWVgtclhTQXhvZ19WZFB2QVFDb0s3eURsOUMyMk1FNF9vRHFBVGV1eGdSUi1TX0l3Ti1IVmVTTzNlNXN2VHpmU0VnQm1sVk11ejgteFA1Z1VWNk5sWk1KWndUWjVWOTjSAbABQVVfeXFMUG5Ec1dBSHJGZUlabzZqWG1KUFpxZkgwNU1iSjhud0Q2MlpKN3lBSVBlTnRrenJjZm12NlZGSjlrOWFTT1hYY2FMbmJORm4zdlVlUEYydFZDQV9mbXpfeHJxSDNZeE1QOU5nWEQ5YnZobElnRjNOQWFEUk52OVh3MWZrNjVuUjJVTlVfLVhBcktIY0FDQ3dadE9Lc3RpSlJMWlp2TVNIdGwxaHVhS0VhaFg?oc=5",
-        "domain": "CNBC",
+        "title": "Eurozone Employment Growth Holds Steady at 0.1% in Q2, Matching Forecasts - CryptoRank",
+        "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE9ES0txX2RBWG84bXVRQjNhY0o5bkFYYkJ2dnFNVXBsb0VfUVZsZkd3Qkt6ZlQtYnFZemc0OExBak45VWIwUjRsMDB4c1BHc2Z5ekN3bXB0MW9QOEtJZXUtWFJWOWc3Sk1yVFFxTWp5RjFPU0VPcnlJa1l2ZlU?oc=5",
+        "domain": "CryptoRank",
         "sourcecountry": null,
         "language": "English",
-        "seen_at": "2026-08-14T04:18:59.000Z"
-      },
-      {
-        "title": "New Zealand central bank to maintain current home lending rules",
-        "url": "https://www.businesstimes.com.sg/property/new-zealands-central-bank-maintain-current-home-lending-rules",
-        "domain": "businesstimes.com.sg",
-        "sourcecountry": "Singapore",
-        "language": "English",
-        "seen_at": "2026-08-14T01:45:00.000Z"
+        "seen_at": "2026-08-14T23:34:00.000Z"
       }
     ],
     "event_risk": {
       "level": "HIGH",
-      "recent_high_impact_24h": 3
+      "recent_high_impact_24h": 4
     },
     "note": "Live News adapter using real macro/central-bank headlines. GDELT DOC 2.0 is primary; Google News RSS is a failover when the public GDELT endpoint is rate-limited or unavailable. Direction uses a transparent local headline-stance lexicon and pair differential with reliability damping. The score is contextual alignment, not a probability of profit or a forecast of headline impact.",
     "provenance": [
       {
-        "provider": "GDELT DOC 2.0",
+        "provider": "Google News RSS fallback",
         "currency": "NZD",
-        "query": "(\"New Zealand dollar\" OR \"Reserve Bank of New Zealand\" OR RBNZ) (inflation OR \"interest rate\" OR rates OR economy OR growth OR employment OR monetary OR \"central bank\") sourcelang:english",
-        "latest_seen_at": "2026-08-16T22:45:00.000Z",
-        "article_count": 12,
-        "supportive_headline_count": 1,
-        "opposing_headline_count": 0,
-        "classified_headline_count": 1
+        "query": "\"New Zealand dollar\" OR RBNZ OR \"Reserve Bank of New Zealand\" inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
+        "latest_seen_at": "2026-08-15T06:13:20.000Z",
+        "article_count": 27,
+        "supportive_headline_count": 6,
+        "opposing_headline_count": 1,
+        "classified_headline_count": 7
       },
       {
         "provider": "Google News RSS fallback",
         "currency": "USD",
         "query": "\"US dollar\" OR \"Federal Reserve\" OR FOMC inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
-        "latest_seen_at": "2026-08-17T00:06:54.000Z",
+        "latest_seen_at": "2026-08-17T02:01:00.000Z",
         "article_count": 40,
         "supportive_headline_count": 12,
         "opposing_headline_count": 1,
@@ -221,11 +221,11 @@
       "directional_headlines_are_optional": true,
       "max_article_age_hours": 96,
       "high_impact_headline_window_hours": 24,
-      "base_headline_balance": 1,
+      "base_headline_balance": 0.714,
       "quote_headline_balance": 0.846,
-      "raw_pair_headline_differential": 0.154,
-      "reliability": 0.25,
-      "adjusted_pair_headline_differential": 0.039,
+      "raw_pair_headline_differential": -0.132,
+      "reliability": 1,
+      "adjusted_pair_headline_differential": -0.132,
       "support_threshold": 62,
       "oppose_threshold": 38,
       "neutral_band": [
