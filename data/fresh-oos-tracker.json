@@ -1,0 +1,325 @@
+{
+  "schema_version": "1.0",
+  "created_at": "2026-08-17T02:04:44.954Z",
+  "updated_at": "2026-08-17T02:04:44.956Z",
+  "status": "FRESH_OOS_COLLECTION_ACTIVE",
+  "policy": {
+    "start_policy": "prospective_only_no_historical_backfill",
+    "capture_unit": "one immutable prediction per new complete ECB session_date",
+    "capture_timing": "after a complete ECB observation is available and before the next complete ECB observation",
+    "settlement_horizon": "next complete ECB observation",
+    "outcome": "directional continuation of the frozen canonical pair bias",
+    "immutable_prediction_hash": "sha256",
+    "thresholds_and_weights": "frozen; tracker does not retune production logic",
+    "preliminary_settled_target": 20,
+    "primary_settled_target": 60
+  },
+  "entries": [
+    {
+      "id": "OOS-0001-2026-08-14",
+      "prediction_hash": "de78500a57006695ab38cdd23d4a8255398f4668fce943b547e28330392aa7e0",
+      "prediction": {
+        "session_date": "2026-08-14",
+        "comparison_date": "2026-08-13",
+        "captured_at": "2026-08-17T02:04:44.953Z",
+        "source_commit": "fde1dee1a13325d21f655526643436ffc9021874",
+        "source_generated_at": "2026-08-17T02:03:51.483Z",
+        "provider_authority": "ECB",
+        "pair": "NZDUSD",
+        "bias": "BUY",
+        "strongest_currency": "NZD",
+        "weakest_currency": "USD",
+        "daily_strength_difference": 3.406,
+        "daily_ranking": [
+          "NZD",
+          "CAD",
+          "AUD",
+          "GBP",
+          "EUR",
+          "JPY",
+          "CHF",
+          "USD"
+        ],
+        "upstream": {
+          "actionability": {
+            "version": "1.1",
+            "score": 87.5,
+            "state": "ACTIONABLE",
+            "decision": "EVALUATE_SETUP",
+            "primary_limiter": "EVIDENCE_QUALITY"
+          },
+          "regime": "CONFIRMED_TREND",
+          "provider_agreement": {
+            "score": 97.5,
+            "level": null
+          },
+          "mtf_alignment": {
+            "score": 80.8,
+            "level": null
+          },
+          "strength_percentile": {
+            "gap_percentile": null
+          },
+          "reversal_risk_indicator": 31.03
+        },
+        "intelligence": {
+          "research_status": "CONTEXT_STACK_LIVE_RESEARCH_VALIDATION_PENDING",
+          "macro_yield": {
+            "available": true,
+            "state": "OPPOSES",
+            "score": 16.7,
+            "updated_at": "2026-08-17T02:03:54.073Z"
+          },
+          "cross_market": {
+            "available": true,
+            "state": "SUPPORTS",
+            "score": 87.5,
+            "updated_at": "2026-08-17T02:03:57.457Z"
+          },
+          "news": {
+            "available": true,
+            "state": "MIXED",
+            "score": 43.4,
+            "event_risk": {
+              "level": "HIGH",
+              "recent_high_impact_24h": 3
+            },
+            "updated_at": "2026-08-17T02:04:44.873Z"
+          },
+          "risk": {
+            "version": "0.2",
+            "score": 52.4,
+            "state": "MODERATE",
+            "primary_drivers": [
+              {
+                "key": "context_opposition",
+                "label": "Context Opposition",
+                "contribution": 17.3,
+                "reason": "Macro & Yield OPPOSES; News MIXED increases contextual contradiction risk."
+              },
+              {
+                "key": "news_event",
+                "label": "News Event Risk",
+                "contribution": 10,
+                "reason": "News event risk is HIGH based on recent high-impact macro/central-bank headlines."
+              },
+              {
+                "key": "context_dispersion",
+                "label": "Context Disagreement",
+                "contribution": 8,
+                "reason": "Context scores are dispersed by 70.8 points."
+              },
+              {
+                "key": "reversal",
+                "label": "Reversal Risk",
+                "contribution": 2.1,
+                "reason": "Reversal-risk indicator is 31/100."
+              }
+            ],
+            "dimensions": {
+              "actionability": {
+                "key": "actionability",
+                "label": "Actionability",
+                "contribution": 0,
+                "max_contribution": 30,
+                "reason": "Actionability is strong at 87.5/100.",
+                "detail": {
+                  "score": 87.5
+                }
+              },
+              "regime": {
+                "key": "regime",
+                "label": "Market Regime",
+                "contribution": 0,
+                "max_contribution": 20,
+                "reason": "Market regime is CONFIRMED_TREND.",
+                "detail": {
+                  "regime": "CONFIRMED_TREND"
+                }
+              },
+              "context_coverage": {
+                "key": "context_coverage",
+                "label": "Context Coverage",
+                "contribution": 0,
+                "max_contribution": 18,
+                "reason": "All contextual layers are available.",
+                "detail": {
+                  "available": 3,
+                  "expected": 3,
+                  "coverage_percent": 100
+                }
+              },
+              "context_opposition": {
+                "key": "context_opposition",
+                "label": "Context Opposition",
+                "contribution": 17.3,
+                "max_contribution": 24,
+                "reason": "Macro & Yield OPPOSES; News MIXED increases contextual contradiction risk.",
+                "detail": {
+                  "layers": [
+                    {
+                      "layer": "macro_yield",
+                      "label": "Macro & Yield",
+                      "state": "OPPOSES",
+                      "score": 16.7,
+                      "contribution": 13.3
+                    },
+                    {
+                      "layer": "news",
+                      "label": "News",
+                      "state": "MIXED",
+                      "score": 43.4,
+                      "contribution": 4
+                    }
+                  ]
+                }
+              },
+              "context_dispersion": {
+                "key": "context_dispersion",
+                "label": "Context Disagreement",
+                "contribution": 8,
+                "max_contribution": 8,
+                "reason": "Context scores are dispersed by 70.8 points.",
+                "detail": {
+                  "spread": 70.8,
+                  "scores": [
+                    {
+                      "key": "macro_yield",
+                      "label": "Macro & Yield",
+                      "score": 16.7
+                    },
+                    {
+                      "key": "cross_market",
+                      "label": "Cross-Market",
+                      "score": 87.5
+                    },
+                    {
+                      "key": "news",
+                      "label": "News",
+                      "score": 43.4
+                    }
+                  ]
+                }
+              },
+              "news_event": {
+                "key": "news_event",
+                "label": "News Event Risk",
+                "contribution": 10,
+                "max_contribution": 10,
+                "reason": "News event risk is HIGH based on recent high-impact macro/central-bank headlines.",
+                "detail": {
+                  "level": "HIGH",
+                  "recent_high_impact_24h": 3
+                }
+              },
+              "reversal": {
+                "key": "reversal",
+                "label": "Reversal Risk",
+                "contribution": 2.1,
+                "max_contribution": 15,
+                "reason": "Reversal-risk indicator is 31/100.",
+                "detail": {
+                  "indicator": 31
+                }
+              },
+              "data_uncertainty": {
+                "key": "data_uncertainty",
+                "label": "Data Uncertainty",
+                "contribution": 0,
+                "max_contribution": 6,
+                "reason": "No reported evidence gaps remain inside available contextual layers.",
+                "detail": {
+                  "gaps": []
+                }
+              }
+            }
+          },
+          "counter_thesis": {
+            "state": "ACTIVE",
+            "objections": [
+              "Macro & Yield explicitly opposes the setup.",
+              "News is mixed and weakens one-sided conviction.",
+              "Recent high-impact news density is HIGH and can invalidate continuation timing.",
+              "The current weak currency has a reversal-risk indicator of 31/100.",
+              "Contextual intelligence is internally dispersed by 70.8 score points."
+            ]
+          },
+          "final_reasoner": {
+            "status": "MIXED_CONTEXT",
+            "outlook": "MIXED",
+            "decision": "REVIEW_SELECTIVELY",
+            "contextual_coverage_percent": 100,
+            "risk_level": "MODERATE",
+            "risk_score": 52.4
+          }
+        }
+      },
+      "outcome": {
+        "status": "PENDING_NEXT_ECB_OBSERVATION"
+      }
+    }
+  ],
+  "summary": {
+    "captured": 1,
+    "settled": 0,
+    "pending": 1,
+    "research_gate": "COLLECTING",
+    "preliminary_target": 20,
+    "primary_target": 60,
+    "progress_to_primary_target_percent": 0,
+    "all_settled": {
+      "n": 0,
+      "hit_rate": null,
+      "avg_directional_return_pct": null,
+      "median_directional_return_pct": null
+    },
+    "by_risk_state": {
+      "LOW": {
+        "n": 0,
+        "hit_rate": null,
+        "avg_directional_return_pct": null,
+        "median_directional_return_pct": null
+      },
+      "MODERATE": {
+        "n": 0,
+        "hit_rate": null,
+        "avg_directional_return_pct": null,
+        "median_directional_return_pct": null
+      },
+      "HIGH": {
+        "n": 0,
+        "hit_rate": null,
+        "avg_directional_return_pct": null,
+        "median_directional_return_pct": null
+      }
+    },
+    "by_actionability_state": {
+      "ACTIONABLE": {
+        "n": 0,
+        "hit_rate": null,
+        "avg_directional_return_pct": null,
+        "median_directional_return_pct": null
+      },
+      "SELECTIVE": {
+        "n": 0,
+        "hit_rate": null,
+        "avg_directional_return_pct": null,
+        "median_directional_return_pct": null
+      },
+      "FILTERED": {
+        "n": 0,
+        "hit_rate": null,
+        "avg_directional_return_pct": null,
+        "median_directional_return_pct": null
+      },
+      "UNAVAILABLE": {
+        "n": 0,
+        "hit_rate": null,
+        "avg_directional_return_pct": null,
+        "median_directional_return_pct": null
+      }
+    },
+    "by_final_reasoner_status": {},
+    "strict_oos_note": "Every prediction is frozen before the next complete ECB observation is known. Outcomes are appended later; historical backfill is prohibited."
+  }
+}
