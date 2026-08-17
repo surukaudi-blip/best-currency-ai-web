@@ -1,0 +1,51 @@
+{
+  "generated_at": "2026-08-17T00:36:55.838Z",
+  "pair": "NZDUSD",
+  "canonical_bias": "BUY",
+  "macro_yield": {
+    "available": true,
+    "direction": "OPPOSES",
+    "score": 16.7,
+    "provider": "FRED (OECD / Federal Reserve source series)",
+    "updated_at": "2026-08-17T00:36:55.838Z",
+    "evidence": [
+      "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
+      "10Y spread momentum: -0.210 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
+      "Short-rate spread: NZD 2.680% (2026-06-01; IR3TIB01NZM156N) vs USD 3.630% (2026-08-13; EFFR); spread -0.950 pp => OPPOSES canonical BUY."
+    ],
+    "missing_evidence": [],
+    "note": "Live Macro & Yield adapter using real FRED-distributed data. The alignment score measures how 10Y yield and fresh short-rate differentials align with the canonical ECB pair bias; it is not a probability of profit. Germany 10Y is used as the EUR sovereign-yield proxy. NZD short-rate context uses the current OECD/FRED 3M interbank series because the older overnight NZ series is stale. Stale observations are excluded.",
+    "provenance": [
+      {
+        "provider": "FRED",
+        "series_id": "IRLTLT01NZM156N",
+        "url": "https://fred.stlouisfed.org/series/IRLTLT01NZM156N",
+        "latest_date": "2026-06-01"
+      },
+      {
+        "provider": "FRED",
+        "series_id": "IRLTLT01USM156N",
+        "url": "https://fred.stlouisfed.org/series/IRLTLT01USM156N",
+        "latest_date": "2026-06-01"
+      },
+      {
+        "provider": "FRED",
+        "series_id": "IR3TIB01NZM156N",
+        "url": "https://fred.stlouisfed.org/series/IR3TIB01NZM156N",
+        "latest_date": "2026-06-01"
+      },
+      {
+        "provider": "FRED",
+        "series_id": "EFFR",
+        "url": "https://fred.stlouisfed.org/series/EFFR",
+        "latest_date": "2026-08-13"
+      }
+    ],
+    "methodology": {
+      "yield_level_deadband_pp": 0.1,
+      "yield_spread_momentum_deadband_pp": 0.03,
+      "short_rate_level_deadband_pp": 0.1,
+      "score_range": "0=fully opposes canonical bias, 50=neutral/mixed, 100=fully supports canonical bias"
+    }
+  }
+}

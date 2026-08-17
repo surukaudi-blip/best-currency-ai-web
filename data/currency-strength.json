@@ -10,8 +10,8 @@
     "provider_name": "European Central Bank",
     "provider_url": "api.frankfurter.dev",
     "module": "Currency Strength Agent",
-    "received_at": "2026-08-16T19:34:39.672Z",
-    "generated_at": "2026-08-16T19:34:39.672Z",
+    "received_at": "2026-08-17T00:36:55.260Z",
+    "generated_at": "2026-08-17T00:36:55.260Z",
     "data_updated_at": "2026-08-14",
     "session_date": "2026-08-14",
     "comparison_date": "2026-08-13",
@@ -1229,7 +1229,7 @@
               "history_sample_target": 60,
               "history_sample_ratio_percent": 100,
               "history_ceiling": 100,
-              "business_day_age": 0,
+              "business_day_age": 1,
               "freshness_ceiling": 100,
               "ceiling": 100
             }
@@ -1257,7 +1257,7 @@
               "pass": true,
               "completeness_percent": 100,
               "history_sample_ratio_percent": 100,
-              "business_day_age": 0,
+              "business_day_age": 1,
               "ceiling": 100
             }
           },
@@ -1327,7 +1327,7 @@
               "history_sample_target": 16,
               "history_sample_ratio_percent": 100,
               "history_ceiling": 100,
-              "business_day_age": 0,
+              "business_day_age": 1,
               "freshness_ceiling": 100,
               "ceiling": 100
             }
@@ -1355,7 +1355,7 @@
               "pass": true,
               "completeness_percent": 100,
               "history_sample_ratio_percent": 100,
-              "business_day_age": 0,
+              "business_day_age": 1,
               "ceiling": 100
             }
           },
@@ -1427,7 +1427,7 @@
               "history_sample_target": 6,
               "history_sample_ratio_percent": 100,
               "history_ceiling": 100,
-              "business_day_age": 0,
+              "business_day_age": 1,
               "freshness_ceiling": 100,
               "ceiling": 100
             }
@@ -1455,7 +1455,7 @@
               "pass": true,
               "completeness_percent": 100,
               "history_sample_ratio_percent": 100,
-              "business_day_age": 0,
+              "business_day_age": 1,
               "ceiling": 100
             }
           },
@@ -1529,7 +1529,7 @@
             "history_sample_target": 60,
             "history_sample_ratio_percent": 100,
             "history_ceiling": 100,
-            "business_day_age": 0,
+            "business_day_age": 1,
             "freshness_ceiling": 100,
             "ceiling": 100
           }
@@ -1557,7 +1557,7 @@
             "pass": true,
             "completeness_percent": 100,
             "history_sample_ratio_percent": 100,
-            "business_day_age": 0,
+            "business_day_age": 1,
             "ceiling": 100
           }
         },
@@ -1590,6 +1590,148 @@
         "actionable_avg_directional_return_percent": 0.1151,
         "fresh_out_of_sample_status": "PENDING"
       }
+    },
+    "intelligence_layer": {
+      "version": "0.1",
+      "role": "downstream_contextual_confirmation_and_reasoning",
+      "architecture": [
+        "macro_yield",
+        "cross_market",
+        "news",
+        "risk",
+        "counter_thesis",
+        "final_reasoner"
+      ],
+      "input_policy": "evidence_grounded_fail_closed",
+      "current_pair": "NZDUSD",
+      "canonical_bias": "BUY",
+      "upstream_actionability": {
+        "version": "1.1",
+        "score": 87.5,
+        "state": "ACTIONABLE",
+        "decision": "EVALUATE_SETUP",
+        "regime": "CONFIRMED_TREND"
+      },
+      "source_input": {
+        "connected": true,
+        "path": "dist/data/intelligence-inputs.json",
+        "external_layers_available": 1,
+        "external_layers_expected": 3
+      },
+      "readiness": {
+        "state": "PARTIAL_CONTEXT",
+        "external_coverage_percent": 33,
+        "final_reasoner_status": "INSUFFICIENT_EXTERNAL_EVIDENCE"
+      },
+      "layers": {
+        "macro_yield": {
+          "key": "macro_yield",
+          "label": "Macro & Yield",
+          "available": true,
+          "state": "OPPOSES",
+          "score": 16.7,
+          "provider": "FRED (OECD / Federal Reserve source series)",
+          "updated_at": "2026-08-17T00:36:55.838Z",
+          "evidence": [
+            "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
+            "10Y spread momentum: -0.210 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
+            "Short-rate spread: NZD 2.680% (2026-06-01; IR3TIB01NZM156N) vs USD 3.630% (2026-08-13; EFFR); spread -0.950 pp => OPPOSES canonical BUY."
+          ],
+          "missing_evidence": [],
+          "note": "Live Macro & Yield adapter using real FRED-distributed data. The alignment score measures how 10Y yield and fresh short-rate differentials align with the canonical ECB pair bias; it is not a probability of profit. Germany 10Y is used as the EUR sovereign-yield proxy. NZD short-rate context uses the current OECD/FRED 3M interbank series because the older overnight NZ series is stale. Stale observations are excluded."
+        },
+        "cross_market": {
+          "key": "cross_market",
+          "label": "Cross-Market",
+          "available": false,
+          "state": "UNAVAILABLE",
+          "score": null,
+          "provider": null,
+          "updated_at": null,
+          "evidence": [],
+          "missing_evidence": [
+            "Cross-Market provider has not been connected to the static intelligence build yet."
+          ],
+          "note": "Cross-Market is fail-closed: no directional claim is created until a real provider adapter supplies evidence."
+        },
+        "news": {
+          "key": "news",
+          "label": "News",
+          "available": false,
+          "state": "UNAVAILABLE",
+          "score": null,
+          "provider": null,
+          "updated_at": null,
+          "evidence": [],
+          "missing_evidence": [
+            "News provider has not been connected to the static intelligence build yet."
+          ],
+          "note": "News is fail-closed: no directional claim is created until a real provider adapter supplies evidence."
+        },
+        "risk": {
+          "key": "risk",
+          "label": "Risk",
+          "available": true,
+          "state": "MODERATE",
+          "score": 56,
+          "scope": "contextual_execution_risk",
+          "reversal_risk_indicator": 31.03,
+          "external_context_coverage": "1/3",
+          "reasons": [
+            "2 contextual intelligence layer(s) are still unavailable.",
+            "Macro & Yield opposes the Currency Strength setup.",
+            "Reversal-risk indicator is non-trivial at 31/100."
+          ],
+          "note": "Risk is a conservative contextual-risk score. It is not probability of loss and does not generate stop-loss or position size."
+        },
+        "counter_thesis": {
+          "key": "counter_thesis",
+          "label": "Counter-Thesis",
+          "available": true,
+          "state": "ACTIVE",
+          "objections": [
+            "Macro & Yield explicitly opposes the setup.",
+            "The current weak currency has a reversal-risk indicator of 31/100."
+          ],
+          "missing_context": [
+            "Cross-Market",
+            "News"
+          ],
+          "invalidation_focus": [
+            "A material reversal in strongest/weakest Currency Strength leadership.",
+            "A deterioration of provider agreement or multi-timeframe alignment.",
+            "New Macro & Yield, Cross-Market, or News evidence that opposes the current pair bias."
+          ],
+          "note": "Counter-Thesis deliberately searches for reasons the current continuation case could fail; it never reverses the ECB signal by itself."
+        },
+        "final_reasoner": {
+          "key": "final_reasoner",
+          "label": "Final Reasoner",
+          "available": true,
+          "status": "INSUFFICIENT_EXTERNAL_EVIDENCE",
+          "outlook": "NOT_FINAL",
+          "decision": "WAIT_FOR_CONTEXT",
+          "pair": "NZDUSD",
+          "canonical_bias": "BUY",
+          "actionability_score": 87.5,
+          "regime": "CONFIRMED_TREND",
+          "contextual_coverage_percent": 33,
+          "context_counts": {
+            "supports": 0,
+            "opposes": 1,
+            "mixed_or_neutral": 0,
+            "available": 1,
+            "expected": 3
+          },
+          "risk_level": "MODERATE",
+          "counter_thesis_state": "ACTIVE",
+          "explanation": "Actionability is available, but the contextual intelligence stack is not sufficiently populated to form a final outlook.",
+          "guardrail": "Final Reasoner is evidence-grounded and fail-closed. Missing Macro & Yield, Cross-Market, or News evidence is never fabricated or silently replaced.",
+          "note": "Final outlook is decision support only. It is not an execution instruction, win probability, or profitability forecast."
+        }
+      },
+      "methodology": "Sequential intelligence architecture: Macro & Yield → Cross-Market → News → Risk → Counter-Thesis → Final Reasoner. The first three stages require real external evidence adapters. Risk and Counter-Thesis can operate conservatively on existing Currency Strength/Actionability context and explicitly penalize missing context. Final Reasoner requires contextual coverage before issuing a final directional outlook.",
+      "research_status": "ARCHITECTURE_IMPLEMENTED_PROVIDER_VALIDATION_PENDING"
     }
   }
 }
