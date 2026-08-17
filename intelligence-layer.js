@@ -33,7 +33,7 @@
     '<div class="intel-layer-grid">' +
       '<div class="intel-stage"><div class="stage-k">01 · Macro & Yield</div><div class="stage-v" id="intel-macro-v">—</div><div class="stage-s" id="intel-macro-s">Memeriksa bukti makro dan yield…</div></div>' +
       '<div class="intel-stage"><div class="stage-k">02 · Cross-Market</div><div class="stage-v" id="intel-cross-v">—</div><div class="stage-s" id="intel-cross-s">Memeriksa konfirmasi lintas pasar…</div></div>' +
-      '<div class="intel-stage"><div class="stage-k">03 · News</div><div class="stage-v" id="intel-news-v">—</div><div class="stage-s" id="intel-news-s">Memeriksa bukti berita…</div></div>' +
+      '<div class="intel-stage"><div class="stage-k">03 · News</div><div class="stage-v" id="intel-news-v">—</div><div class="stage-s" id="intel-news-s">Memeriksa bukti berita…</div><div class="stage-meta" id="intel-news-meta"></div></div>' +
       '<div class="intel-stage"><div class="stage-k">04 · Risk</div><div class="stage-v" id="intel-risk-v">—</div><div class="stage-s" id="intel-risk-s">Mengukur risiko kontekstual…</div></div>' +
       '<div class="intel-stage"><div class="stage-k">05 · Counter-Thesis</div><div class="stage-v" id="intel-counter-v">—</div><div class="stage-s" id="intel-counter-s">Mencari bukti yang menentang setup…</div></div>' +
       '<div class="intel-stage final-stage"><div class="stage-k">06 · Final Reasoner</div><div class="stage-v" id="intel-final-v">—</div><div class="stage-s" id="intel-final-s">Menunggu seluruh bukti yang diperlukan…</div><div class="stage-meta" id="intel-final-meta"></div></div>' +
@@ -76,6 +76,15 @@
     renderInput('cross',layers.cross_market);
     renderInput('news',layers.news);
 
+    var news=layers.news||{};
+    var nm=document.getElementById('intel-news-meta');
+    if(nm&&news.available){
+      var er=news.event_risk&&news.event_risk.level?String(news.event_risk.level):'—';
+      var erLabel=er==='HIGH'?'TINGGI':er==='MODERATE'?'SEDANG':er==='LOW'?'RENDAH':er;
+      var headline=Array.isArray(news.headlines)&&news.headlines.length?news.headlines[0].title:'';
+      nm.textContent='Risiko event '+erLabel+(headline?' · '+headline:'');
+    }else if(nm){nm.textContent='';}
+
     var risk=layers.risk||{};
     var rv=document.getElementById('intel-risk-v');
     var rs=document.getElementById('intel-risk-s');
@@ -109,7 +118,7 @@
   }
 
   function load(){
-    fetch('./data/currency-strength.json?v=bf181a01a7',{headers:{Accept:'application/json'},cache:'no-store'})
+    fetch('./data/currency-strength.json?v=fe56cee8cf',{headers:{Accept:'application/json'},cache:'no-store'})
       .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
       .then(function(payload){render(payload&&payload.data?payload.data:payload);})
       .catch(function(){var el=document.getElementById('intel-readiness');if(el){el.className='intel-layer-badge intel-layer-bad';el.textContent='GAGAL MEMUAT';}});

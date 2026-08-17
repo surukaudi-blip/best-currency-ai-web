@@ -10,8 +10,8 @@
     "provider_name": "European Central Bank",
     "provider_url": "api.frankfurter.dev",
     "module": "Currency Strength Agent",
-    "received_at": "2026-08-17T00:49:30.686Z",
-    "generated_at": "2026-08-17T00:49:30.686Z",
+    "received_at": "2026-08-17T01:07:05.216Z",
+    "generated_at": "2026-08-17T01:07:05.216Z",
     "data_updated_at": "2026-08-14",
     "session_date": "2026-08-14",
     "comparison_date": "2026-08-13",
@@ -1615,12 +1615,12 @@
       "source_input": {
         "connected": true,
         "path": "dist/data/intelligence-inputs.json",
-        "external_layers_available": 2,
+        "external_layers_available": 3,
         "external_layers_expected": 3
       },
       "readiness": {
         "state": "CONTEXT_READY",
-        "external_coverage_percent": 67,
+        "external_coverage_percent": 100,
         "final_reasoner_status": "MIXED_CONTEXT"
       },
       "layers": {
@@ -1631,13 +1631,47 @@
           "state": "OPPOSES",
           "score": 16.7,
           "provider": "FRED (OECD / Federal Reserve source series)",
-          "updated_at": "2026-08-17T00:49:31.712Z",
+          "updated_at": "2026-08-17T01:07:07.210Z",
           "evidence": [
             "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
             "10Y spread momentum: -0.210 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
             "Short-rate spread: NZD 2.680% (2026-06-01; IR3TIB01NZM156N) vs USD 3.630% (2026-08-13; EFFR); spread -0.950 pp => OPPOSES canonical BUY."
           ],
           "missing_evidence": [],
+          "headlines": [],
+          "event_risk": null,
+          "provenance": [
+            {
+              "provider": "FRED",
+              "series_id": "IRLTLT01NZM156N",
+              "url": "https://fred.stlouisfed.org/series/IRLTLT01NZM156N",
+              "latest_date": "2026-06-01"
+            },
+            {
+              "provider": "FRED",
+              "series_id": "IRLTLT01USM156N",
+              "url": "https://fred.stlouisfed.org/series/IRLTLT01USM156N",
+              "latest_date": "2026-06-01"
+            },
+            {
+              "provider": "FRED",
+              "series_id": "IR3TIB01NZM156N",
+              "url": "https://fred.stlouisfed.org/series/IR3TIB01NZM156N",
+              "latest_date": "2026-06-01"
+            },
+            {
+              "provider": "FRED",
+              "series_id": "EFFR",
+              "url": "https://fred.stlouisfed.org/series/EFFR",
+              "latest_date": "2026-08-13"
+            }
+          ],
+          "methodology": {
+            "yield_level_deadband_pp": 0.1,
+            "yield_spread_momentum_deadband_pp": 0.03,
+            "short_rate_level_deadband_pp": 0.1,
+            "score_range": "0=fully opposes canonical bias, 50=neutral/mixed, 100=fully supports canonical bias"
+          },
           "note": "Live Macro & Yield adapter using real FRED-distributed data. The alignment score measures how 10Y yield and fresh short-rate differentials align with the canonical ECB pair bias; it is not a probability of profit. Germany 10Y is used as the EUR sovereign-yield proxy. NZD short-rate context uses the current OECD/FRED 3M interbank series because the older overnight NZ series is stale. Stale observations are excluded."
         },
         "cross_market": {
@@ -1647,7 +1681,7 @@
           "state": "SUPPORTS",
           "score": 87.5,
           "provider": "FRED (Federal Reserve / EIA source series)",
-          "updated_at": "2026-08-17T00:49:31.924Z",
+          "updated_at": "2026-08-17T01:07:07.410Z",
           "evidence": [
             "NFCI: level -0.5490 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
             "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
@@ -1655,21 +1689,183 @@
             "STLFSI4: perubahan -0.2650 dari 2026-07-31 ke 2026-08-07 => SUPPORTS canonical bias."
           ],
           "missing_evidence": [],
+          "headlines": [],
+          "event_risk": null,
+          "provenance": [
+            {
+              "provider": "FRED",
+              "series_id": "NFCI",
+              "label": "Chicago Fed National Financial Conditions Index",
+              "url": "https://fred.stlouisfed.org/series/NFCI",
+              "latest_date": "2026-08-07"
+            },
+            {
+              "provider": "FRED",
+              "series_id": "STLFSI4",
+              "label": "St. Louis Fed Financial Stress Index",
+              "url": "https://fred.stlouisfed.org/series/STLFSI4",
+              "latest_date": "2026-08-07"
+            },
+            {
+              "provider": "FRED",
+              "series_id": "DCOILWTICO",
+              "label": "WTI Crude Oil Spot Price",
+              "url": "https://fred.stlouisfed.org/series/DCOILWTICO",
+              "latest_date": "2026-08-11"
+            }
+          ],
+          "methodology": {
+            "risk_tier": {
+              "NZD": 1,
+              "AUD": 1,
+              "CAD": 1,
+              "EUR": 0,
+              "GBP": 0,
+              "USD": -1,
+              "JPY": -1,
+              "CHF": -1
+            },
+            "risk_differential": 2,
+            "nfci_level_deadband": 0.1,
+            "nfci_momentum_deadband": 0.015,
+            "stlfsi_level_deadband": 0.1,
+            "stlfsi_momentum_deadband": 0.03,
+            "cad_wti_5_observation_deadband_percent": 1,
+            "minimum_components": 2,
+            "score_range": "0=fully opposes canonical bias, 50=neutral/mixed, 100=fully supports canonical bias"
+          },
           "note": "Live Cross-Market adapter using real financial-conditions/stress and commodity data. The score measures contextual alignment with the canonical ECB pair bias, not probability of profit. Cyclical/defensive currency tiers are a transparent heuristic used only to interpret real market-condition data; stale series are excluded."
         },
         "news": {
           "key": "news",
           "label": "News",
-          "available": false,
-          "state": "UNAVAILABLE",
-          "score": null,
-          "provider": null,
-          "updated_at": null,
-          "evidence": [],
-          "missing_evidence": [
-            "News provider has not been connected to the static intelligence build yet."
+          "available": true,
+          "state": "NEUTRAL",
+          "score": 51.9,
+          "provider": "GDELT DOC 2.0 + Google News RSS fallback",
+          "updated_at": "2026-08-17T01:08:04.777Z",
+          "evidence": [
+            "Headline-stance differential NZDUSD BUY: 0.039 after directional-headline reliability 25% => NEUTRAL.",
+            "NZD: 1 supportive vs 0 opposing directional headline(s); balance 1 from 13 recent articles via GDELT DOC 2.0.",
+            "USD: 12 supportive vs 1 opposing directional headline(s); balance 0.846 from 40 recent articles via Google News RSS fallback.",
+            "High-impact headline risk: HIGH; 3 relevant headline(s) detected within 24h."
           ],
-          "note": "News is fail-closed: no directional claim is created until a real provider adapter supplies evidence."
+          "missing_evidence": [],
+          "headlines": [
+            {
+              "title": "S&P 500 Hits Record High August 2026: Inflation Cools & AI Stocks Rally - Intellectia AI",
+              "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1LNXNhSVh1ZV9zU3BUQnQxV1RlZldsVEpJSVRXN0R3ZFZiT0ZKeW9scFRLT0RZVWlFQUtqbUVJQjVYYzNrNlpQM2JQVGphZGMtbFlIVWRUM1djQ0syZlVubnlZR2RaVy16OEVfcw?oc=5",
+              "domain": "Intellectia AI",
+              "sourcecountry": null,
+              "language": "English",
+              "seen_at": "2026-08-17T00:06:54.000Z"
+            },
+            {
+              "title": "Korea stocks eye Fed signals as inflation eases and bond risks loom - CHOSUNBIZ - Chosunbiz",
+              "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOR3Z2cVZMdmIyRm83Z1hTdWcxRmN5Sk1IX1dOYlU4ZHpQR0ZRNXhlZmRJa3lBVkJBNURPOUhoWnNjTTZTcjFOc1RLS21xY2hlUXFLbVFFdHNFTEJ2VDJfRHhqR1ptLUxLX09zV3hBSzZxLVFqMklaTlVtaDNwa2hjTNIBlAFBVV95cUxPaVdSVkoyOVd0NkpnaTdoZzVXR0ZnOVRKQVVHaXdhNTFUZ29HTHhyT2EwUEEwZW1FckV0X29CUUtwcDJNcUE2UlhncXVHNmV1eXR6STZoRHpiVmZ4QUpBX1hRLVZlSGxidG9fX2JVbksyS2dqanI5Vlp1UmNodnV3OXFqT1ZIazdJREozTDJGYnVldHVJ?oc=5",
+              "domain": "Chosunbiz",
+              "sourcecountry": null,
+              "language": "English",
+              "seen_at": "2026-08-16T21:01:00.000Z"
+            },
+            {
+              "title": "AI productivity reveals a way out of inflation crunch - knoxnews.com",
+              "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPRkhHSk9qdVBlb0dSUi10TUNIWkk5NnA5aV9GX2pSNlVGY1p2ZTk1Z3RycS1rX1ZvdUVzNGN4STlLSzVGRkxuRjB0MXZhdzZYYXpfSDVLQkxxWWFicmFlaVBuR0pteXlBSFhXUzV1LTlPNmNob3ZicjlYUlpZVmE0a3VlYVN2N2pFSDc2T1BWOFBTSjU2VV9UbUx0R0wySGhyQWp6d0prbGVCak5IdGFHa1lQY0o1LVFiemVhOVUxSnVVQ0N3VjMzN19VZHlBeWpCQlNQOUhibDNHVWVvbU5JMw?oc=5",
+              "domain": "knoxnews.com",
+              "sourcecountry": null,
+              "language": "English",
+              "seen_at": "2026-08-16T09:03:00.000Z"
+            },
+            {
+              "title": "THINK Ahead: UK inflation and labour market data plus July Fed minutes - ING THINK economic and financial analysis | ING THINK",
+              "url": "https://news.google.com/rss/articles/CBMiX0FVX3lxTE9wemNJRDdIM2I0OE0zSTlJdzJ0RUdXSkE5ajM1b2JLN2stbEhiazZ1aDhJUXotcGV4MmFPbGhpWUdzVzFyNDRwRGhNbWxVNlliZU00WERfWURtTkgta0FZ?oc=5",
+              "domain": "ING THINK economic and financial analysis | ING THINK",
+              "sourcecountry": null,
+              "language": "English",
+              "seen_at": "2026-08-15T07:15:39.000Z"
+            },
+            {
+              "title": "Cooler inflation data may force Warsh's divided Fed to hold the line on rates - Reuters",
+              "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQbDJaOWp0UVZZRVd3MUp5UGNUVk1EOXNybWFfeXRKR2FQYzJsUnJCN3VEU1I2bldJWHFodHlUWXQxcUdzXzVtaTN4RmEyaHlwREhvdVpialZycTYyaFozME5kWWV3MGFqT1hGS00zTnMyQmVDZkZXZTFvT0VGR0RSMU1FMnBiT3dyZFlSQmx5RDRXX0JsZ1dPMy1KOTNteGVOaVJRemdUaDhtWkpmRndEeQ?oc=5",
+              "domain": "Reuters",
+              "sourcecountry": null,
+              "language": "English",
+              "seen_at": "2026-08-14T10:59:51.000Z"
+            },
+            {
+              "title": "New Zealand central bank maintains loan - to - value ratio settings - Xinhua",
+              "url": "https://english.news.cn/20260814/4e04a23ab8364b7682d6eaded0a08fbd/c.html",
+              "domain": "english.news.cn",
+              "sourcecountry": null,
+              "language": "English",
+              "seen_at": "2026-08-14T07:15:00.000Z"
+            },
+            {
+              "title": "Gold rises on weaker dollar as inflation data cements rate-hold bets - CNBC",
+              "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOVWxidENoLWdvdmlvbHp3RHdjdTN1RmFDc1RoVUVIVTFxQVFmNnJLRE0wUHlkcEhEQkIxbEpfQkR5VEZjdURzdThqenduWVgtclhTQXhvZ19WZFB2QVFDb0s3eURsOUMyMk1FNF9vRHFBVGV1eGdSUi1TX0l3Ti1IVmVTTzNlNXN2VHpmU0VnQm1sVk11ejgteFA1Z1VWNk5sWk1KWndUWjVWOTjSAbABQVVfeXFMUG5Ec1dBSHJGZUlabzZqWG1KUFpxZkgwNU1iSjhud0Q2MlpKN3lBSVBlTnRrenJjZm12NlZGSjlrOWFTT1hYY2FMbmJORm4zdlVlUEYydFZDQV9mbXpfeHJxSDNZeE1QOU5nWEQ5YnZobElnRjNOQWFEUk52OVh3MWZrNjVuUjJVTlVfLVhBcktIY0FDQ3dadE9Lc3RpSlJMWlp2TVNIdGwxaHVhS0VhaFg?oc=5",
+              "domain": "CNBC",
+              "sourcecountry": null,
+              "language": "English",
+              "seen_at": "2026-08-14T04:18:59.000Z"
+            },
+            {
+              "title": "New Zealand central bank to maintain current home lending rules",
+              "url": "https://www.businesstimes.com.sg/property/new-zealands-central-bank-maintain-current-home-lending-rules",
+              "domain": "businesstimes.com.sg",
+              "sourcecountry": "Singapore",
+              "language": "English",
+              "seen_at": "2026-08-14T01:45:00.000Z"
+            }
+          ],
+          "event_risk": {
+            "level": "HIGH",
+            "recent_high_impact_24h": 3
+          },
+          "provenance": [
+            {
+              "provider": "GDELT DOC 2.0",
+              "currency": "NZD",
+              "query": "(\"New Zealand dollar\" OR \"Reserve Bank of New Zealand\" OR RBNZ) (inflation OR \"interest rate\" OR rates OR economy OR growth OR employment OR monetary OR \"central bank\") sourcelang:english",
+              "latest_seen_at": "2026-08-16T22:45:00.000Z",
+              "article_count": 13,
+              "supportive_headline_count": 1,
+              "opposing_headline_count": 0,
+              "classified_headline_count": 1
+            },
+            {
+              "provider": "Google News RSS fallback",
+              "currency": "USD",
+              "query": "\"US dollar\" OR \"Federal Reserve\" OR FOMC inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
+              "latest_seen_at": "2026-08-17T00:06:54.000Z",
+              "article_count": 40,
+              "supportive_headline_count": 12,
+              "opposing_headline_count": 1,
+              "classified_headline_count": 13
+            }
+          ],
+          "methodology": {
+            "window": "3d",
+            "language": "English",
+            "provider_policy": "GDELT primary; Google News RSS fallback per currency",
+            "request_model": "one headline-list request per currency, fetched sequentially with retry/backoff",
+            "minimum_articles_per_currency": 3,
+            "directional_headlines_are_optional": true,
+            "max_article_age_hours": 96,
+            "high_impact_headline_window_hours": 24,
+            "base_headline_balance": 1,
+            "quote_headline_balance": 0.846,
+            "raw_pair_headline_differential": 0.154,
+            "reliability": 0.25,
+            "adjusted_pair_headline_differential": 0.039,
+            "support_threshold": 62,
+            "oppose_threshold": 38,
+            "neutral_band": [
+              45,
+              55
+            ],
+            "score_range": "0=strongly opposes canonical bias, 50=neutral/mixed, 100=strongly supports canonical bias"
+          },
+          "note": "Live News adapter using real macro/central-bank headlines. GDELT DOC 2.0 is primary; Google News RSS is a failover when the public GDELT endpoint is rate-limited or unavailable. Direction uses a transparent local headline-stance lexicon and pair differential with reliability damping. The score is contextual alignment, not a probability of profit or a forecast of headline impact."
         },
         "risk": {
           "key": "risk",
@@ -1679,10 +1875,10 @@
           "score": 48,
           "scope": "contextual_execution_risk",
           "reversal_risk_indicator": 31.03,
-          "external_context_coverage": "2/3",
+          "external_context_coverage": "3/3",
           "reasons": [
-            "1 contextual intelligence layer(s) are still unavailable.",
             "Macro & Yield opposes the Currency Strength setup.",
+            "News event risk is HIGH based on recent high-impact macro/central-bank headlines.",
             "Reversal-risk indicator is non-trivial at 31/100."
           ],
           "note": "Risk is a conservative contextual-risk score. It is not probability of loss and does not generate stop-loss or position size."
@@ -1694,11 +1890,10 @@
           "state": "ACTIVE",
           "objections": [
             "Macro & Yield explicitly opposes the setup.",
+            "Recent high-impact news density is HIGH and can invalidate continuation timing.",
             "The current weak currency has a reversal-risk indicator of 31/100."
           ],
-          "missing_context": [
-            "News"
-          ],
+          "missing_context": [],
           "invalidation_focus": [
             "A material reversal in strongest/weakest Currency Strength leadership.",
             "A deterioration of provider agreement or multi-timeframe alignment.",
@@ -1717,12 +1912,12 @@
           "canonical_bias": "BUY",
           "actionability_score": 87.5,
           "regime": "CONFIRMED_TREND",
-          "contextual_coverage_percent": 67,
+          "contextual_coverage_percent": 100,
           "context_counts": {
             "supports": 1,
             "opposes": 1,
-            "mixed_or_neutral": 0,
-            "available": 2,
+            "mixed_or_neutral": 1,
+            "available": 3,
             "expected": 3
           },
           "risk_level": "MODERATE",
@@ -1733,7 +1928,7 @@
         }
       },
       "methodology": "Sequential intelligence architecture: Macro & Yield → Cross-Market → News → Risk → Counter-Thesis → Final Reasoner. The first three stages require real external evidence adapters. Risk and Counter-Thesis can operate conservatively on existing Currency Strength/Actionability context and explicitly penalize missing context. Final Reasoner requires contextual coverage before issuing a final directional outlook.",
-      "research_status": "MACRO_YIELD_CROSS_MARKET_LIVE_NEWS_PENDING"
+      "research_status": "CONTEXT_STACK_LIVE_RESEARCH_VALIDATION_PENDING"
     }
   }
 }
