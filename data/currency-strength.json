@@ -10,8 +10,8 @@
     "provider_name": "European Central Bank",
     "provider_url": "api.frankfurter.dev",
     "module": "Currency Strength Agent",
-    "received_at": "2026-08-17T09:35:23.154Z",
-    "generated_at": "2026-08-17T09:35:23.154Z",
+    "received_at": "2026-08-17T09:56:34.247Z",
+    "generated_at": "2026-08-17T09:56:34.247Z",
     "data_updated_at": "2026-08-14",
     "session_date": "2026-08-14",
     "comparison_date": "2026-08-13",
@@ -1615,13 +1615,13 @@
       "source_input": {
         "connected": true,
         "path": "dist/data/intelligence-inputs.json",
-        "external_layers_available": 2,
+        "external_layers_available": 3,
         "external_layers_expected": 3
       },
       "readiness": {
         "state": "CONTEXT_READY",
-        "external_coverage_percent": 67,
-        "final_reasoner_status": "MIXED_CONTEXT"
+        "external_coverage_percent": 100,
+        "final_reasoner_status": "CONTEXT_CONTRADICTED"
       },
       "layers": {
         "macro_yield": {
@@ -1631,7 +1631,7 @@
           "state": "OPPOSES",
           "score": 16.7,
           "provider": "FRED (OECD / Federal Reserve source series)",
-          "updated_at": "2026-08-17T09:35:24.104Z",
+          "updated_at": "2026-08-17T09:56:35.559Z",
           "evidence": [
             "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
             "10Y spread momentum: -0.210 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
@@ -1681,7 +1681,7 @@
           "state": "SUPPORTS",
           "score": 87.5,
           "provider": "FRED (Federal Reserve / EIA source series)",
-          "updated_at": "2026-08-17T09:35:24.344Z",
+          "updated_at": "2026-08-17T09:56:35.787Z",
           "evidence": [
             "NFCI: level -0.5490 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
             "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
@@ -1739,31 +1739,144 @@
         "news": {
           "key": "news",
           "label": "News",
-          "available": false,
-          "state": "UNAVAILABLE",
-          "score": null,
-          "provider": null,
-          "updated_at": null,
-          "evidence": [],
-          "missing_evidence": [
-            "News provider has not been connected to the static intelligence build yet."
+          "available": true,
+          "state": "OPPOSES",
+          "score": 25,
+          "provider": "Google News RSS fallback",
+          "updated_at": "2026-08-17T09:57:26.782Z",
+          "evidence": [
+            "Headline-stance differential NZDUSD BUY: -0.5 after directional-headline reliability 75% => OPPOSES.",
+            "NZD: 2 supportive vs 1 opposing directional headline(s); balance 0.333 from 27 recent articles via Google News RSS fallback.",
+            "USD: 6 supportive vs 0 opposing directional headline(s); balance 1 from 40 recent articles via Google News RSS fallback.",
+            "High-impact headline risk: HIGH; 6 relevant headline(s) detected within 24h."
           ],
-          "headlines": [],
-          "event_risk": null,
-          "provenance": [],
-          "methodology": null,
-          "note": "News is fail-closed: no directional claim is created until a real provider adapter supplies evidence."
+          "missing_evidence": [],
+          "headlines": [
+            {
+              "title": "FOMC Minutes, Coinbase-Circle USDC Renewal in Focus This Week - bloomingbit",
+              "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9fNHlUMzh6LVA5c3o4V2tFQnp1Zzl2VlZobzZvVkhyc0NSX1dFU19CeXYyVXlHYm5GeExwenptTVhFN3dEVkFBbHdXZnkxR1hmdDlRMg?oc=5",
+              "domain": "bloomingbit",
+              "sourcecountry": null,
+              "language": "English",
+              "seen_at": "2026-08-17T09:44:07.000Z"
+            },
+            {
+              "title": "Treasury yields edge lower as investors look ahead to latest FOMC minutes - CNBC",
+              "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOSlROQUZGcnFZeVc5VHZjWGdpMmItNGNiUWxyV1EwRzdBRWFIRFNuVTIwRkZaSjVlV3FzX0FkSXdyeGtkZFlnUEUzbDdxRTVXLVEzNXBHVTFwU3IweHVfS1dzd3oxeFM3SkdqYldqbkdpaXZYbk9meHIyTWw2Q2tOS3JjSTI3TUY30gGOAUFVX3lxTFBJdnk5T2RxZi1kOGVodnlRdXE0SU00MnJPZnZPTUswMzFFMmJXZnZYa1FxUlNERFU0MHluTnppVTY2NkFVeWRDZ2JTaWJOOFFpTDNMal9ZMEpmQW5oSkpaRWZpQldsR1ExcVdhWTFHLTRtdi1kMlJRMV9GU3A2Q0hBOEFjUHB3eU56OXE5LWc?oc=5",
+              "domain": "CNBC",
+              "sourcecountry": null,
+              "language": "English",
+              "seen_at": "2026-08-17T08:08:17.000Z"
+            },
+            {
+              "title": "Indonesian Rupiah strengthens amid Prabowo's growth target, weaker US Dollar - FXStreet",
+              "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQdUlCWG9DWC02WXVDdFJPaUpGTnItTW01d3lzemhKSkh4Snh3c3I0RWVaeXFia0R1LWc5dFM4TkdBd3pjdW55cThnUDBSRDM1YlNFTnFuaWRWVE5FVjZZRW16bk5kRldndHpPUUt6amxoVlZjS0otTjloRVMyRXlfaGxvcmRManhxSmVGMzFENlhIb0RxbXpTTjd1UUIweUp0ajdNaWVGVHJaLVpEQUE2Yng1SmY4Z2Zh?oc=5",
+              "domain": "FXStreet",
+              "sourcecountry": null,
+              "language": "English",
+              "seen_at": "2026-08-17T05:45:10.000Z"
+            },
+            {
+              "title": "Audinate Group Sees FY27 US Dollar Gross Profit Growth In Line With Or Slightly Ahead Of Rate In FY26 - TradingView",
+              "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQWXNUY2g5WEJFVjMxZ193a29OTHpzVURRb3Rkc2pHMl9aWnJDMm5COHFtY0tXTUVIYV9wQXFyU3ZYYVBjdGJhbXVIS3JuRmxMS01iNWZueFpOaUVqSkV4SWNfU2dNNERhekZrME16ZTlmSllJWmttTk96RjhkMzhSQVdWV1V4RzItRGNTOS1EM0lXeFd5c1FKZTZvNGdEOTNxaWRTQmJ6VWFQdE9pZERTTklrQnNlVy1xZW9BeDkzX296dE5GSDhCU2VlMVVveEpxS1RSX3p6bXR4SE1Md2F0b0lrNkE1R3dFRWdER0UwMmExbVNOaUZEWDhaSmxnVFZl?oc=5",
+              "domain": "TradingView",
+              "sourcecountry": null,
+              "language": "English",
+              "seen_at": "2026-08-17T02:01:00.000Z"
+            },
+            {
+              "title": "New Zealand Food Price Inflation Eases in July, Bolstering Expectations of RBNZ Rate Cuts - VT Markets",
+              "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNekZwTWhWeVBxSVoyQmdhemU4ZnRXbllXNGVFc2x5OTJhZUVWWFFTdk5kQnlObmlLX25qc2RLV012ZHYxcllzSW9YWm0zR3ZQWFlhUDJLZjI2SXRNQXFUdmE4S1JuV0dSdXZERDFsTkRZbXdWbEVKRUN3cDE5RFRtNmtYTVRjRzRVNnFJLWFBQ0NWaklnWHVWMkJUbGxZbWVTdDR3WEpobk1jUjhVa0tDRFJjMUt5RFpTY0R3MHV5Skh5ODc4NHJhdkpIT3BsNUk?oc=5",
+              "domain": "VT Markets",
+              "sourcecountry": null,
+              "language": "English",
+              "seen_at": "2026-08-17T00:53:59.000Z"
+            },
+            {
+              "title": "S&P 500 Hits Record High August 2026: Inflation Cools & AI Stocks Rally - Intellectia AI",
+              "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1LNXNhSVh1ZV9zU3BUQnQxV1RlZldsVEpJSVRXN0R3ZFZiT0ZKeW9scFRLT0RZVWlFQUtqbUVJQjVYYzNrNlpQM2JQVGphZGMtbFlIVWRUM1djQ0syZlVubnlZR2RaVy16OEVfcw?oc=5",
+              "domain": "Intellectia AI",
+              "sourcecountry": null,
+              "language": "English",
+              "seen_at": "2026-08-17T00:06:54.000Z"
+            },
+            {
+              "title": "Germany’s Wholesale Price Inflation Slows in July, Missing Forecasts - CryptoRank",
+              "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE0yTzVJMHg4RGZWbXhjZndUbVl0T2lUT0dDOEo0TDRmYkIxMW13bnVldjJnV05MQ0dOY1d0dFJhMlZuS01xSlB5b0J2VzRXT2tUMGNfLTZkUlNiZENGRTVHei1fQV9uOWJUcndCU0hqOHZXdXRpMTBqWlEyWjE?oc=5",
+              "domain": "CryptoRank",
+              "sourcecountry": null,
+              "language": "English",
+              "seen_at": "2026-08-15T04:23:42.000Z"
+            },
+            {
+              "title": "France Inflation Holds at 2.4% in July, Matching Forecasts - CryptoRank",
+              "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE93anZBc0pOejNJTjZ3N1BQWk9fSFhmWG5WNE56b25GRlBoQU1HOHN1Zk9nTjhuYkkzNHp5YTRTOWJPX1hDLVFaMjZmZzQwX2JtcE1tWDd4TDdMVjRIMTJ4NlE2WU5XT1ZlVk9FeDhaenp6Zw?oc=5",
+              "domain": "CryptoRank",
+              "sourcecountry": null,
+              "language": "English",
+              "seen_at": "2026-08-15T03:35:59.000Z"
+            }
+          ],
+          "event_risk": {
+            "level": "HIGH",
+            "recent_high_impact_24h": 6
+          },
+          "provenance": [
+            {
+              "provider": "Google News RSS fallback",
+              "currency": "NZD",
+              "query": "\"New Zealand dollar\" OR RBNZ OR \"Reserve Bank of New Zealand\" inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
+              "latest_seen_at": "2026-08-17T07:58:09.000Z",
+              "article_count": 27,
+              "supportive_headline_count": 2,
+              "opposing_headline_count": 1,
+              "classified_headline_count": 3
+            },
+            {
+              "provider": "Google News RSS fallback",
+              "currency": "USD",
+              "query": "\"US dollar\" OR \"Federal Reserve\" OR FOMC inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
+              "latest_seen_at": "2026-08-17T09:44:07.000Z",
+              "article_count": 40,
+              "supportive_headline_count": 6,
+              "opposing_headline_count": 0,
+              "classified_headline_count": 6
+            }
+          ],
+          "methodology": {
+            "window": "3d",
+            "language": "English",
+            "provider_policy": "GDELT primary; Google News RSS fallback per currency",
+            "request_model": "one headline-list request per currency, fetched sequentially with retry/backoff",
+            "minimum_articles_per_currency": 3,
+            "directional_headlines_are_optional": true,
+            "max_article_age_hours": 96,
+            "high_impact_headline_window_hours": 24,
+            "base_headline_balance": 0.333,
+            "quote_headline_balance": 1,
+            "raw_pair_headline_differential": -0.667,
+            "reliability": 0.75,
+            "adjusted_pair_headline_differential": -0.5,
+            "support_threshold": 62,
+            "oppose_threshold": 38,
+            "neutral_band": [
+              45,
+              55
+            ],
+            "score_range": "0=strongly opposes canonical bias, 50=neutral/mixed, 100=strongly supports canonical bias"
+          },
+          "note": "Live News adapter using real macro/central-bank headlines. GDELT DOC 2.0 is primary; Google News RSS is a failover when the public GDELT endpoint is rate-limited or unavailable. Direction uses a transparent local headline-stance lexicon and pair differential with reliability damping. The score is contextual alignment, not a probability of profit or a forecast of headline impact."
         },
         "risk": {
           "key": "risk",
           "label": "Risk",
           "version": "0.2",
           "available": true,
-          "state": "LOW",
-          "score": 44.4,
+          "state": "MODERATE",
+          "score": 59.1,
           "scope": "contextual_decision_risk",
           "baseline": 15,
-          "raw_score_before_cap": 44.4,
+          "raw_score_before_cap": 59.1,
           "thresholds": {
             "low_below": 45,
             "moderate_from": 45,
@@ -1793,21 +1906,21 @@
             "context_coverage": {
               "key": "context_coverage",
               "label": "Context Coverage",
-              "contribution": 6,
+              "contribution": 0,
               "max_contribution": 18,
-              "reason": "1 contextual layer(s) are unavailable.",
+              "reason": "All contextual layers are available.",
               "detail": {
-                "available": 2,
+                "available": 3,
                 "expected": 3,
-                "coverage_percent": 67
+                "coverage_percent": 100
               }
             },
             "context_opposition": {
               "key": "context_opposition",
               "label": "Context Opposition",
-              "contribution": 13.3,
+              "contribution": 24,
               "max_contribution": 24,
-              "reason": "Macro & Yield OPPOSES increases contextual contradiction risk.",
+              "reason": "Macro & Yield OPPOSES; News OPPOSES increases contextual contradiction risk.",
               "detail": {
                 "layers": [
                   {
@@ -1816,6 +1929,13 @@
                     "state": "OPPOSES",
                     "score": 16.7,
                     "contribution": 13.3
+                  },
+                  {
+                    "layer": "news",
+                    "label": "News",
+                    "state": "OPPOSES",
+                    "score": 25,
+                    "contribution": 12
                   }
                 ]
               }
@@ -1838,6 +1958,11 @@
                     "key": "cross_market",
                     "label": "Cross-Market",
                     "score": 87.5
+                  },
+                  {
+                    "key": "news",
+                    "label": "News",
+                    "score": 25
                   }
                 ]
               }
@@ -1845,12 +1970,12 @@
             "news_event": {
               "key": "news_event",
               "label": "News Event Risk",
-              "contribution": 0,
+              "contribution": 10,
               "max_contribution": 10,
-              "reason": "News event risk is unavailable.",
+              "reason": "News event risk is HIGH based on recent high-impact macro/central-bank headlines.",
               "detail": {
-                "level": "UNAVAILABLE",
-                "recent_high_impact_24h": null
+                "level": "HIGH",
+                "recent_high_impact_24h": 6
               }
             },
             "reversal": {
@@ -1878,20 +2003,20 @@
             {
               "key": "context_opposition",
               "label": "Context Opposition",
-              "contribution": 13.3,
-              "reason": "Macro & Yield OPPOSES increases contextual contradiction risk."
+              "contribution": 24,
+              "reason": "Macro & Yield OPPOSES; News OPPOSES increases contextual contradiction risk."
+            },
+            {
+              "key": "news_event",
+              "label": "News Event Risk",
+              "contribution": 10,
+              "reason": "News event risk is HIGH based on recent high-impact macro/central-bank headlines."
             },
             {
               "key": "context_dispersion",
               "label": "Context Disagreement",
               "contribution": 8,
               "reason": "Context scores are dispersed by 70.8 points."
-            },
-            {
-              "key": "context_coverage",
-              "label": "Context Coverage",
-              "contribution": 6,
-              "reason": "1 contextual layer(s) are unavailable."
             },
             {
               "key": "reversal",
@@ -1901,24 +2026,24 @@
             }
           ],
           "context_snapshot": {
-            "external_context_coverage": "2/3",
+            "external_context_coverage": "3/3",
             "supports": 1,
-            "opposes": 1,
+            "opposes": 2,
             "mixed_or_neutral": 0,
-            "scored_layers": 2
+            "scored_layers": 3
           },
           "gates": {
-            "full_context": false,
-            "multiple_context_opposition": false,
-            "high_news_event_risk": false,
+            "full_context": true,
+            "multiple_context_opposition": true,
+            "high_news_event_risk": true,
             "risk_constrained": false
           },
           "reversal_risk_indicator": 31.03,
-          "external_context_coverage": "2/3",
+          "external_context_coverage": "3/3",
           "reasons": [
-            "Context Opposition: +13.3 · Macro & Yield OPPOSES increases contextual contradiction risk.",
+            "Context Opposition: +24 · Macro & Yield OPPOSES; News OPPOSES increases contextual contradiction risk.",
+            "News Event Risk: +10 · News event risk is HIGH based on recent high-impact macro/central-bank headlines.",
             "Context Disagreement: +8 · Context scores are dispersed by 70.8 points.",
-            "Context Coverage: +6 · 1 contextual layer(s) are unavailable.",
             "Reversal Risk: +2.1 · Reversal-risk indicator is 31/100."
           ],
           "methodology": "Risk v0.2 uses a conservative additive risk budget: 15-point baseline plus transparent contributions from Actionability weakness, regime weakness, missing context, contextual opposition, cross-context score dispersion, high-impact news-event density, reversal risk, and evidence gaps. Contributions are capped and the final score is bounded to 0-100.",
@@ -1940,8 +2065,8 @@
             "actionability_score": 87.5,
             "regime": "CONFIRMED_TREND",
             "risk_version": "0.2",
-            "risk_score": 44.4,
-            "risk_state": "LOW"
+            "risk_score": 59.1,
+            "risk_state": "MODERATE"
           },
           "primary_objection": {
             "id": "macro_yield_opposes",
@@ -1953,7 +2078,7 @@
               "state": "OPPOSES",
               "score": 16.7,
               "provider": "FRED (OECD / Federal Reserve source series)",
-              "updated_at": "2026-08-17T09:35:24.104Z"
+              "updated_at": "2026-08-17T09:56:35.559Z"
             },
             "evidence": [
               "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
@@ -1972,12 +2097,46 @@
                 "state": "OPPOSES",
                 "score": 16.7,
                 "provider": "FRED (OECD / Federal Reserve source series)",
-                "updated_at": "2026-08-17T09:35:24.104Z"
+                "updated_at": "2026-08-17T09:56:35.559Z"
               },
               "evidence": [
                 "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
                 "10Y spread momentum: -0.210 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
                 "Short-rate spread: NZD 2.680% (2026-06-01; IR3TIB01NZM156N) vs USD 3.630% (2026-08-13; EFFR); spread -0.950 pp => OPPOSES canonical BUY."
+              ]
+            },
+            {
+              "id": "news_opposes",
+              "category": "EXTERNAL_OPPOSITION",
+              "source_layer": "news",
+              "severity": "HIGH",
+              "statement": "News explicitly opposes the NZDUSD BUY setup at 25/100.",
+              "detail": {
+                "state": "OPPOSES",
+                "score": 25,
+                "provider": "Google News RSS fallback",
+                "updated_at": "2026-08-17T09:57:26.782Z"
+              },
+              "evidence": [
+                "Headline-stance differential NZDUSD BUY: -0.5 after directional-headline reliability 75% => OPPOSES.",
+                "NZD: 2 supportive vs 1 opposing directional headline(s); balance 0.333 from 27 recent articles via Google News RSS fallback.",
+                "USD: 6 supportive vs 0 opposing directional headline(s); balance 1 from 40 recent articles via Google News RSS fallback."
+              ]
+            },
+            {
+              "id": "news_event_high",
+              "category": "EVENT_TIMING",
+              "source_layer": "news",
+              "severity": "HIGH",
+              "statement": "Recent high-impact news density is HIGH and can invalidate continuation timing even when directional evidence is otherwise supportive.",
+              "detail": {
+                "level": "HIGH",
+                "recent_high_impact_24h": 6
+              },
+              "evidence": [
+                "FOMC Minutes, Coinbase-Circle USDC Renewal in Focus This Week - bloomingbit",
+                "Treasury yields edge lower as investors look ahead to latest FOMC minutes - CNBC",
+                "Indonesian Rupiah strengthens amid Prabowo's growth target, weaker US Dollar - FXStreet"
               ]
             },
             {
@@ -1998,6 +2157,11 @@
                     "key": "cross_market",
                     "label": "Cross-Market",
                     "score": 87.5
+                  },
+                  {
+                    "key": "news",
+                    "label": "News",
+                    "score": 25
                   }
                 ]
               },
@@ -2018,30 +2182,26 @@
           ],
           "objections": [
             "Macro & Yield explicitly opposes the NZDUSD BUY setup at 16.7/100.",
+            "News explicitly opposes the NZDUSD BUY setup at 25/100.",
+            "Recent high-impact news density is HIGH and can invalidate continuation timing even when directional evidence is otherwise supportive.",
             "Contextual intelligence is internally dispersed by 70.8 score points.",
             "The current weak currency has a reversal-risk indicator of 31/100."
           ],
           "severity_counts": {
-            "HIGH": 2,
+            "HIGH": 4,
             "MODERATE": 0,
             "LOW": 1
           },
           "evidence_balance": {
             "supports": 1,
-            "opposes": 1,
+            "opposes": 2,
             "mixed_or_neutral": 0,
-            "available": 2,
+            "available": 3,
             "expected": 3,
-            "missing": 1,
-            "net_context": "BALANCED"
+            "missing": 0,
+            "net_context": "OPPOSITION_BIASED"
           },
-          "missing_context": [
-            {
-              "key": "news",
-              "label": "News",
-              "reason": "News provider has not been connected to the static intelligence build yet."
-            }
-          ],
+          "missing_context": [],
           "monitoring_triggers": [
             {
               "key": "strength_leadership_flip",
@@ -2077,8 +2237,8 @@
             {
               "key": "multiple_external_opposition",
               "label": "Multiple contextual layers oppose",
-              "triggered": false,
-              "current": 1,
+              "triggered": true,
+              "current": 2,
               "trigger": "At least two contextual layers are OPPOSES."
             },
             {
@@ -2091,24 +2251,28 @@
             {
               "key": "high_event_risk",
               "label": "High-impact event risk",
-              "triggered": false,
-              "current": "UNAVAILABLE",
+              "triggered": true,
+              "current": "HIGH",
               "trigger": "News event-risk level = HIGH."
             },
             {
               "key": "risk_high_70",
               "label": "Risk becomes HIGH",
               "triggered": false,
-              "current": 44.4,
+              "current": 59.1,
               "trigger": "Risk v0.2 >= 70."
             }
           ],
           "triggered_conditions": [
-            "context_dispersion_60"
+            "multiple_external_opposition",
+            "context_dispersion_60",
+            "high_event_risk"
           ],
           "rebuttal_conditions": [
             "Current OPPOSES contextual layer(s) improve to NEUTRAL or SUPPORTS without deterioration elsewhere.",
-            "Cross-context score dispersion falls below 25 points."
+            "Cross-context score dispersion falls below 25 points.",
+            "High-impact event risk normalizes to LOW while directional context remains stable.",
+            "Risk v0.2 falls below 45 without changing the frozen Risk formula."
           ],
           "invalidation_focus": [
             "A material reversal in strongest/weakest Currency Strength leadership.",
@@ -2134,28 +2298,28 @@
           "key": "final_reasoner",
           "label": "Final Reasoner",
           "available": true,
-          "status": "MIXED_CONTEXT",
+          "status": "CONTEXT_CONTRADICTED",
           "outlook": "MIXED",
           "decision": "REVIEW_SELECTIVELY",
           "pair": "NZDUSD",
           "canonical_bias": "BUY",
           "actionability_score": 87.5,
           "regime": "CONFIRMED_TREND",
-          "contextual_coverage_percent": 67,
+          "contextual_coverage_percent": 100,
           "context_counts": {
             "supports": 1,
-            "opposes": 1,
+            "opposes": 2,
             "mixed_or_neutral": 0,
-            "available": 2,
+            "available": 3,
             "expected": 3
           },
-          "risk_level": "LOW",
-          "risk_score": 44.4,
+          "risk_level": "MODERATE",
+          "risk_score": 59.1,
           "risk_version": "0.2",
           "counter_thesis_state": "ACTIVE",
           "counter_thesis_version": "0.2",
           "counter_thesis_challenge_level": "HIGH",
-          "explanation": "Context is populated but not sufficiently one-sided to confirm the canonical pair bias.",
+          "explanation": "More contextual layers oppose than support the Currency Strength setup.",
           "guardrail": "Final Reasoner is evidence-grounded and fail-closed. Missing Macro & Yield, Cross-Market, or News evidence is never fabricated or silently replaced.",
           "note": "Final outlook is decision support only. It is not an execution instruction, win probability, or profitability forecast.",
           "version": "0.2",
@@ -2224,7 +2388,33 @@
                   "state": "OPPOSES",
                   "score": 16.7,
                   "provider": "FRED (OECD / Federal Reserve source series)",
-                  "updated_at": "2026-08-17T09:35:24.104Z"
+                  "updated_at": "2026-08-17T09:56:35.559Z"
+                }
+              }
+            },
+            {
+              "source": "news",
+              "category": "EXTERNAL_OPPOSITION",
+              "statement": "News explicitly opposes the NZDUSD BUY setup at 25/100.",
+              "detail": {
+                "severity": "HIGH",
+                "detail": {
+                  "state": "OPPOSES",
+                  "score": 25,
+                  "provider": "Google News RSS fallback",
+                  "updated_at": "2026-08-17T09:57:26.782Z"
+                }
+              }
+            },
+            {
+              "source": "news",
+              "category": "EVENT_TIMING",
+              "statement": "Recent high-impact news density is HIGH and can invalidate continuation timing even when directional evidence is otherwise supportive.",
+              "detail": {
+                "severity": "HIGH",
+                "detail": {
+                  "level": "HIGH",
+                  "recent_high_impact_24h": 6
                 }
               }
             },
@@ -2246,6 +2436,11 @@
                       "key": "cross_market",
                       "label": "Cross-Market",
                       "score": 87.5
+                    },
+                    {
+                      "key": "news",
+                      "label": "News",
+                      "score": 25
                     }
                   ]
                 }
@@ -2264,29 +2459,23 @@
               }
             }
           ],
-          "evidence_gaps": [
-            {
-              "source": "news",
-              "label": "News",
-              "reason": "News provider has not been connected to the static intelligence build yet."
-            }
-          ],
+          "evidence_gaps": [],
           "evidence_balance": {
             "supporting_items": 5,
-            "opposing_items": 3,
+            "opposing_items": 5,
             "contextual_supports": 1,
-            "contextual_opposes": 1,
+            "contextual_opposes": 2,
             "contextual_mixed_or_neutral": 0,
-            "contextual_available": 2,
+            "contextual_available": 3,
             "contextual_expected": 3
           },
           "key_risk": {
             "key": "context_opposition",
             "label": "Context Opposition",
-            "contribution": 13.3,
-            "reason": "Macro & Yield OPPOSES increases contextual contradiction risk.",
-            "risk_state": "LOW",
-            "risk_score": 44.4
+            "contribution": 24,
+            "reason": "Macro & Yield OPPOSES; News OPPOSES increases contextual contradiction risk.",
+            "risk_state": "MODERATE",
+            "risk_score": 59.1
           },
           "primary_counter_thesis": {
             "category": "EXTERNAL_OPPOSITION",
@@ -2329,8 +2518,8 @@
             {
               "key": "multiple_external_opposition",
               "label": "Multiple contextual layers oppose",
-              "triggered": false,
-              "current": 1,
+              "triggered": true,
+              "current": 2,
               "condition": "At least two contextual layers are OPPOSES."
             },
             {
@@ -2343,26 +2532,30 @@
             {
               "key": "high_event_risk",
               "label": "High-impact event risk",
-              "triggered": false,
-              "current": "UNAVAILABLE",
+              "triggered": true,
+              "current": "HIGH",
               "condition": "News event-risk level = HIGH."
             },
             {
               "key": "risk_high_70",
               "label": "Risk becomes HIGH",
               "triggered": false,
-              "current": 44.4,
+              "current": 59.1,
               "condition": "Risk v0.2 >= 70."
             }
           ],
           "active_invalidation_triggers": [
-            "context_dispersion_60"
+            "multiple_external_opposition",
+            "context_dispersion_60",
+            "high_event_risk"
           ],
           "rebuttal_conditions": [
             "Current OPPOSES contextual layer(s) improve to NEUTRAL or SUPPORTS without deterioration elsewhere.",
-            "Cross-context score dispersion falls below 25 points."
+            "Cross-context score dispersion falls below 25 points.",
+            "High-impact event risk normalizes to LOW while directional context remains stable.",
+            "Risk v0.2 falls below 45 without changing the frozen Risk formula."
           ],
-          "final_assessment": "NZDUSD BUY has Actionability 87.5/100 with regime CONFIRMED_TREND, but contextual evidence is not one-sided. Supports: Cross-Market. Opposes: Macro & Yield. Mixed/neutral: none. Risk v0.2 LOW at 44.4/100. Primary challenge: Macro & Yield explicitly opposes the NZDUSD BUY setup at 16.7/100. Decision remains REVIEW_SELECTIVELY.",
+          "final_assessment": "NZDUSD BUY remains the canonical ECB Currency Strength signal, but contextual opposition exceeds contextual support. Supports: Cross-Market. Opposes: Macro & Yield, News. Mixed/neutral: none. Decision remains REVIEW_SELECTIVELY; the canonical signal is not reversed.",
           "decision_trace": [
             {
               "gate": "actionability_available",
@@ -2373,15 +2566,15 @@
             {
               "gate": "minimum_external_context",
               "passed": true,
-              "current": "2/3",
+              "current": "3/3",
               "rule": "At least 2 of 3 contextual layers must be available."
             },
             {
               "gate": "risk_not_high",
               "passed": true,
               "current": {
-                "state": "LOW",
-                "score": 44.4
+                "state": "MODERATE",
+                "score": 59.1
               },
               "rule": "Risk HIGH constrains the final directional outlook."
             },
@@ -2390,7 +2583,7 @@
               "passed": true,
               "current": {
                 "supports": 1,
-                "opposes": 1,
+                "opposes": 2,
                 "mixed_or_neutral": 0
               },
               "rule": "OPPOSES > SUPPORTS => CONTEXT_CONTRADICTED; SUPPORTS > OPPOSES with Actionability >=80 => CONTEXT_CONFIRMED; otherwise MIXED_CONTEXT."
@@ -2403,7 +2596,7 @@
             }
           ],
           "frozen_decision_contract": {
-            "status": "MIXED_CONTEXT",
+            "status": "CONTEXT_CONTRADICTED",
             "outlook": "MIXED",
             "decision": "REVIEW_SELECTIVELY",
             "verified": true
@@ -2423,7 +2616,7 @@
         }
       },
       "methodology": "Sequential intelligence architecture: Macro & Yield → Cross-Market → News → Risk → Counter-Thesis → Final Reasoner. Risk v0.2 remains frozen during Fresh OOS collection. Counter-Thesis v0.2 performs structured adversarial review. Final Reasoner v0.2 adds Evidence For, Evidence Against, Key Risk, invalidation conditions, decision trace, and a deterministic final assessment while preserving the frozen v0.1 status/outlook/decision logic.",
-      "research_status": "MACRO_YIELD_CROSS_MARKET_LIVE_NEWS_PENDING"
+      "research_status": "CONTEXT_STACK_LIVE_RESEARCH_VALIDATION_PENDING"
     }
   }
 }
