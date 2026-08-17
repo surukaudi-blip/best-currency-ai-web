@@ -10,8 +10,8 @@
     "provider_name": "European Central Bank",
     "provider_url": "api.frankfurter.dev",
     "module": "Currency Strength Agent",
-    "received_at": "2026-08-17T02:16:54.601Z",
-    "generated_at": "2026-08-17T02:16:54.601Z",
+    "received_at": "2026-08-17T02:33:34.233Z",
+    "generated_at": "2026-08-17T02:33:34.233Z",
     "data_updated_at": "2026-08-14",
     "session_date": "2026-08-14",
     "comparison_date": "2026-08-13",
@@ -1631,7 +1631,7 @@
           "state": "OPPOSES",
           "score": 16.7,
           "provider": "FRED (OECD / Federal Reserve source series)",
-          "updated_at": "2026-08-17T02:16:55.559Z",
+          "updated_at": "2026-08-17T02:33:34.997Z",
           "evidence": [
             "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
             "10Y spread momentum: -0.210 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
@@ -1681,7 +1681,7 @@
           "state": "SUPPORTS",
           "score": 87.5,
           "provider": "FRED (Federal Reserve / EIA source series)",
-          "updated_at": "2026-08-17T02:16:55.868Z",
+          "updated_at": "2026-08-17T02:33:35.278Z",
           "evidence": [
             "NFCI: level -0.5490 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
             "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
@@ -1743,7 +1743,7 @@
           "state": "MIXED",
           "score": 43.4,
           "provider": "Google News RSS fallback",
-          "updated_at": "2026-08-17T02:17:45.522Z",
+          "updated_at": "2026-08-17T02:34:34.817Z",
           "evidence": [
             "Headline-stance differential NZDUSD BUY: -0.132 after directional-headline reliability 100% => MIXED.",
             "NZD: 6 supportive vs 1 opposing directional headline(s); balance 0.714 from 27 recent articles via Google News RSS fallback.",
@@ -1826,7 +1826,7 @@
               "provider": "Google News RSS fallback",
               "currency": "NZD",
               "query": "\"New Zealand dollar\" OR RBNZ OR \"Reserve Bank of New Zealand\" inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
-              "latest_seen_at": "2026-08-15T06:13:20.000Z",
+              "latest_seen_at": "2026-08-17T01:59:01.000Z",
               "article_count": 27,
               "supportive_headline_count": 6,
               "opposing_headline_count": 1,
@@ -2078,7 +2078,7 @@
               "state": "OPPOSES",
               "score": 16.7,
               "provider": "FRED (OECD / Federal Reserve source series)",
-              "updated_at": "2026-08-17T02:16:55.559Z"
+              "updated_at": "2026-08-17T02:33:34.997Z"
             },
             "evidence": [
               "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
@@ -2097,7 +2097,7 @@
                 "state": "OPPOSES",
                 "score": 16.7,
                 "provider": "FRED (OECD / Federal Reserve source series)",
-                "updated_at": "2026-08-17T02:16:55.559Z"
+                "updated_at": "2026-08-17T02:33:34.997Z"
               },
               "evidence": [
                 "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
@@ -2159,7 +2159,7 @@
                 "state": "MIXED",
                 "score": 43.4,
                 "provider": "Google News RSS fallback",
-                "updated_at": "2026-08-17T02:17:45.522Z"
+                "updated_at": "2026-08-17T02:34:34.817Z"
               },
               "evidence": [
                 "Headline-stance differential NZDUSD BUY: -0.132 after directional-headline reliability 100% => MIXED.",
@@ -2320,10 +2320,300 @@
           "counter_thesis_challenge_level": "HIGH",
           "explanation": "Context is populated but not sufficiently one-sided to confirm the canonical pair bias.",
           "guardrail": "Final Reasoner is evidence-grounded and fail-closed. Missing Macro & Yield, Cross-Market, or News evidence is never fabricated or silently replaced.",
-          "note": "Final outlook is decision support only. It is not an execution instruction, win probability, or profitability forecast."
+          "note": "Final outlook is decision support only. It is not an execution instruction, win probability, or profitability forecast.",
+          "version": "0.2",
+          "explainability_version": "0.2",
+          "decision_logic_version": "0.1_frozen",
+          "decision_logic_frozen": true,
+          "role": "evidence_synthesis_and_explainable_decision_support",
+          "thesis_anchor": {
+            "pair": "NZDUSD",
+            "canonical_bias": "BUY",
+            "strongest_currency": "NZD",
+            "weakest_currency": "USD",
+            "strength_difference": 3.406
+          },
+          "evidence_for": [
+            {
+              "source": "actionability",
+              "category": "UPSTREAM_READINESS",
+              "statement": "Actionability is strong at 87.5/100.",
+              "detail": {
+                "state": "ACTIONABLE"
+              }
+            },
+            {
+              "source": "regime",
+              "category": "UPSTREAM_STRUCTURE",
+              "statement": "Market regime is CONFIRMED_TREND.",
+              "detail": {
+                "regime": "CONFIRMED_TREND"
+              }
+            },
+            {
+              "source": "provider_agreement",
+              "category": "DATA_CONFIRMATION",
+              "statement": "Provider Agreement is strong at 97.5/100.",
+              "detail": {
+                "score": 97.5
+              }
+            },
+            {
+              "source": "multi_timeframe_alignment",
+              "category": "TIMEFRAME_CONFIRMATION",
+              "statement": "Multi-Timeframe Alignment is strong at 80.8/100.",
+              "detail": {
+                "score": 80.8
+              }
+            },
+            {
+              "source": "cross_market",
+              "category": "EXTERNAL_SUPPORT",
+              "statement": "Cross-Market supports the canonical NZDUSD BUY at 87.5/100.",
+              "detail": {
+                "score": 87.5,
+                "provider": "FRED (Federal Reserve / EIA source series)"
+              }
+            }
+          ],
+          "evidence_against": [
+            {
+              "source": "macro_yield",
+              "category": "EXTERNAL_OPPOSITION",
+              "statement": "Macro & Yield explicitly opposes the NZDUSD BUY setup at 16.7/100.",
+              "detail": {
+                "severity": "HIGH",
+                "detail": {
+                  "state": "OPPOSES",
+                  "score": 16.7,
+                  "provider": "FRED (OECD / Federal Reserve source series)",
+                  "updated_at": "2026-08-17T02:33:34.997Z"
+                }
+              }
+            },
+            {
+              "source": "news",
+              "category": "EVENT_TIMING",
+              "statement": "Recent high-impact news density is HIGH and can invalidate continuation timing even when directional evidence is otherwise supportive.",
+              "detail": {
+                "severity": "HIGH",
+                "detail": {
+                  "level": "HIGH",
+                  "recent_high_impact_24h": 4
+                }
+              }
+            },
+            {
+              "source": "risk.context_dispersion",
+              "category": "INTERNAL_DISAGREEMENT",
+              "statement": "Contextual intelligence is internally dispersed by 70.8 score points.",
+              "detail": {
+                "severity": "HIGH",
+                "detail": {
+                  "spread": 70.8,
+                  "scores": [
+                    {
+                      "key": "macro_yield",
+                      "label": "Macro & Yield",
+                      "score": 16.7
+                    },
+                    {
+                      "key": "cross_market",
+                      "label": "Cross-Market",
+                      "score": 87.5
+                    },
+                    {
+                      "key": "news",
+                      "label": "News",
+                      "score": 43.4
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "source": "news",
+              "category": "EXTERNAL_AMBIGUITY",
+              "statement": "News is mixed and weakens one-sided confirmation of the canonical bias.",
+              "detail": {
+                "severity": "MODERATE",
+                "detail": {
+                  "state": "MIXED",
+                  "score": 43.4,
+                  "provider": "Google News RSS fallback",
+                  "updated_at": "2026-08-17T02:34:34.817Z"
+                }
+              }
+            },
+            {
+              "source": "reversal_intelligence",
+              "category": "REVERSAL_RISK",
+              "statement": "The current weak currency has a reversal-risk indicator of 31/100.",
+              "detail": {
+                "severity": "LOW",
+                "detail": {
+                  "indicator": 31,
+                  "interpretation": "risk indicator, not profit probability"
+                }
+              }
+            }
+          ],
+          "evidence_gaps": [],
+          "evidence_balance": {
+            "supporting_items": 5,
+            "opposing_items": 5,
+            "contextual_supports": 1,
+            "contextual_opposes": 1,
+            "contextual_mixed_or_neutral": 1,
+            "contextual_available": 3,
+            "contextual_expected": 3
+          },
+          "key_risk": {
+            "key": "context_opposition",
+            "label": "Context Opposition",
+            "contribution": 17.3,
+            "reason": "Macro & Yield OPPOSES; News MIXED increases contextual contradiction risk.",
+            "risk_state": "MODERATE",
+            "risk_score": 52.4
+          },
+          "primary_counter_thesis": {
+            "category": "EXTERNAL_OPPOSITION",
+            "source_layer": "macro_yield",
+            "severity": "HIGH",
+            "statement": "Macro & Yield explicitly opposes the NZDUSD BUY setup at 16.7/100."
+          },
+          "invalidation_conditions": [
+            {
+              "key": "strength_leadership_flip",
+              "label": "Currency Strength leadership changes",
+              "triggered": false,
+              "current": {
+                "strongest": "NZD",
+                "weakest": "USD"
+              },
+              "condition": "Strongest/weakest leadership changes materially from NZD/USD."
+            },
+            {
+              "key": "provider_agreement_below_60",
+              "label": "Provider Agreement below 60",
+              "triggered": false,
+              "current": 97.5,
+              "condition": "Provider Agreement < 60."
+            },
+            {
+              "key": "mtf_alignment_below_60",
+              "label": "MTF Alignment below 60",
+              "triggered": false,
+              "current": 80.8,
+              "condition": "Multi-Timeframe Alignment < 60."
+            },
+            {
+              "key": "actionability_below_60",
+              "label": "Actionability becomes filtered",
+              "triggered": false,
+              "current": 87.5,
+              "condition": "Actionability < 60."
+            },
+            {
+              "key": "multiple_external_opposition",
+              "label": "Multiple contextual layers oppose",
+              "triggered": false,
+              "current": 1,
+              "condition": "At least two contextual layers are OPPOSES."
+            },
+            {
+              "key": "context_dispersion_60",
+              "label": "Context disagreement becomes extreme",
+              "triggered": true,
+              "current": 70.8,
+              "condition": "Context score spread >= 60 points."
+            },
+            {
+              "key": "high_event_risk",
+              "label": "High-impact event risk",
+              "triggered": true,
+              "current": "HIGH",
+              "condition": "News event-risk level = HIGH."
+            },
+            {
+              "key": "risk_high_70",
+              "label": "Risk becomes HIGH",
+              "triggered": false,
+              "current": 52.4,
+              "condition": "Risk v0.2 >= 70."
+            }
+          ],
+          "active_invalidation_triggers": [
+            "context_dispersion_60",
+            "high_event_risk"
+          ],
+          "rebuttal_conditions": [
+            "Current OPPOSES contextual layer(s) improve to NEUTRAL or SUPPORTS without deterioration elsewhere.",
+            "Cross-context score dispersion falls below 25 points.",
+            "High-impact event risk normalizes to LOW while directional context remains stable.",
+            "Risk v0.2 falls below 45 without changing the frozen Risk formula."
+          ],
+          "final_assessment": "NZDUSD BUY has Actionability 87.5/100 with regime CONFIRMED_TREND, but contextual evidence is not one-sided. Supports: Cross-Market. Opposes: Macro & Yield. Mixed/neutral: News. Risk v0.2 MODERATE at 52.4/100. Primary challenge: Macro & Yield explicitly opposes the NZDUSD BUY setup at 16.7/100. Decision remains REVIEW_SELECTIVELY.",
+          "decision_trace": [
+            {
+              "gate": "actionability_available",
+              "passed": true,
+              "current": 87.5,
+              "rule": "Actionability must be available before Final Reasoner can assess the setup."
+            },
+            {
+              "gate": "minimum_external_context",
+              "passed": true,
+              "current": "3/3",
+              "rule": "At least 2 of 3 contextual layers must be available."
+            },
+            {
+              "gate": "risk_not_high",
+              "passed": true,
+              "current": {
+                "state": "MODERATE",
+                "score": 52.4
+              },
+              "rule": "Risk HIGH constrains the final directional outlook."
+            },
+            {
+              "gate": "context_vote",
+              "passed": true,
+              "current": {
+                "supports": 1,
+                "opposes": 1,
+                "mixed_or_neutral": 1
+              },
+              "rule": "OPPOSES > SUPPORTS => CONTEXT_CONTRADICTED; SUPPORTS > OPPOSES with Actionability >=80 => CONTEXT_CONFIRMED; otherwise MIXED_CONTEXT."
+            },
+            {
+              "gate": "strong_actionability_for_confirmation",
+              "passed": true,
+              "current": 87.5,
+              "rule": "CONTEXT_CONFIRMED requires Actionability >=80 in addition to net contextual support."
+            }
+          ],
+          "frozen_decision_contract": {
+            "status": "MIXED_CONTEXT",
+            "outlook": "MIXED",
+            "decision": "REVIEW_SELECTIVELY",
+            "verified": true
+          },
+          "explainability_guardrails": {
+            "canonical_ecb_signal_unchanged": true,
+            "actionability_formula_unchanged": true,
+            "risk_v0_2_formula_unchanged": true,
+            "counter_thesis_v0_2_does_not_vote": true,
+            "final_reasoner_decision_logic_unchanged": true,
+            "explanation_does_not_change_decision": true,
+            "not_profit_probability": true,
+            "not_execution_instruction": true
+          },
+          "research_status": "EXPLAINABILITY_V0_2_PROSPECTIVE_TRACKING_ACTIVE",
+          "prospective_policy": "Existing frozen Fresh OOS predictions remain unchanged. Final Reasoner v0.2 adds explainability only; status/outlook/decision follow the frozen v0.1 decision logic."
         }
       },
-      "methodology": "Sequential intelligence architecture: Macro & Yield → Cross-Market → News → Risk → Counter-Thesis → Final Reasoner. The first three stages require real external evidence adapters. Risk v0.2 remains frozen during Fresh OOS collection. Counter-Thesis v0.2 performs structured adversarial evidence review without changing the canonical signal, Risk score, Actionability, or Final Reasoner decision logic.",
+      "methodology": "Sequential intelligence architecture: Macro & Yield → Cross-Market → News → Risk → Counter-Thesis → Final Reasoner. Risk v0.2 remains frozen during Fresh OOS collection. Counter-Thesis v0.2 performs structured adversarial review. Final Reasoner v0.2 adds Evidence For, Evidence Against, Key Risk, invalidation conditions, decision trace, and a deterministic final assessment while preserving the frozen v0.1 status/outlook/decision logic.",
       "research_status": "CONTEXT_STACK_LIVE_RESEARCH_VALIDATION_PENDING"
     }
   }

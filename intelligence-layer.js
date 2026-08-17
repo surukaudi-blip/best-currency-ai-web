@@ -17,6 +17,9 @@
     '.intel-stage .stage-v{font-size:.88rem;font-weight:800;color:var(--text);line-height:1.3}' +
     '.intel-stage .stage-s{font-size:.64rem;color:var(--muted);line-height:1.45;margin-top:4px}' +
     '.intel-stage .stage-meta{font-size:.6rem;color:var(--muted-2);line-height:1.4;margin-top:5px}' +
+    '.intel-final-explain{margin-top:8px;padding-top:7px;border-top:1px solid var(--border);display:grid;gap:5px}' +
+    '.intel-final-row{font-size:.61rem;line-height:1.42;color:var(--muted)}' +
+    '.intel-final-row b{color:var(--text);font-weight:700}' +
     '.intel-layer-badge{display:inline-flex;align-items:center;border-radius:999px;padding:3px 7px;font-size:.57rem;font-weight:800;letter-spacing:.04em;white-space:nowrap}' +
     '.intel-layer-ok{background:var(--green-dim);color:var(--green)}' +
     '.intel-layer-warn{background:var(--amber-dim);color:var(--amber)}' +
@@ -36,9 +39,9 @@
       '<div class="intel-stage"><div class="stage-k">03 · News</div><div class="stage-v" id="intel-news-v">—</div><div class="stage-s" id="intel-news-s">Memeriksa bukti berita…</div><div class="stage-meta" id="intel-news-meta"></div></div>' +
       '<div class="intel-stage"><div class="stage-k">04 · Risk</div><div class="stage-v" id="intel-risk-v">—</div><div class="stage-s" id="intel-risk-s">Mengukur risiko kontekstual…</div><div class="stage-meta" id="intel-risk-meta"></div></div>' +
       '<div class="intel-stage"><div class="stage-k">05 · Counter-Thesis</div><div class="stage-v" id="intel-counter-v">—</div><div class="stage-s" id="intel-counter-s">Mencari bukti yang menentang setup…</div><div class="stage-meta" id="intel-counter-meta"></div></div>' +
-      '<div class="intel-stage final-stage"><div class="stage-k">06 · Final Reasoner</div><div class="stage-v" id="intel-final-v">—</div><div class="stage-s" id="intel-final-s">Menunggu seluruh bukti yang diperlukan…</div><div class="stage-meta" id="intel-final-meta"></div></div>' +
+      '<div class="intel-stage final-stage"><div class="stage-k">06 · Final Reasoner</div><div class="stage-v" id="intel-final-v">—</div><div class="stage-s" id="intel-final-s">Menunggu seluruh bukti yang diperlukan…</div><div class="stage-meta" id="intel-final-meta"></div><div class="intel-final-explain" id="intel-final-explain"></div></div>' +
     '</div>' +
-    '<div class="intel-layer-foot">Fail-closed: Macro & Yield, Cross-Market, dan News tidak diisi dengan asumsi. Risk v0.2 tetap dibekukan selama Fresh OOS. Counter-Thesis adalah adversarial review, bukan probabilitas rugi dan tidak membalik sinyal ECB. Final Reasoner tetap memakai logika keputusan yang sama.</div>';
+    '<div class="intel-layer-foot">Fail-closed: Macro & Yield, Cross-Market, dan News tidak diisi dengan asumsi. Risk v0.2 tetap dibekukan selama Fresh OOS. Counter-Thesis adalah adversarial review. Final Reasoner v0.2 menambahkan explainability tanpa mengubah status/outlook/decision yang sedang diuji.</div>';
 
   var anchor=document.getElementById('provider-confirmation');
   if(anchor) anchor.insertAdjacentElement('afterend',box); else pairPanel.appendChild(box);
@@ -60,6 +63,7 @@
     return '';
   }
   function firstText(arr,fallback){return Array.isArray(arr)&&arr.length?String(arr[0]):fallback;}
+  function firstStatement(arr,fallback){return Array.isArray(arr)&&arr.length&&arr[0]&&arr[0].statement?String(arr[0].statement):fallback;}
   function fmtScore(n){return Number.isFinite(Number(n))?Number(n).toFixed(1).replace('.',','):null;}
   function renderInput(prefix,layer){
     var v=document.getElementById('intel-'+prefix+'-v');
@@ -83,7 +87,7 @@
   function counterSourceLabel(key){
     var map={
       macro_yield:'Macro & Yield',cross_market:'Cross-Market',news:'News',risk:'Risk',regime:'Regime',actionability:'Actionability',
-      reversal_intelligence:'Reversal', 'risk.context_dispersion':'Konflik konteks', counter_thesis:'Counter-Thesis'
+      reversal_intelligence:'Reversal','risk.context_dispersion':'Konflik konteks',counter_thesis:'Counter-Thesis'
     };
     return map[key]||key||'—';
   }
@@ -138,12 +142,24 @@
     var fv=document.getElementById('intel-final-v');
     var fs=document.getElementById('intel-final-s');
     var fm=document.getElementById('intel-final-meta');
+    var fx=document.getElementById('intel-final-explain');
     if(fv){
       var finalLabel=finalR.outlook&&finalR.outlook!=='NOT_FINAL'?finalR.outlook:'BELUM FINAL';
       fv.innerHTML=esc(finalLabel)+' '+stateBadge(finalR.status);
     }
-    if(fs) fs.textContent=finalR.explanation||'Final Reasoner belum tersedia.';
-    if(fm) fm.textContent=(finalR.pair||'—')+' · Bias ECB '+(finalR.canonical_bias||'—')+' · Cakupan konteks '+(Number.isFinite(Number(finalR.contextual_coverage_percent))?finalR.contextual_coverage_percent:'0')+'%'+(finalR.risk_version?' · Risk v'+finalR.risk_version:'')+(finalR.counter_thesis_version?' · CT v'+finalR.counter_thesis_version:'');
+    if(fs) fs.textContent=finalR.final_assessment||finalR.explanation||'Final Reasoner belum tersedia.';
+    if(fm) fm.textContent=(finalR.pair||'—')+' · Bias ECB '+(finalR.canonical_bias||'—')+' · Cakupan konteks '+(Number.isFinite(Number(finalR.contextual_coverage_percent))?finalR.contextual_coverage_percent:'0')+'%'+(finalR.risk_version?' · Risk v'+finalR.risk_version:'')+(finalR.counter_thesis_version?' · CT v'+finalR.counter_thesis_version:'')+(finalR.version?' · FR v'+finalR.version:'');
+    if(fx){
+      var evFor=firstStatement(finalR.evidence_for,'Belum ada bukti pendukung yang terstruktur.');
+      var evAgainst=firstStatement(finalR.evidence_against,'Tidak ada keberatan langsung yang terstruktur.');
+      var keyRisk=finalR.key_risk&&finalR.key_risk.reason?finalR.key_risk.reason:'Risiko utama belum tersedia.';
+      var inv=Array.isArray(finalR.invalidation_conditions)&&finalR.invalidation_conditions.length?(finalR.invalidation_conditions.find(function(x){return x&&x.triggered;})||finalR.invalidation_conditions[0]):null;
+      fx.innerHTML=
+        '<div class="intel-final-row"><b>Bukti mendukung · </b>'+esc(evFor)+'</div>'+
+        '<div class="intel-final-row"><b>Bukti menentang · </b>'+esc(evAgainst)+'</div>'+
+        '<div class="intel-final-row"><b>Risiko utama · </b>'+esc(keyRisk)+'</div>'+
+        '<div class="intel-final-row"><b>Invalidasi · </b>'+esc(inv&&inv.condition?inv.condition:'Belum ada kondisi invalidasi terstruktur.')+'</div>';
+    }
 
     var readiness=document.getElementById('intel-readiness');
     var state=String(intel.readiness&&intel.readiness.state||'WAITING_FOR_CONTEXT_PROVIDERS');
@@ -155,7 +171,7 @@
   }
 
   function load(){
-    fetch('./data/currency-strength.json?v=ca9382eb73',{headers:{Accept:'application/json'},cache:'no-store'})
+    fetch('./data/currency-strength.json?v=0b44283b27',{headers:{Accept:'application/json'},cache:'no-store'})
       .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
       .then(function(payload){render(payload&&payload.data?payload.data:payload);})
       .catch(function(){var el=document.getElementById('intel-readiness');if(el){el.className='intel-layer-badge intel-layer-bad';el.textContent='GAGAL MEMUAT';}});
