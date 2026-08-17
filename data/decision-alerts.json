@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "DECISION_ALERT_WATCH_ACTIVE",
   "created_at": "2026-08-17T03:19:49.195Z",
-  "updated_at": "2026-08-17T13:15:45.894Z",
+  "updated_at": "2026-08-17T15:48:17.857Z",
   "policy": {
     "mode": "material_change_notification_and_explainability_watch",
     "no_historical_backfill": true,
@@ -15,55 +15,34 @@
   },
   "active_alerts": [
     {
-      "key": "FINAL_CONTEXT_CONTRADICTED",
+      "key": "ACTIONABILITY_FILTERED",
       "severity": "HIGH",
-      "title": "Konteks menentang thesis",
-      "detail": "Final Reasoner CONTEXT_CONTRADICTED; keputusan REVIEW_SELECTIVELY.",
-      "source": "final_reasoner",
-      "session_date": "2026-08-14",
-      "trigger": "Final Reasoner status = CONTEXT_CONTRADICTED.",
+      "title": "Actionability terfilter",
+      "detail": "Actionability 55 · FILTERED.",
+      "source": "actionability",
+      "session_date": "2026-08-17",
+      "trigger": "Actionability < 60 or state FILTERED.",
       "evidence": {
-        "version": "0.2",
-        "decision_logic_version": "0.1_frozen",
-        "status": "CONTEXT_CONTRADICTED",
-        "outlook": "MIXED",
-        "decision": "REVIEW_SELECTIVELY"
+        "score": 55,
+        "state": "FILTERED",
+        "regime": "LOW_ALIGNMENT"
       },
-      "first_seen": "2026-08-17T10:23:31.601Z",
-      "last_seen": "2026-08-17T13:15:45.894Z",
-      "occurrences": 2
+      "first_seen": "2026-08-17T15:48:17.857Z",
+      "last_seen": "2026-08-17T15:48:17.857Z",
+      "occurrences": 1
     },
     {
-      "key": "MULTIPLE_CONTEXT_OPPOSITION",
+      "key": "MTF_ALIGNMENT_LOW",
       "severity": "HIGH",
-      "title": "Beberapa layer konteks menentang",
-      "detail": "2 contextual layer berada pada OPPOSES.",
+      "title": "MTF Alignment di bawah guardrail",
+      "detail": "Multi-Timeframe Alignment turun di bawah 60.",
       "source": "counter_thesis",
-      "session_date": "2026-08-14",
-      "trigger": "At least two external contextual layers are OPPOSES.",
-      "evidence": {
-        "supports": 1,
-        "opposes": 2,
-        "mixed_or_neutral": 0,
-        "available": 3,
-        "expected": 3
-      },
-      "first_seen": "2026-08-17T10:23:31.601Z",
-      "last_seen": "2026-08-17T13:15:45.894Z",
-      "occurrences": 2
-    },
-    {
-      "key": "CONTEXT_DISAGREEMENT_EXTREME",
-      "severity": "MODERATE",
-      "title": "Context disagreement ekstrem",
-      "detail": "Context score spread mencapai atau melampaui 60 poin.",
-      "source": "counter_thesis",
-      "session_date": "2026-08-14",
-      "trigger": "Context disagreement >= 60 points.",
+      "session_date": "2026-08-17",
+      "trigger": "MTF Alignment < 60.",
       "evidence": null,
-      "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T13:15:45.894Z",
-      "occurrences": 16
+      "first_seen": "2026-08-17T15:48:17.857Z",
+      "last_seen": "2026-08-17T15:48:17.857Z",
+      "occurrences": 1
     },
     {
       "key": "COUNTER_THESIS_HIGH",
@@ -71,55 +50,38 @@
       "title": "Counter-Thesis challenge HIGH",
       "detail": "Counter-Thesis ACTIVE · challenge HIGH.",
       "source": "counter_thesis",
-      "session_date": "2026-08-14",
+      "session_date": "2026-08-17",
       "trigger": "Counter-Thesis challenge level = HIGH.",
       "evidence": {
         "version": "0.2",
         "state": "ACTIVE",
         "challenge_level": "HIGH",
         "triggered_conditions": [
-          "multiple_external_opposition",
-          "context_dispersion_60",
+          "mtf_alignment_below_60",
+          "actionability_below_60",
           "high_event_risk"
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T13:15:45.894Z",
-      "occurrences": 16
+      "last_seen": "2026-08-17T15:48:17.857Z",
+      "occurrences": 17
     },
     {
       "key": "NEWS_EVENT_HIGH",
       "severity": "MODERATE",
       "title": "High-impact News Event Risk",
-      "detail": "News Event Risk HIGH sementara News 25 · OPPOSES.",
+      "detail": "News Event Risk HIGH sementara News 57.9 · MIXED.",
       "source": "news",
-      "session_date": "2026-08-14",
+      "session_date": "2026-08-17",
       "trigger": "News event-risk level = HIGH.",
       "evidence": {
-        "state": "OPPOSES",
-        "score": 25,
+        "state": "MIXED",
+        "score": 57.9,
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T09:57:27.459Z",
-      "last_seen": "2026-08-17T13:15:45.894Z",
-      "occurrences": 5
-    },
-    {
-      "key": "NEWS_OPPOSES",
-      "severity": "MODERATE",
-      "title": "News menentang canonical bias",
-      "detail": "News 25 · OPPOSES NZDUSD BUY.",
-      "source": "news",
-      "session_date": "2026-08-14",
-      "trigger": "News state = OPPOSES.",
-      "evidence": {
-        "state": "OPPOSES",
-        "score": 25,
-        "event_risk": "HIGH"
-      },
-      "first_seen": "2026-08-17T10:23:31.601Z",
-      "last_seen": "2026-08-17T13:15:45.894Z",
-      "occurrences": 2
+      "last_seen": "2026-08-17T15:48:17.857Z",
+      "occurrences": 6
     }
   ],
   "events": [
@@ -681,53 +643,131 @@
       "session_date": "2026-08-14",
       "dedupe_key": "RESOLVED:INTRADAY_HIGH_DRIFT:2026-08-14:2026-08-17T10:23:31.601Z",
       "event_hash": "a3468b5ac63f140e0d2523bd88c1aee8b60158635625736acdfadd8d7a39f6ad"
+    },
+    {
+      "id": "ALERT-EVENT-0044",
+      "occurred_at": "2026-08-17T15:48:17.857Z",
+      "event_type": "OPEN",
+      "alert_key": "ACTIONABILITY_FILTERED",
+      "severity": "HIGH",
+      "title": "Actionability terfilter",
+      "detail": "Actionability 55 · FILTERED.",
+      "source": "actionability",
+      "session_date": "2026-08-17",
+      "dedupe_key": "OPEN:ACTIONABILITY_FILTERED:2026-08-17",
+      "event_hash": "8a29c4525ab806b02503b294303506eb9ea411c401d3250cf868229591aa2300"
+    },
+    {
+      "id": "ALERT-EVENT-0045",
+      "occurred_at": "2026-08-17T15:48:17.857Z",
+      "event_type": "OPEN",
+      "alert_key": "MTF_ALIGNMENT_LOW",
+      "severity": "HIGH",
+      "title": "MTF Alignment di bawah guardrail",
+      "detail": "Multi-Timeframe Alignment turun di bawah 60.",
+      "source": "counter_thesis",
+      "session_date": "2026-08-17",
+      "dedupe_key": "OPEN:MTF_ALIGNMENT_LOW:2026-08-17",
+      "event_hash": "76f88270354c035e2e09777547de131141ef9f7da908e9d9b84ad5c8f89c5456"
+    },
+    {
+      "id": "ALERT-EVENT-0046",
+      "occurred_at": "2026-08-17T15:48:17.857Z",
+      "event_type": "RESOLVED",
+      "alert_key": "FINAL_CONTEXT_CONTRADICTED",
+      "severity": "HIGH",
+      "title": "Konteks menentang thesis",
+      "detail": "Resolved: Final Reasoner CONTEXT_CONTRADICTED; keputusan REVIEW_SELECTIVELY.",
+      "source": "final_reasoner",
+      "session_date": "2026-08-17",
+      "dedupe_key": "RESOLVED:FINAL_CONTEXT_CONTRADICTED:2026-08-17:2026-08-17T15:48:17.857Z",
+      "event_hash": "9134dc4266481a80dfd075116a7908ae970877186f8c0be7217aa6f7ca49bc08"
+    },
+    {
+      "id": "ALERT-EVENT-0047",
+      "occurred_at": "2026-08-17T15:48:17.857Z",
+      "event_type": "RESOLVED",
+      "alert_key": "MULTIPLE_CONTEXT_OPPOSITION",
+      "severity": "HIGH",
+      "title": "Beberapa layer konteks menentang",
+      "detail": "Resolved: 2 contextual layer berada pada OPPOSES.",
+      "source": "counter_thesis",
+      "session_date": "2026-08-17",
+      "dedupe_key": "RESOLVED:MULTIPLE_CONTEXT_OPPOSITION:2026-08-17:2026-08-17T15:48:17.857Z",
+      "event_hash": "087c20d3ad7433f0f19c16b6f953c0b43b9797215f324ca8526d0cc3c49ee9da"
+    },
+    {
+      "id": "ALERT-EVENT-0048",
+      "occurred_at": "2026-08-17T15:48:17.857Z",
+      "event_type": "RESOLVED",
+      "alert_key": "CONTEXT_DISAGREEMENT_EXTREME",
+      "severity": "MODERATE",
+      "title": "Context disagreement ekstrem",
+      "detail": "Resolved: Context score spread mencapai atau melampaui 60 poin.",
+      "source": "counter_thesis",
+      "session_date": "2026-08-17",
+      "dedupe_key": "RESOLVED:CONTEXT_DISAGREEMENT_EXTREME:2026-08-17:2026-08-17T15:48:17.857Z",
+      "event_hash": "1bf4b51dc3f8862337645fe3f09c644d1cd09cda007da43f5b9b49be7bf93b1a"
+    },
+    {
+      "id": "ALERT-EVENT-0049",
+      "occurred_at": "2026-08-17T15:48:17.857Z",
+      "event_type": "RESOLVED",
+      "alert_key": "NEWS_OPPOSES",
+      "severity": "MODERATE",
+      "title": "News menentang canonical bias",
+      "detail": "Resolved: News 25 · OPPOSES NZDUSD BUY.",
+      "source": "news",
+      "session_date": "2026-08-17",
+      "dedupe_key": "RESOLVED:NEWS_OPPOSES:2026-08-17:2026-08-17T15:48:17.857Z",
+      "event_hash": "f773a0cc5a9c4e9fb85ce8b23bc99da8b8078d791b0ce7a46eb0d820733cf7d3"
     }
   ],
   "summary": {
     "alert_gate": "REVIEW_NOW",
-    "active_total": 6,
+    "active_total": 4,
     "high_active": 2,
-    "moderate_active": 4,
+    "moderate_active": 2,
     "info_active": 0,
-    "event_count": 43,
-    "new_events_this_run": 0,
-    "latest_event_at": "2026-08-17T10:23:31.601Z",
-    "latest_event_id": "ALERT-EVENT-0043"
+    "event_count": 49,
+    "new_events_this_run": 6,
+    "latest_event_at": "2026-08-17T15:48:17.857Z",
+    "latest_event_id": "ALERT-EVENT-0049"
   },
   "current_watch": {
-    "session_date": "2026-08-14",
-    "pair": "NZDUSD",
+    "session_date": "2026-08-17",
+    "pair": "AUDUSD",
     "canonical_bias": "BUY",
     "actionability": {
-      "score": 87.5,
-      "state": "ACTIONABLE",
-      "regime": "CONFIRMED_TREND"
+      "score": 55,
+      "state": "FILTERED",
+      "regime": "LOW_ALIGNMENT"
     },
     "context": {
       "macro_yield": {
-        "state": "OPPOSES",
-        "score": 16.7
+        "state": "SUPPORTS",
+        "score": 66.7
       },
       "cross_market": {
         "state": "SUPPORTS",
         "score": 87.5
       },
       "news": {
-        "state": "OPPOSES",
-        "score": 25,
+        "state": "MIXED",
+        "score": 57.9,
         "event_risk": "HIGH"
       },
       "counts": {
-        "supports": 1,
-        "opposes": 2,
-        "mixed_or_neutral": 0,
+        "supports": 2,
+        "opposes": 0,
+        "mixed_or_neutral": 1,
         "available": 3,
         "expected": 3
       }
     },
     "risk": {
       "version": "0.2",
-      "score": 59.1,
+      "score": 67.5,
       "state": "MODERATE"
     },
     "counter_thesis": {
@@ -735,24 +775,33 @@
       "state": "ACTIVE",
       "challenge_level": "HIGH",
       "triggered_conditions": [
-        "multiple_external_opposition",
-        "context_dispersion_60",
+        "mtf_alignment_below_60",
+        "actionability_below_60",
         "high_event_risk"
       ]
     },
     "final_reasoner": {
       "version": "0.2",
       "decision_logic_version": "0.1_frozen",
-      "status": "CONTEXT_CONTRADICTED",
+      "status": "MIXED_CONTEXT",
       "outlook": "MIXED",
-      "decision": "REVIEW_SELECTIVELY"
+      "decision": "DEPRIORITIZE"
     },
     "intraday": {
-      "id": "DRIFT-0012-2026-08-14",
-      "captured_at": "2026-08-17T13:15:45.645Z",
-      "drift_level": "NONE",
-      "snapshot_hash": "caa6c8d77f315cedcf78b5f3a01749b354592756cbf2305de71994775f265ccf",
-      "drift_vs_previous": []
+      "id": "DRIFT-0013-2026-08-17",
+      "captured_at": "2026-08-17T15:48:17.711Z",
+      "drift_level": "BASELINE",
+      "snapshot_hash": "b4922e3af204419a1f14ef1c98458f0415b34fb3fbb1edec9d94ff2f2450d7dc",
+      "drift_vs_previous": [
+        {
+          "key": "session_baseline",
+          "severity": "NONE",
+          "label": "Session baseline",
+          "from": null,
+          "to": "AUDUSD BUY",
+          "delta": null
+        }
+      ]
     },
     "anchors": {
       "decision_history": {

@@ -171,7 +171,7 @@
   }
 
   function load(){
-    fetch('./data/currency-strength.json?v=6114cb5f67',{headers:{Accept:'application/json'},cache:'no-store'})
+    fetch('./data/currency-strength.json?v=616537b254',{headers:{Accept:'application/json'},cache:'no-store'})
       .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
       .then(function(payload){latest=payload&&payload.data?payload.data:payload;render();})
       .catch(function(){document.getElementById('actionability-score').textContent='—';document.getElementById('provider-score').textContent='—';document.getElementById('mtf-score').textContent='—';document.getElementById('strength-percentile').textContent='—';document.getElementById('regime-name').textContent='—';document.getElementById('provider-confirm-line').textContent='Intelijen Kekuatan Mata Uang tidak dapat dimuat.';});
