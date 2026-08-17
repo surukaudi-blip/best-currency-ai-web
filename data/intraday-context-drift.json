@@ -1,0 +1,658 @@
+{
+  "schema_version": "1.0",
+  "status": "INTRADAY_CONTEXT_DRIFT_ACTIVE",
+  "created_at": "2026-08-17T03:10:50.566Z",
+  "updated_at": "2026-08-17T04:00:12.391Z",
+  "policy": {
+    "mode": "prospective_intraday_context_audit",
+    "capture_scope": "multiple_context_captures_within_same_complete_ecb_session",
+    "no_historical_backfill": true,
+    "append_only_captures": true,
+    "no_model_tuning": true,
+    "no_signal_voting": true,
+    "frozen_anchor_policy": "decision_history_and_fresh_oos_are_reference_only_and_never_rewritten",
+    "drift_level_interpretation": "descriptive_context_change_severity_not_market_risk_probability"
+  },
+  "captures": [
+    {
+      "id": "DRIFT-0001-2026-08-14",
+      "captured_at": "2026-08-17T03:10:50.566Z",
+      "source_event": "push",
+      "source_run_id": "31990254754",
+      "source_run_attempt": "1",
+      "snapshot": {
+        "session_date": "2026-08-14",
+        "pair": "NZDUSD",
+        "canonical_bias": "BUY",
+        "actionability": {
+          "score": 87.5,
+          "state": "ACTIONABLE",
+          "regime": "CONFIRMED_TREND"
+        },
+        "context": {
+          "macro_yield": {
+            "available": true,
+            "state": "OPPOSES",
+            "score": 16.7,
+            "provider": "FRED (OECD / Federal Reserve source series)",
+            "updated_at": "2026-08-17T03:10:01.711Z"
+          },
+          "cross_market": {
+            "available": true,
+            "state": "SUPPORTS",
+            "score": 87.5,
+            "provider": "FRED (Federal Reserve / EIA source series)",
+            "updated_at": "2026-08-17T03:10:02.894Z"
+          },
+          "news": {
+            "available": true,
+            "state": "MIXED",
+            "score": 44.1,
+            "provider": "Google News RSS fallback",
+            "updated_at": "2026-08-17T03:10:50.316Z",
+            "event_risk": "HIGH",
+            "recent_high_impact_24h": 4
+          },
+          "coverage_percent": 100
+        },
+        "risk": {
+          "version": "0.2",
+          "score": 52.4,
+          "state": "MODERATE",
+          "primary_driver": {
+            "key": "context_opposition",
+            "label": "Context Opposition",
+            "contribution": 17.3
+          }
+        },
+        "counter_thesis": {
+          "version": "0.2",
+          "state": "ACTIVE",
+          "challenge_level": "HIGH",
+          "active_trigger_count": 2
+        },
+        "final_reasoner": {
+          "version": "0.2",
+          "decision_logic_version": "0.1_frozen",
+          "status": "MIXED_CONTEXT",
+          "outlook": "MIXED",
+          "decision": "REVIEW_SELECTIVELY",
+          "evidence_for_count": 5,
+          "evidence_against_count": 5
+        }
+      },
+      "snapshot_hash": "ce2b584020fe70dc5b6c502613d28165e56cfba50a673cfa619a82f4255acb12",
+      "drift_level": "BASELINE",
+      "drift_vs_previous": [
+        {
+          "key": "session_baseline",
+          "severity": "NONE",
+          "label": "Session baseline",
+          "from": null,
+          "to": "NZDUSD BUY",
+          "delta": null
+        }
+      ],
+      "frozen_anchors": {
+        "decision_history": {
+          "id": "DECISION-0001-2026-08-14",
+          "snapshot_hash": "de702fe84b65a0c46e3550d0372047f84da918e1a5e4ba420a6f70279f28944c",
+          "final_status": "MIXED_CONTEXT",
+          "final_decision": "REVIEW_SELECTIVELY",
+          "risk_score": 48.4,
+          "risk_state": "MODERATE"
+        },
+        "fresh_oos": {
+          "id": "OOS-0001-2026-08-14",
+          "prediction_hash": "de78500a57006695ab38cdd23d4a8255398f4668fce943b547e28330392aa7e0",
+          "outcome_status": "PENDING_NEXT_ECB_OBSERVATION",
+          "final_status": "MIXED_CONTEXT",
+          "final_decision": "REVIEW_SELECTIVELY",
+          "risk_score": 52.4,
+          "risk_state": "MODERATE"
+        }
+      }
+    },
+    {
+      "id": "DRIFT-0002-2026-08-14",
+      "captured_at": "2026-08-17T03:19:48.968Z",
+      "source_event": "push",
+      "source_run_id": "31990751168",
+      "source_run_attempt": "1",
+      "snapshot": {
+        "session_date": "2026-08-14",
+        "pair": "NZDUSD",
+        "canonical_bias": "BUY",
+        "actionability": {
+          "score": 87.5,
+          "state": "ACTIONABLE",
+          "regime": "CONFIRMED_TREND"
+        },
+        "context": {
+          "macro_yield": {
+            "available": true,
+            "state": "OPPOSES",
+            "score": 16.7,
+            "provider": "FRED (OECD / Federal Reserve source series)",
+            "updated_at": "2026-08-17T03:19:05.909Z"
+          },
+          "cross_market": {
+            "available": true,
+            "state": "SUPPORTS",
+            "score": 87.5,
+            "provider": "FRED (Federal Reserve / EIA source series)",
+            "updated_at": "2026-08-17T03:19:06.234Z"
+          },
+          "news": {
+            "available": true,
+            "state": "SUPPORTS",
+            "score": 62.5,
+            "provider": "Google News RSS fallback + GDELT DOC 2.0",
+            "updated_at": "2026-08-17T03:19:48.665Z",
+            "event_risk": "HIGH",
+            "recent_high_impact_24h": 5
+          },
+          "coverage_percent": 100
+        },
+        "risk": {
+          "version": "0.2",
+          "score": 48.4,
+          "state": "MODERATE",
+          "primary_driver": {
+            "key": "context_opposition",
+            "label": "Context Opposition",
+            "contribution": 13.3
+          }
+        },
+        "counter_thesis": {
+          "version": "0.2",
+          "state": "ACTIVE",
+          "challenge_level": "HIGH",
+          "active_trigger_count": 2
+        },
+        "final_reasoner": {
+          "version": "0.2",
+          "decision_logic_version": "0.1_frozen",
+          "status": "CONTEXT_CONFIRMED",
+          "outlook": "BULLISH",
+          "decision": "EVALUATE_SETUP",
+          "evidence_for_count": 6,
+          "evidence_against_count": 4
+        }
+      },
+      "snapshot_hash": "b8a3b9f5e0d79b2f09c15387542244fa310ed92948e389f7b847283d25a36dd7",
+      "drift_level": "HIGH",
+      "drift_vs_previous": [
+        {
+          "key": "news_state",
+          "severity": "MODERATE",
+          "label": "News state",
+          "from": "MIXED",
+          "to": "SUPPORTS",
+          "delta": 18.4
+        },
+        {
+          "key": "final_reasoner",
+          "severity": "HIGH",
+          "label": "Final Reasoner",
+          "from": "MIXED_CONTEXT/REVIEW_SELECTIVELY",
+          "to": "CONTEXT_CONFIRMED/EVALUATE_SETUP",
+          "delta": null
+        }
+      ],
+      "frozen_anchors": {
+        "decision_history": {
+          "id": "DECISION-0001-2026-08-14",
+          "snapshot_hash": "de702fe84b65a0c46e3550d0372047f84da918e1a5e4ba420a6f70279f28944c",
+          "final_status": "MIXED_CONTEXT",
+          "final_decision": "REVIEW_SELECTIVELY",
+          "risk_score": 48.4,
+          "risk_state": "MODERATE"
+        },
+        "fresh_oos": {
+          "id": "OOS-0001-2026-08-14",
+          "prediction_hash": "de78500a57006695ab38cdd23d4a8255398f4668fce943b547e28330392aa7e0",
+          "outcome_status": "PENDING_NEXT_ECB_OBSERVATION",
+          "final_status": "MIXED_CONTEXT",
+          "final_decision": "REVIEW_SELECTIVELY",
+          "risk_score": 52.4,
+          "risk_state": "MODERATE"
+        }
+      }
+    },
+    {
+      "id": "DRIFT-0003-2026-08-14",
+      "captured_at": "2026-08-17T03:23:19.649Z",
+      "source_event": "push",
+      "source_run_id": "31990932565",
+      "source_run_attempt": "1",
+      "snapshot": {
+        "session_date": "2026-08-14",
+        "pair": "NZDUSD",
+        "canonical_bias": "BUY",
+        "actionability": {
+          "score": 87.5,
+          "state": "ACTIONABLE",
+          "regime": "CONFIRMED_TREND"
+        },
+        "context": {
+          "macro_yield": {
+            "available": true,
+            "state": "OPPOSES",
+            "score": 16.7,
+            "provider": "FRED (OECD / Federal Reserve source series)",
+            "updated_at": "2026-08-17T03:22:25.022Z"
+          },
+          "cross_market": {
+            "available": true,
+            "state": "SUPPORTS",
+            "score": 87.5,
+            "provider": "FRED (Federal Reserve / EIA source series)",
+            "updated_at": "2026-08-17T03:22:25.227Z"
+          },
+          "news": {
+            "available": true,
+            "state": "MIXED",
+            "score": 44.1,
+            "provider": "Google News RSS fallback",
+            "updated_at": "2026-08-17T03:23:19.350Z",
+            "event_risk": "HIGH",
+            "recent_high_impact_24h": 4
+          },
+          "coverage_percent": 100
+        },
+        "risk": {
+          "version": "0.2",
+          "score": 52.4,
+          "state": "MODERATE",
+          "primary_driver": {
+            "key": "context_opposition",
+            "label": "Context Opposition",
+            "contribution": 17.3
+          }
+        },
+        "counter_thesis": {
+          "version": "0.2",
+          "state": "ACTIVE",
+          "challenge_level": "HIGH",
+          "active_trigger_count": 2
+        },
+        "final_reasoner": {
+          "version": "0.2",
+          "decision_logic_version": "0.1_frozen",
+          "status": "MIXED_CONTEXT",
+          "outlook": "MIXED",
+          "decision": "REVIEW_SELECTIVELY",
+          "evidence_for_count": 5,
+          "evidence_against_count": 5
+        }
+      },
+      "snapshot_hash": "5ad78ca9e3d3d5d1e08ea91d135752c4d859dbdb9a5bc3d2204c5c396c189e9c",
+      "drift_level": "HIGH",
+      "drift_vs_previous": [
+        {
+          "key": "news_state",
+          "severity": "MODERATE",
+          "label": "News state",
+          "from": "SUPPORTS",
+          "to": "MIXED",
+          "delta": -18.4
+        },
+        {
+          "key": "final_reasoner",
+          "severity": "HIGH",
+          "label": "Final Reasoner",
+          "from": "CONTEXT_CONFIRMED/EVALUATE_SETUP",
+          "to": "MIXED_CONTEXT/REVIEW_SELECTIVELY",
+          "delta": null
+        }
+      ],
+      "frozen_anchors": {
+        "decision_history": {
+          "id": "DECISION-0001-2026-08-14",
+          "snapshot_hash": "de702fe84b65a0c46e3550d0372047f84da918e1a5e4ba420a6f70279f28944c",
+          "final_status": "MIXED_CONTEXT",
+          "final_decision": "REVIEW_SELECTIVELY",
+          "risk_score": 48.4,
+          "risk_state": "MODERATE"
+        },
+        "fresh_oos": {
+          "id": "OOS-0001-2026-08-14",
+          "prediction_hash": "de78500a57006695ab38cdd23d4a8255398f4668fce943b547e28330392aa7e0",
+          "outcome_status": "PENDING_NEXT_ECB_OBSERVATION",
+          "final_status": "MIXED_CONTEXT",
+          "final_decision": "REVIEW_SELECTIVELY",
+          "risk_score": 52.4,
+          "risk_state": "MODERATE"
+        }
+      }
+    },
+    {
+      "id": "DRIFT-0004-2026-08-14",
+      "captured_at": "2026-08-17T03:35:18.484Z",
+      "source_event": "push",
+      "source_run_id": "31991574675",
+      "source_run_attempt": "1",
+      "snapshot": {
+        "session_date": "2026-08-14",
+        "pair": "NZDUSD",
+        "canonical_bias": "BUY",
+        "actionability": {
+          "score": 87.5,
+          "state": "ACTIONABLE",
+          "regime": "CONFIRMED_TREND"
+        },
+        "context": {
+          "macro_yield": {
+            "available": true,
+            "state": "OPPOSES",
+            "score": 16.7,
+            "provider": "FRED (OECD / Federal Reserve source series)",
+            "updated_at": "2026-08-17T03:34:26.624Z"
+          },
+          "cross_market": {
+            "available": true,
+            "state": "SUPPORTS",
+            "score": 87.5,
+            "provider": "FRED (Federal Reserve / EIA source series)",
+            "updated_at": "2026-08-17T03:34:26.830Z"
+          },
+          "news": {
+            "available": true,
+            "state": "MIXED",
+            "score": 44.8,
+            "provider": "Google News RSS fallback",
+            "updated_at": "2026-08-17T03:35:18.206Z",
+            "event_risk": "HIGH",
+            "recent_high_impact_24h": 4
+          },
+          "coverage_percent": 100
+        },
+        "risk": {
+          "version": "0.2",
+          "score": 52.4,
+          "state": "MODERATE",
+          "primary_driver": {
+            "key": "context_opposition",
+            "label": "Context Opposition",
+            "contribution": 17.3
+          }
+        },
+        "counter_thesis": {
+          "version": "0.2",
+          "state": "ACTIVE",
+          "challenge_level": "HIGH",
+          "active_trigger_count": 2
+        },
+        "final_reasoner": {
+          "version": "0.2",
+          "decision_logic_version": "0.1_frozen",
+          "status": "MIXED_CONTEXT",
+          "outlook": "MIXED",
+          "decision": "REVIEW_SELECTIVELY",
+          "evidence_for_count": 5,
+          "evidence_against_count": 5
+        }
+      },
+      "snapshot_hash": "7fbc9ff85e22cfaee0c1fb029d5086f253b9ea895d84811cf337bc510243b0dd",
+      "drift_level": "NONE",
+      "drift_vs_previous": [],
+      "frozen_anchors": {
+        "decision_history": {
+          "id": "DECISION-0001-2026-08-14",
+          "snapshot_hash": "de702fe84b65a0c46e3550d0372047f84da918e1a5e4ba420a6f70279f28944c",
+          "final_status": "MIXED_CONTEXT",
+          "final_decision": "REVIEW_SELECTIVELY",
+          "risk_score": 48.4,
+          "risk_state": "MODERATE"
+        },
+        "fresh_oos": {
+          "id": "OOS-0001-2026-08-14",
+          "prediction_hash": "de78500a57006695ab38cdd23d4a8255398f4668fce943b547e28330392aa7e0",
+          "outcome_status": "PENDING_NEXT_ECB_OBSERVATION",
+          "final_status": "MIXED_CONTEXT",
+          "final_decision": "REVIEW_SELECTIVELY",
+          "risk_score": 52.4,
+          "risk_state": "MODERATE"
+        }
+      }
+    },
+    {
+      "id": "DRIFT-0005-2026-08-14",
+      "captured_at": "2026-08-17T03:36:34.360Z",
+      "source_event": "push",
+      "source_run_id": "31991640256",
+      "source_run_attempt": "1",
+      "snapshot": {
+        "session_date": "2026-08-14",
+        "pair": "NZDUSD",
+        "canonical_bias": "BUY",
+        "actionability": {
+          "score": 87.5,
+          "state": "ACTIONABLE",
+          "regime": "CONFIRMED_TREND"
+        },
+        "context": {
+          "macro_yield": {
+            "available": true,
+            "state": "OPPOSES",
+            "score": 16.7,
+            "provider": "FRED (OECD / Federal Reserve source series)",
+            "updated_at": "2026-08-17T03:35:36.291Z"
+          },
+          "cross_market": {
+            "available": true,
+            "state": "SUPPORTS",
+            "score": 87.5,
+            "provider": "FRED (Federal Reserve / EIA source series)",
+            "updated_at": "2026-08-17T03:35:36.509Z"
+          },
+          "news": {
+            "available": true,
+            "state": "MIXED",
+            "score": 44.8,
+            "provider": "Google News RSS fallback",
+            "updated_at": "2026-08-17T03:36:34.119Z",
+            "event_risk": "HIGH",
+            "recent_high_impact_24h": 4
+          },
+          "coverage_percent": 100
+        },
+        "risk": {
+          "version": "0.2",
+          "score": 52.4,
+          "state": "MODERATE",
+          "primary_driver": {
+            "key": "context_opposition",
+            "label": "Context Opposition",
+            "contribution": 17.3
+          }
+        },
+        "counter_thesis": {
+          "version": "0.2",
+          "state": "ACTIVE",
+          "challenge_level": "HIGH",
+          "active_trigger_count": 2
+        },
+        "final_reasoner": {
+          "version": "0.2",
+          "decision_logic_version": "0.1_frozen",
+          "status": "MIXED_CONTEXT",
+          "outlook": "MIXED",
+          "decision": "REVIEW_SELECTIVELY",
+          "evidence_for_count": 5,
+          "evidence_against_count": 5
+        }
+      },
+      "snapshot_hash": "9b4d7fef9aa407f353d6acdae098adc3eb840d8a340681682574e47d76e9e956",
+      "drift_level": "NONE",
+      "drift_vs_previous": [],
+      "frozen_anchors": {
+        "decision_history": {
+          "id": "DECISION-0001-2026-08-14",
+          "snapshot_hash": "de702fe84b65a0c46e3550d0372047f84da918e1a5e4ba420a6f70279f28944c",
+          "final_status": "MIXED_CONTEXT",
+          "final_decision": "REVIEW_SELECTIVELY",
+          "risk_score": 48.4,
+          "risk_state": "MODERATE"
+        },
+        "fresh_oos": {
+          "id": "OOS-0001-2026-08-14",
+          "prediction_hash": "de78500a57006695ab38cdd23d4a8255398f4668fce943b547e28330392aa7e0",
+          "outcome_status": "PENDING_NEXT_ECB_OBSERVATION",
+          "final_status": "MIXED_CONTEXT",
+          "final_decision": "REVIEW_SELECTIVELY",
+          "risk_score": 52.4,
+          "risk_state": "MODERATE"
+        }
+      }
+    },
+    {
+      "id": "DRIFT-0006-2026-08-14",
+      "captured_at": "2026-08-17T04:00:12.391Z",
+      "source_event": "push",
+      "source_run_id": "31992897990",
+      "source_run_attempt": "1",
+      "snapshot": {
+        "session_date": "2026-08-14",
+        "pair": "NZDUSD",
+        "canonical_bias": "BUY",
+        "actionability": {
+          "score": 87.5,
+          "state": "ACTIONABLE",
+          "regime": "CONFIRMED_TREND"
+        },
+        "context": {
+          "macro_yield": {
+            "available": true,
+            "state": "OPPOSES",
+            "score": 16.7,
+            "provider": "FRED (OECD / Federal Reserve source series)",
+            "updated_at": "2026-08-17T03:59:32.048Z"
+          },
+          "cross_market": {
+            "available": true,
+            "state": "SUPPORTS",
+            "score": 87.5,
+            "provider": "FRED (Federal Reserve / EIA source series)",
+            "updated_at": "2026-08-17T03:59:32.275Z"
+          },
+          "news": {
+            "available": true,
+            "state": "OPPOSES",
+            "score": 28.6,
+            "provider": "Google News RSS fallback + GDELT DOC 2.0",
+            "updated_at": "2026-08-17T04:00:12.105Z",
+            "event_risk": "HIGH",
+            "recent_high_impact_24h": 6
+          },
+          "coverage_percent": 100
+        },
+        "risk": {
+          "version": "0.2",
+          "score": 59.1,
+          "state": "MODERATE",
+          "primary_driver": {
+            "key": "context_opposition",
+            "label": "Context Opposition",
+            "contribution": 24
+          }
+        },
+        "counter_thesis": {
+          "version": "0.2",
+          "state": "ACTIVE",
+          "challenge_level": "HIGH",
+          "active_trigger_count": 3
+        },
+        "final_reasoner": {
+          "version": "0.2",
+          "decision_logic_version": "0.1_frozen",
+          "status": "CONTEXT_CONTRADICTED",
+          "outlook": "MIXED",
+          "decision": "REVIEW_SELECTIVELY",
+          "evidence_for_count": 5,
+          "evidence_against_count": 5
+        }
+      },
+      "snapshot_hash": "6a59fc091a27e94401ce6e1db567c15f1cacf2c94babe4094f4835a135a911c6",
+      "drift_level": "HIGH",
+      "drift_vs_previous": [
+        {
+          "key": "news_state",
+          "severity": "MODERATE",
+          "label": "News state",
+          "from": "MIXED",
+          "to": "OPPOSES",
+          "delta": -16.2
+        },
+        {
+          "key": "risk_score",
+          "severity": "LOW",
+          "label": "Risk score",
+          "from": 52.4,
+          "to": 59.1,
+          "delta": 6.7
+        },
+        {
+          "key": "final_reasoner",
+          "severity": "HIGH",
+          "label": "Final Reasoner",
+          "from": "MIXED_CONTEXT/REVIEW_SELECTIVELY",
+          "to": "CONTEXT_CONTRADICTED/REVIEW_SELECTIVELY",
+          "delta": null
+        }
+      ],
+      "frozen_anchors": {
+        "decision_history": {
+          "id": "DECISION-0001-2026-08-14",
+          "snapshot_hash": "de702fe84b65a0c46e3550d0372047f84da918e1a5e4ba420a6f70279f28944c",
+          "final_status": "MIXED_CONTEXT",
+          "final_decision": "REVIEW_SELECTIVELY",
+          "risk_score": 48.4,
+          "risk_state": "MODERATE"
+        },
+        "fresh_oos": {
+          "id": "OOS-0001-2026-08-14",
+          "prediction_hash": "de78500a57006695ab38cdd23d4a8255398f4668fce943b547e28330392aa7e0",
+          "outcome_status": "PENDING_NEXT_ECB_OBSERVATION",
+          "final_status": "MIXED_CONTEXT",
+          "final_decision": "REVIEW_SELECTIVELY",
+          "risk_score": 52.4,
+          "risk_state": "MODERATE"
+        }
+      }
+    }
+  ],
+  "current_session": {
+    "session_date": "2026-08-14",
+    "captures": 6,
+    "first_capture_at": "2026-08-17T03:10:50.566Z",
+    "last_capture_at": "2026-08-17T04:00:12.391Z",
+    "current_drift_level": "HIGH",
+    "total_drift_events": 7,
+    "drift_event_counts": {
+      "news_state": 3,
+      "final_reasoner": 3,
+      "risk_score": 1
+    },
+    "first_to_latest": {
+      "macro_score_delta": 0,
+      "cross_market_score_delta": 0,
+      "news_score_delta": -15.5,
+      "risk_score_delta": 6.7,
+      "macro_state": "OPPOSES → OPPOSES",
+      "cross_market_state": "SUPPORTS → SUPPORTS",
+      "news_state": "MIXED → OPPOSES",
+      "risk_state": "MODERATE → MODERATE",
+      "final_reasoner": "MIXED_CONTEXT/REVIEW_SELECTIVELY → CONTEXT_CONTRADICTED/REVIEW_SELECTIVELY"
+    }
+  },
+  "summary": {
+    "total_captures": 6,
+    "distinct_ecb_sessions": 1,
+    "current_session_captures": 6,
+    "high_drift_captures": 3,
+    "moderate_drift_captures": 0,
+    "low_drift_captures": 0
+  }
+}
