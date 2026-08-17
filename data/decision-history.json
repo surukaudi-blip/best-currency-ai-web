@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "DECISION_HISTORY_COLLECTION_ACTIVE",
   "started_at": "2026-08-17T02:50:18.076Z",
-  "updated_at": "2026-08-17T09:57:27.091Z",
+  "updated_at": "2026-08-17T10:22:34.607Z",
   "policy": {
     "start_policy": "prospective_only_no_historical_backfill",
     "capture_policy": "one_immutable_snapshot_per_complete_ecb_session",
