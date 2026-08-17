@@ -10,8 +10,8 @@
     "provider_name": "European Central Bank",
     "provider_url": "api.frankfurter.dev",
     "module": "Currency Strength Agent",
-    "received_at": "2026-08-17T02:49:19.691Z",
-    "generated_at": "2026-08-17T02:49:19.691Z",
+    "received_at": "2026-08-17T02:59:10.058Z",
+    "generated_at": "2026-08-17T02:59:10.058Z",
     "data_updated_at": "2026-08-14",
     "session_date": "2026-08-14",
     "comparison_date": "2026-08-13",
@@ -1621,7 +1621,7 @@
       "readiness": {
         "state": "CONTEXT_READY",
         "external_coverage_percent": 100,
-        "final_reasoner_status": "MIXED_CONTEXT"
+        "final_reasoner_status": "CONTEXT_CONFIRMED"
       },
       "layers": {
         "macro_yield": {
@@ -1631,7 +1631,7 @@
           "state": "OPPOSES",
           "score": 16.7,
           "provider": "FRED (OECD / Federal Reserve source series)",
-          "updated_at": "2026-08-17T02:49:20.939Z",
+          "updated_at": "2026-08-17T02:59:10.805Z",
           "evidence": [
             "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
             "10Y spread momentum: -0.210 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
@@ -1681,7 +1681,7 @@
           "state": "SUPPORTS",
           "score": 87.5,
           "provider": "FRED (Federal Reserve / EIA source series)",
-          "updated_at": "2026-08-17T02:49:21.153Z",
+          "updated_at": "2026-08-17T02:59:11.009Z",
           "evidence": [
             "NFCI: level -0.5490 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
             "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
@@ -1740,57 +1740,49 @@
           "key": "news",
           "label": "News",
           "available": true,
-          "state": "NEUTRAL",
-          "score": 51.9,
-          "provider": "GDELT DOC 2.0 + Google News RSS fallback",
-          "updated_at": "2026-08-17T02:50:17.833Z",
+          "state": "SUPPORTS",
+          "score": 62.5,
+          "provider": "GDELT DOC 2.0",
+          "updated_at": "2026-08-17T02:59:56.217Z",
           "evidence": [
-            "Headline-stance differential NZDUSD BUY: 0.039 after directional-headline reliability 25% => NEUTRAL.",
+            "Headline-stance differential NZDUSD BUY: 0.25 after directional-headline reliability 25% => SUPPORTS.",
             "NZD: 1 supportive vs 0 opposing directional headline(s); balance 1 from 7 recent articles via GDELT DOC 2.0.",
-            "USD: 12 supportive vs 1 opposing directional headline(s); balance 0.846 from 40 recent articles via Google News RSS fallback.",
+            "USD: 1 supportive vs 1 opposing directional headline(s); balance 0 from 40 recent articles via GDELT DOC 2.0.",
             "High-impact headline risk: HIGH; 4 relevant headline(s) detected within 24h."
           ],
           "missing_evidence": [],
           "headlines": [
             {
-              "title": "Audinate Group Sees FY27 US Dollar Gross Profit Growth In Line With Or Slightly Ahead Of Rate In FY26 - TradingView",
-              "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQWXNUY2g5WEJFVjMxZ193a29OTHpzVURRb3Rkc2pHMl9aWnJDMm5COHFtY0tXTUVIYV9wQXFyU3ZYYVBjdGJhbXVIS3JuRmxMS01iNWZueFpOaUVqSkV4SWNfU2dNNERhekZrME16ZTlmSllJWmttTk96RjhkMzhSQVdWV1V4RzItRGNTOS1EM0lXeFd5c1FKZTZvNGdEOTNxaWRTQmJ6VWFQdE9pZERTTklrQnNlVy1xZW9BeDkzX296dE5GSDhCU2VlMVVveEpxS1RSX3p6bXR4SE1Md2F0b0lrNkE1R3dFRWdER0UwMmExbVNOaUZEWDhaSmxnVFZl?oc=5",
-              "domain": "TradingView",
-              "sourcecountry": null,
+              "title": "America In Focus : Inflation cools in July , but so do consumers with their spending",
+              "url": "https://www.texarkanagazette.com/news/2026/aug/16/america-in-focus-inflation-cools-in-july-but-so/",
+              "domain": "texarkanagazette.com",
+              "sourcecountry": "United States",
               "language": "English",
-              "seen_at": "2026-08-17T02:01:00.000Z"
+              "seen_at": "2026-08-16T19:45:00.000Z"
             },
             {
-              "title": "S&P 500 Hits Record High August 2026: Inflation Cools & AI Stocks Rally - Intellectia AI",
-              "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1LNXNhSVh1ZV9zU3BUQnQxV1RlZldsVEpJSVRXN0R3ZFZiT0ZKeW9scFRLT0RZVWlFQUtqbUVJQjVYYzNrNlpQM2JQVGphZGMtbFlIVWRUM1djQ0syZlVubnlZR2RaVy16OEVfcw?oc=5",
-              "domain": "Intellectia AI",
-              "sourcecountry": null,
+              "title": "The US$20 burrito debate is inflation fatigue",
+              "url": "https://www.taipeitimes.com/News/editorials/archives/2026/08/17/2003862609",
+              "domain": "taipeitimes.com",
+              "sourcecountry": "Taiwan",
               "language": "English",
-              "seen_at": "2026-08-17T00:06:54.000Z"
+              "seen_at": "2026-08-16T19:00:00.000Z"
             },
             {
-              "title": "Korea stocks eye Fed signals as inflation eases and bond risks loom - CHOSUNBIZ - Chosunbiz",
-              "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOR3Z2cVZMdmIyRm83Z1hTdWcxRmN5Sk1IX1dOYlU4ZHpQR0ZRNXhlZmRJa3lBVkJBNURPOUhoWnNjTTZTcjFOc1RLS21xY2hlUXFLbVFFdHNFTEJ2VDJfRHhqR1ptLUxLX09zV3hBSzZxLVFqMklaTlVtaDNwa2hjTNIBlAFBVV95cUxPaVdSVkoyOVd0NkpnaTdoZzVXR0ZnOVRKQVVHaXdhNTFUZ29HTHhyT2EwUEEwZW1FckV0X29CUUtwcDJNcUE2UlhncXVHNmV1eXR6STZoRHpiVmZ4QUpBX1hRLVZlSGxidG9fX2JVbksyS2dqanI5Vlp1UmNodnV3OXFqT1ZIazdJREozTDJGYnVldHVJ?oc=5",
-              "domain": "Chosunbiz",
-              "sourcecountry": null,
+              "title": "Rate of inflation doubles during the spring",
+              "url": "https://www.caledonianrecord.com/news/local/rate-of-inflation-doubles-during-the-spring/article_7a5f8d9d-6d48-5a21-8c38-1828f2852949.html",
+              "domain": "caledonianrecord.com",
+              "sourcecountry": "United States",
               "language": "English",
-              "seen_at": "2026-08-16T21:01:00.000Z"
+              "seen_at": "2026-08-16T17:00:00.000Z"
             },
             {
-              "title": "AI productivity reveals a way out of inflation crunch - Knoxville News Sentinel",
-              "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPRkhHSk9qdVBlb0dSUi10TUNIWkk5NnA5aV9GX2pSNlVGY1p2ZTk1Z3RycS1rX1ZvdUVzNGN4STlLSzVGRkxuRjB0MXZhdzZYYXpfSDVLQkxxWWFicmFlaVBuR0pteXlBSFhXUzV1LTlPNmNob3ZicjlYUlpZVmE0a3VlYVN2N2pFSDc2T1BWOFBTSjU2VV9UbUx0R0wySGhyQWp6d0prbGVCak5IdGFHa1lQY0o1LVFiemVhOVUxSnVVQ0N3VjMzN19VZHlBeWpCQlNQOUhibDNHVWVvbU5JMw?oc=5",
-              "domain": "Knoxville News Sentinel",
-              "sourcecountry": null,
+              "title": "Trump grand plan to put American workers first may be backfiring as U . S .- born unemployment rises and wage growth stalls",
+              "url": "https://finance.yahoo.com/economy/policy/articles/trump-grand-plan-put-american-080000989.html",
+              "domain": "finance.yahoo.com",
+              "sourcecountry": "United States",
               "language": "English",
-              "seen_at": "2026-08-16T09:03:00.000Z"
-            },
-            {
-              "title": "Cooler inflation data may force Warsh's divided Fed to hold the line on rates - Reuters",
-              "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxQbDJaOWp0UVZZRVd3MUp5UGNUVk1EOXNybWFfeXRKR2FQYzJsUnJCN3VEU1I2bldJWHFodHlUWXQxcUdzXzVtaTN4RmEyaHlwREhvdVpialZycTYyaFozME5kWWV3MGFqT1hGS00zTnMyQmVDZkZXZTFvT0VGR0RSMU1FMnBiT3dyZFlSQmx5RDRXX0JsZ1dPMy1KOTNteGVOaVJRemdUaDhtWkpmRndEeQ?oc=5",
-              "domain": "Reuters",
-              "sourcecountry": null,
-              "language": "English",
-              "seen_at": "2026-08-14T10:59:51.000Z"
+              "seen_at": "2026-08-16T16:45:00.000Z"
             },
             {
               "title": "New Zealand central bank maintains loan - to - value ratio settings - Xinhua",
@@ -1799,14 +1791,6 @@
               "sourcecountry": null,
               "language": "English",
               "seen_at": "2026-08-14T07:15:00.000Z"
-            },
-            {
-              "title": "Gold rises on weaker dollar as inflation data cements rate-hold bets - CNBC",
-              "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOVWxidENoLWdvdmlvbHp3RHdjdTN1RmFDc1RoVUVIVTFxQVFmNnJLRE0wUHlkcEhEQkIxbEpfQkR5VEZjdURzdThqenduWVgtclhTQXhvZ19WZFB2QVFDb0s3eURsOUMyMk1FNF9vRHFBVGV1eGdSUi1TX0l3Ti1IVmVTTzNlNXN2VHpmU0VnQm1sVk11ejgteFA1Z1VWNk5sWk1KWndUWjVWOTjSAbABQVVfeXFMUG5Ec1dBSHJGZUlabzZqWG1KUFpxZkgwNU1iSjhud0Q2MlpKN3lBSVBlTnRrenJjZm12NlZGSjlrOWFTT1hYY2FMbmJORm4zdlVlUEYydFZDQV9mbXpfeHJxSDNZeE1QOU5nWEQ5YnZobElnRjNOQWFEUk52OVh3MWZrNjVuUjJVTlVfLVhBcktIY0FDQ3dadE9Lc3RpSlJMWlp2TVNIdGwxaHVhS0VhaFg?oc=5",
-              "domain": "CNBC",
-              "sourcecountry": null,
-              "language": "English",
-              "seen_at": "2026-08-14T04:18:59.000Z"
             }
           ],
           "event_risk": {
@@ -1825,14 +1809,14 @@
               "classified_headline_count": 1
             },
             {
-              "provider": "Google News RSS fallback",
+              "provider": "GDELT DOC 2.0",
               "currency": "USD",
-              "query": "\"US dollar\" OR \"Federal Reserve\" OR FOMC inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
-              "latest_seen_at": "2026-08-17T02:01:00.000Z",
+              "query": "(\"US dollar\" OR \"U.S. dollar\" OR \"Federal Reserve\" OR FOMC) (inflation OR \"interest rate\" OR rates OR economy OR growth OR employment OR monetary OR \"central bank\") sourcelang:english",
+              "latest_seen_at": "2026-08-17T02:30:00.000Z",
               "article_count": 40,
-              "supportive_headline_count": 12,
+              "supportive_headline_count": 1,
               "opposing_headline_count": 1,
-              "classified_headline_count": 13
+              "classified_headline_count": 2
             }
           ],
           "methodology": {
@@ -1845,10 +1829,10 @@
             "max_article_age_hours": 96,
             "high_impact_headline_window_hours": 24,
             "base_headline_balance": 1,
-            "quote_headline_balance": 0.846,
-            "raw_pair_headline_differential": 0.154,
+            "quote_headline_balance": 0,
+            "raw_pair_headline_differential": 1,
             "reliability": 0.25,
-            "adjusted_pair_headline_differential": 0.039,
+            "adjusted_pair_headline_differential": 0.25,
             "support_threshold": 62,
             "oppose_threshold": 38,
             "neutral_band": [
@@ -1947,7 +1931,7 @@
                   {
                     "key": "news",
                     "label": "News",
-                    "score": 51.9
+                    "score": 62.5
                   }
                 ]
               }
@@ -2012,9 +1996,9 @@
           ],
           "context_snapshot": {
             "external_context_coverage": "3/3",
-            "supports": 1,
+            "supports": 2,
             "opposes": 1,
-            "mixed_or_neutral": 1,
+            "mixed_or_neutral": 0,
             "scored_layers": 3
           },
           "gates": {
@@ -2063,7 +2047,7 @@
               "state": "OPPOSES",
               "score": 16.7,
               "provider": "FRED (OECD / Federal Reserve source series)",
-              "updated_at": "2026-08-17T02:49:20.939Z"
+              "updated_at": "2026-08-17T02:59:10.805Z"
             },
             "evidence": [
               "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
@@ -2082,7 +2066,7 @@
                 "state": "OPPOSES",
                 "score": 16.7,
                 "provider": "FRED (OECD / Federal Reserve source series)",
-                "updated_at": "2026-08-17T02:49:20.939Z"
+                "updated_at": "2026-08-17T02:59:10.805Z"
               },
               "evidence": [
                 "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
@@ -2101,9 +2085,9 @@
                 "recent_high_impact_24h": 4
               },
               "evidence": [
-                "Audinate Group Sees FY27 US Dollar Gross Profit Growth In Line With Or Slightly Ahead Of Rate In FY26 - TradingView",
-                "S&P 500 Hits Record High August 2026: Inflation Cools & AI Stocks Rally - Intellectia AI",
-                "Korea stocks eye Fed signals as inflation eases and bond risks loom - CHOSUNBIZ - Chosunbiz"
+                "America In Focus : Inflation cools in July , but so do consumers with their spending",
+                "The US$20 burrito debate is inflation fatigue",
+                "Rate of inflation doubles during the spring"
               ]
             },
             {
@@ -2128,7 +2112,7 @@
                   {
                     "key": "news",
                     "label": "News",
-                    "score": 51.9
+                    "score": 62.5
                   }
                 ]
               },
@@ -2159,13 +2143,13 @@
             "LOW": 1
           },
           "evidence_balance": {
-            "supports": 1,
+            "supports": 2,
             "opposes": 1,
-            "mixed_or_neutral": 1,
+            "mixed_or_neutral": 0,
             "available": 3,
             "expected": 3,
             "missing": 0,
-            "net_context": "BALANCED"
+            "net_context": "SUPPORT_BIASED"
           },
           "missing_context": [],
           "monitoring_triggers": [
@@ -2263,18 +2247,18 @@
           "key": "final_reasoner",
           "label": "Final Reasoner",
           "available": true,
-          "status": "MIXED_CONTEXT",
-          "outlook": "MIXED",
-          "decision": "REVIEW_SELECTIVELY",
+          "status": "CONTEXT_CONFIRMED",
+          "outlook": "BULLISH",
+          "decision": "EVALUATE_SETUP",
           "pair": "NZDUSD",
           "canonical_bias": "BUY",
           "actionability_score": 87.5,
           "regime": "CONFIRMED_TREND",
           "contextual_coverage_percent": 100,
           "context_counts": {
-            "supports": 1,
+            "supports": 2,
             "opposes": 1,
-            "mixed_or_neutral": 1,
+            "mixed_or_neutral": 0,
             "available": 3,
             "expected": 3
           },
@@ -2284,7 +2268,7 @@
           "counter_thesis_state": "ACTIVE",
           "counter_thesis_version": "0.2",
           "counter_thesis_challenge_level": "HIGH",
-          "explanation": "Context is populated but not sufficiently one-sided to confirm the canonical pair bias.",
+          "explanation": "Actionability is strong and the available contextual intelligence has net support for the canonical pair bias.",
           "guardrail": "Final Reasoner is evidence-grounded and fail-closed. Missing Macro & Yield, Cross-Market, or News evidence is never fabricated or silently replaced.",
           "note": "Final outlook is decision support only. It is not an execution instruction, win probability, or profitability forecast.",
           "version": "0.2",
@@ -2340,6 +2324,15 @@
                 "score": 87.5,
                 "provider": "FRED (Federal Reserve / EIA source series)"
               }
+            },
+            {
+              "source": "news",
+              "category": "EXTERNAL_SUPPORT",
+              "statement": "News supports the canonical NZDUSD BUY at 62.5/100.",
+              "detail": {
+                "score": 62.5,
+                "provider": "GDELT DOC 2.0"
+              }
             }
           ],
           "evidence_against": [
@@ -2353,7 +2346,7 @@
                   "state": "OPPOSES",
                   "score": 16.7,
                   "provider": "FRED (OECD / Federal Reserve source series)",
-                  "updated_at": "2026-08-17T02:49:20.939Z"
+                  "updated_at": "2026-08-17T02:59:10.805Z"
                 }
               }
             },
@@ -2391,7 +2384,7 @@
                     {
                       "key": "news",
                       "label": "News",
-                      "score": 51.9
+                      "score": 62.5
                     }
                   ]
                 }
@@ -2412,11 +2405,11 @@
           ],
           "evidence_gaps": [],
           "evidence_balance": {
-            "supporting_items": 5,
+            "supporting_items": 6,
             "opposing_items": 4,
-            "contextual_supports": 1,
+            "contextual_supports": 2,
             "contextual_opposes": 1,
-            "contextual_mixed_or_neutral": 1,
+            "contextual_mixed_or_neutral": 0,
             "contextual_available": 3,
             "contextual_expected": 3
           },
@@ -2505,7 +2498,7 @@
             "High-impact event risk normalizes to LOW while directional context remains stable.",
             "Risk v0.2 falls below 45 without changing the frozen Risk formula."
           ],
-          "final_assessment": "NZDUSD BUY has Actionability 87.5/100 with regime CONFIRMED_TREND, but contextual evidence is not one-sided. Supports: Cross-Market. Opposes: Macro & Yield. Mixed/neutral: News. Risk v0.2 MODERATE at 48.4/100. Primary challenge: Macro & Yield explicitly opposes the NZDUSD BUY setup at 16.7/100. Decision remains REVIEW_SELECTIVELY.",
+          "final_assessment": "NZDUSD BUY has strong upstream readiness (Actionability 87.5/100, CONFIRMED_TREND) and net contextual support. Supports: Cross-Market, News. Opposes: Macro & Yield. Risk v0.2 MODERATE at 48.4/100. This confirms context for evaluation, not execution or profit probability.",
           "decision_trace": [
             {
               "gate": "actionability_available",
@@ -2532,9 +2525,9 @@
               "gate": "context_vote",
               "passed": true,
               "current": {
-                "supports": 1,
+                "supports": 2,
                 "opposes": 1,
-                "mixed_or_neutral": 1
+                "mixed_or_neutral": 0
               },
               "rule": "OPPOSES > SUPPORTS => CONTEXT_CONTRADICTED; SUPPORTS > OPPOSES with Actionability >=80 => CONTEXT_CONFIRMED; otherwise MIXED_CONTEXT."
             },
@@ -2546,9 +2539,9 @@
             }
           ],
           "frozen_decision_contract": {
-            "status": "MIXED_CONTEXT",
-            "outlook": "MIXED",
-            "decision": "REVIEW_SELECTIVELY",
+            "status": "CONTEXT_CONFIRMED",
+            "outlook": "BULLISH",
+            "decision": "EVALUATE_SETUP",
             "verified": true
           },
           "explainability_guardrails": {

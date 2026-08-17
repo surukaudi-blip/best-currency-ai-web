@@ -171,7 +171,7 @@
   }
 
   function load(){
-    fetch('./data/currency-strength.json?v=071adc3c78',{headers:{Accept:'application/json'},cache:'no-store'})
+    fetch('./data/currency-strength.json?v=2da09b4904',{headers:{Accept:'application/json'},cache:'no-store'})
       .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
       .then(function(payload){render(payload&&payload.data?payload.data:payload);})
       .catch(function(){var el=document.getElementById('intel-readiness');if(el){el.className='intel-layer-badge intel-layer-bad';el.textContent='GAGAL MEMUAT';}});

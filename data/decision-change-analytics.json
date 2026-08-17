@@ -1,0 +1,166 @@
+{
+  "schema_version": "1.0",
+  "status": "DECISION_CHANGE_ANALYTICS_ACTIVE",
+  "generated_at": "2026-08-17T02:59:56.662Z",
+  "source": {
+    "decision_history_status": "DECISION_HISTORY_COLLECTION_ACTIVE",
+    "decision_history_sessions": 1,
+    "first_session": "2026-08-14",
+    "last_session": "2026-08-14",
+    "fresh_oos_status": "FRESH_OOS_COLLECTION_ACTIVE"
+  },
+  "policy": {
+    "mode": "prospective_descriptive_change_analytics",
+    "no_historical_backfill": true,
+    "no_model_tuning": true,
+    "no_signal_voting": true,
+    "oos_join_policy": "outcome_only_by_session_no_prediction_overwrite",
+    "interpretation": "Descriptive transition analytics only. Counts, streaks and lead/lag observations are not probabilities of profit or causal evidence."
+  },
+  "sample": {
+    "captured_sessions": 1,
+    "transitions": 0,
+    "analytics_gate": "COLLECTING_TRANSITIONS",
+    "settled_oos_links": 0
+  },
+  "current_state": {
+    "session_date": "2026-08-14",
+    "pair": "NZDUSD",
+    "canonical_bias": "BUY",
+    "actionability": {
+      "score": 87.5,
+      "state": "ACTIONABLE"
+    },
+    "risk": {
+      "score": 48.4,
+      "state": "MODERATE"
+    },
+    "final_reasoner": {
+      "status": "MIXED_CONTEXT",
+      "decision": "REVIEW_SELECTIVELY"
+    }
+  },
+  "current_streaks": {
+    "canonical_signal": {
+      "value": "NZDUSD BUY",
+      "sessions": 1,
+      "start_session": "2026-08-14",
+      "end_session": "2026-08-14"
+    },
+    "bias": {
+      "value": "BUY",
+      "sessions": 1,
+      "start_session": "2026-08-14",
+      "end_session": "2026-08-14"
+    },
+    "risk_state": {
+      "value": "MODERATE",
+      "sessions": 1,
+      "start_session": "2026-08-14",
+      "end_session": "2026-08-14"
+    },
+    "final_decision": {
+      "value": "REVIEW_SELECTIVELY",
+      "sessions": 1,
+      "start_session": "2026-08-14",
+      "end_session": "2026-08-14"
+    }
+  },
+  "transition_counts": {
+    "transitions": 0,
+    "canonical_signal_changes": 0,
+    "pair_changes": 0,
+    "bias_changes": 0,
+    "leadership_changes": 0,
+    "actionability_state_changes": 0,
+    "macro_state_changes": 0,
+    "cross_market_state_changes": 0,
+    "news_state_changes": 0,
+    "news_event_risk_changes": 0,
+    "risk_state_changes": 0,
+    "counter_thesis_changes": 0,
+    "final_status_changes": 0,
+    "final_decision_changes": 0
+  },
+  "transition_rates_percent": {
+    "canonical_signal_changes": null,
+    "pair_changes": null,
+    "bias_changes": null,
+    "leadership_changes": null,
+    "actionability_state_changes": null,
+    "macro_state_changes": null,
+    "cross_market_state_changes": null,
+    "news_state_changes": null,
+    "news_event_risk_changes": null,
+    "risk_state_changes": null,
+    "counter_thesis_changes": null,
+    "final_status_changes": null,
+    "final_decision_changes": null
+  },
+  "score_movement": {
+    "avg_abs_actionability_change": 0,
+    "avg_abs_macro_change": 0,
+    "avg_abs_cross_market_change": 0,
+    "avg_abs_news_change": 0,
+    "avg_abs_risk_change": 0
+  },
+  "runs": {
+    "canonical_signal": [
+      {
+        "type": "canonical_signal",
+        "value": "NZDUSD BUY",
+        "start_session": "2026-08-14",
+        "end_session": "2026-08-14",
+        "sessions": 1
+      }
+    ],
+    "bias": [
+      {
+        "type": "bias",
+        "value": "BUY",
+        "start_session": "2026-08-14",
+        "end_session": "2026-08-14",
+        "sessions": 1
+      }
+    ],
+    "risk_state": [
+      {
+        "type": "risk_state",
+        "value": "MODERATE",
+        "start_session": "2026-08-14",
+        "end_session": "2026-08-14",
+        "sessions": 1
+      }
+    ],
+    "final_decision": [
+      {
+        "type": "final_decision",
+        "value": "REVIEW_SELECTIVELY",
+        "start_session": "2026-08-14",
+        "end_session": "2026-08-14",
+        "sessions": 1
+      }
+    ]
+  },
+  "signal_flip_diagnostics": [],
+  "final_change_precursors": [],
+  "final_change_precursor_frequency": {},
+  "fresh_oos_links": [
+    {
+      "session_date": "2026-08-14",
+      "decision_history_id": "DECISION-0001-2026-08-14",
+      "fresh_oos_id": "OOS-0001-2026-08-14",
+      "history_pre_outcome": true,
+      "outcome_status": "PENDING_NEXT_ECB_OBSERVATION",
+      "hit": null,
+      "directional_return_pct": null,
+      "outcome_session_date": null,
+      "note": "Outcome-only linkage by ECB session. Decision History and Fresh OOS snapshots remain separate immutable captures and may contain different intraday/context-provider states."
+    }
+  ],
+  "settled_oos_descriptive": {
+    "n": 0,
+    "hit_rate": null,
+    "avg_directional_return_pct": null
+  }
+}
