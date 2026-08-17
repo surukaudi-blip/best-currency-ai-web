@@ -3,7 +3,7 @@
   "status": "DECISION_ALERT_STABILITY_ACTIVE",
   "stability_version": "0.1",
   "created_at": "2026-08-17T03:36:34.650Z",
-  "updated_at": "2026-08-17T03:37:51.568Z",
+  "updated_at": "2026-08-17T03:59:16.639Z",
   "config": {
     "persistence_default": 1,
     "persistence_overrides": {
@@ -46,7 +46,7 @@
     ]
   },
   "raw_alert_status": "DECISION_ALERT_WATCH_ACTIVE",
-  "raw_alert_updated_at": "2026-08-17T03:37:51.416Z",
+  "raw_alert_updated_at": "2026-08-17T03:59:16.436Z",
   "oscillation": {
     "detected": false,
     "classification": "NO_OSCILLATION",
@@ -89,11 +89,11 @@
       "trigger": "Context disagreement >= 60 points.",
       "evidence": null,
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T03:37:51.416Z",
-      "occurrences": 6,
+      "last_seen": "2026-08-17T03:59:16.436Z",
+      "occurrences": 7,
       "stability": {
         "required_confirmations": 2,
-        "observed_confirmations": 6,
+        "observed_confirmations": 7,
         "immediate_structural": false,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -119,8 +119,8 @@
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T03:37:51.416Z",
-      "occurrences": 6,
+      "last_seen": "2026-08-17T03:59:16.436Z",
+      "occurrences": 7,
       "stability": {
         "required_confirmations": 2,
         "observed_confirmations": 5,
@@ -135,18 +135,18 @@
       "key": "NEWS_EVENT_HIGH",
       "severity": "MODERATE",
       "title": "High-impact News Event Risk",
-      "detail": "News Event Risk HIGH sementara News 54.2 · NEUTRAL.",
+      "detail": "News Event Risk HIGH sementara News 50 · NEUTRAL.",
       "source": "news",
       "session_date": "2026-08-14",
       "trigger": "News event-risk level = HIGH.",
       "evidence": {
         "state": "NEUTRAL",
-        "score": 54.2,
+        "score": 50,
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T03:37:51.416Z",
-      "occurrences": 6,
+      "last_seen": "2026-08-17T03:59:16.436Z",
+      "occurrences": 7,
       "stability": {
         "required_confirmations": 2,
         "observed_confirmations": 5,
@@ -180,7 +180,7 @@
       },
       "news": {
         "state": "NEUTRAL",
-        "score": 54.2,
+        "score": 50,
         "event_risk": "HIGH"
       },
       "counts": {

@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "DECISION_ALERT_WATCH_ACTIVE",
   "created_at": "2026-08-17T03:19:49.195Z",
-  "updated_at": "2026-08-17T03:37:51.416Z",
+  "updated_at": "2026-08-17T03:59:16.436Z",
   "policy": {
     "mode": "material_change_notification_and_explainability_watch",
     "no_historical_backfill": true,
@@ -24,8 +24,8 @@
       "trigger": "Context disagreement >= 60 points.",
       "evidence": null,
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T03:37:51.416Z",
-      "occurrences": 6
+      "last_seen": "2026-08-17T03:59:16.436Z",
+      "occurrences": 7
     },
     {
       "key": "COUNTER_THESIS_HIGH",
@@ -45,25 +45,25 @@
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T03:37:51.416Z",
-      "occurrences": 6
+      "last_seen": "2026-08-17T03:59:16.436Z",
+      "occurrences": 7
     },
     {
       "key": "NEWS_EVENT_HIGH",
       "severity": "MODERATE",
       "title": "High-impact News Event Risk",
-      "detail": "News Event Risk HIGH sementara News 54.2 · NEUTRAL.",
+      "detail": "News Event Risk HIGH sementara News 50 · NEUTRAL.",
       "source": "news",
       "session_date": "2026-08-14",
       "trigger": "News event-risk level = HIGH.",
       "evidence": {
         "state": "NEUTRAL",
-        "score": 54.2,
+        "score": 50,
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T03:37:51.416Z",
-      "occurrences": 6
+      "last_seen": "2026-08-17T03:59:16.436Z",
+      "occurrences": 7
     }
   ],
   "events": [
@@ -216,7 +216,7 @@
       },
       "news": {
         "state": "NEUTRAL",
-        "score": 54.2,
+        "score": 50,
         "event_risk": "HIGH"
       },
       "counts": {
