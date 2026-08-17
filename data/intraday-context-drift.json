@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "INTRADAY_CONTEXT_DRIFT_ACTIVE",
   "created_at": "2026-08-17T03:10:50.566Z",
-  "updated_at": "2026-08-17T04:00:12.391Z",
+  "updated_at": "2026-08-17T09:09:13.501Z",
   "policy": {
     "mode": "prospective_intraday_context_audit",
     "capture_scope": "multiple_context_captures_within_same_complete_ecb_session",
@@ -621,14 +621,104 @@
           "risk_state": "MODERATE"
         }
       }
+    },
+    {
+      "id": "DRIFT-0007-2026-08-14",
+      "captured_at": "2026-08-17T09:09:13.501Z",
+      "source_event": "schedule",
+      "source_run_id": "32013581690",
+      "source_run_attempt": "1",
+      "snapshot": {
+        "session_date": "2026-08-14",
+        "pair": "NZDUSD",
+        "canonical_bias": "BUY",
+        "actionability": {
+          "score": 87.5,
+          "state": "ACTIONABLE",
+          "regime": "CONFIRMED_TREND"
+        },
+        "context": {
+          "macro_yield": {
+            "available": true,
+            "state": "OPPOSES",
+            "score": 16.7,
+            "provider": "FRED (OECD / Federal Reserve source series)",
+            "updated_at": "2026-08-17T09:08:14.505Z"
+          },
+          "cross_market": {
+            "available": true,
+            "state": "SUPPORTS",
+            "score": 87.5,
+            "provider": "FRED (Federal Reserve / EIA source series)",
+            "updated_at": "2026-08-17T09:08:14.675Z"
+          },
+          "news": {
+            "available": true,
+            "state": "OPPOSES",
+            "score": 25,
+            "provider": "Google News RSS fallback + GDELT DOC 2.0",
+            "updated_at": "2026-08-17T09:09:13.209Z",
+            "event_risk": "HIGH",
+            "recent_high_impact_24h": 7
+          },
+          "coverage_percent": 100
+        },
+        "risk": {
+          "version": "0.2",
+          "score": 59.1,
+          "state": "MODERATE",
+          "primary_driver": {
+            "key": "context_opposition",
+            "label": "Context Opposition",
+            "contribution": 24
+          }
+        },
+        "counter_thesis": {
+          "version": "0.2",
+          "state": "ACTIVE",
+          "challenge_level": "HIGH",
+          "active_trigger_count": 3
+        },
+        "final_reasoner": {
+          "version": "0.2",
+          "decision_logic_version": "0.1_frozen",
+          "status": "CONTEXT_CONTRADICTED",
+          "outlook": "MIXED",
+          "decision": "REVIEW_SELECTIVELY",
+          "evidence_for_count": 5,
+          "evidence_against_count": 5
+        }
+      },
+      "snapshot_hash": "cb46c5633d04f173937c6e91a8f4d317b70698aeb1b267a92fc4723d162adeae",
+      "drift_level": "NONE",
+      "drift_vs_previous": [],
+      "frozen_anchors": {
+        "decision_history": {
+          "id": "DECISION-0001-2026-08-14",
+          "snapshot_hash": "de702fe84b65a0c46e3550d0372047f84da918e1a5e4ba420a6f70279f28944c",
+          "final_status": "MIXED_CONTEXT",
+          "final_decision": "REVIEW_SELECTIVELY",
+          "risk_score": 48.4,
+          "risk_state": "MODERATE"
+        },
+        "fresh_oos": {
+          "id": "OOS-0001-2026-08-14",
+          "prediction_hash": "de78500a57006695ab38cdd23d4a8255398f4668fce943b547e28330392aa7e0",
+          "outcome_status": "PENDING_NEXT_ECB_OBSERVATION",
+          "final_status": "MIXED_CONTEXT",
+          "final_decision": "REVIEW_SELECTIVELY",
+          "risk_score": 52.4,
+          "risk_state": "MODERATE"
+        }
+      }
     }
   ],
   "current_session": {
     "session_date": "2026-08-14",
-    "captures": 6,
+    "captures": 7,
     "first_capture_at": "2026-08-17T03:10:50.566Z",
-    "last_capture_at": "2026-08-17T04:00:12.391Z",
-    "current_drift_level": "HIGH",
+    "last_capture_at": "2026-08-17T09:09:13.501Z",
+    "current_drift_level": "NONE",
     "total_drift_events": 7,
     "drift_event_counts": {
       "news_state": 3,
@@ -638,7 +728,7 @@
     "first_to_latest": {
       "macro_score_delta": 0,
       "cross_market_score_delta": 0,
-      "news_score_delta": -15.5,
+      "news_score_delta": -19.1,
       "risk_score_delta": 6.7,
       "macro_state": "OPPOSES → OPPOSES",
       "cross_market_state": "SUPPORTS → SUPPORTS",
@@ -648,9 +738,9 @@
     }
   },
   "summary": {
-    "total_captures": 6,
+    "total_captures": 7,
     "distinct_ecb_sessions": 1,
-    "current_session_captures": 6,
+    "current_session_captures": 7,
     "high_drift_captures": 3,
     "moderate_drift_captures": 0,
     "low_drift_captures": 0
