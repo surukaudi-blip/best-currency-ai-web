@@ -34,11 +34,11 @@
       '<div class="intel-stage"><div class="stage-k">01 · Macro & Yield</div><div class="stage-v" id="intel-macro-v">—</div><div class="stage-s" id="intel-macro-s">Memeriksa bukti makro dan yield…</div></div>' +
       '<div class="intel-stage"><div class="stage-k">02 · Cross-Market</div><div class="stage-v" id="intel-cross-v">—</div><div class="stage-s" id="intel-cross-s">Memeriksa konfirmasi lintas pasar…</div></div>' +
       '<div class="intel-stage"><div class="stage-k">03 · News</div><div class="stage-v" id="intel-news-v">—</div><div class="stage-s" id="intel-news-s">Memeriksa bukti berita…</div><div class="stage-meta" id="intel-news-meta"></div></div>' +
-      '<div class="intel-stage"><div class="stage-k">04 · Risk</div><div class="stage-v" id="intel-risk-v">—</div><div class="stage-s" id="intel-risk-s">Mengukur risiko kontekstual…</div></div>' +
+      '<div class="intel-stage"><div class="stage-k">04 · Risk</div><div class="stage-v" id="intel-risk-v">—</div><div class="stage-s" id="intel-risk-s">Mengukur risiko kontekstual…</div><div class="stage-meta" id="intel-risk-meta"></div></div>' +
       '<div class="intel-stage"><div class="stage-k">05 · Counter-Thesis</div><div class="stage-v" id="intel-counter-v">—</div><div class="stage-s" id="intel-counter-s">Mencari bukti yang menentang setup…</div></div>' +
       '<div class="intel-stage final-stage"><div class="stage-k">06 · Final Reasoner</div><div class="stage-v" id="intel-final-v">—</div><div class="stage-s" id="intel-final-s">Menunggu seluruh bukti yang diperlukan…</div><div class="stage-meta" id="intel-final-meta"></div></div>' +
     '</div>' +
-    '<div class="intel-layer-foot">Fail-closed: Macro & Yield, Cross-Market, dan News tidak akan diisi dengan asumsi. Final Reasoner hanya membentuk outlook final ketika bukti kontekstual nyata sudah tersedia.</div>';
+    '<div class="intel-layer-foot">Fail-closed: Macro & Yield, Cross-Market, dan News tidak akan diisi dengan asumsi. Risk adalah indeks risiko keputusan kontekstual, bukan probabilitas rugi. Final Reasoner hanya membentuk outlook ketika bukti yang diperlukan tersedia.</div>';
 
   var anchor=document.getElementById('provider-confirmation');
   if(anchor) anchor.insertAdjacentElement('afterend',box); else pairPanel.appendChild(box);
@@ -53,6 +53,7 @@
     return badge('MENUNGGU DATA','intel-layer-muted');
   }
   function firstText(arr,fallback){return Array.isArray(arr)&&arr.length?String(arr[0]):fallback;}
+  function fmtScore(n){return Number.isFinite(Number(n))?Number(n).toFixed(1).replace('.',','):null;}
   function renderInput(prefix,layer){
     var v=document.getElementById('intel-'+prefix+'-v');
     var s=document.getElementById('intel-'+prefix+'-s');
@@ -62,8 +63,15 @@
       s.textContent='Provider bukti nyata belum tersambung. Tidak ada arah yang diasumsikan.';
       return;
     }
-    v.innerHTML=stateBadge(layer.state)+(Number.isFinite(Number(layer.score))?' '+Number(layer.score).toFixed(1).replace('.',',')+'/100':'');
+    v.innerHTML=stateBadge(layer.state)+(fmtScore(layer.score)!==null?' '+fmtScore(layer.score)+'/100':'');
     s.textContent=firstText(layer.evidence,layer.note||'Bukti tersedia.');
+  }
+  function riskDriverLabel(key){
+    var map={
+      actionability:'Actionability',regime:'Regime',context_coverage:'Cakupan konteks',context_opposition:'Kontradiksi konteks',
+      context_dispersion:'Konflik antar-konteks',news_event:'Event berita',reversal:'Risiko reversal',data_uncertainty:'Ketidakpastian data'
+    };
+    return map[key]||key||'Risiko';
   }
   function render(data){
     var intel=data&&data.intelligence_layer;
@@ -88,8 +96,15 @@
     var risk=layers.risk||{};
     var rv=document.getElementById('intel-risk-v');
     var rs=document.getElementById('intel-risk-s');
-    if(rv) rv.innerHTML=stateBadge(risk.state)+(Number.isFinite(Number(risk.score))?' '+Number(risk.score).toFixed(1).replace('.',',')+'/100':'');
+    var rm=document.getElementById('intel-risk-meta');
+    if(rv) rv.innerHTML=stateBadge(risk.state)+(fmtScore(risk.score)!==null?' '+fmtScore(risk.score)+'/100':'');
     if(rs) rs.textContent=firstText(risk.reasons,risk.note||'Risiko belum tersedia.');
+    if(rm){
+      var drivers=Array.isArray(risk.primary_drivers)?risk.primary_drivers.slice(0,3):[];
+      rm.textContent=drivers.length
+        ? 'Driver utama · '+drivers.map(function(d){return riskDriverLabel(d.key)+' +'+fmtScore(d.contribution);}).join(' · ')+(risk.version?' · v'+risk.version:'')
+        : (risk.version?'Risk v'+risk.version+' · hanya baseline konservatif':'');
+    }
 
     var counter=layers.counter_thesis||{};
     var cv=document.getElementById('intel-counter-v');
@@ -106,7 +121,7 @@
       fv.innerHTML=esc(finalLabel)+' '+stateBadge(finalR.status);
     }
     if(fs) fs.textContent=finalR.explanation||'Final Reasoner belum tersedia.';
-    if(fm) fm.textContent=(finalR.pair||'—')+' · Bias ECB '+(finalR.canonical_bias||'—')+' · Cakupan konteks '+(Number.isFinite(Number(finalR.contextual_coverage_percent))?finalR.contextual_coverage_percent:'0')+'%';
+    if(fm) fm.textContent=(finalR.pair||'—')+' · Bias ECB '+(finalR.canonical_bias||'—')+' · Cakupan konteks '+(Number.isFinite(Number(finalR.contextual_coverage_percent))?finalR.contextual_coverage_percent:'0')+'%'+(finalR.risk_version?' · Risk v'+finalR.risk_version:'');
 
     var readiness=document.getElementById('intel-readiness');
     var state=String(intel.readiness&&intel.readiness.state||'WAITING_FOR_CONTEXT_PROVIDERS');
@@ -118,7 +133,7 @@
   }
 
   function load(){
-    fetch('./data/currency-strength.json?v=fe56cee8cf',{headers:{Accept:'application/json'},cache:'no-store'})
+    fetch('./data/currency-strength.json?v=d921873e6d',{headers:{Accept:'application/json'},cache:'no-store'})
       .then(function(r){if(!r.ok)throw new Error('HTTP '+r.status);return r.json();})
       .then(function(payload){render(payload&&payload.data?payload.data:payload);})
       .catch(function(){var el=document.getElementById('intel-readiness');if(el){el.className='intel-layer-badge intel-layer-bad';el.textContent='GAGAL MEMUAT';}});

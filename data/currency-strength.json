@@ -10,8 +10,8 @@
     "provider_name": "European Central Bank",
     "provider_url": "api.frankfurter.dev",
     "module": "Currency Strength Agent",
-    "received_at": "2026-08-17T01:07:05.216Z",
-    "generated_at": "2026-08-17T01:07:05.216Z",
+    "received_at": "2026-08-17T01:19:16.625Z",
+    "generated_at": "2026-08-17T01:19:16.625Z",
     "data_updated_at": "2026-08-14",
     "session_date": "2026-08-14",
     "comparison_date": "2026-08-13",
@@ -1631,7 +1631,7 @@
           "state": "OPPOSES",
           "score": 16.7,
           "provider": "FRED (OECD / Federal Reserve source series)",
-          "updated_at": "2026-08-17T01:07:07.210Z",
+          "updated_at": "2026-08-17T01:19:18.049Z",
           "evidence": [
             "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
             "10Y spread momentum: -0.210 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
@@ -1681,7 +1681,7 @@
           "state": "SUPPORTS",
           "score": 87.5,
           "provider": "FRED (Federal Reserve / EIA source series)",
-          "updated_at": "2026-08-17T01:07:07.410Z",
+          "updated_at": "2026-08-17T01:19:18.240Z",
           "evidence": [
             "NFCI: level -0.5490 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
             "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
@@ -1743,10 +1743,10 @@
           "state": "NEUTRAL",
           "score": 51.9,
           "provider": "GDELT DOC 2.0 + Google News RSS fallback",
-          "updated_at": "2026-08-17T01:08:04.777Z",
+          "updated_at": "2026-08-17T01:19:55.370Z",
           "evidence": [
             "Headline-stance differential NZDUSD BUY: 0.039 after directional-headline reliability 25% => NEUTRAL.",
-            "NZD: 1 supportive vs 0 opposing directional headline(s); balance 1 from 13 recent articles via GDELT DOC 2.0.",
+            "NZD: 1 supportive vs 0 opposing directional headline(s); balance 1 from 12 recent articles via GDELT DOC 2.0.",
             "USD: 12 supportive vs 1 opposing directional headline(s); balance 0.846 from 40 recent articles via Google News RSS fallback.",
             "High-impact headline risk: HIGH; 3 relevant headline(s) detected within 24h."
           ],
@@ -1769,9 +1769,9 @@
               "seen_at": "2026-08-16T21:01:00.000Z"
             },
             {
-              "title": "AI productivity reveals a way out of inflation crunch - knoxnews.com",
+              "title": "AI productivity reveals a way out of inflation crunch - Knoxville News Sentinel",
               "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPRkhHSk9qdVBlb0dSUi10TUNIWkk5NnA5aV9GX2pSNlVGY1p2ZTk1Z3RycS1rX1ZvdUVzNGN4STlLSzVGRkxuRjB0MXZhdzZYYXpfSDVLQkxxWWFicmFlaVBuR0pteXlBSFhXUzV1LTlPNmNob3ZicjlYUlpZVmE0a3VlYVN2N2pFSDc2T1BWOFBTSjU2VV9UbUx0R0wySGhyQWp6d0prbGVCak5IdGFHa1lQY0o1LVFiemVhOVUxSnVVQ0N3VjMzN19VZHlBeWpCQlNQOUhibDNHVWVvbU5JMw?oc=5",
-              "domain": "knoxnews.com",
+              "domain": "Knoxville News Sentinel",
               "sourcecountry": null,
               "language": "English",
               "seen_at": "2026-08-16T09:03:00.000Z"
@@ -1827,7 +1827,7 @@
               "currency": "NZD",
               "query": "(\"New Zealand dollar\" OR \"Reserve Bank of New Zealand\" OR RBNZ) (inflation OR \"interest rate\" OR rates OR economy OR growth OR employment OR monetary OR \"central bank\") sourcelang:english",
               "latest_seen_at": "2026-08-16T22:45:00.000Z",
-              "article_count": 13,
+              "article_count": 12,
               "supportive_headline_count": 1,
               "opposing_headline_count": 0,
               "classified_headline_count": 1
@@ -1870,18 +1870,178 @@
         "risk": {
           "key": "risk",
           "label": "Risk",
+          "version": "0.2",
           "available": true,
           "state": "MODERATE",
-          "score": 48,
-          "scope": "contextual_execution_risk",
+          "score": 48.4,
+          "scope": "contextual_decision_risk",
+          "baseline": 15,
+          "raw_score_before_cap": 48.4,
+          "thresholds": {
+            "low_below": 45,
+            "moderate_from": 45,
+            "high_from": 70
+          },
+          "dimensions": {
+            "actionability": {
+              "key": "actionability",
+              "label": "Actionability",
+              "contribution": 0,
+              "max_contribution": 30,
+              "reason": "Actionability is strong at 87.5/100.",
+              "detail": {
+                "score": 87.5
+              }
+            },
+            "regime": {
+              "key": "regime",
+              "label": "Market Regime",
+              "contribution": 0,
+              "max_contribution": 20,
+              "reason": "Market regime is CONFIRMED_TREND.",
+              "detail": {
+                "regime": "CONFIRMED_TREND"
+              }
+            },
+            "context_coverage": {
+              "key": "context_coverage",
+              "label": "Context Coverage",
+              "contribution": 0,
+              "max_contribution": 18,
+              "reason": "All contextual layers are available.",
+              "detail": {
+                "available": 3,
+                "expected": 3,
+                "coverage_percent": 100
+              }
+            },
+            "context_opposition": {
+              "key": "context_opposition",
+              "label": "Context Opposition",
+              "contribution": 13.3,
+              "max_contribution": 24,
+              "reason": "Macro & Yield OPPOSES increases contextual contradiction risk.",
+              "detail": {
+                "layers": [
+                  {
+                    "layer": "macro_yield",
+                    "label": "Macro & Yield",
+                    "state": "OPPOSES",
+                    "score": 16.7,
+                    "contribution": 13.3
+                  }
+                ]
+              }
+            },
+            "context_dispersion": {
+              "key": "context_dispersion",
+              "label": "Context Disagreement",
+              "contribution": 8,
+              "max_contribution": 8,
+              "reason": "Context scores are dispersed by 70.8 points.",
+              "detail": {
+                "spread": 70.8,
+                "scores": [
+                  {
+                    "key": "macro_yield",
+                    "label": "Macro & Yield",
+                    "score": 16.7
+                  },
+                  {
+                    "key": "cross_market",
+                    "label": "Cross-Market",
+                    "score": 87.5
+                  },
+                  {
+                    "key": "news",
+                    "label": "News",
+                    "score": 51.9
+                  }
+                ]
+              }
+            },
+            "news_event": {
+              "key": "news_event",
+              "label": "News Event Risk",
+              "contribution": 10,
+              "max_contribution": 10,
+              "reason": "News event risk is HIGH based on recent high-impact macro/central-bank headlines.",
+              "detail": {
+                "level": "HIGH",
+                "recent_high_impact_24h": 3
+              }
+            },
+            "reversal": {
+              "key": "reversal",
+              "label": "Reversal Risk",
+              "contribution": 2.1,
+              "max_contribution": 15,
+              "reason": "Reversal-risk indicator is 31/100.",
+              "detail": {
+                "indicator": 31
+              }
+            },
+            "data_uncertainty": {
+              "key": "data_uncertainty",
+              "label": "Data Uncertainty",
+              "contribution": 0,
+              "max_contribution": 6,
+              "reason": "No reported evidence gaps remain inside available contextual layers.",
+              "detail": {
+                "gaps": []
+              }
+            }
+          },
+          "primary_drivers": [
+            {
+              "key": "context_opposition",
+              "label": "Context Opposition",
+              "contribution": 13.3,
+              "reason": "Macro & Yield OPPOSES increases contextual contradiction risk."
+            },
+            {
+              "key": "news_event",
+              "label": "News Event Risk",
+              "contribution": 10,
+              "reason": "News event risk is HIGH based on recent high-impact macro/central-bank headlines."
+            },
+            {
+              "key": "context_dispersion",
+              "label": "Context Disagreement",
+              "contribution": 8,
+              "reason": "Context scores are dispersed by 70.8 points."
+            },
+            {
+              "key": "reversal",
+              "label": "Reversal Risk",
+              "contribution": 2.1,
+              "reason": "Reversal-risk indicator is 31/100."
+            }
+          ],
+          "context_snapshot": {
+            "external_context_coverage": "3/3",
+            "supports": 1,
+            "opposes": 1,
+            "mixed_or_neutral": 1,
+            "scored_layers": 3
+          },
+          "gates": {
+            "full_context": true,
+            "multiple_context_opposition": false,
+            "high_news_event_risk": true,
+            "risk_constrained": false
+          },
           "reversal_risk_indicator": 31.03,
           "external_context_coverage": "3/3",
           "reasons": [
-            "Macro & Yield opposes the Currency Strength setup.",
-            "News event risk is HIGH based on recent high-impact macro/central-bank headlines.",
-            "Reversal-risk indicator is non-trivial at 31/100."
+            "Context Opposition: +13.3 · Macro & Yield OPPOSES increases contextual contradiction risk.",
+            "News Event Risk: +10 · News event risk is HIGH based on recent high-impact macro/central-bank headlines.",
+            "Context Disagreement: +8 · Context scores are dispersed by 70.8 points.",
+            "Reversal Risk: +2.1 · Reversal-risk indicator is 31/100."
           ],
-          "note": "Risk is a conservative contextual-risk score. It is not probability of loss and does not generate stop-loss or position size."
+          "methodology": "Risk v0.2 uses a conservative additive risk budget: 15-point baseline plus transparent contributions from Actionability weakness, regime weakness, missing context, contextual opposition, cross-context score dispersion, high-impact news-event density, reversal risk, and evidence gaps. Contributions are capped and the final score is bounded to 0-100.",
+          "research_status": "RULES_BASED_V0_2_RESEARCH_VALIDATION_PENDING",
+          "note": "Risk is a contextual decision-risk index, not probability of loss. It does not generate stop-loss, position size, or execution instructions."
         },
         "counter_thesis": {
           "key": "counter_thesis",
@@ -1891,13 +2051,15 @@
           "objections": [
             "Macro & Yield explicitly opposes the setup.",
             "Recent high-impact news density is HIGH and can invalidate continuation timing.",
-            "The current weak currency has a reversal-risk indicator of 31/100."
+            "The current weak currency has a reversal-risk indicator of 31/100.",
+            "Contextual intelligence is internally dispersed by 70.8 score points."
           ],
           "missing_context": [],
           "invalidation_focus": [
             "A material reversal in strongest/weakest Currency Strength leadership.",
             "A deterioration of provider agreement or multi-timeframe alignment.",
-            "New Macro & Yield, Cross-Market, or News evidence that opposes the current pair bias."
+            "New Macro & Yield, Cross-Market, or News evidence that opposes the current pair bias.",
+            "A sharp increase in contextual disagreement or high-impact event risk."
           ],
           "note": "Counter-Thesis deliberately searches for reasons the current continuation case could fail; it never reverses the ECB signal by itself."
         },
@@ -1921,13 +2083,15 @@
             "expected": 3
           },
           "risk_level": "MODERATE",
+          "risk_score": 48.4,
+          "risk_version": "0.2",
           "counter_thesis_state": "ACTIVE",
           "explanation": "Context is populated but not sufficiently one-sided to confirm the canonical pair bias.",
           "guardrail": "Final Reasoner is evidence-grounded and fail-closed. Missing Macro & Yield, Cross-Market, or News evidence is never fabricated or silently replaced.",
           "note": "Final outlook is decision support only. It is not an execution instruction, win probability, or profitability forecast."
         }
       },
-      "methodology": "Sequential intelligence architecture: Macro & Yield → Cross-Market → News → Risk → Counter-Thesis → Final Reasoner. The first three stages require real external evidence adapters. Risk and Counter-Thesis can operate conservatively on existing Currency Strength/Actionability context and explicitly penalize missing context. Final Reasoner requires contextual coverage before issuing a final directional outlook.",
+      "methodology": "Sequential intelligence architecture: Macro & Yield → Cross-Market → News → Risk → Counter-Thesis → Final Reasoner. The first three stages require real external evidence adapters. Risk v0.2 decomposes contextual decision risk into transparent capped contributions. Counter-Thesis searches for explicit failure cases, and Final Reasoner is fail-closed when context is insufficient or risk is constrained.",
       "research_status": "CONTEXT_STACK_LIVE_RESEARCH_VALIDATION_PENDING"
     }
   }
