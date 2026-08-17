@@ -10,8 +10,8 @@
     "provider_name": "European Central Bank",
     "provider_url": "api.frankfurter.dev",
     "module": "Currency Strength Agent",
-    "received_at": "2026-08-17T15:47:23.387Z",
-    "generated_at": "2026-08-17T15:47:23.387Z",
+    "received_at": "2026-08-17T15:50:57.773Z",
+    "generated_at": "2026-08-17T15:50:57.773Z",
     "data_updated_at": "2026-08-17",
     "session_date": "2026-08-17",
     "comparison_date": "2026-08-14",
@@ -1644,7 +1644,7 @@
           "state": "SUPPORTS",
           "score": 66.7,
           "provider": "FRED (OECD / Federal Reserve source series)",
-          "updated_at": "2026-08-17T15:47:28.053Z",
+          "updated_at": "2026-08-17T15:51:01.638Z",
           "evidence": [
             "10Y yield spread: AUD 4.831% (2026-06-01) vs USD 4.470% (2026-06-01); spread +0.361 pp => SUPPORTS canonical BUY.",
             "10Y spread momentum: -0.141 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
@@ -1694,7 +1694,7 @@
           "state": "SUPPORTS",
           "score": 87.5,
           "provider": "FRED (Federal Reserve / EIA source series)",
-          "updated_at": "2026-08-17T15:47:28.231Z",
+          "updated_at": "2026-08-17T15:51:01.811Z",
           "evidence": [
             "NFCI: level -0.5490 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
             "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
@@ -1753,49 +1753,73 @@
           "key": "news",
           "label": "News",
           "available": true,
-          "state": "MIXED",
-          "score": 57.9,
-          "provider": "Google News RSS fallback",
-          "updated_at": "2026-08-17T15:48:17.444Z",
+          "state": "SUPPORTS",
+          "score": 89.3,
+          "provider": "Google News RSS fallback + GDELT DOC 2.0",
+          "updated_at": "2026-08-17T15:51:45.467Z",
           "evidence": [
-            "Headline-stance differential AUDUSD BUY: 0.158 after directional-headline reliability 100% => MIXED.",
+            "Headline-stance differential AUDUSD BUY: 0.785 after directional-headline reliability 75% => SUPPORTS.",
             "AUD: 6 supportive vs 1 opposing directional headline(s); balance 0.714 from 40 recent articles via Google News RSS fallback.",
-            "USD: 7 supportive vs 2 opposing directional headline(s); balance 0.556 from 40 recent articles via Google News RSS fallback.",
+            "USD: 1 supportive vs 2 opposing directional headline(s); balance -0.333 from 40 recent articles via GDELT DOC 2.0.",
             "High-impact headline risk: HIGH; 8 relevant headline(s) detected within 24h."
           ],
           "missing_evidence": [],
           "headlines": [
             {
-              "title": "Rate hikes may be a blunt tool, but they're all the Fed has to cool inflation - Reuters",
-              "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQSkx4M1hZeWx5Mnp2endmVlRLNnltcERaNG55Sk9YSmpOU2lQaUhxLUtnRGNJal9KcEtwTG1kdS1HMlRHcGE3amwzRl84LVNWT3JUMmlQWE5VZ3JaQ0VqMUpFNEJRV2U3bjUyLVY0dzFWVndmS3lTcUt6OWluLTQxeVc0cmU2TGRFdlJMVjV1QXZDSkJhM2JTNW12S0JVZmJya1YyRGdMQzloN2FqeFplWEtibVU1T3BWc09Gb0h2SkxvYjFNSjFYa0ZWdw?oc=5",
-              "domain": "Reuters",
-              "sourcecountry": null,
+              "title": "Franklin Templeton stays bullish on equities as earnings growth tops 20 %",
+              "url": "https://www.investmentnews.com/equities/franklin-templeton-stays-bullish-on-equities-as-earnings-growth-tops-20/267831",
+              "domain": "investmentnews.com",
+              "sourcecountry": "United States",
               "language": "English",
-              "seen_at": "2026-08-17T13:03:16.000Z"
+              "seen_at": "2026-08-17T14:00:00.000Z"
             },
             {
-              "title": "Yen retreats below 159.00 against the US Dollar as Japanese GDP disappoints - FXStreet",
-              "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxNWW5DY1NaYk5uVDcyM05CNFZEN3o2RGtna1RvRE5Ed2E0TXNfdHJ2ZGF4M2wxTkNVY1VHcnJJWDBrM1lMS3E4Y0NyNFN0R19yd3N2VVdnVGl3cTJwQV93S0M5eVg0RWxGbWR0dUZzVnJ6VFQ1NnRYSHdVcWo1MXdqMjlkLVlfVnNOLUZGZE5Ua2llLURnVC1LaDQwTml5azRNMENoUUdzZGxlX2V0R010Z1JjV0NiaEE?oc=5",
-              "domain": "FXStreet",
-              "sourcecountry": null,
+              "title": "Canada July annual inflation accelerates to 3 % as gasoline rebounds",
+              "url": "https://www.933thedrive.com/2026/08/17/canadas-july-annual-inflation-accelerates-to-3-as-gasoline-rebounds/",
+              "domain": "933thedrive.com",
+              "sourcecountry": "United States",
               "language": "English",
-              "seen_at": "2026-08-17T10:40:27.000Z"
+              "seen_at": "2026-08-17T14:00:00.000Z"
             },
             {
-              "title": "Fed Rate Hike Bets Are Fading Fast. Cooler Inflation Could Leave Warsh An Easier Choice. - International Business Times",
-              "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNkk4dHkzbHRqajNtN09zbVdRbHowcXJaS2ZQSXc0ZmdUZFJlZk00LVpZelJpMEgxdmVJTE1uUnFrcDVjTG9yaUdycE5yRnVKaGZGUlJrSEs1WGFZRmlRSXZ4dTFFR2tQXzdBc1pXdTZqd3FJcHBiVW1EczhPM3J1aG9XMjJLa25reXp1TjhyMDJ6dWxBcXFjZDRzdzZRR1QtZVpXQ0RmRVpQSGNLZ2pNSDBBRlZqUQ?oc=5",
-              "domain": "International Business Times",
-              "sourcecountry": null,
+              "title": "Asian Shares Mixed On Concerns Over U . S . Growth",
+              "url": "https://www.rttnews.com/3680968/asian-shares-mixed-on-concerns-over-u-s-growth.aspx",
+              "domain": "rttnews.com",
+              "sourcecountry": "United States",
               "language": "English",
-              "seen_at": "2026-08-17T10:11:01.000Z"
+              "seen_at": "2026-08-17T13:30:00.000Z"
             },
             {
-              "title": "FOMC Minutes, Coinbase-Circle USDC Renewal in Focus This Week - en.bloomingbit.io",
-              "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9fNHlUMzh6LVA5c3o4V2tFQnp1Zzl2VlZobzZvVkhyc0NSX1dFU19CeXYyVXlHYm5GeExwenptTVhFN3dEVkFBbHdXZnkxR1hmdDlRMg?oc=5",
-              "domain": "en.bloomingbit.io",
+              "title": "Sweden Inflation Expectations Take Focus Ahead of Riksbank",
+              "url": "https://www.actionforex.com/contributors/fundamental-analysis/650831-sweden-inflation-expectations-take-focus-ahead-of-riksbank/",
+              "domain": "actionforex.com",
+              "sourcecountry": "United Kingdom",
+              "language": "English",
+              "seen_at": "2026-08-17T10:30:00.000Z"
+            },
+            {
+              "title": "Why Teens Are Struggling to Find Summer Jobs",
+              "url": "https://www.theepochtimes.com/article/why-teens-are-struggling-to-find-summer-jobs-6050689",
+              "domain": "theepochtimes.com",
+              "sourcecountry": "United States",
+              "language": "English",
+              "seen_at": "2026-08-17T10:15:00.000Z"
+            },
+            {
+              "title": "Reserve Bank of Australia hawkish policy stance: AUD/USD resistance levels in focus - Traders Union",
+              "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxON18tdlJ4ekgweDJSNmttellpNzZmNlp0OWZyRHJrbmt0MnRZOFVXMk5xWDRJSEFWblZMUUF4NGF0UVZEMUwxb2VwaHRnUklKLUpMbTBncHpuZnJXeHk2ZmVGTlBDdWVRS2dsMEs2bmZXRVMzaUI2TThVWGRrUmhmU0tLa041X0NWU01uMk5XSDZsMVAyWWtmd0hCS0s?oc=5",
+              "domain": "Traders Union",
               "sourcecountry": null,
               "language": "English",
-              "seen_at": "2026-08-17T09:44:07.000Z"
+              "seen_at": "2026-08-17T09:50:28.000Z"
+            },
+            {
+              "title": "RBC bets on growth in Europe as businesses diversify trade",
+              "url": "https://www.theglobeandmail.com/business/article-rbc-bets-on-growth-in-europe-as-businesses-diversify-trade/",
+              "domain": "theglobeandmail.com",
+              "sourcecountry": "Canada",
+              "language": "English",
+              "seen_at": "2026-08-17T09:45:00.000Z"
             },
             {
               "title": "RBA Holds Steady at 4.35%, Warns of Possible Hike If Inflation Rebounds - Vocal",
@@ -1804,30 +1828,6 @@
               "sourcecountry": null,
               "language": "English",
               "seen_at": "2026-08-17T08:15:38.000Z"
-            },
-            {
-              "title": "Treasury yields edge higher as investors look ahead to latest FOMC minutes - CNBC",
-              "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxOSlROQUZGcnFZeVc5VHZjWGdpMmItNGNiUWxyV1EwRzdBRWFIRFNuVTIwRkZaSjVlV3FzX0FkSXdyeGtkZFlnUEUzbDdxRTVXLVEzNXBHVTFwU3IweHVfS1dzd3oxeFM3SkdqYldqbkdpaXZYbk9meHIyTWw2Q2tOS3JjSTI3TUY30gGOAUFVX3lxTFBJdnk5T2RxZi1kOGVodnlRdXE0SU00MnJPZnZPTUswMzFFMmJXZnZYa1FxUlNERFU0MHluTnppVTY2NkFVeWRDZ2JTaWJOOFFpTDNMal9ZMEpmQW5oSkpaRWZpQldsR1ExcVdhWTFHLTRtdi1kMlJRMV9GU3A2Q0hBOEFjUHB3eU56OXE5LWc?oc=5",
-              "domain": "CNBC",
-              "sourcecountry": null,
-              "language": "English",
-              "seen_at": "2026-08-17T08:08:17.000Z"
-            },
-            {
-              "title": "Australian Dollar Outlook: AUD/USD Grinds into Jobs, DXY Holds Support - FOREX.com",
-              "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPeERmb2pCem92TEdiR3AxRDI0bEdmNkQwRHJJUVpmMm5nbXhDVnVKbTlxMmFiZW5lNjhlYmt4bzAtV19xaVhpOFdsR1NiY0Z2SlJCemZNUDdocU9Wc296bDRmY19HSFJWdWVpVjJPbWM3cGxwRVZicUlKOTBsSEtpUy1fOFVEYXFOSmVjYTRRM0NQZm4yZzhSNWFmRW1HdUNPeTBoNDM1Smd5aDR1WHdBeFhwUUtWZw?oc=5",
-              "domain": "FOREX.com",
-              "sourcecountry": null,
-              "language": "English",
-              "seen_at": "2026-08-17T06:32:15.000Z"
-            },
-            {
-              "title": "Indonesian Rupiah strengthens amid Prabowo's growth target, weaker US Dollar - FXStreet",
-              "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQdUlCWG9DWC02WXVDdFJPaUpGTnItTW01d3lzemhKSkh4Snh3c3I0RWVaeXFia0R1LWc5dFM4TkdBd3pjdW55cThnUDBSRDM1YlNFTnFuaWRWVE5FVjZZRW16bk5kRldndHpPUUt6amxoVlZjS0otTjloRVMyRXlfaGxvcmRManhxSmVGMzFENlhIb0RxbXpTTjd1UUIweUp0ajdNaWVGVHJaLVpEQUE2Yng1SmY4Z2Zh?oc=5",
-              "domain": "FXStreet",
-              "sourcecountry": null,
-              "language": "English",
-              "seen_at": "2026-08-17T05:45:10.000Z"
             }
           ],
           "event_risk": {
@@ -1846,14 +1846,14 @@
               "classified_headline_count": 7
             },
             {
-              "provider": "Google News RSS fallback",
+              "provider": "GDELT DOC 2.0",
               "currency": "USD",
-              "query": "\"US dollar\" OR \"Federal Reserve\" OR FOMC inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
-              "latest_seen_at": "2026-08-17T15:39:21.000Z",
+              "query": "(\"US dollar\" OR \"U.S. dollar\" OR \"Federal Reserve\" OR FOMC) (inflation OR \"interest rate\" OR rates OR economy OR growth OR employment OR monetary OR \"central bank\") sourcelang:english",
+              "latest_seen_at": "2026-08-17T15:30:00.000Z",
               "article_count": 40,
-              "supportive_headline_count": 7,
+              "supportive_headline_count": 1,
               "opposing_headline_count": 2,
-              "classified_headline_count": 9
+              "classified_headline_count": 3
             }
           ],
           "methodology": {
@@ -1866,10 +1866,10 @@
             "max_article_age_hours": 96,
             "high_impact_headline_window_hours": 24,
             "base_headline_balance": 0.714,
-            "quote_headline_balance": 0.556,
-            "raw_pair_headline_differential": 0.158,
-            "reliability": 1,
-            "adjusted_pair_headline_differential": 0.158,
+            "quote_headline_balance": -0.333,
+            "raw_pair_headline_differential": 1.047,
+            "reliability": 0.75,
+            "adjusted_pair_headline_differential": 0.785,
             "support_threshold": 62,
             "oppose_threshold": 38,
             "neutral_band": [
@@ -1886,10 +1886,10 @@
           "version": "0.2",
           "available": true,
           "state": "MODERATE",
-          "score": 67.5,
+          "score": 60.5,
           "scope": "contextual_decision_risk",
           "baseline": 15,
-          "raw_score_before_cap": 67.5,
+          "raw_score_before_cap": 60.5,
           "thresholds": {
             "low_below": 45,
             "moderate_from": 45,
@@ -1931,29 +1931,21 @@
             "context_opposition": {
               "key": "context_opposition",
               "label": "Context Opposition",
-              "contribution": 4,
+              "contribution": 0,
               "max_contribution": 24,
-              "reason": "News MIXED increases contextual contradiction risk.",
+              "reason": "No contextual layer directly opposes the canonical setup.",
               "detail": {
-                "layers": [
-                  {
-                    "layer": "news",
-                    "label": "News",
-                    "state": "MIXED",
-                    "score": 57.9,
-                    "contribution": 4
-                  }
-                ]
+                "layers": []
               }
             },
             "context_dispersion": {
               "key": "context_dispersion",
               "label": "Context Disagreement",
-              "contribution": 3,
+              "contribution": 0,
               "max_contribution": 8,
-              "reason": "Context scores are dispersed by 29.6 points.",
+              "reason": "Context score dispersion is contained at 22.6 points.",
               "detail": {
-                "spread": 29.6,
+                "spread": 22.6,
                 "scores": [
                   {
                     "key": "macro_yield",
@@ -1968,7 +1960,7 @@
                   {
                     "key": "news",
                     "label": "News",
-                    "score": 57.9
+                    "score": 89.3
                   }
                 ]
               }
@@ -2025,17 +2017,17 @@
               "reason": "News event risk is HIGH based on recent high-impact macro/central-bank headlines."
             },
             {
-              "key": "context_opposition",
-              "label": "Context Opposition",
-              "contribution": 4,
-              "reason": "News MIXED increases contextual contradiction risk."
+              "key": "reversal",
+              "label": "Reversal Risk",
+              "contribution": 1.5,
+              "reason": "Reversal-risk indicator is 27.9/100."
             }
           ],
           "context_snapshot": {
             "external_context_coverage": "3/3",
-            "supports": 2,
+            "supports": 3,
             "opposes": 0,
-            "mixed_or_neutral": 1,
+            "mixed_or_neutral": 0,
             "scored_layers": 3
           },
           "gates": {
@@ -2050,7 +2042,7 @@
             "Actionability: +22 · Actionability is filtered at 55/100.",
             "Market Regime: +12 · Market regime is LOW_ALIGNMENT.",
             "News Event Risk: +10 · News event risk is HIGH based on recent high-impact macro/central-bank headlines.",
-            "Context Opposition: +4 · News MIXED increases contextual contradiction risk."
+            "Reversal Risk: +1.5 · Reversal-risk indicator is 27.9/100."
           ],
           "methodology": "Risk v0.2 uses a conservative additive risk budget: 15-point baseline plus transparent contributions from Actionability weakness, regime weakness, missing context, contextual opposition, cross-context score dispersion, high-impact news-event density, reversal risk, and evidence gaps. Contributions are capped and the final score is bounded to 0-100.",
           "research_status": "RULES_BASED_V0_2_RESEARCH_VALIDATION_PENDING",
@@ -2071,7 +2063,7 @@
             "actionability_score": 55,
             "regime": "LOW_ALIGNMENT",
             "risk_version": "0.2",
-            "risk_score": 67.5,
+            "risk_score": 60.5,
             "risk_state": "MODERATE"
           },
           "primary_objection": {
@@ -2085,9 +2077,9 @@
               "recent_high_impact_24h": 8
             },
             "evidence": [
-              "Rate hikes may be a blunt tool, but they're all the Fed has to cool inflation - Reuters",
-              "Yen retreats below 159.00 against the US Dollar as Japanese GDP disappoints - FXStreet",
-              "Fed Rate Hike Bets Are Fading Fast. Cooler Inflation Could Leave Warsh An Easier Choice. - International Business Times"
+              "Franklin Templeton stays bullish on equities as earnings growth tops 20 %",
+              "Canada July annual inflation accelerates to 3 % as gasoline rebounds",
+              "Asian Shares Mixed On Concerns Over U . S . Growth"
             ]
           },
           "structured_objections": [
@@ -2102,9 +2094,9 @@
                 "recent_high_impact_24h": 8
               },
               "evidence": [
-                "Rate hikes may be a blunt tool, but they're all the Fed has to cool inflation - Reuters",
-                "Yen retreats below 159.00 against the US Dollar as Japanese GDP disappoints - FXStreet",
-                "Fed Rate Hike Bets Are Fading Fast. Cooler Inflation Could Leave Warsh An Easier Choice. - International Business Times"
+                "Franklin Templeton stays bullish on equities as earnings growth tops 20 %",
+                "Canada July annual inflation accelerates to 3 % as gasoline rebounds",
+                "Asian Shares Mixed On Concerns Over U . S . Growth"
               ]
             },
             {
@@ -2131,52 +2123,6 @@
               "evidence": []
             },
             {
-              "id": "news_mixed",
-              "category": "EXTERNAL_AMBIGUITY",
-              "source_layer": "news",
-              "severity": "MODERATE",
-              "statement": "News is mixed and weakens one-sided confirmation of the canonical bias.",
-              "detail": {
-                "state": "MIXED",
-                "score": 57.9,
-                "provider": "Google News RSS fallback",
-                "updated_at": "2026-08-17T15:48:17.444Z"
-              },
-              "evidence": [
-                "Headline-stance differential AUDUSD BUY: 0.158 after directional-headline reliability 100% => MIXED.",
-                "AUD: 6 supportive vs 1 opposing directional headline(s); balance 0.714 from 40 recent articles via Google News RSS fallback.",
-                "USD: 7 supportive vs 2 opposing directional headline(s); balance 0.556 from 40 recent articles via Google News RSS fallback."
-              ]
-            },
-            {
-              "id": "context_dispersion",
-              "category": "INTERNAL_DISAGREEMENT",
-              "source_layer": "risk.context_dispersion",
-              "severity": "LOW",
-              "statement": "Contextual intelligence is internally dispersed by 29.6 score points.",
-              "detail": {
-                "spread": 29.6,
-                "scores": [
-                  {
-                    "key": "macro_yield",
-                    "label": "Macro & Yield",
-                    "score": 66.7
-                  },
-                  {
-                    "key": "cross_market",
-                    "label": "Cross-Market",
-                    "score": 87.5
-                  },
-                  {
-                    "key": "news",
-                    "label": "News",
-                    "score": 57.9
-                  }
-                ]
-              },
-              "evidence": []
-            },
-            {
               "id": "weak_currency_reversal",
               "category": "REVERSAL_RISK",
               "source_layer": "reversal_intelligence",
@@ -2193,19 +2139,17 @@
             "Recent high-impact news density is HIGH and can invalidate continuation timing even when directional evidence is otherwise supportive.",
             "The market regime is LOW_ALIGNMENT, not CONFIRMED_TREND.",
             "Actionability is filtered at 55/100.",
-            "News is mixed and weakens one-sided confirmation of the canonical bias.",
-            "Contextual intelligence is internally dispersed by 29.6 score points.",
             "The current weak currency has a reversal-risk indicator of 27.9/100."
           ],
           "severity_counts": {
             "HIGH": 3,
-            "MODERATE": 1,
-            "LOW": 2
+            "MODERATE": 0,
+            "LOW": 1
           },
           "evidence_balance": {
-            "supports": 2,
+            "supports": 3,
             "opposes": 0,
-            "mixed_or_neutral": 1,
+            "mixed_or_neutral": 0,
             "available": 3,
             "expected": 3,
             "missing": 0,
@@ -2255,7 +2199,7 @@
               "key": "context_dispersion_60",
               "label": "Context disagreement becomes extreme",
               "triggered": false,
-              "current": 29.6,
+              "current": 22.6,
               "trigger": "Context score spread >= 60 points."
             },
             {
@@ -2269,7 +2213,7 @@
               "key": "risk_high_70",
               "label": "Risk becomes HIGH",
               "triggered": false,
-              "current": 67.5,
+              "current": 60.5,
               "trigger": "Risk v0.2 >= 70."
             }
           ],
@@ -2279,7 +2223,6 @@
             "high_event_risk"
           ],
           "rebuttal_conditions": [
-            "Cross-context score dispersion falls below 25 points.",
             "High-impact event risk normalizes to LOW while directional context remains stable.",
             "Risk v0.2 falls below 45 without changing the frozen Risk formula."
           ],
@@ -2316,14 +2259,14 @@
           "regime": "LOW_ALIGNMENT",
           "contextual_coverage_percent": 100,
           "context_counts": {
-            "supports": 2,
+            "supports": 3,
             "opposes": 0,
-            "mixed_or_neutral": 1,
+            "mixed_or_neutral": 0,
             "available": 3,
             "expected": 3
           },
           "risk_level": "MODERATE",
-          "risk_score": 67.5,
+          "risk_score": 60.5,
           "risk_version": "0.2",
           "counter_thesis_state": "ACTIVE",
           "counter_thesis_version": "0.2",
@@ -2360,6 +2303,15 @@
               "detail": {
                 "score": 87.5,
                 "provider": "FRED (Federal Reserve / EIA source series)"
+              }
+            },
+            {
+              "source": "news",
+              "category": "EXTERNAL_SUPPORT",
+              "statement": "News supports the canonical AUDUSD BUY at 89.3/100.",
+              "detail": {
+                "score": 89.3,
+                "provider": "Google News RSS fallback + GDELT DOC 2.0"
               }
             }
           ],
@@ -2400,48 +2352,6 @@
               }
             },
             {
-              "source": "news",
-              "category": "EXTERNAL_AMBIGUITY",
-              "statement": "News is mixed and weakens one-sided confirmation of the canonical bias.",
-              "detail": {
-                "severity": "MODERATE",
-                "detail": {
-                  "state": "MIXED",
-                  "score": 57.9,
-                  "provider": "Google News RSS fallback",
-                  "updated_at": "2026-08-17T15:48:17.444Z"
-                }
-              }
-            },
-            {
-              "source": "risk.context_dispersion",
-              "category": "INTERNAL_DISAGREEMENT",
-              "statement": "Contextual intelligence is internally dispersed by 29.6 score points.",
-              "detail": {
-                "severity": "LOW",
-                "detail": {
-                  "spread": 29.6,
-                  "scores": [
-                    {
-                      "key": "macro_yield",
-                      "label": "Macro & Yield",
-                      "score": 66.7
-                    },
-                    {
-                      "key": "cross_market",
-                      "label": "Cross-Market",
-                      "score": 87.5
-                    },
-                    {
-                      "key": "news",
-                      "label": "News",
-                      "score": 57.9
-                    }
-                  ]
-                }
-              }
-            },
-            {
               "source": "reversal_intelligence",
               "category": "REVERSAL_RISK",
               "statement": "The current weak currency has a reversal-risk indicator of 27.9/100.",
@@ -2456,11 +2366,11 @@
           ],
           "evidence_gaps": [],
           "evidence_balance": {
-            "supporting_items": 2,
-            "opposing_items": 6,
-            "contextual_supports": 2,
+            "supporting_items": 3,
+            "opposing_items": 4,
+            "contextual_supports": 3,
             "contextual_opposes": 0,
-            "contextual_mixed_or_neutral": 1,
+            "contextual_mixed_or_neutral": 0,
             "contextual_available": 3,
             "contextual_expected": 3
           },
@@ -2470,7 +2380,7 @@
             "contribution": 22,
             "reason": "Actionability is filtered at 55/100.",
             "risk_state": "MODERATE",
-            "risk_score": 67.5
+            "risk_score": 60.5
           },
           "primary_counter_thesis": {
             "category": "EVENT_TIMING",
@@ -2521,7 +2431,7 @@
               "key": "context_dispersion_60",
               "label": "Context disagreement becomes extreme",
               "triggered": false,
-              "current": 29.6,
+              "current": 22.6,
               "condition": "Context score spread >= 60 points."
             },
             {
@@ -2535,7 +2445,7 @@
               "key": "risk_high_70",
               "label": "Risk becomes HIGH",
               "triggered": false,
-              "current": 67.5,
+              "current": 60.5,
               "condition": "Risk v0.2 >= 70."
             }
           ],
@@ -2545,11 +2455,10 @@
             "high_event_risk"
           ],
           "rebuttal_conditions": [
-            "Cross-context score dispersion falls below 25 points.",
             "High-impact event risk normalizes to LOW while directional context remains stable.",
             "Risk v0.2 falls below 45 without changing the frozen Risk formula."
           ],
-          "final_assessment": "AUDUSD BUY has Actionability 55/100 with regime LOW_ALIGNMENT, but contextual evidence is not one-sided. Supports: Macro & Yield, Cross-Market. Opposes: none. Mixed/neutral: News. Risk v0.2 MODERATE at 67.5/100. Primary challenge: Recent high-impact news density is HIGH and can invalidate continuation timing even when directional evidence is otherwise supportive. Decision remains DEPRIORITIZE.",
+          "final_assessment": "AUDUSD BUY has Actionability 55/100 with regime LOW_ALIGNMENT, but contextual evidence is not one-sided. Supports: Macro & Yield, Cross-Market, News. Opposes: none. Mixed/neutral: none. Risk v0.2 MODERATE at 60.5/100. Primary challenge: Recent high-impact news density is HIGH and can invalidate continuation timing even when directional evidence is otherwise supportive. Decision remains DEPRIORITIZE.",
           "decision_trace": [
             {
               "gate": "actionability_available",
@@ -2568,7 +2477,7 @@
               "passed": true,
               "current": {
                 "state": "MODERATE",
-                "score": 67.5
+                "score": 60.5
               },
               "rule": "Risk HIGH constrains the final directional outlook."
             },
@@ -2576,9 +2485,9 @@
               "gate": "context_vote",
               "passed": true,
               "current": {
-                "supports": 2,
+                "supports": 3,
                 "opposes": 0,
-                "mixed_or_neutral": 1
+                "mixed_or_neutral": 0
               },
               "rule": "OPPOSES > SUPPORTS => CONTEXT_CONTRADICTED; SUPPORTS > OPPOSES with Actionability >=80 => CONTEXT_CONFIRMED; otherwise MIXED_CONTEXT."
             },
