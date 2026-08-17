@@ -3,7 +3,7 @@
   "status": "DECISION_ALERT_STABILITY_ACTIVE",
   "stability_version": "0.1",
   "created_at": "2026-08-17T03:36:34.650Z",
-  "updated_at": "2026-08-17T10:23:31.782Z",
+  "updated_at": "2026-08-17T13:15:46.094Z",
   "config": {
     "persistence_default": 1,
     "persistence_overrides": {
@@ -395,28 +395,28 @@
     ]
   },
   "raw_alert_status": "DECISION_ALERT_WATCH_ACTIVE",
-  "raw_alert_updated_at": "2026-08-17T10:23:31.601Z",
+  "raw_alert_updated_at": "2026-08-17T13:15:45.894Z",
   "oscillation": {
     "detected": false,
     "classification": "NO_OSCILLATION",
     "window": [
-      "DRIFT-0009-2026-08-14",
       "DRIFT-0010-2026-08-14",
-      "DRIFT-0011-2026-08-14"
+      "DRIFT-0011-2026-08-14",
+      "DRIFT-0012-2026-08-14"
     ],
     "affected": [],
     "news_path": [
-      "UNAVAILABLE",
+      "OPPOSES",
       "OPPOSES",
       "OPPOSES"
     ],
     "final_reasoner_path": [
-      "MIXED_CONTEXT/REVIEW_SELECTIVELY",
+      "CONTEXT_CONTRADICTED/REVIEW_SELECTIVELY",
       "CONTEXT_CONTRADICTED/REVIEW_SELECTIVELY",
       "CONTEXT_CONTRADICTED/REVIEW_SELECTIVELY"
     ],
     "risk_path": [
-      "LOW",
+      "MODERATE",
       "MODERATE",
       "MODERATE"
     ],
@@ -444,11 +444,11 @@
         "decision": "REVIEW_SELECTIVELY"
       },
       "first_seen": "2026-08-17T10:23:31.601Z",
-      "last_seen": "2026-08-17T10:23:31.601Z",
-      "occurrences": 1,
+      "last_seen": "2026-08-17T13:15:45.894Z",
+      "occurrences": 2,
       "stability": {
         "required_confirmations": 1,
-        "observed_confirmations": 1,
+        "observed_confirmations": 2,
         "immediate_structural": true,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -472,11 +472,11 @@
         "expected": 3
       },
       "first_seen": "2026-08-17T10:23:31.601Z",
-      "last_seen": "2026-08-17T10:23:31.601Z",
-      "occurrences": 1,
+      "last_seen": "2026-08-17T13:15:45.894Z",
+      "occurrences": 2,
       "stability": {
         "required_confirmations": 1,
-        "observed_confirmations": 1,
+        "observed_confirmations": 2,
         "immediate_structural": true,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -494,11 +494,11 @@
       "trigger": "Context disagreement >= 60 points.",
       "evidence": null,
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T10:23:31.601Z",
-      "occurrences": 15,
+      "last_seen": "2026-08-17T13:15:45.894Z",
+      "occurrences": 16,
       "stability": {
         "required_confirmations": 2,
-        "observed_confirmations": 15,
+        "observed_confirmations": 16,
         "immediate_structural": false,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -525,11 +525,11 @@
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T10:23:31.601Z",
-      "occurrences": 15,
+      "last_seen": "2026-08-17T13:15:45.894Z",
+      "occurrences": 16,
       "stability": {
         "required_confirmations": 2,
-        "observed_confirmations": 11,
+        "observed_confirmations": 12,
         "immediate_structural": false,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -551,11 +551,11 @@
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T09:57:27.459Z",
-      "last_seen": "2026-08-17T10:23:31.601Z",
-      "occurrences": 4,
+      "last_seen": "2026-08-17T13:15:45.894Z",
+      "occurrences": 5,
       "stability": {
         "required_confirmations": 2,
-        "observed_confirmations": 2,
+        "observed_confirmations": 3,
         "immediate_structural": false,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -577,11 +577,11 @@
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T10:23:31.601Z",
-      "last_seen": "2026-08-17T10:23:31.601Z",
-      "occurrences": 1,
+      "last_seen": "2026-08-17T13:15:45.894Z",
+      "occurrences": 2,
       "stability": {
         "required_confirmations": 2,
-        "observed_confirmations": 2,
+        "observed_confirmations": 3,
         "immediate_structural": false,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -646,10 +646,10 @@
       "decision": "REVIEW_SELECTIVELY"
     },
     "intraday": {
-      "id": "DRIFT-0011-2026-08-14",
-      "captured_at": "2026-08-17T10:23:31.397Z",
+      "id": "DRIFT-0012-2026-08-14",
+      "captured_at": "2026-08-17T13:15:45.645Z",
       "drift_level": "NONE",
-      "snapshot_hash": "7bde2f47c2932d016b7b3326985a8c5b4b19f708f0820b0d41928f8baccc77c9",
+      "snapshot_hash": "caa6c8d77f315cedcf78b5f3a01749b354592756cbf2305de71994775f265ccf",
       "drift_vs_previous": []
     },
     "anchors": {
@@ -676,7 +676,7 @@
     "confirmed_high": 2,
     "confirmed_moderate": 4,
     "oscillation_detected": false,
-    "notification_eligible_this_run": 4,
+    "notification_eligible_this_run": 0,
     "notification_suppressed_this_run": 0,
     "delivery_log_count": 23
   }

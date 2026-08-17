@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "DECISION_ALERT_WATCH_ACTIVE",
   "created_at": "2026-08-17T03:19:49.195Z",
-  "updated_at": "2026-08-17T10:23:31.601Z",
+  "updated_at": "2026-08-17T13:15:45.894Z",
   "policy": {
     "mode": "material_change_notification_and_explainability_watch",
     "no_historical_backfill": true,
@@ -30,8 +30,8 @@
         "decision": "REVIEW_SELECTIVELY"
       },
       "first_seen": "2026-08-17T10:23:31.601Z",
-      "last_seen": "2026-08-17T10:23:31.601Z",
-      "occurrences": 1
+      "last_seen": "2026-08-17T13:15:45.894Z",
+      "occurrences": 2
     },
     {
       "key": "MULTIPLE_CONTEXT_OPPOSITION",
@@ -49,8 +49,8 @@
         "expected": 3
       },
       "first_seen": "2026-08-17T10:23:31.601Z",
-      "last_seen": "2026-08-17T10:23:31.601Z",
-      "occurrences": 1
+      "last_seen": "2026-08-17T13:15:45.894Z",
+      "occurrences": 2
     },
     {
       "key": "CONTEXT_DISAGREEMENT_EXTREME",
@@ -62,8 +62,8 @@
       "trigger": "Context disagreement >= 60 points.",
       "evidence": null,
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T10:23:31.601Z",
-      "occurrences": 15
+      "last_seen": "2026-08-17T13:15:45.894Z",
+      "occurrences": 16
     },
     {
       "key": "COUNTER_THESIS_HIGH",
@@ -84,8 +84,8 @@
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T10:23:31.601Z",
-      "occurrences": 15
+      "last_seen": "2026-08-17T13:15:45.894Z",
+      "occurrences": 16
     },
     {
       "key": "NEWS_EVENT_HIGH",
@@ -101,8 +101,8 @@
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T09:57:27.459Z",
-      "last_seen": "2026-08-17T10:23:31.601Z",
-      "occurrences": 4
+      "last_seen": "2026-08-17T13:15:45.894Z",
+      "occurrences": 5
     },
     {
       "key": "NEWS_OPPOSES",
@@ -118,8 +118,8 @@
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T10:23:31.601Z",
-      "last_seen": "2026-08-17T10:23:31.601Z",
-      "occurrences": 1
+      "last_seen": "2026-08-17T13:15:45.894Z",
+      "occurrences": 2
     }
   ],
   "events": [
@@ -690,7 +690,7 @@
     "moderate_active": 4,
     "info_active": 0,
     "event_count": 43,
-    "new_events_this_run": 4,
+    "new_events_this_run": 0,
     "latest_event_at": "2026-08-17T10:23:31.601Z",
     "latest_event_id": "ALERT-EVENT-0043"
   },
@@ -748,10 +748,10 @@
       "decision": "REVIEW_SELECTIVELY"
     },
     "intraday": {
-      "id": "DRIFT-0011-2026-08-14",
-      "captured_at": "2026-08-17T10:23:31.397Z",
+      "id": "DRIFT-0012-2026-08-14",
+      "captured_at": "2026-08-17T13:15:45.645Z",
       "drift_level": "NONE",
-      "snapshot_hash": "7bde2f47c2932d016b7b3326985a8c5b4b19f708f0820b0d41928f8baccc77c9",
+      "snapshot_hash": "caa6c8d77f315cedcf78b5f3a01749b354592756cbf2305de71994775f265ccf",
       "drift_vs_previous": []
     },
     "anchors": {
