@@ -10,8 +10,8 @@
     "provider_name": "European Central Bank",
     "provider_url": "api.frankfurter.dev",
     "module": "Currency Strength Agent",
-    "received_at": "2026-08-17T00:36:55.260Z",
-    "generated_at": "2026-08-17T00:36:55.260Z",
+    "received_at": "2026-08-17T00:38:49.291Z",
+    "generated_at": "2026-08-17T00:38:49.291Z",
     "data_updated_at": "2026-08-14",
     "session_date": "2026-08-14",
     "comparison_date": "2026-08-13",
@@ -1631,7 +1631,7 @@
           "state": "OPPOSES",
           "score": 16.7,
           "provider": "FRED (OECD / Federal Reserve source series)",
-          "updated_at": "2026-08-17T00:36:55.838Z",
+          "updated_at": "2026-08-17T00:38:50.303Z",
           "evidence": [
             "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
             "10Y spread momentum: -0.210 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
@@ -1731,7 +1731,7 @@
         }
       },
       "methodology": "Sequential intelligence architecture: Macro & Yield → Cross-Market → News → Risk → Counter-Thesis → Final Reasoner. The first three stages require real external evidence adapters. Risk and Counter-Thesis can operate conservatively on existing Currency Strength/Actionability context and explicitly penalize missing context. Final Reasoner requires contextual coverage before issuing a final directional outlook.",
-      "research_status": "ARCHITECTURE_IMPLEMENTED_PROVIDER_VALIDATION_PENDING"
+      "research_status": "MACRO_YIELD_LIVE_CROSS_MARKET_NEWS_PENDING"
     }
   }
 }
