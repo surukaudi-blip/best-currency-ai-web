@@ -142,7 +142,7 @@
   }
 
   function load(){
-    fetch('./data/currency-strength.json?v=2da09b4904',{headers:{Accept:'application/json'},cache:'no-store'})
+    fetch('./data/currency-strength.json?v=08a85a27f0',{headers:{Accept:'application/json'},cache:'no-store'})
       .then(function(r){if(!r.ok) throw new Error('HTTP '+r.status);return r.json();})
       .then(function(payload){render(payload&&payload.data?payload.data:payload);})
       .catch(function(){var s=document.getElementById('fid-status');if(s){s.className='fid-badge fid-bad';s.textContent='GAGAL MEMUAT';}});
