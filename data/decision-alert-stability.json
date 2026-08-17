@@ -1,0 +1,250 @@
+{
+  "schema_version": "1.0",
+  "status": "DECISION_ALERT_STABILITY_ACTIVE",
+  "stability_version": "0.1",
+  "created_at": "2026-08-17T03:36:34.650Z",
+  "updated_at": "2026-08-17T03:36:34.650Z",
+  "config": {
+    "persistence_default": 1,
+    "persistence_overrides": {
+      "INTRADAY_HIGH_DRIFT": 2,
+      "INTRADAY_MODERATE_DRIFT": 2,
+      "NEWS_EVENT_HIGH": 2,
+      "COUNTER_THESIS_HIGH": 2,
+      "NEWS_OPPOSES": 2,
+      "CONTEXT_DISAGREEMENT_EXTREME": 2
+    },
+    "immediate_high_keys": [
+      "RISK_HIGH",
+      "FINAL_RISK_CONSTRAINED",
+      "FINAL_CONTEXT_CONTRADICTED",
+      "ACTIONABILITY_FILTERED",
+      "MULTIPLE_CONTEXT_OPPOSITION",
+      "PROVIDER_AGREEMENT_LOW",
+      "MTF_ALIGNMENT_LOW"
+    ],
+    "cooldown_minutes": 90,
+    "oscillation_window_captures": 3,
+    "first_run_policy": "baseline_existing_raw_events_without_replaying_external_notifications"
+  },
+  "policy": {
+    "no_model_tuning": true,
+    "no_signal_voting": true,
+    "no_trade_execution": true,
+    "raw_alert_audit_preserved": true,
+    "notification_filter_only": true
+  },
+  "delivery_log": [],
+  "cursor": {
+    "last_raw_event_id": "ALERT-EVENT-0009"
+  },
+  "classification_snapshot": {
+    "confirmed_keys": [
+      "CONTEXT_DISAGREEMENT_EXTREME",
+      "COUNTER_THESIS_HIGH",
+      "NEWS_EVENT_HIGH"
+    ]
+  },
+  "raw_alert_status": "DECISION_ALERT_WATCH_ACTIVE",
+  "raw_alert_updated_at": "2026-08-17T03:36:34.484Z",
+  "oscillation": {
+    "detected": false,
+    "classification": "NO_OSCILLATION",
+    "window": [
+      "DRIFT-0003-2026-08-14",
+      "DRIFT-0004-2026-08-14",
+      "DRIFT-0005-2026-08-14"
+    ],
+    "affected": [],
+    "news_path": [
+      "MIXED",
+      "MIXED",
+      "MIXED"
+    ],
+    "final_reasoner_path": [
+      "MIXED_CONTEXT/REVIEW_SELECTIVELY",
+      "MIXED_CONTEXT/REVIEW_SELECTIVELY",
+      "MIXED_CONTEXT/REVIEW_SELECTIVELY"
+    ],
+    "risk_path": [
+      "MODERATE",
+      "MODERATE",
+      "MODERATE"
+    ],
+    "canonical_path": [
+      "NZDUSD BUY",
+      "NZDUSD BUY",
+      "NZDUSD BUY"
+    ],
+    "interpretation": "No A→B→A context oscillation detected in the latest three captures."
+  },
+  "confirmed_alerts": [
+    {
+      "key": "CONTEXT_DISAGREEMENT_EXTREME",
+      "severity": "MODERATE",
+      "title": "Context disagreement ekstrem",
+      "detail": "Context score spread mencapai atau melampaui 60 poin.",
+      "source": "counter_thesis",
+      "session_date": "2026-08-14",
+      "trigger": "Context disagreement >= 60 points.",
+      "evidence": null,
+      "first_seen": "2026-08-17T03:19:49.195Z",
+      "last_seen": "2026-08-17T03:36:34.484Z",
+      "occurrences": 5,
+      "stability": {
+        "required_confirmations": 2,
+        "observed_confirmations": 5,
+        "immediate_structural": false,
+        "persistence_confirmed": true,
+        "suppression_reason": null,
+        "effective_severity": "MODERATE",
+        "notification_eligible": true
+      }
+    },
+    {
+      "key": "COUNTER_THESIS_HIGH",
+      "severity": "MODERATE",
+      "title": "Counter-Thesis challenge HIGH",
+      "detail": "Counter-Thesis ACTIVE · challenge HIGH.",
+      "source": "counter_thesis",
+      "session_date": "2026-08-14",
+      "trigger": "Counter-Thesis challenge level = HIGH.",
+      "evidence": {
+        "version": "0.2",
+        "state": "ACTIVE",
+        "challenge_level": "HIGH",
+        "triggered_conditions": [
+          "context_dispersion_60",
+          "high_event_risk"
+        ]
+      },
+      "first_seen": "2026-08-17T03:19:49.195Z",
+      "last_seen": "2026-08-17T03:36:34.484Z",
+      "occurrences": 5,
+      "stability": {
+        "required_confirmations": 2,
+        "observed_confirmations": 5,
+        "immediate_structural": false,
+        "persistence_confirmed": true,
+        "suppression_reason": null,
+        "effective_severity": "MODERATE",
+        "notification_eligible": true
+      }
+    },
+    {
+      "key": "NEWS_EVENT_HIGH",
+      "severity": "MODERATE",
+      "title": "High-impact News Event Risk",
+      "detail": "News Event Risk HIGH sementara News 44.8 · MIXED.",
+      "source": "news",
+      "session_date": "2026-08-14",
+      "trigger": "News event-risk level = HIGH.",
+      "evidence": {
+        "state": "MIXED",
+        "score": 44.8,
+        "event_risk": "HIGH"
+      },
+      "first_seen": "2026-08-17T03:19:49.195Z",
+      "last_seen": "2026-08-17T03:36:34.484Z",
+      "occurrences": 5,
+      "stability": {
+        "required_confirmations": 2,
+        "observed_confirmations": 5,
+        "immediate_structural": false,
+        "persistence_confirmed": true,
+        "suppression_reason": null,
+        "effective_severity": "MODERATE",
+        "notification_eligible": true
+      }
+    }
+  ],
+  "pending_alerts": [],
+  "suppressed_alerts": [],
+  "current_watch": {
+    "session_date": "2026-08-14",
+    "pair": "NZDUSD",
+    "canonical_bias": "BUY",
+    "actionability": {
+      "score": 87.5,
+      "state": "ACTIONABLE",
+      "regime": "CONFIRMED_TREND"
+    },
+    "context": {
+      "macro_yield": {
+        "state": "OPPOSES",
+        "score": 16.7
+      },
+      "cross_market": {
+        "state": "SUPPORTS",
+        "score": 87.5
+      },
+      "news": {
+        "state": "MIXED",
+        "score": 44.8,
+        "event_risk": "HIGH"
+      },
+      "counts": {
+        "supports": 1,
+        "opposes": 1,
+        "mixed_or_neutral": 1,
+        "available": 3,
+        "expected": 3
+      }
+    },
+    "risk": {
+      "version": "0.2",
+      "score": 52.4,
+      "state": "MODERATE"
+    },
+    "counter_thesis": {
+      "version": "0.2",
+      "state": "ACTIVE",
+      "challenge_level": "HIGH",
+      "triggered_conditions": [
+        "context_dispersion_60",
+        "high_event_risk"
+      ]
+    },
+    "final_reasoner": {
+      "version": "0.2",
+      "decision_logic_version": "0.1_frozen",
+      "status": "MIXED_CONTEXT",
+      "outlook": "MIXED",
+      "decision": "REVIEW_SELECTIVELY"
+    },
+    "intraday": {
+      "id": "DRIFT-0005-2026-08-14",
+      "captured_at": "2026-08-17T03:36:34.360Z",
+      "drift_level": "NONE",
+      "snapshot_hash": "9b4d7fef9aa407f353d6acdae098adc3eb840d8a340681682574e47d76e9e956",
+      "drift_vs_previous": []
+    },
+    "anchors": {
+      "decision_history": {
+        "id": "DECISION-0001-2026-08-14",
+        "snapshot_hash": "de702fe84b65a0c46e3550d0372047f84da918e1a5e4ba420a6f70279f28944c",
+        "session_date": "2026-08-14"
+      },
+      "fresh_oos": {
+        "id": "OOS-0001-2026-08-14",
+        "prediction_hash": "de78500a57006695ab38cdd23d4a8255398f4668fce943b547e28330392aa7e0",
+        "session_date": "2026-08-14",
+        "outcome_status": "PENDING_NEXT_ECB_OBSERVATION"
+      }
+    }
+  },
+  "summary": {
+    "raw_gate": "WATCH_CLOSELY",
+    "stable_gate": "WATCH_CLOSELY",
+    "raw_active_total": 3,
+    "confirmed_total": 3,
+    "pending_total": 0,
+    "suppressed_total": 0,
+    "confirmed_high": 0,
+    "confirmed_moderate": 3,
+    "oscillation_detected": false,
+    "notification_eligible_this_run": 0,
+    "notification_suppressed_this_run": 0,
+    "delivery_log_count": 0
+  }
+}

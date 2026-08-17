@@ -10,8 +10,8 @@
     "provider_name": "European Central Bank",
     "provider_url": "api.frankfurter.dev",
     "module": "Currency Strength Agent",
-    "received_at": "2026-08-17T03:34:25.789Z",
-    "generated_at": "2026-08-17T03:34:25.789Z",
+    "received_at": "2026-08-17T03:35:35.502Z",
+    "generated_at": "2026-08-17T03:35:35.502Z",
     "data_updated_at": "2026-08-14",
     "session_date": "2026-08-14",
     "comparison_date": "2026-08-13",
@@ -1631,7 +1631,7 @@
           "state": "OPPOSES",
           "score": 16.7,
           "provider": "FRED (OECD / Federal Reserve source series)",
-          "updated_at": "2026-08-17T03:34:26.624Z",
+          "updated_at": "2026-08-17T03:35:36.291Z",
           "evidence": [
             "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
             "10Y spread momentum: -0.210 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
@@ -1681,7 +1681,7 @@
           "state": "SUPPORTS",
           "score": 87.5,
           "provider": "FRED (Federal Reserve / EIA source series)",
-          "updated_at": "2026-08-17T03:34:26.830Z",
+          "updated_at": "2026-08-17T03:35:36.509Z",
           "evidence": [
             "NFCI: level -0.5490 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
             "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
@@ -1743,7 +1743,7 @@
           "state": "MIXED",
           "score": 44.8,
           "provider": "Google News RSS fallback",
-          "updated_at": "2026-08-17T03:35:18.206Z",
+          "updated_at": "2026-08-17T03:36:34.119Z",
           "evidence": [
             "Headline-stance differential NZDUSD BUY: -0.104 after directional-headline reliability 100% => MIXED.",
             "NZD: 6 supportive vs 1 opposing directional headline(s); balance 0.714 from 30 recent articles via Google News RSS fallback.",
@@ -2078,7 +2078,7 @@
               "state": "OPPOSES",
               "score": 16.7,
               "provider": "FRED (OECD / Federal Reserve source series)",
-              "updated_at": "2026-08-17T03:34:26.624Z"
+              "updated_at": "2026-08-17T03:35:36.291Z"
             },
             "evidence": [
               "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
@@ -2097,7 +2097,7 @@
                 "state": "OPPOSES",
                 "score": 16.7,
                 "provider": "FRED (OECD / Federal Reserve source series)",
-                "updated_at": "2026-08-17T03:34:26.624Z"
+                "updated_at": "2026-08-17T03:35:36.291Z"
               },
               "evidence": [
                 "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
@@ -2159,7 +2159,7 @@
                 "state": "MIXED",
                 "score": 44.8,
                 "provider": "Google News RSS fallback",
-                "updated_at": "2026-08-17T03:35:18.206Z"
+                "updated_at": "2026-08-17T03:36:34.119Z"
               },
               "evidence": [
                 "Headline-stance differential NZDUSD BUY: -0.104 after directional-headline reliability 100% => MIXED.",
@@ -2387,7 +2387,7 @@
                   "state": "OPPOSES",
                   "score": 16.7,
                   "provider": "FRED (OECD / Federal Reserve source series)",
-                  "updated_at": "2026-08-17T03:34:26.624Z"
+                  "updated_at": "2026-08-17T03:35:36.291Z"
                 }
               }
             },
@@ -2441,7 +2441,7 @@
                   "state": "MIXED",
                   "score": 44.8,
                   "provider": "Google News RSS fallback",
-                  "updated_at": "2026-08-17T03:35:18.206Z"
+                  "updated_at": "2026-08-17T03:36:34.119Z"
                 }
               }
             },
