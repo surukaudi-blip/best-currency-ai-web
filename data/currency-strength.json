@@ -10,8 +10,8 @@
     "provider_name": "European Central Bank",
     "provider_url": "api.frankfurter.dev",
     "module": "Currency Strength Agent",
-    "received_at": "2026-08-17T03:23:38.910Z",
-    "generated_at": "2026-08-17T03:23:38.910Z",
+    "received_at": "2026-08-17T03:34:25.789Z",
+    "generated_at": "2026-08-17T03:34:25.789Z",
     "data_updated_at": "2026-08-14",
     "session_date": "2026-08-14",
     "comparison_date": "2026-08-13",
@@ -1631,7 +1631,7 @@
           "state": "OPPOSES",
           "score": 16.7,
           "provider": "FRED (OECD / Federal Reserve source series)",
-          "updated_at": "2026-08-17T03:23:39.876Z",
+          "updated_at": "2026-08-17T03:34:26.624Z",
           "evidence": [
             "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
             "10Y spread momentum: -0.210 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
@@ -1681,7 +1681,7 @@
           "state": "SUPPORTS",
           "score": 87.5,
           "provider": "FRED (Federal Reserve / EIA source series)",
-          "updated_at": "2026-08-17T03:23:40.103Z",
+          "updated_at": "2026-08-17T03:34:26.830Z",
           "evidence": [
             "NFCI: level -0.5490 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
             "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
@@ -1741,48 +1741,48 @@
           "label": "News",
           "available": true,
           "state": "MIXED",
-          "score": 60.7,
-          "provider": "Google News RSS fallback + GDELT DOC 2.0",
-          "updated_at": "2026-08-17T03:24:39.647Z",
+          "score": 44.8,
+          "provider": "Google News RSS fallback",
+          "updated_at": "2026-08-17T03:35:18.206Z",
           "evidence": [
-            "Headline-stance differential NZDUSD BUY: 0.214 after directional-headline reliability 100% => MIXED.",
+            "Headline-stance differential NZDUSD BUY: -0.104 after directional-headline reliability 100% => MIXED.",
             "NZD: 6 supportive vs 1 opposing directional headline(s); balance 0.714 from 30 recent articles via Google News RSS fallback.",
-            "USD: 3 supportive vs 1 opposing directional headline(s); balance 0.5 from 40 recent articles via GDELT DOC 2.0.",
+            "USD: 10 supportive vs 1 opposing directional headline(s); balance 0.818 from 40 recent articles via Google News RSS fallback.",
             "High-impact headline risk: HIGH; 4 relevant headline(s) detected within 24h."
           ],
           "missing_evidence": [],
           "headlines": [
             {
-              "title": "Ringgit opens higher against US dollar on upbeat GDP data",
-              "url": "https://www.freemalaysiatoday.com/category/business/2026/08/17/ringgit-opens-higher-against-us-dollar-on-upbeat-gdp-data",
-              "domain": "freemalaysiatoday.com",
-              "sourcecountry": "Malaysia",
+              "title": "Audinate Group Sees FY27 US Dollar Gross Profit Growth In Line With Or Slightly Ahead Of Rate In FY26 - TradingView",
+              "url": "https://news.google.com/rss/articles/CBMigAJBVV95cUxQWXNUY2g5WEJFVjMxZ193a29OTHpzVURRb3Rkc2pHMl9aWnJDMm5COHFtY0tXTUVIYV9wQXFyU3ZYYVBjdGJhbXVIS3JuRmxMS01iNWZueFpOaUVqSkV4SWNfU2dNNERhekZrME16ZTlmSllJWmttTk96RjhkMzhSQVdWV1V4RzItRGNTOS1EM0lXeFd5c1FKZTZvNGdEOTNxaWRTQmJ6VWFQdE9pZERTTklrQnNlVy1xZW9BeDkzX296dE5GSDhCU2VlMVVveEpxS1RSX3p6bXR4SE1Md2F0b0lrNkE1R3dFRWdER0UwMmExbVNOaUZEWDhaSmxnVFZl?oc=5",
+              "domain": "TradingView",
+              "sourcecountry": null,
               "language": "English",
-              "seen_at": "2026-08-17T03:00:00.000Z"
+              "seen_at": "2026-08-17T02:01:00.000Z"
             },
             {
-              "title": "America In Focus : Inflation cools in July , but so do consumers with their spending",
-              "url": "https://www.texarkanagazette.com/news/2026/aug/16/america-in-focus-inflation-cools-in-july-but-so/",
-              "domain": "texarkanagazette.com",
-              "sourcecountry": "United States",
+              "title": "S&P 500 Hits Record High August 2026: Inflation Cools & AI Stocks Rally - Intellectia AI",
+              "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1LNXNhSVh1ZV9zU3BUQnQxV1RlZldsVEpJSVRXN0R3ZFZiT0ZKeW9scFRLT0RZVWlFQUtqbUVJQjVYYzNrNlpQM2JQVGphZGMtbFlIVWRUM1djQ0syZlVubnlZR2RaVy16OEVfcw?oc=5",
+              "domain": "Intellectia AI",
+              "sourcecountry": null,
               "language": "English",
-              "seen_at": "2026-08-16T19:45:00.000Z"
+              "seen_at": "2026-08-17T00:06:54.000Z"
             },
             {
-              "title": "The US$20 burrito debate is inflation fatigue",
-              "url": "https://www.taipeitimes.com/News/editorials/archives/2026/08/17/2003862609",
-              "domain": "taipeitimes.com",
-              "sourcecountry": "Taiwan",
+              "title": "Korea stocks eye Fed signals as inflation eases and bond risks loom - CHOSUNBIZ - Chosunbiz",
+              "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxOR3Z2cVZMdmIyRm83Z1hTdWcxRmN5Sk1IX1dOYlU4ZHpQR0ZRNXhlZmRJa3lBVkJBNURPOUhoWnNjTTZTcjFOc1RLS21xY2hlUXFLbVFFdHNFTEJ2VDJfRHhqR1ptLUxLX09zV3hBSzZxLVFqMklaTlVtaDNwa2hjTNIBlAFBVV95cUxPaVdSVkoyOVd0NkpnaTdoZzVXR0ZnOVRKQVVHaXdhNTFUZ29HTHhyT2EwUEEwZW1FckV0X29CUUtwcDJNcUE2UlhncXVHNmV1eXR6STZoRHpiVmZ4QUpBX1hRLVZlSGxidG9fX2JVbksyS2dqanI5Vlp1UmNodnV3OXFqT1ZIazdJREozTDJGYnVldHVJ?oc=5",
+              "domain": "Chosunbiz",
+              "sourcecountry": null,
               "language": "English",
-              "seen_at": "2026-08-16T19:00:00.000Z"
+              "seen_at": "2026-08-16T21:01:00.000Z"
             },
             {
-              "title": "Rate of inflation doubles during the spring",
-              "url": "https://www.caledonianrecord.com/news/local/rate-of-inflation-doubles-during-the-spring/article_7a5f8d9d-6d48-5a21-8c38-1828f2852949.html",
-              "domain": "caledonianrecord.com",
-              "sourcecountry": "United States",
+              "title": "AI productivity reveals a way out of inflation crunch - Knoxville News Sentinel",
+              "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPRkhHSk9qdVBlb0dSUi10TUNIWkk5NnA5aV9GX2pSNlVGY1p2ZTk1Z3RycS1rX1ZvdUVzNGN4STlLSzVGRkxuRjB0MXZhdzZYYXpfSDVLQkxxWWFicmFlaVBuR0pteXlBSFhXUzV1LTlPNmNob3ZicjlYUlpZVmE0a3VlYVN2N2pFSDc2T1BWOFBTSjU2VV9UbUx0R0wySGhyQWp6d0prbGVCak5IdGFHa1lQY0o1LVFiemVhOVUxSnVVQ0N3VjMzN19VZHlBeWpCQlNQOUhibDNHVWVvbU5JMw?oc=5",
+              "domain": "Knoxville News Sentinel",
+              "sourcecountry": null,
               "language": "English",
-              "seen_at": "2026-08-16T17:00:00.000Z"
+              "seen_at": "2026-08-16T09:03:00.000Z"
             },
             {
               "title": "Germany’s Wholesale Price Inflation Slows in July, Missing Forecasts - CryptoRank",
@@ -1833,14 +1833,14 @@
               "classified_headline_count": 7
             },
             {
-              "provider": "GDELT DOC 2.0",
+              "provider": "Google News RSS fallback",
               "currency": "USD",
-              "query": "(\"US dollar\" OR \"U.S. dollar\" OR \"Federal Reserve\" OR FOMC) (inflation OR \"interest rate\" OR rates OR economy OR growth OR employment OR monetary OR \"central bank\") sourcelang:english",
-              "latest_seen_at": "2026-08-17T03:00:00.000Z",
+              "query": "\"US dollar\" OR \"Federal Reserve\" OR FOMC inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
+              "latest_seen_at": "2026-08-17T02:01:00.000Z",
               "article_count": 40,
-              "supportive_headline_count": 3,
+              "supportive_headline_count": 10,
               "opposing_headline_count": 1,
-              "classified_headline_count": 4
+              "classified_headline_count": 11
             }
           ],
           "methodology": {
@@ -1853,10 +1853,10 @@
             "max_article_age_hours": 96,
             "high_impact_headline_window_hours": 24,
             "base_headline_balance": 0.714,
-            "quote_headline_balance": 0.5,
-            "raw_pair_headline_differential": 0.214,
+            "quote_headline_balance": 0.818,
+            "raw_pair_headline_differential": -0.104,
             "reliability": 1,
-            "adjusted_pair_headline_differential": 0.214,
+            "adjusted_pair_headline_differential": -0.104,
             "support_threshold": 62,
             "oppose_threshold": 38,
             "neutral_band": [
@@ -1934,7 +1934,7 @@
                     "layer": "news",
                     "label": "News",
                     "state": "MIXED",
-                    "score": 60.7,
+                    "score": 44.8,
                     "contribution": 4
                   }
                 ]
@@ -1962,7 +1962,7 @@
                   {
                     "key": "news",
                     "label": "News",
-                    "score": 60.7
+                    "score": 44.8
                   }
                 ]
               }
@@ -2078,7 +2078,7 @@
               "state": "OPPOSES",
               "score": 16.7,
               "provider": "FRED (OECD / Federal Reserve source series)",
-              "updated_at": "2026-08-17T03:23:39.876Z"
+              "updated_at": "2026-08-17T03:34:26.624Z"
             },
             "evidence": [
               "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
@@ -2097,7 +2097,7 @@
                 "state": "OPPOSES",
                 "score": 16.7,
                 "provider": "FRED (OECD / Federal Reserve source series)",
-                "updated_at": "2026-08-17T03:23:39.876Z"
+                "updated_at": "2026-08-17T03:34:26.624Z"
               },
               "evidence": [
                 "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
@@ -2116,9 +2116,9 @@
                 "recent_high_impact_24h": 4
               },
               "evidence": [
-                "Ringgit opens higher against US dollar on upbeat GDP data",
-                "America In Focus : Inflation cools in July , but so do consumers with their spending",
-                "The US$20 burrito debate is inflation fatigue"
+                "Audinate Group Sees FY27 US Dollar Gross Profit Growth In Line With Or Slightly Ahead Of Rate In FY26 - TradingView",
+                "S&P 500 Hits Record High August 2026: Inflation Cools & AI Stocks Rally - Intellectia AI",
+                "Korea stocks eye Fed signals as inflation eases and bond risks loom - CHOSUNBIZ - Chosunbiz"
               ]
             },
             {
@@ -2143,7 +2143,7 @@
                   {
                     "key": "news",
                     "label": "News",
-                    "score": 60.7
+                    "score": 44.8
                   }
                 ]
               },
@@ -2157,14 +2157,14 @@
               "statement": "News is mixed and weakens one-sided confirmation of the canonical bias.",
               "detail": {
                 "state": "MIXED",
-                "score": 60.7,
-                "provider": "Google News RSS fallback + GDELT DOC 2.0",
-                "updated_at": "2026-08-17T03:24:39.647Z"
+                "score": 44.8,
+                "provider": "Google News RSS fallback",
+                "updated_at": "2026-08-17T03:35:18.206Z"
               },
               "evidence": [
-                "Headline-stance differential NZDUSD BUY: 0.214 after directional-headline reliability 100% => MIXED.",
+                "Headline-stance differential NZDUSD BUY: -0.104 after directional-headline reliability 100% => MIXED.",
                 "NZD: 6 supportive vs 1 opposing directional headline(s); balance 0.714 from 30 recent articles via Google News RSS fallback.",
-                "USD: 3 supportive vs 1 opposing directional headline(s); balance 0.5 from 40 recent articles via GDELT DOC 2.0."
+                "USD: 10 supportive vs 1 opposing directional headline(s); balance 0.818 from 40 recent articles via Google News RSS fallback."
               ]
             },
             {
@@ -2387,7 +2387,7 @@
                   "state": "OPPOSES",
                   "score": 16.7,
                   "provider": "FRED (OECD / Federal Reserve source series)",
-                  "updated_at": "2026-08-17T03:23:39.876Z"
+                  "updated_at": "2026-08-17T03:34:26.624Z"
                 }
               }
             },
@@ -2425,7 +2425,7 @@
                     {
                       "key": "news",
                       "label": "News",
-                      "score": 60.7
+                      "score": 44.8
                     }
                   ]
                 }
@@ -2439,9 +2439,9 @@
                 "severity": "MODERATE",
                 "detail": {
                   "state": "MIXED",
-                  "score": 60.7,
-                  "provider": "Google News RSS fallback + GDELT DOC 2.0",
-                  "updated_at": "2026-08-17T03:24:39.647Z"
+                  "score": 44.8,
+                  "provider": "Google News RSS fallback",
+                  "updated_at": "2026-08-17T03:35:18.206Z"
                 }
               }
             },
