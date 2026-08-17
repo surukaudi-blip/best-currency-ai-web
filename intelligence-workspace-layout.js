@@ -15,7 +15,7 @@
     '.iw-chip:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px var(--green-dim)}' +
     '.iw-zone{min-width:0}' +
     '.iw-observe{display:grid;grid-template-columns:1fr;gap:12px;align-items:start}' +
-    '.iw-shell #final-intelligence-dashboard,.iw-shell #decision-alert-watch,.iw-shell #intelligence-timeline,.iw-shell #decision-change-analytics,.iw-shell #intraday-context-drift{width:100%;min-width:0;margin-top:0}' +
+    '.iw-shell #final-intelligence-dashboard,.iw-shell #fresh-oos-monitoring,.iw-shell #decision-alert-watch,.iw-shell #intelligence-timeline,.iw-shell #decision-change-analytics,.iw-shell #intraday-context-drift{width:100%;min-width:0;margin-top:0}' +
     '@media(min-width:980px){.iw-shell .fid-kpis{grid-template-columns:repeat(4,minmax(0,1fr))}.iw-shell .fid-context{grid-template-columns:repeat(3,minmax(0,1fr))}}' +
     '.iw-divider{height:1px;background:linear-gradient(90deg,transparent,var(--border-2),transparent);margin:2px 0}' +
     '.iw-zone-label{display:flex;align-items:center;gap:8px;margin:2px 2px -2px;font-size:.58rem;text-transform:uppercase;letter-spacing:.08em;font-weight:800;color:var(--muted-2)}' +
@@ -30,10 +30,11 @@
     shell.className='iw-shell';
     shell.innerHTML=
       '<div class="iw-head">' +
-        '<div><div class="iw-kicker">Decision Intelligence Workspace</div><div class="iw-title">Keputusan utama dan monitoring dalam satu area</div><div class="iw-sub">Final Intelligence Dashboard menjadi tampilan utama. Alert, timeline, drift, dan analytics tetap tersedia sebagai observability tanpa mengulang seluruh Intelligence Layer di layar.</div></div>' +
+        '<div><div class="iw-kicker">Decision Intelligence Workspace</div><div class="iw-title">Keputusan utama dan monitoring dalam satu area</div><div class="iw-sub">Final Intelligence Dashboard menjadi tampilan utama. Fresh OOS memantau validasi prospektif model, sementara alert, timeline, drift, dan analytics tetap menjadi observability tanpa mengulang seluruh Intelligence Layer di layar.</div></div>' +
         '<span class="iw-chip">RINGKAS & TERORGANISASI</span>' +
       '</div>' +
       '<div class="iw-zone-label">Executive View</div><div class="iw-zone" id="iw-executive"></div>' +
+      '<div class="iw-zone-label">Fresh OOS Validation</div><div class="iw-zone" id="iw-oos"></div>' +
       '<div class="iw-zone-label">Decision Watch</div><div class="iw-zone" id="iw-watch"></div>' +
       '<div class="iw-divider"></div>' +
       '<div class="iw-zone-label">History & Observability</div><div class="iw-observe" id="iw-observe"></div>';
@@ -50,6 +51,7 @@
     var redundant=document.getElementById('intelligence-layer-panel');
     if(redundant) redundant.remove();
     move('final-intelligence-dashboard','iw-executive');
+    move('fresh-oos-monitoring','iw-oos');
     move('decision-alert-watch','iw-watch');
     move('intelligence-timeline','iw-observe');
     move('intraday-context-drift','iw-observe');

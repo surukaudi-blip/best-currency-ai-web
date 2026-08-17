@@ -3,7 +3,7 @@
   "status": "DECISION_ALERT_STABILITY_ACTIVE",
   "stability_version": "0.1",
   "created_at": "2026-08-17T03:36:34.650Z",
-  "updated_at": "2026-08-17T09:57:27.657Z",
+  "updated_at": "2026-08-17T09:58:38.029Z",
   "config": {
     "persistence_default": 1,
     "persistence_overrides": {
@@ -259,10 +259,70 @@
       "cooldown_minutes": 90,
       "reason": "Immediate structural alert; no persistence debounce required.",
       "delivery_hash": "4ff16ee7968da0a172914871292d8e2e9ff76a3a0846a824c343a97cc2a98826"
+    },
+    {
+      "id": "STABILITY-EVENT-0016",
+      "evaluated_at": "2026-08-17T09:58:38.029Z",
+      "source_event_id": "ALERT-EVENT-0033",
+      "source_occurred_at": "2026-08-17T09:58:37.889Z",
+      "source_event_type": "PULSE",
+      "family": "NEWS_STATE_CHANGE",
+      "severity": "MODERATE",
+      "title": "Intraday: News state",
+      "detail": "UNAVAILABLE → OPPOSES · Δ 25",
+      "decision": "SUPPRESSED_COOLDOWN",
+      "cooldown_minutes": 90,
+      "reason": "Suppressed because the same pulse family was already eligible within 90 minutes.",
+      "delivery_hash": "0caa622b3bcabd31a98536b6cd204e65a2b2b067d5671cbd52c4560a684a5865"
+    },
+    {
+      "id": "STABILITY-EVENT-0016",
+      "evaluated_at": "2026-08-17T09:58:38.029Z",
+      "source_event_id": "ALERT-EVENT-0034",
+      "source_occurred_at": "2026-08-17T09:58:37.889Z",
+      "source_event_type": "PULSE",
+      "family": "intraday_context_drift:Intraday: News event risk",
+      "severity": "MODERATE",
+      "title": "Intraday: News event risk",
+      "detail": "— → HIGH",
+      "decision": "SUPPRESSED_COOLDOWN",
+      "cooldown_minutes": 90,
+      "reason": "Suppressed because the same pulse family was already eligible within 90 minutes.",
+      "delivery_hash": "87f30333d8152ce1655a8b825c8620e2441045384a1dbc62e2322c03c8ea6359"
+    },
+    {
+      "id": "STABILITY-EVENT-0016",
+      "evaluated_at": "2026-08-17T09:58:38.029Z",
+      "source_event_id": "ALERT-EVENT-0035",
+      "source_occurred_at": "2026-08-17T09:58:37.889Z",
+      "source_event_type": "PULSE",
+      "family": "intraday_context_drift:Intraday: Risk state",
+      "severity": "HIGH",
+      "title": "Intraday: Risk state",
+      "detail": "LOW → MODERATE · Δ 14.7",
+      "decision": "SUPPRESSED_COOLDOWN",
+      "cooldown_minutes": 90,
+      "reason": "Suppressed because the same pulse family was already eligible within 90 minutes.",
+      "delivery_hash": "648169e6fac2cf2576f40207028f5df0b8346d4180a58877029d68a5a476da78"
+    },
+    {
+      "id": "STABILITY-EVENT-0016",
+      "evaluated_at": "2026-08-17T09:58:38.029Z",
+      "source_event_id": "ALERT-EVENT-0036",
+      "source_occurred_at": "2026-08-17T09:58:37.889Z",
+      "source_event_type": "PULSE",
+      "family": "FINAL_REASONER_CHANGE",
+      "severity": "HIGH",
+      "title": "Intraday: Final Reasoner",
+      "detail": "MIXED_CONTEXT/REVIEW_SELECTIVELY → CONTEXT_CONTRADICTED/REVIEW_SELECTIVELY",
+      "decision": "ELIGIBLE",
+      "cooldown_minutes": 90,
+      "reason": "Critical structural/session pulse bypasses debounce and cooldown.",
+      "delivery_hash": "870f49efcba71f292204cc7e6956f69a74f260030263c2c5eade430435a966f2"
     }
   ],
   "cursor": {
-    "last_raw_event_id": "ALERT-EVENT-0032"
+    "last_raw_event_id": "ALERT-EVENT-0036"
   },
   "classification_snapshot": {
     "confirmed_keys": [
@@ -274,30 +334,30 @@
     ]
   },
   "raw_alert_status": "DECISION_ALERT_WATCH_ACTIVE",
-  "raw_alert_updated_at": "2026-08-17T09:57:27.459Z",
+  "raw_alert_updated_at": "2026-08-17T09:58:37.889Z",
   "oscillation": {
     "detected": false,
     "classification": "NO_OSCILLATION",
     "window": [
-      "DRIFT-0007-2026-08-14",
       "DRIFT-0008-2026-08-14",
-      "DRIFT-0009-2026-08-14"
+      "DRIFT-0009-2026-08-14",
+      "DRIFT-0010-2026-08-14"
     ],
     "affected": [],
     "news_path": [
-      "OPPOSES",
       "NEUTRAL",
-      "UNAVAILABLE"
+      "UNAVAILABLE",
+      "OPPOSES"
     ],
     "final_reasoner_path": [
-      "CONTEXT_CONTRADICTED/REVIEW_SELECTIVELY",
       "MIXED_CONTEXT/REVIEW_SELECTIVELY",
-      "MIXED_CONTEXT/REVIEW_SELECTIVELY"
+      "MIXED_CONTEXT/REVIEW_SELECTIVELY",
+      "CONTEXT_CONTRADICTED/REVIEW_SELECTIVELY"
     ],
     "risk_path": [
       "MODERATE",
-      "MODERATE",
-      "LOW"
+      "LOW",
+      "MODERATE"
     ],
     "canonical_path": [
       "NZDUSD BUY",
@@ -323,11 +383,11 @@
         "decision": "REVIEW_SELECTIVELY"
       },
       "first_seen": "2026-08-17T09:57:27.459Z",
-      "last_seen": "2026-08-17T09:57:27.459Z",
-      "occurrences": 1,
+      "last_seen": "2026-08-17T09:58:37.889Z",
+      "occurrences": 2,
       "stability": {
         "required_confirmations": 1,
-        "observed_confirmations": 1,
+        "observed_confirmations": 2,
         "immediate_structural": true,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -339,48 +399,56 @@
       "key": "INTRADAY_HIGH_DRIFT",
       "severity": "HIGH",
       "title": "Intraday context drift tinggi",
-      "detail": "Capture DRIFT-0009-2026-08-14 mendeteksi HIGH drift.",
+      "detail": "Capture DRIFT-0010-2026-08-14 mendeteksi HIGH drift.",
       "source": "intraday_context_drift",
       "session_date": "2026-08-14",
       "trigger": "Latest intraday drift level = HIGH.",
       "evidence": {
-        "id": "DRIFT-0009-2026-08-14",
-        "captured_at": "2026-08-17T09:36:48.585Z",
+        "id": "DRIFT-0010-2026-08-14",
+        "captured_at": "2026-08-17T09:58:37.752Z",
         "drift_level": "HIGH",
-        "snapshot_hash": "b6a63ca0b54a87143f75937694b3f5a29445941ad37bd13190ac585f27372efc",
+        "snapshot_hash": "e885f2bf24fd2975da9e604713fee974676aacc1f5932d820d24a93e39b1f61c",
         "drift_vs_previous": [
           {
             "key": "news_state",
             "severity": "MODERATE",
             "label": "News state",
-            "from": "NEUTRAL",
-            "to": "UNAVAILABLE",
-            "delta": -50
+            "from": "UNAVAILABLE",
+            "to": "OPPOSES",
+            "delta": 25
           },
           {
             "key": "news_event_risk",
             "severity": "MODERATE",
             "label": "News event risk",
-            "from": "HIGH",
-            "to": null,
+            "from": null,
+            "to": "HIGH",
             "delta": null
           },
           {
             "key": "risk_state",
             "severity": "HIGH",
             "label": "Risk state",
-            "from": "MODERATE",
-            "to": "LOW",
-            "delta": -4
+            "from": "LOW",
+            "to": "MODERATE",
+            "delta": 14.7
+          },
+          {
+            "key": "final_reasoner",
+            "severity": "HIGH",
+            "label": "Final Reasoner",
+            "from": "MIXED_CONTEXT/REVIEW_SELECTIVELY",
+            "to": "CONTEXT_CONTRADICTED/REVIEW_SELECTIVELY",
+            "delta": null
           }
         ]
       },
       "first_seen": "2026-08-17T09:35:07.649Z",
-      "last_seen": "2026-08-17T09:57:27.459Z",
-      "occurrences": 3,
+      "last_seen": "2026-08-17T09:58:37.889Z",
+      "occurrences": 4,
       "stability": {
         "required_confirmations": 2,
-        "observed_confirmations": 2,
+        "observed_confirmations": 3,
         "immediate_structural": false,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -404,11 +472,11 @@
         "expected": 3
       },
       "first_seen": "2026-08-17T09:57:27.459Z",
-      "last_seen": "2026-08-17T09:57:27.459Z",
-      "occurrences": 1,
+      "last_seen": "2026-08-17T09:58:37.889Z",
+      "occurrences": 2,
       "stability": {
         "required_confirmations": 1,
-        "observed_confirmations": 1,
+        "observed_confirmations": 2,
         "immediate_structural": true,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -426,11 +494,11 @@
       "trigger": "Context disagreement >= 60 points.",
       "evidence": null,
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T09:57:27.459Z",
-      "occurrences": 12,
+      "last_seen": "2026-08-17T09:58:37.889Z",
+      "occurrences": 13,
       "stability": {
         "required_confirmations": 2,
-        "observed_confirmations": 12,
+        "observed_confirmations": 13,
         "immediate_structural": false,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -457,11 +525,11 @@
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T09:57:27.459Z",
-      "occurrences": 12,
+      "last_seen": "2026-08-17T09:58:37.889Z",
+      "occurrences": 13,
       "stability": {
         "required_confirmations": 2,
-        "observed_confirmations": 9,
+        "observed_confirmations": 10,
         "immediate_structural": false,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -485,11 +553,11 @@
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T09:57:27.459Z",
-      "last_seen": "2026-08-17T09:57:27.459Z",
-      "occurrences": 1,
+      "last_seen": "2026-08-17T09:58:37.889Z",
+      "occurrences": 2,
       "stability": {
         "required_confirmations": 2,
-        "observed_confirmations": 0,
+        "observed_confirmations": 1,
         "immediate_structural": false,
         "persistence_confirmed": false,
         "suppression_reason": "PERSISTENCE_CONFIRMATION_PENDING",
@@ -511,11 +579,11 @@
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T09:57:27.459Z",
-      "last_seen": "2026-08-17T09:57:27.459Z",
-      "occurrences": 1,
+      "last_seen": "2026-08-17T09:58:37.889Z",
+      "occurrences": 2,
       "stability": {
         "required_confirmations": 2,
-        "observed_confirmations": 0,
+        "observed_confirmations": 1,
         "immediate_structural": false,
         "persistence_confirmed": false,
         "suppression_reason": "PERSISTENCE_CONFIRMATION_PENDING",
@@ -579,34 +647,42 @@
       "decision": "REVIEW_SELECTIVELY"
     },
     "intraday": {
-      "id": "DRIFT-0009-2026-08-14",
-      "captured_at": "2026-08-17T09:36:48.585Z",
+      "id": "DRIFT-0010-2026-08-14",
+      "captured_at": "2026-08-17T09:58:37.752Z",
       "drift_level": "HIGH",
-      "snapshot_hash": "b6a63ca0b54a87143f75937694b3f5a29445941ad37bd13190ac585f27372efc",
+      "snapshot_hash": "e885f2bf24fd2975da9e604713fee974676aacc1f5932d820d24a93e39b1f61c",
       "drift_vs_previous": [
         {
           "key": "news_state",
           "severity": "MODERATE",
           "label": "News state",
-          "from": "NEUTRAL",
-          "to": "UNAVAILABLE",
-          "delta": -50
+          "from": "UNAVAILABLE",
+          "to": "OPPOSES",
+          "delta": 25
         },
         {
           "key": "news_event_risk",
           "severity": "MODERATE",
           "label": "News event risk",
-          "from": "HIGH",
-          "to": null,
+          "from": null,
+          "to": "HIGH",
           "delta": null
         },
         {
           "key": "risk_state",
           "severity": "HIGH",
           "label": "Risk state",
-          "from": "MODERATE",
-          "to": "LOW",
-          "delta": -4
+          "from": "LOW",
+          "to": "MODERATE",
+          "delta": 14.7
+        },
+        {
+          "key": "final_reasoner",
+          "severity": "HIGH",
+          "label": "Final Reasoner",
+          "from": "MIXED_CONTEXT/REVIEW_SELECTIVELY",
+          "to": "CONTEXT_CONTRADICTED/REVIEW_SELECTIVELY",
+          "delta": null
         }
       ]
     },
@@ -634,8 +710,8 @@
     "confirmed_high": 3,
     "confirmed_moderate": 2,
     "oscillation_detected": false,
-    "notification_eligible_this_run": 2,
-    "notification_suppressed_this_run": 0,
-    "delivery_log_count": 15
+    "notification_eligible_this_run": 1,
+    "notification_suppressed_this_run": 3,
+    "delivery_log_count": 19
   }
 }
