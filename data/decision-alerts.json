@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "DECISION_ALERT_WATCH_ACTIVE",
   "created_at": "2026-08-17T03:19:49.195Z",
-  "updated_at": "2026-08-17T10:22:34.980Z",
+  "updated_at": "2026-08-17T10:23:31.601Z",
   "policy": {
     "mode": "material_change_notification_and_explainability_watch",
     "no_historical_backfill": true,
@@ -15,56 +15,42 @@
   },
   "active_alerts": [
     {
-      "key": "INTRADAY_HIGH_DRIFT",
+      "key": "FINAL_CONTEXT_CONTRADICTED",
       "severity": "HIGH",
-      "title": "Intraday context drift tinggi",
-      "detail": "Capture DRIFT-0010-2026-08-14 mendeteksi HIGH drift.",
-      "source": "intraday_context_drift",
+      "title": "Konteks menentang thesis",
+      "detail": "Final Reasoner CONTEXT_CONTRADICTED; keputusan REVIEW_SELECTIVELY.",
+      "source": "final_reasoner",
       "session_date": "2026-08-14",
-      "trigger": "Latest intraday drift level = HIGH.",
+      "trigger": "Final Reasoner status = CONTEXT_CONTRADICTED.",
       "evidence": {
-        "id": "DRIFT-0010-2026-08-14",
-        "captured_at": "2026-08-17T09:58:37.752Z",
-        "drift_level": "HIGH",
-        "snapshot_hash": "e885f2bf24fd2975da9e604713fee974676aacc1f5932d820d24a93e39b1f61c",
-        "drift_vs_previous": [
-          {
-            "key": "news_state",
-            "severity": "MODERATE",
-            "label": "News state",
-            "from": "UNAVAILABLE",
-            "to": "OPPOSES",
-            "delta": 25
-          },
-          {
-            "key": "news_event_risk",
-            "severity": "MODERATE",
-            "label": "News event risk",
-            "from": null,
-            "to": "HIGH",
-            "delta": null
-          },
-          {
-            "key": "risk_state",
-            "severity": "HIGH",
-            "label": "Risk state",
-            "from": "LOW",
-            "to": "MODERATE",
-            "delta": 14.7
-          },
-          {
-            "key": "final_reasoner",
-            "severity": "HIGH",
-            "label": "Final Reasoner",
-            "from": "MIXED_CONTEXT/REVIEW_SELECTIVELY",
-            "to": "CONTEXT_CONTRADICTED/REVIEW_SELECTIVELY",
-            "delta": null
-          }
-        ]
+        "version": "0.2",
+        "decision_logic_version": "0.1_frozen",
+        "status": "CONTEXT_CONTRADICTED",
+        "outlook": "MIXED",
+        "decision": "REVIEW_SELECTIVELY"
       },
-      "first_seen": "2026-08-17T09:35:07.649Z",
-      "last_seen": "2026-08-17T10:22:34.980Z",
-      "occurrences": 5
+      "first_seen": "2026-08-17T10:23:31.601Z",
+      "last_seen": "2026-08-17T10:23:31.601Z",
+      "occurrences": 1
+    },
+    {
+      "key": "MULTIPLE_CONTEXT_OPPOSITION",
+      "severity": "HIGH",
+      "title": "Beberapa layer konteks menentang",
+      "detail": "2 contextual layer berada pada OPPOSES.",
+      "source": "counter_thesis",
+      "session_date": "2026-08-14",
+      "trigger": "At least two external contextual layers are OPPOSES.",
+      "evidence": {
+        "supports": 1,
+        "opposes": 2,
+        "mixed_or_neutral": 0,
+        "available": 3,
+        "expected": 3
+      },
+      "first_seen": "2026-08-17T10:23:31.601Z",
+      "last_seen": "2026-08-17T10:23:31.601Z",
+      "occurrences": 1
     },
     {
       "key": "CONTEXT_DISAGREEMENT_EXTREME",
@@ -76,8 +62,8 @@
       "trigger": "Context disagreement >= 60 points.",
       "evidence": null,
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T10:22:34.980Z",
-      "occurrences": 14
+      "last_seen": "2026-08-17T10:23:31.601Z",
+      "occurrences": 15
     },
     {
       "key": "COUNTER_THESIS_HIGH",
@@ -92,30 +78,48 @@
         "state": "ACTIVE",
         "challenge_level": "HIGH",
         "triggered_conditions": [
+          "multiple_external_opposition",
           "context_dispersion_60",
           "high_event_risk"
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T10:22:34.980Z",
-      "occurrences": 14
+      "last_seen": "2026-08-17T10:23:31.601Z",
+      "occurrences": 15
     },
     {
       "key": "NEWS_EVENT_HIGH",
       "severity": "MODERATE",
       "title": "High-impact News Event Risk",
-      "detail": "News Event Risk HIGH sementara News 50 · NEUTRAL.",
+      "detail": "News Event Risk HIGH sementara News 25 · OPPOSES.",
       "source": "news",
       "session_date": "2026-08-14",
       "trigger": "News event-risk level = HIGH.",
       "evidence": {
-        "state": "NEUTRAL",
-        "score": 50,
+        "state": "OPPOSES",
+        "score": 25,
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T09:57:27.459Z",
-      "last_seen": "2026-08-17T10:22:34.980Z",
-      "occurrences": 3
+      "last_seen": "2026-08-17T10:23:31.601Z",
+      "occurrences": 4
+    },
+    {
+      "key": "NEWS_OPPOSES",
+      "severity": "MODERATE",
+      "title": "News menentang canonical bias",
+      "detail": "News 25 · OPPOSES NZDUSD BUY.",
+      "source": "news",
+      "session_date": "2026-08-14",
+      "trigger": "News state = OPPOSES.",
+      "evidence": {
+        "state": "OPPOSES",
+        "score": 25,
+        "event_risk": "HIGH"
+      },
+      "first_seen": "2026-08-17T10:23:31.601Z",
+      "last_seen": "2026-08-17T10:23:31.601Z",
+      "occurrences": 1
     }
   ],
   "events": [
@@ -625,18 +629,70 @@
       "session_date": "2026-08-14",
       "dedupe_key": "RESOLVED:NEWS_OPPOSES:2026-08-14:2026-08-17T10:22:34.980Z",
       "event_hash": "8ee9119cd38f69c4bd4e1c2d066ba0b0fee66e483ed21b856b5b23684250aee1"
+    },
+    {
+      "id": "ALERT-EVENT-0040",
+      "occurred_at": "2026-08-17T10:23:31.601Z",
+      "event_type": "OPEN",
+      "alert_key": "FINAL_CONTEXT_CONTRADICTED",
+      "severity": "HIGH",
+      "title": "Konteks menentang thesis",
+      "detail": "Final Reasoner CONTEXT_CONTRADICTED; keputusan REVIEW_SELECTIVELY.",
+      "source": "final_reasoner",
+      "session_date": "2026-08-14",
+      "dedupe_key": "OPEN:FINAL_CONTEXT_CONTRADICTED:2026-08-14",
+      "event_hash": "4af916edc96aaeb5ac8adba0705995ce6b908d9d93423da684e22e2427658c5d"
+    },
+    {
+      "id": "ALERT-EVENT-0041",
+      "occurred_at": "2026-08-17T10:23:31.601Z",
+      "event_type": "OPEN",
+      "alert_key": "MULTIPLE_CONTEXT_OPPOSITION",
+      "severity": "HIGH",
+      "title": "Beberapa layer konteks menentang",
+      "detail": "2 contextual layer berada pada OPPOSES.",
+      "source": "counter_thesis",
+      "session_date": "2026-08-14",
+      "dedupe_key": "OPEN:MULTIPLE_CONTEXT_OPPOSITION:2026-08-14",
+      "event_hash": "408a35ae5c19217a6962078d0b0114f38e5d05c7dfc82ecfd9e281465f26cf65"
+    },
+    {
+      "id": "ALERT-EVENT-0042",
+      "occurred_at": "2026-08-17T10:23:31.601Z",
+      "event_type": "OPEN",
+      "alert_key": "NEWS_OPPOSES",
+      "severity": "MODERATE",
+      "title": "News menentang canonical bias",
+      "detail": "News 25 · OPPOSES NZDUSD BUY.",
+      "source": "news",
+      "session_date": "2026-08-14",
+      "dedupe_key": "OPEN:NEWS_OPPOSES:2026-08-14",
+      "event_hash": "94464fc39c59594ea39e7c695f39eeeef48a4383b1f4219880934b27fc13d813"
+    },
+    {
+      "id": "ALERT-EVENT-0043",
+      "occurred_at": "2026-08-17T10:23:31.601Z",
+      "event_type": "RESOLVED",
+      "alert_key": "INTRADAY_HIGH_DRIFT",
+      "severity": "HIGH",
+      "title": "Intraday context drift tinggi",
+      "detail": "Resolved: Capture DRIFT-0010-2026-08-14 mendeteksi HIGH drift.",
+      "source": "intraday_context_drift",
+      "session_date": "2026-08-14",
+      "dedupe_key": "RESOLVED:INTRADAY_HIGH_DRIFT:2026-08-14:2026-08-17T10:23:31.601Z",
+      "event_hash": "a3468b5ac63f140e0d2523bd88c1aee8b60158635625736acdfadd8d7a39f6ad"
     }
   ],
   "summary": {
     "alert_gate": "REVIEW_NOW",
-    "active_total": 4,
-    "high_active": 1,
-    "moderate_active": 3,
+    "active_total": 6,
+    "high_active": 2,
+    "moderate_active": 4,
     "info_active": 0,
-    "event_count": 39,
-    "new_events_this_run": 3,
-    "latest_event_at": "2026-08-17T10:22:34.980Z",
-    "latest_event_id": "ALERT-EVENT-0039"
+    "event_count": 43,
+    "new_events_this_run": 4,
+    "latest_event_at": "2026-08-17T10:23:31.601Z",
+    "latest_event_id": "ALERT-EVENT-0043"
   },
   "current_watch": {
     "session_date": "2026-08-14",
@@ -657,21 +713,21 @@
         "score": 87.5
       },
       "news": {
-        "state": "NEUTRAL",
-        "score": 50,
+        "state": "OPPOSES",
+        "score": 25,
         "event_risk": "HIGH"
       },
       "counts": {
         "supports": 1,
-        "opposes": 1,
-        "mixed_or_neutral": 1,
+        "opposes": 2,
+        "mixed_or_neutral": 0,
         "available": 3,
         "expected": 3
       }
     },
     "risk": {
       "version": "0.2",
-      "score": 48.4,
+      "score": 59.1,
       "state": "MODERATE"
     },
     "counter_thesis": {
@@ -679,6 +735,7 @@
       "state": "ACTIVE",
       "challenge_level": "HIGH",
       "triggered_conditions": [
+        "multiple_external_opposition",
         "context_dispersion_60",
         "high_event_risk"
       ]
@@ -686,49 +743,16 @@
     "final_reasoner": {
       "version": "0.2",
       "decision_logic_version": "0.1_frozen",
-      "status": "MIXED_CONTEXT",
+      "status": "CONTEXT_CONTRADICTED",
       "outlook": "MIXED",
       "decision": "REVIEW_SELECTIVELY"
     },
     "intraday": {
-      "id": "DRIFT-0010-2026-08-14",
-      "captured_at": "2026-08-17T09:58:37.752Z",
-      "drift_level": "HIGH",
-      "snapshot_hash": "e885f2bf24fd2975da9e604713fee974676aacc1f5932d820d24a93e39b1f61c",
-      "drift_vs_previous": [
-        {
-          "key": "news_state",
-          "severity": "MODERATE",
-          "label": "News state",
-          "from": "UNAVAILABLE",
-          "to": "OPPOSES",
-          "delta": 25
-        },
-        {
-          "key": "news_event_risk",
-          "severity": "MODERATE",
-          "label": "News event risk",
-          "from": null,
-          "to": "HIGH",
-          "delta": null
-        },
-        {
-          "key": "risk_state",
-          "severity": "HIGH",
-          "label": "Risk state",
-          "from": "LOW",
-          "to": "MODERATE",
-          "delta": 14.7
-        },
-        {
-          "key": "final_reasoner",
-          "severity": "HIGH",
-          "label": "Final Reasoner",
-          "from": "MIXED_CONTEXT/REVIEW_SELECTIVELY",
-          "to": "CONTEXT_CONTRADICTED/REVIEW_SELECTIVELY",
-          "delta": null
-        }
-      ]
+      "id": "DRIFT-0011-2026-08-14",
+      "captured_at": "2026-08-17T10:23:31.397Z",
+      "drift_level": "NONE",
+      "snapshot_hash": "7bde2f47c2932d016b7b3326985a8c5b4b19f708f0820b0d41928f8baccc77c9",
+      "drift_vs_previous": []
     },
     "anchors": {
       "decision_history": {
