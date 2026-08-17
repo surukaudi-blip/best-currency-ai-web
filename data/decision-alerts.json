@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "DECISION_ALERT_WATCH_ACTIVE",
   "created_at": "2026-08-17T03:19:49.195Z",
-  "updated_at": "2026-08-17T03:36:34.484Z",
+  "updated_at": "2026-08-17T03:37:51.416Z",
   "policy": {
     "mode": "material_change_notification_and_explainability_watch",
     "no_historical_backfill": true,
@@ -24,8 +24,8 @@
       "trigger": "Context disagreement >= 60 points.",
       "evidence": null,
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T03:36:34.484Z",
-      "occurrences": 5
+      "last_seen": "2026-08-17T03:37:51.416Z",
+      "occurrences": 6
     },
     {
       "key": "COUNTER_THESIS_HIGH",
@@ -45,25 +45,25 @@
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T03:36:34.484Z",
-      "occurrences": 5
+      "last_seen": "2026-08-17T03:37:51.416Z",
+      "occurrences": 6
     },
     {
       "key": "NEWS_EVENT_HIGH",
       "severity": "MODERATE",
       "title": "High-impact News Event Risk",
-      "detail": "News Event Risk HIGH sementara News 44.8 · MIXED.",
+      "detail": "News Event Risk HIGH sementara News 54.2 · NEUTRAL.",
       "source": "news",
       "session_date": "2026-08-14",
       "trigger": "News event-risk level = HIGH.",
       "evidence": {
-        "state": "MIXED",
-        "score": 44.8,
+        "state": "NEUTRAL",
+        "score": 54.2,
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T03:36:34.484Z",
-      "occurrences": 5
+      "last_seen": "2026-08-17T03:37:51.416Z",
+      "occurrences": 6
     }
   ],
   "events": [
@@ -215,8 +215,8 @@
         "score": 87.5
       },
       "news": {
-        "state": "MIXED",
-        "score": 44.8,
+        "state": "NEUTRAL",
+        "score": 54.2,
         "event_risk": "HIGH"
       },
       "counts": {
@@ -229,7 +229,7 @@
     },
     "risk": {
       "version": "0.2",
-      "score": 52.4,
+      "score": 48.4,
       "state": "MODERATE"
     },
     "counter_thesis": {
