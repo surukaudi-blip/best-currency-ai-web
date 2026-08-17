@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T00:38:50.303Z",
+  "generated_at": "2026-08-17T00:49:31.924Z",
   "pair": "NZDUSD",
   "canonical_bias": "BUY",
   "macro_yield": {
@@ -7,7 +7,7 @@
     "direction": "OPPOSES",
     "score": 16.7,
     "provider": "FRED (OECD / Federal Reserve source series)",
-    "updated_at": "2026-08-17T00:38:50.303Z",
+    "updated_at": "2026-08-17T00:49:31.712Z",
     "evidence": [
       "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
       "10Y spread momentum: -0.210 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
@@ -45,6 +45,64 @@
       "yield_level_deadband_pp": 0.1,
       "yield_spread_momentum_deadband_pp": 0.03,
       "short_rate_level_deadband_pp": 0.1,
+      "score_range": "0=fully opposes canonical bias, 50=neutral/mixed, 100=fully supports canonical bias"
+    }
+  },
+  "cross_market": {
+    "available": true,
+    "direction": "SUPPORTS",
+    "score": 87.5,
+    "provider": "FRED (Federal Reserve / EIA source series)",
+    "updated_at": "2026-08-17T00:49:31.924Z",
+    "evidence": [
+      "NFCI: level -0.5490 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
+      "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
+      "STLFSI4: level -0.7709 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
+      "STLFSI4: perubahan -0.2650 dari 2026-07-31 ke 2026-08-07 => SUPPORTS canonical bias."
+    ],
+    "missing_evidence": [],
+    "note": "Live Cross-Market adapter using real financial-conditions/stress and commodity data. The score measures contextual alignment with the canonical ECB pair bias, not probability of profit. Cyclical/defensive currency tiers are a transparent heuristic used only to interpret real market-condition data; stale series are excluded.",
+    "provenance": [
+      {
+        "provider": "FRED",
+        "series_id": "NFCI",
+        "label": "Chicago Fed National Financial Conditions Index",
+        "url": "https://fred.stlouisfed.org/series/NFCI",
+        "latest_date": "2026-08-07"
+      },
+      {
+        "provider": "FRED",
+        "series_id": "STLFSI4",
+        "label": "St. Louis Fed Financial Stress Index",
+        "url": "https://fred.stlouisfed.org/series/STLFSI4",
+        "latest_date": "2026-08-07"
+      },
+      {
+        "provider": "FRED",
+        "series_id": "DCOILWTICO",
+        "label": "WTI Crude Oil Spot Price",
+        "url": "https://fred.stlouisfed.org/series/DCOILWTICO",
+        "latest_date": "2026-08-11"
+      }
+    ],
+    "methodology": {
+      "risk_tier": {
+        "NZD": 1,
+        "AUD": 1,
+        "CAD": 1,
+        "EUR": 0,
+        "GBP": 0,
+        "USD": -1,
+        "JPY": -1,
+        "CHF": -1
+      },
+      "risk_differential": 2,
+      "nfci_level_deadband": 0.1,
+      "nfci_momentum_deadband": 0.015,
+      "stlfsi_level_deadband": 0.1,
+      "stlfsi_momentum_deadband": 0.03,
+      "cad_wti_5_observation_deadband_percent": 1,
+      "minimum_components": 2,
       "score_range": "0=fully opposes canonical bias, 50=neutral/mixed, 100=fully supports canonical bias"
     }
   }

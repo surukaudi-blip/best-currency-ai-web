@@ -10,8 +10,8 @@
     "provider_name": "European Central Bank",
     "provider_url": "api.frankfurter.dev",
     "module": "Currency Strength Agent",
-    "received_at": "2026-08-17T00:38:49.291Z",
-    "generated_at": "2026-08-17T00:38:49.291Z",
+    "received_at": "2026-08-17T00:49:30.686Z",
+    "generated_at": "2026-08-17T00:49:30.686Z",
     "data_updated_at": "2026-08-14",
     "session_date": "2026-08-14",
     "comparison_date": "2026-08-13",
@@ -1615,13 +1615,13 @@
       "source_input": {
         "connected": true,
         "path": "dist/data/intelligence-inputs.json",
-        "external_layers_available": 1,
+        "external_layers_available": 2,
         "external_layers_expected": 3
       },
       "readiness": {
-        "state": "PARTIAL_CONTEXT",
-        "external_coverage_percent": 33,
-        "final_reasoner_status": "INSUFFICIENT_EXTERNAL_EVIDENCE"
+        "state": "CONTEXT_READY",
+        "external_coverage_percent": 67,
+        "final_reasoner_status": "MIXED_CONTEXT"
       },
       "layers": {
         "macro_yield": {
@@ -1631,7 +1631,7 @@
           "state": "OPPOSES",
           "score": 16.7,
           "provider": "FRED (OECD / Federal Reserve source series)",
-          "updated_at": "2026-08-17T00:38:50.303Z",
+          "updated_at": "2026-08-17T00:49:31.712Z",
           "evidence": [
             "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical BUY.",
             "10Y spread momentum: -0.210 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
@@ -1643,16 +1643,19 @@
         "cross_market": {
           "key": "cross_market",
           "label": "Cross-Market",
-          "available": false,
-          "state": "UNAVAILABLE",
-          "score": null,
-          "provider": null,
-          "updated_at": null,
-          "evidence": [],
-          "missing_evidence": [
-            "Cross-Market provider has not been connected to the static intelligence build yet."
+          "available": true,
+          "state": "SUPPORTS",
+          "score": 87.5,
+          "provider": "FRED (Federal Reserve / EIA source series)",
+          "updated_at": "2026-08-17T00:49:31.924Z",
+          "evidence": [
+            "NFCI: level -0.5490 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
+            "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
+            "STLFSI4: level -0.7709 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
+            "STLFSI4: perubahan -0.2650 dari 2026-07-31 ke 2026-08-07 => SUPPORTS canonical bias."
           ],
-          "note": "Cross-Market is fail-closed: no directional claim is created until a real provider adapter supplies evidence."
+          "missing_evidence": [],
+          "note": "Live Cross-Market adapter using real financial-conditions/stress and commodity data. The score measures contextual alignment with the canonical ECB pair bias, not probability of profit. Cyclical/defensive currency tiers are a transparent heuristic used only to interpret real market-condition data; stale series are excluded."
         },
         "news": {
           "key": "news",
@@ -1673,12 +1676,12 @@
           "label": "Risk",
           "available": true,
           "state": "MODERATE",
-          "score": 56,
+          "score": 48,
           "scope": "contextual_execution_risk",
           "reversal_risk_indicator": 31.03,
-          "external_context_coverage": "1/3",
+          "external_context_coverage": "2/3",
           "reasons": [
-            "2 contextual intelligence layer(s) are still unavailable.",
+            "1 contextual intelligence layer(s) are still unavailable.",
             "Macro & Yield opposes the Currency Strength setup.",
             "Reversal-risk indicator is non-trivial at 31/100."
           ],
@@ -1694,7 +1697,6 @@
             "The current weak currency has a reversal-risk indicator of 31/100."
           ],
           "missing_context": [
-            "Cross-Market",
             "News"
           ],
           "invalidation_focus": [
@@ -1708,30 +1710,30 @@
           "key": "final_reasoner",
           "label": "Final Reasoner",
           "available": true,
-          "status": "INSUFFICIENT_EXTERNAL_EVIDENCE",
-          "outlook": "NOT_FINAL",
-          "decision": "WAIT_FOR_CONTEXT",
+          "status": "MIXED_CONTEXT",
+          "outlook": "MIXED",
+          "decision": "REVIEW_SELECTIVELY",
           "pair": "NZDUSD",
           "canonical_bias": "BUY",
           "actionability_score": 87.5,
           "regime": "CONFIRMED_TREND",
-          "contextual_coverage_percent": 33,
+          "contextual_coverage_percent": 67,
           "context_counts": {
-            "supports": 0,
+            "supports": 1,
             "opposes": 1,
             "mixed_or_neutral": 0,
-            "available": 1,
+            "available": 2,
             "expected": 3
           },
           "risk_level": "MODERATE",
           "counter_thesis_state": "ACTIVE",
-          "explanation": "Actionability is available, but the contextual intelligence stack is not sufficiently populated to form a final outlook.",
+          "explanation": "Context is populated but not sufficiently one-sided to confirm the canonical pair bias.",
           "guardrail": "Final Reasoner is evidence-grounded and fail-closed. Missing Macro & Yield, Cross-Market, or News evidence is never fabricated or silently replaced.",
           "note": "Final outlook is decision support only. It is not an execution instruction, win probability, or profitability forecast."
         }
       },
       "methodology": "Sequential intelligence architecture: Macro & Yield → Cross-Market → News → Risk → Counter-Thesis → Final Reasoner. The first three stages require real external evidence adapters. Risk and Counter-Thesis can operate conservatively on existing Currency Strength/Actionability context and explicitly penalize missing context. Final Reasoner requires contextual coverage before issuing a final directional outlook.",
-      "research_status": "MACRO_YIELD_LIVE_CROSS_MARKET_NEWS_PENDING"
+      "research_status": "MACRO_YIELD_CROSS_MARKET_LIVE_NEWS_PENDING"
     }
   }
 }
