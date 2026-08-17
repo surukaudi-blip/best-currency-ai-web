@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "DECISION_ALERT_WATCH_ACTIVE",
   "created_at": "2026-08-17T03:19:49.195Z",
-  "updated_at": "2026-08-17T09:35:07.649Z",
+  "updated_at": "2026-08-17T09:36:48.768Z",
   "policy": {
     "mode": "material_change_notification_and_explainability_watch",
     "no_historical_backfill": true,
@@ -18,45 +18,45 @@
       "key": "INTRADAY_HIGH_DRIFT",
       "severity": "HIGH",
       "title": "Intraday context drift tinggi",
-      "detail": "Capture DRIFT-0008-2026-08-14 mendeteksi HIGH drift.",
+      "detail": "Capture DRIFT-0009-2026-08-14 mendeteksi HIGH drift.",
       "source": "intraday_context_drift",
       "session_date": "2026-08-14",
       "trigger": "Latest intraday drift level = HIGH.",
       "evidence": {
-        "id": "DRIFT-0008-2026-08-14",
-        "captured_at": "2026-08-17T09:35:07.478Z",
+        "id": "DRIFT-0009-2026-08-14",
+        "captured_at": "2026-08-17T09:36:48.585Z",
         "drift_level": "HIGH",
-        "snapshot_hash": "962212c6c5301274b35273acf578ca14c2edc0716d39f4dcdf3b7a2ad02fa969",
+        "snapshot_hash": "b6a63ca0b54a87143f75937694b3f5a29445941ad37bd13190ac585f27372efc",
         "drift_vs_previous": [
           {
             "key": "news_state",
             "severity": "MODERATE",
             "label": "News state",
-            "from": "OPPOSES",
-            "to": "NEUTRAL",
-            "delta": 25
+            "from": "NEUTRAL",
+            "to": "UNAVAILABLE",
+            "delta": -50
           },
           {
-            "key": "risk_score",
+            "key": "news_event_risk",
             "severity": "MODERATE",
-            "label": "Risk score",
-            "from": 59.1,
-            "to": 48.4,
-            "delta": -10.7
+            "label": "News event risk",
+            "from": "HIGH",
+            "to": null,
+            "delta": null
           },
           {
-            "key": "final_reasoner",
+            "key": "risk_state",
             "severity": "HIGH",
-            "label": "Final Reasoner",
-            "from": "CONTEXT_CONTRADICTED/REVIEW_SELECTIVELY",
-            "to": "MIXED_CONTEXT/REVIEW_SELECTIVELY",
-            "delta": null
+            "label": "Risk state",
+            "from": "MODERATE",
+            "to": "LOW",
+            "delta": -4
           }
         ]
       },
       "first_seen": "2026-08-17T09:35:07.649Z",
-      "last_seen": "2026-08-17T09:35:07.649Z",
-      "occurrences": 1
+      "last_seen": "2026-08-17T09:36:48.768Z",
+      "occurrences": 2
     },
     {
       "key": "CONTEXT_DISAGREEMENT_EXTREME",
@@ -68,8 +68,8 @@
       "trigger": "Context disagreement >= 60 points.",
       "evidence": null,
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T09:35:07.649Z",
-      "occurrences": 10
+      "last_seen": "2026-08-17T09:36:48.768Z",
+      "occurrences": 11
     },
     {
       "key": "COUNTER_THESIS_HIGH",
@@ -84,30 +84,12 @@
         "state": "ACTIVE",
         "challenge_level": "HIGH",
         "triggered_conditions": [
-          "context_dispersion_60",
-          "high_event_risk"
+          "context_dispersion_60"
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T09:35:07.649Z",
-      "occurrences": 10
-    },
-    {
-      "key": "NEWS_EVENT_HIGH",
-      "severity": "MODERATE",
-      "title": "High-impact News Event Risk",
-      "detail": "News Event Risk HIGH sementara News 50 · NEUTRAL.",
-      "source": "news",
-      "session_date": "2026-08-14",
-      "trigger": "News event-risk level = HIGH.",
-      "evidence": {
-        "state": "NEUTRAL",
-        "score": 50,
-        "event_risk": "HIGH"
-      },
-      "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T09:35:07.649Z",
-      "occurrences": 10
+      "last_seen": "2026-08-17T09:36:48.768Z",
+      "occurrences": 11
     }
   ],
   "events": [
@@ -422,18 +404,70 @@
       "session_date": "2026-08-14",
       "dedupe_key": "DRIFT:DRIFT-0008-2026-08-14:final_reasoner",
       "event_hash": "1f825d662fd1adbfd74f40dd97fa1a33e5fb6fc18e484e08ce1bc99d6d4f7838"
+    },
+    {
+      "id": "ALERT-EVENT-0025",
+      "occurred_at": "2026-08-17T09:36:48.768Z",
+      "event_type": "RESOLVED",
+      "alert_key": "NEWS_EVENT_HIGH",
+      "severity": "MODERATE",
+      "title": "High-impact News Event Risk",
+      "detail": "Resolved: News Event Risk HIGH sementara News 50 · NEUTRAL.",
+      "source": "news",
+      "session_date": "2026-08-14",
+      "dedupe_key": "RESOLVED:NEWS_EVENT_HIGH:2026-08-14:2026-08-17T09:36:48.768Z",
+      "event_hash": "85d13260c8076716c7eb365566f911027bbedf8b26c0da5793479bf4e17efb3d"
+    },
+    {
+      "id": "ALERT-EVENT-0026",
+      "occurred_at": "2026-08-17T09:36:48.768Z",
+      "event_type": "PULSE",
+      "alert_key": "DRIFT:DRIFT-0009-2026-08-14:news_state",
+      "severity": "MODERATE",
+      "title": "Intraday: News state",
+      "detail": "NEUTRAL → UNAVAILABLE · Δ -50",
+      "source": "intraday_context_drift",
+      "session_date": "2026-08-14",
+      "dedupe_key": "DRIFT:DRIFT-0009-2026-08-14:news_state",
+      "event_hash": "aad0c087fc530045db80e39bae2343a4bdc3fc7e474b5010cbf090d1a1c3b48e"
+    },
+    {
+      "id": "ALERT-EVENT-0027",
+      "occurred_at": "2026-08-17T09:36:48.768Z",
+      "event_type": "PULSE",
+      "alert_key": "DRIFT:DRIFT-0009-2026-08-14:news_event_risk",
+      "severity": "MODERATE",
+      "title": "Intraday: News event risk",
+      "detail": "HIGH → —",
+      "source": "intraday_context_drift",
+      "session_date": "2026-08-14",
+      "dedupe_key": "DRIFT:DRIFT-0009-2026-08-14:news_event_risk",
+      "event_hash": "eb048cc1e892917a864a313e93121f81cf7a8b87c6b3bdb4888832be25fc2715"
+    },
+    {
+      "id": "ALERT-EVENT-0028",
+      "occurred_at": "2026-08-17T09:36:48.768Z",
+      "event_type": "PULSE",
+      "alert_key": "DRIFT:DRIFT-0009-2026-08-14:risk_state",
+      "severity": "HIGH",
+      "title": "Intraday: Risk state",
+      "detail": "MODERATE → LOW · Δ -4",
+      "source": "intraday_context_drift",
+      "session_date": "2026-08-14",
+      "dedupe_key": "DRIFT:DRIFT-0009-2026-08-14:risk_state",
+      "event_hash": "846f445aec3e4a67be38c8bc76f95f8997dc350171cf5333f33cab002275d31f"
     }
   ],
   "summary": {
     "alert_gate": "REVIEW_NOW",
-    "active_total": 4,
+    "active_total": 3,
     "high_active": 1,
-    "moderate_active": 3,
+    "moderate_active": 2,
     "info_active": 0,
-    "event_count": 24,
-    "new_events_this_run": 7,
-    "latest_event_at": "2026-08-17T09:35:07.649Z",
-    "latest_event_id": "ALERT-EVENT-0024"
+    "event_count": 28,
+    "new_events_this_run": 4,
+    "latest_event_at": "2026-08-17T09:36:48.768Z",
+    "latest_event_id": "ALERT-EVENT-0028"
   },
   "current_watch": {
     "session_date": "2026-08-14",
@@ -454,30 +488,29 @@
         "score": 87.5
       },
       "news": {
-        "state": "NEUTRAL",
-        "score": 50,
-        "event_risk": "HIGH"
+        "state": "UNAVAILABLE",
+        "score": 0,
+        "event_risk": "UNAVAILABLE"
       },
       "counts": {
         "supports": 1,
         "opposes": 1,
-        "mixed_or_neutral": 1,
-        "available": 3,
+        "mixed_or_neutral": 0,
+        "available": 2,
         "expected": 3
       }
     },
     "risk": {
       "version": "0.2",
-      "score": 48.4,
-      "state": "MODERATE"
+      "score": 44.4,
+      "state": "LOW"
     },
     "counter_thesis": {
       "version": "0.2",
       "state": "ACTIVE",
       "challenge_level": "HIGH",
       "triggered_conditions": [
-        "context_dispersion_60",
-        "high_event_risk"
+        "context_dispersion_60"
       ]
     },
     "final_reasoner": {
@@ -488,34 +521,34 @@
       "decision": "REVIEW_SELECTIVELY"
     },
     "intraday": {
-      "id": "DRIFT-0008-2026-08-14",
-      "captured_at": "2026-08-17T09:35:07.478Z",
+      "id": "DRIFT-0009-2026-08-14",
+      "captured_at": "2026-08-17T09:36:48.585Z",
       "drift_level": "HIGH",
-      "snapshot_hash": "962212c6c5301274b35273acf578ca14c2edc0716d39f4dcdf3b7a2ad02fa969",
+      "snapshot_hash": "b6a63ca0b54a87143f75937694b3f5a29445941ad37bd13190ac585f27372efc",
       "drift_vs_previous": [
         {
           "key": "news_state",
           "severity": "MODERATE",
           "label": "News state",
-          "from": "OPPOSES",
-          "to": "NEUTRAL",
-          "delta": 25
+          "from": "NEUTRAL",
+          "to": "UNAVAILABLE",
+          "delta": -50
         },
         {
-          "key": "risk_score",
+          "key": "news_event_risk",
           "severity": "MODERATE",
-          "label": "Risk score",
-          "from": 59.1,
-          "to": 48.4,
-          "delta": -10.7
+          "label": "News event risk",
+          "from": "HIGH",
+          "to": null,
+          "delta": null
         },
         {
-          "key": "final_reasoner",
+          "key": "risk_state",
           "severity": "HIGH",
-          "label": "Final Reasoner",
-          "from": "CONTEXT_CONTRADICTED/REVIEW_SELECTIVELY",
-          "to": "MIXED_CONTEXT/REVIEW_SELECTIVELY",
-          "delta": null
+          "label": "Risk state",
+          "from": "MODERATE",
+          "to": "LOW",
+          "delta": -4
         }
       ]
     },
