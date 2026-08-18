@@ -3,7 +3,7 @@
   "status": "DECISION_ALERT_STABILITY_ACTIVE",
   "stability_version": "0.1",
   "created_at": "2026-08-17T03:36:34.650Z",
-  "updated_at": "2026-08-18T13:22:50.820Z",
+  "updated_at": "2026-08-18T15:56:00.178Z",
   "config": {
     "persistence_default": 1,
     "persistence_overrides": {
@@ -589,72 +589,94 @@
       "cooldown_minutes": 90,
       "reason": "Eligible after stability/noise-control checks.",
       "delivery_hash": "1aef5368afc52c1787366f39490283a7cbcf38c122bc3b8f600d4e0e275c8538"
+    },
+    {
+      "id": "STABILITY-EVENT-0038",
+      "evaluated_at": "2026-08-18T15:56:00.178Z",
+      "source_event_id": null,
+      "source_occurred_at": null,
+      "source_event_type": "CONFIRMED",
+      "family": "PERSISTENT:FINAL_RISK_CONSTRAINED",
+      "severity": "HIGH",
+      "title": "Final Reasoner dibatasi Risk",
+      "detail": "Status RISK_CONSTRAINED; keputusan DEPRIORITIZE.",
+      "decision": "ELIGIBLE",
+      "cooldown_minutes": 90,
+      "reason": "Immediate structural alert; no persistence debounce required.",
+      "delivery_hash": "945663bd646bb703975d24b2a48aa4688f2a78bdb17c3aaf10f544df9e361b9d"
+    },
+    {
+      "id": "STABILITY-EVENT-0038",
+      "evaluated_at": "2026-08-18T15:56:00.178Z",
+      "source_event_id": null,
+      "source_occurred_at": null,
+      "source_event_type": "CONFIRMED",
+      "family": "PERSISTENT:PROVIDER_AGREEMENT_LOW",
+      "severity": "HIGH",
+      "title": "Provider Agreement di bawah guardrail",
+      "detail": "Provider Agreement turun di bawah 60.",
+      "decision": "ELIGIBLE",
+      "cooldown_minutes": 90,
+      "reason": "Immediate structural alert; no persistence debounce required.",
+      "delivery_hash": "3fc1fc59ab7161354446c04bb53624aa64df9df889588962d1205410a964267f"
+    },
+    {
+      "id": "STABILITY-EVENT-0038",
+      "evaluated_at": "2026-08-18T15:56:00.178Z",
+      "source_event_id": null,
+      "source_occurred_at": null,
+      "source_event_type": "CONFIRMED",
+      "family": "PERSISTENT:RISK_HIGH",
+      "severity": "HIGH",
+      "title": "Risk v0.2 HIGH",
+      "detail": "Risk v0.2 berada di 81/100.",
+      "decision": "ELIGIBLE",
+      "cooldown_minutes": 90,
+      "reason": "Immediate structural alert; no persistence debounce required.",
+      "delivery_hash": "24acbb9b6a489d6ba609a57241befea57317bef3b8f6fde4eed4630f896c1221"
     }
   ],
   "cursor": {
-    "last_raw_event_id": "ALERT-EVENT-0062"
+    "last_raw_event_id": "ALERT-EVENT-0068"
   },
   "classification_snapshot": {
     "confirmed_keys": [
       "ACTIONABILITY_FILTERED",
-      "MTF_ALIGNMENT_LOW",
-      "COUNTER_THESIS_HIGH",
-      "NEWS_EVENT_HIGH"
+      "FINAL_RISK_CONSTRAINED",
+      "PROVIDER_AGREEMENT_LOW",
+      "RISK_HIGH"
     ]
   },
   "raw_alert_status": "DECISION_ALERT_WATCH_ACTIVE",
-  "raw_alert_updated_at": "2026-08-18T13:22:50.672Z",
+  "raw_alert_updated_at": "2026-08-18T15:56:00.036Z",
   "oscillation": {
     "detected": false,
-    "classification": "NO_OSCILLATION",
+    "classification": "INSUFFICIENT_CAPTURES",
     "window": [
-      "DRIFT-0016-2026-08-17",
-      "DRIFT-0017-2026-08-17",
-      "DRIFT-0018-2026-08-17"
+      "DRIFT-0019-2026-08-18"
     ],
-    "affected": [],
-    "news_path": [
-      "SUPPORTS",
-      "SUPPORTS",
-      "NEUTRAL"
-    ],
-    "final_reasoner_path": [
-      "MIXED_CONTEXT/DEPRIORITIZE",
-      "MIXED_CONTEXT/DEPRIORITIZE",
-      "MIXED_CONTEXT/DEPRIORITIZE"
-    ],
-    "risk_path": [
-      "MODERATE",
-      "MODERATE",
-      "MODERATE"
-    ],
-    "canonical_path": [
-      "AUDUSD BUY",
-      "AUDUSD BUY",
-      "AUDUSD BUY"
-    ],
-    "interpretation": "No A→B→A context oscillation detected in the latest three captures."
+    "affected": []
   },
   "confirmed_alerts": [
     {
       "key": "ACTIONABILITY_FILTERED",
       "severity": "HIGH",
       "title": "Actionability terfilter",
-      "detail": "Actionability 55 · FILTERED.",
+      "detail": "Actionability 50 · FILTERED.",
       "source": "actionability",
-      "session_date": "2026-08-17",
+      "session_date": "2026-08-18",
       "trigger": "Actionability < 60 or state FILTERED.",
       "evidence": {
-        "score": 55,
+        "score": 50,
         "state": "FILTERED",
-        "regime": "LOW_ALIGNMENT"
+        "regime": "PROVIDER_DIVERGENCE"
       },
       "first_seen": "2026-08-17T15:48:17.857Z",
-      "last_seen": "2026-08-18T13:22:50.672Z",
-      "occurrences": 7,
+      "last_seen": "2026-08-18T15:56:00.036Z",
+      "occurrences": 8,
       "stability": {
         "required_confirmations": 1,
-        "observed_confirmations": 7,
+        "observed_confirmations": 8,
         "immediate_structural": true,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -663,25 +685,103 @@
       }
     },
     {
-      "key": "MTF_ALIGNMENT_LOW",
+      "key": "FINAL_RISK_CONSTRAINED",
       "severity": "HIGH",
-      "title": "MTF Alignment di bawah guardrail",
-      "detail": "Multi-Timeframe Alignment turun di bawah 60.",
-      "source": "counter_thesis",
-      "session_date": "2026-08-17",
-      "trigger": "MTF Alignment < 60.",
-      "evidence": null,
-      "first_seen": "2026-08-17T15:48:17.857Z",
-      "last_seen": "2026-08-18T13:22:50.672Z",
-      "occurrences": 7,
+      "title": "Final Reasoner dibatasi Risk",
+      "detail": "Status RISK_CONSTRAINED; keputusan DEPRIORITIZE.",
+      "source": "final_reasoner",
+      "session_date": "2026-08-18",
+      "trigger": "Final Reasoner status = RISK_CONSTRAINED.",
+      "evidence": {
+        "version": "0.2",
+        "decision_logic_version": "0.1_frozen",
+        "status": "RISK_CONSTRAINED",
+        "outlook": "CAUTION",
+        "decision": "DEPRIORITIZE"
+      },
+      "first_seen": "2026-08-18T15:56:00.036Z",
+      "last_seen": "2026-08-18T15:56:00.036Z",
+      "occurrences": 1,
       "stability": {
         "required_confirmations": 1,
-        "observed_confirmations": 7,
+        "observed_confirmations": 1,
         "immediate_structural": true,
         "persistence_confirmed": true,
         "suppression_reason": null,
         "effective_severity": "HIGH",
         "notification_eligible": true
+      }
+    },
+    {
+      "key": "PROVIDER_AGREEMENT_LOW",
+      "severity": "HIGH",
+      "title": "Provider Agreement di bawah guardrail",
+      "detail": "Provider Agreement turun di bawah 60.",
+      "source": "counter_thesis",
+      "session_date": "2026-08-18",
+      "trigger": "Provider Agreement < 60.",
+      "evidence": null,
+      "first_seen": "2026-08-18T15:56:00.036Z",
+      "last_seen": "2026-08-18T15:56:00.036Z",
+      "occurrences": 1,
+      "stability": {
+        "required_confirmations": 1,
+        "observed_confirmations": 1,
+        "immediate_structural": true,
+        "persistence_confirmed": true,
+        "suppression_reason": null,
+        "effective_severity": "HIGH",
+        "notification_eligible": true
+      }
+    },
+    {
+      "key": "RISK_HIGH",
+      "severity": "HIGH",
+      "title": "Risk v0.2 HIGH",
+      "detail": "Risk v0.2 berada di 81/100.",
+      "source": "risk",
+      "session_date": "2026-08-18",
+      "trigger": "Risk state = HIGH / score >= 70.",
+      "evidence": {
+        "version": "0.2",
+        "score": 81,
+        "state": "HIGH"
+      },
+      "first_seen": "2026-08-18T15:56:00.036Z",
+      "last_seen": "2026-08-18T15:56:00.036Z",
+      "occurrences": 1,
+      "stability": {
+        "required_confirmations": 1,
+        "observed_confirmations": 1,
+        "immediate_structural": true,
+        "persistence_confirmed": true,
+        "suppression_reason": null,
+        "effective_severity": "HIGH",
+        "notification_eligible": true
+      }
+    }
+  ],
+  "pending_alerts": [
+    {
+      "key": "CONTEXT_DISAGREEMENT_EXTREME",
+      "severity": "MODERATE",
+      "title": "Context disagreement ekstrem",
+      "detail": "Context score spread mencapai atau melampaui 60 poin.",
+      "source": "counter_thesis",
+      "session_date": "2026-08-18",
+      "trigger": "Context disagreement >= 60 points.",
+      "evidence": null,
+      "first_seen": "2026-08-18T15:56:00.036Z",
+      "last_seen": "2026-08-18T15:56:00.036Z",
+      "occurrences": 1,
+      "stability": {
+        "required_confirmations": 2,
+        "observed_confirmations": 1,
+        "immediate_structural": false,
+        "persistence_confirmed": false,
+        "suppression_reason": "PERSISTENCE_CONFIRMATION_PENDING",
+        "effective_severity": "MODERATE",
+        "notification_eligible": false
       }
     },
     {
@@ -690,86 +790,49 @@
       "title": "Counter-Thesis challenge HIGH",
       "detail": "Counter-Thesis ACTIVE · challenge HIGH.",
       "source": "counter_thesis",
-      "session_date": "2026-08-17",
+      "session_date": "2026-08-18",
       "trigger": "Counter-Thesis challenge level = HIGH.",
       "evidence": {
         "version": "0.2",
         "state": "ACTIVE",
         "challenge_level": "HIGH",
         "triggered_conditions": [
-          "mtf_alignment_below_60",
+          "provider_agreement_below_60",
           "actionability_below_60",
-          "high_event_risk"
+          "context_dispersion_60",
+          "high_event_risk",
+          "risk_high_70"
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-18T13:22:50.672Z",
-      "occurrences": 23,
+      "last_seen": "2026-08-18T15:56:00.036Z",
+      "occurrences": 24,
       "stability": {
         "required_confirmations": 2,
-        "observed_confirmations": 6,
+        "observed_confirmations": 1,
         "immediate_structural": false,
-        "persistence_confirmed": true,
-        "suppression_reason": null,
+        "persistence_confirmed": false,
+        "suppression_reason": "PERSISTENCE_CONFIRMATION_PENDING",
         "effective_severity": "MODERATE",
-        "notification_eligible": true
+        "notification_eligible": false
       }
     },
     {
       "key": "NEWS_EVENT_HIGH",
       "severity": "MODERATE",
       "title": "High-impact News Event Risk",
-      "detail": "News Event Risk HIGH sementara News 50 · NEUTRAL.",
+      "detail": "News Event Risk HIGH sementara News 48.1 · NEUTRAL.",
       "source": "news",
-      "session_date": "2026-08-17",
+      "session_date": "2026-08-18",
       "trigger": "News event-risk level = HIGH.",
       "evidence": {
         "state": "NEUTRAL",
-        "score": 50,
+        "score": 48.1,
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T09:57:27.459Z",
-      "last_seen": "2026-08-18T13:22:50.672Z",
-      "occurrences": 12,
-      "stability": {
-        "required_confirmations": 2,
-        "observed_confirmations": 6,
-        "immediate_structural": false,
-        "persistence_confirmed": true,
-        "suppression_reason": null,
-        "effective_severity": "MODERATE",
-        "notification_eligible": true
-      }
-    }
-  ],
-  "pending_alerts": [
-    {
-      "key": "INTRADAY_MODERATE_DRIFT",
-      "severity": "MODERATE",
-      "title": "Intraday context drift moderat",
-      "detail": "Capture DRIFT-0018-2026-08-17 mendeteksi MODERATE drift.",
-      "source": "intraday_context_drift",
-      "session_date": "2026-08-17",
-      "trigger": "Latest intraday drift level = MODERATE.",
-      "evidence": {
-        "id": "DRIFT-0018-2026-08-17",
-        "captured_at": "2026-08-18T13:22:50.510Z",
-        "drift_level": "MODERATE",
-        "snapshot_hash": "50c96228e063bd6e7f00468548ba6aa9c622143f5944c8be6ef5cbfe2cf02260",
-        "drift_vs_previous": [
-          {
-            "key": "news_state",
-            "severity": "MODERATE",
-            "label": "News state",
-            "from": "SUPPORTS",
-            "to": "NEUTRAL",
-            "delta": -18.8
-          }
-        ]
-      },
-      "first_seen": "2026-08-18T13:22:50.672Z",
-      "last_seen": "2026-08-18T13:22:50.672Z",
-      "occurrences": 1,
+      "last_seen": "2026-08-18T15:56:00.036Z",
+      "occurrences": 13,
       "stability": {
         "required_confirmations": 2,
         "observed_confirmations": 1,
@@ -783,31 +846,31 @@
   ],
   "suppressed_alerts": [],
   "current_watch": {
-    "session_date": "2026-08-17",
-    "pair": "AUDUSD",
-    "canonical_bias": "BUY",
+    "session_date": "2026-08-18",
+    "pair": "NZDUSD",
+    "canonical_bias": "SELL",
     "actionability": {
-      "score": 55,
+      "score": 50,
       "state": "FILTERED",
-      "regime": "LOW_ALIGNMENT"
+      "regime": "PROVIDER_DIVERGENCE"
     },
     "context": {
       "macro_yield": {
         "state": "SUPPORTS",
-        "score": 66.7
+        "score": 83.3
       },
       "cross_market": {
-        "state": "SUPPORTS",
-        "score": 87.5
+        "state": "OPPOSES",
+        "score": 12.5
       },
       "news": {
         "state": "NEUTRAL",
-        "score": 50,
+        "score": 48.1,
         "event_risk": "HIGH"
       },
       "counts": {
-        "supports": 2,
-        "opposes": 0,
+        "supports": 1,
+        "opposes": 1,
         "mixed_or_neutral": 1,
         "available": 3,
         "expected": 3
@@ -815,39 +878,41 @@
     },
     "risk": {
       "version": "0.2",
-      "score": 63.5,
-      "state": "MODERATE"
+      "score": 81,
+      "state": "HIGH"
     },
     "counter_thesis": {
       "version": "0.2",
       "state": "ACTIVE",
       "challenge_level": "HIGH",
       "triggered_conditions": [
-        "mtf_alignment_below_60",
+        "provider_agreement_below_60",
         "actionability_below_60",
-        "high_event_risk"
+        "context_dispersion_60",
+        "high_event_risk",
+        "risk_high_70"
       ]
     },
     "final_reasoner": {
       "version": "0.2",
       "decision_logic_version": "0.1_frozen",
-      "status": "MIXED_CONTEXT",
-      "outlook": "MIXED",
+      "status": "RISK_CONSTRAINED",
+      "outlook": "CAUTION",
       "decision": "DEPRIORITIZE"
     },
     "intraday": {
-      "id": "DRIFT-0018-2026-08-17",
-      "captured_at": "2026-08-18T13:22:50.510Z",
-      "drift_level": "MODERATE",
-      "snapshot_hash": "50c96228e063bd6e7f00468548ba6aa9c622143f5944c8be6ef5cbfe2cf02260",
+      "id": "DRIFT-0019-2026-08-18",
+      "captured_at": "2026-08-18T15:55:59.892Z",
+      "drift_level": "BASELINE",
+      "snapshot_hash": "23733d75ef31a0e99ee72552faad38424b5bf7848e8d71a91534fd72f956ee5a",
       "drift_vs_previous": [
         {
-          "key": "news_state",
-          "severity": "MODERATE",
-          "label": "News state",
-          "from": "SUPPORTS",
-          "to": "NEUTRAL",
-          "delta": -18.8
+          "key": "session_baseline",
+          "severity": "NONE",
+          "label": "Session baseline",
+          "from": null,
+          "to": "NZDUSD SELL",
+          "delta": null
         }
       ]
     },
@@ -868,15 +933,15 @@
   "summary": {
     "raw_gate": "REVIEW_NOW",
     "stable_gate": "REVIEW_NOW",
-    "raw_active_total": 5,
+    "raw_active_total": 7,
     "confirmed_total": 4,
-    "pending_total": 1,
+    "pending_total": 3,
     "suppressed_total": 0,
-    "confirmed_high": 2,
-    "confirmed_moderate": 2,
+    "confirmed_high": 4,
+    "confirmed_moderate": 0,
     "oscillation_detected": false,
-    "notification_eligible_this_run": 1,
+    "notification_eligible_this_run": 3,
     "notification_suppressed_this_run": 0,
-    "delivery_log_count": 37
+    "delivery_log_count": 40
   }
 }

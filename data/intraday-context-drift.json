@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "INTRADAY_CONTEXT_DRIFT_ACTIVE",
   "created_at": "2026-08-17T03:10:50.566Z",
-  "updated_at": "2026-08-18T13:22:50.510Z",
+  "updated_at": "2026-08-18T15:55:59.892Z",
   "policy": {
     "mode": "prospective_intraday_context_audit",
     "capture_scope": "multiple_context_captures_within_same_complete_ecb_session",
@@ -1736,35 +1736,116 @@
         },
         "fresh_oos": null
       }
+    },
+    {
+      "id": "DRIFT-0019-2026-08-18",
+      "captured_at": "2026-08-18T15:55:59.892Z",
+      "source_event": "schedule",
+      "source_run_id": "32157312682",
+      "source_run_attempt": "1",
+      "snapshot": {
+        "session_date": "2026-08-18",
+        "pair": "NZDUSD",
+        "canonical_bias": "SELL",
+        "actionability": {
+          "score": 50,
+          "state": "FILTERED",
+          "regime": "PROVIDER_DIVERGENCE"
+        },
+        "context": {
+          "macro_yield": {
+            "available": true,
+            "state": "SUPPORTS",
+            "score": 83.3,
+            "provider": "FRED (OECD / Federal Reserve source series)",
+            "updated_at": "2026-08-18T15:55:03.096Z"
+          },
+          "cross_market": {
+            "available": true,
+            "state": "OPPOSES",
+            "score": 12.5,
+            "provider": "FRED (Federal Reserve / EIA source series)",
+            "updated_at": "2026-08-18T15:55:05.817Z"
+          },
+          "news": {
+            "available": true,
+            "state": "NEUTRAL",
+            "score": 48.1,
+            "provider": "Google News RSS fallback",
+            "updated_at": "2026-08-18T15:55:59.603Z",
+            "event_risk": "HIGH",
+            "recent_high_impact_24h": 6
+          },
+          "coverage_percent": 100
+        },
+        "risk": {
+          "version": "0.2",
+          "score": 81,
+          "state": "HIGH",
+          "primary_driver": {
+            "key": "actionability",
+            "label": "Actionability",
+            "contribution": 22
+          }
+        },
+        "counter_thesis": {
+          "version": "0.2",
+          "state": "ACTIVE",
+          "challenge_level": "HIGH",
+          "active_trigger_count": 5
+        },
+        "final_reasoner": {
+          "version": "0.2",
+          "decision_logic_version": "0.1_frozen",
+          "status": "RISK_CONSTRAINED",
+          "outlook": "CAUTION",
+          "decision": "DEPRIORITIZE",
+          "evidence_for_count": 1,
+          "evidence_against_count": 6
+        }
+      },
+      "snapshot_hash": "23733d75ef31a0e99ee72552faad38424b5bf7848e8d71a91534fd72f956ee5a",
+      "drift_level": "BASELINE",
+      "drift_vs_previous": [
+        {
+          "key": "session_baseline",
+          "severity": "NONE",
+          "label": "Session baseline",
+          "from": null,
+          "to": "NZDUSD SELL",
+          "delta": null
+        }
+      ],
+      "frozen_anchors": {
+        "decision_history": null,
+        "fresh_oos": null
+      }
     }
   ],
   "current_session": {
-    "session_date": "2026-08-17",
-    "captures": 6,
-    "first_capture_at": "2026-08-17T15:48:17.711Z",
-    "last_capture_at": "2026-08-18T13:22:50.510Z",
-    "current_drift_level": "MODERATE",
-    "total_drift_events": 3,
-    "drift_event_counts": {
-      "news_state": 2,
-      "risk_score": 1
-    },
+    "session_date": "2026-08-18",
+    "captures": 1,
+    "first_capture_at": "2026-08-18T15:55:59.892Z",
+    "last_capture_at": "2026-08-18T15:55:59.892Z",
+    "current_drift_level": "BASELINE",
+    "total_drift_events": 0,
+    "drift_event_counts": {},
     "first_to_latest": {
       "macro_score_delta": 0,
       "cross_market_score_delta": 0,
-      "news_score_delta": -7.9,
-      "risk_score_delta": -4,
+      "news_score_delta": 0,
+      "risk_score_delta": 0,
       "macro_state": "SUPPORTS → SUPPORTS",
-      "cross_market_state": "SUPPORTS → SUPPORTS",
-      "news_state": "MIXED → NEUTRAL",
-      "risk_state": "MODERATE → MODERATE",
-      "final_reasoner": "MIXED_CONTEXT/DEPRIORITIZE → MIXED_CONTEXT/DEPRIORITIZE"
+      "cross_market_state": "OPPOSES → OPPOSES",
+      "news_state": "NEUTRAL → NEUTRAL",
+      "risk_state": "HIGH → HIGH",
+      "final_reasoner": "RISK_CONSTRAINED/DEPRIORITIZE → RISK_CONSTRAINED/DEPRIORITIZE"
     }
   },
   "summary": {
-    "total_captures": 18,
-    "distinct_ecb_sessions": 2,
-    "current_session_captures": 6,
+    "total_captures": 19,
+    "distinct_ecb_sessions": 3,
+    "current_session_captures": 1,
     "high_drift_captures": 6,
     "moderate_drift_captures": 2,
     "low_drift_captures": 0
