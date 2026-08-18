@@ -73,6 +73,7 @@
     '.dr-eyebrow{font-size:.57rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:850}' +
     '.dr-title{margin-top:4px;font-size:1.04rem;font-weight:900;color:var(--text)}' +
     '.dr-sub{margin-top:5px;max-width:720px;font-size:.62rem;line-height:1.5;color:var(--muted)}' +
+    '.dr-snapshot{margin-top:7px;font-size:.52rem;color:var(--muted-2);font-weight:700}' +
     '.dr-summary{display:flex;align-items:center;gap:12px;justify-content:flex-start}' +
     '.dr-ring{width:82px;height:82px;border-radius:50%;background:conic-gradient(var(--dr-tone) var(--dr-pct),rgba(148,163,184,.12) 0);display:grid;place-items:center;position:relative;flex:0 0 auto}' +
     '.dr-ring:after{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--bg-2);border:1px solid var(--border)}' +
@@ -84,25 +85,36 @@
     '.dr-progress{height:7px;border-radius:999px;background:rgba(148,163,184,.1);overflow:hidden;border:1px solid var(--border)}' +
     '.dr-progress>span{display:block;height:100%;width:var(--dr-pct);background:var(--dr-tone);border-radius:999px;transition:width .25s ease}' +
     '.dr-scale{display:flex;justify-content:space-between;gap:8px;margin-top:5px;font-size:.5rem;color:var(--muted-2)}' +
-    '.dr-blockers{display:flex;align-items:flex-start;gap:8px;margin-top:11px;padding:9px 10px;border-radius:10px;border:1px solid var(--border);background:rgba(7,11,20,.18);font-size:.54rem;line-height:1.45}' +
-    '.dr-blockers-label{color:var(--muted-2);font-weight:800;white-space:nowrap}' +
-    '.dr-blockers-value{color:var(--text);font-weight:800}' +
+    '.dr-blockers,.dr-why-blocked{display:flex;align-items:flex-start;gap:8px;margin-top:11px;padding:9px 10px;border-radius:10px;border:1px solid var(--border);background:rgba(7,11,20,.18);font-size:.54rem;line-height:1.45}' +
+    '.dr-blockers-label,.dr-why-label{color:var(--muted-2);font-weight:800;white-space:nowrap}' +
+    '.dr-blockers-value,.dr-why-value{color:var(--text);font-weight:800}' +
     '.dr-blockers.clear{border-color:rgba(59,214,154,.2);background:rgba(59,214,154,.035)}' +
     '.dr-blockers.clear .dr-blockers-value{color:var(--green)}' +
+    '.dr-why-blocked{margin-top:7px;border-color:rgba(240,163,47,.17);background:rgba(240,163,47,.025)}' +
+    '.dr-why-blocked.clear{display:none}' +
     '.dr-checks{display:grid;grid-template-columns:1fr;gap:7px;margin-top:12px}' +
     '@media(min-width:760px){.dr-checks{grid-template-columns:repeat(5,minmax(0,1fr))}}' +
     '.dr-check{border:1px solid var(--border);border-radius:10px;padding:9px;background:rgba(7,11,20,.18);min-width:0}' +
+    '.dr-check.caution{border-color:rgba(240,163,47,.22);background:rgba(240,163,47,.025)}' +
     '.dr-check-top{display:flex;align-items:center;gap:6px}' +
     '.dr-icon{width:18px;height:18px;border-radius:6px;display:grid;place-items:center;font-size:.58rem;font-weight:900;flex:0 0 auto}' +
-    '.dr-check.pass .dr-icon{background:var(--green-dim);color:var(--green)}.dr-check.fail .dr-icon{background:var(--red-dim);color:var(--red)}' +
+    '.dr-check.pass .dr-icon{background:var(--green-dim);color:var(--green)}.dr-check.caution .dr-icon{background:var(--amber-dim);color:var(--amber)}.dr-check.fail .dr-icon{background:var(--red-dim);color:var(--red)}' +
     '.dr-check-name{font-size:.56rem;font-weight:850;color:var(--text);line-height:1.25}' +
+    '.dr-check-status{margin-left:auto;font-size:.47rem;font-weight:900;letter-spacing:.04em;color:var(--muted-2)}' +
+    '.dr-check.caution .dr-check-status{color:var(--amber)}.dr-check.pass .dr-check-status{color:var(--green)}.dr-check.fail .dr-check-status{color:var(--red)}' +
     '.dr-check-detail{margin-top:6px;font-size:.51rem;line-height:1.4;color:var(--muted)}' +
+    '.dr-explain{margin-top:11px;border:1px solid var(--border);border-radius:10px;background:rgba(7,11,20,.14);overflow:hidden}' +
+    '.dr-explain summary{cursor:pointer;list-style:none;padding:9px 10px;font-size:.55rem;font-weight:850;color:var(--text);display:flex;align-items:center;justify-content:space-between;gap:8px}' +
+    '.dr-explain summary::-webkit-details-marker{display:none}.dr-explain summary:after{content:"+";font-size:.7rem;color:var(--accent)}.dr-explain[open] summary:after{content:"−"}' +
+    '.dr-explain-body{border-top:1px solid var(--border);padding:9px 10px;display:grid;gap:6px}' +
+    '.dr-explain-row{display:grid;grid-template-columns:minmax(115px,.8fr) 1fr auto;gap:8px;align-items:start;font-size:.51rem;line-height:1.4}' +
+    '.dr-explain-name{font-weight:800;color:var(--text)}.dr-explain-reason{color:var(--muted)}.dr-explain-points{font-weight:900;white-space:nowrap}.dr-explain-points.pass{color:var(--green)}.dr-explain-points.caution{color:var(--amber)}.dr-explain-points.fail{color:var(--red)}' +
     '.dr-foot{display:flex;flex-direction:column;gap:7px;margin-top:12px;padding:10px 11px;border-radius:10px;background:rgba(47,211,238,.03);border:1px solid rgba(47,211,238,.14)}' +
     '@media(min-width:760px){.dr-foot{flex-direction:row;align-items:center;justify-content:space-between}}' +
     '.dr-interpretation{font-size:.6rem;font-weight:900;color:var(--text)}' +
     '.dr-guard{font-size:.52rem;line-height:1.45;color:var(--muted);max-width:760px}' +
     '.dr-guard b{color:var(--accent);font-weight:850}' +
-    '@media(max-width:899px){.iw-shell{margin-top:16px}.iw-head{padding:0}.iw-title{font-size:1.03rem}.iw-sub{font-size:.64rem}.ug-head{padding:15px}.ug-flow,.ug-block{padding-left:15px;padding-right:15px}.ug-guard{margin-left:15px;margin-right:15px}.dr-head,.dr-body{padding-left:15px;padding-right:15px}.dr-ring{width:74px;height:74px}.dr-blockers{flex-direction:column;gap:3px}}';
+    '@media(max-width:899px){.iw-shell{margin-top:16px}.iw-head{padding:0}.iw-title{font-size:1.03rem}.iw-sub{font-size:.64rem}.ug-head{padding:15px}.ug-flow,.ug-block{padding-left:15px;padding-right:15px}.ug-guard{margin-left:15px;margin-right:15px}.dr-head,.dr-body{padding-left:15px;padding-right:15px}.dr-ring{width:74px;height:74px}.dr-blockers,.dr-why-blocked{flex-direction:column;gap:3px}.dr-explain-row{grid-template-columns:1fr auto}.dr-explain-reason{grid-column:1/-1}}';
   document.head.appendChild(style);
 
   var shell=document.getElementById('intelligence-workspace');
@@ -174,14 +186,16 @@
     readiness.style.setProperty('--dr-pct','0%');
     readiness.innerHTML=
       '<div class="dr-head">' +
-        '<div><div class="dr-eyebrow">Decision Readiness</div><div class="dr-title">Persentase syarat review yang terpenuhi</div><div class="dr-sub">Ringkasan rule-based dari lima pemeriksaan keputusan. Setiap check bernilai 20 poin; Primary Gate tetap ditentukan oleh Actionability dan dapat meng-override interpretasi persentase.</div></div>' +
+        '<div><div class="dr-eyebrow">Decision Readiness</div><div class="dr-title">Persentase syarat review yang terpenuhi</div><div class="dr-sub">Ringkasan rule-based dari lima pemeriksaan keputusan. Setiap check bernilai 20 poin; Primary Gate tetap ditentukan oleh Actionability dan dapat meng-override interpretasi persentase.</div><div class="dr-snapshot" id="dr-snapshot">Based on latest ECB decision snapshot · —</div></div>' +
         '<div class="dr-summary"><div class="dr-ring"><div class="dr-pct" id="dr-pct">—</div></div><div class="dr-summary-meta"><div class="dr-met" id="dr-met">Memuat…</div><span class="dr-primary fail" id="dr-primary">PRIMARY GATE · —</span></div></div>' +
       '</div>' +
       '<div class="dr-body">' +
         '<div class="dr-progress"><span></span></div>' +
         '<div class="dr-scale"><span>0–40% · Low Readiness</span><span>60% · Review</span><span>80–100% · High Readiness</span></div>' +
         '<div class="dr-blockers" id="dr-blockers"><span class="dr-blockers-label">Current blockers</span><span class="dr-blockers-value">Memuat…</span></div>' +
+        '<div class="dr-why-blocked" id="dr-why-blocked"><span class="dr-why-label">Why blocked?</span><span class="dr-why-value">Memuat…</span></div>' +
         '<div class="dr-checks" id="dr-checks"></div>' +
+        '<details class="dr-explain"><summary>Why this score?</summary><div class="dr-explain-body" id="dr-explain-body">Memuat penjelasan…</div></details>' +
         '<div class="dr-foot"><div class="dr-interpretation" id="dr-interpretation">Menunggu data terbaru…</div><div class="dr-guard"><b>Guardrail:</b> Decision Readiness mengukur requirement completion, bukan win probability, expected return, profit forecast, atau performa trading.</div></div>' +
       '</div>';
   }
@@ -189,12 +203,18 @@
 
   function drEsc(value){
     return String(value==null?'—':value).replace(/[&<>"']/g,function(c){
-      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c];
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
     });
   }
   function drNum(value){
     var n=Number(value);
     return Number.isFinite(n)?n.toFixed(1).replace('.',','):'—';
+  }
+  function drDate(value){
+    if(!value) return '—';
+    var d=new Date(String(value).slice(0,10)+'T00:00:00Z');
+    if(Number.isNaN(d.getTime())) return String(value);
+    return d.toLocaleDateString('en-GB',{day:'2-digit',month:'short',year:'numeric',timeZone:'UTC'});
   }
   function drRender(payload){
     var data=payload&&payload.data?payload.data:payload;
@@ -216,32 +236,50 @@
     var invalidation=Array.isArray(f.invalidation_conditions)?f.invalidation_conditions:[];
     var riskState=String(r.state||f.risk_level||'UNAVAILABLE').toUpperCase();
     var actionState=String(a.state||'UNAVAILABLE').toUpperCase();
+    var regimeCode=a&&a.dimensions&&a.dimensions.regime_guardrail&&a.dimensions.regime_guardrail.code||f.regime||a.regime||'';
+    var actionLimiter=a.primary_limiter||(Array.isArray(a.limiting_factors)&&a.limiting_factors[0])||'';
+    var counterObjection=(c.primary_objection&&c.primary_objection.statement)||(f.primary_counter_thesis&&f.primary_counter_thesis.statement)||'';
 
     var checks=[
       {
         name:'Actionability Gate',
         pass:actionState==='ACTIONABLE',
-        detail:(Number.isFinite(Number(a.score))?drNum(a.score)+'/100 · ':'')+actionState
+        visual:actionState==='ACTIONABLE'?'pass':'fail',
+        status:actionState==='ACTIONABLE'?'PASS':'FAIL',
+        detail:(Number.isFinite(Number(a.score))?drNum(a.score)+'/100 · ':'')+actionState,
+        reason:actionState==='ACTIONABLE'?'Primary Actionability gate is satisfied.':('Primary gate is '+actionState+(actionLimiter?' · limiter '+String(actionLimiter).replace(/_/g,' '):'')+(regimeCode?' · regime '+String(regimeCode).replace(/_/g,' '):''))
       },
       {
         name:'Risk Check',
         pass:riskState==='LOW'||riskState==='MODERATE',
-        detail:(Number.isFinite(Number(r.score))?drNum(r.score)+'/100 · ':'')+riskState
+        visual:riskState==='LOW'?'pass':riskState==='MODERATE'?'caution':'fail',
+        status:riskState==='LOW'?'PASS':riskState==='MODERATE'?'PASS WITH CAUTION':'FAIL',
+        detail:(Number.isFinite(Number(r.score))?drNum(r.score)+'/100 · ':'')+riskState,
+        reason:riskState==='LOW'?'Contextual decision risk is LOW.':riskState==='MODERATE'?'Risk still passes the readiness check, but MODERATE requires additional review.':'Risk is HIGH or unavailable, so this check is not satisfied.'
       },
       {
         name:'External Context',
         pass:available>=2&&supports>opposes,
-        detail:available+'/'+expected+' tersedia · support '+supports+' · oppose '+opposes
+        visual:available>=2&&supports>opposes?'pass':'fail',
+        status:available>=2&&supports>opposes?'PASS':'FAIL',
+        detail:available+'/'+expected+' tersedia · support '+supports+' · oppose '+opposes,
+        reason:available<2?'Fewer than two external contextual layers are available.':supports<=opposes?'External support does not exceed opposition.':'External context has sufficient coverage and net support.'
       },
       {
         name:'Counter-Thesis',
         pass:challenge!=='HIGH'&&challenge!=='UNAVAILABLE',
-        detail:'Challenge '+challenge
+        visual:challenge==='MODERATE'?'caution':(challenge!=='HIGH'&&challenge!=='UNAVAILABLE'?'pass':'fail'),
+        status:challenge==='MODERATE'?'PASS WITH CAUTION':(challenge!=='HIGH'&&challenge!=='UNAVAILABLE'?'PASS':'FAIL'),
+        detail:'Challenge '+challenge,
+        reason:challenge==='HIGH'?(counterObjection||'Counter-Thesis challenge is HIGH.'):challenge==='UNAVAILABLE'?'Counter-Thesis evidence is unavailable.':challenge==='MODERATE'?'Counter-Thesis is not blocking, but the challenge remains moderate.':'Counter-Thesis does not present a blocking challenge.'
       },
       {
         name:'Evidence & Invalidation',
         pass:(evidenceFor.length+evidenceAgainst.length)>=2&&invalidation.length>0&&evidenceGaps.length===0,
-        detail:(evidenceFor.length+evidenceAgainst.length)+' evidence · '+invalidation.length+' invalidation · gaps '+evidenceGaps.length
+        visual:(evidenceFor.length+evidenceAgainst.length)>=2&&invalidation.length>0&&evidenceGaps.length===0?'pass':'fail',
+        status:(evidenceFor.length+evidenceAgainst.length)>=2&&invalidation.length>0&&evidenceGaps.length===0?'PASS':'FAIL',
+        detail:(evidenceFor.length+evidenceAgainst.length)+' evidence · '+invalidation.length+' invalidation · gaps '+evidenceGaps.length,
+        reason:(evidenceFor.length+evidenceAgainst.length)<2?'Structured evidence is still insufficient.':invalidation.length===0?'No structured invalidation condition is available.':evidenceGaps.length>0?'One or more evidence gaps remain.':'Evidence and invalidation conditions are structurally available.'
       }
     ];
 
@@ -250,7 +288,8 @@
     var primaryPassed=checks[0].pass;
     var className=!primaryPassed?'low':(pct>=80?'high':pct>=60?'partial':'low');
     var interpretation=!primaryPassed?'DEPRIORITIZE · Primary Gate belum terpenuhi':(pct>=80?'PRIORITIZE REVIEW · High Readiness':pct>=60?'REVIEW SELECTIVELY · Partial Readiness':'DEPRIORITIZE · Low Readiness');
-    var blockers=checks.filter(function(x){return !x.pass;}).map(function(x){return x.name;});
+    var blockers=checks.filter(function(x){return !x.pass;});
+    var snapshot=data.session_date||data.data_updated_at||data.comparison_date||'';
 
     readiness.className='dr-panel '+className;
     readiness.style.setProperty('--dr-pct',pct+'%');
@@ -261,15 +300,32 @@
     primary.textContent='PRIMARY GATE · '+(primaryPassed?'PASSED':'NOT PASSED');
     document.getElementById('dr-interpretation').textContent=interpretation;
 
+    var snapshotEl=document.getElementById('dr-snapshot');
+    if(snapshotEl) snapshotEl.textContent='Based on ECB decision snapshot · '+drDate(snapshot);
+
     var blockersEl=document.getElementById('dr-blockers');
     if(blockersEl){
       blockersEl.className='dr-blockers'+(blockers.length?'':' clear');
-      blockersEl.innerHTML='<span class="dr-blockers-label">Current blockers</span><span class="dr-blockers-value">'+drEsc(blockers.length?blockers.join(' · '):'None — all five checks met')+'</span>';
+      blockersEl.innerHTML='<span class="dr-blockers-label">Current blockers</span><span class="dr-blockers-value">'+drEsc(blockers.length?blockers.map(function(x){return x.name;}).join(' · '):'None — all five checks met')+'</span>';
+    }
+
+    var whyEl=document.getElementById('dr-why-blocked');
+    if(whyEl){
+      whyEl.className='dr-why-blocked'+(blockers.length?'':' clear');
+      whyEl.innerHTML='<span class="dr-why-label">Why blocked?</span><span class="dr-why-value">'+drEsc(blockers.length?blockers.map(function(x){return x.name+': '+x.reason;}).join(' · '):'')+'</span>';
     }
 
     document.getElementById('dr-checks').innerHTML=checks.map(function(x){
-      return '<div class="dr-check '+(x.pass?'pass':'fail')+'"><div class="dr-check-top"><span class="dr-icon">'+(x.pass?'✓':'×')+'</span><span class="dr-check-name">'+drEsc(x.name)+'</span></div><div class="dr-check-detail">'+drEsc(x.detail)+'</div></div>';
+      var icon=x.visual==='pass'?'✓':x.visual==='caution'?'!':'×';
+      return '<div class="dr-check '+x.visual+'"><div class="dr-check-top"><span class="dr-icon">'+icon+'</span><span class="dr-check-name">'+drEsc(x.name)+'</span><span class="dr-check-status">'+drEsc(x.status)+'</span></div><div class="dr-check-detail">'+drEsc(x.detail)+'</div></div>';
     }).join('');
+
+    var explain=document.getElementById('dr-explain-body');
+    if(explain){
+      explain.innerHTML=checks.map(function(x){
+        return '<div class="dr-explain-row"><span class="dr-explain-name">'+drEsc(x.name)+'</span><span class="dr-explain-reason">'+drEsc(x.reason)+'</span><span class="dr-explain-points '+x.visual+'">'+(x.pass?'+20':'0')+' pts</span></div>';
+      }).join('');
+    }
   }
   function drLoad(){
     fetch('./data/currency-strength.json?decision-readiness='+Date.now(),{headers:{Accept:'application/json'},cache:'no-store'})
@@ -279,10 +335,16 @@
         var pct=document.getElementById('dr-pct');
         var met=document.getElementById('dr-met');
         var blockers=document.getElementById('dr-blockers');
+        var why=document.getElementById('dr-why-blocked');
+        var snapshot=document.getElementById('dr-snapshot');
+        var explain=document.getElementById('dr-explain-body');
         var interpretation=document.getElementById('dr-interpretation');
         if(pct) pct.textContent='—';
         if(met) met.textContent='Data belum tersedia';
         if(blockers) blockers.innerHTML='<span class="dr-blockers-label">Current blockers</span><span class="dr-blockers-value">Tidak dapat dihitung</span>';
+        if(why) why.innerHTML='<span class="dr-why-label">Why blocked?</span><span class="dr-why-value">Data belum tersedia</span>';
+        if(snapshot) snapshot.textContent='Based on ECB decision snapshot · —';
+        if(explain) explain.textContent='Penjelasan belum tersedia karena snapshot tidak dapat dimuat.';
         if(interpretation) interpretation.textContent='Decision Readiness tidak dapat dihitung pada snapshot ini.';
       });
   }
