@@ -62,7 +62,38 @@
     '.ug-use-p{margin-top:5px;font-size:.56rem;line-height:1.48;color:var(--muted)}' +
     '.ug-guard{margin:0 18px 17px;padding:10px 11px;border-radius:10px;border:1px solid rgba(240,163,47,.2);background:rgba(240,163,47,.035);font-size:.55rem;line-height:1.5;color:var(--muted)}' +
     '.ug-guard b{color:var(--amber);font-weight:850}' +
-    '@media(max-width:899px){.iw-shell{margin-top:16px}.iw-head{padding:0}.iw-title{font-size:1.03rem}.iw-sub{font-size:.64rem}.ug-head{padding:15px}.ug-flow,.ug-block{padding-left:15px;padding-right:15px}.ug-guard{margin-left:15px;margin-right:15px}}';
+    '.dr-panel{margin-top:12px;border:1px solid var(--border-2);border-radius:16px;background:linear-gradient(180deg,rgba(148,163,184,.045),rgba(7,11,20,.2));overflow:hidden;--dr-tone:var(--amber);--dr-pct:0%}' +
+    '.dr-panel.high{--dr-tone:var(--green)}.dr-panel.partial{--dr-tone:var(--amber)}.dr-panel.low{--dr-tone:var(--red)}' +
+    '.dr-head{display:grid;grid-template-columns:1fr;gap:14px;padding:17px 18px;border-bottom:1px solid var(--border)}' +
+    '@media(min-width:760px){.dr-head{grid-template-columns:1fr auto;align-items:center}}' +
+    '.dr-eyebrow{font-size:.57rem;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);font-weight:850}' +
+    '.dr-title{margin-top:4px;font-size:1.04rem;font-weight:900;color:var(--text)}' +
+    '.dr-sub{margin-top:5px;max-width:720px;font-size:.62rem;line-height:1.5;color:var(--muted)}' +
+    '.dr-summary{display:flex;align-items:center;gap:12px;justify-content:flex-start}' +
+    '.dr-ring{width:82px;height:82px;border-radius:50%;background:conic-gradient(var(--dr-tone) var(--dr-pct),rgba(148,163,184,.12) 0);display:grid;place-items:center;position:relative;flex:0 0 auto}' +
+    '.dr-ring:after{content:"";position:absolute;inset:7px;border-radius:50%;background:var(--bg-2);border:1px solid var(--border)}' +
+    '.dr-pct{position:relative;z-index:1;font-size:1.18rem;font-weight:900;color:var(--text);letter-spacing:-.03em}' +
+    '.dr-summary-meta{min-width:128px}.dr-met{font-size:.72rem;font-weight:850;color:var(--text)}' +
+    '.dr-primary{display:inline-flex;margin-top:6px;border-radius:999px;padding:5px 8px;font-size:.54rem;font-weight:900;letter-spacing:.04em}' +
+    '.dr-primary.pass{background:var(--green-dim);color:var(--green)}.dr-primary.fail{background:var(--red-dim);color:var(--red)}' +
+    '.dr-body{padding:14px 18px 16px}' +
+    '.dr-progress{height:7px;border-radius:999px;background:rgba(148,163,184,.1);overflow:hidden;border:1px solid var(--border)}' +
+    '.dr-progress>span{display:block;height:100%;width:var(--dr-pct);background:var(--dr-tone);border-radius:999px;transition:width .25s ease}' +
+    '.dr-scale{display:flex;justify-content:space-between;gap:8px;margin-top:5px;font-size:.5rem;color:var(--muted-2)}' +
+    '.dr-checks{display:grid;grid-template-columns:1fr;gap:7px;margin-top:12px}' +
+    '@media(min-width:760px){.dr-checks{grid-template-columns:repeat(5,minmax(0,1fr))}}' +
+    '.dr-check{border:1px solid var(--border);border-radius:10px;padding:9px;background:rgba(7,11,20,.18);min-width:0}' +
+    '.dr-check-top{display:flex;align-items:center;gap:6px}' +
+    '.dr-icon{width:18px;height:18px;border-radius:6px;display:grid;place-items:center;font-size:.58rem;font-weight:900;flex:0 0 auto}' +
+    '.dr-check.pass .dr-icon{background:var(--green-dim);color:var(--green)}.dr-check.fail .dr-icon{background:var(--red-dim);color:var(--red)}' +
+    '.dr-check-name{font-size:.56rem;font-weight:850;color:var(--text);line-height:1.25}' +
+    '.dr-check-detail{margin-top:6px;font-size:.51rem;line-height:1.4;color:var(--muted)}' +
+    '.dr-foot{display:flex;flex-direction:column;gap:7px;margin-top:12px;padding:10px 11px;border-radius:10px;background:rgba(47,211,238,.03);border:1px solid rgba(47,211,238,.14)}' +
+    '@media(min-width:760px){.dr-foot{flex-direction:row;align-items:center;justify-content:space-between}}' +
+    '.dr-interpretation{font-size:.6rem;font-weight:900;color:var(--text)}' +
+    '.dr-guard{font-size:.52rem;line-height:1.45;color:var(--muted);max-width:760px}' +
+    '.dr-guard b{color:var(--accent);font-weight:850}' +
+    '@media(max-width:899px){.iw-shell{margin-top:16px}.iw-head{padding:0}.iw-title{font-size:1.03rem}.iw-sub{font-size:.64rem}.ug-head{padding:15px}.ug-flow,.ug-block{padding-left:15px;padding-right:15px}.ug-guard{margin-left:15px;margin-right:15px}.dr-head,.dr-body{padding-left:15px;padding-right:15px}.dr-ring{width:74px;height:74px}}';
   document.head.appendChild(style);
 
   var shell=document.getElementById('intelligence-workspace');
@@ -123,6 +154,117 @@
   var guideZone=document.getElementById('iw-guide');
   if(guideZone&&guide.parentElement!==guideZone) guideZone.appendChild(guide);
 
+  var readiness=document.getElementById('decision-readiness');
+  if(!readiness){
+    readiness=document.createElement('div');
+    readiness.id='decision-readiness';
+    readiness.className='dr-panel partial';
+    readiness.style.setProperty('--dr-pct','0%');
+    readiness.innerHTML=
+      '<div class="dr-head">' +
+        '<div><div class="dr-eyebrow">Decision Readiness</div><div class="dr-title">Persentase syarat review yang terpenuhi</div><div class="dr-sub">Skor 0–100 dihitung dari lima pemeriksaan yang masing-masing bernilai 20 poin. Primary Gate tetap ditentukan oleh Actionability dan dapat meng-override interpretasi persentase.</div></div>' +
+        '<div class="dr-summary"><div class="dr-ring"><div class="dr-pct" id="dr-pct">—</div></div><div class="dr-summary-meta"><div class="dr-met" id="dr-met">Memuat…</div><span class="dr-primary fail" id="dr-primary">PRIMARY GATE · —</span></div></div>' +
+      '</div>' +
+      '<div class="dr-body">' +
+        '<div class="dr-progress"><span></span></div>' +
+        '<div class="dr-scale"><span>0–40% · Low Readiness</span><span>60% · Review</span><span>80–100% · High Readiness</span></div>' +
+        '<div class="dr-checks" id="dr-checks"></div>' +
+        '<div class="dr-foot"><div class="dr-interpretation" id="dr-interpretation">Menunggu data terbaru…</div><div class="dr-guard"><b>Guardrail:</b> Decision Readiness mengukur requirement completion, bukan win probability, expected return, profit forecast, atau performa trading.</div></div>' +
+      '</div>';
+  }
+  if(guideZone&&readiness.parentElement!==guideZone) guideZone.appendChild(readiness);
+
+  function drEsc(value){
+    return String(value==null?'—':value).replace(/[&<>"']/g,function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  function drNum(value){
+    var n=Number(value);
+    return Number.isFinite(n)?n.toFixed(1).replace('.',','):'—';
+  }
+  function drRender(payload){
+    var data=payload&&payload.data?payload.data:payload;
+    var intel=data&&data.intelligence_layer||{};
+    var layers=intel.layers||{};
+    var f=layers.final_reasoner||{};
+    var r=layers.risk||{};
+    var c=layers.counter_thesis||{};
+    var a=data&&data.actionability_score&&(data.actionability_score.current||(data.actionability_score.timeframes&&data.actionability_score.timeframes.daily))||intel.upstream_actionability||{};
+    var counts=f.context_counts||{};
+    var supports=Number(counts.supports)||0;
+    var opposes=Number(counts.opposes)||0;
+    var available=Number(counts.available)||0;
+    var expected=Number(counts.expected)||3;
+    var challenge=String(c.challenge_level||f.counter_thesis_challenge_level||'UNAVAILABLE').toUpperCase();
+    var evidenceFor=Array.isArray(f.evidence_for)?f.evidence_for:[];
+    var evidenceAgainst=Array.isArray(f.evidence_against)?f.evidence_against:[];
+    var evidenceGaps=Array.isArray(f.evidence_gaps)?f.evidence_gaps:[];
+    var invalidation=Array.isArray(f.invalidation_conditions)?f.invalidation_conditions:[];
+    var riskState=String(r.state||f.risk_level||'UNAVAILABLE').toUpperCase();
+    var actionState=String(a.state||'UNAVAILABLE').toUpperCase();
+
+    var checks=[
+      {
+        name:'Actionability Gate',
+        pass:actionState==='ACTIONABLE',
+        detail:(Number.isFinite(Number(a.score))?drNum(a.score)+'/100 · ':'')+actionState
+      },
+      {
+        name:'Risk Check',
+        pass:riskState==='LOW'||riskState==='MODERATE',
+        detail:(Number.isFinite(Number(r.score))?drNum(r.score)+'/100 · ':'')+riskState
+      },
+      {
+        name:'External Context',
+        pass:available>=2&&supports>opposes,
+        detail:available+'/'+expected+' tersedia · support '+supports+' · oppose '+opposes
+      },
+      {
+        name:'Counter-Thesis',
+        pass:challenge!=='HIGH'&&challenge!=='UNAVAILABLE',
+        detail:'Challenge '+challenge
+      },
+      {
+        name:'Evidence & Invalidation',
+        pass:(evidenceFor.length+evidenceAgainst.length)>=2&&invalidation.length>0&&evidenceGaps.length===0,
+        detail:(evidenceFor.length+evidenceAgainst.length)+' evidence · '+invalidation.length+' invalidation · gaps '+evidenceGaps.length
+      }
+    ];
+
+    var met=checks.filter(function(x){return x.pass;}).length;
+    var pct=met*20;
+    var primaryPassed=checks[0].pass;
+    var className=!primaryPassed?'low':(pct>=80?'high':pct>=60?'partial':'low');
+    var interpretation=!primaryPassed?'DEPRIORITIZE · Primary Gate belum terpenuhi':(pct>=80?'PRIORITIZE REVIEW · High Readiness':pct>=60?'REVIEW SELECTIVELY · Partial Readiness':'DEPRIORITIZE · Low Readiness');
+
+    readiness.className='dr-panel '+className;
+    readiness.style.setProperty('--dr-pct',pct+'%');
+    document.getElementById('dr-pct').textContent=pct+'%';
+    document.getElementById('dr-met').textContent=met+' / 5 checks met';
+    var primary=document.getElementById('dr-primary');
+    primary.className='dr-primary '+(primaryPassed?'pass':'fail');
+    primary.textContent='PRIMARY GATE · '+(primaryPassed?'PASSED':'NOT PASSED');
+    document.getElementById('dr-interpretation').textContent=interpretation;
+
+    document.getElementById('dr-checks').innerHTML=checks.map(function(x){
+      return '<div class="dr-check '+(x.pass?'pass':'fail')+'"><div class="dr-check-top"><span class="dr-icon">'+(x.pass?'✓':'×')+'</span><span class="dr-check-name">'+drEsc(x.name)+'</span></div><div class="dr-check-detail">'+drEsc(x.detail)+'</div></div>';
+    }).join('');
+  }
+  function drLoad(){
+    fetch('./data/currency-strength.json?decision-readiness='+Date.now(),{headers:{Accept:'application/json'},cache:'no-store'})
+      .then(function(res){if(!res.ok) throw new Error('HTTP '+res.status);return res.json();})
+      .then(drRender)
+      .catch(function(){
+        var pct=document.getElementById('dr-pct');
+        var met=document.getElementById('dr-met');
+        var interpretation=document.getElementById('dr-interpretation');
+        if(pct) pct.textContent='—';
+        if(met) met.textContent='Data belum tersedia';
+        if(interpretation) interpretation.textContent='Decision Readiness tidak dapat dihitung pada snapshot ini.';
+      });
+  }
+
   var nav=document.querySelector('.analysis-nav');
   if(nav&&!document.getElementById('how-to-use-nav')){
     var navLink=document.createElement('a');
@@ -144,6 +286,7 @@
     if(redundant) redundant.remove();
     move('final-intelligence-dashboard','iw-executive');
     move('how-to-use-bcai','iw-guide');
+    move('decision-readiness','iw-guide');
     move('fresh-oos-monitoring','iw-oos');
     move('decision-alert-watch','iw-watch');
     move('intelligence-timeline','iw-observe');
@@ -152,6 +295,11 @@
   }
 
   organize();
+  drLoad();
+
+  var refresh=document.getElementById('live-refresh');
+  if(refresh) refresh.addEventListener('click',function(){setTimeout(drLoad,450);});
+  setInterval(drLoad,60000);
 
   var observer=new MutationObserver(function(){organize();});
   observer.observe(liveSection,{childList:true,subtree:true});
