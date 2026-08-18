@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "DECISION_HISTORY_COLLECTION_ACTIVE",
   "started_at": "2026-08-17T02:50:18.076Z",
-  "updated_at": "2026-08-17T10:22:34.607Z",
+  "updated_at": "2026-08-18T07:24:15.912Z",
   "policy": {
     "start_policy": "prospective_only_no_historical_backfill",
     "capture_policy": "one_immutable_snapshot_per_complete_ecb_session",
@@ -11,19 +11,20 @@
     "frozen_model_policy": "timeline_does_not_modify_currency_strength_actionability_risk_counter_thesis_or_final_reasoner"
   },
   "summary": {
-    "captured": 1,
+    "captured": 2,
     "first_session": "2026-08-14",
-    "last_session": "2026-08-14",
-    "buy_count": 1,
+    "last_session": "2026-08-17",
+    "buy_count": 2,
     "sell_count": 0,
     "risk_states": {
-      "MODERATE": 1
+      "MODERATE": 2
     },
     "final_statuses": {
-      "MIXED_CONTEXT": 1
+      "MIXED_CONTEXT": 2
     },
     "decisions": {
-      "REVIEW_SELECTIVELY": 1
+      "REVIEW_SELECTIVELY": 1,
+      "DEPRIORITIZE": 1
     }
   },
   "entries": [
@@ -124,6 +125,138 @@
           "key": "collection_start",
           "label": "Timeline dimulai",
           "detail": "Snapshot pertama Decision History direkam."
+        }
+      ]
+    },
+    {
+      "id": "DECISION-0002-2026-08-17",
+      "captured_at": "2026-08-18T07:24:15.912Z",
+      "snapshot": {
+        "session_date": "2026-08-17",
+        "pair": "AUDUSD",
+        "canonical_bias": "BUY",
+        "currency_strength": {
+          "strongest_currency": "AUD",
+          "weakest_currency": "USD",
+          "strength_difference": 2.287,
+          "provider_agreement": 74.2,
+          "multi_timeframe_alignment": 49.5
+        },
+        "actionability": {
+          "version": "1.1",
+          "score": 55,
+          "state": "FILTERED",
+          "decision": "DEPRIORITIZE",
+          "primary_limiter": "REGIME_GUARDRAIL",
+          "regime": "LOW_ALIGNMENT"
+        },
+        "context": {
+          "macro_yield": {
+            "available": true,
+            "state": "SUPPORTS",
+            "score": 66.7,
+            "provider": "FRED (OECD / Federal Reserve source series)"
+          },
+          "cross_market": {
+            "available": true,
+            "state": "SUPPORTS",
+            "score": 87.5,
+            "provider": "FRED (Federal Reserve / EIA source series)"
+          },
+          "news": {
+            "available": true,
+            "state": "SUPPORTS",
+            "score": 62.5,
+            "provider": "GDELT DOC 2.0 + Google News RSS fallback",
+            "event_risk": "HIGH"
+          },
+          "coverage_percent": 100,
+          "counts": {
+            "supports": 3,
+            "opposes": 0,
+            "mixed_or_neutral": 0,
+            "available": 3,
+            "expected": 3
+          }
+        },
+        "risk": {
+          "version": "0.2",
+          "score": 63.5,
+          "state": "MODERATE",
+          "primary_driver": {
+            "key": "actionability",
+            "label": "Actionability",
+            "contribution": 22
+          }
+        },
+        "counter_thesis": {
+          "version": "0.2",
+          "state": "ACTIVE",
+          "challenge_level": "HIGH",
+          "primary_objection_source": "news",
+          "primary_objection_severity": "HIGH",
+          "triggered_conditions": [
+            "mtf_alignment_below_60",
+            "actionability_below_60",
+            "high_event_risk"
+          ]
+        },
+        "final_reasoner": {
+          "version": "0.2",
+          "explainability_version": "0.2",
+          "decision_logic_version": "0.1_frozen",
+          "status": "MIXED_CONTEXT",
+          "outlook": "MIXED",
+          "decision": "DEPRIORITIZE",
+          "key_risk": {
+            "key": "actionability",
+            "label": "Actionability",
+            "contribution": 22
+          },
+          "active_invalidation_triggers": [
+            "mtf_alignment_below_60",
+            "actionability_below_60",
+            "high_event_risk"
+          ],
+          "final_assessment": "AUDUSD BUY has Actionability 55/100 with regime LOW_ALIGNMENT, but contextual evidence is not one-sided. Supports: Macro & Yield, Cross-Market, News. Opposes: none. Mixed/neutral: none. Risk v0.2 MODERATE at 63.5/100. Primary challenge: Recent high-impact news density is HIGH and can invalidate continuation timing even when directional evidence is otherwise supportive. Decision remains DEPRIORITIZE."
+        }
+      },
+      "snapshot_hash": "15cfc706574ca52a28df92073e78ad746fdac0cfe28f67057a45047a9f81e84c",
+      "changes_vs_previous": [
+        {
+          "key": "canonical_signal",
+          "label": "Sinyal ECB berubah",
+          "detail": "NZDUSD BUY → AUDUSD BUY"
+        },
+        {
+          "key": "strength_leadership",
+          "label": "Leadership berubah",
+          "detail": "NZD/USD → AUD/USD"
+        },
+        {
+          "key": "actionability",
+          "label": "Actionability berubah",
+          "detail": "87.5 ACTIONABLE → 55 FILTERED"
+        },
+        {
+          "key": "macro_yield",
+          "label": "macro yield berubah",
+          "detail": "16.7 OPPOSES → 66.7 SUPPORTS"
+        },
+        {
+          "key": "news",
+          "label": "news berubah",
+          "detail": "51.9 NEUTRAL → 62.5 SUPPORTS"
+        },
+        {
+          "key": "risk",
+          "label": "Risk berubah",
+          "detail": "48.4 MODERATE → 63.5 MODERATE"
+        },
+        {
+          "key": "final_reasoner",
+          "label": "Final Reasoner berubah",
+          "detail": "MIXED_CONTEXT/REVIEW_SELECTIVELY → MIXED_CONTEXT/DEPRIORITIZE"
         }
       ]
     }

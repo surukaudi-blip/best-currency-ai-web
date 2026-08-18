@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "status": "DECISION_CHANGE_ANALYTICS_ACTIVE",
-  "generated_at": "2026-08-18T02:16:10.663Z",
+  "generated_at": "2026-08-18T07:24:16.079Z",
   "source": {
     "decision_history_status": "DECISION_HISTORY_COLLECTION_ACTIVE",
-    "decision_history_sessions": 1,
+    "decision_history_sessions": 2,
     "first_session": "2026-08-14",
-    "last_session": "2026-08-14",
+    "last_session": "2026-08-17",
     "fresh_oos_status": "FRESH_OOS_COLLECTION_ACTIVE"
   },
   "policy": {
@@ -18,91 +18,91 @@
     "interpretation": "Descriptive transition analytics only. Counts, streaks and lead/lag observations are not probabilities of profit or causal evidence."
   },
   "sample": {
-    "captured_sessions": 1,
-    "transitions": 0,
+    "captured_sessions": 2,
+    "transitions": 1,
     "analytics_gate": "COLLECTING_TRANSITIONS",
     "settled_oos_links": 0
   },
   "current_state": {
-    "session_date": "2026-08-14",
-    "pair": "NZDUSD",
+    "session_date": "2026-08-17",
+    "pair": "AUDUSD",
     "canonical_bias": "BUY",
     "actionability": {
-      "score": 87.5,
-      "state": "ACTIONABLE"
+      "score": 55,
+      "state": "FILTERED"
     },
     "risk": {
-      "score": 48.4,
+      "score": 63.5,
       "state": "MODERATE"
     },
     "final_reasoner": {
       "status": "MIXED_CONTEXT",
-      "decision": "REVIEW_SELECTIVELY"
+      "decision": "DEPRIORITIZE"
     }
   },
   "current_streaks": {
     "canonical_signal": {
-      "value": "NZDUSD BUY",
+      "value": "AUDUSD BUY",
       "sessions": 1,
-      "start_session": "2026-08-14",
-      "end_session": "2026-08-14"
+      "start_session": "2026-08-17",
+      "end_session": "2026-08-17"
     },
     "bias": {
       "value": "BUY",
-      "sessions": 1,
+      "sessions": 2,
       "start_session": "2026-08-14",
-      "end_session": "2026-08-14"
+      "end_session": "2026-08-17"
     },
     "risk_state": {
       "value": "MODERATE",
-      "sessions": 1,
+      "sessions": 2,
       "start_session": "2026-08-14",
-      "end_session": "2026-08-14"
+      "end_session": "2026-08-17"
     },
     "final_decision": {
-      "value": "REVIEW_SELECTIVELY",
+      "value": "DEPRIORITIZE",
       "sessions": 1,
-      "start_session": "2026-08-14",
-      "end_session": "2026-08-14"
+      "start_session": "2026-08-17",
+      "end_session": "2026-08-17"
     }
   },
   "transition_counts": {
-    "transitions": 0,
-    "canonical_signal_changes": 0,
-    "pair_changes": 0,
+    "transitions": 1,
+    "canonical_signal_changes": 1,
+    "pair_changes": 1,
     "bias_changes": 0,
-    "leadership_changes": 0,
-    "actionability_state_changes": 0,
-    "macro_state_changes": 0,
+    "leadership_changes": 1,
+    "actionability_state_changes": 1,
+    "macro_state_changes": 1,
     "cross_market_state_changes": 0,
-    "news_state_changes": 0,
+    "news_state_changes": 1,
     "news_event_risk_changes": 0,
     "risk_state_changes": 0,
     "counter_thesis_changes": 0,
     "final_status_changes": 0,
-    "final_decision_changes": 0
+    "final_decision_changes": 1
   },
   "transition_rates_percent": {
-    "canonical_signal_changes": null,
-    "pair_changes": null,
-    "bias_changes": null,
-    "leadership_changes": null,
-    "actionability_state_changes": null,
-    "macro_state_changes": null,
-    "cross_market_state_changes": null,
-    "news_state_changes": null,
-    "news_event_risk_changes": null,
-    "risk_state_changes": null,
-    "counter_thesis_changes": null,
-    "final_status_changes": null,
-    "final_decision_changes": null
+    "canonical_signal_changes": 100,
+    "pair_changes": 100,
+    "bias_changes": 0,
+    "leadership_changes": 100,
+    "actionability_state_changes": 100,
+    "macro_state_changes": 100,
+    "cross_market_state_changes": 0,
+    "news_state_changes": 100,
+    "news_event_risk_changes": 0,
+    "risk_state_changes": 0,
+    "counter_thesis_changes": 0,
+    "final_status_changes": 0,
+    "final_decision_changes": 100
   },
   "score_movement": {
-    "avg_abs_actionability_change": 0,
-    "avg_abs_macro_change": 0,
+    "avg_abs_actionability_change": 32.5,
+    "avg_abs_macro_change": 50,
     "avg_abs_cross_market_change": 0,
-    "avg_abs_news_change": 0,
-    "avg_abs_risk_change": 0
+    "avg_abs_news_change": 10.6,
+    "avg_abs_risk_change": 15.1
   },
   "runs": {
     "canonical_signal": [
@@ -112,6 +112,13 @@
         "start_session": "2026-08-14",
         "end_session": "2026-08-14",
         "sessions": 1
+      },
+      {
+        "type": "canonical_signal",
+        "value": "AUDUSD BUY",
+        "start_session": "2026-08-17",
+        "end_session": "2026-08-17",
+        "sessions": 1
       }
     ],
     "bias": [
@@ -119,8 +126,8 @@
         "type": "bias",
         "value": "BUY",
         "start_session": "2026-08-14",
-        "end_session": "2026-08-14",
-        "sessions": 1
+        "end_session": "2026-08-17",
+        "sessions": 2
       }
     ],
     "risk_state": [
@@ -128,8 +135,8 @@
         "type": "risk_state",
         "value": "MODERATE",
         "start_session": "2026-08-14",
-        "end_session": "2026-08-14",
-        "sessions": 1
+        "end_session": "2026-08-17",
+        "sessions": 2
       }
     ],
     "final_decision": [
@@ -139,12 +146,65 @@
         "start_session": "2026-08-14",
         "end_session": "2026-08-14",
         "sessions": 1
+      },
+      {
+        "type": "final_decision",
+        "value": "DEPRIORITIZE",
+        "start_session": "2026-08-17",
+        "end_session": "2026-08-17",
+        "sessions": 1
       }
     ]
   },
-  "signal_flip_diagnostics": [],
-  "final_change_precursors": [],
-  "final_change_precursor_frequency": {},
+  "signal_flip_diagnostics": [
+    {
+      "from_session": "2026-08-14",
+      "to_session": "2026-08-17",
+      "from_signal": "NZDUSD BUY",
+      "to_signal": "AUDUSD BUY",
+      "risk_before_flip": {
+        "score": 48.4,
+        "state": "MODERATE"
+      },
+      "risk_at_flip": {
+        "score": 63.5,
+        "state": "MODERATE"
+      },
+      "risk_delta": 15.1,
+      "context_before_flip": {
+        "macro_yield": "OPPOSES",
+        "cross_market": "SUPPORTS",
+        "news": "NEUTRAL",
+        "news_event_risk": "HIGH"
+      }
+    }
+  ],
+  "final_change_precursors": [
+    {
+      "from_session": "2026-08-14",
+      "to_session": "2026-08-17",
+      "changed_inputs_same_transition": [
+        "actionability",
+        "macro_yield",
+        "news",
+        "risk"
+      ],
+      "final_from": {
+        "status": "MIXED_CONTEXT",
+        "decision": "REVIEW_SELECTIVELY"
+      },
+      "final_to": {
+        "status": "MIXED_CONTEXT",
+        "decision": "DEPRIORITIZE"
+      }
+    }
+  ],
+  "final_change_precursor_frequency": {
+    "actionability": 1,
+    "macro_yield": 1,
+    "news": 1,
+    "risk": 1
+  },
   "fresh_oos_links": [
     {
       "session_date": "2026-08-14",

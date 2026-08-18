@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T02:16:10.582Z",
+  "generated_at": "2026-08-18T07:24:15.591Z",
   "pair": "AUDUSD",
   "canonical_bias": "BUY",
   "macro_yield": {
@@ -7,7 +7,7 @@
     "direction": "SUPPORTS",
     "score": 66.7,
     "provider": "FRED (OECD / Federal Reserve source series)",
-    "updated_at": "2026-08-18T02:15:21.917Z",
+    "updated_at": "2026-08-18T07:23:29.053Z",
     "evidence": [
       "10Y yield spread: AUD 4.831% (2026-06-01) vs USD 4.470% (2026-06-01); spread +0.361 pp => SUPPORTS canonical BUY.",
       "10Y spread momentum: -0.141 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
@@ -53,7 +53,7 @@
     "direction": "SUPPORTS",
     "score": 87.5,
     "provider": "FRED (Federal Reserve / EIA source series)",
-    "updated_at": "2026-08-18T02:15:23.055Z",
+    "updated_at": "2026-08-18T07:23:29.280Z",
     "evidence": [
       "NFCI: level -0.5490 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
       "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
@@ -109,32 +109,40 @@
   "news": {
     "available": true,
     "direction": "SUPPORTS",
-    "score": 68.8,
-    "provider": "Google News RSS fallback",
-    "updated_at": "2026-08-18T02:16:10.582Z",
+    "score": 62.5,
+    "provider": "GDELT DOC 2.0 + Google News RSS fallback",
+    "updated_at": "2026-08-18T07:24:15.591Z",
     "evidence": [
-      "Headline-stance differential AUDUSD BUY: 0.375 after directional-headline reliability 100% => SUPPORTS.",
-      "AUD: 7 supportive vs 0 opposing directional headline(s); balance 1 from 37 recent articles via Google News RSS fallback.",
-      "USD: 13 supportive vs 3 opposing directional headline(s); balance 0.625 from 40 recent articles via Google News RSS fallback.",
+      "Headline-stance differential AUDUSD BUY: 0.25 after directional-headline reliability 100% => SUPPORTS.",
+      "AUD: 4 supportive vs 0 opposing directional headline(s); balance 1 from 40 recent articles via GDELT DOC 2.0.",
+      "USD: 14 supportive vs 2 opposing directional headline(s); balance 0.75 from 40 recent articles via Google News RSS fallback.",
       "High-impact headline risk: HIGH; 8 relevant headline(s) detected within 24h."
     ],
     "missing_evidence": [],
     "headlines": [
+      {
+        "title": "The Morning Catch - Up : ASX set to open lower as oil - driven inflation fears weigh on Wall Street",
+        "url": "https://www.proactiveinvestors.com.au/companies/news/1097156/the-morning-catch-up-asx-set-to-open-lower-as-oil-driven-inflation-fears-weigh-on-wall-street-1097156.html",
+        "domain": "proactiveinvestors.com.au",
+        "sourcecountry": "Australia",
+        "language": "English",
+        "seen_at": "2026-08-18T01:15:00.000Z"
+      },
       {
         "title": "Goldman calls September Fed hike very unlikely as inflation eases - investingLive",
         "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQNENOQTVCNUJnajZ5N2J3QUFvbEx3TFJBVGticnpvQ1JobUFpVnF0T2E5WHRYcjREN2Z4U3huUDVmeE10QUZWTi1Ibjc0U1Z5dlpSQU5tNmptclJKSWlQVXlJS0tfQWRKbnhvSFo1S2RpODEwQnNHUHZkbW82OGd6NlRzWUVOTkNQeE9aN2dVZXhGMTJodDBEa1pndmU1TVIyNTU4cEJCTHYxQQ?oc=5",
         "domain": "investingLive",
         "sourcecountry": null,
         "language": "English",
-        "seen_at": "2026-08-18T00:53:21.000Z"
+        "seen_at": "2026-08-18T00:50:15.000Z"
       },
       {
-        "title": "British Pound Outlook: GBP/USD, GBP/AUD Face UK Jobs Test - FOREX.com",
-        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOUDNna012MzdhU2JRaG4xT2pJbHFVa2R6bC1fdzZMcnBzeVlHZm9STWJ2LS1IOVM0U1FYY1hzTEtIakpnQWJlOTdZNnlRemFGRDhjTklMWVJYVFdYYWV6NWdMbVYzQkZMTk01NnpTOFUzQjJZdXFvUGxIbVlJT1pWNGdUSUsyVzlvVk1EY3dqUGJ0M1oxSUFEdWVEai11T1VHTHFNQQ?oc=5",
-        "domain": "FOREX.com",
-        "sourcecountry": null,
+        "title": "RBI Polymer Notes Pilot : Why India Is Exploring Plastic Currency Amid UPI Growth",
+        "url": "https://dailypioneer.com/news/why-rbi-is-betting-on-plastic-in-a-upi-economy",
+        "domain": "dailypioneer.com",
+        "sourcecountry": "India",
         "language": "English",
-        "seen_at": "2026-08-18T00:13:05.000Z"
+        "seen_at": "2026-08-18T00:15:00.000Z"
       },
       {
         "title": "Rate hikes may be a blunt tool, but they're all the Fed has to cool inflation - Reuters",
@@ -143,6 +151,14 @@
         "sourcecountry": null,
         "language": "English",
         "seen_at": "2026-08-17T23:30:32.000Z"
+      },
+      {
+        "title": "Study Results from Federal Reserve Board Broaden Understanding of Investment (Inflation Risk and the Labor Market: Beneath the Surface of a Flat Phillips Curve): Investment - InsuranceNewsNet",
+        "url": "https://news.google.com/rss/articles/CBMirwJBVV95cUxNU3p3cklFNi1YRzFJVUZOWXNLVlBVZ2tlSlpmWVE1SHJaV3M1ZmRVamNJajJTaWhva1ZCMWdvYmpETXVsVTdhelJHRkh3cG5jcVZuYUVCSXRBbC0wTWQydmZldGEyUkZ4N0JycmZDOWVrVGJUTnJGMVpVcXFmSWIxSVUwa3VzRE03c2VxMFNrODBBaGk3cU1ocG5RelJheVNzNmtobGtsb19oOFh5WngyMVpSbGcwU1QxVV9XTkFQSEg4T3RGdVo0N3ZqcHJoVHFiZ24tYjdfc09GblN5YVRFQml1NFNCT3A5UlUxSXctdUdtWWJBdHQtcHd5TVBtM3pvQW9HdFJ1ZmRhZTBSblp1SjJsRHJZTzRPdC1IeTdXbi05MjhpaWtZU0xOeklFUGs?oc=5",
+        "domain": "InsuranceNewsNet",
+        "sourcecountry": null,
+        "language": "English",
+        "seen_at": "2026-08-17T21:49:30.000Z"
       },
       {
         "title": "Dallas Fed: Loan Demand, Volume Continue Strong Growth - Fort Worth Inc.",
@@ -161,28 +177,12 @@
         "seen_at": "2026-08-17T16:33:34.000Z"
       },
       {
-        "title": "New RBA Monetary Policy Board member appointed - The Adviser",
-        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPdGZpMTRzUHRkZm5aOW9NeENseFdfeDd3NVlqVXFuVXZCd1pLMklMMER6Q0pjVF9YUDRrQ1d5RXNRSWJLVG9mc2J4UVJ5Y1FtM1BQaUllME16aFhIYjViT0d6VzJPLUhXU00yNENSVEZ5enJRM1hDbnIwUUFuSGU5LUc0dWYzQWJDVlZPbDhFNGRxdTBpRHc?oc=5",
-        "domain": "The Adviser",
+        "title": "Goldman Sachs: September Fed rate hike very unlikely as inflation slows - Yahoo Finance",
+        "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPSGJJNGhuQWhrYUtMOWk2V21uVkk2QVdISGc2Y1d2UGE5dGtxTDRydWg3SXdrcVZtME1neFBJdXhLVmxwdkpDeE5YaGV6U08wTkZZQTNlZUtvSU1qYU9NejRCLUVxWnJlSWI4QktaTFVua1N0ZkxXYjJuZFZvUXpQbUhkcm5jTnhfcnNmMzlXV0k2UEduUE1Od01kMnFBdw?oc=5",
+        "domain": "Yahoo Finance",
         "sourcecountry": null,
         "language": "English",
-        "seen_at": "2026-08-17T10:40:45.000Z"
-      },
-      {
-        "title": "Fed Rate Hike Bets Are Fading Fast. Cooler Inflation Could Leave Warsh An Easier Choice. - International Business Times",
-        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNkk4dHkzbHRqajNtN09zbVdRbHowcXJaS2ZQSXc0ZmdUZFJlZk00LVpZelJpMEgxdmVJTE1uUnFrcDVjTG9yaUdycE5yRnVKaGZGUlJrSEs1WGFZRmlRSXZ4dTFFR2tQXzdBc1pXdTZqd3FJcHBiVW1EczhPM3J1aG9XMjJLa25reXp1TjhyMDJ6dWxBcXFjZDRzdzZRR1QtZVpXQ0RmRVpQSGNLZ2pNSDBBRlZqUQ?oc=5",
-        "domain": "International Business Times",
-        "sourcecountry": null,
-        "language": "English",
-        "seen_at": "2026-08-17T10:11:01.000Z"
-      },
-      {
-        "title": "Reserve Bank of Australia hawkish policy stance: AUD/USD resistance levels in focus - Traders Union",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxON18tdlJ4ekgweDJSNmttellpNzZmNlp0OWZyRHJrbmt0MnRZOFVXMk5xWDRJSEFWblZMUUF4NGF0UVZEMUwxb2VwaHRnUklKLUpMbTBncHpuZnJXeHk2ZmVGTlBDdWVRS2dsMEs2bmZXRVMzaUI2TThVWGRrUmhmU0tLa041X0NWU01uMk5XSDZsMVAyWWtmd0hCS0s?oc=5",
-        "domain": "Traders Union",
-        "sourcecountry": null,
-        "language": "English",
-        "seen_at": "2026-08-17T09:50:28.000Z"
+        "seen_at": "2026-08-17T12:22:49.000Z"
       }
     ],
     "event_risk": {
@@ -192,23 +192,23 @@
     "note": "Live News adapter using real macro/central-bank headlines. GDELT DOC 2.0 is primary; Google News RSS is a failover when the public GDELT endpoint is rate-limited or unavailable. Direction uses a transparent local headline-stance lexicon and pair differential with reliability damping. The score is contextual alignment, not a probability of profit or a forecast of headline impact.",
     "provenance": [
       {
-        "provider": "Google News RSS fallback",
+        "provider": "GDELT DOC 2.0",
         "currency": "AUD",
-        "query": "\"Australian dollar\" OR \"Reserve Bank of Australia\" inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
-        "latest_seen_at": "2026-08-18T01:00:26.000Z",
-        "article_count": 37,
-        "supportive_headline_count": 7,
+        "query": "(\"Australian dollar\" OR \"Reserve Bank of Australia\") (inflation OR \"interest rate\" OR rates OR economy OR growth OR employment OR monetary OR \"central bank\") sourcelang:english",
+        "latest_seen_at": "2026-08-18T06:15:00.000Z",
+        "article_count": 40,
+        "supportive_headline_count": 4,
         "opposing_headline_count": 0,
-        "classified_headline_count": 7
+        "classified_headline_count": 4
       },
       {
         "provider": "Google News RSS fallback",
         "currency": "USD",
         "query": "\"US dollar\" OR \"Federal Reserve\" OR FOMC inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
-        "latest_seen_at": "2026-08-18T00:57:00.000Z",
+        "latest_seen_at": "2026-08-18T06:35:00.000Z",
         "article_count": 40,
-        "supportive_headline_count": 13,
-        "opposing_headline_count": 3,
+        "supportive_headline_count": 14,
+        "opposing_headline_count": 2,
         "classified_headline_count": 16
       }
     ],
@@ -222,10 +222,10 @@
       "max_article_age_hours": 96,
       "high_impact_headline_window_hours": 24,
       "base_headline_balance": 1,
-      "quote_headline_balance": 0.625,
-      "raw_pair_headline_differential": 0.375,
+      "quote_headline_balance": 0.75,
+      "raw_pair_headline_differential": 0.25,
       "reliability": 1,
-      "adjusted_pair_headline_differential": 0.375,
+      "adjusted_pair_headline_differential": 0.25,
       "support_threshold": 62,
       "oppose_threshold": 38,
       "neutral_band": [

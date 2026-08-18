@@ -109,13 +109,3 @@
     .then(render)
     .catch(function(){var st=document.getElementById('dca-status');if(st){st.className='dca-badge dca-muted';st.textContent='MENUNGGU DATA';}});
 })();
-
-// Load the structured Beta Program as a separate presentation/product-validation layer.
-(function(){
-  if(document.querySelector('script[data-beta-program-loader]')) return;
-  var script=document.createElement('script');
-  script.src='beta-program.js?v=20260818beta1';
-  script.async=false;
-  script.dataset.betaProgramLoader='true';
-  document.body.appendChild(script);
-})();
