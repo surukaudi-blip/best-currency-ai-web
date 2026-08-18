@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T15:55:59.603Z",
+  "generated_at": "2026-08-18T15:59:08.312Z",
   "pair": "NZDUSD",
   "canonical_bias": "SELL",
   "macro_yield": {
@@ -7,7 +7,7 @@
     "direction": "SUPPORTS",
     "score": 83.3,
     "provider": "FRED (OECD / Federal Reserve source series)",
-    "updated_at": "2026-08-18T15:55:03.096Z",
+    "updated_at": "2026-08-18T15:58:11.186Z",
     "evidence": [
       "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical SELL.",
       "10Y spread momentum: -0.210 pp versus prior observations (2026-05-01/2026-05-01) => SUPPORTS canonical SELL.",
@@ -53,7 +53,7 @@
     "direction": "OPPOSES",
     "score": 12.5,
     "provider": "FRED (Federal Reserve / EIA source series)",
-    "updated_at": "2026-08-18T15:55:05.817Z",
+    "updated_at": "2026-08-18T15:58:11.399Z",
     "evidence": [
       "NFCI: level -0.5490 (2026-08-07) => OPPOSES canonical bias berdasarkan profil cyclical/defensive pasangan.",
       "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
@@ -109,25 +109,17 @@
   "news": {
     "available": true,
     "direction": "NEUTRAL",
-    "score": 48.1,
+    "score": 50,
     "provider": "Google News RSS fallback",
-    "updated_at": "2026-08-18T15:55:59.603Z",
+    "updated_at": "2026-08-18T15:59:08.312Z",
     "evidence": [
-      "Headline-stance differential NZDUSD SELL: -0.039 after directional-headline reliability 25% => NEUTRAL.",
-      "NZD: 1 supportive vs 0 opposing directional headline(s); balance 1 from 27 recent articles via Google News RSS fallback.",
-      "USD: 12 supportive vs 1 opposing directional headline(s); balance 0.846 from 40 recent articles via Google News RSS fallback.",
+      "Headline-stance differential NZDUSD SELL: 0 after directional-headline reliability 25% => NEUTRAL.",
+      "NZD: 1 supportive vs 0 opposing directional headline(s); balance 1 from 28 recent articles via Google News RSS fallback.",
+      "USD: 12 supportive vs 0 opposing directional headline(s); balance 1 from 40 recent articles via Google News RSS fallback.",
       "High-impact headline risk: HIGH; 6 relevant headline(s) detected within 24h."
     ],
     "missing_evidence": [],
     "headlines": [
-      {
-        "title": "Monetary Policy and Financial Conditions - Atlanta - Federal Reserve Bank",
-        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQSE1GZlhQcm1pUk9Ga3ZIOG5RVmhLTzZTRnlQTHpnVkhLU19pX0pjcnowSkQxMkxqbGNBN2dMV1poc3BPd2hGNDRpY2FEbGpZRThHeVJwSEVBekZDVlBIMjF0SU1DSHdkZk5haFFpNXo3UzBYbUEwb0c5enBnRElvbkx0cERNQ0V6b1lmSjBYZ0JzQko3N1ZlQ1BQSlFFU0M4U3FVTVF4VUN6cC1GSzhrYjVleWswSm4taXJtVXFLNzJHbVFkV0FucnppOEQ4Z0tJcUhB?oc=5",
-        "domain": "Atlanta - Federal Reserve Bank",
-        "sourcecountry": null,
-        "language": "English",
-        "seen_at": "2026-08-18T14:36:50.000Z"
-      },
       {
         "title": "FOMC Minutes, Canadian Inflation Data, and USD/CAD Technical Analysis - Action Forex",
         "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxNb3NOcnN4NUtsUFJVdXhQY1R4ajNvOTYwZTk0V1kzUTJ0bmtGU3JFMDdLN1R1REcwQlU4MEhTZlo0VGQ3Y0VYQlg3WHVMSzhVV21MQTFnZGUyUmlwYjdOWm1qVF92elNsZk9lY0tNa1BiMk5pR1E2bFFOUUdwaXFmdGdFUkpqeFNaRjZXcjhaNG44STV1Q0hNRnpkVERHVllDUGpNNHdqeGVpMW15UzNab3Bma2NKYmY5UGVDN0tKazJDeWo3VzMzYW9HT0NBcFpuTnhZ?oc=5",
@@ -145,6 +137,14 @@
         "seen_at": "2026-08-18T09:16:07.000Z"
       },
       {
+        "title": "Silver Price Forecast: XAG/USD remains sideways around $65, FOMC takes centre stage - FXStreet",
+        "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOWS1FQ3RGU0hBQ1Btc21zVG9ybW1nN1ZLak1SclRXaXNvQnR4UHNNMGxLSUMyX1FkTkxGY1g1bXh0bzRFbF96cHdEckhPMUtCZUxnNThpa2xvcEhjVjByR0ZjanM4VFdwNGdXR1RhT1pacnl1a244Xy1LR29vM05PYzQzdUcwVGJSbGFLZFRvTmVPQko3aTJaNWJwdkZkekw2MVpQSTFrLU56dllPbGFNd3hsZ090aURiMDhDdVZHU0E?oc=5",
+        "domain": "FXStreet",
+        "sourcecountry": null,
+        "language": "English",
+        "seen_at": "2026-08-18T07:07:24.000Z"
+      },
+      {
         "title": "Rate hikes may be a blunt tool, but they're all the Fed has to cool inflation - Reuters",
         "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQSkx4M1hZeWx5Mnp2endmVlRLNnltcERaNG55Sk9YSmpOU2lQaUhxLUtnRGNJal9KcEtwTG1kdS1HMlRHcGE3amwzRl84LVNWT3JUMmlQWE5VZ3JaQ0VqMUpFNEJRV2U3bjUyLVY0dzFWVndmS3lTcUt6OWluLTQxeVc0cmU2TGRFdlJMVjV1QXZDSkJhM2JTNW12S0JVZmJya1YyRGdMQzloN2FqeFplWEtibVU1T3BWc09Gb0h2SkxvYjFNSjFYa0ZWdw?oc=5",
         "domain": "Reuters",
@@ -153,9 +153,9 @@
         "seen_at": "2026-08-17T23:30:32.000Z"
       },
       {
-        "title": "Study Results from Federal Reserve Board Broaden Understanding of Investment (Inflation Risk and the Labor Market: Beneath the Surface of a Flat Phillips Curve): Investment - insurancenewsnet.com",
+        "title": "Study Results from Federal Reserve Board Broaden Understanding of Investment (Inflation Risk and the Labor Market: Beneath the Surface of a Flat Phillips Curve): Investment - InsuranceNewsNet",
         "url": "https://news.google.com/rss/articles/CBMirwJBVV95cUxNU3p3cklFNi1YRzFJVUZOWXNLVlBVZ2tlSlpmWVE1SHJaV3M1ZmRVamNJajJTaWhva1ZCMWdvYmpETXVsVTdhelJHRkh3cG5jcVZuYUVCSXRBbC0wTWQydmZldGEyUkZ4N0JycmZDOWVrVGJUTnJGMVpVcXFmSWIxSVUwa3VzRE03c2VxMFNrODBBaGk3cU1ocG5RelJheVNzNmtobGtsb19oOFh5WngyMVpSbGcwU1QxVV9XTkFQSEg4T3RGdVo0N3ZqcHJoVHFiZ24tYjdfc09GblN5YVRFQml1NFNCT3A5UlUxSXctdUdtWWJBdHQtcHd5TVBtM3pvQW9HdFJ1ZmRhZTBSblp1SjJsRHJZTzRPdC1IeTdXbi05MjhpaWtZU0xOeklFUGs?oc=5",
-        "domain": "insurancenewsnet.com",
+        "domain": "InsuranceNewsNet",
         "sourcecountry": null,
         "language": "English",
         "seen_at": "2026-08-17T21:49:30.000Z"
@@ -196,7 +196,7 @@
         "currency": "NZD",
         "query": "\"New Zealand dollar\" OR RBNZ OR \"Reserve Bank of New Zealand\" inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
         "latest_seen_at": "2026-08-18T15:52:45.000Z",
-        "article_count": 27,
+        "article_count": 28,
         "supportive_headline_count": 1,
         "opposing_headline_count": 0,
         "classified_headline_count": 1
@@ -205,11 +205,11 @@
         "provider": "Google News RSS fallback",
         "currency": "USD",
         "query": "\"US dollar\" OR \"Federal Reserve\" OR FOMC inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
-        "latest_seen_at": "2026-08-18T14:36:50.000Z",
+        "latest_seen_at": "2026-08-18T13:38:14.000Z",
         "article_count": 40,
         "supportive_headline_count": 12,
-        "opposing_headline_count": 1,
-        "classified_headline_count": 13
+        "opposing_headline_count": 0,
+        "classified_headline_count": 12
       }
     ],
     "methodology": {
@@ -222,10 +222,10 @@
       "max_article_age_hours": 96,
       "high_impact_headline_window_hours": 24,
       "base_headline_balance": 1,
-      "quote_headline_balance": 0.846,
-      "raw_pair_headline_differential": -0.154,
+      "quote_headline_balance": 1,
+      "raw_pair_headline_differential": 0,
       "reliability": 0.25,
-      "adjusted_pair_headline_differential": -0.039,
+      "adjusted_pair_headline_differential": 0,
       "support_threshold": 62,
       "oppose_threshold": 38,
       "neutral_band": [
