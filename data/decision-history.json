@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "DECISION_HISTORY_COLLECTION_ACTIVE",
   "started_at": "2026-08-17T02:50:18.076Z",
-  "updated_at": "2026-08-18T07:24:15.912Z",
+  "updated_at": "2026-08-18T17:03:17.036Z",
   "policy": {
     "start_policy": "prospective_only_no_historical_backfill",
     "capture_policy": "one_immutable_snapshot_per_complete_ecb_session",
@@ -11,20 +11,22 @@
     "frozen_model_policy": "timeline_does_not_modify_currency_strength_actionability_risk_counter_thesis_or_final_reasoner"
   },
   "summary": {
-    "captured": 2,
+    "captured": 3,
     "first_session": "2026-08-14",
-    "last_session": "2026-08-17",
+    "last_session": "2026-08-18",
     "buy_count": 2,
-    "sell_count": 0,
+    "sell_count": 1,
     "risk_states": {
-      "MODERATE": 2
+      "MODERATE": 2,
+      "HIGH": 1
     },
     "final_statuses": {
-      "MIXED_CONTEXT": 2
+      "MIXED_CONTEXT": 2,
+      "RISK_CONSTRAINED": 1
     },
     "decisions": {
       "REVIEW_SELECTIVELY": 1,
-      "DEPRIORITIZE": 1
+      "DEPRIORITIZE": 2
     }
   },
   "entries": [
@@ -257,6 +259,147 @@
           "key": "final_reasoner",
           "label": "Final Reasoner berubah",
           "detail": "MIXED_CONTEXT/REVIEW_SELECTIVELY → MIXED_CONTEXT/DEPRIORITIZE"
+        }
+      ]
+    },
+    {
+      "id": "DECISION-0003-2026-08-18",
+      "captured_at": "2026-08-18T17:03:17.036Z",
+      "snapshot": {
+        "session_date": "2026-08-18",
+        "pair": "NZDUSD",
+        "canonical_bias": "SELL",
+        "currency_strength": {
+          "strongest_currency": "USD",
+          "weakest_currency": "NZD",
+          "strength_difference": -2.41,
+          "provider_agreement": 36.8,
+          "multi_timeframe_alignment": 73.1
+        },
+        "actionability": {
+          "version": "1.1",
+          "score": 50,
+          "state": "FILTERED",
+          "decision": "DEPRIORITIZE",
+          "primary_limiter": "REGIME_GUARDRAIL",
+          "regime": "PROVIDER_DIVERGENCE"
+        },
+        "context": {
+          "macro_yield": {
+            "available": true,
+            "state": "SUPPORTS",
+            "score": 83.3,
+            "provider": "FRED (OECD / Federal Reserve source series)"
+          },
+          "cross_market": {
+            "available": true,
+            "state": "OPPOSES",
+            "score": 12.5,
+            "provider": "FRED (Federal Reserve / EIA source series)"
+          },
+          "news": {
+            "available": true,
+            "state": "NEUTRAL",
+            "score": 47.9,
+            "provider": "Google News RSS fallback",
+            "event_risk": "HIGH"
+          },
+          "coverage_percent": 100,
+          "counts": {
+            "supports": 1,
+            "opposes": 1,
+            "mixed_or_neutral": 1,
+            "available": 3,
+            "expected": 3
+          }
+        },
+        "risk": {
+          "version": "0.2",
+          "score": 81,
+          "state": "HIGH",
+          "primary_driver": {
+            "key": "actionability",
+            "label": "Actionability",
+            "contribution": 22
+          }
+        },
+        "counter_thesis": {
+          "version": "0.2",
+          "state": "ACTIVE",
+          "challenge_level": "HIGH",
+          "primary_objection_source": "cross_market",
+          "primary_objection_severity": "HIGH",
+          "triggered_conditions": [
+            "provider_agreement_below_60",
+            "actionability_below_60",
+            "context_dispersion_60",
+            "high_event_risk",
+            "risk_high_70"
+          ]
+        },
+        "final_reasoner": {
+          "version": "0.2",
+          "explainability_version": "0.2",
+          "decision_logic_version": "0.1_frozen",
+          "status": "RISK_CONSTRAINED",
+          "outlook": "CAUTION",
+          "decision": "DEPRIORITIZE",
+          "key_risk": {
+            "key": "actionability",
+            "label": "Actionability",
+            "contribution": 22
+          },
+          "active_invalidation_triggers": [
+            "provider_agreement_below_60",
+            "actionability_below_60",
+            "context_dispersion_60",
+            "high_event_risk",
+            "risk_high_70"
+          ],
+          "final_assessment": "NZDUSD SELL retains its canonical Currency Strength bias, but Risk v0.2 HIGH at 81/100 constrains promotion of the setup. Supporting context: Macro & Yield. Opposing context: Cross-Market. Primary challenge: Cross-Market explicitly opposes the NZDUSD SELL setup at 12.5/100."
+        }
+      },
+      "snapshot_hash": "9ed74237cf05dbdc56a6b5ef78879c86c96b0e6ba6f09d8ece66c12f2545146d",
+      "changes_vs_previous": [
+        {
+          "key": "canonical_signal",
+          "label": "Sinyal ECB berubah",
+          "detail": "AUDUSD BUY → NZDUSD SELL"
+        },
+        {
+          "key": "strength_leadership",
+          "label": "Leadership berubah",
+          "detail": "AUD/USD → USD/NZD"
+        },
+        {
+          "key": "actionability",
+          "label": "Actionability berubah",
+          "detail": "55 FILTERED → 50 FILTERED"
+        },
+        {
+          "key": "macro_yield",
+          "label": "macro yield berubah",
+          "detail": "66.7 SUPPORTS → 83.3 SUPPORTS"
+        },
+        {
+          "key": "cross_market",
+          "label": "cross market berubah",
+          "detail": "87.5 SUPPORTS → 12.5 OPPOSES"
+        },
+        {
+          "key": "news",
+          "label": "news berubah",
+          "detail": "62.5 SUPPORTS → 47.9 NEUTRAL"
+        },
+        {
+          "key": "risk",
+          "label": "Risk berubah",
+          "detail": "63.5 MODERATE → 81 HIGH"
+        },
+        {
+          "key": "final_reasoner",
+          "label": "Final Reasoner berubah",
+          "detail": "MIXED_CONTEXT/DEPRIORITIZE → RISK_CONSTRAINED/DEPRIORITIZE"
         }
       ]
     }
