@@ -10,8 +10,8 @@
     "provider_name": "European Central Bank",
     "provider_url": "api.frankfurter.dev",
     "module": "Currency Strength Agent",
-    "received_at": "2026-08-18T07:23:28.311Z",
-    "generated_at": "2026-08-18T07:23:28.311Z",
+    "received_at": "2026-08-18T13:22:06.004Z",
+    "generated_at": "2026-08-18T13:22:06.004Z",
     "data_updated_at": "2026-08-17",
     "session_date": "2026-08-17",
     "comparison_date": "2026-08-14",
@@ -1644,11 +1644,11 @@
           "state": "SUPPORTS",
           "score": 66.7,
           "provider": "FRED (OECD / Federal Reserve source series)",
-          "updated_at": "2026-08-18T07:23:29.053Z",
+          "updated_at": "2026-08-18T13:22:08.962Z",
           "evidence": [
             "10Y yield spread: AUD 4.831% (2026-06-01) vs USD 4.470% (2026-06-01); spread +0.361 pp => SUPPORTS canonical BUY.",
             "10Y spread momentum: -0.141 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
-            "Short-rate spread: AUD 4.350% (2026-06-01; IRSTCI01AUM156N) vs USD 3.630% (2026-08-14; EFFR); spread +0.720 pp => SUPPORTS canonical BUY."
+            "Short-rate spread: AUD 4.350% (2026-06-01; IRSTCI01AUM156N) vs USD 3.630% (2026-08-17; EFFR); spread +0.720 pp => SUPPORTS canonical BUY."
           ],
           "missing_evidence": [],
           "headlines": [],
@@ -1676,7 +1676,7 @@
               "provider": "FRED",
               "series_id": "EFFR",
               "url": "https://fred.stlouisfed.org/series/EFFR",
-              "latest_date": "2026-08-14"
+              "latest_date": "2026-08-17"
             }
           ],
           "methodology": {
@@ -1694,7 +1694,7 @@
           "state": "SUPPORTS",
           "score": 87.5,
           "provider": "FRED (Federal Reserve / EIA source series)",
-          "updated_at": "2026-08-18T07:23:29.280Z",
+          "updated_at": "2026-08-18T13:22:11.994Z",
           "evidence": [
             "NFCI: level -0.5490 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
             "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
@@ -1753,18 +1753,42 @@
           "key": "news",
           "label": "News",
           "available": true,
-          "state": "SUPPORTS",
-          "score": 62.5,
-          "provider": "GDELT DOC 2.0 + Google News RSS fallback",
-          "updated_at": "2026-08-18T07:24:15.591Z",
+          "state": "NEUTRAL",
+          "score": 50,
+          "provider": "GDELT DOC 2.0",
+          "updated_at": "2026-08-18T13:22:50.242Z",
           "evidence": [
-            "Headline-stance differential AUDUSD BUY: 0.25 after directional-headline reliability 100% => SUPPORTS.",
+            "Headline-stance differential AUDUSD BUY: 0 after directional-headline reliability 25% => NEUTRAL.",
             "AUD: 4 supportive vs 0 opposing directional headline(s); balance 1 from 40 recent articles via GDELT DOC 2.0.",
-            "USD: 14 supportive vs 2 opposing directional headline(s); balance 0.75 from 40 recent articles via Google News RSS fallback.",
-            "High-impact headline risk: HIGH; 8 relevant headline(s) detected within 24h."
+            "USD: 1 supportive vs 0 opposing directional headline(s); balance 1 from 40 recent articles via GDELT DOC 2.0.",
+            "High-impact headline risk: HIGH; 5 relevant headline(s) detected within 24h."
           ],
           "missing_evidence": [],
           "headlines": [
+            {
+              "title": "Bitcoin climbs towards $64 , 000 as cooling inflation and falling treasury yields aid recovery",
+              "url": "https://economictimes.indiatimes.com/markets/cryptocurrency/crypto-news/bitcoin-climbs-towards-64000-as-cooling-inflation-and-falling-treasury-yields-aid-recovery/articleshow/133318408.cms",
+              "domain": "economictimes.indiatimes.com",
+              "sourcecountry": "India",
+              "language": "English",
+              "seen_at": "2026-08-18T11:15:00.000Z"
+            },
+            {
+              "title": "Rupee ends marginally lower as central bank shields from oil , yield strain",
+              "url": "https://economictimes.indiatimes.com/markets/forex/forex-news/rupee-ends-marginally-lower-as-central-bank-shields-from-oil-yield-strain/articleshow/133318793.cms",
+              "domain": "economictimes.indiatimes.com",
+              "sourcecountry": "India",
+              "language": "English",
+              "seen_at": "2026-08-18T11:15:00.000Z"
+            },
+            {
+              "title": "Pound Falls After U . K . Soft Jobs Data",
+              "url": "https://www.finanznachrichten.de/nachrichten-2026-08/69340657-pound-falls-after-u-k-soft-jobs-data-020.htm",
+              "domain": "finanznachrichten.de",
+              "sourcecountry": "Germany",
+              "language": "English",
+              "seen_at": "2026-08-18T11:15:00.000Z"
+            },
             {
               "title": "The Morning Catch - Up : ASX set to open lower as oil - driven inflation fears weigh on Wall Street",
               "url": "https://www.proactiveinvestors.com.au/companies/news/1097156/the-morning-catch-up-asx-set-to-open-lower-as-oil-driven-inflation-fears-weigh-on-wall-street-1097156.html",
@@ -1774,86 +1798,38 @@
               "seen_at": "2026-08-18T01:15:00.000Z"
             },
             {
-              "title": "Goldman calls September Fed hike very unlikely as inflation eases - investingLive",
-              "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQNENOQTVCNUJnajZ5N2J3QUFvbEx3TFJBVGticnpvQ1JobUFpVnF0T2E5WHRYcjREN2Z4U3huUDVmeE10QUZWTi1Ibjc0U1Z5dlpSQU5tNmptclJKSWlQVXlJS0tfQWRKbnhvSFo1S2RpODEwQnNHUHZkbW82OGd6NlRzWUVOTkNQeE9aN2dVZXhGMTJodDBEa1pndmU1TVIyNTU4cEJCTHYxQQ?oc=5",
-              "domain": "investingLive",
-              "sourcecountry": null,
-              "language": "English",
-              "seen_at": "2026-08-18T00:50:15.000Z"
-            },
-            {
               "title": "RBI Polymer Notes Pilot : Why India Is Exploring Plastic Currency Amid UPI Growth",
               "url": "https://dailypioneer.com/news/why-rbi-is-betting-on-plastic-in-a-upi-economy",
               "domain": "dailypioneer.com",
               "sourcecountry": "India",
               "language": "English",
               "seen_at": "2026-08-18T00:15:00.000Z"
-            },
-            {
-              "title": "Rate hikes may be a blunt tool, but they're all the Fed has to cool inflation - Reuters",
-              "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQSkx4M1hZeWx5Mnp2endmVlRLNnltcERaNG55Sk9YSmpOU2lQaUhxLUtnRGNJal9KcEtwTG1kdS1HMlRHcGE3amwzRl84LVNWT3JUMmlQWE5VZ3JaQ0VqMUpFNEJRV2U3bjUyLVY0dzFWVndmS3lTcUt6OWluLTQxeVc0cmU2TGRFdlJMVjV1QXZDSkJhM2JTNW12S0JVZmJya1YyRGdMQzloN2FqeFplWEtibVU1T3BWc09Gb0h2SkxvYjFNSjFYa0ZWdw?oc=5",
-              "domain": "Reuters",
-              "sourcecountry": null,
-              "language": "English",
-              "seen_at": "2026-08-17T23:30:32.000Z"
-            },
-            {
-              "title": "Study Results from Federal Reserve Board Broaden Understanding of Investment (Inflation Risk and the Labor Market: Beneath the Surface of a Flat Phillips Curve): Investment - InsuranceNewsNet",
-              "url": "https://news.google.com/rss/articles/CBMirwJBVV95cUxNU3p3cklFNi1YRzFJVUZOWXNLVlBVZ2tlSlpmWVE1SHJaV3M1ZmRVamNJajJTaWhva1ZCMWdvYmpETXVsVTdhelJHRkh3cG5jcVZuYUVCSXRBbC0wTWQydmZldGEyUkZ4N0JycmZDOWVrVGJUTnJGMVpVcXFmSWIxSVUwa3VzRE03c2VxMFNrODBBaGk3cU1ocG5RelJheVNzNmtobGtsb19oOFh5WngyMVpSbGcwU1QxVV9XTkFQSEg4T3RGdVo0N3ZqcHJoVHFiZ24tYjdfc09GblN5YVRFQml1NFNCT3A5UlUxSXctdUdtWWJBdHQtcHd5TVBtM3pvQW9HdFJ1ZmRhZTBSblp1SjJsRHJZTzRPdC1IeTdXbi05MjhpaWtZU0xOeklFUGs?oc=5",
-              "domain": "InsuranceNewsNet",
-              "sourcecountry": null,
-              "language": "English",
-              "seen_at": "2026-08-17T21:49:30.000Z"
-            },
-            {
-              "title": "Dallas Fed: Loan Demand, Volume Continue Strong Growth - Fort Worth Inc.",
-              "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdFpFNWE2TVJBZll0YWtidzkxc1dneFlQdDRjQ0JiMThNSkVwdlQ3dkpvR3dycFhSanVyc0EtaG1pMjdySG5EdGdwQTFlcmNSdW5iT2pyTURnVmpmUU9TdFp3MVA4cEF3MUFCbVEwNmJzQXNzbERRbFRYX1NPOUtvZnJqeWJ0aFpPNXJr?oc=5",
-              "domain": "Fort Worth Inc.",
-              "sourcecountry": null,
-              "language": "English",
-              "seen_at": "2026-08-17T20:08:00.000Z"
-            },
-            {
-              "title": "Inflation moderates but interest rates expected to remain high - Heartlander News",
-              "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQZDBRcTNubUF3VXk3OTZ4MDBCTVg1c1l2Njd3ZktOV29qZjdHeG4xVFRNeERFbnBoYXNSMTBqYlpGUWoya0xCQWY2RmM0RWtGaWFQblE3Z3k0MnhVQXl0UDJ3MDBuempYc0NSeGwzaExRZWNCUnhmWElhNGtIaDlMYnM1clBYcXE3MzRRZjBvZnNocVk4NHc?oc=5",
-              "domain": "Heartlander News",
-              "sourcecountry": null,
-              "language": "English",
-              "seen_at": "2026-08-17T16:33:34.000Z"
-            },
-            {
-              "title": "Goldman Sachs: September Fed rate hike very unlikely as inflation slows - Yahoo Finance",
-              "url": "https://news.google.com/rss/articles/CBMingFBVV95cUxPSGJJNGhuQWhrYUtMOWk2V21uVkk2QVdISGc2Y1d2UGE5dGtxTDRydWg3SXdrcVZtME1neFBJdXhLVmxwdkpDeE5YaGV6U08wTkZZQTNlZUtvSU1qYU9NejRCLUVxWnJlSWI4QktaTFVua1N0ZkxXYjJuZFZvUXpQbUhkcm5jTnhfcnNmMzlXV0k2UEduUE1Od01kMnFBdw?oc=5",
-              "domain": "Yahoo Finance",
-              "sourcecountry": null,
-              "language": "English",
-              "seen_at": "2026-08-17T12:22:49.000Z"
             }
           ],
           "event_risk": {
             "level": "HIGH",
-            "recent_high_impact_24h": 8
+            "recent_high_impact_24h": 5
           },
           "provenance": [
             {
               "provider": "GDELT DOC 2.0",
               "currency": "AUD",
               "query": "(\"Australian dollar\" OR \"Reserve Bank of Australia\") (inflation OR \"interest rate\" OR rates OR economy OR growth OR employment OR monetary OR \"central bank\") sourcelang:english",
-              "latest_seen_at": "2026-08-18T06:15:00.000Z",
+              "latest_seen_at": "2026-08-18T08:45:00.000Z",
               "article_count": 40,
               "supportive_headline_count": 4,
               "opposing_headline_count": 0,
               "classified_headline_count": 4
             },
             {
-              "provider": "Google News RSS fallback",
+              "provider": "GDELT DOC 2.0",
               "currency": "USD",
-              "query": "\"US dollar\" OR \"Federal Reserve\" OR FOMC inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
-              "latest_seen_at": "2026-08-18T06:35:00.000Z",
+              "query": "(\"US dollar\" OR \"U.S. dollar\" OR \"Federal Reserve\" OR FOMC) (inflation OR \"interest rate\" OR rates OR economy OR growth OR employment OR monetary OR \"central bank\") sourcelang:english",
+              "latest_seen_at": "2026-08-18T12:45:00.000Z",
               "article_count": 40,
-              "supportive_headline_count": 14,
-              "opposing_headline_count": 2,
-              "classified_headline_count": 16
+              "supportive_headline_count": 1,
+              "opposing_headline_count": 0,
+              "classified_headline_count": 1
             }
           ],
           "methodology": {
@@ -1866,10 +1842,10 @@
             "max_article_age_hours": 96,
             "high_impact_headline_window_hours": 24,
             "base_headline_balance": 1,
-            "quote_headline_balance": 0.75,
-            "raw_pair_headline_differential": 0.25,
-            "reliability": 1,
-            "adjusted_pair_headline_differential": 0.25,
+            "quote_headline_balance": 1,
+            "raw_pair_headline_differential": 0,
+            "reliability": 0.25,
+            "adjusted_pair_headline_differential": 0,
             "support_threshold": 62,
             "oppose_threshold": 38,
             "neutral_band": [
@@ -1943,9 +1919,9 @@
               "label": "Context Disagreement",
               "contribution": 3,
               "max_contribution": 8,
-              "reason": "Context scores are dispersed by 25 points.",
+              "reason": "Context scores are dispersed by 37.5 points.",
               "detail": {
-                "spread": 25,
+                "spread": 37.5,
                 "scores": [
                   {
                     "key": "macro_yield",
@@ -1960,7 +1936,7 @@
                   {
                     "key": "news",
                     "label": "News",
-                    "score": 62.5
+                    "score": 50
                   }
                 ]
               }
@@ -1973,7 +1949,7 @@
               "reason": "News event risk is HIGH based on recent high-impact macro/central-bank headlines.",
               "detail": {
                 "level": "HIGH",
-                "recent_high_impact_24h": 8
+                "recent_high_impact_24h": 5
               }
             },
             "reversal": {
@@ -2020,14 +1996,14 @@
               "key": "context_dispersion",
               "label": "Context Disagreement",
               "contribution": 3,
-              "reason": "Context scores are dispersed by 25 points."
+              "reason": "Context scores are dispersed by 37.5 points."
             }
           ],
           "context_snapshot": {
             "external_context_coverage": "3/3",
-            "supports": 3,
+            "supports": 2,
             "opposes": 0,
-            "mixed_or_neutral": 0,
+            "mixed_or_neutral": 1,
             "scored_layers": 3
           },
           "gates": {
@@ -2042,7 +2018,7 @@
             "Actionability: +22 · Actionability is filtered at 55/100.",
             "Market Regime: +12 · Market regime is LOW_ALIGNMENT.",
             "News Event Risk: +10 · News event risk is HIGH based on recent high-impact macro/central-bank headlines.",
-            "Context Disagreement: +3 · Context scores are dispersed by 25 points."
+            "Context Disagreement: +3 · Context scores are dispersed by 37.5 points."
           ],
           "methodology": "Risk v0.2 uses a conservative additive risk budget: 15-point baseline plus transparent contributions from Actionability weakness, regime weakness, missing context, contextual opposition, cross-context score dispersion, high-impact news-event density, reversal risk, and evidence gaps. Contributions are capped and the final score is bounded to 0-100.",
           "research_status": "RULES_BASED_V0_2_RESEARCH_VALIDATION_PENDING",
@@ -2074,12 +2050,12 @@
             "statement": "Recent high-impact news density is HIGH and can invalidate continuation timing even when directional evidence is otherwise supportive.",
             "detail": {
               "level": "HIGH",
-              "recent_high_impact_24h": 8
+              "recent_high_impact_24h": 5
             },
             "evidence": [
-              "The Morning Catch - Up : ASX set to open lower as oil - driven inflation fears weigh on Wall Street",
-              "Goldman calls September Fed hike very unlikely as inflation eases - investingLive",
-              "RBI Polymer Notes Pilot : Why India Is Exploring Plastic Currency Amid UPI Growth"
+              "Bitcoin climbs towards $64 , 000 as cooling inflation and falling treasury yields aid recovery",
+              "Rupee ends marginally lower as central bank shields from oil , yield strain",
+              "Pound Falls After U . K . Soft Jobs Data"
             ]
           },
           "structured_objections": [
@@ -2091,12 +2067,12 @@
               "statement": "Recent high-impact news density is HIGH and can invalidate continuation timing even when directional evidence is otherwise supportive.",
               "detail": {
                 "level": "HIGH",
-                "recent_high_impact_24h": 8
+                "recent_high_impact_24h": 5
               },
               "evidence": [
-                "The Morning Catch - Up : ASX set to open lower as oil - driven inflation fears weigh on Wall Street",
-                "Goldman calls September Fed hike very unlikely as inflation eases - investingLive",
-                "RBI Polymer Notes Pilot : Why India Is Exploring Plastic Currency Amid UPI Growth"
+                "Bitcoin climbs towards $64 , 000 as cooling inflation and falling treasury yields aid recovery",
+                "Rupee ends marginally lower as central bank shields from oil , yield strain",
+                "Pound Falls After U . K . Soft Jobs Data"
               ]
             },
             {
@@ -2127,9 +2103,9 @@
               "category": "INTERNAL_DISAGREEMENT",
               "source_layer": "risk.context_dispersion",
               "severity": "LOW",
-              "statement": "Contextual intelligence is internally dispersed by 25 score points.",
+              "statement": "Contextual intelligence is internally dispersed by 37.5 score points.",
               "detail": {
-                "spread": 25,
+                "spread": 37.5,
                 "scores": [
                   {
                     "key": "macro_yield",
@@ -2144,7 +2120,7 @@
                   {
                     "key": "news",
                     "label": "News",
-                    "score": 62.5
+                    "score": 50
                   }
                 ]
               },
@@ -2167,7 +2143,7 @@
             "Recent high-impact news density is HIGH and can invalidate continuation timing even when directional evidence is otherwise supportive.",
             "The market regime is LOW_ALIGNMENT, not CONFIRMED_TREND.",
             "Actionability is filtered at 55/100.",
-            "Contextual intelligence is internally dispersed by 25 score points.",
+            "Contextual intelligence is internally dispersed by 37.5 score points.",
             "The current weak currency has a reversal-risk indicator of 27.9/100."
           ],
           "severity_counts": {
@@ -2176,9 +2152,9 @@
             "LOW": 2
           },
           "evidence_balance": {
-            "supports": 3,
+            "supports": 2,
             "opposes": 0,
-            "mixed_or_neutral": 0,
+            "mixed_or_neutral": 1,
             "available": 3,
             "expected": 3,
             "missing": 0,
@@ -2228,7 +2204,7 @@
               "key": "context_dispersion_60",
               "label": "Context disagreement becomes extreme",
               "triggered": false,
-              "current": 25,
+              "current": 37.5,
               "trigger": "Context score spread >= 60 points."
             },
             {
@@ -2289,9 +2265,9 @@
           "regime": "LOW_ALIGNMENT",
           "contextual_coverage_percent": 100,
           "context_counts": {
-            "supports": 3,
+            "supports": 2,
             "opposes": 0,
-            "mixed_or_neutral": 0,
+            "mixed_or_neutral": 1,
             "available": 3,
             "expected": 3
           },
@@ -2334,15 +2310,6 @@
                 "score": 87.5,
                 "provider": "FRED (Federal Reserve / EIA source series)"
               }
-            },
-            {
-              "source": "news",
-              "category": "EXTERNAL_SUPPORT",
-              "statement": "News supports the canonical AUDUSD BUY at 62.5/100.",
-              "detail": {
-                "score": 62.5,
-                "provider": "GDELT DOC 2.0 + Google News RSS fallback"
-              }
             }
           ],
           "evidence_against": [
@@ -2354,7 +2321,7 @@
                 "severity": "HIGH",
                 "detail": {
                   "level": "HIGH",
-                  "recent_high_impact_24h": 8
+                  "recent_high_impact_24h": 5
                 }
               }
             },
@@ -2384,11 +2351,11 @@
             {
               "source": "risk.context_dispersion",
               "category": "INTERNAL_DISAGREEMENT",
-              "statement": "Contextual intelligence is internally dispersed by 25 score points.",
+              "statement": "Contextual intelligence is internally dispersed by 37.5 score points.",
               "detail": {
                 "severity": "LOW",
                 "detail": {
-                  "spread": 25,
+                  "spread": 37.5,
                   "scores": [
                     {
                       "key": "macro_yield",
@@ -2403,7 +2370,7 @@
                     {
                       "key": "news",
                       "label": "News",
-                      "score": 62.5
+                      "score": 50
                     }
                   ]
                 }
@@ -2424,11 +2391,11 @@
           ],
           "evidence_gaps": [],
           "evidence_balance": {
-            "supporting_items": 3,
+            "supporting_items": 2,
             "opposing_items": 5,
-            "contextual_supports": 3,
+            "contextual_supports": 2,
             "contextual_opposes": 0,
-            "contextual_mixed_or_neutral": 0,
+            "contextual_mixed_or_neutral": 1,
             "contextual_available": 3,
             "contextual_expected": 3
           },
@@ -2489,7 +2456,7 @@
               "key": "context_dispersion_60",
               "label": "Context disagreement becomes extreme",
               "triggered": false,
-              "current": 25,
+              "current": 37.5,
               "condition": "Context score spread >= 60 points."
             },
             {
@@ -2517,7 +2484,7 @@
             "High-impact event risk normalizes to LOW while directional context remains stable.",
             "Risk v0.2 falls below 45 without changing the frozen Risk formula."
           ],
-          "final_assessment": "AUDUSD BUY has Actionability 55/100 with regime LOW_ALIGNMENT, but contextual evidence is not one-sided. Supports: Macro & Yield, Cross-Market, News. Opposes: none. Mixed/neutral: none. Risk v0.2 MODERATE at 63.5/100. Primary challenge: Recent high-impact news density is HIGH and can invalidate continuation timing even when directional evidence is otherwise supportive. Decision remains DEPRIORITIZE.",
+          "final_assessment": "AUDUSD BUY has Actionability 55/100 with regime LOW_ALIGNMENT, but contextual evidence is not one-sided. Supports: Macro & Yield, Cross-Market. Opposes: none. Mixed/neutral: News. Risk v0.2 MODERATE at 63.5/100. Primary challenge: Recent high-impact news density is HIGH and can invalidate continuation timing even when directional evidence is otherwise supportive. Decision remains DEPRIORITIZE.",
           "decision_trace": [
             {
               "gate": "actionability_available",
@@ -2544,9 +2511,9 @@
               "gate": "context_vote",
               "passed": true,
               "current": {
-                "supports": 3,
+                "supports": 2,
                 "opposes": 0,
-                "mixed_or_neutral": 0
+                "mixed_or_neutral": 1
               },
               "rule": "OPPOSES > SUPPORTS => CONTEXT_CONTRADICTED; SUPPORTS > OPPOSES with Actionability >=80 => CONTEXT_CONFIRMED; otherwise MIXED_CONTEXT."
             },

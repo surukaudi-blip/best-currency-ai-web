@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "DECISION_ALERT_WATCH_ACTIVE",
   "created_at": "2026-08-17T03:19:49.195Z",
-  "updated_at": "2026-08-18T07:24:16.288Z",
+  "updated_at": "2026-08-18T13:22:50.672Z",
   "policy": {
     "mode": "material_change_notification_and_explainability_watch",
     "no_historical_backfill": true,
@@ -28,8 +28,8 @@
         "regime": "LOW_ALIGNMENT"
       },
       "first_seen": "2026-08-17T15:48:17.857Z",
-      "last_seen": "2026-08-18T07:24:16.288Z",
-      "occurrences": 6
+      "last_seen": "2026-08-18T13:22:50.672Z",
+      "occurrences": 7
     },
     {
       "key": "MTF_ALIGNMENT_LOW",
@@ -41,8 +41,8 @@
       "trigger": "MTF Alignment < 60.",
       "evidence": null,
       "first_seen": "2026-08-17T15:48:17.857Z",
-      "last_seen": "2026-08-18T07:24:16.288Z",
-      "occurrences": 6
+      "last_seen": "2026-08-18T13:22:50.672Z",
+      "occurrences": 7
     },
     {
       "key": "COUNTER_THESIS_HIGH",
@@ -63,25 +63,53 @@
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-18T07:24:16.288Z",
-      "occurrences": 22
+      "last_seen": "2026-08-18T13:22:50.672Z",
+      "occurrences": 23
+    },
+    {
+      "key": "INTRADAY_MODERATE_DRIFT",
+      "severity": "MODERATE",
+      "title": "Intraday context drift moderat",
+      "detail": "Capture DRIFT-0018-2026-08-17 mendeteksi MODERATE drift.",
+      "source": "intraday_context_drift",
+      "session_date": "2026-08-17",
+      "trigger": "Latest intraday drift level = MODERATE.",
+      "evidence": {
+        "id": "DRIFT-0018-2026-08-17",
+        "captured_at": "2026-08-18T13:22:50.510Z",
+        "drift_level": "MODERATE",
+        "snapshot_hash": "50c96228e063bd6e7f00468548ba6aa9c622143f5944c8be6ef5cbfe2cf02260",
+        "drift_vs_previous": [
+          {
+            "key": "news_state",
+            "severity": "MODERATE",
+            "label": "News state",
+            "from": "SUPPORTS",
+            "to": "NEUTRAL",
+            "delta": -18.8
+          }
+        ]
+      },
+      "first_seen": "2026-08-18T13:22:50.672Z",
+      "last_seen": "2026-08-18T13:22:50.672Z",
+      "occurrences": 1
     },
     {
       "key": "NEWS_EVENT_HIGH",
       "severity": "MODERATE",
       "title": "High-impact News Event Risk",
-      "detail": "News Event Risk HIGH sementara News 62.5 · SUPPORTS.",
+      "detail": "News Event Risk HIGH sementara News 50 · NEUTRAL.",
       "source": "news",
       "session_date": "2026-08-17",
       "trigger": "News event-risk level = HIGH.",
       "evidence": {
-        "state": "SUPPORTS",
-        "score": 62.5,
+        "state": "NEUTRAL",
+        "score": 50,
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T09:57:27.459Z",
-      "last_seen": "2026-08-18T07:24:16.288Z",
-      "occurrences": 11
+      "last_seen": "2026-08-18T13:22:50.672Z",
+      "occurrences": 12
     }
   ],
   "events": [
@@ -864,18 +892,44 @@
       "session_date": "2026-08-17",
       "dedupe_key": "HISTORY:DECISION-0002-2026-08-17:final_reasoner",
       "event_hash": "942613ee3e9dc3329fcbfc5909ee8d0c07df6396e96e782112a1b112e5f725b2"
+    },
+    {
+      "id": "ALERT-EVENT-0061",
+      "occurred_at": "2026-08-18T13:22:50.672Z",
+      "event_type": "OPEN",
+      "alert_key": "INTRADAY_MODERATE_DRIFT",
+      "severity": "MODERATE",
+      "title": "Intraday context drift moderat",
+      "detail": "Capture DRIFT-0018-2026-08-17 mendeteksi MODERATE drift.",
+      "source": "intraday_context_drift",
+      "session_date": "2026-08-17",
+      "dedupe_key": "OPEN:INTRADAY_MODERATE_DRIFT:2026-08-17",
+      "event_hash": "8be609c8f42c829f2f0b276c267f5ce679b797115865f5cc7ae1bf3e35e6fd50"
+    },
+    {
+      "id": "ALERT-EVENT-0062",
+      "occurred_at": "2026-08-18T13:22:50.672Z",
+      "event_type": "PULSE",
+      "alert_key": "DRIFT:DRIFT-0018-2026-08-17:news_state",
+      "severity": "MODERATE",
+      "title": "Intraday: News state",
+      "detail": "SUPPORTS → NEUTRAL · Δ -18.8",
+      "source": "intraday_context_drift",
+      "session_date": "2026-08-17",
+      "dedupe_key": "DRIFT:DRIFT-0018-2026-08-17:news_state",
+      "event_hash": "81616614b37bf3e85c13b5b874b7079b34d0922fcb8a91258d31b2cf1683d1ad"
     }
   ],
   "summary": {
     "alert_gate": "REVIEW_NOW",
-    "active_total": 4,
+    "active_total": 5,
     "high_active": 2,
-    "moderate_active": 2,
+    "moderate_active": 3,
     "info_active": 0,
-    "event_count": 60,
-    "new_events_this_run": 7,
-    "latest_event_at": "2026-08-18T07:24:16.288Z",
-    "latest_event_id": "ALERT-EVENT-0060"
+    "event_count": 62,
+    "new_events_this_run": 2,
+    "latest_event_at": "2026-08-18T13:22:50.672Z",
+    "latest_event_id": "ALERT-EVENT-0062"
   },
   "current_watch": {
     "session_date": "2026-08-17",
@@ -896,14 +950,14 @@
         "score": 87.5
       },
       "news": {
-        "state": "SUPPORTS",
-        "score": 62.5,
+        "state": "NEUTRAL",
+        "score": 50,
         "event_risk": "HIGH"
       },
       "counts": {
-        "supports": 3,
+        "supports": 2,
         "opposes": 0,
-        "mixed_or_neutral": 0,
+        "mixed_or_neutral": 1,
         "available": 3,
         "expected": 3
       }
@@ -931,11 +985,20 @@
       "decision": "DEPRIORITIZE"
     },
     "intraday": {
-      "id": "DRIFT-0017-2026-08-17",
-      "captured_at": "2026-08-18T02:16:10.794Z",
-      "drift_level": "NONE",
-      "snapshot_hash": "21d91f1b78ec31e077d2d950e1c6e6bca1fcce9f8faa66aa3a28aec9e67649b8",
-      "drift_vs_previous": []
+      "id": "DRIFT-0018-2026-08-17",
+      "captured_at": "2026-08-18T13:22:50.510Z",
+      "drift_level": "MODERATE",
+      "snapshot_hash": "50c96228e063bd6e7f00468548ba6aa9c622143f5944c8be6ef5cbfe2cf02260",
+      "drift_vs_previous": [
+        {
+          "key": "news_state",
+          "severity": "MODERATE",
+          "label": "News state",
+          "from": "SUPPORTS",
+          "to": "NEUTRAL",
+          "delta": -18.8
+        }
+      ]
     },
     "anchors": {
       "decision_history": {

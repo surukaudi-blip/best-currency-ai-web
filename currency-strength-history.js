@@ -204,7 +204,7 @@
     render();
   });
 
-  fetch('./data/currency-strength-history.json?v=8b9efd886e',{headers:{Accept:'application/json'},cache:'no-store'})
+  fetch('./data/currency-strength-history.json?v=40cbbf9c1e',{headers:{Accept:'application/json'},cache:'no-store'})
     .then(function(r){if(!r.ok) throw new Error('HTTP '+r.status);return r.json();})
     .then(function(payload){historyData=payload&&payload.data?payload.data:payload;render();})
     .catch(function(){
