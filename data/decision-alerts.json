@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "DECISION_ALERT_WATCH_ACTIVE",
   "created_at": "2026-08-17T03:19:49.195Z",
-  "updated_at": "2026-08-18T02:03:32.069Z",
+  "updated_at": "2026-08-18T02:16:10.907Z",
   "policy": {
     "mode": "material_change_notification_and_explainability_watch",
     "no_historical_backfill": true,
@@ -28,8 +28,8 @@
         "regime": "LOW_ALIGNMENT"
       },
       "first_seen": "2026-08-17T15:48:17.857Z",
-      "last_seen": "2026-08-18T02:03:32.069Z",
-      "occurrences": 4
+      "last_seen": "2026-08-18T02:16:10.907Z",
+      "occurrences": 5
     },
     {
       "key": "MTF_ALIGNMENT_LOW",
@@ -41,8 +41,8 @@
       "trigger": "MTF Alignment < 60.",
       "evidence": null,
       "first_seen": "2026-08-17T15:48:17.857Z",
-      "last_seen": "2026-08-18T02:03:32.069Z",
-      "occurrences": 4
+      "last_seen": "2026-08-18T02:16:10.907Z",
+      "occurrences": 5
     },
     {
       "key": "COUNTER_THESIS_HIGH",
@@ -63,8 +63,8 @@
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-18T02:03:32.069Z",
-      "occurrences": 20
+      "last_seen": "2026-08-18T02:16:10.907Z",
+      "occurrences": 21
     },
     {
       "key": "NEWS_EVENT_HIGH",
@@ -80,8 +80,8 @@
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T09:57:27.459Z",
-      "last_seen": "2026-08-18T02:03:32.069Z",
-      "occurrences": 9
+      "last_seen": "2026-08-18T02:16:10.907Z",
+      "occurrences": 10
     }
   ],
   "events": [
@@ -840,10 +840,10 @@
       "decision": "DEPRIORITIZE"
     },
     "intraday": {
-      "id": "DRIFT-0016-2026-08-17",
-      "captured_at": "2026-08-18T02:03:31.855Z",
+      "id": "DRIFT-0017-2026-08-17",
+      "captured_at": "2026-08-18T02:16:10.794Z",
       "drift_level": "NONE",
-      "snapshot_hash": "be783730ddf3f388da55b3b350b0457b7e7d53d4f0e55912e02392a00011177a",
+      "snapshot_hash": "21d91f1b78ec31e077d2d950e1c6e6bca1fcce9f8faa66aa3a28aec9e67649b8",
       "drift_vs_previous": []
     },
     "anchors": {

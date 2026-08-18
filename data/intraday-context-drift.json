@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "INTRADAY_CONTEXT_DRIFT_ACTIVE",
   "created_at": "2026-08-17T03:10:50.566Z",
-  "updated_at": "2026-08-18T02:03:31.855Z",
+  "updated_at": "2026-08-18T02:16:10.794Z",
   "policy": {
     "mode": "prospective_intraday_context_audit",
     "capture_scope": "multiple_context_captures_within_same_complete_ecb_session",
@@ -1570,13 +1570,88 @@
         "decision_history": null,
         "fresh_oos": null
       }
+    },
+    {
+      "id": "DRIFT-0017-2026-08-17",
+      "captured_at": "2026-08-18T02:16:10.794Z",
+      "source_event": "push",
+      "source_run_id": "32091167111",
+      "source_run_attempt": "1",
+      "snapshot": {
+        "session_date": "2026-08-17",
+        "pair": "AUDUSD",
+        "canonical_bias": "BUY",
+        "actionability": {
+          "score": 55,
+          "state": "FILTERED",
+          "regime": "LOW_ALIGNMENT"
+        },
+        "context": {
+          "macro_yield": {
+            "available": true,
+            "state": "SUPPORTS",
+            "score": 66.7,
+            "provider": "FRED (OECD / Federal Reserve source series)",
+            "updated_at": "2026-08-18T02:15:21.917Z"
+          },
+          "cross_market": {
+            "available": true,
+            "state": "SUPPORTS",
+            "score": 87.5,
+            "provider": "FRED (Federal Reserve / EIA source series)",
+            "updated_at": "2026-08-18T02:15:23.055Z"
+          },
+          "news": {
+            "available": true,
+            "state": "SUPPORTS",
+            "score": 68.8,
+            "provider": "Google News RSS fallback",
+            "updated_at": "2026-08-18T02:16:10.582Z",
+            "event_risk": "HIGH",
+            "recent_high_impact_24h": 8
+          },
+          "coverage_percent": 100
+        },
+        "risk": {
+          "version": "0.2",
+          "score": 60.5,
+          "state": "MODERATE",
+          "primary_driver": {
+            "key": "actionability",
+            "label": "Actionability",
+            "contribution": 22
+          }
+        },
+        "counter_thesis": {
+          "version": "0.2",
+          "state": "ACTIVE",
+          "challenge_level": "HIGH",
+          "active_trigger_count": 3
+        },
+        "final_reasoner": {
+          "version": "0.2",
+          "decision_logic_version": "0.1_frozen",
+          "status": "MIXED_CONTEXT",
+          "outlook": "MIXED",
+          "decision": "DEPRIORITIZE",
+          "evidence_for_count": 3,
+          "evidence_against_count": 4
+        }
+      },
+      "snapshot_hash": "21d91f1b78ec31e077d2d950e1c6e6bca1fcce9f8faa66aa3a28aec9e67649b8",
+      "drift_level": "NONE",
+      "drift_vs_previous": [],
+      "frozen_anchors": {
+        "decision_history": null,
+        "fresh_oos": null
+      }
     }
   ],
   "current_session": {
     "session_date": "2026-08-17",
-    "captures": 4,
+    "captures": 5,
     "first_capture_at": "2026-08-17T15:48:17.711Z",
-    "last_capture_at": "2026-08-18T02:03:31.855Z",
+    "last_capture_at": "2026-08-18T02:16:10.794Z",
     "current_drift_level": "NONE",
     "total_drift_events": 2,
     "drift_event_counts": {
@@ -1596,9 +1671,9 @@
     }
   },
   "summary": {
-    "total_captures": 16,
+    "total_captures": 17,
     "distinct_ecb_sessions": 2,
-    "current_session_captures": 4,
+    "current_session_captures": 5,
     "high_drift_captures": 6,
     "moderate_drift_captures": 1,
     "low_drift_captures": 0

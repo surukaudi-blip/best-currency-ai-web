@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T02:03:31.532Z",
+  "generated_at": "2026-08-18T02:16:10.582Z",
   "pair": "AUDUSD",
   "canonical_bias": "BUY",
   "macro_yield": {
@@ -7,7 +7,7 @@
     "direction": "SUPPORTS",
     "score": 66.7,
     "provider": "FRED (OECD / Federal Reserve source series)",
-    "updated_at": "2026-08-18T02:02:41.427Z",
+    "updated_at": "2026-08-18T02:15:21.917Z",
     "evidence": [
       "10Y yield spread: AUD 4.831% (2026-06-01) vs USD 4.470% (2026-06-01); spread +0.361 pp => SUPPORTS canonical BUY.",
       "10Y spread momentum: -0.141 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
@@ -53,7 +53,7 @@
     "direction": "SUPPORTS",
     "score": 87.5,
     "provider": "FRED (Federal Reserve / EIA source series)",
-    "updated_at": "2026-08-18T02:02:43.874Z",
+    "updated_at": "2026-08-18T02:15:23.055Z",
     "evidence": [
       "NFCI: level -0.5490 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
       "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
@@ -111,7 +111,7 @@
     "direction": "SUPPORTS",
     "score": 68.8,
     "provider": "Google News RSS fallback",
-    "updated_at": "2026-08-18T02:03:31.532Z",
+    "updated_at": "2026-08-18T02:16:10.582Z",
     "evidence": [
       "Headline-stance differential AUDUSD BUY: 0.375 after directional-headline reliability 100% => SUPPORTS.",
       "AUD: 7 supportive vs 0 opposing directional headline(s); balance 1 from 37 recent articles via Google News RSS fallback.",
@@ -126,7 +126,7 @@
         "domain": "investingLive",
         "sourcecountry": null,
         "language": "English",
-        "seen_at": "2026-08-18T00:46:14.000Z"
+        "seen_at": "2026-08-18T00:53:21.000Z"
       },
       {
         "title": "British Pound Outlook: GBP/USD, GBP/AUD Face UK Jobs Test - FOREX.com",
