@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-17T15:51:45.467Z",
+  "generated_at": "2026-08-18T00:49:16.343Z",
   "pair": "AUDUSD",
   "canonical_bias": "BUY",
   "macro_yield": {
@@ -7,7 +7,7 @@
     "direction": "SUPPORTS",
     "score": 66.7,
     "provider": "FRED (OECD / Federal Reserve source series)",
-    "updated_at": "2026-08-17T15:51:01.638Z",
+    "updated_at": "2026-08-18T00:48:26.228Z",
     "evidence": [
       "10Y yield spread: AUD 4.831% (2026-06-01) vs USD 4.470% (2026-06-01); spread +0.361 pp => SUPPORTS canonical BUY.",
       "10Y spread momentum: -0.141 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
@@ -53,7 +53,7 @@
     "direction": "SUPPORTS",
     "score": 87.5,
     "provider": "FRED (Federal Reserve / EIA source series)",
-    "updated_at": "2026-08-17T15:51:01.811Z",
+    "updated_at": "2026-08-18T00:48:26.995Z",
     "evidence": [
       "NFCI: level -0.5490 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
       "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
@@ -109,80 +109,80 @@
   "news": {
     "available": true,
     "direction": "SUPPORTS",
-    "score": 89.3,
-    "provider": "Google News RSS fallback + GDELT DOC 2.0",
-    "updated_at": "2026-08-17T15:51:45.467Z",
+    "score": 70,
+    "provider": "Google News RSS fallback",
+    "updated_at": "2026-08-18T00:49:16.343Z",
     "evidence": [
-      "Headline-stance differential AUDUSD BUY: 0.785 after directional-headline reliability 75% => SUPPORTS.",
-      "AUD: 6 supportive vs 1 opposing directional headline(s); balance 0.714 from 40 recent articles via Google News RSS fallback.",
-      "USD: 1 supportive vs 2 opposing directional headline(s); balance -0.333 from 40 recent articles via GDELT DOC 2.0.",
+      "Headline-stance differential AUDUSD BUY: 0.4 after directional-headline reliability 100% => SUPPORTS.",
+      "AUD: 6 supportive vs 0 opposing directional headline(s); balance 1 from 38 recent articles via Google News RSS fallback.",
+      "USD: 12 supportive vs 3 opposing directional headline(s); balance 0.6 from 40 recent articles via Google News RSS fallback.",
       "High-impact headline risk: HIGH; 8 relevant headline(s) detected within 24h."
     ],
     "missing_evidence": [],
     "headlines": [
       {
-        "title": "Franklin Templeton stays bullish on equities as earnings growth tops 20 %",
-        "url": "https://www.investmentnews.com/equities/franklin-templeton-stays-bullish-on-equities-as-earnings-growth-tops-20/267831",
-        "domain": "investmentnews.com",
-        "sourcecountry": "United States",
-        "language": "English",
-        "seen_at": "2026-08-17T14:00:00.000Z"
-      },
-      {
-        "title": "Canada July annual inflation accelerates to 3 % as gasoline rebounds",
-        "url": "https://www.933thedrive.com/2026/08/17/canadas-july-annual-inflation-accelerates-to-3-as-gasoline-rebounds/",
-        "domain": "933thedrive.com",
-        "sourcecountry": "United States",
-        "language": "English",
-        "seen_at": "2026-08-17T14:00:00.000Z"
-      },
-      {
-        "title": "Asian Shares Mixed On Concerns Over U . S . Growth",
-        "url": "https://www.rttnews.com/3680968/asian-shares-mixed-on-concerns-over-u-s-growth.aspx",
-        "domain": "rttnews.com",
-        "sourcecountry": "United States",
-        "language": "English",
-        "seen_at": "2026-08-17T13:30:00.000Z"
-      },
-      {
-        "title": "Sweden Inflation Expectations Take Focus Ahead of Riksbank",
-        "url": "https://www.actionforex.com/contributors/fundamental-analysis/650831-sweden-inflation-expectations-take-focus-ahead-of-riksbank/",
-        "domain": "actionforex.com",
-        "sourcecountry": "United Kingdom",
-        "language": "English",
-        "seen_at": "2026-08-17T10:30:00.000Z"
-      },
-      {
-        "title": "Why Teens Are Struggling to Find Summer Jobs",
-        "url": "https://www.theepochtimes.com/article/why-teens-are-struggling-to-find-summer-jobs-6050689",
-        "domain": "theepochtimes.com",
-        "sourcecountry": "United States",
-        "language": "English",
-        "seen_at": "2026-08-17T10:15:00.000Z"
-      },
-      {
-        "title": "Reserve Bank of Australia hawkish policy stance: AUD/USD resistance levels in focus - Traders Union",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxON18tdlJ4ekgweDJSNmttellpNzZmNlp0OWZyRHJrbmt0MnRZOFVXMk5xWDRJSEFWblZMUUF4NGF0UVZEMUwxb2VwaHRnUklKLUpMbTBncHpuZnJXeHk2ZmVGTlBDdWVRS2dsMEs2bmZXRVMzaUI2TThVWGRrUmhmU0tLa041X0NWU01uMk5XSDZsMVAyWWtmd0hCS0s?oc=5",
-        "domain": "Traders Union",
+        "title": "British Pound Outlook: GBP/USD, GBP/AUD Face UK Jobs Test - FOREX.com",
+        "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOUDNna012MzdhU2JRaG4xT2pJbHFVa2R6bC1fdzZMcnBzeVlHZm9STWJ2LS1IOVM0U1FYY1hzTEtIakpnQWJlOTdZNnlRemFGRDhjTklMWVJYVFdYYWV6NWdMbVYzQkZMTk01NnpTOFUzQjJZdXFvUGxIbVlJT1pWNGdUSUsyVzlvVk1EY3dqUGJ0M1oxSUFEdWVEai11T1VHTHFNQQ?oc=5",
+        "domain": "FOREX.com",
         "sourcecountry": null,
         "language": "English",
-        "seen_at": "2026-08-17T09:50:28.000Z"
+        "seen_at": "2026-08-18T00:13:05.000Z"
       },
       {
-        "title": "RBC bets on growth in Europe as businesses diversify trade",
-        "url": "https://www.theglobeandmail.com/business/article-rbc-bets-on-growth-in-europe-as-businesses-diversify-trade/",
-        "domain": "theglobeandmail.com",
-        "sourcecountry": "Canada",
-        "language": "English",
-        "seen_at": "2026-08-17T09:45:00.000Z"
-      },
-      {
-        "title": "RBA Holds Steady at 4.35%, Warns of Possible Hike If Inflation Rebounds - Vocal",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOM0lucDUxMVZUZ21kakF2bThjRlpYYzBOeWF0QUpCS3g0aXhOZVBEckkycWEzT214RmxtaXZNS0hSdU9ET3NVclhwYWlSN002VWZYWnpLTnFWZm42RElzRDJvRkUwUlI0UE85ZWZBdmFYd3c3WjVja1EyaWctMUo2dlV4RmU4WjkzMW5QREpLaktKN3RLN2pRRUc1UlE?oc=5",
-        "domain": "Vocal",
+        "title": "Rate hikes may be a blunt tool, but they're all the Fed has to cool inflation - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQSkx4M1hZeWx5Mnp2endmVlRLNnltcERaNG55Sk9YSmpOU2lQaUhxLUtnRGNJal9KcEtwTG1kdS1HMlRHcGE3amwzRl84LVNWT3JUMmlQWE5VZ3JaQ0VqMUpFNEJRV2U3bjUyLVY0dzFWVndmS3lTcUt6OWluLTQxeVc0cmU2TGRFdlJMVjV1QXZDSkJhM2JTNW12S0JVZmJya1YyRGdMQzloN2FqeFplWEtibVU1T3BWc09Gb0h2SkxvYjFNSjFYa0ZWdw?oc=5",
+        "domain": "Reuters",
         "sourcecountry": null,
         "language": "English",
-        "seen_at": "2026-08-17T08:15:38.000Z"
+        "seen_at": "2026-08-17T23:30:32.000Z"
+      },
+      {
+        "title": "Inflation moderates but interest rates expected to remain high - Heartlander News",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQZDBRcTNubUF3VXk3OTZ4MDBCTVg1c1l2Njd3ZktOV29qZjdHeG4xVFRNeERFbnBoYXNSMTBqYlpGUWoya0xCQWY2RmM0RWtGaWFQblE3Z3k0MnhVQXl0UDJ3MDBuempYc0NSeGwzaExRZWNCUnhmWElhNGtIaDlMYnM1clBYcXE3MzRRZjBvZnNocVk4NHc?oc=5",
+        "domain": "Heartlander News",
+        "sourcecountry": null,
+        "language": "English",
+        "seen_at": "2026-08-17T16:33:34.000Z"
+      },
+      {
+        "title": "Yen retreats below 159.00 against the US Dollar as Japanese GDP disappoints - tmgm.com",
+        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPSWJ1SW5mR3N1WXpDN2RnTFJRQk4wekRWN3pueDZWNzR4dnkwR01YNjJ1VVlmeTRBa3NPYVRGeWJhOGtZOGtfZE5HUF84bllTYlFJY2tzS29SLUMtYWtnN1JZcUtFMEQ3MHJqeXZEMjdsQ282TDZuX0hvTUw1SC1yeF9YV3pRdFB2MUpFY2FYaEtUb1FfUGItQjVkQ2tPR2M3ak1RVGEzM2ZRS190ejBIZElVeWNRcGRCaGtEbWRPdDRFOE1WeGNuUS1XcXB2azZEeHJua2dn?oc=5",
+        "domain": "tmgm.com",
+        "sourcecountry": null,
+        "language": "English",
+        "seen_at": "2026-08-17T10:47:12.000Z"
+      },
+      {
+        "title": "New RBA Monetary Policy Board member appointed - The Adviser",
+        "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPdGZpMTRzUHRkZm5aOW9NeENseFdfeDd3NVlqVXFuVXZCd1pLMklMMER6Q0pjVF9YUDRrQ1d5RXNRSWJLVG9mc2J4UVJ5Y1FtM1BQaUllME16aFhIYjViT0d6VzJPLUhXU00yNENSVEZ5enJRM1hDbnIwUUFuSGU5LUc0dWYzQWJDVlZPbDhFNGRxdTBpRHc?oc=5",
+        "domain": "The Adviser",
+        "sourcecountry": null,
+        "language": "English",
+        "seen_at": "2026-08-17T10:40:45.000Z"
+      },
+      {
+        "title": "Canadian Dollar Firms as Fed Rate Hike Bets Cool, CPI in Focus - CryptoRank",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPOUw4QVFrejltQjdBallKaTZxMTZHVkhmdUgtM3c0eFhLTjB6cS1PX3IzZy1GVXkyaFdGTENheUV3bEo4RzR2WmNValhjQnlkZEhzVFoxMlhRWmd2QzVzbUxTdnpIc0xvYmcteTZLNjgzOUN5UUo1anRfcnJ5TXR5VXZJRFVFbGlKV0pLU19VeUx4djhWazVoaU1lQ2o?oc=5",
+        "domain": "CryptoRank",
+        "sourcecountry": null,
+        "language": "English",
+        "seen_at": "2026-08-17T10:31:12.000Z"
+      },
+      {
+        "title": "Fed Rate Hike Bets Are Fading Fast. Cooler Inflation Could Leave Warsh An Easier Choice. - International Business Times",
+        "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQNkk4dHkzbHRqajNtN09zbVdRbHowcXJaS2ZQSXc0ZmdUZFJlZk00LVpZelJpMEgxdmVJTE1uUnFrcDVjTG9yaUdycE5yRnVKaGZGUlJrSEs1WGFZRmlRSXZ4dTFFR2tQXzdBc1pXdTZqd3FJcHBiVW1EczhPM3J1aG9XMjJLa25reXp1TjhyMDJ6dWxBcXFjZDRzdzZRR1QtZVpXQ0RmRVpQSGNLZ2pNSDBBRlZqUQ?oc=5",
+        "domain": "International Business Times",
+        "sourcecountry": null,
+        "language": "English",
+        "seen_at": "2026-08-17T10:11:01.000Z"
+      },
+      {
+        "title": "FOMC Minutes, Coinbase-Circle USDC Renewal in Focus This Week - bloomingbit",
+        "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9fNHlUMzh6LVA5c3o4V2tFQnp1Zzl2VlZobzZvVkhyc0NSX1dFU19CeXYyVXlHYm5GeExwenptTVhFN3dEVkFBbHdXZnkxR1hmdDlRMg?oc=5",
+        "domain": "bloomingbit",
+        "sourcecountry": null,
+        "language": "English",
+        "seen_at": "2026-08-17T09:44:07.000Z"
       }
     ],
     "event_risk": {
@@ -195,21 +195,21 @@
         "provider": "Google News RSS fallback",
         "currency": "AUD",
         "query": "\"Australian dollar\" OR \"Reserve Bank of Australia\" inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
-        "latest_seen_at": "2026-08-17T15:20:35.000Z",
-        "article_count": 40,
+        "latest_seen_at": "2026-08-18T00:13:05.000Z",
+        "article_count": 38,
         "supportive_headline_count": 6,
-        "opposing_headline_count": 1,
-        "classified_headline_count": 7
+        "opposing_headline_count": 0,
+        "classified_headline_count": 6
       },
       {
-        "provider": "GDELT DOC 2.0",
+        "provider": "Google News RSS fallback",
         "currency": "USD",
-        "query": "(\"US dollar\" OR \"U.S. dollar\" OR \"Federal Reserve\" OR FOMC) (inflation OR \"interest rate\" OR rates OR economy OR growth OR employment OR monetary OR \"central bank\") sourcelang:english",
-        "latest_seen_at": "2026-08-17T15:30:00.000Z",
+        "query": "\"US dollar\" OR \"Federal Reserve\" OR FOMC inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
+        "latest_seen_at": "2026-08-18T00:22:53.000Z",
         "article_count": 40,
-        "supportive_headline_count": 1,
-        "opposing_headline_count": 2,
-        "classified_headline_count": 3
+        "supportive_headline_count": 12,
+        "opposing_headline_count": 3,
+        "classified_headline_count": 15
       }
     ],
     "methodology": {
@@ -221,11 +221,11 @@
       "directional_headlines_are_optional": true,
       "max_article_age_hours": 96,
       "high_impact_headline_window_hours": 24,
-      "base_headline_balance": 0.714,
-      "quote_headline_balance": -0.333,
-      "raw_pair_headline_differential": 1.047,
-      "reliability": 0.75,
-      "adjusted_pair_headline_differential": 0.785,
+      "base_headline_balance": 1,
+      "quote_headline_balance": 0.6,
+      "raw_pair_headline_differential": 0.4,
+      "reliability": 1,
+      "adjusted_pair_headline_differential": 0.4,
       "support_threshold": 62,
       "oppose_threshold": 38,
       "neutral_band": [

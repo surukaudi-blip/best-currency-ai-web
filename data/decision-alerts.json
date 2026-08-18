@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "DECISION_ALERT_WATCH_ACTIVE",
   "created_at": "2026-08-17T03:19:49.195Z",
-  "updated_at": "2026-08-17T15:48:17.857Z",
+  "updated_at": "2026-08-18T00:49:16.835Z",
   "policy": {
     "mode": "material_change_notification_and_explainability_watch",
     "no_historical_backfill": true,
@@ -28,8 +28,8 @@
         "regime": "LOW_ALIGNMENT"
       },
       "first_seen": "2026-08-17T15:48:17.857Z",
-      "last_seen": "2026-08-17T15:48:17.857Z",
-      "occurrences": 1
+      "last_seen": "2026-08-18T00:49:16.835Z",
+      "occurrences": 2
     },
     {
       "key": "MTF_ALIGNMENT_LOW",
@@ -41,8 +41,8 @@
       "trigger": "MTF Alignment < 60.",
       "evidence": null,
       "first_seen": "2026-08-17T15:48:17.857Z",
-      "last_seen": "2026-08-17T15:48:17.857Z",
-      "occurrences": 1
+      "last_seen": "2026-08-18T00:49:16.835Z",
+      "occurrences": 2
     },
     {
       "key": "COUNTER_THESIS_HIGH",
@@ -63,25 +63,61 @@
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-17T15:48:17.857Z",
-      "occurrences": 17
+      "last_seen": "2026-08-18T00:49:16.835Z",
+      "occurrences": 18
+    },
+    {
+      "key": "INTRADAY_MODERATE_DRIFT",
+      "severity": "MODERATE",
+      "title": "Intraday context drift moderat",
+      "detail": "Capture DRIFT-0014-2026-08-17 mendeteksi MODERATE drift.",
+      "source": "intraday_context_drift",
+      "session_date": "2026-08-17",
+      "trigger": "Latest intraday drift level = MODERATE.",
+      "evidence": {
+        "id": "DRIFT-0014-2026-08-17",
+        "captured_at": "2026-08-18T00:49:16.667Z",
+        "drift_level": "MODERATE",
+        "snapshot_hash": "8216b32415c663c4b77b67087cf54db6d0d295718e7f396ef26447da48fff92c",
+        "drift_vs_previous": [
+          {
+            "key": "news_state",
+            "severity": "MODERATE",
+            "label": "News state",
+            "from": "MIXED",
+            "to": "SUPPORTS",
+            "delta": 12.1
+          },
+          {
+            "key": "risk_score",
+            "severity": "LOW",
+            "label": "Risk score",
+            "from": 67.5,
+            "to": 60.5,
+            "delta": -7
+          }
+        ]
+      },
+      "first_seen": "2026-08-18T00:49:16.835Z",
+      "last_seen": "2026-08-18T00:49:16.835Z",
+      "occurrences": 1
     },
     {
       "key": "NEWS_EVENT_HIGH",
       "severity": "MODERATE",
       "title": "High-impact News Event Risk",
-      "detail": "News Event Risk HIGH sementara News 57.9 · MIXED.",
+      "detail": "News Event Risk HIGH sementara News 70 · SUPPORTS.",
       "source": "news",
       "session_date": "2026-08-17",
       "trigger": "News event-risk level = HIGH.",
       "evidence": {
-        "state": "MIXED",
-        "score": 57.9,
+        "state": "SUPPORTS",
+        "score": 70,
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T09:57:27.459Z",
-      "last_seen": "2026-08-17T15:48:17.857Z",
-      "occurrences": 6
+      "last_seen": "2026-08-18T00:49:16.835Z",
+      "occurrences": 7
     }
   ],
   "events": [
@@ -721,18 +757,57 @@
       "session_date": "2026-08-17",
       "dedupe_key": "RESOLVED:NEWS_OPPOSES:2026-08-17:2026-08-17T15:48:17.857Z",
       "event_hash": "f773a0cc5a9c4e9fb85ce8b23bc99da8b8078d791b0ce7a46eb0d820733cf7d3"
+    },
+    {
+      "id": "ALERT-EVENT-0050",
+      "occurred_at": "2026-08-18T00:49:16.835Z",
+      "event_type": "OPEN",
+      "alert_key": "INTRADAY_MODERATE_DRIFT",
+      "severity": "MODERATE",
+      "title": "Intraday context drift moderat",
+      "detail": "Capture DRIFT-0014-2026-08-17 mendeteksi MODERATE drift.",
+      "source": "intraday_context_drift",
+      "session_date": "2026-08-17",
+      "dedupe_key": "OPEN:INTRADAY_MODERATE_DRIFT:2026-08-17",
+      "event_hash": "1834d70406e47c33d6d0a12e4435a77f611b3e40369530a898f25d4a6fc62f6b"
+    },
+    {
+      "id": "ALERT-EVENT-0051",
+      "occurred_at": "2026-08-18T00:49:16.835Z",
+      "event_type": "PULSE",
+      "alert_key": "DRIFT:DRIFT-0014-2026-08-17:news_state",
+      "severity": "MODERATE",
+      "title": "Intraday: News state",
+      "detail": "MIXED → SUPPORTS · Δ 12.1",
+      "source": "intraday_context_drift",
+      "session_date": "2026-08-17",
+      "dedupe_key": "DRIFT:DRIFT-0014-2026-08-17:news_state",
+      "event_hash": "8dc95af90c83f0a86655f60b15d7d636bd83574184bf8e7f71bd1e1ab84dc2a4"
+    },
+    {
+      "id": "ALERT-EVENT-0052",
+      "occurred_at": "2026-08-18T00:49:16.835Z",
+      "event_type": "PULSE",
+      "alert_key": "DRIFT:DRIFT-0014-2026-08-17:risk_score",
+      "severity": "INFO",
+      "title": "Intraday: Risk score",
+      "detail": "67.5 → 60.5 · Δ -7",
+      "source": "intraday_context_drift",
+      "session_date": "2026-08-17",
+      "dedupe_key": "DRIFT:DRIFT-0014-2026-08-17:risk_score",
+      "event_hash": "208b4ef6a1660fede8096b48eb92f53f286ad7862870f0ae3cfcdf7a9d9cfc88"
     }
   ],
   "summary": {
     "alert_gate": "REVIEW_NOW",
-    "active_total": 4,
+    "active_total": 5,
     "high_active": 2,
-    "moderate_active": 2,
+    "moderate_active": 3,
     "info_active": 0,
-    "event_count": 49,
-    "new_events_this_run": 6,
-    "latest_event_at": "2026-08-17T15:48:17.857Z",
-    "latest_event_id": "ALERT-EVENT-0049"
+    "event_count": 52,
+    "new_events_this_run": 3,
+    "latest_event_at": "2026-08-18T00:49:16.835Z",
+    "latest_event_id": "ALERT-EVENT-0052"
   },
   "current_watch": {
     "session_date": "2026-08-17",
@@ -753,21 +828,21 @@
         "score": 87.5
       },
       "news": {
-        "state": "MIXED",
-        "score": 57.9,
+        "state": "SUPPORTS",
+        "score": 70,
         "event_risk": "HIGH"
       },
       "counts": {
-        "supports": 2,
+        "supports": 3,
         "opposes": 0,
-        "mixed_or_neutral": 1,
+        "mixed_or_neutral": 0,
         "available": 3,
         "expected": 3
       }
     },
     "risk": {
       "version": "0.2",
-      "score": 67.5,
+      "score": 60.5,
       "state": "MODERATE"
     },
     "counter_thesis": {
@@ -788,18 +863,26 @@
       "decision": "DEPRIORITIZE"
     },
     "intraday": {
-      "id": "DRIFT-0013-2026-08-17",
-      "captured_at": "2026-08-17T15:48:17.711Z",
-      "drift_level": "BASELINE",
-      "snapshot_hash": "b4922e3af204419a1f14ef1c98458f0415b34fb3fbb1edec9d94ff2f2450d7dc",
+      "id": "DRIFT-0014-2026-08-17",
+      "captured_at": "2026-08-18T00:49:16.667Z",
+      "drift_level": "MODERATE",
+      "snapshot_hash": "8216b32415c663c4b77b67087cf54db6d0d295718e7f396ef26447da48fff92c",
       "drift_vs_previous": [
         {
-          "key": "session_baseline",
-          "severity": "NONE",
-          "label": "Session baseline",
-          "from": null,
-          "to": "AUDUSD BUY",
-          "delta": null
+          "key": "news_state",
+          "severity": "MODERATE",
+          "label": "News state",
+          "from": "MIXED",
+          "to": "SUPPORTS",
+          "delta": 12.1
+        },
+        {
+          "key": "risk_score",
+          "severity": "LOW",
+          "label": "Risk score",
+          "from": 67.5,
+          "to": 60.5,
+          "delta": -7
         }
       ]
     },
