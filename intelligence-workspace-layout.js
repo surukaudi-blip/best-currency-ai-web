@@ -4,6 +4,10 @@
   var liveShell=container&&container.querySelector('.live-shell');
   if(!container||!liveShell) return;
 
+  // Decision Readiness methodology is presentation-only UI heuristic v0.1.
+  // It summarizes existing frozen model outputs and does not alter model logic.
+  var DECISION_READINESS_METHOD='ui_heuristic_v0.1';
+
   var style=document.createElement('style');
   style.textContent=
     '.iw-shell{margin-top:22px;display:grid;gap:12px}' +
@@ -80,6 +84,11 @@
     '.dr-progress{height:7px;border-radius:999px;background:rgba(148,163,184,.1);overflow:hidden;border:1px solid var(--border)}' +
     '.dr-progress>span{display:block;height:100%;width:var(--dr-pct);background:var(--dr-tone);border-radius:999px;transition:width .25s ease}' +
     '.dr-scale{display:flex;justify-content:space-between;gap:8px;margin-top:5px;font-size:.5rem;color:var(--muted-2)}' +
+    '.dr-blockers{display:flex;align-items:flex-start;gap:8px;margin-top:11px;padding:9px 10px;border-radius:10px;border:1px solid var(--border);background:rgba(7,11,20,.18);font-size:.54rem;line-height:1.45}' +
+    '.dr-blockers-label{color:var(--muted-2);font-weight:800;white-space:nowrap}' +
+    '.dr-blockers-value{color:var(--text);font-weight:800}' +
+    '.dr-blockers.clear{border-color:rgba(59,214,154,.2);background:rgba(59,214,154,.035)}' +
+    '.dr-blockers.clear .dr-blockers-value{color:var(--green)}' +
     '.dr-checks{display:grid;grid-template-columns:1fr;gap:7px;margin-top:12px}' +
     '@media(min-width:760px){.dr-checks{grid-template-columns:repeat(5,minmax(0,1fr))}}' +
     '.dr-check{border:1px solid var(--border);border-radius:10px;padding:9px;background:rgba(7,11,20,.18);min-width:0}' +
@@ -93,7 +102,7 @@
     '.dr-interpretation{font-size:.6rem;font-weight:900;color:var(--text)}' +
     '.dr-guard{font-size:.52rem;line-height:1.45;color:var(--muted);max-width:760px}' +
     '.dr-guard b{color:var(--accent);font-weight:850}' +
-    '@media(max-width:899px){.iw-shell{margin-top:16px}.iw-head{padding:0}.iw-title{font-size:1.03rem}.iw-sub{font-size:.64rem}.ug-head{padding:15px}.ug-flow,.ug-block{padding-left:15px;padding-right:15px}.ug-guard{margin-left:15px;margin-right:15px}.dr-head,.dr-body{padding-left:15px;padding-right:15px}.dr-ring{width:74px;height:74px}}';
+    '@media(max-width:899px){.iw-shell{margin-top:16px}.iw-head{padding:0}.iw-title{font-size:1.03rem}.iw-sub{font-size:.64rem}.ug-head{padding:15px}.ug-flow,.ug-block{padding-left:15px;padding-right:15px}.ug-guard{margin-left:15px;margin-right:15px}.dr-head,.dr-body{padding-left:15px;padding-right:15px}.dr-ring{width:74px;height:74px}.dr-blockers{flex-direction:column;gap:3px}}';
   document.head.appendChild(style);
 
   var shell=document.getElementById('intelligence-workspace');
@@ -159,15 +168,19 @@
     readiness=document.createElement('div');
     readiness.id='decision-readiness';
     readiness.className='dr-panel partial';
+    readiness.dataset.methodology=DECISION_READINESS_METHOD;
+    readiness.dataset.methodologyVersion='0.1';
+    readiness.dataset.role='presentation_only';
     readiness.style.setProperty('--dr-pct','0%');
     readiness.innerHTML=
       '<div class="dr-head">' +
-        '<div><div class="dr-eyebrow">Decision Readiness</div><div class="dr-title">Persentase syarat review yang terpenuhi</div><div class="dr-sub">Skor 0–100 dihitung dari lima pemeriksaan yang masing-masing bernilai 20 poin. Primary Gate tetap ditentukan oleh Actionability dan dapat meng-override interpretasi persentase.</div></div>' +
+        '<div><div class="dr-eyebrow">Decision Readiness</div><div class="dr-title">Persentase syarat review yang terpenuhi</div><div class="dr-sub">Ringkasan rule-based dari lima pemeriksaan keputusan. Setiap check bernilai 20 poin; Primary Gate tetap ditentukan oleh Actionability dan dapat meng-override interpretasi persentase.</div></div>' +
         '<div class="dr-summary"><div class="dr-ring"><div class="dr-pct" id="dr-pct">—</div></div><div class="dr-summary-meta"><div class="dr-met" id="dr-met">Memuat…</div><span class="dr-primary fail" id="dr-primary">PRIMARY GATE · —</span></div></div>' +
       '</div>' +
       '<div class="dr-body">' +
         '<div class="dr-progress"><span></span></div>' +
         '<div class="dr-scale"><span>0–40% · Low Readiness</span><span>60% · Review</span><span>80–100% · High Readiness</span></div>' +
+        '<div class="dr-blockers" id="dr-blockers"><span class="dr-blockers-label">Current blockers</span><span class="dr-blockers-value">Memuat…</span></div>' +
         '<div class="dr-checks" id="dr-checks"></div>' +
         '<div class="dr-foot"><div class="dr-interpretation" id="dr-interpretation">Menunggu data terbaru…</div><div class="dr-guard"><b>Guardrail:</b> Decision Readiness mengukur requirement completion, bukan win probability, expected return, profit forecast, atau performa trading.</div></div>' +
       '</div>';
@@ -176,7 +189,7 @@
 
   function drEsc(value){
     return String(value==null?'—':value).replace(/[&<>"']/g,function(c){
-      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c];
     });
   }
   function drNum(value){
@@ -237,6 +250,7 @@
     var primaryPassed=checks[0].pass;
     var className=!primaryPassed?'low':(pct>=80?'high':pct>=60?'partial':'low');
     var interpretation=!primaryPassed?'DEPRIORITIZE · Primary Gate belum terpenuhi':(pct>=80?'PRIORITIZE REVIEW · High Readiness':pct>=60?'REVIEW SELECTIVELY · Partial Readiness':'DEPRIORITIZE · Low Readiness');
+    var blockers=checks.filter(function(x){return !x.pass;}).map(function(x){return x.name;});
 
     readiness.className='dr-panel '+className;
     readiness.style.setProperty('--dr-pct',pct+'%');
@@ -246,6 +260,12 @@
     primary.className='dr-primary '+(primaryPassed?'pass':'fail');
     primary.textContent='PRIMARY GATE · '+(primaryPassed?'PASSED':'NOT PASSED');
     document.getElementById('dr-interpretation').textContent=interpretation;
+
+    var blockersEl=document.getElementById('dr-blockers');
+    if(blockersEl){
+      blockersEl.className='dr-blockers'+(blockers.length?'':' clear');
+      blockersEl.innerHTML='<span class="dr-blockers-label">Current blockers</span><span class="dr-blockers-value">'+drEsc(blockers.length?blockers.join(' · '):'None — all five checks met')+'</span>';
+    }
 
     document.getElementById('dr-checks').innerHTML=checks.map(function(x){
       return '<div class="dr-check '+(x.pass?'pass':'fail')+'"><div class="dr-check-top"><span class="dr-icon">'+(x.pass?'✓':'×')+'</span><span class="dr-check-name">'+drEsc(x.name)+'</span></div><div class="dr-check-detail">'+drEsc(x.detail)+'</div></div>';
@@ -258,9 +278,11 @@
       .catch(function(){
         var pct=document.getElementById('dr-pct');
         var met=document.getElementById('dr-met');
+        var blockers=document.getElementById('dr-blockers');
         var interpretation=document.getElementById('dr-interpretation');
         if(pct) pct.textContent='—';
         if(met) met.textContent='Data belum tersedia';
+        if(blockers) blockers.innerHTML='<span class="dr-blockers-label">Current blockers</span><span class="dr-blockers-value">Tidak dapat dihitung</span>';
         if(interpretation) interpretation.textContent='Decision Readiness tidak dapat dihitung pada snapshot ini.';
       });
   }
