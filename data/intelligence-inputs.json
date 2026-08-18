@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T00:49:16.343Z",
+  "generated_at": "2026-08-18T01:21:38.853Z",
   "pair": "AUDUSD",
   "canonical_bias": "BUY",
   "macro_yield": {
@@ -7,7 +7,7 @@
     "direction": "SUPPORTS",
     "score": 66.7,
     "provider": "FRED (OECD / Federal Reserve source series)",
-    "updated_at": "2026-08-18T00:48:26.228Z",
+    "updated_at": "2026-08-18T01:20:44.499Z",
     "evidence": [
       "10Y yield spread: AUD 4.831% (2026-06-01) vs USD 4.470% (2026-06-01); spread +0.361 pp => SUPPORTS canonical BUY.",
       "10Y spread momentum: -0.141 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
@@ -53,7 +53,7 @@
     "direction": "SUPPORTS",
     "score": 87.5,
     "provider": "FRED (Federal Reserve / EIA source series)",
-    "updated_at": "2026-08-18T00:48:26.995Z",
+    "updated_at": "2026-08-18T01:20:44.714Z",
     "evidence": [
       "NFCI: level -0.5490 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
       "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
@@ -109,17 +109,25 @@
   "news": {
     "available": true,
     "direction": "SUPPORTS",
-    "score": 70,
+    "score": 64.3,
     "provider": "Google News RSS fallback",
-    "updated_at": "2026-08-18T00:49:16.343Z",
+    "updated_at": "2026-08-18T01:21:38.853Z",
     "evidence": [
-      "Headline-stance differential AUDUSD BUY: 0.4 after directional-headline reliability 100% => SUPPORTS.",
-      "AUD: 6 supportive vs 0 opposing directional headline(s); balance 1 from 38 recent articles via Google News RSS fallback.",
-      "USD: 12 supportive vs 3 opposing directional headline(s); balance 0.6 from 40 recent articles via Google News RSS fallback.",
+      "Headline-stance differential AUDUSD BUY: 0.286 after directional-headline reliability 100% => SUPPORTS.",
+      "AUD: 7 supportive vs 0 opposing directional headline(s); balance 1 from 38 recent articles via Google News RSS fallback.",
+      "USD: 12 supportive vs 2 opposing directional headline(s); balance 0.714 from 40 recent articles via Google News RSS fallback.",
       "High-impact headline risk: HIGH; 8 relevant headline(s) detected within 24h."
     ],
     "missing_evidence": [],
     "headlines": [
+      {
+        "title": "Goldman calls September Fed hike very unlikely as inflation eases - investingLive",
+        "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQNENOQTVCNUJnajZ5N2J3QUFvbEx3TFJBVGticnpvQ1JobUFpVnF0T2E5WHRYcjREN2Z4U3huUDVmeE10QUZWTi1Ibjc0U1Z5dlpSQU5tNmptclJKSWlQVXlJS0tfQWRKbnhvSFo1S2RpODEwQnNHUHZkbW82OGd6NlRzWUVOTkNQeE9aN2dVZXhGMTJodDBEa1pndmU1TVIyNTU4cEJCTHYxQQ?oc=5",
+        "domain": "investingLive",
+        "sourcecountry": null,
+        "language": "English",
+        "seen_at": "2026-08-18T00:46:14.000Z"
+      },
       {
         "title": "British Pound Outlook: GBP/USD, GBP/AUD Face UK Jobs Test - FOREX.com",
         "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOUDNna012MzdhU2JRaG4xT2pJbHFVa2R6bC1fdzZMcnBzeVlHZm9STWJ2LS1IOVM0U1FYY1hzTEtIakpnQWJlOTdZNnlRemFGRDhjTklMWVJYVFdYYWV6NWdMbVYzQkZMTk01NnpTOFUzQjJZdXFvUGxIbVlJT1pWNGdUSUsyVzlvVk1EY3dqUGJ0M1oxSUFEdWVEai11T1VHTHFNQQ?oc=5",
@@ -153,20 +161,12 @@
         "seen_at": "2026-08-17T10:47:12.000Z"
       },
       {
-        "title": "New RBA Monetary Policy Board member appointed - The Adviser",
+        "title": "New RBA Monetary Policy Board member appointed - theadviser.com.au",
         "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPdGZpMTRzUHRkZm5aOW9NeENseFdfeDd3NVlqVXFuVXZCd1pLMklMMER6Q0pjVF9YUDRrQ1d5RXNRSWJLVG9mc2J4UVJ5Y1FtM1BQaUllME16aFhIYjViT0d6VzJPLUhXU00yNENSVEZ5enJRM1hDbnIwUUFuSGU5LUc0dWYzQWJDVlZPbDhFNGRxdTBpRHc?oc=5",
-        "domain": "The Adviser",
+        "domain": "theadviser.com.au",
         "sourcecountry": null,
         "language": "English",
         "seen_at": "2026-08-17T10:40:45.000Z"
-      },
-      {
-        "title": "Canadian Dollar Firms as Fed Rate Hike Bets Cool, CPI in Focus - CryptoRank",
-        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxPOUw4QVFrejltQjdBallKaTZxMTZHVkhmdUgtM3c0eFhLTjB6cS1PX3IzZy1GVXkyaFdGTENheUV3bEo4RzR2WmNValhjQnlkZEhzVFoxMlhRWmd2QzVzbUxTdnpIc0xvYmcteTZLNjgzOUN5UUo1anRfcnJ5TXR5VXZJRFVFbGlKV0pLU19VeUx4djhWazVoaU1lQ2o?oc=5",
-        "domain": "CryptoRank",
-        "sourcecountry": null,
-        "language": "English",
-        "seen_at": "2026-08-17T10:31:12.000Z"
       },
       {
         "title": "Fed Rate Hike Bets Are Fading Fast. Cooler Inflation Could Leave Warsh An Easier Choice. - International Business Times",
@@ -177,12 +177,12 @@
         "seen_at": "2026-08-17T10:11:01.000Z"
       },
       {
-        "title": "FOMC Minutes, Coinbase-Circle USDC Renewal in Focus This Week - bloomingbit",
-        "url": "https://news.google.com/rss/articles/CBMiVEFVX3lxTE9fNHlUMzh6LVA5c3o4V2tFQnp1Zzl2VlZobzZvVkhyc0NSX1dFU19CeXYyVXlHYm5GeExwenptTVhFN3dEVkFBbHdXZnkxR1hmdDlRMg?oc=5",
-        "domain": "bloomingbit",
+        "title": "Reserve Bank of Australia hawkish policy stance: AUD/USD resistance levels in focus - Traders Union",
+        "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxON18tdlJ4ekgweDJSNmttellpNzZmNlp0OWZyRHJrbmt0MnRZOFVXMk5xWDRJSEFWblZMUUF4NGF0UVZEMUwxb2VwaHRnUklKLUpMbTBncHpuZnJXeHk2ZmVGTlBDdWVRS2dsMEs2bmZXRVMzaUI2TThVWGRrUmhmU0tLa041X0NWU01uMk5XSDZsMVAyWWtmd0hCS0s?oc=5",
+        "domain": "Traders Union",
         "sourcecountry": null,
         "language": "English",
-        "seen_at": "2026-08-17T09:44:07.000Z"
+        "seen_at": "2026-08-17T09:50:28.000Z"
       }
     ],
     "event_risk": {
@@ -195,21 +195,21 @@
         "provider": "Google News RSS fallback",
         "currency": "AUD",
         "query": "\"Australian dollar\" OR \"Reserve Bank of Australia\" inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
-        "latest_seen_at": "2026-08-18T00:13:05.000Z",
+        "latest_seen_at": "2026-08-18T01:00:26.000Z",
         "article_count": 38,
-        "supportive_headline_count": 6,
+        "supportive_headline_count": 7,
         "opposing_headline_count": 0,
-        "classified_headline_count": 6
+        "classified_headline_count": 7
       },
       {
         "provider": "Google News RSS fallback",
         "currency": "USD",
         "query": "\"US dollar\" OR \"Federal Reserve\" OR FOMC inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
-        "latest_seen_at": "2026-08-18T00:22:53.000Z",
+        "latest_seen_at": "2026-08-18T00:57:00.000Z",
         "article_count": 40,
         "supportive_headline_count": 12,
-        "opposing_headline_count": 3,
-        "classified_headline_count": 15
+        "opposing_headline_count": 2,
+        "classified_headline_count": 14
       }
     ],
     "methodology": {
@@ -222,10 +222,10 @@
       "max_article_age_hours": 96,
       "high_impact_headline_window_hours": 24,
       "base_headline_balance": 1,
-      "quote_headline_balance": 0.6,
-      "raw_pair_headline_differential": 0.4,
+      "quote_headline_balance": 0.714,
+      "raw_pair_headline_differential": 0.286,
       "reliability": 1,
-      "adjusted_pair_headline_differential": 0.4,
+      "adjusted_pair_headline_differential": 0.286,
       "support_threshold": 62,
       "oppose_threshold": 38,
       "neutral_band": [

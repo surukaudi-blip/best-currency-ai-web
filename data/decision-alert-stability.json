@@ -3,7 +3,7 @@
   "status": "DECISION_ALERT_STABILITY_ACTIVE",
   "stability_version": "0.1",
   "created_at": "2026-08-17T03:36:34.650Z",
-  "updated_at": "2026-08-18T00:49:17.015Z",
+  "updated_at": "2026-08-18T01:21:39.566Z",
   "config": {
     "persistence_default": 1,
     "persistence_overrides": {
@@ -472,7 +472,7 @@
     }
   ],
   "cursor": {
-    "last_raw_event_id": "ALERT-EVENT-0052"
+    "last_raw_event_id": "ALERT-EVENT-0053"
   },
   "classification_snapshot": {
     "confirmed_keys": [
@@ -483,15 +483,37 @@
     ]
   },
   "raw_alert_status": "DECISION_ALERT_WATCH_ACTIVE",
-  "raw_alert_updated_at": "2026-08-18T00:49:16.835Z",
+  "raw_alert_updated_at": "2026-08-18T01:21:39.347Z",
   "oscillation": {
     "detected": false,
-    "classification": "INSUFFICIENT_CAPTURES",
+    "classification": "NO_OSCILLATION",
     "window": [
       "DRIFT-0013-2026-08-17",
-      "DRIFT-0014-2026-08-17"
+      "DRIFT-0014-2026-08-17",
+      "DRIFT-0015-2026-08-17"
     ],
-    "affected": []
+    "affected": [],
+    "news_path": [
+      "MIXED",
+      "SUPPORTS",
+      "SUPPORTS"
+    ],
+    "final_reasoner_path": [
+      "MIXED_CONTEXT/DEPRIORITIZE",
+      "MIXED_CONTEXT/DEPRIORITIZE",
+      "MIXED_CONTEXT/DEPRIORITIZE"
+    ],
+    "risk_path": [
+      "MODERATE",
+      "MODERATE",
+      "MODERATE"
+    ],
+    "canonical_path": [
+      "AUDUSD BUY",
+      "AUDUSD BUY",
+      "AUDUSD BUY"
+    ],
+    "interpretation": "No A→B→A context oscillation detected in the latest three captures."
   },
   "confirmed_alerts": [
     {
@@ -508,11 +530,11 @@
         "regime": "LOW_ALIGNMENT"
       },
       "first_seen": "2026-08-17T15:48:17.857Z",
-      "last_seen": "2026-08-18T00:49:16.835Z",
-      "occurrences": 2,
+      "last_seen": "2026-08-18T01:21:39.347Z",
+      "occurrences": 3,
       "stability": {
         "required_confirmations": 1,
-        "observed_confirmations": 2,
+        "observed_confirmations": 3,
         "immediate_structural": true,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -530,11 +552,11 @@
       "trigger": "MTF Alignment < 60.",
       "evidence": null,
       "first_seen": "2026-08-17T15:48:17.857Z",
-      "last_seen": "2026-08-18T00:49:16.835Z",
-      "occurrences": 2,
+      "last_seen": "2026-08-18T01:21:39.347Z",
+      "occurrences": 3,
       "stability": {
         "required_confirmations": 1,
-        "observed_confirmations": 2,
+        "observed_confirmations": 3,
         "immediate_structural": true,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -561,11 +583,11 @@
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-18T00:49:16.835Z",
-      "occurrences": 18,
+      "last_seen": "2026-08-18T01:21:39.347Z",
+      "occurrences": 19,
       "stability": {
         "required_confirmations": 2,
-        "observed_confirmations": 2,
+        "observed_confirmations": 3,
         "immediate_structural": false,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -577,21 +599,21 @@
       "key": "NEWS_EVENT_HIGH",
       "severity": "MODERATE",
       "title": "High-impact News Event Risk",
-      "detail": "News Event Risk HIGH sementara News 70 · SUPPORTS.",
+      "detail": "News Event Risk HIGH sementara News 64.3 · SUPPORTS.",
       "source": "news",
       "session_date": "2026-08-17",
       "trigger": "News event-risk level = HIGH.",
       "evidence": {
         "state": "SUPPORTS",
-        "score": 70,
+        "score": 64.3,
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T09:57:27.459Z",
-      "last_seen": "2026-08-18T00:49:16.835Z",
-      "occurrences": 7,
+      "last_seen": "2026-08-18T01:21:39.347Z",
+      "occurrences": 8,
       "stability": {
         "required_confirmations": 2,
-        "observed_confirmations": 2,
+        "observed_confirmations": 3,
         "immediate_structural": false,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -600,53 +622,7 @@
       }
     }
   ],
-  "pending_alerts": [
-    {
-      "key": "INTRADAY_MODERATE_DRIFT",
-      "severity": "MODERATE",
-      "title": "Intraday context drift moderat",
-      "detail": "Capture DRIFT-0014-2026-08-17 mendeteksi MODERATE drift.",
-      "source": "intraday_context_drift",
-      "session_date": "2026-08-17",
-      "trigger": "Latest intraday drift level = MODERATE.",
-      "evidence": {
-        "id": "DRIFT-0014-2026-08-17",
-        "captured_at": "2026-08-18T00:49:16.667Z",
-        "drift_level": "MODERATE",
-        "snapshot_hash": "8216b32415c663c4b77b67087cf54db6d0d295718e7f396ef26447da48fff92c",
-        "drift_vs_previous": [
-          {
-            "key": "news_state",
-            "severity": "MODERATE",
-            "label": "News state",
-            "from": "MIXED",
-            "to": "SUPPORTS",
-            "delta": 12.1
-          },
-          {
-            "key": "risk_score",
-            "severity": "LOW",
-            "label": "Risk score",
-            "from": 67.5,
-            "to": 60.5,
-            "delta": -7
-          }
-        ]
-      },
-      "first_seen": "2026-08-18T00:49:16.835Z",
-      "last_seen": "2026-08-18T00:49:16.835Z",
-      "occurrences": 1,
-      "stability": {
-        "required_confirmations": 2,
-        "observed_confirmations": 1,
-        "immediate_structural": false,
-        "persistence_confirmed": false,
-        "suppression_reason": "PERSISTENCE_CONFIRMATION_PENDING",
-        "effective_severity": "MODERATE",
-        "notification_eligible": false
-      }
-    }
-  ],
+  "pending_alerts": [],
   "suppressed_alerts": [],
   "current_watch": {
     "session_date": "2026-08-17",
@@ -668,7 +644,7 @@
       },
       "news": {
         "state": "SUPPORTS",
-        "score": 70,
+        "score": 64.3,
         "event_risk": "HIGH"
       },
       "counts": {
@@ -702,28 +678,11 @@
       "decision": "DEPRIORITIZE"
     },
     "intraday": {
-      "id": "DRIFT-0014-2026-08-17",
-      "captured_at": "2026-08-18T00:49:16.667Z",
-      "drift_level": "MODERATE",
-      "snapshot_hash": "8216b32415c663c4b77b67087cf54db6d0d295718e7f396ef26447da48fff92c",
-      "drift_vs_previous": [
-        {
-          "key": "news_state",
-          "severity": "MODERATE",
-          "label": "News state",
-          "from": "MIXED",
-          "to": "SUPPORTS",
-          "delta": 12.1
-        },
-        {
-          "key": "risk_score",
-          "severity": "LOW",
-          "label": "Risk score",
-          "from": 67.5,
-          "to": 60.5,
-          "delta": -7
-        }
-      ]
+      "id": "DRIFT-0015-2026-08-17",
+      "captured_at": "2026-08-18T01:21:39.174Z",
+      "drift_level": "NONE",
+      "snapshot_hash": "604fe643e2367c075aaa9834c1a822532c9a71d355f79463041097c183e9aaa3",
+      "drift_vs_previous": []
     },
     "anchors": {
       "decision_history": {
@@ -742,14 +701,14 @@
   "summary": {
     "raw_gate": "REVIEW_NOW",
     "stable_gate": "REVIEW_NOW",
-    "raw_active_total": 5,
+    "raw_active_total": 4,
     "confirmed_total": 4,
-    "pending_total": 1,
+    "pending_total": 0,
     "suppressed_total": 0,
     "confirmed_high": 2,
     "confirmed_moderate": 2,
     "oscillation_detected": false,
-    "notification_eligible_this_run": 4,
+    "notification_eligible_this_run": 0,
     "notification_suppressed_this_run": 0,
     "delivery_log_count": 29
   }
