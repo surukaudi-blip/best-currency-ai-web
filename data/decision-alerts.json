@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "DECISION_ALERT_WATCH_ACTIVE",
   "created_at": "2026-08-17T03:19:49.195Z",
-  "updated_at": "2026-08-18T01:21:39.347Z",
+  "updated_at": "2026-08-18T02:03:32.069Z",
   "policy": {
     "mode": "material_change_notification_and_explainability_watch",
     "no_historical_backfill": true,
@@ -28,8 +28,8 @@
         "regime": "LOW_ALIGNMENT"
       },
       "first_seen": "2026-08-17T15:48:17.857Z",
-      "last_seen": "2026-08-18T01:21:39.347Z",
-      "occurrences": 3
+      "last_seen": "2026-08-18T02:03:32.069Z",
+      "occurrences": 4
     },
     {
       "key": "MTF_ALIGNMENT_LOW",
@@ -41,8 +41,8 @@
       "trigger": "MTF Alignment < 60.",
       "evidence": null,
       "first_seen": "2026-08-17T15:48:17.857Z",
-      "last_seen": "2026-08-18T01:21:39.347Z",
-      "occurrences": 3
+      "last_seen": "2026-08-18T02:03:32.069Z",
+      "occurrences": 4
     },
     {
       "key": "COUNTER_THESIS_HIGH",
@@ -63,25 +63,25 @@
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-18T01:21:39.347Z",
-      "occurrences": 19
+      "last_seen": "2026-08-18T02:03:32.069Z",
+      "occurrences": 20
     },
     {
       "key": "NEWS_EVENT_HIGH",
       "severity": "MODERATE",
       "title": "High-impact News Event Risk",
-      "detail": "News Event Risk HIGH sementara News 64.3 · SUPPORTS.",
+      "detail": "News Event Risk HIGH sementara News 68.8 · SUPPORTS.",
       "source": "news",
       "session_date": "2026-08-17",
       "trigger": "News event-risk level = HIGH.",
       "evidence": {
         "state": "SUPPORTS",
-        "score": 64.3,
+        "score": 68.8,
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T09:57:27.459Z",
-      "last_seen": "2026-08-18T01:21:39.347Z",
-      "occurrences": 8
+      "last_seen": "2026-08-18T02:03:32.069Z",
+      "occurrences": 9
     }
   ],
   "events": [
@@ -782,7 +782,7 @@
     "moderate_active": 2,
     "info_active": 0,
     "event_count": 53,
-    "new_events_this_run": 1,
+    "new_events_this_run": 0,
     "latest_event_at": "2026-08-18T01:21:39.347Z",
     "latest_event_id": "ALERT-EVENT-0053"
   },
@@ -806,7 +806,7 @@
       },
       "news": {
         "state": "SUPPORTS",
-        "score": 64.3,
+        "score": 68.8,
         "event_risk": "HIGH"
       },
       "counts": {
@@ -840,10 +840,10 @@
       "decision": "DEPRIORITIZE"
     },
     "intraday": {
-      "id": "DRIFT-0015-2026-08-17",
-      "captured_at": "2026-08-18T01:21:39.174Z",
+      "id": "DRIFT-0016-2026-08-17",
+      "captured_at": "2026-08-18T02:03:31.855Z",
       "drift_level": "NONE",
-      "snapshot_hash": "604fe643e2367c075aaa9834c1a822532c9a71d355f79463041097c183e9aaa3",
+      "snapshot_hash": "be783730ddf3f388da55b3b350b0457b7e7d53d4f0e55912e02392a00011177a",
       "drift_vs_previous": []
     },
     "anchors": {

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-18T01:21:38.853Z",
+  "generated_at": "2026-08-18T02:03:31.532Z",
   "pair": "AUDUSD",
   "canonical_bias": "BUY",
   "macro_yield": {
@@ -7,7 +7,7 @@
     "direction": "SUPPORTS",
     "score": 66.7,
     "provider": "FRED (OECD / Federal Reserve source series)",
-    "updated_at": "2026-08-18T01:20:44.499Z",
+    "updated_at": "2026-08-18T02:02:41.427Z",
     "evidence": [
       "10Y yield spread: AUD 4.831% (2026-06-01) vs USD 4.470% (2026-06-01); spread +0.361 pp => SUPPORTS canonical BUY.",
       "10Y spread momentum: -0.141 pp versus prior observations (2026-05-01/2026-05-01) => OPPOSES canonical BUY.",
@@ -53,7 +53,7 @@
     "direction": "SUPPORTS",
     "score": 87.5,
     "provider": "FRED (Federal Reserve / EIA source series)",
-    "updated_at": "2026-08-18T01:20:44.714Z",
+    "updated_at": "2026-08-18T02:02:43.874Z",
     "evidence": [
       "NFCI: level -0.5490 (2026-08-07) => SUPPORTS canonical bias berdasarkan profil cyclical/defensive pasangan.",
       "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
@@ -109,13 +109,13 @@
   "news": {
     "available": true,
     "direction": "SUPPORTS",
-    "score": 64.3,
+    "score": 68.8,
     "provider": "Google News RSS fallback",
-    "updated_at": "2026-08-18T01:21:38.853Z",
+    "updated_at": "2026-08-18T02:03:31.532Z",
     "evidence": [
-      "Headline-stance differential AUDUSD BUY: 0.286 after directional-headline reliability 100% => SUPPORTS.",
-      "AUD: 7 supportive vs 0 opposing directional headline(s); balance 1 from 38 recent articles via Google News RSS fallback.",
-      "USD: 12 supportive vs 2 opposing directional headline(s); balance 0.714 from 40 recent articles via Google News RSS fallback.",
+      "Headline-stance differential AUDUSD BUY: 0.375 after directional-headline reliability 100% => SUPPORTS.",
+      "AUD: 7 supportive vs 0 opposing directional headline(s); balance 1 from 37 recent articles via Google News RSS fallback.",
+      "USD: 13 supportive vs 3 opposing directional headline(s); balance 0.625 from 40 recent articles via Google News RSS fallback.",
       "High-impact headline risk: HIGH; 8 relevant headline(s) detected within 24h."
     ],
     "missing_evidence": [],
@@ -145,6 +145,14 @@
         "seen_at": "2026-08-17T23:30:32.000Z"
       },
       {
+        "title": "Dallas Fed: Loan Demand, Volume Continue Strong Growth - Fort Worth Inc.",
+        "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPdFpFNWE2TVJBZll0YWtidzkxc1dneFlQdDRjQ0JiMThNSkVwdlQ3dkpvR3dycFhSanVyc0EtaG1pMjdySG5EdGdwQTFlcmNSdW5iT2pyTURnVmpmUU9TdFp3MVA4cEF3MUFCbVEwNmJzQXNzbERRbFRYX1NPOUtvZnJqeWJ0aFpPNXJr?oc=5",
+        "domain": "Fort Worth Inc.",
+        "sourcecountry": null,
+        "language": "English",
+        "seen_at": "2026-08-17T20:08:00.000Z"
+      },
+      {
         "title": "Inflation moderates but interest rates expected to remain high - Heartlander News",
         "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxQZDBRcTNubUF3VXk3OTZ4MDBCTVg1c1l2Njd3ZktOV29qZjdHeG4xVFRNeERFbnBoYXNSMTBqYlpGUWoya0xCQWY2RmM0RWtGaWFQblE3Z3k0MnhVQXl0UDJ3MDBuempYc0NSeGwzaExRZWNCUnhmWElhNGtIaDlMYnM1clBYcXE3MzRRZjBvZnNocVk4NHc?oc=5",
         "domain": "Heartlander News",
@@ -153,17 +161,9 @@
         "seen_at": "2026-08-17T16:33:34.000Z"
       },
       {
-        "title": "Yen retreats below 159.00 against the US Dollar as Japanese GDP disappoints - tmgm.com",
-        "url": "https://news.google.com/rss/articles/CBMi1gFBVV95cUxPSWJ1SW5mR3N1WXpDN2RnTFJRQk4wekRWN3pueDZWNzR4dnkwR01YNjJ1VVlmeTRBa3NPYVRGeWJhOGtZOGtfZE5HUF84bllTYlFJY2tzS29SLUMtYWtnN1JZcUtFMEQ3MHJqeXZEMjdsQ282TDZuX0hvTUw1SC1yeF9YV3pRdFB2MUpFY2FYaEtUb1FfUGItQjVkQ2tPR2M3ak1RVGEzM2ZRS190ejBIZElVeWNRcGRCaGtEbWRPdDRFOE1WeGNuUS1XcXB2azZEeHJua2dn?oc=5",
-        "domain": "tmgm.com",
-        "sourcecountry": null,
-        "language": "English",
-        "seen_at": "2026-08-17T10:47:12.000Z"
-      },
-      {
-        "title": "New RBA Monetary Policy Board member appointed - theadviser.com.au",
+        "title": "New RBA Monetary Policy Board member appointed - The Adviser",
         "url": "https://news.google.com/rss/articles/CBMilgFBVV95cUxPdGZpMTRzUHRkZm5aOW9NeENseFdfeDd3NVlqVXFuVXZCd1pLMklMMER6Q0pjVF9YUDRrQ1d5RXNRSWJLVG9mc2J4UVJ5Y1FtM1BQaUllME16aFhIYjViT0d6VzJPLUhXU00yNENSVEZ5enJRM1hDbnIwUUFuSGU5LUc0dWYzQWJDVlZPbDhFNGRxdTBpRHc?oc=5",
-        "domain": "theadviser.com.au",
+        "domain": "The Adviser",
         "sourcecountry": null,
         "language": "English",
         "seen_at": "2026-08-17T10:40:45.000Z"
@@ -196,7 +196,7 @@
         "currency": "AUD",
         "query": "\"Australian dollar\" OR \"Reserve Bank of Australia\" inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
         "latest_seen_at": "2026-08-18T01:00:26.000Z",
-        "article_count": 38,
+        "article_count": 37,
         "supportive_headline_count": 7,
         "opposing_headline_count": 0,
         "classified_headline_count": 7
@@ -207,9 +207,9 @@
         "query": "\"US dollar\" OR \"Federal Reserve\" OR FOMC inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
         "latest_seen_at": "2026-08-18T00:57:00.000Z",
         "article_count": 40,
-        "supportive_headline_count": 12,
-        "opposing_headline_count": 2,
-        "classified_headline_count": 14
+        "supportive_headline_count": 13,
+        "opposing_headline_count": 3,
+        "classified_headline_count": 16
       }
     ],
     "methodology": {
@@ -222,10 +222,10 @@
       "max_article_age_hours": 96,
       "high_impact_headline_window_hours": 24,
       "base_headline_balance": 1,
-      "quote_headline_balance": 0.714,
-      "raw_pair_headline_differential": 0.286,
+      "quote_headline_balance": 0.625,
+      "raw_pair_headline_differential": 0.375,
       "reliability": 1,
-      "adjusted_pair_headline_differential": 0.286,
+      "adjusted_pair_headline_differential": 0.375,
       "support_threshold": 62,
       "oppose_threshold": 38,
       "neutral_band": [

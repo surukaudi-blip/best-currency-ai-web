@@ -3,7 +3,7 @@
   "status": "DECISION_ALERT_STABILITY_ACTIVE",
   "stability_version": "0.1",
   "created_at": "2026-08-17T03:36:34.650Z",
-  "updated_at": "2026-08-18T01:21:39.566Z",
+  "updated_at": "2026-08-18T02:03:32.246Z",
   "config": {
     "persistence_default": 1,
     "persistence_overrides": {
@@ -483,18 +483,18 @@
     ]
   },
   "raw_alert_status": "DECISION_ALERT_WATCH_ACTIVE",
-  "raw_alert_updated_at": "2026-08-18T01:21:39.347Z",
+  "raw_alert_updated_at": "2026-08-18T02:03:32.069Z",
   "oscillation": {
     "detected": false,
     "classification": "NO_OSCILLATION",
     "window": [
-      "DRIFT-0013-2026-08-17",
       "DRIFT-0014-2026-08-17",
-      "DRIFT-0015-2026-08-17"
+      "DRIFT-0015-2026-08-17",
+      "DRIFT-0016-2026-08-17"
     ],
     "affected": [],
     "news_path": [
-      "MIXED",
+      "SUPPORTS",
       "SUPPORTS",
       "SUPPORTS"
     ],
@@ -530,11 +530,11 @@
         "regime": "LOW_ALIGNMENT"
       },
       "first_seen": "2026-08-17T15:48:17.857Z",
-      "last_seen": "2026-08-18T01:21:39.347Z",
-      "occurrences": 3,
+      "last_seen": "2026-08-18T02:03:32.069Z",
+      "occurrences": 4,
       "stability": {
         "required_confirmations": 1,
-        "observed_confirmations": 3,
+        "observed_confirmations": 4,
         "immediate_structural": true,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -552,11 +552,11 @@
       "trigger": "MTF Alignment < 60.",
       "evidence": null,
       "first_seen": "2026-08-17T15:48:17.857Z",
-      "last_seen": "2026-08-18T01:21:39.347Z",
-      "occurrences": 3,
+      "last_seen": "2026-08-18T02:03:32.069Z",
+      "occurrences": 4,
       "stability": {
         "required_confirmations": 1,
-        "observed_confirmations": 3,
+        "observed_confirmations": 4,
         "immediate_structural": true,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -583,11 +583,11 @@
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-18T01:21:39.347Z",
-      "occurrences": 19,
+      "last_seen": "2026-08-18T02:03:32.069Z",
+      "occurrences": 20,
       "stability": {
         "required_confirmations": 2,
-        "observed_confirmations": 3,
+        "observed_confirmations": 4,
         "immediate_structural": false,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -599,21 +599,21 @@
       "key": "NEWS_EVENT_HIGH",
       "severity": "MODERATE",
       "title": "High-impact News Event Risk",
-      "detail": "News Event Risk HIGH sementara News 64.3 · SUPPORTS.",
+      "detail": "News Event Risk HIGH sementara News 68.8 · SUPPORTS.",
       "source": "news",
       "session_date": "2026-08-17",
       "trigger": "News event-risk level = HIGH.",
       "evidence": {
         "state": "SUPPORTS",
-        "score": 64.3,
+        "score": 68.8,
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T09:57:27.459Z",
-      "last_seen": "2026-08-18T01:21:39.347Z",
-      "occurrences": 8,
+      "last_seen": "2026-08-18T02:03:32.069Z",
+      "occurrences": 9,
       "stability": {
         "required_confirmations": 2,
-        "observed_confirmations": 3,
+        "observed_confirmations": 4,
         "immediate_structural": false,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -644,7 +644,7 @@
       },
       "news": {
         "state": "SUPPORTS",
-        "score": 64.3,
+        "score": 68.8,
         "event_risk": "HIGH"
       },
       "counts": {
@@ -678,10 +678,10 @@
       "decision": "DEPRIORITIZE"
     },
     "intraday": {
-      "id": "DRIFT-0015-2026-08-17",
-      "captured_at": "2026-08-18T01:21:39.174Z",
+      "id": "DRIFT-0016-2026-08-17",
+      "captured_at": "2026-08-18T02:03:31.855Z",
       "drift_level": "NONE",
-      "snapshot_hash": "604fe643e2367c075aaa9834c1a822532c9a71d355f79463041097c183e9aaa3",
+      "snapshot_hash": "be783730ddf3f388da55b3b350b0457b7e7d53d4f0e55912e02392a00011177a",
       "drift_vs_previous": []
     },
     "anchors": {
