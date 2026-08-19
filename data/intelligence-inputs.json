@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T09:03:23.538Z",
+  "generated_at": "2026-08-19T13:24:24.348Z",
   "pair": "NZDUSD",
   "canonical_bias": "SELL",
   "macro_yield": {
@@ -7,11 +7,11 @@
     "direction": "SUPPORTS",
     "score": 83.3,
     "provider": "FRED (OECD / Federal Reserve source series)",
-    "updated_at": "2026-08-19T09:02:34.635Z",
+    "updated_at": "2026-08-19T13:23:56.287Z",
     "evidence": [
       "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical SELL.",
       "10Y spread momentum: -0.210 pp versus prior observations (2026-05-01/2026-05-01) => SUPPORTS canonical SELL.",
-      "Short-rate spread: NZD 2.680% (2026-06-01; IR3TIB01NZM156N) vs USD 3.630% (2026-08-17; EFFR); spread -0.950 pp => SUPPORTS canonical SELL."
+      "Short-rate spread: NZD 2.680% (2026-06-01; IR3TIB01NZM156N) vs USD 3.630% (2026-08-18; EFFR); spread -0.950 pp => SUPPORTS canonical SELL."
     ],
     "missing_evidence": [],
     "note": "Live Macro & Yield adapter using real FRED-distributed data. The alignment score measures how 10Y yield and fresh short-rate differentials align with the canonical ECB pair bias; it is not a probability of profit. Germany 10Y is used as the EUR sovereign-yield proxy. NZD short-rate context uses the current OECD/FRED 3M interbank series because the older overnight NZ series is stale. Stale observations are excluded.",
@@ -38,7 +38,7 @@
         "provider": "FRED",
         "series_id": "EFFR",
         "url": "https://fred.stlouisfed.org/series/EFFR",
-        "latest_date": "2026-08-17"
+        "latest_date": "2026-08-18"
       }
     ],
     "methodology": {
@@ -53,10 +53,10 @@
     "direction": "OPPOSES",
     "score": 12.5,
     "provider": "FRED (Federal Reserve / EIA source series)",
-    "updated_at": "2026-08-19T09:02:34.821Z",
+    "updated_at": "2026-08-19T13:23:57.276Z",
     "evidence": [
-      "NFCI: level -0.5490 (2026-08-07) => OPPOSES canonical bias berdasarkan profil cyclical/defensive pasangan.",
-      "NFCI: perubahan -0.0030 dari 2026-07-31 ke 2026-08-07 => NEUTRAL canonical bias.",
+      "NFCI: level -0.5590 (2026-08-14) => OPPOSES canonical bias berdasarkan profil cyclical/defensive pasangan.",
+      "NFCI: perubahan -0.0040 dari 2026-08-07 ke 2026-08-14 => NEUTRAL canonical bias.",
       "STLFSI4: level -0.7709 (2026-08-07) => OPPOSES canonical bias berdasarkan profil cyclical/defensive pasangan.",
       "STLFSI4: perubahan -0.2650 dari 2026-07-31 ke 2026-08-07 => OPPOSES canonical bias."
     ],
@@ -68,7 +68,7 @@
         "series_id": "NFCI",
         "label": "Chicago Fed National Financial Conditions Index",
         "url": "https://fred.stlouisfed.org/series/NFCI",
-        "latest_date": "2026-08-07"
+        "latest_date": "2026-08-14"
       },
       {
         "provider": "FRED",
@@ -108,41 +108,33 @@
   },
   "news": {
     "available": true,
-    "direction": "NEUTRAL",
-    "score": 53.6,
-    "provider": "Google News RSS fallback",
-    "updated_at": "2026-08-19T09:03:23.538Z",
+    "direction": "SUPPORTS",
+    "score": 75,
+    "provider": "Google News RSS fallback + GDELT DOC 2.0",
+    "updated_at": "2026-08-19T13:24:24.348Z",
     "evidence": [
-      "Headline-stance differential NZDUSD SELL: 0.071 after directional-headline reliability 100% => NEUTRAL.",
-      "NZD: 3 supportive vs 1 opposing directional headline(s); balance 0.5 from 35 recent articles via Google News RSS fallback.",
-      "USD: 11 supportive vs 3 opposing directional headline(s); balance 0.571 from 40 recent articles via Google News RSS fallback.",
-      "High-impact headline risk: HIGH; 7 relevant headline(s) detected within 24h."
+      "Headline-stance differential NZDUSD SELL: 0.5 after directional-headline reliability 75% => SUPPORTS.",
+      "NZD: 2 supportive vs 1 opposing directional headline(s); balance 0.333 from 35 recent articles via Google News RSS fallback.",
+      "USD: 5 supportive vs 0 opposing directional headline(s); balance 1 from 40 recent articles via GDELT DOC 2.0.",
+      "High-impact headline risk: HIGH; 3 relevant headline(s) detected within 24h."
     ],
     "missing_evidence": [],
     "headlines": [
       {
-        "title": "Treasury yields pull back from multi-decade highs ahead of FOMC minutes - CNBC",
-        "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxOS3pqSU0xNlBxTzEzTmJqWl9YSnpVaUtnUmRHUzFyZTdsbWw0aVMwT1dfRkhQZjd5c3BnRmdiQWliYWxDbERsY2xpLXlsZW13N0x2LXRrNUYzaHJ3N3loR0FhTXhEeUp4WHk1S2toeVh5aW1xdDdmZ05PWFdwYXVmOEF2SlB2X0J6Y3JqaDVFc1jSAZYBQVVfeXFMTzBXRjRROG0wcS1uOTZCUXBHVVFna2VNSXdLcEE5MGpSUXpwUXk1TUVjTmJncThKY1RMOFpkNXZycW9HWnRIRjY3bkdzOUQ5SjFPc1doWThpU2lrY0NyTWtibWFzQ1p2dFJ4TjFBZlBqYWY1aTZRTWEyNnFBaktnclNvYXhNMmZlSFZYbllqclBWRnJMRkhR?oc=5",
-        "domain": "CNBC",
-        "sourcecountry": null,
+        "title": "U . S . Dollar Falls Ahead Of U . S . FOMC Minutes",
+        "url": "https://www.finanznachrichten.de/nachrichten-2026-08/69351070-u-s-dollar-falls-ahead-of-u-s-fomc-minutes-020.htm",
+        "domain": "finanznachrichten.de",
+        "sourcecountry": "Germany",
         "language": "English",
-        "seen_at": "2026-08-19T08:33:21.000Z"
+        "seen_at": "2026-08-19T10:00:00.000Z"
       },
       {
-        "title": "Inflation prints and FOMC Minutes take centre stage - FXStreet",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQZU5CWDhSczBRcDJGSDY3VUs3VFJzTnp5ZEhhR2JUWGlmbExQVXpwRHVqRXRXMEtXX2VUanRGSlR1MThpeXZTUkQ4Qkc3dDVxYU5PVFlKQUFuUTQwVDBkM1FQQTJ4ZnNjcG53bzBSczU3QUFJaGxtVUtraXNqYlMxRGc1MnBoNTh4RHZXRWpyTlpfVURsOVFCaEZ6UTlsTWs?oc=5",
-        "domain": "FXStreet",
-        "sourcecountry": null,
+        "title": "Indonesia Central Bank Holds Rates Steady at 5 . 75 %, as Expected",
+        "url": "https://english.kontan.co.id/news/indonesia-central-bank-holds-rates-steady-at-575-as-expected",
+        "domain": "english.kontan.co.id",
+        "sourcecountry": "Indonesia",
         "language": "English",
-        "seen_at": "2026-08-19T06:05:33.000Z"
-      },
-      {
-        "title": "US Dollar Price Forecast: DXY Near 99.38 as Fed Minutes and UK Inflation Loom; EUR/USD and GBP/USD Hold Firm - FXEmpire",
-        "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQQ0JGUnBwVUFqZl9XOW04Zi1zeEdhS2hZU19Fam9uU0tTNnh6TWlfV2hLbmtfRV9TX243d0Jma0Nyano3UGJiMGI2UHZCVWo4b0lCLVV2YUVfaFNvbXB3cVE3NlotLWUwOGwtYTIyaHFsSUtXdjVIMEZzeVZRbzFqZEdCNk5mWGVzcTZSaDRsTGVaeXBGWHM5X2VDVnBLT1JnRXBrN0gtMzk3TndUVkVnXzlNUmEzZlFHWndXdTVNM2lVWmNmRDN1TGZPV25LOVJCa0E0aS0zaEZQSmRtSG1PZmRVWFo1Rm96S05GN2ln?oc=5",
-        "domain": "FXEmpire",
-        "sourcecountry": null,
-        "language": "English",
-        "seen_at": "2026-08-19T06:00:00.000Z"
+        "seen_at": "2026-08-19T08:15:00.000Z"
       },
       {
         "title": "New Zealand Dollar declines to weekly low as USD holds firm ahead of FOMC Minutes - tmgm.com",
@@ -153,41 +145,25 @@
         "seen_at": "2026-08-19T02:40:00.000Z"
       },
       {
-        "title": "Preview: What to watch as July FOMC minutes drop Wednesday - investingLive",
-        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPWXBUUDJUMHB0Y3VHeHZFMEVNYUd0WEJSOEs1aUExWU5SZm5DOXlpV2lHaGxhTzJKMENjcWcyT1IzNDgzLXQwZ0p2Z0FGMlN4c1JPSG9iZzRHenFWOFc2MGVpZGZNVWdwRU1PbTdzQ1lLS1Fjc1Y2bXYzZWVUXzVDbjh2YlFGY2E3Zmh6a2ZYWUdzQ2Uzd2tyN1ZyWEF5Z2c?oc=5",
-        "domain": "investingLive",
-        "sourcecountry": null,
-        "language": "English",
-        "seen_at": "2026-08-18T21:42:44.000Z"
-      },
-      {
-        "title": "Monetary Policy and Financial Conditions - Atlanta - Federal Reserve Bank",
-        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQSE1GZlhQcm1pUk9Ga3ZIOG5RVmhLTzZTRnlQTHpnVkhLU19pX0pjcnowSkQxMkxqbGNBN2dMV1poc3BPd2hGNDRpY2FEbGpZRThHeVJwSEVBekZDVlBIMjF0SU1DSHdkZk5haFFpNXo3UzBYbUEwb0c5enBnRElvbkx0cERNQ0V6b1lmSjBYZ0JzQko3N1ZlQ1BQSlFFU0M4U3FVTVF4VUN6cC1GSzhrYjVleWswSm4taXJtVXFLNzJHbVFkV0FucnppOEQ4Z0tJcUhB?oc=5",
-        "domain": "Atlanta - Federal Reserve Bank",
-        "sourcecountry": null,
-        "language": "English",
-        "seen_at": "2026-08-18T14:36:50.000Z"
-      },
-      {
-        "title": "FOMC Minutes, Canadian Inflation Data, And USD/CAD Technical Analysis - Seeking Alpha",
-        "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxOUjJyYU9NLWtCemx4cDkzck5XMEZObGxpTXd0dEpILUVSZTIxYUtSOGZlbUJlTE9CbVdLN2txNTR3NndpY0VSZ05zQUpkUXMzMGJHV3N3Q25BUXVBLUFPNUxvWGZTaWpBVGJpQU5NUVNyY3ZLS3RMYVlTY1hlOEtPSlBUSTNqZEVKT0dkZDZiVjE2Ym12bjIxX2xmNmoyc2kwVDRMbjFR?oc=5",
-        "domain": "Seeking Alpha",
-        "sourcecountry": null,
-        "language": "English",
-        "seen_at": "2026-08-18T14:15:00.000Z"
-      },
-      {
         "title": "Indonesian Rupiah Gains Ground on Prabowo’s Growth Ambitions and Dollar Weakness - CryptoRank",
         "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQanFndlp4Xzd1WW0xNmY1a2JOUnhZaGZRNmo0RzFlMXBzeWlrLXRsbEEtOThUQnpQbUVJR3gzZW5yYWhwZ1R2Vnlka2tQLTBLc0F2THNUb2pfaEp6QVpoUTd6WGRXQk9XYVBWWDlMZHkwdTNlTW1KU21NV21temJuNkFsQ09nbmFFdDRMelVGUkE5eGxkcDhMdk9MVmdQV2pOUTZ5ZXBja0M?oc=5",
         "domain": "CryptoRank",
         "sourcecountry": null,
         "language": "English",
         "seen_at": "2026-08-18T01:32:13.000Z"
+      },
+      {
+        "title": "New Zealand Food Prices Rise 0.1% in July, Annual Inflation Eases - CryptoRank",
+        "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBDODh6cjNjRVlESWo2cDZLQ0RCU3JKSDREaC1wVmx0NHBBczVwWUJLMG1ONWczT29OLVZXdDF5ejdBOTl2d1VqY1NpS3JhM2wtbmhnajhsQlVHaTJQdUMyVjRycnA0anl3SjByeWFpWHhBOUl0YVBYLVBB?oc=5",
+        "domain": "CryptoRank",
+        "sourcecountry": null,
+        "language": "English",
+        "seen_at": "2026-08-17T11:24:46.000Z"
       }
     ],
     "event_risk": {
       "level": "HIGH",
-      "recent_high_impact_24h": 7
+      "recent_high_impact_24h": 3
     },
     "note": "Live News adapter using real macro/central-bank headlines. GDELT DOC 2.0 is primary; Google News RSS is a failover when the public GDELT endpoint is rate-limited or unavailable. Direction uses a transparent local headline-stance lexicon and pair differential with reliability damping. The score is contextual alignment, not a probability of profit or a forecast of headline impact.",
     "provenance": [
@@ -195,21 +171,21 @@
         "provider": "Google News RSS fallback",
         "currency": "NZD",
         "query": "\"New Zealand dollar\" OR RBNZ OR \"Reserve Bank of New Zealand\" inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
-        "latest_seen_at": "2026-08-19T02:40:00.000Z",
+        "latest_seen_at": "2026-08-19T12:55:15.000Z",
         "article_count": 35,
-        "supportive_headline_count": 3,
+        "supportive_headline_count": 2,
         "opposing_headline_count": 1,
-        "classified_headline_count": 4
+        "classified_headline_count": 3
       },
       {
-        "provider": "Google News RSS fallback",
+        "provider": "GDELT DOC 2.0",
         "currency": "USD",
-        "query": "\"US dollar\" OR \"Federal Reserve\" OR FOMC inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
-        "latest_seen_at": "2026-08-19T08:33:21.000Z",
+        "query": "(\"US dollar\" OR \"U.S. dollar\" OR \"Federal Reserve\" OR FOMC) (inflation OR \"interest rate\" OR rates OR economy OR growth OR employment OR monetary OR \"central bank\") sourcelang:english",
+        "latest_seen_at": "2026-08-19T12:45:00.000Z",
         "article_count": 40,
-        "supportive_headline_count": 11,
-        "opposing_headline_count": 3,
-        "classified_headline_count": 14
+        "supportive_headline_count": 5,
+        "opposing_headline_count": 0,
+        "classified_headline_count": 5
       }
     ],
     "methodology": {
@@ -221,11 +197,11 @@
       "directional_headlines_are_optional": true,
       "max_article_age_hours": 96,
       "high_impact_headline_window_hours": 24,
-      "base_headline_balance": 0.5,
-      "quote_headline_balance": 0.571,
-      "raw_pair_headline_differential": 0.071,
-      "reliability": 1,
-      "adjusted_pair_headline_differential": 0.071,
+      "base_headline_balance": 0.333,
+      "quote_headline_balance": 1,
+      "raw_pair_headline_differential": 0.667,
+      "reliability": 0.75,
+      "adjusted_pair_headline_differential": 0.5,
       "support_threshold": 62,
       "oppose_threshold": 38,
       "neutral_band": [
