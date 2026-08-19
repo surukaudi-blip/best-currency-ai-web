@@ -1,5 +1,5 @@
 {
-  "version": "1.6",
+  "version": "1.7",
   "updated_at": "2026-08-19",
   "principles": [
     "Do not fabricate unavailable market data.",
@@ -32,8 +32,8 @@
       "status": "IN_PROGRESS",
       "scope": "Major liquid non-stable crypto assets v1; market data + official protocol/regulatory evidence",
       "steps": [
-        {"id": "11A", "name": "Crypto Market Data & Source Adapter", "status": "READY_TO_ACTIVATE", "output": "Keyed CoinGecko market snapshot, global context, and derived metrics from completed UTC daily observations; raw historical series not republished"},
-        {"id": "11B", "name": "Protocol, On-Chain & Regulatory Evidence", "status": "PLANNED"},
+        {"id": "11A", "name": "Crypto Market Data & Source Adapter", "status": "COMPLETE", "output": "Keyed CoinGecko Demo market snapshot, global context, and derived metrics from completed UTC daily observations; 8/8 initial assets READY; raw historical series not republished"},
+        {"id": "11B", "name": "Protocol, On-Chain & Regulatory Evidence", "status": "NEXT"},
         {"id": "11C", "name": "Crypto Decision Intelligence", "status": "PLANNED"},
         {"id": "11C.4", "name": "Historical Backtest", "status": "MANDATORY_BEFORE_FREEZE"},
         {"id": "11C.5", "name": "Pre-Freeze Cross-Check & Model QA", "status": "MANDATORY_BEFORE_FREEZE"},
