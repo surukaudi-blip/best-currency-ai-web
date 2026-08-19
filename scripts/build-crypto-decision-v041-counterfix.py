@@ -9,7 +9,10 @@ of Counter-Thesis strength so the state reflects the strongest active challenge:
 - MODERATE: one or more MODERATE challenge factors are active and no HIGH factor exists.
 - HIGH: at least one HIGH challenge factor is active.
 
-This is a semantic QA correction, not historical threshold optimization.
+After Stage 11D freeze, the same immutable model may continue to refresh inputs.
+If data/crypto-model-freeze.json exists and declares CRYPTO_MODEL_FROZEN, this
+wrapper stamps the generated artifact with frozen/prospective metadata without
+changing any model formula or threshold.
 """
 
 from __future__ import annotations
@@ -22,6 +25,7 @@ from typing import Any, Dict
 ROOT = Path(__file__).resolve().parents[1]
 BASE = ROOT / "scripts" / "build-crypto-decision-v041.py"
 OUTPUT = ROOT / "data" / "crypto-decision-intelligence.json"
+FREEZE = ROOT / "data" / "crypto-model-freeze.json"
 
 spec = importlib.util.spec_from_file_location("crypto_decision_v041", BASE)
 module = importlib.util.module_from_spec(spec)
@@ -75,6 +79,28 @@ if OUTPUT.exists():
         "direction_mtf_regime_risk_changed": False,
         "trade_execution": "OFF"
     }
+
+    if FREEZE.exists():
+        freeze = json.loads(FREEZE.read_text(encoding="utf-8"))
+        if freeze.get("status") == "CRYPTO_MODEL_FROZEN":
+            artifact["frozen"] = True
+            artifact["model_status"] = "FROZEN_PROSPECTIVE"
+            artifact["model_id"] = freeze.get("model_id")
+            artifact["freeze"] = {
+                "model_id": freeze.get("model_id"),
+                "freeze_declared_at": freeze.get("freeze_declared_at"),
+                "baseline_market_session": freeze.get("baseline_market_session"),
+                "frozen_methodology_sha256": freeze.get("frozen_methodology_sha256"),
+                "fresh_oos_status": "ACTIVE_PROSPECTIVE_ONLY",
+                "historical_backfill": "PROHIBITED"
+            }
+            guardrails = artifact.setdefault("guardrails", {})
+            guardrails["model_is_unfrozen"] = False
+            guardrails["model_frozen"] = True
+            guardrails["fresh_oos_prospective_only"] = True
+            guardrails["historical_backfill"] = "PROHIBITED"
+            guardrails["threshold_tuning_after_freeze"] = "PROHIBITED"
+
     OUTPUT.write_text(json.dumps(artifact, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 raise SystemExit(code)
