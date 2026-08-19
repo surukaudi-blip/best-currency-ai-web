@@ -1,7 +1,7 @@
 {
   "version": "1.1",
   "status": "CRYPTO_6CHECK_COUNTER_THESIS_SEMANTIC_REVISION_DIAGNOSTIC_COMPLETE",
-  "generated_at": "2026-08-19T15:28:16.174035Z",
+  "generated_at": "2026-08-19T15:53:20.794824Z",
   "scope": "MAJOR_LIQUID_CRYPTO_ASSETS_V1",
   "model_frozen": false,
   "test_design": {
@@ -764,14 +764,14 @@
   ],
   "counter_thesis_semantic_revision_evaluation": {
     "previous_official_semantics": {
-      "strict_6_of_6_observations": 16,
-      "strict_6_of_6_hit_rate_7d_percent": 43.75,
-      "strict_6_of_6_avg_directional_return_7d_percent": -0.6386
+      "strict_6_of_6_observations": 60,
+      "strict_6_of_6_hit_rate_7d_percent": 65.0,
+      "strict_6_of_6_avg_directional_return_7d_percent": 2.1751
     },
     "previous_sensitivity_reference": {
-      "observations": 76,
-      "hit_rate_7d_percent": 60.53,
-      "avg_directional_return_7d_percent": 1.5828
+      "observations": null,
+      "hit_rate_7d_percent": null,
+      "avg_directional_return_7d_percent": null
     },
     "revised_semantics_official_diagnostic": {
       "strict_6_of_6_observations": 60,
