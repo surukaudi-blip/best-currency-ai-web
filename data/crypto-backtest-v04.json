@@ -1,0 +1,23 @@
+{
+  "version": "4.0",
+  "status": "CRYPTO_V04_ACTIONABILITY_BACKTEST_NOT_RUN",
+  "scope": "MAJOR_LIQUID_CRYPTO_ASSETS_V1",
+  "generated_at": null,
+  "model_status": "EXPERIMENTAL_V01_CORE_MTF_ACTIONABILITY_PREVALIDATION",
+  "guardrails": {
+    "canonical_direction_is_exact_v01": true,
+    "mtf_does_not_reverse_direction": true,
+    "historical_non_market_evidence_not_backfilled": true,
+    "market_only_actionability_proxy": true,
+    "no_threshold_search": true,
+    "consumed_historical_window": true,
+    "fresh_oos_remains_primary_validation": true,
+    "no_buy_sell": true,
+    "trade_execution": "OFF"
+  },
+  "summary": null,
+  "per_asset": [],
+  "regimes": {},
+  "limiter_distribution": {},
+  "next_gate": "RUN_V04_DIAGNOSTIC_THEN_11C5_REVIEW"
+}
