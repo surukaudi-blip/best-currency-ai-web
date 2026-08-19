@@ -2,9 +2,9 @@
   "version": "0.1",
   "status": "STOCKS_DECISION_INTELLIGENCE_READY",
   "scope": "US_LISTED_EQUITIES_V1",
-  "generated_at": "2026-08-19T05:13:09.801508Z",
-  "model_status": "EXPERIMENTAL_PREVALIDATION",
-  "frozen": false,
+  "generated_at": "2026-08-19T05:34:18.019007Z",
+  "model_status": "FROZEN_PROSPECTIVE",
+  "frozen": true,
   "source_readiness": {
     "sec_official_evidence": "OFFICIAL_EVIDENCE_READY",
     "daily_market_data": "DAILY_MARKET_DATA_READY",
@@ -1011,5 +1011,18 @@
       }
     }
   ],
-  "errors": []
+  "errors": [],
+  "freeze_validation": {
+    "status": "MATCH",
+    "model_id": "STOCKS_DECISION_0.1_FROZEN_20260819",
+    "expected_methodology_sha256": "f55ea9c47271313aa335ac53f22c7e947f84b3ded1fd7127923602202fc95303",
+    "current_methodology_sha256": "f55ea9c47271313aa335ac53f22c7e947f84b3ded1fd7127923602202fc95303",
+    "expected_core_decision_engine_git_blob_sha1": "3ba35edc9f0671d4fb49bff8a86f7cce5e4c9c02",
+    "current_core_decision_engine_git_blob_sha1": "3ba35edc9f0671d4fb49bff8a86f7cce5e4c9c02",
+    "methodology_match": true,
+    "core_logic_match": true,
+    "baseline_market_session": "2026-08-18"
+  },
+  "model_id": "STOCKS_DECISION_0.1_FROZEN_20260819",
+  "model_hash": "f55ea9c47271313aa335ac53f22c7e947f84b3ded1fd7127923602202fc95303"
 }

@@ -1,21 +1,57 @@
 {
   "version": "1.0",
-  "status": "STOCKS_DECISION_WATCH_NOT_RUN",
+  "status": "STOCKS_DECISION_WATCH_ACTIVE",
   "scope": "US_LISTED_EQUITIES_V1",
-  "generated_at": null,
+  "generated_at": "2026-08-19T05:34:18.086222Z",
+  "market_session": "2026-08-18",
   "model_id": "STOCKS_DECISION_0.1_FROZEN_20260819",
   "model_hash": "f55ea9c47271313aa335ac53f22c7e947f84b3ded1fd7127923602202fc95303",
   "summary": {
-    "gate": "AWAITING_FIRST_RUN",
-    "high": 0,
+    "gate": "REVIEW_NOW",
+    "high": 4,
     "moderate": 0,
     "informational": 0,
-    "total": 0
+    "total": 4,
+    "symbols_under_watch": 2
   },
-  "alerts": [],
+  "alerts": [
+    {
+      "ticker": "META",
+      "code": "COUNTER_THESIS_HIGH",
+      "severity": "HIGH",
+      "message": "Counter-Thesis strength is HIGH.",
+      "current": "HIGH",
+      "previous": null
+    },
+    {
+      "ticker": "META",
+      "code": "EVIDENCE_DIVERGENT",
+      "severity": "HIGH",
+      "message": "Market and SEC evidence are directionally divergent.",
+      "current": "DIVERGENT",
+      "previous": null
+    },
+    {
+      "ticker": "TSLA",
+      "code": "COUNTER_THESIS_HIGH",
+      "severity": "HIGH",
+      "message": "Counter-Thesis strength is HIGH.",
+      "current": "HIGH",
+      "previous": null
+    },
+    {
+      "ticker": "TSLA",
+      "code": "EVIDENCE_DIVERGENT",
+      "severity": "HIGH",
+      "message": "Market and SEC evidence are directionally divergent.",
+      "current": "DIVERGENT",
+      "previous": null
+    }
+  ],
   "guardrails": {
     "material_change_only": true,
     "alerts_are_review_priority_not_profit_probability": true,
+    "baseline_is_not_historical_backfill": true,
     "no_buy_sell": true,
     "trade_execution": "OFF"
   }
