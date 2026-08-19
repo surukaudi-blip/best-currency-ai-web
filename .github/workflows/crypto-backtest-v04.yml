@@ -26,8 +26,8 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Run Stage 11C v0.4 MTF Actionability diagnostic
-        run: python scripts/build-crypto-backtest-v04.py
+      - name: Run Stage 11C v0.4 MTF Actionability diagnostic with production parity
+        run: python scripts/build-crypto-backtest-v04-safe.py
 
       - name: Commit aggregated v0.4 diagnostics when changed
         run: |
