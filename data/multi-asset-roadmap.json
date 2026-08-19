@@ -1,5 +1,5 @@
 {
-  "version": "2.3",
+  "version": "2.4",
   "updated_at": "2026-08-19",
   "principles": [
     "Do not fabricate unavailable market data.",
@@ -35,9 +35,9 @@
       "steps": [
         {"id": "11A", "name": "Crypto Market Data & Source Adapter", "status": "COMPLETE", "output": "Keyed CoinGecko Demo market snapshot, global context, and derived metrics from completed UTC daily observations; 8/8 initial assets READY; raw historical series not republished"},
         {"id": "11B", "name": "Protocol, On-Chain & Regulatory Evidence", "status": "COMPLETE", "output": "Operationally verified: 8/8 curated protocol/core repositories, 3/3 SEC/CFTC primary regulatory feeds, 4/4 explicitly enabled network endpoints, deferred/N/A telemetry preserved without imputation, and no universal on-chain score"},
-        {"id": "11C", "name": "Crypto Decision Intelligence", "status": "REFINED_V0_2_READY_TO_VERIFY", "output": "v0.2 structural refinement: volatility-normalized market components, 3-of-4 horizon confirmation, reversal/exhaustion guardrails, risk-aware readiness, and unchanged evidence non-directionality; model remains unfrozen"},
-        {"id": "11C.4", "name": "Historical Backtest", "status": "V0_1_COMPLETE_FINDINGS_V0_2_RETEST_READY", "output": "v0.1 diagnostic backtest is preserved and its holdout is consumed. v0.2 uses a separate diagnostic retest artifact over the same historical window, explicitly not new OOS evidence"},
-        {"id": "11C.5", "name": "Pre-Freeze Cross-Check & Model QA", "status": "BLOCKED_UNTIL_V0_2_RETEST_REVIEWED", "output": "Cross-check data integrity, normalization, alignment, guardrails, risk, counter-thesis, regime stability and failure cases before any freeze decision"},
+        {"id": "11C", "name": "Crypto Decision Intelligence", "status": "HYBRID_V0_3_READY_TO_VERIFY", "output": "v0.3 hybrid combines v0.1 absolute market sensitivity and v0.2 volatility-normalized structure through a fixed symmetric 50/50 blend; model agreement replaces directional clarity in readiness; hard 3-of-4 suppression removed; extremity remains risk context; model remains unfrozen"},
+        {"id": "11C.4", "name": "Historical Backtest", "status": "V0_1_V0_2_CONSUMED_V0_3_HYBRID_RETEST_READY", "output": "v0.1 and v0.2 diagnostics are preserved as consumed historical evidence. v0.3 has its own manual diagnostic retest artifact over the same consumed window; no blend-weight or threshold search is permitted"},
+        {"id": "11C.5", "name": "Pre-Freeze Cross-Check & Model QA", "status": "BLOCKED_UNTIL_V0_3_RETEST_REVIEWED", "output": "Cross-check hybrid stability, model agreement, risk, counter-thesis, regime behavior, directional coverage and failure cases before any freeze decision"},
         {"id": "11D", "name": "Freeze, Watch, Timeline & Fresh OOS", "status": "BLOCKED_UNTIL_C4_C5_PASS"}
       ]
     },
