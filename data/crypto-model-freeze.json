@@ -1,0 +1,76 @@
+{
+  "version": "1.0",
+  "status": "CRYPTO_MODEL_FROZEN",
+  "model_id": "CRYPTO_DECISION_0.4.1_FROZEN_20260819",
+  "source_stage": "11D",
+  "source_model_version": "0.4.1",
+  "counter_thesis_version": "COUNTER_THESIS_0.2",
+  "source_final_diagnostic_commit": "9eaf1e9f62a18615a3b98ceae88ae453bbb58332",
+  "freeze_declared_at": "2026-08-19T15:58:29Z",
+  "baseline_market_session": "2026-08-18",
+  "frozen_methodology_sha256": "df53ab8895519a4b43520b22561015687d75b5b402be3a12c29cd8fa1dcca5a6",
+  "canonical_v01_methodology_sha256": "2e58009070741bf6e2cb4c2b0c3b7dff154c5b8250651bc0963a15eef00b7be4",
+  "core_engine_git_blobs": {
+    "v041_decision_layer": "ee5cbe8224216bd585bf3b380e6dd7932c81ddb1",
+    "counter_thesis_v02_wrapper": "fa4602edbb294bb3afe14e6f1df9f76b80d9c2ba",
+    "final_decision_artifact": "ea7dac151cc1aef9bf2b2c4d1f035438a434389d"
+  },
+  "frozen_architecture": {
+    "canonical_direction": "Exact v0.1 absolute Market Structure; SUPPORTIVE >=62, PRESSURED <=38, otherwise MIXED.",
+    "mtf_confirmation": "Daily 45% + Weekly 35% + Monthly 20%; confirmation only and cannot reverse canonical direction.",
+    "regime_guardrail": "LOW_VOL may reach 100; MODERATE_VOL caps 70; HIGH/UNKNOWN_VOL caps 55; STRESSED_DRAWDOWN caps 60.",
+    "decision_risk": "LOW <35; MODERATE 35-64.99; HIGH >=65.",
+    "counter_thesis": "LOW=PASS; MODERATE=CAUTION; HIGH=FAIL under COUNTER_THESIS_0.2 semantics.",
+    "actionability": "Minimum-ceiling CRYPTO_ACTIONABILITY_0.2; ACTIONABLE >=80, SELECTIVE >=60, FILTERED <60.",
+    "primary_gate": "ACTIONABILITY >=80 and state ACTIONABLE.",
+    "six_check_readiness": "Canonical Direction, MTF, Regime, Decision Risk, Counter-Thesis, Actionability. One point per PASS; checklist is dependent governance evidence, not six independent statistical signals."
+  },
+  "prefreeze_evidence": {
+    "crosscheck": "PASS_WITH_CONDITIONS",
+    "checks": "20 PASS, 1 PASS_WITH_CONDITION, 0 FAIL, 0 blocking failures",
+    "strict_6_of_6_consumed_diagnostic": {
+      "observations": 60,
+      "hit_rate_7d_percent": 65.0,
+      "avg_directional_return_7d_percent": 2.1751
+    },
+    "primary_gate_consumed_diagnostic": {
+      "observations": 83,
+      "hit_rate_7d_percent": 60.24,
+      "avg_directional_return_7d_percent": 1.4144
+    },
+    "interpretation": "Consumed diagnostic evidence only; these values are not profit probabilities and are not Fresh OOS proof."
+  },
+  "prospective_start_rule": "Only completed UTC crypto sessions strictly after 2026-08-18 may create Fresh OOS records. Historical backfill is prohibited.",
+  "outcome_definition": {
+    "eligible_prediction": "Canonical direction must be SUPPORTIVE or PRESSURED and Actionability Primary Gate must PASS at the frozen completed session.",
+    "primary_endpoint": "7D directional continuation: SUPPORTIVE expects the completed close 7 UTC sessions later to be higher; PRESSURED expects it to be lower.",
+    "secondary_endpoints": [
+      "1D directional continuation",
+      "3D directional continuation"
+    ],
+    "mixed_state": "Not scored as a directional prediction.",
+    "readiness_6_of_6": "Recorded as a quality tier, not required to redefine or override the Actionability Primary Gate."
+  },
+  "change_policy": {
+    "canonical_direction_engine": "IMMUTABLE_DURING_PRIMARY_EVALUATION",
+    "mtf_formula_weights_spans": "IMMUTABLE_DURING_PRIMARY_EVALUATION",
+    "regime_caps_boundaries": "IMMUTABLE_DURING_PRIMARY_EVALUATION",
+    "risk_weights_thresholds": "IMMUTABLE_DURING_PRIMARY_EVALUATION",
+    "counter_thesis_semantics": "IMMUTABLE_DURING_PRIMARY_EVALUATION",
+    "actionability_dimensions_thresholds": "IMMUTABLE_DURING_PRIMARY_EVALUATION",
+    "primary_gate": "IMMUTABLE_DURING_PRIMARY_EVALUATION",
+    "ui_monitoring_observability": "MAY_CHANGE_WITHOUT_CHANGING_MODEL_HASH",
+    "historical_backfill": "PROHIBITED",
+    "outcome_tuning": "PROHIBITED",
+    "asset_specific_rules_from_consumed_backtest": "PROHIBITED",
+    "news_layer": "DEFERRED_TO_UNIFIED_NEWS_INTELLIGENCE_UNLESS_NEW_MODEL_VERSION_IS_DECLARED",
+    "trade_execution": "OFF"
+  },
+  "sample_policy": {
+    "unit": "eligible_symbol_session",
+    "preliminary_settled_target": 20,
+    "primary_settled_target": 60,
+    "note": "Sample targets are sufficiency gates, not proof; cross-asset and overlapping-horizon dependence must be disclosed."
+  },
+  "governance_condition": "Six-check readiness is a dependent checklist. Shared underlying inputs across Regime, Risk, Counter-Thesis and Actionability must never be converted into a confidence or probability claim."
+}

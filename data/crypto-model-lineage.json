@@ -1,0 +1,149 @@
+{
+  "version": "1.3",
+  "status": "FROZEN_PROSPECTIVE",
+  "updated_at": "2026-08-19",
+  "scope": "CRYPTO_STAGE_11D",
+  "canonical_direction": {
+    "model_version": "0.1",
+    "methodology_sha256": "2e58009070741bf6e2cb4c2b0c3b7dff154c5b8250651bc0963a15eef00b7be4",
+    "policy": "Exact v0.1 Market Structure remains the canonical directional core. Overlays filter priority but may not reverse canonical direction."
+  },
+  "freeze": {
+    "status": "CRYPTO_MODEL_FROZEN",
+    "model_id": "CRYPTO_DECISION_0.4.1_FROZEN_20260819",
+    "freeze_declared_at": "2026-08-19T15:58:29Z",
+    "baseline_market_session": "2026-08-18",
+    "frozen_methodology_sha256": "df53ab8895519a4b43520b22561015687d75b5b402be3a12c29cd8fa1dcca5a6",
+    "authoritative_artifact": "data/crypto-model-freeze.json",
+    "fresh_oos_tracker": "data/crypto-fresh-oos.json",
+    "primary_gate": "ACTIONABILITY >=80 ACTIONABLE",
+    "primary_fresh_oos_endpoint": "7D directional continuation",
+    "secondary_fresh_oos_endpoints": ["1D directional continuation", "3D directional continuation"],
+    "historical_backfill": "PROHIBITED",
+    "decision": "11D_FROZEN_FRESH_OOS_PROSPECTIVE_ONLY"
+  },
+  "historical_window_policy": {
+    "window_days": 365,
+    "status": "CONSUMED_DIAGNOSTIC_NOT_FRESH_OOS",
+    "no_relabel_as_untouched_holdout": true,
+    "fresh_oos_after_freeze_is_primary_validation": true
+  },
+  "diagnostic_history": {
+    "v0.1": {
+      "role": "canonical_directional_reference",
+      "directional_coverage_percent": 59.41,
+      "hit_rate_1d_percent": 50.43,
+      "hit_rate_3d_percent": 48.54,
+      "hit_rate_7d_percent": 47.91,
+      "decision": "KEEP_DIRECTIONAL_CORE"
+    },
+    "v0.2": {
+      "role": "volatility_normalized_refinement",
+      "directional_coverage_percent": 37.27,
+      "hit_rate_7d_percent": 45.98,
+      "decision": "REJECT_AS_DIRECTIONAL_REPLACEMENT"
+    },
+    "v0.3": {
+      "role": "fixed_50_50_hybrid",
+      "directional_coverage_percent": 52.86,
+      "hit_rate_7d_percent": 46.86,
+      "decision": "REJECT_AS_DIRECTIONAL_REPLACEMENT"
+    },
+    "v0.4": {
+      "role": "v0.1_core_plus_dwm_mtf_plus_actionability",
+      "actionable_only": {
+        "observations": 120,
+        "hit_rate_7d_percent": 50.0
+      },
+      "finding": "Canonical v0.1 and D/W/M retained; Actionability required regime-aware refinement."
+    },
+    "v0.4.1": {
+      "role": "v0.1_core_plus_dwm_mtf_plus_regime_aware_actionability",
+      "actionable_only": {
+        "observations": 83,
+        "retention_percent": 6.54,
+        "hit_rate_1d_percent": 54.22,
+        "hit_rate_3d_percent": 48.19,
+        "hit_rate_7d_percent": 60.24,
+        "avg_directional_return_7d_percent": 1.4144
+      },
+      "finding": "Regime-aware Actionability retained as Primary Gate. Consumed diagnostic only."
+    },
+    "counter_thesis_v0.2": {
+      "role": "11C5_semantic_qa_correction",
+      "change_type": "SEMANTIC_CORRECTION_NOT_THRESHOLD_TUNING",
+      "semantics": {
+        "LOW": "No material active counter-thesis factor; PASS.",
+        "MODERATE": "One or more moderate challenge factors and no high factor; CAUTION.",
+        "HIGH": "At least one high-severity challenge factor; FAIL."
+      },
+      "counter_thesis_pass": {
+        "observations": 258,
+        "hit_rate_7d_percent": 55.04,
+        "avg_directional_return_7d_percent": 1.6595
+      },
+      "strict_6_of_6_after_semantic_correction": {
+        "observations": 60,
+        "hit_rate_7d_percent": 65.0,
+        "avg_directional_return_7d_percent": 2.1751
+      },
+      "readiness_5plus_primary_gate_pass": {
+        "observations": 81,
+        "hit_rate_7d_percent": 61.73,
+        "avg_directional_return_7d_percent": 1.5861
+      },
+      "decision": "KEEP_SEMANTIC_CORRECTION_11C5_QA_PASSED"
+    },
+    "prefreeze_crosscheck_v1": {
+      "role": "11C5_final_prefreeze_crosscheck",
+      "artifact": "data/crypto-prefreeze-crosscheck.json",
+      "overall_decision": "PASS_WITH_CONDITIONS",
+      "freeze_recommendation": "READY_FOR_FREEZE_WITH_GOVERNANCE_CONDITIONS",
+      "checks_total": 21,
+      "pass": 20,
+      "pass_with_condition": 1,
+      "fail": 0,
+      "blocking_failures": 0,
+      "condition": "Six-check readiness is a dependent governance checklist, not six statistically independent signals.",
+      "decision": "11C5_COMPLETE_READY_FOR_FREEZE_WITH_GOVERNANCE_CONDITIONS"
+    },
+    "final_rerun": {
+      "artifact": "data/crypto-backtest-readiness6.json",
+      "source_commit": "9eaf1e9f62a18615a3b98ceae88ae453bbb58332",
+      "strict_6_of_6": {
+        "observations": 60,
+        "hit_rate_7d_percent": 65.0,
+        "avg_directional_return_7d_percent": 2.1751
+      },
+      "primary_gate": {
+        "observations": 83,
+        "hit_rate_7d_percent": 60.24,
+        "avg_directional_return_7d_percent": 1.4144
+      },
+      "result": "IDENTICAL_TO_PRIOR_DIAGNOSTIC_NO_UNEXPECTED_DRIFT"
+    }
+  },
+  "source_commits": {
+    "v0.4_model_merge": "f56f725e6b77753f1fae07b1ae1acd6ef81f2d3f",
+    "v0.4_production_refresh": "6d8737a32e147e5141bd4c3d67342bbcbd1e42a3",
+    "v0.4_diagnostic": "1e4617d6e025928ee55468d3f554db03d74c2579",
+    "counter_thesis_v0.2_merge": "644ff55d664d72625ab864e1dbf8b65b0599c508",
+    "counter_thesis_v0.2_qa_artifacts": "c1b1cfc42fe3afce3cf1b42637f719950c1f2e6c",
+    "prefreeze_crosscheck_merge": "607254d5d098d6de7d0cd3081aa4f1ee58e62b29",
+    "final_prefreeze_backtest_rerun": "9eaf1e9f62a18615a3b98ceae88ae453bbb58332"
+  },
+  "guardrails": {
+    "model_frozen": true,
+    "no_asset_specific_rules_from_consumed_backtest": true,
+    "no_directional_threshold_search": true,
+    "counter_thesis_revision_is_semantic_not_optimized": true,
+    "actionability_remains_primary_gate": true,
+    "readiness_is_dependent_governance_checklist_not_independent_probability": true,
+    "fresh_oos_after_freeze_is_primary_validation": true,
+    "historical_backfill": "PROHIBITED",
+    "outcome_tuning": "PROHIBITED",
+    "no_buy_sell": true,
+    "no_profit_probability": true,
+    "trade_execution": "OFF"
+  }
+}

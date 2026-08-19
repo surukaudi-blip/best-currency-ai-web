@@ -1,0 +1,43 @@
+name: Update Crypto Fresh OOS
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - data/crypto-decision-intelligence.json
+  schedule:
+    - cron: '55 0 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crypto-fresh-oos
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Update prospective-only Fresh OOS tracker
+        run: python scripts/update-crypto-fresh-oos.py
+      - name: Commit Fresh OOS tracker when changed
+        run: |
+          if [ -z "$(git status --porcelain -- data/crypto-fresh-oos.json)" ]; then
+            echo "No Crypto Fresh OOS changes."
+            exit 0
+          fi
+          git config user.name "best-currency-ai-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/crypto-fresh-oos.json
+          git commit -m "data: update Crypto Fresh OOS prospective tracker"
+          git push
