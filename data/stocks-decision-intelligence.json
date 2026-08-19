@@ -1,15 +1,15 @@
 {
   "version": "0.1",
-  "status": "DECISION_INTELLIGENCE_NOT_RUN",
+  "status": "STOCKS_DECISION_INTELLIGENCE_READY",
   "scope": "US_LISTED_EQUITIES_V1",
-  "generated_at": null,
+  "generated_at": "2026-08-19T05:13:09.801508Z",
   "model_status": "EXPERIMENTAL_PREVALIDATION",
   "frozen": false,
   "source_readiness": {
-    "sec_official_evidence": "REQUIRED",
-    "daily_market_data": "REQUIRED",
+    "sec_official_evidence": "OFFICIAL_EVIDENCE_READY",
+    "daily_market_data": "DAILY_MARKET_DATA_READY",
     "news": "DEFERRED_TO_UNIFIED_NEWS_INTELLIGENCE",
-    "decision_intelligence": "READY_TO_BUILD"
+    "decision_intelligence": "STOCKS_DECISION_INTELLIGENCE_READY"
   },
   "guardrails": {
     "no_buy_sell": true,
@@ -19,7 +19,997 @@
     "freeze_required_before_prospective_validation": true,
     "trade_execution": "OFF"
   },
-  "methodology": {},
-  "symbols": [],
+  "methodology": {
+    "market_structure": {
+      "weights": {
+        "return_20d": 0.35,
+        "close_vs_sma20": 0.25,
+        "close_vs_sma50": 0.3,
+        "return_5d": 0.1
+      },
+      "supportive_threshold": 62,
+      "pressured_threshold": 38,
+      "inputs": [
+        "20D return",
+        "close vs SMA20",
+        "close vs SMA50",
+        "5D return"
+      ]
+    },
+    "fundamental_evidence": {
+      "weights": {
+        "revenue": 0.2,
+        "net_income": 0.2,
+        "operating_income": 0.15,
+        "operating_cash_flow": 0.2,
+        "diluted_eps": 0.15,
+        "cash": 0.05,
+        "stockholders_equity": 0.05
+      },
+      "comparison_rule": "Only SAME_FISCAL_PERIOD_PRIOR_YEAR SEC XBRL comparisons are eligible.",
+      "change_span_for_score": "-25% maps toward 0; +25% maps toward 100; clipped outside span.",
+      "minimum_comparable_coverage_percent": 40,
+      "coverage_guardrail": "Below 40% comparable coverage, Fundamental Evidence state is INSUFFICIENT and cross-layer alignment fails closed."
+    },
+    "decision_readiness": {
+      "weights": {
+        "sec_completeness": 0.1,
+        "market_completeness": 0.1,
+        "comparable_fundamental_coverage": 0.05,
+        "market_freshness": 0.1,
+        "sec_freshness": 0.1,
+        "cross_layer_alignment": 0.25,
+        "directional_clarity": 0.2,
+        "market_participation": 0.1
+      },
+      "states": {
+        "ready_for_review": ">=70",
+        "conditional_review": "50-69.99",
+        "low_readiness": "<50"
+      }
+    },
+    "decision_risk": {
+      "weights": {
+        "volatility": 0.35,
+        "one_day_shock": 0.15,
+        "recent_material_filing_activity": 0.15,
+        "evidence_divergence": 0.2,
+        "balance_sheet_stress": 0.1,
+        "raw_price_adjustment_caution": 0.05
+      },
+      "states": {
+        "low": "<35",
+        "moderate": "35-64.99",
+        "high": ">=65"
+      }
+    },
+    "validation_policy": "Stage 10C weights are pre-validation and must be frozen before Stage 10D prospective collection. No outcome tuning is performed here."
+  },
+  "symbols": [
+    {
+      "ticker": "AAPL",
+      "name": "Apple Inc.",
+      "exchange": "Nasdaq",
+      "market_session": "2026-08-18",
+      "latest_sec_filing_date": "2026-07-31",
+      "market_structure": {
+        "score": 41.93,
+        "state": "MIXED",
+        "components": {
+          "return_20d": 32.0,
+          "close_vs_sma20": 37.25,
+          "close_vs_sma50": 51.21,
+          "return_5d": 60.5
+        }
+      },
+      "fundamental_evidence": {
+        "score": 91.09,
+        "state": "SUPPORTIVE",
+        "comparable_coverage_percent": 100.0,
+        "components": {
+          "revenue": {
+            "change_percent": 16.15,
+            "score": 82.3,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "net_income": {
+            "change_percent": 20.01,
+            "score": 90.02,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "operating_income": {
+            "change_percent": 21.67,
+            "score": 93.34,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "operating_cash_flow": {
+            "change_percent": 43.11,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "diluted_eps": {
+            "change_percent": 22.42,
+            "score": 94.84,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "cash": {
+            "change_percent": 9.03,
+            "score": 68.06,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "stockholders_equity": {
+            "change_percent": 63.33,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          }
+        }
+      },
+      "cross_layer_alignment": "MIXED_ALIGNMENT",
+      "decision_readiness": {
+        "score": 79.08,
+        "state": "READY_FOR_REVIEW",
+        "components": {
+          "sec_completeness": 100.0,
+          "market_completeness": 100.0,
+          "comparable_fundamental_coverage": 100.0,
+          "market_freshness": 100.0,
+          "sec_freshness": 100.0,
+          "cross_layer_alignment": 65.0,
+          "directional_clarity": 49.16,
+          "market_participation": 80.0
+        }
+      },
+      "decision_risk": {
+        "score": 36.03,
+        "state": "MODERATE",
+        "components": {
+          "volatility": 36.15,
+          "one_day_shock": 24.17,
+          "recent_material_filing_activity": 45.0,
+          "evidence_divergence": 45.0,
+          "balance_sheet_stress": 25.0,
+          "liability_growth_minus_asset_growth_pct_points": -11.83,
+          "raw_price_adjustment_caution": 30.0
+        }
+      },
+      "counter_thesis": {
+        "status": "ACTIVE",
+        "strength": "LOW",
+        "factors": [
+          {
+            "severity": "MODERATE",
+            "text": "Recent 8-K activity can introduce material-event uncertainty that market-only signals may miss."
+          }
+        ]
+      },
+      "ai_decision_reasoner": {
+        "status": "MIXED_CONTEXT",
+        "decision": "WATCH",
+        "market_view": "MIXED",
+        "fundamental_view": "SUPPORTIVE",
+        "readiness_state": "READY_FOR_REVIEW",
+        "counter_thesis_strength": "LOW",
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF"
+      },
+      "provenance": {
+        "market_data": "Alpha Vantage TIME_SERIES_DAILY / Stage 10B",
+        "official_company_evidence": "SEC EDGAR submissions + XBRL / Stage 10A",
+        "news": "DEFERRED_TO_UNIFIED_NEWS_INTELLIGENCE"
+      }
+    },
+    {
+      "ticker": "AMZN",
+      "name": "AMAZON COM INC",
+      "exchange": "Nasdaq",
+      "market_session": "2026-08-18",
+      "latest_sec_filing_date": "2026-07-31",
+      "market_structure": {
+        "score": 59.21,
+        "state": "MIXED",
+        "components": {
+          "return_20d": 66.03,
+          "close_vs_sma20": 54.31,
+          "close_vs_sma50": 68.21,
+          "return_5d": 20.56
+        }
+      },
+      "fundamental_evidence": {
+        "score": 97.27,
+        "state": "SUPPORTIVE",
+        "comparable_coverage_percent": 100.0,
+        "components": {
+          "revenue": {
+            "change_percent": 18.17,
+            "score": 86.34,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "net_income": {
+            "change_percent": 91.55,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "operating_income": {
+            "change_percent": 36.56,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "operating_cash_flow": {
+            "change_percent": 33.24,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "diluted_eps": {
+            "change_percent": 160.86,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "cash": {
+            "change_percent": 35.45,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "stockholders_equity": {
+            "change_percent": 65.27,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          }
+        }
+      },
+      "cross_layer_alignment": "MIXED_ALIGNMENT",
+      "decision_readiness": {
+        "score": 76.94,
+        "state": "READY_FOR_REVIEW",
+        "components": {
+          "sec_completeness": 88.9,
+          "market_completeness": 100.0,
+          "comparable_fundamental_coverage": 100.0,
+          "market_freshness": 100.0,
+          "sec_freshness": 100.0,
+          "cross_layer_alignment": 65.0,
+          "directional_clarity": 56.48,
+          "market_participation": 55.0
+        }
+      },
+      "decision_risk": {
+        "score": 47.46,
+        "state": "MODERATE",
+        "components": {
+          "volatility": 71.23,
+          "one_day_shock": 11.83,
+          "recent_material_filing_activity": 45.0,
+          "evidence_divergence": 45.0,
+          "balance_sheet_stress": 35.0,
+          "liability_growth_minus_asset_growth_pct_points": null,
+          "raw_price_adjustment_caution": 30.0
+        }
+      },
+      "counter_thesis": {
+        "status": "ACTIVE",
+        "strength": "MODERATE",
+        "factors": [
+          {
+            "severity": "MODERATE",
+            "text": "20-day realized volatility is elevated, increasing regime-instability risk."
+          },
+          {
+            "severity": "MODERATE",
+            "text": "Recent 8-K activity can introduce material-event uncertainty that market-only signals may miss."
+          }
+        ]
+      },
+      "ai_decision_reasoner": {
+        "status": "MIXED_CONTEXT",
+        "decision": "WATCH",
+        "market_view": "MIXED",
+        "fundamental_view": "SUPPORTIVE",
+        "readiness_state": "READY_FOR_REVIEW",
+        "counter_thesis_strength": "MODERATE",
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF"
+      },
+      "provenance": {
+        "market_data": "Alpha Vantage TIME_SERIES_DAILY / Stage 10B",
+        "official_company_evidence": "SEC EDGAR submissions + XBRL / Stage 10A",
+        "news": "DEFERRED_TO_UNIFIED_NEWS_INTELLIGENCE"
+      }
+    },
+    {
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc.",
+      "exchange": "Nasdaq",
+      "market_session": "2026-08-18",
+      "latest_sec_filing_date": "2026-08-10",
+      "market_structure": {
+        "score": 45.27,
+        "state": "MIXED",
+        "components": {
+          "return_20d": 47.17,
+          "close_vs_sma20": 47.0,
+          "close_vs_sma50": 39.79,
+          "return_5d": 50.75
+        }
+      },
+      "fundamental_evidence": {
+        "score": 99.22,
+        "state": "SUPPORTIVE",
+        "comparable_coverage_percent": 100.0,
+        "components": {
+          "revenue": {
+            "change_percent": 23.05,
+            "score": 96.1,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "net_income": {
+            "change_percent": 178.58,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "operating_income": {
+            "change_percent": 30.04,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "operating_cash_flow": {
+            "change_percent": 32.81,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "diluted_eps": {
+            "change_percent": 178.13,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "cash": {
+            "change_percent": 165.79,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "stockholders_equity": {
+            "change_percent": 76.48,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          }
+        }
+      },
+      "cross_layer_alignment": "MIXED_ALIGNMENT",
+      "decision_readiness": {
+        "score": 77.54,
+        "state": "READY_FOR_REVIEW",
+        "components": {
+          "sec_completeness": 100.0,
+          "market_completeness": 100.0,
+          "comparable_fundamental_coverage": 100.0,
+          "market_freshness": 100.0,
+          "sec_freshness": 100.0,
+          "cross_layer_alignment": 65.0,
+          "directional_clarity": 53.95,
+          "market_participation": 55.0
+        }
+      },
+      "decision_risk": {
+        "score": 45.99,
+        "state": "MODERATE",
+        "components": {
+          "volatility": 54.55,
+          "one_day_shock": 1.0,
+          "recent_material_filing_activity": 65.0,
+          "evidence_divergence": 45.0,
+          "balance_sheet_stress": 65.0,
+          "liability_growth_minus_asset_growth_pct_points": 18.68,
+          "raw_price_adjustment_caution": 30.0
+        }
+      },
+      "counter_thesis": {
+        "status": "ACTIVE",
+        "strength": "LOW",
+        "factors": [
+          {
+            "severity": "MODERATE",
+            "text": "Recent 8-K activity can introduce material-event uncertainty that market-only signals may miss."
+          }
+        ]
+      },
+      "ai_decision_reasoner": {
+        "status": "MIXED_CONTEXT",
+        "decision": "WATCH",
+        "market_view": "MIXED",
+        "fundamental_view": "SUPPORTIVE",
+        "readiness_state": "READY_FOR_REVIEW",
+        "counter_thesis_strength": "LOW",
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF"
+      },
+      "provenance": {
+        "market_data": "Alpha Vantage TIME_SERIES_DAILY / Stage 10B",
+        "official_company_evidence": "SEC EDGAR submissions + XBRL / Stage 10A",
+        "news": "DEFERRED_TO_UNIFIED_NEWS_INTELLIGENCE"
+      }
+    },
+    {
+      "ticker": "IBM",
+      "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "exchange": "NYSE",
+      "market_session": "2026-08-18",
+      "latest_sec_filing_date": "2026-08-14",
+      "market_structure": {
+        "score": 55.6,
+        "state": "MIXED",
+        "components": {
+          "return_20d": 85.1,
+          "close_vs_sma20": 63.62,
+          "close_vs_sma50": 21.38,
+          "return_5d": 34.94
+        }
+      },
+      "fundamental_evidence": {
+        "score": 67.24,
+        "state": "SUPPORTIVE",
+        "comparable_coverage_percent": 85.0,
+        "components": {
+          "revenue": {
+            "change_percent": 4.95,
+            "score": 59.9,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "net_income": {
+            "change_percent": 4.06,
+            "score": 58.12,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "operating_income": {
+            "change_percent": null,
+            "score": null,
+            "comparison_basis": null
+          },
+          "operating_cash_flow": {
+            "change_percent": 27.92,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "diluted_eps": {
+            "change_percent": 3.5,
+            "score": 57.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "cash": {
+            "change_percent": -39.95,
+            "score": 0.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "stockholders_equity": {
+            "change_percent": 25.24,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          }
+        }
+      },
+      "cross_layer_alignment": "MIXED_ALIGNMENT",
+      "decision_readiness": {
+        "score": 69.46,
+        "state": "CONDITIONAL_REVIEW",
+        "components": {
+          "sec_completeness": 88.9,
+          "market_completeness": 100.0,
+          "comparable_fundamental_coverage": 85.0,
+          "market_freshness": 100.0,
+          "sec_freshness": 100.0,
+          "cross_layer_alignment": 65.0,
+          "directional_clarity": 22.84,
+          "market_participation": 55.0
+        }
+      },
+      "decision_risk": {
+        "score": 38.02,
+        "state": "MODERATE",
+        "components": {
+          "volatility": 31.7,
+          "one_day_shock": 27.83,
+          "recent_material_filing_activity": 65.0,
+          "evidence_divergence": 45.0,
+          "balance_sheet_stress": 25.0,
+          "liability_growth_minus_asset_growth_pct_points": -5.2,
+          "raw_price_adjustment_caution": 30.0
+        }
+      },
+      "counter_thesis": {
+        "status": "ACTIVE",
+        "strength": "LOW",
+        "factors": [
+          {
+            "severity": "MODERATE",
+            "text": "Recent 8-K activity can introduce material-event uncertainty that market-only signals may miss."
+          }
+        ]
+      },
+      "ai_decision_reasoner": {
+        "status": "MIXED_CONTEXT",
+        "decision": "WATCH",
+        "market_view": "MIXED",
+        "fundamental_view": "SUPPORTIVE",
+        "readiness_state": "CONDITIONAL_REVIEW",
+        "counter_thesis_strength": "LOW",
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF"
+      },
+      "provenance": {
+        "market_data": "Alpha Vantage TIME_SERIES_DAILY / Stage 10B",
+        "official_company_evidence": "SEC EDGAR submissions + XBRL / Stage 10A",
+        "news": "DEFERRED_TO_UNIFIED_NEWS_INTELLIGENCE"
+      }
+    },
+    {
+      "ticker": "META",
+      "name": "Meta Platforms, Inc.",
+      "exchange": "Nasdaq",
+      "market_session": "2026-08-18",
+      "latest_sec_filing_date": "2026-07-30",
+      "market_structure": {
+        "score": 5.49,
+        "state": "PRESSURED",
+        "components": {
+          "return_20d": 0.0,
+          "close_vs_sma20": 5.06,
+          "close_vs_sma50": 14.08,
+          "return_5d": 0.0
+        }
+      },
+      "fundamental_evidence": {
+        "score": 93.39,
+        "state": "SUPPORTIVE",
+        "comparable_coverage_percent": 100.0,
+        "components": {
+          "revenue": {
+            "change_percent": 30.37,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "net_income": {
+            "change_percent": 21.84,
+            "score": 93.68,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "operating_income": {
+            "change_percent": 9.61,
+            "score": 69.22,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "operating_cash_flow": {
+            "change_percent": 29.24,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "diluted_eps": {
+            "change_percent": 22.57,
+            "score": 95.14,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "cash": {
+            "change_percent": 28.8,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "stockholders_equity": {
+            "change_percent": 33.91,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          }
+        }
+      },
+      "cross_layer_alignment": "DIVERGENT",
+      "decision_readiness": {
+        "score": 77.83,
+        "state": "READY_FOR_REVIEW",
+        "components": {
+          "sec_completeness": 100.0,
+          "market_completeness": 100.0,
+          "comparable_fundamental_coverage": 100.0,
+          "market_freshness": 100.0,
+          "sec_freshness": 100.0,
+          "cross_layer_alignment": 25.0,
+          "directional_clarity": 87.9,
+          "market_participation": 90.0
+        }
+      },
+      "decision_risk": {
+        "score": 63.36,
+        "state": "MODERATE",
+        "components": {
+          "volatility": 55.66,
+          "one_day_shock": 74.17,
+          "recent_material_filing_activity": 45.0,
+          "evidence_divergence": 80.0,
+          "balance_sheet_stress": 85.0,
+          "liability_growth_minus_asset_growth_pct_points": 36.69,
+          "raw_price_adjustment_caution": 30.0
+        }
+      },
+      "counter_thesis": {
+        "status": "ACTIVE",
+        "strength": "HIGH",
+        "factors": [
+          {
+            "severity": "HIGH",
+            "text": "Market structure is pressured while comparable SEC fundamentals remain supportive."
+          },
+          {
+            "severity": "MODERATE",
+            "text": "Recent 8-K activity can introduce material-event uncertainty that market-only signals may miss."
+          }
+        ]
+      },
+      "ai_decision_reasoner": {
+        "status": "EVIDENCE_DIVERGENT",
+        "decision": "WATCH",
+        "market_view": "PRESSURED",
+        "fundamental_view": "SUPPORTIVE",
+        "readiness_state": "READY_FOR_REVIEW",
+        "counter_thesis_strength": "HIGH",
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF"
+      },
+      "provenance": {
+        "market_data": "Alpha Vantage TIME_SERIES_DAILY / Stage 10B",
+        "official_company_evidence": "SEC EDGAR submissions + XBRL / Stage 10A",
+        "news": "DEFERRED_TO_UNIFIED_NEWS_INTELLIGENCE"
+      }
+    },
+    {
+      "ticker": "MSFT",
+      "name": "MICROSOFT CORP",
+      "exchange": "Nasdaq",
+      "market_session": "2026-08-18",
+      "latest_sec_filing_date": "2026-07-29",
+      "market_structure": {
+        "score": 87.69,
+        "state": "SUPPORTIVE",
+        "components": {
+          "return_20d": 100.0,
+          "close_vs_sma20": 81.75,
+          "close_vs_sma50": 100.0,
+          "return_5d": 22.5
+        }
+      },
+      "fundamental_evidence": {
+        "score": 90.85,
+        "state": "SUPPORTIVE",
+        "comparable_coverage_percent": 100.0,
+        "components": {
+          "revenue": {
+            "change_percent": 17.79,
+            "score": 85.58,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "net_income": {
+            "change_percent": 31.34,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "operating_income": {
+            "change_percent": 20.78,
+            "score": 91.56,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "operating_cash_flow": {
+            "change_percent": 34.35,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "diluted_eps": {
+            "change_percent": 31.6,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "cash": {
+            "change_percent": -30.78,
+            "score": 0.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "stockholders_equity": {
+            "change_percent": 28.8,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          }
+        }
+      },
+      "cross_layer_alignment": "ALIGNED",
+      "decision_readiness": {
+        "score": 91.21,
+        "state": "READY_FOR_REVIEW",
+        "components": {
+          "sec_completeness": 100.0,
+          "market_completeness": 100.0,
+          "comparable_fundamental_coverage": 100.0,
+          "market_freshness": 100.0,
+          "sec_freshness": 100.0,
+          "cross_layer_alignment": 100.0,
+          "directional_clarity": 78.54,
+          "market_participation": 55.0
+        }
+      },
+      "decision_risk": {
+        "score": 40.44,
+        "state": "MODERATE",
+        "components": {
+          "volatility": 68.62,
+          "one_day_shock": 4.5,
+          "recent_material_filing_activity": 45.0,
+          "evidence_divergence": 25.0,
+          "balance_sheet_stress": 25.0,
+          "liability_growth_minus_asset_growth_pct_points": -7.83,
+          "raw_price_adjustment_caution": 30.0
+        }
+      },
+      "counter_thesis": {
+        "status": "ACTIVE",
+        "strength": "MODERATE",
+        "factors": [
+          {
+            "severity": "MODERATE",
+            "text": "20-day realized volatility is elevated, increasing regime-instability risk."
+          },
+          {
+            "severity": "MODERATE",
+            "text": "Recent 8-K activity can introduce material-event uncertainty that market-only signals may miss."
+          }
+        ]
+      },
+      "ai_decision_reasoner": {
+        "status": "COHERENT_SUPPORTIVE",
+        "decision": "REVIEW_SELECTIVELY",
+        "market_view": "SUPPORTIVE",
+        "fundamental_view": "SUPPORTIVE",
+        "readiness_state": "READY_FOR_REVIEW",
+        "counter_thesis_strength": "MODERATE",
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF"
+      },
+      "provenance": {
+        "market_data": "Alpha Vantage TIME_SERIES_DAILY / Stage 10B",
+        "official_company_evidence": "SEC EDGAR submissions + XBRL / Stage 10A",
+        "news": "DEFERRED_TO_UNIFIED_NEWS_INTELLIGENCE"
+      }
+    },
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA CORP",
+      "exchange": "Nasdaq",
+      "market_session": "2026-08-18",
+      "latest_sec_filing_date": "2026-08-17",
+      "market_structure": {
+        "score": 71.02,
+        "state": "SUPPORTIVE",
+        "components": {
+          "return_20d": 70.03,
+          "close_vs_sma20": 72.5,
+          "close_vs_sma50": 75.79,
+          "return_5d": 56.44
+        }
+      },
+      "fundamental_evidence": {
+        "score": 96.19,
+        "state": "SUPPORTIVE",
+        "comparable_coverage_percent": 100.0,
+        "components": {
+          "revenue": {
+            "change_percent": 85.23,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "net_income": {
+            "change_percent": 210.63,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "operating_income": {
+            "change_percent": 147.42,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "operating_cash_flow": {
+            "change_percent": 83.64,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "diluted_eps": {
+            "change_percent": 214.47,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "cash": {
+            "change_percent": -13.11,
+            "score": 23.78,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "stockholders_equity": {
+            "change_percent": 133.14,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          }
+        }
+      },
+      "cross_layer_alignment": "ALIGNED",
+      "decision_readiness": {
+        "score": 90.44,
+        "state": "READY_FOR_REVIEW",
+        "components": {
+          "sec_completeness": 100.0,
+          "market_completeness": 100.0,
+          "comparable_fundamental_coverage": 100.0,
+          "market_freshness": 100.0,
+          "sec_freshness": 100.0,
+          "cross_layer_alignment": 100.0,
+          "directional_clarity": 67.21,
+          "market_participation": 70.0
+        }
+      },
+      "decision_risk": {
+        "score": 36.88,
+        "state": "MODERATE",
+        "components": {
+          "volatility": 43.67,
+          "one_day_shock": 39.0,
+          "recent_material_filing_activity": 45.0,
+          "evidence_divergence": 25.0,
+          "balance_sheet_stress": 25.0,
+          "liability_growth_minus_asset_growth_pct_points": -52.61,
+          "raw_price_adjustment_caution": 30.0
+        }
+      },
+      "counter_thesis": {
+        "status": "ACTIVE",
+        "strength": "LOW",
+        "factors": [
+          {
+            "severity": "MODERATE",
+            "text": "Recent 8-K activity can introduce material-event uncertainty that market-only signals may miss."
+          }
+        ]
+      },
+      "ai_decision_reasoner": {
+        "status": "COHERENT_SUPPORTIVE",
+        "decision": "REVIEW_SELECTIVELY",
+        "market_view": "SUPPORTIVE",
+        "fundamental_view": "SUPPORTIVE",
+        "readiness_state": "READY_FOR_REVIEW",
+        "counter_thesis_strength": "LOW",
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF"
+      },
+      "provenance": {
+        "market_data": "Alpha Vantage TIME_SERIES_DAILY / Stage 10B",
+        "official_company_evidence": "SEC EDGAR submissions + XBRL / Stage 10A",
+        "news": "DEFERRED_TO_UNIFIED_NEWS_INTELLIGENCE"
+      }
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "exchange": "Nasdaq",
+      "market_session": "2026-08-18",
+      "latest_sec_filing_date": "2026-07-23",
+      "market_structure": {
+        "score": 32.56,
+        "state": "PRESSURED",
+        "components": {
+          "return_20d": 13.0,
+          "close_vs_sma20": 71.81,
+          "close_vs_sma50": 14.33,
+          "return_5d": 57.62
+        }
+      },
+      "fundamental_evidence": {
+        "score": 70.05,
+        "state": "SUPPORTIVE",
+        "comparable_coverage_percent": 100.0,
+        "components": {
+          "revenue": {
+            "change_percent": 21.02,
+            "score": 92.04,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "net_income": {
+            "change_percent": 0.63,
+            "score": 51.26,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "operating_income": {
+            "change_percent": 1.29,
+            "score": 52.58,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "operating_cash_flow": {
+            "change_percent": 83.86,
+            "score": 100.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "diluted_eps": {
+            "change_percent": 0.0,
+            "score": 50.0,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "cash": {
+            "change_percent": -2.36,
+            "score": 45.28,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          },
+          "stockholders_equity": {
+            "change_percent": 12.34,
+            "score": 74.68,
+            "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR"
+          }
+        }
+      },
+      "cross_layer_alignment": "DIVERGENT",
+      "decision_readiness": {
+        "score": 64.25,
+        "state": "CONDITIONAL_REVIEW",
+        "components": {
+          "sec_completeness": 100.0,
+          "market_completeness": 100.0,
+          "comparable_fundamental_coverage": 100.0,
+          "market_freshness": 100.0,
+          "sec_freshness": 100.0,
+          "cross_layer_alignment": 25.0,
+          "directional_clarity": 37.49,
+          "market_participation": 55.0
+        }
+      },
+      "decision_risk": {
+        "score": 55.87,
+        "state": "MODERATE",
+        "components": {
+          "volatility": 73.77,
+          "one_day_shock": 12.0,
+          "recent_material_filing_activity": 45.0,
+          "evidence_divergence": 80.0,
+          "balance_sheet_stress": 40.0,
+          "liability_growth_minus_asset_growth_pct_points": 5.29,
+          "raw_price_adjustment_caution": 30.0
+        }
+      },
+      "counter_thesis": {
+        "status": "ACTIVE",
+        "strength": "HIGH",
+        "factors": [
+          {
+            "severity": "HIGH",
+            "text": "Market structure is pressured while comparable SEC fundamentals remain supportive."
+          },
+          {
+            "severity": "MODERATE",
+            "text": "20-day realized volatility is elevated, increasing regime-instability risk."
+          },
+          {
+            "severity": "MODERATE",
+            "text": "Recent 8-K activity can introduce material-event uncertainty that market-only signals may miss."
+          }
+        ]
+      },
+      "ai_decision_reasoner": {
+        "status": "EVIDENCE_DIVERGENT",
+        "decision": "WATCH",
+        "market_view": "PRESSURED",
+        "fundamental_view": "SUPPORTIVE",
+        "readiness_state": "CONDITIONAL_REVIEW",
+        "counter_thesis_strength": "HIGH",
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF"
+      },
+      "provenance": {
+        "market_data": "Alpha Vantage TIME_SERIES_DAILY / Stage 10B",
+        "official_company_evidence": "SEC EDGAR submissions + XBRL / Stage 10A",
+        "news": "DEFERRED_TO_UNIFIED_NEWS_INTELLIGENCE"
+      }
+    }
+  ],
   "errors": []
 }
