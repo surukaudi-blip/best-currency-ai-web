@@ -1,18 +1,18 @@
 {
   "version": "1.0",
-  "status": "MARKET_ADAPTER_NOT_RUN",
+  "status": "DAILY_MARKET_DATA_READY",
   "scope": "US_LISTED_EQUITIES_V1",
-  "generated_at": null,
+  "generated_at": "2026-08-19T05:03:03.586555Z",
   "provider": {
     "name": "Alpha Vantage",
     "function": "TIME_SERIES_DAILY",
     "mode": "HISTORICAL_DAILY_RAW_OHLCV",
     "outputsize": "compact",
     "entitlement": "historical_default",
-    "api_key_env": "ALPHA_VANTAGE_API_KEY"
+    "requests_this_run": 8
   },
   "source_readiness": {
-    "daily_ohlcv": "READY_TO_RUN_AFTER_API_KEY_CONFIG",
+    "daily_ohlcv": "DAILY_MARKET_DATA_READY",
     "realtime": "DISABLED",
     "delayed_15m": "DISABLED",
     "adjusted_prices": "NOT_INCLUDED_IN_10B_V1",
@@ -28,6 +28,407 @@
     "provider_terms_apply": true,
     "trade_execution": "OFF"
   },
-  "symbols": [],
+  "symbols": [
+    {
+      "ticker": "NVDA",
+      "name": "NVIDIA CORP",
+      "exchange": "Nasdaq",
+      "source": {
+        "provider": "Alpha Vantage",
+        "function": "TIME_SERIES_DAILY",
+        "mode": "HISTORICAL_DAILY_RAW_OHLCV",
+        "provider_last_refreshed": "2026-08-18",
+        "provider_time_zone": "US/Eastern",
+        "full_raw_series_published": false
+      },
+      "freshness": {
+        "latest_market_session": "2026-08-18",
+        "calendar_days_since_latest_session": 1
+      },
+      "latest_bar": {
+        "session": "2026-08-18",
+        "open": 220.45,
+        "high": 221.64,
+        "low": 218.6902,
+        "close": 219.74,
+        "volume": 103128247
+      },
+      "derived_market_context": {
+        "return_1d_percent": -2.34,
+        "return_5d_percent": 1.03,
+        "return_20d_percent": 6.01,
+        "sma_20": 212.104,
+        "sma_50": 206.9394,
+        "close_vs_sma20_percent": 3.6,
+        "close_vs_sma50_percent": 6.19,
+        "annualized_volatility_20d_percent": 39.2,
+        "average_volume_20d": 120324490,
+        "latest_volume_vs_20d_average_ratio": 0.86,
+        "high_low_range_20d_percent": 19.95
+      },
+      "data_quality": {
+        "bars_received": 100,
+        "minimum_for_50d_context_met": true,
+        "price_adjustment": "RAW_AS_TRADED_UNADJUSTED",
+        "corporate_action_caution": "Split/dividend adjustment is not included in 10B v1; long-horizon inference remains constrained."
+      },
+      "decision_state": {
+        "market_data_status": "DAILY_OHLCV_READY",
+        "market_view": "DEFERRED_TO_STAGE_10C",
+        "buy_sell": "NOT_GENERATED",
+        "trade_execution": "OFF"
+      }
+    },
+    {
+      "ticker": "AAPL",
+      "name": "Apple Inc.",
+      "exchange": "Nasdaq",
+      "source": {
+        "provider": "Alpha Vantage",
+        "function": "TIME_SERIES_DAILY",
+        "mode": "HISTORICAL_DAILY_RAW_OHLCV",
+        "provider_last_refreshed": "2026-08-18",
+        "provider_time_zone": "US/Eastern",
+        "full_raw_series_published": false
+      },
+      "freshness": {
+        "latest_market_session": "2026-08-18",
+        "calendar_days_since_latest_session": 1
+      },
+      "latest_bar": {
+        "session": "2026-08-18",
+        "open": 307.58,
+        "high": 311.49,
+        "low": 305.74,
+        "close": 310.03,
+        "volume": 53424535
+      },
+      "derived_market_context": {
+        "return_1d_percent": 1.45,
+        "return_5d_percent": 1.68,
+        "return_20d_percent": -5.4,
+        "sma_20": 316.493,
+        "sma_50": 309.1318,
+        "close_vs_sma20_percent": -2.04,
+        "close_vs_sma50_percent": 0.29,
+        "annualized_volatility_20d_percent": 34.69,
+        "average_volume_20d": 52456774,
+        "latest_volume_vs_20d_average_ratio": 1.02,
+        "high_low_range_20d_percent": 14.86
+      },
+      "data_quality": {
+        "bars_received": 100,
+        "minimum_for_50d_context_met": true,
+        "price_adjustment": "RAW_AS_TRADED_UNADJUSTED",
+        "corporate_action_caution": "Split/dividend adjustment is not included in 10B v1; long-horizon inference remains constrained."
+      },
+      "decision_state": {
+        "market_data_status": "DAILY_OHLCV_READY",
+        "market_view": "DEFERRED_TO_STAGE_10C",
+        "buy_sell": "NOT_GENERATED",
+        "trade_execution": "OFF"
+      }
+    },
+    {
+      "ticker": "GOOGL",
+      "name": "Alphabet Inc.",
+      "exchange": "Nasdaq",
+      "source": {
+        "provider": "Alpha Vantage",
+        "function": "TIME_SERIES_DAILY",
+        "mode": "HISTORICAL_DAILY_RAW_OHLCV",
+        "provider_last_refreshed": "2026-08-18",
+        "provider_time_zone": "US/Eastern",
+        "full_raw_series_published": false
+      },
+      "freshness": {
+        "latest_market_session": "2026-08-18",
+        "calendar_days_since_latest_session": 1
+      },
+      "latest_bar": {
+        "session": "2026-08-18",
+        "open": 342.405,
+        "high": 344.8699,
+        "low": 340.19,
+        "close": 344.2,
+        "volume": 19248828
+      },
+      "derived_market_context": {
+        "return_1d_percent": 0.06,
+        "return_5d_percent": 0.12,
+        "return_20d_percent": -0.85,
+        "sma_20": 345.8625,
+        "sma_50": 352.844,
+        "close_vs_sma20_percent": -0.48,
+        "close_vs_sma50_percent": -2.45,
+        "annualized_volatility_20d_percent": 47.64,
+        "average_volume_20d": 30770452,
+        "latest_volume_vs_20d_average_ratio": 0.63,
+        "high_low_range_20d_percent": 22.1
+      },
+      "data_quality": {
+        "bars_received": 100,
+        "minimum_for_50d_context_met": true,
+        "price_adjustment": "RAW_AS_TRADED_UNADJUSTED",
+        "corporate_action_caution": "Split/dividend adjustment is not included in 10B v1; long-horizon inference remains constrained."
+      },
+      "decision_state": {
+        "market_data_status": "DAILY_OHLCV_READY",
+        "market_view": "DEFERRED_TO_STAGE_10C",
+        "buy_sell": "NOT_GENERATED",
+        "trade_execution": "OFF"
+      }
+    },
+    {
+      "ticker": "MSFT",
+      "name": "MICROSOFT CORP",
+      "exchange": "Nasdaq",
+      "source": {
+        "provider": "Alpha Vantage",
+        "function": "TIME_SERIES_DAILY",
+        "mode": "HISTORICAL_DAILY_RAW_OHLCV",
+        "provider_last_refreshed": "2026-08-18",
+        "provider_time_zone": "US/Eastern",
+        "full_raw_series_published": false
+      },
+      "freshness": {
+        "latest_market_session": "2026-08-18",
+        "calendar_days_since_latest_session": 1
+      },
+      "latest_bar": {
+        "session": "2026-08-18",
+        "open": 481.54,
+        "high": 484.27,
+        "low": 477.1505,
+        "close": 481.63,
+        "volume": 24087591
+      },
+      "derived_market_context": {
+        "return_1d_percent": 0.27,
+        "return_5d_percent": -4.4,
+        "return_20d_percent": 21.09,
+        "sma_20": 458.338,
+        "sma_50": 415.1208,
+        "close_vs_sma20_percent": 5.08,
+        "close_vs_sma50_percent": 16.02,
+        "annualized_volatility_20d_percent": 58.9,
+        "average_volume_20d": 37836236,
+        "latest_volume_vs_20d_average_ratio": 0.64,
+        "high_low_range_20d_percent": 36.13
+      },
+      "data_quality": {
+        "bars_received": 100,
+        "minimum_for_50d_context_met": true,
+        "price_adjustment": "RAW_AS_TRADED_UNADJUSTED",
+        "corporate_action_caution": "Split/dividend adjustment is not included in 10B v1; long-horizon inference remains constrained."
+      },
+      "decision_state": {
+        "market_data_status": "DAILY_OHLCV_READY",
+        "market_view": "DEFERRED_TO_STAGE_10C",
+        "buy_sell": "NOT_GENERATED",
+        "trade_execution": "OFF"
+      }
+    },
+    {
+      "ticker": "AMZN",
+      "name": "AMAZON COM INC",
+      "exchange": "Nasdaq",
+      "source": {
+        "provider": "Alpha Vantage",
+        "function": "TIME_SERIES_DAILY",
+        "mode": "HISTORICAL_DAILY_RAW_OHLCV",
+        "provider_last_refreshed": "2026-08-18",
+        "provider_time_zone": "US/Eastern",
+        "full_raw_series_published": false
+      },
+      "freshness": {
+        "latest_market_session": "2026-08-18",
+        "calendar_days_since_latest_session": 1
+      },
+      "latest_bar": {
+        "session": "2026-08-18",
+        "open": 260.63,
+        "high": 262.18,
+        "low": 257.73,
+        "close": 259.45,
+        "volume": 33171263
+      },
+      "derived_market_context": {
+        "return_1d_percent": -0.71,
+        "return_5d_percent": -4.71,
+        "return_20d_percent": 4.81,
+        "sma_20": 257.6805,
+        "sma_50": 248.5854,
+        "close_vs_sma20_percent": 0.69,
+        "close_vs_sma50_percent": 4.37,
+        "annualized_volatility_20d_percent": 61.48,
+        "average_volume_20d": 48812965,
+        "latest_volume_vs_20d_average_ratio": 0.68,
+        "high_low_range_20d_percent": 26.99
+      },
+      "data_quality": {
+        "bars_received": 100,
+        "minimum_for_50d_context_met": true,
+        "price_adjustment": "RAW_AS_TRADED_UNADJUSTED",
+        "corporate_action_caution": "Split/dividend adjustment is not included in 10B v1; long-horizon inference remains constrained."
+      },
+      "decision_state": {
+        "market_data_status": "DAILY_OHLCV_READY",
+        "market_view": "DEFERRED_TO_STAGE_10C",
+        "buy_sell": "NOT_GENERATED",
+        "trade_execution": "OFF"
+      }
+    },
+    {
+      "ticker": "META",
+      "name": "Meta Platforms, Inc.",
+      "exchange": "Nasdaq",
+      "source": {
+        "provider": "Alpha Vantage",
+        "function": "TIME_SERIES_DAILY",
+        "mode": "HISTORICAL_DAILY_RAW_OHLCV",
+        "provider_last_refreshed": "2026-08-18",
+        "provider_time_zone": "US/Eastern",
+        "full_raw_series_published": false
+      },
+      "freshness": {
+        "latest_market_session": "2026-08-18",
+        "calendar_days_since_latest_session": 1
+      },
+      "latest_bar": {
+        "session": "2026-08-18",
+        "open": 557.48,
+        "high": 560.66,
+        "low": 543.21,
+        "close": 543.67,
+        "volume": 27094871
+      },
+      "derived_market_context": {
+        "return_1d_percent": -4.45,
+        "return_5d_percent": -9.26,
+        "return_20d_percent": -15.55,
+        "sma_20": 585.8195,
+        "sma_50": 594.9752,
+        "close_vs_sma20_percent": -7.19,
+        "close_vs_sma50_percent": -8.62,
+        "annualized_volatility_20d_percent": 48.53,
+        "average_volume_20d": 17026315,
+        "latest_volume_vs_20d_average_ratio": 1.59,
+        "high_low_range_20d_percent": 23.74
+      },
+      "data_quality": {
+        "bars_received": 100,
+        "minimum_for_50d_context_met": true,
+        "price_adjustment": "RAW_AS_TRADED_UNADJUSTED",
+        "corporate_action_caution": "Split/dividend adjustment is not included in 10B v1; long-horizon inference remains constrained."
+      },
+      "decision_state": {
+        "market_data_status": "DAILY_OHLCV_READY",
+        "market_view": "DEFERRED_TO_STAGE_10C",
+        "buy_sell": "NOT_GENERATED",
+        "trade_execution": "OFF"
+      }
+    },
+    {
+      "ticker": "TSLA",
+      "name": "Tesla, Inc.",
+      "exchange": "Nasdaq",
+      "source": {
+        "provider": "Alpha Vantage",
+        "function": "TIME_SERIES_DAILY",
+        "mode": "HISTORICAL_DAILY_RAW_OHLCV",
+        "provider_last_refreshed": "2026-08-18",
+        "provider_time_zone": "US/Eastern",
+        "full_raw_series_published": false
+      },
+      "freshness": {
+        "latest_market_session": "2026-08-18",
+        "calendar_days_since_latest_session": 1
+      },
+      "latest_bar": {
+        "session": "2026-08-18",
+        "open": 333.22,
+        "high": 340.53,
+        "low": 331.12,
+        "close": 336.87,
+        "volume": 27994466
+      },
+      "derived_market_context": {
+        "return_1d_percent": -0.72,
+        "return_5d_percent": 1.22,
+        "return_20d_percent": -11.1,
+        "sma_20": 325.523,
+        "sma_50": 368.4198,
+        "close_vs_sma20_percent": 3.49,
+        "close_vs_sma50_percent": -8.56,
+        "annualized_volatility_20d_percent": 64.52,
+        "average_volume_20d": 39200993,
+        "latest_volume_vs_20d_average_ratio": 0.71,
+        "high_low_range_20d_percent": 27.84
+      },
+      "data_quality": {
+        "bars_received": 100,
+        "minimum_for_50d_context_met": true,
+        "price_adjustment": "RAW_AS_TRADED_UNADJUSTED",
+        "corporate_action_caution": "Split/dividend adjustment is not included in 10B v1; long-horizon inference remains constrained."
+      },
+      "decision_state": {
+        "market_data_status": "DAILY_OHLCV_READY",
+        "market_view": "DEFERRED_TO_STAGE_10C",
+        "buy_sell": "NOT_GENERATED",
+        "trade_execution": "OFF"
+      }
+    },
+    {
+      "ticker": "IBM",
+      "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "exchange": "NYSE",
+      "source": {
+        "provider": "Alpha Vantage",
+        "function": "TIME_SERIES_DAILY",
+        "mode": "HISTORICAL_DAILY_RAW_OHLCV",
+        "provider_last_refreshed": "2026-08-18",
+        "provider_time_zone": "US/Eastern",
+        "full_raw_series_published": false
+      },
+      "freshness": {
+        "latest_market_session": "2026-08-18",
+        "calendar_days_since_latest_session": 1
+      },
+      "latest_bar": {
+        "session": "2026-08-18",
+        "open": 229.73,
+        "high": 234.4499,
+        "low": 229.415,
+        "close": 232.67,
+        "volume": 4650116
+      },
+      "derived_market_context": {
+        "return_1d_percent": 1.67,
+        "return_5d_percent": -2.41,
+        "return_20d_percent": 10.53,
+        "sma_20": 227.7025,
+        "sma_50": 249.8412,
+        "close_vs_sma20_percent": 2.18,
+        "close_vs_sma50_percent": -6.87,
+        "annualized_volatility_20d_percent": 32.02,
+        "average_volume_20d": 7979965,
+        "latest_volume_vs_20d_average_ratio": 0.58,
+        "high_low_range_20d_percent": 21.39
+      },
+      "data_quality": {
+        "bars_received": 100,
+        "minimum_for_50d_context_met": true,
+        "price_adjustment": "RAW_AS_TRADED_UNADJUSTED",
+        "corporate_action_caution": "Split/dividend adjustment is not included in 10B v1; long-horizon inference remains constrained."
+      },
+      "decision_state": {
+        "market_data_status": "DAILY_OHLCV_READY",
+        "market_view": "DEFERRED_TO_STAGE_10C",
+        "buy_sell": "NOT_GENERATED",
+        "trade_execution": "OFF"
+      }
+    }
+  ],
   "errors": []
 }
