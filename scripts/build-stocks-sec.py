@@ -153,7 +153,6 @@ def summarize_fact(
     if not values or tag is None or unit is None:
         return None
 
-    # Latest filed observation per reporting end date.
     unique: List[Dict[str, Any]] = []
     seen_ends = set()
     for item in values:
@@ -165,8 +164,6 @@ def summarize_fact(
 
     latest = unique[0]
     latest_family = form_family(latest.get("form"))
-    # Compare only with the same reporting family (quarterly-to-quarterly or annual-to-annual)
-    # to avoid presenting a quarter-vs-year percentage as a meaningful trend.
     previous = next(
         (
             item
@@ -192,6 +189,7 @@ def summarize_fact(
         "previous_value": previous.get("val") if previous else None,
         "previous_period_end": previous.get("end") if previous else None,
         "comparison_family": latest_family,
+        "change_percent_vs_previous_reported_period": growth_percent,
         "change_percent_vs_comparable_reported_period": growth_percent,
     }
 
@@ -276,7 +274,7 @@ def main() -> int:
         try:
             print(f"SEC: {entry['ticker']} ({entry['cik']})")
             companies.append(build_company(entry, user_agent))
-        except Exception as exc:  # Fail individual company closed, preserve audit visibility.
+        except Exception as exc:
             errors.append({"ticker": entry.get("ticker"), "cik": entry.get("cik"), "error": str(exc)})
 
     generated_at = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
