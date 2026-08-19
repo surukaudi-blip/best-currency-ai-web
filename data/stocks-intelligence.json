@@ -1,8 +1,8 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "status": "OFFICIAL_EVIDENCE_READY",
   "scope": "US_LISTED_EQUITIES_V1",
-  "generated_at": "2026-08-19T04:43:34.553844Z",
+  "generated_at": "2026-08-19T04:52:36.647679Z",
   "source_readiness": {
     "sec_official_evidence": "OFFICIAL_EVIDENCE_READY",
     "market_price": "UNAVAILABLE",
@@ -14,6 +14,8 @@
     "no_buy_sell_without_market_layer": true,
     "no_single_filing_is_trade_instruction": true,
     "missing_data_fail_closed": true,
+    "xbrl_latest_across_accepted_tags": true,
+    "fundamental_comparison_same_fiscal_period_prior_year": true,
     "trade_execution": "OFF"
   },
   "companies": [
@@ -149,19 +151,19 @@
       ],
       "fundamentals": {
         "revenue": {
-          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "Revenues",
           "unit": "USD",
-          "value": 26914000000,
-          "period_end": "2022-01-30",
-          "filed": "2022-03-18",
-          "form": "10-K",
-          "fiscal_year": 2022,
-          "fiscal_period": "FY",
-          "previous_value": 16675000000,
-          "previous_period_end": "2021-01-31",
-          "comparison_family": "ANNUAL",
-          "change_percent_vs_previous_reported_period": 61.4,
-          "change_percent_vs_comparable_reported_period": 61.4
+          "value": 81615000000,
+          "period_end": "2026-04-26",
+          "filed": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "previous_value": 44062000000,
+          "previous_period_end": "2025-04-27",
+          "comparison_family": "QUARTERLY",
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 85.23
         },
         "net_income": {
           "tag": "NetIncomeLoss",
@@ -172,11 +174,11 @@
           "form": "10-Q",
           "fiscal_year": 2027,
           "fiscal_period": "Q1",
-          "previous_value": 77107000000,
-          "previous_period_end": "2025-10-26",
+          "previous_value": 18775000000,
+          "previous_period_end": "2025-04-27",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": -24.36,
-          "change_percent_vs_comparable_reported_period": -24.36
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 210.63
         },
         "operating_income": {
           "tag": "OperatingIncomeLoss",
@@ -187,11 +189,11 @@
           "form": "10-Q",
           "fiscal_year": 2027,
           "fiscal_period": "Q1",
-          "previous_value": 86088000000,
-          "previous_period_end": "2025-10-26",
+          "previous_value": 21638000000,
+          "previous_period_end": "2025-04-27",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": -37.81,
-          "change_percent_vs_comparable_reported_period": -37.81
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 147.42
         },
         "operating_cash_flow": {
           "tag": "NetCashProvidedByUsedInOperatingActivities",
@@ -202,11 +204,11 @@
           "form": "10-Q",
           "fiscal_year": 2027,
           "fiscal_period": "Q1",
-          "previous_value": 66530000000,
-          "previous_period_end": "2025-10-26",
+          "previous_value": 27414000000,
+          "previous_period_end": "2025-04-27",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": -24.33,
-          "change_percent_vs_comparable_reported_period": -24.33
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 83.64
         },
         "cash": {
           "tag": "CashAndCashEquivalentsAtCarryingValue",
@@ -217,11 +219,11 @@
           "form": "10-Q",
           "fiscal_year": 2027,
           "fiscal_period": "Q1",
-          "previous_value": 10605000000,
-          "previous_period_end": "2026-01-25",
+          "previous_value": 15234000000,
+          "previous_period_end": "2025-04-27",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 24.82,
-          "change_percent_vs_comparable_reported_period": 24.82
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": -13.11
         },
         "assets": {
           "tag": "Assets",
@@ -232,11 +234,11 @@
           "form": "10-Q",
           "fiscal_year": 2027,
           "fiscal_period": "Q1",
-          "previous_value": 206803000000,
-          "previous_period_end": "2026-01-25",
+          "previous_value": 125254000000,
+          "previous_period_end": "2025-04-27",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 25.47,
-          "change_percent_vs_comparable_reported_period": 25.47
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 107.16
         },
         "liabilities": {
           "tag": "Liabilities",
@@ -247,11 +249,11 @@
           "form": "10-Q",
           "fiscal_year": 2027,
           "fiscal_period": "Q1",
-          "previous_value": 49510000000,
-          "previous_period_end": "2026-01-25",
+          "previous_value": 41411000000,
+          "previous_period_end": "2025-04-27",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 29.27,
-          "change_percent_vs_comparable_reported_period": 29.27
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 54.55
         },
         "stockholders_equity": {
           "tag": "StockholdersEquity",
@@ -262,11 +264,11 @@
           "form": "10-Q",
           "fiscal_year": 2027,
           "fiscal_period": "Q1",
-          "previous_value": 157293000000,
-          "previous_period_end": "2026-01-25",
+          "previous_value": 83843000000,
+          "previous_period_end": "2025-04-27",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 24.27,
-          "change_percent_vs_comparable_reported_period": 24.27
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 133.14
         },
         "diluted_eps": {
           "tag": "EarningsPerShareDiluted",
@@ -277,11 +279,11 @@
           "form": "10-Q",
           "fiscal_year": 2027,
           "fiscal_period": "Q1",
-          "previous_value": 3.14,
-          "previous_period_end": "2025-10-26",
+          "previous_value": 0.76,
+          "previous_period_end": "2025-04-27",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": -23.89,
-          "change_percent_vs_comparable_reported_period": -23.89
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 214.47
         }
       },
       "evidence_completeness_percent": 100.0,
@@ -436,11 +438,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q3",
-          "previous_value": 254940000000,
-          "previous_period_end": "2026-03-28",
+          "previous_value": 313695000000,
+          "previous_period_end": "2025-06-28",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 42.92,
-          "change_percent_vs_comparable_reported_period": 42.92
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 16.15
         },
         "net_income": {
           "tag": "NetIncomeLoss",
@@ -451,11 +453,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q3",
-          "previous_value": 71675000000,
-          "previous_period_end": "2026-03-28",
+          "previous_value": 84544000000,
+          "previous_period_end": "2025-06-28",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 41.56,
-          "change_percent_vs_comparable_reported_period": 41.56
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 20.01
         },
         "operating_income": {
           "tag": "OperatingIncomeLoss",
@@ -466,11 +468,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q3",
-          "previous_value": 86737000000,
-          "previous_period_end": "2026-03-28",
+          "previous_value": 100623000000,
+          "previous_period_end": "2025-06-28",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 41.15,
-          "change_percent_vs_comparable_reported_period": 41.15
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 21.67
         },
         "operating_cash_flow": {
           "tag": "NetCashProvidedByUsedInOperatingActivities",
@@ -481,11 +483,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q3",
-          "previous_value": 82627000000,
-          "previous_period_end": "2026-03-28",
+          "previous_value": 81754000000,
+          "previous_period_end": "2025-06-28",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 41.6,
-          "change_percent_vs_comparable_reported_period": 41.6
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 43.11
         },
         "cash": {
           "tag": "CashAndCashEquivalentsAtCarryingValue",
@@ -496,11 +498,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q3",
-          "previous_value": 45572000000,
-          "previous_period_end": "2026-03-28",
+          "previous_value": 36269000000,
+          "previous_period_end": "2025-06-28",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": -13.23,
-          "change_percent_vs_comparable_reported_period": -13.23
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 9.03
         },
         "assets": {
           "tag": "Assets",
@@ -511,11 +513,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q3",
-          "previous_value": 371082000000,
-          "previous_period_end": "2026-03-28",
+          "previous_value": 331495000000,
+          "previous_period_end": "2025-06-28",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 3.28,
-          "change_percent_vs_comparable_reported_period": 3.28
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 15.62
         },
         "liabilities": {
           "tag": "Liabilities",
@@ -526,11 +528,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q3",
-          "previous_value": 264591000000,
-          "previous_period_end": "2026-03-28",
+          "previous_value": 265665000000,
+          "previous_period_end": "2025-06-28",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 4.22,
-          "change_percent_vs_comparable_reported_period": 4.22
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 3.79
         },
         "stockholders_equity": {
           "tag": "StockholdersEquity",
@@ -541,11 +543,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q3",
-          "previous_value": 106491000000,
-          "previous_period_end": "2026-03-28",
+          "previous_value": 65830000000,
+          "previous_period_end": "2025-06-28",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 0.97,
-          "change_percent_vs_comparable_reported_period": 0.97
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 63.33
         },
         "diluted_eps": {
           "tag": "EarningsPerShareDiluted",
@@ -556,11 +558,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q3",
-          "previous_value": 4.85,
-          "previous_period_end": "2026-03-28",
+          "previous_value": 5.62,
+          "previous_period_end": "2025-06-28",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 41.86,
-          "change_percent_vs_comparable_reported_period": 41.86
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 22.42
         }
       },
       "evidence_completeness_percent": 100.0,
@@ -707,19 +709,19 @@
       ],
       "fundamentals": {
         "revenue": {
-          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "tag": "Revenues",
           "unit": "USD",
-          "value": 90234000000,
-          "period_end": "2025-03-31",
-          "filed": "2025-04-25",
+          "value": 229692000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
           "form": "10-Q",
-          "fiscal_year": 2025,
-          "fiscal_period": "Q1",
-          "previous_value": 253549000000,
-          "previous_period_end": "2024-09-30",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 186662000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": -64.41,
-          "change_percent_vs_comparable_reported_period": -64.41
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 23.05
         },
         "net_income": {
           "tag": "NetIncomeLoss",
@@ -730,11 +732,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 62578000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 62736000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 179.29,
-          "change_percent_vs_comparable_reported_period": 179.29
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 178.58
         },
         "operating_income": {
           "tag": "OperatingIncomeLoss",
@@ -745,11 +747,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 39696000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 61877000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 102.71,
-          "change_percent_vs_comparable_reported_period": 102.71
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 30.04
         },
         "operating_cash_flow": {
           "tag": "NetCashProvidedByUsedInOperatingActivities",
@@ -760,11 +762,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 45790000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 63897000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 85.32,
-          "change_percent_vs_comparable_reported_period": 85.32
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 32.81
         },
         "cash": {
           "tag": "CashAndCashEquivalentsAtCarryingValue",
@@ -775,11 +777,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 38063000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 21036000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 46.89,
-          "change_percent_vs_comparable_reported_period": 46.89
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 165.79
         },
         "assets": {
           "tag": "Assets",
@@ -790,11 +792,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 703919000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 502053000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 30.98,
-          "change_percent_vs_comparable_reported_period": 30.98
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 83.64
         },
         "liabilities": {
           "tag": "Liabilities",
@@ -805,11 +807,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 225173000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 139137000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 25.02,
-          "change_percent_vs_comparable_reported_period": 25.02
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 102.32
         },
         "stockholders_equity": {
           "tag": "StockholdersEquity",
@@ -820,11 +822,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 478746000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 362916000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 33.78,
-          "change_percent_vs_comparable_reported_period": 33.78
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 76.48
         },
         "diluted_eps": {
           "tag": "EarningsPerShareDiluted",
@@ -835,11 +837,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 5.11,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 5.12,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 178.67,
-          "change_percent_vs_comparable_reported_period": 178.67
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 178.13
         }
       },
       "evidence_completeness_percent": 100.0,
@@ -997,7 +999,7 @@
           "previous_value": 281724000000,
           "previous_period_end": "2025-06-30",
           "comparison_family": "ANNUAL",
-          "change_percent_vs_previous_reported_period": 17.79,
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
           "change_percent_vs_comparable_reported_period": 17.79
         },
         "net_income": {
@@ -1012,7 +1014,7 @@
           "previous_value": 101832000000,
           "previous_period_end": "2025-06-30",
           "comparison_family": "ANNUAL",
-          "change_percent_vs_previous_reported_period": 31.34,
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
           "change_percent_vs_comparable_reported_period": 31.34
         },
         "operating_income": {
@@ -1027,7 +1029,7 @@
           "previous_value": 128528000000,
           "previous_period_end": "2025-06-30",
           "comparison_family": "ANNUAL",
-          "change_percent_vs_previous_reported_period": 20.78,
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
           "change_percent_vs_comparable_reported_period": 20.78
         },
         "operating_cash_flow": {
@@ -1042,7 +1044,7 @@
           "previous_value": 136162000000,
           "previous_period_end": "2025-06-30",
           "comparison_family": "ANNUAL",
-          "change_percent_vs_previous_reported_period": 34.35,
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
           "change_percent_vs_comparable_reported_period": 34.35
         },
         "cash": {
@@ -1057,7 +1059,7 @@
           "previous_value": 30242000000,
           "previous_period_end": "2025-06-30",
           "comparison_family": "ANNUAL",
-          "change_percent_vs_previous_reported_period": -30.78,
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
           "change_percent_vs_comparable_reported_period": -30.78
         },
         "assets": {
@@ -1072,7 +1074,7 @@
           "previous_value": 619003000000,
           "previous_period_end": "2025-06-30",
           "comparison_family": "ANNUAL",
-          "change_percent_vs_previous_reported_period": 22.52,
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
           "change_percent_vs_comparable_reported_period": 22.52
         },
         "liabilities": {
@@ -1087,7 +1089,7 @@
           "previous_value": 275524000000,
           "previous_period_end": "2025-06-30",
           "comparison_family": "ANNUAL",
-          "change_percent_vs_previous_reported_period": 14.69,
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
           "change_percent_vs_comparable_reported_period": 14.69
         },
         "stockholders_equity": {
@@ -1102,7 +1104,7 @@
           "previous_value": 343479000000,
           "previous_period_end": "2025-06-30",
           "comparison_family": "ANNUAL",
-          "change_percent_vs_previous_reported_period": 28.8,
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
           "change_percent_vs_comparable_reported_period": 28.8
         },
         "diluted_eps": {
@@ -1117,7 +1119,7 @@
           "previous_value": 13.64,
           "previous_period_end": "2025-06-30",
           "comparison_family": "ANNUAL",
-          "change_percent_vs_previous_reported_period": 31.6,
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
           "change_percent_vs_comparable_reported_period": 31.6
         }
       },
@@ -1273,11 +1275,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 181519000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 323369000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 110.52,
-          "change_percent_vs_comparable_reported_period": 110.52
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 18.17
         },
         "net_income": {
           "tag": "NetIncomeLoss",
@@ -1288,11 +1290,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 90798000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 70623000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 48.99,
-          "change_percent_vs_comparable_reported_period": 48.99
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 91.55
         },
         "operating_income": {
           "tag": "OperatingIncomeLoss",
@@ -1303,11 +1305,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 23852000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 37576000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 115.13,
-          "change_percent_vs_comparable_reported_period": 115.13
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 36.56
         },
         "operating_cash_flow": {
           "tag": "NetCashProvidedByUsedInOperatingActivities",
@@ -1318,11 +1320,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 148531000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 121137000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 8.67,
-          "change_percent_vs_comparable_reported_period": 8.67
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 33.24
         },
         "cash": {
           "tag": "CashAndCashEquivalentsAtCarryingValue",
@@ -1333,11 +1335,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 101816000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 57741000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": -23.18,
-          "change_percent_vs_comparable_reported_period": -23.18
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 35.45
         },
         "assets": {
           "tag": "Assets",
@@ -1348,11 +1350,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 916630000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 682170000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 19.53,
-          "change_percent_vs_comparable_reported_period": 19.53
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 60.62
         },
         "liabilities": null,
         "stockholders_equity": {
@@ -1364,11 +1366,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 441914000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 333775000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 24.83,
-          "change_percent_vs_comparable_reported_period": 24.83
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 65.27
         },
         "diluted_eps": {
           "tag": "EarningsPerShareDiluted",
@@ -1379,11 +1381,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 2.78,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 3.27,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 206.83,
-          "change_percent_vs_comparable_reported_period": 206.83
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 160.86
         }
       },
       "evidence_completeness_percent": 88.9,
@@ -1538,11 +1540,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 56311000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 89830000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 107.97,
-          "change_percent_vs_comparable_reported_period": 107.97
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 30.37
         },
         "net_income": {
           "tag": "NetIncomeLoss",
@@ -1553,11 +1555,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 26773000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 34981000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 59.19,
-          "change_percent_vs_comparable_reported_period": 59.19
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 21.84
         },
         "operating_income": {
           "tag": "OperatingIncomeLoss",
@@ -1568,11 +1570,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 22872000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 37997000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 82.09,
-          "change_percent_vs_comparable_reported_period": 82.09
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 9.61
         },
         "operating_cash_flow": {
           "tag": "NetCashProvidedByUsedInOperatingActivities",
@@ -1583,11 +1585,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 32226000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 49587000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 98.87,
-          "change_percent_vs_comparable_reported_period": 98.87
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 29.24
         },
         "cash": {
           "tag": "CashAndCashEquivalentsAtCarryingValue",
@@ -1598,11 +1600,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 23426000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 12005000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": -34.0,
-          "change_percent_vs_comparable_reported_period": -34.0
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 28.8
         },
         "assets": {
           "tag": "Assets",
@@ -1613,11 +1615,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 395250000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 294744000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 13.84,
-          "change_percent_vs_comparable_reported_period": 13.84
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 52.66
         },
         "liabilities": {
           "tag": "Liabilities",
@@ -1628,11 +1630,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 151569000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 99674000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 24.52,
-          "change_percent_vs_comparable_reported_period": 24.52
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 89.35
         },
         "stockholders_equity": {
           "tag": "StockholdersEquity",
@@ -1643,11 +1645,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 243681000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 195070000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 7.2,
-          "change_percent_vs_comparable_reported_period": 7.2
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 33.91
         },
         "diluted_eps": {
           "tag": "EarningsPerShareDiluted",
@@ -1658,11 +1660,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 10.44,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 13.56,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 59.2,
-          "change_percent_vs_comparable_reported_period": 59.2
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 22.57
         }
       },
       "evidence_completeness_percent": 100.0,
@@ -1817,11 +1819,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 22387000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 41831000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 126.13,
-          "change_percent_vs_comparable_reported_period": 126.13
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 21.02
         },
         "net_income": {
           "tag": "NetIncomeLoss",
@@ -1832,11 +1834,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 477000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 1581000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 233.54,
-          "change_percent_vs_comparable_reported_period": 233.54
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 0.63
         },
         "operating_income": {
           "tag": "OperatingIncomeLoss",
@@ -1847,11 +1849,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 941000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 1322000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 42.3,
-          "change_percent_vs_comparable_reported_period": 42.3
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 1.29
         },
         "operating_cash_flow": {
           "tag": "NetCashProvidedByUsedInOperatingActivities",
@@ -1862,11 +1864,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 3937000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 4696000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 119.3,
-          "change_percent_vs_comparable_reported_period": 119.3
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 83.86
         },
         "cash": {
           "tag": "CashAndCashEquivalentsAtCarryingValue",
@@ -1877,11 +1879,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 16603000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 15587000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": -8.34,
-          "change_percent_vs_comparable_reported_period": -8.34
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": -2.36
         },
         "assets": {
           "tag": "Assets",
@@ -1892,11 +1894,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 143724000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 128567000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 3.34,
-          "change_percent_vs_comparable_reported_period": 3.34
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 15.52
         },
         "liabilities": {
           "tag": "Liabilities",
@@ -1907,11 +1909,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 58922000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 50495000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 3.54,
-          "change_percent_vs_comparable_reported_period": 3.54
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 20.81
         },
         "stockholders_equity": {
           "tag": "StockholdersEquity",
@@ -1922,11 +1924,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 84116000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 77314000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 3.26,
-          "change_percent_vs_comparable_reported_period": 3.26
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 12.34
         },
         "diluted_eps": {
           "tag": "EarningsPerShareDiluted",
@@ -1937,11 +1939,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 0.13,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 0.45,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 246.15,
-          "change_percent_vs_comparable_reported_period": 246.15
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 0.0
         }
       },
       "evidence_completeness_percent": 100.0,
@@ -2096,11 +2098,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 15917000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 31519000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 107.82,
-          "change_percent_vs_comparable_reported_period": 107.82
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 4.95
         },
         "net_income": {
           "tag": "NetIncomeLoss",
@@ -2111,11 +2113,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 1216000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 3249000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 178.04,
-          "change_percent_vs_comparable_reported_period": 178.04
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 4.06
         },
         "operating_income": null,
         "operating_cash_flow": {
@@ -2127,11 +2129,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 5169000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 6071000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 50.24,
-          "change_percent_vs_comparable_reported_period": 50.24
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 27.92
         },
         "cash": {
           "tag": "CashAndCashEquivalentsAtCarryingValue",
@@ -2142,11 +2144,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 10819000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 11943000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": -33.71,
-          "change_percent_vs_comparable_reported_period": -33.71
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": -39.95
         },
         "assets": {
           "tag": "Assets",
@@ -2157,11 +2159,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 156229000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 148585000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": -2.64,
-          "change_percent_vs_comparable_reported_period": -2.64
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 2.36
         },
         "liabilities": {
           "tag": "Liabilities",
@@ -2172,11 +2174,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 123174000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 120998000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": -4.56,
-          "change_percent_vs_comparable_reported_period": -4.56
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": -2.84
         },
         "stockholders_equity": {
           "tag": "StockholdersEquity",
@@ -2187,11 +2189,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 32974000000,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 27509000000,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 4.48,
-          "change_percent_vs_comparable_reported_period": 4.48
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 25.24
         },
         "diluted_eps": {
           "tag": "EarningsPerShareDiluted",
@@ -2202,11 +2204,11 @@
           "form": "10-Q",
           "fiscal_year": 2026,
           "fiscal_period": "Q2",
-          "previous_value": 1.28,
-          "previous_period_end": "2026-03-31",
+          "previous_value": 3.43,
+          "previous_period_end": "2025-06-30",
           "comparison_family": "QUARTERLY",
-          "change_percent_vs_previous_reported_period": 177.34,
-          "change_percent_vs_comparable_reported_period": 177.34
+          "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR",
+          "change_percent_vs_comparable_reported_period": 3.5
         }
       },
       "evidence_completeness_percent": 88.9,
