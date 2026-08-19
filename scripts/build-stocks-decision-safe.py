@@ -13,6 +13,20 @@ BASE_SCRIPT = ROOT / "scripts" / "build-stocks-decision.py"
 OUTPUT_PATH = ROOT / "data" / "stocks-decision-intelligence.json"
 FREEZE_PATH = ROOT / "data" / "stocks-model-freeze.json"
 
+
+def git_blob_sha1(path: Path) -> str:
+    data = path.read_bytes()
+    header = f"blob {len(data)}\0".encode("utf-8")
+    return hashlib.sha1(header + data).hexdigest()
+
+
+freeze = json.loads(FREEZE_PATH.read_text(encoding="utf-8")) if FREEZE_PATH.exists() else None
+if freeze:
+    expected_core_blob = freeze.get("core_decision_engine_git_blob_sha1")
+    current_core_blob = git_blob_sha1(BASE_SCRIPT)
+    if expected_core_blob and current_core_blob != expected_core_blob:
+        raise SystemExit(f"Frozen core decision engine mismatch: expected {expected_core_blob}, got {current_core_blob}")
+
 spec = importlib.util.spec_from_file_location("stocks_decision_base", BASE_SCRIPT)
 module = importlib.util.module_from_spec(spec)
 assert spec and spec.loader
@@ -46,17 +60,24 @@ if OUTPUT_PATH.exists():
     methodology["minimum_comparable_coverage_percent"] = 40
     methodology["coverage_guardrail"] = "Below 40% comparable coverage, Fundamental Evidence state is INSUFFICIENT and cross-layer alignment fails closed."
 
-    if FREEZE_PATH.exists():
-        freeze = json.loads(FREEZE_PATH.read_text(encoding="utf-8"))
+    if freeze:
         canonical = json.dumps(artifact.get("methodology", {}), sort_keys=True, separators=(",", ":"), ensure_ascii=False)
         current_hash = hashlib.sha256(canonical.encode("utf-8")).hexdigest()
         expected_hash = freeze.get("methodology_sha256")
-        match = bool(expected_hash) and current_hash == expected_hash
+        current_core_blob = git_blob_sha1(BASE_SCRIPT)
+        expected_core_blob = freeze.get("core_decision_engine_git_blob_sha1")
+        methodology_match = bool(expected_hash) and current_hash == expected_hash
+        core_logic_match = bool(expected_core_blob) and current_core_blob == expected_core_blob
+        match = methodology_match and core_logic_match
         artifact["freeze_validation"] = {
             "status": "MATCH" if match else "HASH_MISMATCH",
             "model_id": freeze.get("model_id"),
             "expected_methodology_sha256": expected_hash,
             "current_methodology_sha256": current_hash,
+            "expected_core_decision_engine_git_blob_sha1": expected_core_blob,
+            "current_core_decision_engine_git_blob_sha1": current_core_blob,
+            "methodology_match": methodology_match,
+            "core_logic_match": core_logic_match,
             "baseline_market_session": freeze.get("baseline_market_session"),
         }
         if match:
