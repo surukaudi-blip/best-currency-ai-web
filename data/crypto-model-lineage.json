@@ -1,0 +1,84 @@
+{
+  "version": "1.0",
+  "status": "ACTIVE_COMPACT_LINEAGE",
+  "updated_at": "2026-08-19",
+  "scope": "CRYPTO_STAGE_11C",
+  "canonical_direction": {
+    "model_version": "0.1",
+    "methodology_sha256": "2e58009070741bf6e2cb4c2b0c3b7dff154c5b8250651bc0963a15eef00b7be4",
+    "policy": "Exact v0.1 Market Structure remains the canonical directional core. Later overlays may filter priority but may not reverse canonical direction."
+  },
+  "historical_window_policy": {
+    "window_days": 365,
+    "status": "CONSUMED_DIAGNOSTIC_NOT_FRESH_OOS",
+    "no_relabel_as_untouched_holdout": true,
+    "fresh_oos_after_freeze_remains_primary_validation": true
+  },
+  "diagnostic_history": {
+    "v0.1": {
+      "role": "canonical_directional_reference",
+      "directional_coverage_percent": 59.41,
+      "hit_rate_1d_percent": 50.43,
+      "hit_rate_3d_percent": 48.54,
+      "hit_rate_7d_percent": 47.91,
+      "high_clarity_7d_miss_rate_percent": 55.96,
+      "decision": "KEEP_DIRECTIONAL_CORE"
+    },
+    "v0.2": {
+      "role": "volatility_normalized_refinement",
+      "directional_coverage_percent": 37.27,
+      "hit_rate_1d_percent": 49.37,
+      "hit_rate_3d_percent": 46.48,
+      "hit_rate_7d_percent": 45.98,
+      "high_clarity_7d_miss_rate_percent": 55.03,
+      "decision": "REJECT_AS_DIRECTIONAL_REPLACEMENT"
+    },
+    "v0.3": {
+      "role": "fixed_50_50_hybrid",
+      "directional_coverage_percent": 52.86,
+      "hit_rate_1d_percent": 49.25,
+      "hit_rate_3d_percent": 47.39,
+      "hit_rate_7d_percent": 46.86,
+      "high_extremity_7d_miss_rate_percent": 59.05,
+      "decision": "REJECT_AS_DIRECTIONAL_REPLACEMENT"
+    },
+    "v0.4": {
+      "role": "v0.1_core_plus_dwm_mtf_plus_actionability",
+      "v01_all_directional": {
+        "observations": 1269,
+        "retention_percent": 100.0,
+        "hit_rate_1d_percent": 50.43,
+        "hit_rate_3d_percent": 48.54,
+        "hit_rate_7d_percent": 47.91
+      },
+      "selective_or_actionable": {
+        "observations": 911,
+        "retention_percent": 71.79,
+        "hit_rate_1d_percent": 50.49,
+        "hit_rate_3d_percent": 48.41,
+        "hit_rate_7d_percent": 47.31
+      },
+      "actionable_only": {
+        "observations": 120,
+        "retention_percent": 9.46,
+        "hit_rate_1d_percent": 50.83,
+        "hit_rate_3d_percent": 46.67,
+        "hit_rate_7d_percent": 50.0
+      },
+      "finding": "Canonical v0.1 and D/W/M architecture are retained. Actionability requires regime-aware refinement before 11C.5."
+    }
+  },
+  "source_commits": {
+    "v0.4_model_merge": "f56f725e6b77753f1fae07b1ae1acd6ef81f2d3f",
+    "v0.4_production_refresh": "6d8737a32e147e5141bd4c3d67342bbcbd1e42a3",
+    "v0.4_diagnostic": "1e4617d6e025928ee55468d3f554db03d74c2579",
+    "workspace_cleanup": "c8d9a959e39f5e23eee43a108814c483e9d636ac"
+  },
+  "guardrails": {
+    "no_asset_specific_rules_from_consumed_backtest": true,
+    "no_directional_threshold_search": true,
+    "no_buy_sell": true,
+    "no_profit_probability": true,
+    "trade_execution": "OFF"
+  }
+}

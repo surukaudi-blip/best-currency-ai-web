@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "scope": "MAJOR_LIQUID_CRYPTO_ASSETS_V1",
+  "selection_policy": {
+    "purpose": "Small auditable cross-asset crypto universe for Stage 11A-C before backtest and freeze governance.",
+    "stablecoins_excluded": true,
+    "wrapped_duplicate_assets_excluded": true,
+    "selection_is_not_a_market_cap_ranking_claim": true,
+    "trade_execution": "OFF"
+  },
+  "assets": [
+    {"id": "bitcoin", "symbol": "BTC", "name": "Bitcoin"},
+    {"id": "ethereum", "symbol": "ETH", "name": "Ethereum"},
+    {"id": "solana", "symbol": "SOL", "name": "Solana"},
+    {"id": "ripple", "symbol": "XRP", "name": "XRP"},
+    {"id": "binancecoin", "symbol": "BNB", "name": "BNB"},
+    {"id": "cardano", "symbol": "ADA", "name": "Cardano"},
+    {"id": "dogecoin", "symbol": "DOGE", "name": "Dogecoin"},
+    {"id": "chainlink", "symbol": "LINK", "name": "Chainlink"}
+  ]
+}
