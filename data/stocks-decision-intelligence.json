@@ -1,0 +1,25 @@
+{
+  "version": "0.1",
+  "status": "DECISION_INTELLIGENCE_NOT_RUN",
+  "scope": "US_LISTED_EQUITIES_V1",
+  "generated_at": null,
+  "model_status": "EXPERIMENTAL_PREVALIDATION",
+  "frozen": false,
+  "source_readiness": {
+    "sec_official_evidence": "REQUIRED",
+    "daily_market_data": "REQUIRED",
+    "news": "DEFERRED_TO_UNIFIED_NEWS_INTELLIGENCE",
+    "decision_intelligence": "READY_TO_BUILD"
+  },
+  "guardrails": {
+    "no_buy_sell": true,
+    "no_profit_probability": true,
+    "decision_support_only": true,
+    "weights_not_tuned_on_outcomes": true,
+    "freeze_required_before_prospective_validation": true,
+    "trade_execution": "OFF"
+  },
+  "methodology": {},
+  "symbols": [],
+  "errors": []
+}
