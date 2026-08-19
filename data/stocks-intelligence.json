@@ -1,13 +1,13 @@
 {
   "version": "1.0",
-  "status": "SEC_ADAPTER_NOT_RUN",
+  "status": "OFFICIAL_EVIDENCE_READY",
   "scope": "US_LISTED_EQUITIES_V1",
-  "generated_at": null,
+  "generated_at": "2026-08-19T04:43:34.553844Z",
   "source_readiness": {
-    "sec_official_evidence": "READY_TO_RUN_AFTER_USER_AGENT_CONFIG",
+    "sec_official_evidence": "OFFICIAL_EVIDENCE_READY",
     "market_price": "UNAVAILABLE",
     "news": "DEFERRED_TO_UNIFIED_NEWS_INTELLIGENCE",
-    "decision_intelligence": "NOT_ELIGIBLE"
+    "decision_intelligence": "NOT_ELIGIBLE_WITHOUT_MARKET_DATA"
   },
   "guardrails": {
     "market_view_requires_price_data": true,
@@ -16,5 +16,2211 @@
     "missing_data_fail_closed": true,
     "trade_execution": "OFF"
   },
-  "companies": []
+  "companies": [
+    {
+      "ticker": "NVDA",
+      "cik": "0001045810",
+      "name": "NVIDIA CORP",
+      "exchange": "Nasdaq",
+      "sic": "3674",
+      "sic_description": "Semiconductors & Related Devices",
+      "fiscal_year_end": "0131",
+      "entity_type": "operating",
+      "source": {
+        "tier": "A",
+        "provider": "SEC EDGAR",
+        "submissions_url": "https://data.sec.gov/submissions/CIK0001045810.json",
+        "companyfacts_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001045810.json"
+      },
+      "freshness": {
+        "latest_material_filing_date": "2026-08-17",
+        "days_since_latest_material_filing": 2,
+        "recent_8k_count_30d": 1
+      },
+      "recent_filings": [
+        {
+          "form": "8-K",
+          "filing_date": "2026-08-17",
+          "report_date": "2026-08-17",
+          "accession_number": "0001045810-26-000069",
+          "primary_document": "nvda-20260817.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000069/nvda-20260817.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-07-02",
+          "report_date": "2026-06-28",
+          "accession_number": "0001045810-26-000060",
+          "primary_document": "nvda-20260628.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000060/nvda-20260628.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-06-30",
+          "report_date": "2026-06-24",
+          "accession_number": "0001045810-26-000056",
+          "primary_document": "nvda-20260624.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000056/nvda-20260624.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-06-18",
+          "report_date": "2026-06-15",
+          "accession_number": "0001193125-26-275783",
+          "primary_document": "d48176d8k.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1045810/000119312526275783/d48176d8k.htm"
+        },
+        {
+          "form": "10-Q",
+          "filing_date": "2026-05-20",
+          "report_date": "2026-04-26",
+          "accession_number": "0001045810-26-000052",
+          "primary_document": "nvda-20260426.htm",
+          "description": "10-Q",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000052/nvda-20260426.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-05-20",
+          "report_date": "2026-05-20",
+          "accession_number": "0001045810-26-000051",
+          "primary_document": "nvda-20260520.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000051/nvda-20260520.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-05-08",
+          "report_date": "2026-05-07",
+          "accession_number": "0001045810-26-000028",
+          "primary_document": "nvda-20260507.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000028/nvda-20260507.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-04-27",
+          "report_date": "2026-04-24",
+          "accession_number": "0001045810-26-000026",
+          "primary_document": "nvda-20260424.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000026/nvda-20260424.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-03-06",
+          "report_date": "2026-03-02",
+          "accession_number": "0001045810-26-000024",
+          "primary_document": "nvda-20260302.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000024/nvda-20260302.htm"
+        },
+        {
+          "form": "10-K",
+          "filing_date": "2026-02-25",
+          "report_date": "2026-01-25",
+          "accession_number": "0001045810-26-000021",
+          "primary_document": "nvda-20260125.htm",
+          "description": "10-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000021/nvda-20260125.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-02-25",
+          "report_date": "2026-02-25",
+          "accession_number": "0001045810-26-000019",
+          "primary_document": "nvda-20260225.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000019/nvda-20260225.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-01-23",
+          "report_date": "2026-01-20",
+          "accession_number": "0001045810-26-000003",
+          "primary_document": "nvda-20260120.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000003/nvda-20260120.htm"
+        }
+      ],
+      "fundamentals": {
+        "revenue": {
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "unit": "USD",
+          "value": 26914000000,
+          "period_end": "2022-01-30",
+          "filed": "2022-03-18",
+          "form": "10-K",
+          "fiscal_year": 2022,
+          "fiscal_period": "FY",
+          "previous_value": 16675000000,
+          "previous_period_end": "2021-01-31",
+          "comparison_family": "ANNUAL",
+          "change_percent_vs_previous_reported_period": 61.4,
+          "change_percent_vs_comparable_reported_period": 61.4
+        },
+        "net_income": {
+          "tag": "NetIncomeLoss",
+          "unit": "USD",
+          "value": 58321000000,
+          "period_end": "2026-04-26",
+          "filed": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "previous_value": 77107000000,
+          "previous_period_end": "2025-10-26",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": -24.36,
+          "change_percent_vs_comparable_reported_period": -24.36
+        },
+        "operating_income": {
+          "tag": "OperatingIncomeLoss",
+          "unit": "USD",
+          "value": 53536000000,
+          "period_end": "2026-04-26",
+          "filed": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "previous_value": 86088000000,
+          "previous_period_end": "2025-10-26",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": -37.81,
+          "change_percent_vs_comparable_reported_period": -37.81
+        },
+        "operating_cash_flow": {
+          "tag": "NetCashProvidedByUsedInOperatingActivities",
+          "unit": "USD",
+          "value": 50344000000,
+          "period_end": "2026-04-26",
+          "filed": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "previous_value": 66530000000,
+          "previous_period_end": "2025-10-26",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": -24.33,
+          "change_percent_vs_comparable_reported_period": -24.33
+        },
+        "cash": {
+          "tag": "CashAndCashEquivalentsAtCarryingValue",
+          "unit": "USD",
+          "value": 13237000000,
+          "period_end": "2026-04-26",
+          "filed": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "previous_value": 10605000000,
+          "previous_period_end": "2026-01-25",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 24.82,
+          "change_percent_vs_comparable_reported_period": 24.82
+        },
+        "assets": {
+          "tag": "Assets",
+          "unit": "USD",
+          "value": 259474000000,
+          "period_end": "2026-04-26",
+          "filed": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "previous_value": 206803000000,
+          "previous_period_end": "2026-01-25",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 25.47,
+          "change_percent_vs_comparable_reported_period": 25.47
+        },
+        "liabilities": {
+          "tag": "Liabilities",
+          "unit": "USD",
+          "value": 64000000000,
+          "period_end": "2026-04-26",
+          "filed": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "previous_value": 49510000000,
+          "previous_period_end": "2026-01-25",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 29.27,
+          "change_percent_vs_comparable_reported_period": 29.27
+        },
+        "stockholders_equity": {
+          "tag": "StockholdersEquity",
+          "unit": "USD",
+          "value": 195474000000,
+          "period_end": "2026-04-26",
+          "filed": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "previous_value": 157293000000,
+          "previous_period_end": "2026-01-25",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 24.27,
+          "change_percent_vs_comparable_reported_period": 24.27
+        },
+        "diluted_eps": {
+          "tag": "EarningsPerShareDiluted",
+          "unit": "USD/shares",
+          "value": 2.39,
+          "period_end": "2026-04-26",
+          "filed": "2026-05-20",
+          "form": "10-Q",
+          "fiscal_year": 2027,
+          "fiscal_period": "Q1",
+          "previous_value": 3.14,
+          "previous_period_end": "2025-10-26",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": -23.89,
+          "change_percent_vs_comparable_reported_period": -23.89
+        }
+      },
+      "evidence_completeness_percent": 100.0,
+      "market_data": {
+        "status": "UNAVAILABLE",
+        "reason": "Licensed price/volume adapter not configured yet."
+      },
+      "decision_state": {
+        "status": "OFFICIAL_EVIDENCE_READY",
+        "market_view": "UNAVAILABLE",
+        "decision_readiness": "NOT_ELIGIBLE_WITHOUT_MARKET_DATA",
+        "trade_execution": "OFF"
+      }
+    },
+    {
+      "ticker": "AAPL",
+      "cik": "0000320193",
+      "name": "Apple Inc.",
+      "exchange": "Nasdaq",
+      "sic": "3571",
+      "sic_description": "Electronic Computers",
+      "fiscal_year_end": "0926",
+      "entity_type": "operating",
+      "source": {
+        "tier": "A",
+        "provider": "SEC EDGAR",
+        "submissions_url": "https://data.sec.gov/submissions/CIK0000320193.json",
+        "companyfacts_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000320193.json"
+      },
+      "freshness": {
+        "latest_material_filing_date": "2026-07-31",
+        "days_since_latest_material_filing": 19,
+        "recent_8k_count_30d": 1
+      },
+      "recent_filings": [
+        {
+          "form": "10-Q",
+          "filing_date": "2026-07-31",
+          "report_date": "2026-06-27",
+          "accession_number": "0000320193-26-000020",
+          "primary_document": "aapl-20260627.htm",
+          "description": "10-Q",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000020/aapl-20260627.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-07-30",
+          "report_date": "2026-07-30",
+          "accession_number": "0000320193-26-000018",
+          "primary_document": "aapl-20260730.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000018/aapl-20260730.htm"
+        },
+        {
+          "form": "10-Q",
+          "filing_date": "2026-05-01",
+          "report_date": "2026-03-28",
+          "accession_number": "0000320193-26-000013",
+          "primary_document": "aapl-20260328.htm",
+          "description": "10-Q",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000013/aapl-20260328.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-04-30",
+          "report_date": "2026-04-30",
+          "accession_number": "0000320193-26-000011",
+          "primary_document": "aapl-20260430.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000011/aapl-20260430.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-04-20",
+          "report_date": "2026-04-17",
+          "accession_number": "0001140361-26-015711",
+          "primary_document": "ef20071035_8k.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126015711/ef20071035_8k.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-02-24",
+          "report_date": "2026-02-24",
+          "accession_number": "0001140361-26-006577",
+          "primary_document": "ef20060722_8k.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126006577/ef20060722_8k.htm"
+        },
+        {
+          "form": "10-Q",
+          "filing_date": "2026-01-30",
+          "report_date": "2025-12-27",
+          "accession_number": "0000320193-26-000006",
+          "primary_document": "aapl-20251227.htm",
+          "description": "10-Q",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000006/aapl-20251227.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-01-29",
+          "report_date": "2026-01-29",
+          "accession_number": "0000320193-26-000005",
+          "primary_document": "aapl-20260129.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019326000005/aapl-20260129.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-01-02",
+          "report_date": "2025-12-30",
+          "accession_number": "0001140361-26-000199",
+          "primary_document": "ef20060722_8k.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036126000199/ef20060722_8k.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2025-12-05",
+          "report_date": "2025-12-04",
+          "accession_number": "0001140361-25-044561",
+          "primary_document": "ef20060722_8k.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/320193/000114036125044561/ef20060722_8k.htm"
+        },
+        {
+          "form": "10-K",
+          "filing_date": "2025-10-31",
+          "report_date": "2025-09-27",
+          "accession_number": "0000320193-25-000079",
+          "primary_document": "aapl-20250927.htm",
+          "description": "10-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000079/aapl-20250927.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2025-10-30",
+          "report_date": "2025-10-30",
+          "accession_number": "0000320193-25-000077",
+          "primary_document": "aapl-20251030.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/320193/000032019325000077/aapl-20251030.htm"
+        }
+      ],
+      "fundamentals": {
+        "revenue": {
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "unit": "USD",
+          "value": 364357000000,
+          "period_end": "2026-06-27",
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "previous_value": 254940000000,
+          "previous_period_end": "2026-03-28",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 42.92,
+          "change_percent_vs_comparable_reported_period": 42.92
+        },
+        "net_income": {
+          "tag": "NetIncomeLoss",
+          "unit": "USD",
+          "value": 101464000000,
+          "period_end": "2026-06-27",
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "previous_value": 71675000000,
+          "previous_period_end": "2026-03-28",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 41.56,
+          "change_percent_vs_comparable_reported_period": 41.56
+        },
+        "operating_income": {
+          "tag": "OperatingIncomeLoss",
+          "unit": "USD",
+          "value": 122432000000,
+          "period_end": "2026-06-27",
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "previous_value": 86737000000,
+          "previous_period_end": "2026-03-28",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 41.15,
+          "change_percent_vs_comparable_reported_period": 41.15
+        },
+        "operating_cash_flow": {
+          "tag": "NetCashProvidedByUsedInOperatingActivities",
+          "unit": "USD",
+          "value": 116996000000,
+          "period_end": "2026-06-27",
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "previous_value": 82627000000,
+          "previous_period_end": "2026-03-28",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 41.6,
+          "change_percent_vs_comparable_reported_period": 41.6
+        },
+        "cash": {
+          "tag": "CashAndCashEquivalentsAtCarryingValue",
+          "unit": "USD",
+          "value": 39544000000,
+          "period_end": "2026-06-27",
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "previous_value": 45572000000,
+          "previous_period_end": "2026-03-28",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": -13.23,
+          "change_percent_vs_comparable_reported_period": -13.23
+        },
+        "assets": {
+          "tag": "Assets",
+          "unit": "USD",
+          "value": 383266000000,
+          "period_end": "2026-06-27",
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "previous_value": 371082000000,
+          "previous_period_end": "2026-03-28",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 3.28,
+          "change_percent_vs_comparable_reported_period": 3.28
+        },
+        "liabilities": {
+          "tag": "Liabilities",
+          "unit": "USD",
+          "value": 275746000000,
+          "period_end": "2026-06-27",
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "previous_value": 264591000000,
+          "previous_period_end": "2026-03-28",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 4.22,
+          "change_percent_vs_comparable_reported_period": 4.22
+        },
+        "stockholders_equity": {
+          "tag": "StockholdersEquity",
+          "unit": "USD",
+          "value": 107520000000,
+          "period_end": "2026-06-27",
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "previous_value": 106491000000,
+          "previous_period_end": "2026-03-28",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 0.97,
+          "change_percent_vs_comparable_reported_period": 0.97
+        },
+        "diluted_eps": {
+          "tag": "EarningsPerShareDiluted",
+          "unit": "USD/shares",
+          "value": 6.88,
+          "period_end": "2026-06-27",
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q3",
+          "previous_value": 4.85,
+          "previous_period_end": "2026-03-28",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 41.86,
+          "change_percent_vs_comparable_reported_period": 41.86
+        }
+      },
+      "evidence_completeness_percent": 100.0,
+      "market_data": {
+        "status": "UNAVAILABLE",
+        "reason": "Licensed price/volume adapter not configured yet."
+      },
+      "decision_state": {
+        "status": "OFFICIAL_EVIDENCE_READY",
+        "market_view": "UNAVAILABLE",
+        "decision_readiness": "NOT_ELIGIBLE_WITHOUT_MARKET_DATA",
+        "trade_execution": "OFF"
+      }
+    },
+    {
+      "ticker": "GOOGL",
+      "cik": "0001652044",
+      "name": "Alphabet Inc.",
+      "exchange": "Nasdaq",
+      "sic": "7370",
+      "sic_description": "Services-Computer Programming, Data Processing, Etc.",
+      "fiscal_year_end": "1231",
+      "entity_type": "operating",
+      "source": {
+        "tier": "A",
+        "provider": "SEC EDGAR",
+        "submissions_url": "https://data.sec.gov/submissions/CIK0001652044.json",
+        "companyfacts_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001652044.json"
+      },
+      "freshness": {
+        "latest_material_filing_date": "2026-08-10",
+        "days_since_latest_material_filing": 9,
+        "recent_8k_count_30d": 2
+      },
+      "recent_filings": [
+        {
+          "form": "8-K",
+          "filing_date": "2026-08-10",
+          "report_date": "2026-08-10",
+          "accession_number": "0001193125-26-342390",
+          "primary_document": "d171253d8k.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526342390/d171253d8k.htm"
+        },
+        {
+          "form": "10-Q",
+          "filing_date": "2026-07-23",
+          "report_date": "2026-06-30",
+          "accession_number": "0001652044-26-000071",
+          "primary_document": "goog-20260630.htm",
+          "description": "10-Q",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000071/goog-20260630.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-07-22",
+          "report_date": "2026-07-22",
+          "accession_number": "0001652044-26-000066",
+          "primary_document": "goog-20260722.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000066/goog-20260722.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-06-11",
+          "report_date": "2026-06-05",
+          "accession_number": "0001193125-26-267578",
+          "primary_document": "d57679d8k.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526267578/d57679d8k.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-06-05",
+          "report_date": "2026-06-05",
+          "accession_number": "0001193125-26-259830",
+          "primary_document": "d36818d8k.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526259830/d36818d8k.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-06-05",
+          "report_date": "2026-06-02",
+          "accession_number": "0001652044-26-000059",
+          "primary_document": "goog-20260602.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000059/goog-20260602.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-06-04",
+          "report_date": "2026-06-04",
+          "accession_number": "0001193125-26-257724",
+          "primary_document": "d83560d8k.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526257724/d83560d8k.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-05-21",
+          "report_date": "2026-05-21",
+          "accession_number": "0001193125-26-234488",
+          "primary_document": "d144566d8k.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526234488/d144566d8k.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-05-11",
+          "report_date": "2026-05-11",
+          "accession_number": "0001193125-26-216986",
+          "primary_document": "d109021d8k.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1652044/000119312526216986/d109021d8k.htm"
+        },
+        {
+          "form": "10-Q",
+          "filing_date": "2026-04-30",
+          "report_date": "2026-03-31",
+          "accession_number": "0001652044-26-000048",
+          "primary_document": "goog-20260331.htm",
+          "description": "10-Q",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000048/goog-20260331.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-04-29",
+          "report_date": "2026-04-29",
+          "accession_number": "0001652044-26-000043",
+          "primary_document": "goog-20260429.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000043/goog-20260429.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-04-10",
+          "report_date": "2026-04-07",
+          "accession_number": "0001652044-26-000034",
+          "primary_document": "goog-20260407.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1652044/000165204426000034/goog-20260407.htm"
+        }
+      ],
+      "fundamentals": {
+        "revenue": {
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "unit": "USD",
+          "value": 90234000000,
+          "period_end": "2025-03-31",
+          "filed": "2025-04-25",
+          "form": "10-Q",
+          "fiscal_year": 2025,
+          "fiscal_period": "Q1",
+          "previous_value": 253549000000,
+          "previous_period_end": "2024-09-30",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": -64.41,
+          "change_percent_vs_comparable_reported_period": -64.41
+        },
+        "net_income": {
+          "tag": "NetIncomeLoss",
+          "unit": "USD",
+          "value": 174771000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 62578000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 179.29,
+          "change_percent_vs_comparable_reported_period": 179.29
+        },
+        "operating_income": {
+          "tag": "OperatingIncomeLoss",
+          "unit": "USD",
+          "value": 80466000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 39696000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 102.71,
+          "change_percent_vs_comparable_reported_period": 102.71
+        },
+        "operating_cash_flow": {
+          "tag": "NetCashProvidedByUsedInOperatingActivities",
+          "unit": "USD",
+          "value": 84859000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 45790000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 85.32,
+          "change_percent_vs_comparable_reported_period": 85.32
+        },
+        "cash": {
+          "tag": "CashAndCashEquivalentsAtCarryingValue",
+          "unit": "USD",
+          "value": 55911000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 38063000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 46.89,
+          "change_percent_vs_comparable_reported_period": 46.89
+        },
+        "assets": {
+          "tag": "Assets",
+          "unit": "USD",
+          "value": 921983000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 703919000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 30.98,
+          "change_percent_vs_comparable_reported_period": 30.98
+        },
+        "liabilities": {
+          "tag": "Liabilities",
+          "unit": "USD",
+          "value": 281503000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 225173000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 25.02,
+          "change_percent_vs_comparable_reported_period": 25.02
+        },
+        "stockholders_equity": {
+          "tag": "StockholdersEquity",
+          "unit": "USD",
+          "value": 640480000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 478746000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 33.78,
+          "change_percent_vs_comparable_reported_period": 33.78
+        },
+        "diluted_eps": {
+          "tag": "EarningsPerShareDiluted",
+          "unit": "USD/shares",
+          "value": 14.24,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 5.11,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 178.67,
+          "change_percent_vs_comparable_reported_period": 178.67
+        }
+      },
+      "evidence_completeness_percent": 100.0,
+      "market_data": {
+        "status": "UNAVAILABLE",
+        "reason": "Licensed price/volume adapter not configured yet."
+      },
+      "decision_state": {
+        "status": "OFFICIAL_EVIDENCE_READY",
+        "market_view": "UNAVAILABLE",
+        "decision_readiness": "NOT_ELIGIBLE_WITHOUT_MARKET_DATA",
+        "trade_execution": "OFF"
+      }
+    },
+    {
+      "ticker": "MSFT",
+      "cik": "0000789019",
+      "name": "MICROSOFT CORP",
+      "exchange": "Nasdaq",
+      "sic": "7372",
+      "sic_description": "Services-Prepackaged Software",
+      "fiscal_year_end": "0630",
+      "entity_type": "operating",
+      "source": {
+        "tier": "A",
+        "provider": "SEC EDGAR",
+        "submissions_url": "https://data.sec.gov/submissions/CIK0000789019.json",
+        "companyfacts_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000789019.json"
+      },
+      "freshness": {
+        "latest_material_filing_date": "2026-07-29",
+        "days_since_latest_material_filing": 21,
+        "recent_8k_count_30d": 1
+      },
+      "recent_filings": [
+        {
+          "form": "10-K",
+          "filing_date": "2026-07-29",
+          "report_date": "2026-06-30",
+          "accession_number": "0001193125-26-323660",
+          "primary_document": "msft-20260630.htm",
+          "description": "10-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323660/msft-20260630.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-07-29",
+          "report_date": "2026-07-29",
+          "accession_number": "0001193125-26-323632",
+          "primary_document": "msft-20260729.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526323632/msft-20260729.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-06-05",
+          "report_date": "2026-06-02",
+          "accession_number": "0001193125-26-258667",
+          "primary_document": "d26760d8k.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526258667/d26760d8k.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-05-14",
+          "report_date": "2026-05-13",
+          "accession_number": "0001193125-26-224155",
+          "primary_document": "d125909d8k.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526224155/d125909d8k.htm"
+        },
+        {
+          "form": "10-Q",
+          "filing_date": "2026-04-29",
+          "report_date": "2026-03-31",
+          "accession_number": "0001193125-26-191507",
+          "primary_document": "msft-20260331.htm",
+          "description": "10-Q",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191507/msft-20260331.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-04-29",
+          "report_date": "2026-04-29",
+          "accession_number": "0001193125-26-191457",
+          "primary_document": "msft-20260429.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526191457/msft-20260429.htm"
+        },
+        {
+          "form": "10-Q",
+          "filing_date": "2026-01-28",
+          "report_date": "2025-12-31",
+          "accession_number": "0001193125-26-027207",
+          "primary_document": "msft-20251231.htm",
+          "description": "10-Q",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027207/msft-20251231.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-01-28",
+          "report_date": "2026-01-28",
+          "accession_number": "0001193125-26-027198",
+          "primary_document": "msft-20260128.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312526027198/msft-20260128.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2025-12-08",
+          "report_date": "2025-12-05",
+          "accession_number": "0001193125-25-311196",
+          "primary_document": "d34077d8k.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525311196/d34077d8k.htm"
+        },
+        {
+          "form": "10-Q",
+          "filing_date": "2025-10-29",
+          "report_date": "2025-09-30",
+          "accession_number": "0001193125-25-256321",
+          "primary_document": "msft-20250930.htm",
+          "description": "10-Q",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256321/msft-20250930.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2025-10-29",
+          "report_date": "2025-10-28",
+          "accession_number": "0001193125-25-256310",
+          "primary_document": "msft-20251028.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525256310/msft-20251028.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2025-09-30",
+          "report_date": "2025-09-24",
+          "accession_number": "0001193125-25-225125",
+          "primary_document": "d863209d8k.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/789019/000119312525225125/d863209d8k.htm"
+        }
+      ],
+      "fundamentals": {
+        "revenue": {
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "unit": "USD",
+          "value": 331839000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-29",
+          "form": "10-K",
+          "fiscal_year": 2026,
+          "fiscal_period": "FY",
+          "previous_value": 281724000000,
+          "previous_period_end": "2025-06-30",
+          "comparison_family": "ANNUAL",
+          "change_percent_vs_previous_reported_period": 17.79,
+          "change_percent_vs_comparable_reported_period": 17.79
+        },
+        "net_income": {
+          "tag": "NetIncomeLoss",
+          "unit": "USD",
+          "value": 133749000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-29",
+          "form": "10-K",
+          "fiscal_year": 2026,
+          "fiscal_period": "FY",
+          "previous_value": 101832000000,
+          "previous_period_end": "2025-06-30",
+          "comparison_family": "ANNUAL",
+          "change_percent_vs_previous_reported_period": 31.34,
+          "change_percent_vs_comparable_reported_period": 31.34
+        },
+        "operating_income": {
+          "tag": "OperatingIncomeLoss",
+          "unit": "USD",
+          "value": 155237000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-29",
+          "form": "10-K",
+          "fiscal_year": 2026,
+          "fiscal_period": "FY",
+          "previous_value": 128528000000,
+          "previous_period_end": "2025-06-30",
+          "comparison_family": "ANNUAL",
+          "change_percent_vs_previous_reported_period": 20.78,
+          "change_percent_vs_comparable_reported_period": 20.78
+        },
+        "operating_cash_flow": {
+          "tag": "NetCashProvidedByUsedInOperatingActivities",
+          "unit": "USD",
+          "value": 182935000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-29",
+          "form": "10-K",
+          "fiscal_year": 2026,
+          "fiscal_period": "FY",
+          "previous_value": 136162000000,
+          "previous_period_end": "2025-06-30",
+          "comparison_family": "ANNUAL",
+          "change_percent_vs_previous_reported_period": 34.35,
+          "change_percent_vs_comparable_reported_period": 34.35
+        },
+        "cash": {
+          "tag": "CashAndCashEquivalentsAtCarryingValue",
+          "unit": "USD",
+          "value": 20935000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-29",
+          "form": "10-K",
+          "fiscal_year": 2026,
+          "fiscal_period": "FY",
+          "previous_value": 30242000000,
+          "previous_period_end": "2025-06-30",
+          "comparison_family": "ANNUAL",
+          "change_percent_vs_previous_reported_period": -30.78,
+          "change_percent_vs_comparable_reported_period": -30.78
+        },
+        "assets": {
+          "tag": "Assets",
+          "unit": "USD",
+          "value": 758376000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-29",
+          "form": "10-K",
+          "fiscal_year": 2026,
+          "fiscal_period": "FY",
+          "previous_value": 619003000000,
+          "previous_period_end": "2025-06-30",
+          "comparison_family": "ANNUAL",
+          "change_percent_vs_previous_reported_period": 22.52,
+          "change_percent_vs_comparable_reported_period": 22.52
+        },
+        "liabilities": {
+          "tag": "Liabilities",
+          "unit": "USD",
+          "value": 315989000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-29",
+          "form": "10-K",
+          "fiscal_year": 2026,
+          "fiscal_period": "FY",
+          "previous_value": 275524000000,
+          "previous_period_end": "2025-06-30",
+          "comparison_family": "ANNUAL",
+          "change_percent_vs_previous_reported_period": 14.69,
+          "change_percent_vs_comparable_reported_period": 14.69
+        },
+        "stockholders_equity": {
+          "tag": "StockholdersEquity",
+          "unit": "USD",
+          "value": 442387000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-29",
+          "form": "10-K",
+          "fiscal_year": 2026,
+          "fiscal_period": "FY",
+          "previous_value": 343479000000,
+          "previous_period_end": "2025-06-30",
+          "comparison_family": "ANNUAL",
+          "change_percent_vs_previous_reported_period": 28.8,
+          "change_percent_vs_comparable_reported_period": 28.8
+        },
+        "diluted_eps": {
+          "tag": "EarningsPerShareDiluted",
+          "unit": "USD/shares",
+          "value": 17.95,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-29",
+          "form": "10-K",
+          "fiscal_year": 2026,
+          "fiscal_period": "FY",
+          "previous_value": 13.64,
+          "previous_period_end": "2025-06-30",
+          "comparison_family": "ANNUAL",
+          "change_percent_vs_previous_reported_period": 31.6,
+          "change_percent_vs_comparable_reported_period": 31.6
+        }
+      },
+      "evidence_completeness_percent": 100.0,
+      "market_data": {
+        "status": "UNAVAILABLE",
+        "reason": "Licensed price/volume adapter not configured yet."
+      },
+      "decision_state": {
+        "status": "OFFICIAL_EVIDENCE_READY",
+        "market_view": "UNAVAILABLE",
+        "decision_readiness": "NOT_ELIGIBLE_WITHOUT_MARKET_DATA",
+        "trade_execution": "OFF"
+      }
+    },
+    {
+      "ticker": "AMZN",
+      "cik": "0001018724",
+      "name": "AMAZON COM INC",
+      "exchange": "Nasdaq",
+      "sic": "5961",
+      "sic_description": "Retail-Catalog & Mail-Order Houses",
+      "fiscal_year_end": "1231",
+      "entity_type": "operating",
+      "source": {
+        "tier": "A",
+        "provider": "SEC EDGAR",
+        "submissions_url": "https://data.sec.gov/submissions/CIK0001018724.json",
+        "companyfacts_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001018724.json"
+      },
+      "freshness": {
+        "latest_material_filing_date": "2026-07-31",
+        "days_since_latest_material_filing": 19,
+        "recent_8k_count_30d": 1
+      },
+      "recent_filings": [
+        {
+          "form": "10-Q",
+          "filing_date": "2026-07-31",
+          "report_date": "2026-06-30",
+          "accession_number": "0001018724-26-000026",
+          "primary_document": "amzn-20260630.htm",
+          "description": "10-Q",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000026/amzn-20260630.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-07-30",
+          "report_date": "2026-07-30",
+          "accession_number": "0001018724-26-000024",
+          "primary_document": "amzn-20260730.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000024/amzn-20260730.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-07-09",
+          "report_date": "2026-07-09",
+          "accession_number": "0001104659-26-082293",
+          "primary_document": "tm2619352d4_8k.htm",
+          "description": "FORM 8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926082293/tm2619352d4_8k.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-06-12",
+          "report_date": "2026-06-12",
+          "accession_number": "0001104659-26-073562",
+          "primary_document": "tm2613616d5_8k.htm",
+          "description": "FORM 8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926073562/tm2613616d5_8k.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-06-10",
+          "report_date": "2026-06-08",
+          "accession_number": "0001104659-26-072140",
+          "primary_document": "tm2613616d4_8k.htm",
+          "description": "FORM 8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926072140/tm2613616d4_8k.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-05-22",
+          "report_date": "2026-05-20",
+          "accession_number": "0001104659-26-065717",
+          "primary_document": "tm2614288d1_8k.htm",
+          "description": "FORM 8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926065717/tm2614288d1_8k.htm"
+        },
+        {
+          "form": "10-Q",
+          "filing_date": "2026-04-30",
+          "report_date": "2026-03-31",
+          "accession_number": "0001018724-26-000014",
+          "primary_document": "amzn-20260331.htm",
+          "description": "10-Q",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000014/amzn-20260331.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-04-29",
+          "report_date": "2026-04-29",
+          "accession_number": "0001018724-26-000012",
+          "primary_document": "amzn-20260429.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1018724/000101872426000012/amzn-20260429.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-04-14",
+          "report_date": "2026-04-14",
+          "accession_number": "0001104659-26-042880",
+          "primary_document": "tm2611746d1_8k.htm",
+          "description": "FORM 8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926042880/tm2611746d1_8k.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-04-09",
+          "report_date": "2026-04-09",
+          "accession_number": "0001104659-26-041034",
+          "primary_document": "tm263815d2_8k.htm",
+          "description": "FORM 8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926041034/tm263815d2_8k.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-03-16",
+          "report_date": "2026-03-16",
+          "accession_number": "0001104659-26-028556",
+          "primary_document": "tm266670d9_8k.htm",
+          "description": "FORM 8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926028556/tm266670d9_8k.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-03-13",
+          "report_date": "2026-03-13",
+          "accession_number": "0001104659-26-027729",
+          "primary_document": "tm266670d8_8k.htm",
+          "description": "FORM 8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1018724/000110465926027729/tm266670d8_8k.htm"
+        }
+      ],
+      "fundamentals": {
+        "revenue": {
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "unit": "USD",
+          "value": 382125000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 181519000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 110.52,
+          "change_percent_vs_comparable_reported_period": 110.52
+        },
+        "net_income": {
+          "tag": "NetIncomeLoss",
+          "unit": "USD",
+          "value": 135281000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 90798000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 48.99,
+          "change_percent_vs_comparable_reported_period": 48.99
+        },
+        "operating_income": {
+          "tag": "OperatingIncomeLoss",
+          "unit": "USD",
+          "value": 51313000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 23852000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 115.13,
+          "change_percent_vs_comparable_reported_period": 115.13
+        },
+        "operating_cash_flow": {
+          "tag": "NetCashProvidedByUsedInOperatingActivities",
+          "unit": "USD",
+          "value": 161403000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 148531000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 8.67,
+          "change_percent_vs_comparable_reported_period": 8.67
+        },
+        "cash": {
+          "tag": "CashAndCashEquivalentsAtCarryingValue",
+          "unit": "USD",
+          "value": 78213000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 101816000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": -23.18,
+          "change_percent_vs_comparable_reported_period": -23.18
+        },
+        "assets": {
+          "tag": "Assets",
+          "unit": "USD",
+          "value": 1095689000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 916630000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 19.53,
+          "change_percent_vs_comparable_reported_period": 19.53
+        },
+        "liabilities": null,
+        "stockholders_equity": {
+          "tag": "StockholdersEquity",
+          "unit": "USD",
+          "value": 551620000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 441914000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 24.83,
+          "change_percent_vs_comparable_reported_period": 24.83
+        },
+        "diluted_eps": {
+          "tag": "EarningsPerShareDiluted",
+          "unit": "USD/shares",
+          "value": 8.53,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-31",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 2.78,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 206.83,
+          "change_percent_vs_comparable_reported_period": 206.83
+        }
+      },
+      "evidence_completeness_percent": 88.9,
+      "market_data": {
+        "status": "UNAVAILABLE",
+        "reason": "Licensed price/volume adapter not configured yet."
+      },
+      "decision_state": {
+        "status": "OFFICIAL_EVIDENCE_READY",
+        "market_view": "UNAVAILABLE",
+        "decision_readiness": "NOT_ELIGIBLE_WITHOUT_MARKET_DATA",
+        "trade_execution": "OFF"
+      }
+    },
+    {
+      "ticker": "META",
+      "cik": "0001326801",
+      "name": "Meta Platforms, Inc.",
+      "exchange": "Nasdaq",
+      "sic": "7370",
+      "sic_description": "Services-Computer Programming, Data Processing, Etc.",
+      "fiscal_year_end": "1231",
+      "entity_type": "operating",
+      "source": {
+        "tier": "A",
+        "provider": "SEC EDGAR",
+        "submissions_url": "https://data.sec.gov/submissions/CIK0001326801.json",
+        "companyfacts_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001326801.json"
+      },
+      "freshness": {
+        "latest_material_filing_date": "2026-07-30",
+        "days_since_latest_material_filing": 20,
+        "recent_8k_count_30d": 1
+      },
+      "recent_filings": [
+        {
+          "form": "10-Q",
+          "filing_date": "2026-07-30",
+          "report_date": "2026-06-30",
+          "accession_number": "0001628280-26-050705",
+          "primary_document": "meta-20260630.htm",
+          "description": "10-Q",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050705/meta-20260630.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-07-29",
+          "report_date": "2026-07-29",
+          "accession_number": "0001628280-26-050596",
+          "primary_document": "meta-20260729.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026050596/meta-20260729.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-05-29",
+          "report_date": "2026-05-27",
+          "accession_number": "0001628280-26-039193",
+          "primary_document": "meta-20260527.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026039193/meta-20260527.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-05-04",
+          "report_date": "2026-04-30",
+          "accession_number": "0001193125-26-204128",
+          "primary_document": "d134616d8k.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1326801/000119312526204128/d134616d8k.htm"
+        },
+        {
+          "form": "10-Q",
+          "filing_date": "2026-04-30",
+          "report_date": "2026-03-31",
+          "accession_number": "0001628280-26-028526",
+          "primary_document": "meta-20260331.htm",
+          "description": "10-Q",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028526/meta-20260331.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-04-29",
+          "report_date": "2026-04-29",
+          "accession_number": "0001628280-26-028364",
+          "primary_document": "meta-20260429.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026028364/meta-20260429.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-04-14",
+          "report_date": "2026-04-08",
+          "accession_number": "0001628280-26-025108",
+          "primary_document": "meta-20260408.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026025108/meta-20260408.htm"
+        },
+        {
+          "form": "10-K",
+          "filing_date": "2026-01-29",
+          "report_date": "2025-12-31",
+          "accession_number": "0001628280-26-003942",
+          "primary_document": "meta-20251231.htm",
+          "description": "10-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003942/meta-20251231.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-01-28",
+          "report_date": "2026-01-28",
+          "accession_number": "0001628280-26-003832",
+          "primary_document": "meta-20260128.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026003832/meta-20260128.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-01-16",
+          "report_date": "2026-01-12",
+          "accession_number": "0001628280-26-002429",
+          "primary_document": "meta-20260112.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828026002429/meta-20260112.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2025-12-19",
+          "report_date": "2025-12-19",
+          "accession_number": "0001628280-25-058337",
+          "primary_document": "meta-20251219.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025058337/meta-20251219.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2025-12-12",
+          "report_date": "2025-12-05",
+          "accession_number": "0001628280-25-056768",
+          "primary_document": "meta-20251205.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1326801/000162828025056768/meta-20251205.htm"
+        }
+      ],
+      "fundamentals": {
+        "revenue": {
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "unit": "USD",
+          "value": 117111000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 56311000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 107.97,
+          "change_percent_vs_comparable_reported_period": 107.97
+        },
+        "net_income": {
+          "tag": "NetIncomeLoss",
+          "unit": "USD",
+          "value": 42621000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 26773000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 59.19,
+          "change_percent_vs_comparable_reported_period": 59.19
+        },
+        "operating_income": {
+          "tag": "OperatingIncomeLoss",
+          "unit": "USD",
+          "value": 41647000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 22872000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 82.09,
+          "change_percent_vs_comparable_reported_period": 82.09
+        },
+        "operating_cash_flow": {
+          "tag": "NetCashProvidedByUsedInOperatingActivities",
+          "unit": "USD",
+          "value": 64088000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 32226000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 98.87,
+          "change_percent_vs_comparable_reported_period": 98.87
+        },
+        "cash": {
+          "tag": "CashAndCashEquivalentsAtCarryingValue",
+          "unit": "USD",
+          "value": 15462000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 23426000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": -34.0,
+          "change_percent_vs_comparable_reported_period": -34.0
+        },
+        "assets": {
+          "tag": "Assets",
+          "unit": "USD",
+          "value": 449956000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 395250000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 13.84,
+          "change_percent_vs_comparable_reported_period": 13.84
+        },
+        "liabilities": {
+          "tag": "Liabilities",
+          "unit": "USD",
+          "value": 188735000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 151569000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 24.52,
+          "change_percent_vs_comparable_reported_period": 24.52
+        },
+        "stockholders_equity": {
+          "tag": "StockholdersEquity",
+          "unit": "USD",
+          "value": 261221000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 243681000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 7.2,
+          "change_percent_vs_comparable_reported_period": 7.2
+        },
+        "diluted_eps": {
+          "tag": "EarningsPerShareDiluted",
+          "unit": "USD/shares",
+          "value": 16.62,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-30",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 10.44,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 59.2,
+          "change_percent_vs_comparable_reported_period": 59.2
+        }
+      },
+      "evidence_completeness_percent": 100.0,
+      "market_data": {
+        "status": "UNAVAILABLE",
+        "reason": "Licensed price/volume adapter not configured yet."
+      },
+      "decision_state": {
+        "status": "OFFICIAL_EVIDENCE_READY",
+        "market_view": "UNAVAILABLE",
+        "decision_readiness": "NOT_ELIGIBLE_WITHOUT_MARKET_DATA",
+        "trade_execution": "OFF"
+      }
+    },
+    {
+      "ticker": "TSLA",
+      "cik": "0001318605",
+      "name": "Tesla, Inc.",
+      "exchange": "Nasdaq",
+      "sic": "3711",
+      "sic_description": "Motor Vehicles & Passenger Car Bodies",
+      "fiscal_year_end": "1231",
+      "entity_type": "operating",
+      "source": {
+        "tier": "A",
+        "provider": "SEC EDGAR",
+        "submissions_url": "https://data.sec.gov/submissions/CIK0001318605.json",
+        "companyfacts_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001318605.json"
+      },
+      "freshness": {
+        "latest_material_filing_date": "2026-07-23",
+        "days_since_latest_material_filing": 27,
+        "recent_8k_count_30d": 1
+      },
+      "recent_filings": [
+        {
+          "form": "10-Q",
+          "filing_date": "2026-07-23",
+          "report_date": "2026-06-30",
+          "accession_number": "0001628280-26-049270",
+          "primary_document": "tsla-20260630.htm",
+          "description": "10-Q",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049270/tsla-20260630.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-07-22",
+          "report_date": "2026-07-22",
+          "accession_number": "0001628280-26-049213",
+          "primary_document": "tsla-20260722.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026049213/tsla-20260722.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-07-02",
+          "report_date": "2026-07-02",
+          "accession_number": "0001628280-26-046717",
+          "primary_document": "tsla-20260702.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026046717/tsla-20260702.htm"
+        },
+        {
+          "form": "10-K/A",
+          "filing_date": "2026-04-30",
+          "report_date": "2025-12-31",
+          "accession_number": "0001104659-26-053166",
+          "primary_document": "tm2611837d1_10ka.htm",
+          "description": "FORM 10-K/A",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465926053166/tm2611837d1_10ka.htm"
+        },
+        {
+          "form": "10-Q",
+          "filing_date": "2026-04-23",
+          "report_date": "2026-03-31",
+          "accession_number": "0001628280-26-026673",
+          "primary_document": "tsla-20260331.htm",
+          "description": "10-Q",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026673/tsla-20260331.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-04-22",
+          "report_date": "2026-04-22",
+          "accession_number": "0001628280-26-026551",
+          "primary_document": "tsla-20260422.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026026551/tsla-20260422.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-04-02",
+          "report_date": "2026-04-02",
+          "accession_number": "0001628280-26-022956",
+          "primary_document": "tsla-20260402.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026022956/tsla-20260402.htm"
+        },
+        {
+          "form": "10-K",
+          "filing_date": "2026-01-29",
+          "report_date": "2025-12-31",
+          "accession_number": "0001628280-26-003952",
+          "primary_document": "tsla-20251231.htm",
+          "description": "10-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003952/tsla-20251231.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-01-28",
+          "report_date": "2026-01-28",
+          "accession_number": "0001628280-26-003837",
+          "primary_document": "tsla-20260128.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026003837/tsla-20260128.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-01-02",
+          "report_date": "2026-01-02",
+          "accession_number": "0001628280-26-000016",
+          "primary_document": "tsla-20260102.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828026000016/tsla-20260102.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2025-11-07",
+          "report_date": "2025-11-06",
+          "accession_number": "0001104659-25-108507",
+          "primary_document": "tm2530590d1_8k.htm",
+          "description": "FORM 8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1318605/000110465925108507/tm2530590d1_8k.htm"
+        },
+        {
+          "form": "10-Q",
+          "filing_date": "2025-10-23",
+          "report_date": "2025-09-30",
+          "accession_number": "0001628280-25-045968",
+          "primary_document": "tsla-20250930.htm",
+          "description": "10-Q",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/1318605/000162828025045968/tsla-20250930.htm"
+        }
+      ],
+      "fundamentals": {
+        "revenue": {
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "unit": "USD",
+          "value": 50623000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 22387000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 126.13,
+          "change_percent_vs_comparable_reported_period": 126.13
+        },
+        "net_income": {
+          "tag": "NetIncomeLoss",
+          "unit": "USD",
+          "value": 1591000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 477000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 233.54,
+          "change_percent_vs_comparable_reported_period": 233.54
+        },
+        "operating_income": {
+          "tag": "OperatingIncomeLoss",
+          "unit": "USD",
+          "value": 1339000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 941000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 42.3,
+          "change_percent_vs_comparable_reported_period": 42.3
+        },
+        "operating_cash_flow": {
+          "tag": "NetCashProvidedByUsedInOperatingActivities",
+          "unit": "USD",
+          "value": 8634000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 3937000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 119.3,
+          "change_percent_vs_comparable_reported_period": 119.3
+        },
+        "cash": {
+          "tag": "CashAndCashEquivalentsAtCarryingValue",
+          "unit": "USD",
+          "value": 15219000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 16603000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": -8.34,
+          "change_percent_vs_comparable_reported_period": -8.34
+        },
+        "assets": {
+          "tag": "Assets",
+          "unit": "USD",
+          "value": 148524000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 143724000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 3.34,
+          "change_percent_vs_comparable_reported_period": 3.34
+        },
+        "liabilities": {
+          "tag": "Liabilities",
+          "unit": "USD",
+          "value": 61005000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 58922000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 3.54,
+          "change_percent_vs_comparable_reported_period": 3.54
+        },
+        "stockholders_equity": {
+          "tag": "StockholdersEquity",
+          "unit": "USD",
+          "value": 86858000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 84116000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 3.26,
+          "change_percent_vs_comparable_reported_period": 3.26
+        },
+        "diluted_eps": {
+          "tag": "EarningsPerShareDiluted",
+          "unit": "USD/shares",
+          "value": 0.45,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 0.13,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 246.15,
+          "change_percent_vs_comparable_reported_period": 246.15
+        }
+      },
+      "evidence_completeness_percent": 100.0,
+      "market_data": {
+        "status": "UNAVAILABLE",
+        "reason": "Licensed price/volume adapter not configured yet."
+      },
+      "decision_state": {
+        "status": "OFFICIAL_EVIDENCE_READY",
+        "market_view": "UNAVAILABLE",
+        "decision_readiness": "NOT_ELIGIBLE_WITHOUT_MARKET_DATA",
+        "trade_execution": "OFF"
+      }
+    },
+    {
+      "ticker": "IBM",
+      "cik": "0000051143",
+      "name": "INTERNATIONAL BUSINESS MACHINES CORP",
+      "exchange": "NYSE",
+      "sic": "3570",
+      "sic_description": "Computer & office Equipment",
+      "fiscal_year_end": "1231",
+      "entity_type": "operating",
+      "source": {
+        "tier": "A",
+        "provider": "SEC EDGAR",
+        "submissions_url": "https://data.sec.gov/submissions/CIK0000051143.json",
+        "companyfacts_url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000051143.json"
+      },
+      "freshness": {
+        "latest_material_filing_date": "2026-08-14",
+        "days_since_latest_material_filing": 5,
+        "recent_8k_count_30d": 2
+      },
+      "recent_filings": [
+        {
+          "form": "8-K",
+          "filing_date": "2026-08-14",
+          "report_date": "2026-08-10",
+          "accession_number": "0001104659-26-097089",
+          "primary_document": "tm2623193d1_8k.htm",
+          "description": "FORM 8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/51143/000110465926097089/tm2623193d1_8k.htm"
+        },
+        {
+          "form": "10-Q",
+          "filing_date": "2026-07-23",
+          "report_date": "2026-06-30",
+          "accession_number": "0000051143-26-000078",
+          "primary_document": "ibm-20260630.htm",
+          "description": "10-Q",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000078/ibm-20260630.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-07-22",
+          "report_date": "2026-07-22",
+          "accession_number": "0000051143-26-000077",
+          "primary_document": "ibm-20260722.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000077/ibm-20260722.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-07-14",
+          "report_date": "2026-07-14",
+          "accession_number": "0000051143-26-000070",
+          "primary_document": "ibm-20260714.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000070/ibm-20260714.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-06-23",
+          "report_date": "2026-06-22",
+          "accession_number": "0000051143-26-000061",
+          "primary_document": "ibm-20260622.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000061/ibm-20260622.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-05-28",
+          "report_date": "2026-05-28",
+          "accession_number": "0000051143-26-000047",
+          "primary_document": "ibm-20260528.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000047/ibm-20260528.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-05-01",
+          "report_date": "2026-04-28",
+          "accession_number": "0000051143-26-000043",
+          "primary_document": "ibm-20260428.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000043/ibm-20260428.htm"
+        },
+        {
+          "form": "10-Q",
+          "filing_date": "2026-04-23",
+          "report_date": "2026-03-31",
+          "accession_number": "0000051143-26-000038",
+          "primary_document": "ibm-20260331.htm",
+          "description": "10-Q",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000038/ibm-20260331.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-04-22",
+          "report_date": "2026-04-22",
+          "accession_number": "0000051143-26-000036",
+          "primary_document": "ibm-20260422.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000036/ibm-20260422.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-03-03",
+          "report_date": "2026-03-01",
+          "accession_number": "0000051143-26-000015",
+          "primary_document": "ibm-20260301.htm",
+          "description": "8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000015/ibm-20260301.htm"
+        },
+        {
+          "form": "10-K",
+          "filing_date": "2026-02-24",
+          "report_date": "2025-12-31",
+          "accession_number": "0000051143-26-000010",
+          "primary_document": "ibm-20251231.htm",
+          "description": "10-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/51143/000005114326000010/ibm-20251231.htm"
+        },
+        {
+          "form": "8-K",
+          "filing_date": "2026-02-02",
+          "report_date": "2026-01-29",
+          "accession_number": "0001104659-26-009343",
+          "primary_document": "tm264790d2_8k.htm",
+          "description": "FORM 8-K",
+          "filing_url": "https://www.sec.gov/Archives/edgar/data/51143/000110465926009343/tm264790d2_8k.htm"
+        }
+      ],
+      "fundamentals": {
+        "revenue": {
+          "tag": "Revenues",
+          "unit": "USD",
+          "value": 33079000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 15917000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 107.82,
+          "change_percent_vs_comparable_reported_period": 107.82
+        },
+        "net_income": {
+          "tag": "NetIncomeLoss",
+          "unit": "USD",
+          "value": 3381000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 1216000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 178.04,
+          "change_percent_vs_comparable_reported_period": 178.04
+        },
+        "operating_income": null,
+        "operating_cash_flow": {
+          "tag": "NetCashProvidedByUsedInOperatingActivities",
+          "unit": "USD",
+          "value": 7766000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 5169000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 50.24,
+          "change_percent_vs_comparable_reported_period": 50.24
+        },
+        "cash": {
+          "tag": "CashAndCashEquivalentsAtCarryingValue",
+          "unit": "USD",
+          "value": 7172000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 10819000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": -33.71,
+          "change_percent_vs_comparable_reported_period": -33.71
+        },
+        "assets": {
+          "tag": "Assets",
+          "unit": "USD",
+          "value": 152099000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 156229000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": -2.64,
+          "change_percent_vs_comparable_reported_period": -2.64
+        },
+        "liabilities": {
+          "tag": "Liabilities",
+          "unit": "USD",
+          "value": 117558000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 123174000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": -4.56,
+          "change_percent_vs_comparable_reported_period": -4.56
+        },
+        "stockholders_equity": {
+          "tag": "StockholdersEquity",
+          "unit": "USD",
+          "value": 34452000000,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 32974000000,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 4.48,
+          "change_percent_vs_comparable_reported_period": 4.48
+        },
+        "diluted_eps": {
+          "tag": "EarningsPerShareDiluted",
+          "unit": "USD/shares",
+          "value": 3.55,
+          "period_end": "2026-06-30",
+          "filed": "2026-07-23",
+          "form": "10-Q",
+          "fiscal_year": 2026,
+          "fiscal_period": "Q2",
+          "previous_value": 1.28,
+          "previous_period_end": "2026-03-31",
+          "comparison_family": "QUARTERLY",
+          "change_percent_vs_previous_reported_period": 177.34,
+          "change_percent_vs_comparable_reported_period": 177.34
+        }
+      },
+      "evidence_completeness_percent": 88.9,
+      "market_data": {
+        "status": "UNAVAILABLE",
+        "reason": "Licensed price/volume adapter not configured yet."
+      },
+      "decision_state": {
+        "status": "OFFICIAL_EVIDENCE_READY",
+        "market_view": "UNAVAILABLE",
+        "decision_readiness": "NOT_ELIGIBLE_WITHOUT_MARKET_DATA",
+        "trade_execution": "OFF"
+      }
+    }
+  ],
+  "errors": []
 }
