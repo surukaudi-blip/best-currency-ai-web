@@ -1,5 +1,5 @@
 {
-  "version": "1.8",
+  "version": "1.9",
   "updated_at": "2026-08-19",
   "principles": [
     "Do not fabricate unavailable market data.",
@@ -33,8 +33,8 @@
       "scope": "Major liquid non-stable crypto assets v1; market data + protocol/regulatory/network evidence",
       "steps": [
         {"id": "11A", "name": "Crypto Market Data & Source Adapter", "status": "COMPLETE", "output": "Keyed CoinGecko Demo market snapshot, global context, and derived metrics from completed UTC daily observations; 8/8 initial assets READY; raw historical series not republished"},
-        {"id": "11B", "name": "Protocol, On-Chain & Regulatory Evidence", "status": "READY_TO_ACTIVATE", "output": "Curated primary core-implementation repositories, SEC/CFTC primary regulatory feeds, and heterogeneous approved network telemetry with explicit provenance; no universal on-chain score"},
-        {"id": "11C", "name": "Crypto Decision Intelligence", "status": "BLOCKED_UNTIL_11B_VERIFIED"},
+        {"id": "11B", "name": "Protocol, On-Chain & Regulatory Evidence", "status": "COMPLETE", "output": "Operationally verified: 8/8 curated protocol/core repositories, 3/3 SEC/CFTC primary regulatory feeds, 4/4 explicitly enabled network endpoints, deferred/N/A telemetry preserved without imputation, and no universal on-chain score"},
+        {"id": "11C", "name": "Crypto Decision Intelligence", "status": "NEXT", "output": "Build explainable Market View, Decision Readiness, Decision Risk, Counter-Thesis and AI Decision Reasoner from 11A + 11B while remaining unfrozen and pre-validation"},
         {"id": "11C.4", "name": "Historical Backtest", "status": "MANDATORY_BEFORE_FREEZE"},
         {"id": "11C.5", "name": "Pre-Freeze Cross-Check & Model QA", "status": "MANDATORY_BEFORE_FREEZE"},
         {"id": "11D", "name": "Freeze, Watch, Timeline & Fresh OOS", "status": "BLOCKED_UNTIL_C4_C5_PASS"}

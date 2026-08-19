@@ -1,5 +1,5 @@
 {
-  "version": "1.2",
+  "version": "1.3",
   "status": "MULTI_ASSET_SOURCE_POLICY_ACTIVE",
   "principles": {
     "market_data_separate_from_news": true,
@@ -29,23 +29,23 @@
       "news":[{"name":"SEC filings and company Investor Relations","tier":"A","status":"PREFERRED"},{"name":"Reuters","tier":"B","status":"LICENSE_REQUIRED"},{"name":"Bloomberg","tier":"B","status":"LICENSE_REQUIRED"},{"name":"Financial Times / Wall Street Journal / CNBC","tier":"C","status":"CONTEXTUAL"},{"name":"Alpha Vantage News & Sentiment","tier":"D","status":"DISCOVERY_ONLY"}]
     },
     "crypto": {
-      "label":"Crypto","production_status":"STAGE_11B_READY_TO_ACTIVATE",
+      "label":"Crypto","production_status":"STAGE_11B_COMPLETE_11C_NEXT",
       "market_data":[
         {"name":"CoinGecko Demo API","tier":"C","role":"keyed aggregated spot, market-cap, volume and completed UTC historical context","status":"ACTIVE_SERVER_SIDE_KEY"},
         {"name":"CoinGecko keyless public pool","tier":"C","role":"light experimentation only","status":"NOT_USED_BY_PIPELINE"}
       ],
       "evidence":[
-        {"name":"Curated core implementation repositories","tier":"A","role":"technical release and implementation activity for BTC/ETH/SOL/XRP/BNB/ADA/DOGE/LINK","status":"ADAPTER_READY_11B"},
-        {"name":"SEC Press Releases RSS","tier":"A","role":"primary U.S. securities regulatory events","status":"ADAPTER_READY_11B"},
-        {"name":"CFTC General + Enforcement RSS","tier":"A","role":"primary U.S. derivatives/commodities regulatory events","status":"ADAPTER_READY_11B"},
-        {"name":"Solana public Mainnet RPC","tier":"A","role":"low-frequency chain-specific network telemetry","status":"ADAPTER_READY_11B"},
-        {"name":"Ripple-operated XRPL public server","tier":"A","role":"low-frequency chain-specific network telemetry","status":"ADAPTER_READY_11B"},
-        {"name":"BNB Smart Chain public RPC","tier":"A","role":"low-frequency chain-specific network telemetry","status":"ADAPTER_READY_11B"},
-        {"name":"Blockstream Esplora","tier":"C","role":"independent Bitcoin network telemetry","status":"ADAPTER_READY_11B"}
+        {"name":"Curated core implementation repositories","tier":"A","role":"technical release and implementation activity for BTC/ETH/SOL/XRP/BNB/ADA/DOGE/LINK","status":"ACTIVE_8_OF_8"},
+        {"name":"SEC Press Releases RSS","tier":"A","role":"primary U.S. securities regulatory events","status":"ACTIVE"},
+        {"name":"CFTC General + Enforcement RSS","tier":"A","role":"primary U.S. derivatives/commodities regulatory events","status":"ACTIVE"},
+        {"name":"Solana public Mainnet RPC","tier":"A","role":"low-frequency chain-specific network telemetry","status":"ACTIVE"},
+        {"name":"Ripple-operated XRPL public server","tier":"A","role":"low-frequency chain-specific network telemetry","status":"ACTIVE"},
+        {"name":"BNB Smart Chain public RPC","tier":"A","role":"low-frequency chain-specific network telemetry","status":"ACTIVE"},
+        {"name":"Blockstream Esplora","tier":"C","role":"independent Bitcoin network telemetry","status":"ACTIVE"}
       ],
       "news":[
-        {"name":"SEC / CFTC / official regulators","tier":"A","status":"PRIMARY_EVIDENCE_11B"},
-        {"name":"Official project/foundation and core implementation releases","tier":"A","status":"PRIMARY_TECHNICAL_EVIDENCE_11B"},
+        {"name":"SEC / CFTC / official regulators","tier":"A","status":"PRIMARY_EVIDENCE_ACTIVE"},
+        {"name":"Official project/foundation and core implementation releases","tier":"A","status":"PRIMARY_TECHNICAL_EVIDENCE_ACTIVE"},
         {"name":"Reuters","tier":"B","status":"LICENSE_REQUIRED_STAGE14"},
         {"name":"Bloomberg","tier":"B","status":"LICENSE_REQUIRED_STAGE14"},
         {"name":"Alpha Vantage News & Sentiment","tier":"D","status":"DISCOVERY_ONLY_STAGE14"}
