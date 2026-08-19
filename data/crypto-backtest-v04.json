@@ -1,9 +1,609 @@
 {
   "version": "4.0",
-  "status": "CRYPTO_V04_ACTIONABILITY_BACKTEST_NOT_RUN",
+  "status": "CRYPTO_V04_ACTIONABILITY_DIAGNOSTIC_COMPLETE_REQUIRES_11C5_REVIEW",
   "scope": "MAJOR_LIQUID_CRYPTO_ASSETS_V1",
-  "generated_at": null,
-  "model_status": "EXPERIMENTAL_V01_CORE_MTF_ACTIONABILITY_PREVALIDATION",
+  "generated_at": "2026-08-19T08:46:11.626234Z",
+  "model_snapshot": {
+    "version": "0.4",
+    "model_status": "EXPERIMENTAL_V01_CORE_MTF_ACTIONABILITY_PREVALIDATION",
+    "frozen": false,
+    "canonical_v01_methodology_sha256": "2e58009070741bf6e2cb4c2b0c3b7dff154c5b8250651bc0963a15eef00b7be4",
+    "actionability_version": "CRYPTO_ACTIONABILITY_0.1"
+  },
+  "test_design": {
+    "historical_window_days": 365,
+    "warmup_days": 90,
+    "forward_horizons_days": [
+      1,
+      3,
+      7
+    ],
+    "historical_window_status": "CONSUMED_DIAGNOSTIC_NOT_FRESH_OOS",
+    "canonical_direction": "EXACT_V01_RECONSTRUCTION",
+    "mtf": {
+      "daily": "1D completed return; absolute span 6%",
+      "weekly": "7D completed return; absolute span 12%",
+      "monthly": "30D completed return; absolute span 25%",
+      "weights": {
+        "daily": 0.45,
+        "weekly": 0.35,
+        "monthly": 0.2
+      },
+      "state_thresholds": {
+        "supportive_gte": 62,
+        "pressured_lte": 38
+      }
+    },
+    "actionability_proxy": "MARKET_ONLY; reconstructible MTF + participation + market-risk regime. Historical protocol/regulatory/network evidence and operational freshness are not backfilled.",
+    "actionability_thresholds": {
+      "actionable": 80,
+      "selective": 60
+    },
+    "no_threshold_search": true,
+    "production_rounding_parity": {
+      "percent_inputs_decimals": 4,
+      "component_score_decimals": 2,
+      "weighted_score_decimals": 2,
+      "status": "ENFORCED"
+    }
+  },
+  "summary": {
+    "v01_all_directional": {
+      "observations": 1269,
+      "coverage_percent_of_all": 59.41,
+      "retention_percent_of_v01_directional": 100.0,
+      "hit_rate_1d_percent": 50.43,
+      "avg_directional_return_1d_percent": -0.0929,
+      "hit_rate_3d_percent": 48.54,
+      "avg_directional_return_3d_percent": -0.1144,
+      "hit_rate_7d_percent": 47.91,
+      "avg_directional_return_7d_percent": 0.0651
+    },
+    "v04_selective_or_actionable": {
+      "observations": 911,
+      "coverage_percent_of_all": 42.65,
+      "retention_percent_of_v01_directional": 71.79,
+      "hit_rate_1d_percent": 50.49,
+      "avg_directional_return_1d_percent": 0.1287,
+      "hit_rate_3d_percent": 48.41,
+      "avg_directional_return_3d_percent": 0.0725,
+      "hit_rate_7d_percent": 47.31,
+      "avg_directional_return_7d_percent": 0.151
+    },
+    "v04_actionable_only": {
+      "observations": 120,
+      "coverage_percent_of_all": 5.62,
+      "retention_percent_of_v01_directional": 9.46,
+      "hit_rate_1d_percent": 50.83,
+      "avg_directional_return_1d_percent": 0.3141,
+      "hit_rate_3d_percent": 46.67,
+      "avg_directional_return_3d_percent": 0.205,
+      "hit_rate_7d_percent": 50.0,
+      "avg_directional_return_7d_percent": 0.2207
+    }
+  },
+  "per_asset": [
+    {
+      "asset": "BTC",
+      "v01_all_directional": {
+        "observations": 139,
+        "coverage_percent_of_all": 52.06,
+        "retention_percent_of_v01_directional": 100.0,
+        "hit_rate_1d_percent": 54.68,
+        "avg_directional_return_1d_percent": 0.1261,
+        "hit_rate_3d_percent": 48.92,
+        "avg_directional_return_3d_percent": 0.3375,
+        "hit_rate_7d_percent": 53.24,
+        "avg_directional_return_7d_percent": 0.8772
+      },
+      "v04_selective_or_actionable": {
+        "observations": 118,
+        "coverage_percent_of_all": 44.19,
+        "retention_percent_of_v01_directional": 84.89,
+        "hit_rate_1d_percent": 55.08,
+        "avg_directional_return_1d_percent": 0.1615,
+        "hit_rate_3d_percent": 50.0,
+        "avg_directional_return_3d_percent": 0.3636,
+        "hit_rate_7d_percent": 51.69,
+        "avg_directional_return_7d_percent": 0.9254
+      },
+      "v04_actionable_only": {
+        "observations": 38,
+        "coverage_percent_of_all": 14.23,
+        "retention_percent_of_v01_directional": 27.34,
+        "hit_rate_1d_percent": 57.89,
+        "avg_directional_return_1d_percent": 0.3802,
+        "hit_rate_3d_percent": 52.63,
+        "avg_directional_return_3d_percent": 0.5715,
+        "hit_rate_7d_percent": 50.0,
+        "avg_directional_return_7d_percent": 0.6877
+      }
+    },
+    {
+      "asset": "ETH",
+      "v01_all_directional": {
+        "observations": 177,
+        "coverage_percent_of_all": 66.29,
+        "retention_percent_of_v01_directional": 100.0,
+        "hit_rate_1d_percent": 49.72,
+        "avg_directional_return_1d_percent": 0.0146,
+        "hit_rate_3d_percent": 48.59,
+        "avg_directional_return_3d_percent": 0.1074,
+        "hit_rate_7d_percent": 49.15,
+        "avg_directional_return_7d_percent": 0.6083
+      },
+      "v04_selective_or_actionable": {
+        "observations": 123,
+        "coverage_percent_of_all": 46.07,
+        "retention_percent_of_v01_directional": 69.49,
+        "hit_rate_1d_percent": 52.03,
+        "avg_directional_return_1d_percent": 0.2524,
+        "hit_rate_3d_percent": 48.78,
+        "avg_directional_return_3d_percent": 0.3759,
+        "hit_rate_7d_percent": 48.78,
+        "avg_directional_return_7d_percent": 0.8627
+      },
+      "v04_actionable_only": {
+        "observations": 13,
+        "coverage_percent_of_all": 4.87,
+        "retention_percent_of_v01_directional": 7.34,
+        "hit_rate_1d_percent": 61.54,
+        "avg_directional_return_1d_percent": 0.856,
+        "hit_rate_3d_percent": 46.15,
+        "avg_directional_return_3d_percent": 0.322,
+        "hit_rate_7d_percent": 69.23,
+        "avg_directional_return_7d_percent": 2.7852
+      }
+    },
+    {
+      "asset": "SOL",
+      "v01_all_directional": {
+        "observations": 160,
+        "coverage_percent_of_all": 59.93,
+        "retention_percent_of_v01_directional": 100.0,
+        "hit_rate_1d_percent": 51.25,
+        "avg_directional_return_1d_percent": -0.1189,
+        "hit_rate_3d_percent": 42.5,
+        "avg_directional_return_3d_percent": -0.4575,
+        "hit_rate_7d_percent": 42.5,
+        "avg_directional_return_7d_percent": -0.6701
+      },
+      "v04_selective_or_actionable": {
+        "observations": 111,
+        "coverage_percent_of_all": 41.57,
+        "retention_percent_of_v01_directional": 69.38,
+        "hit_rate_1d_percent": 52.25,
+        "avg_directional_return_1d_percent": 0.1289,
+        "hit_rate_3d_percent": 43.24,
+        "avg_directional_return_3d_percent": -0.1984,
+        "hit_rate_7d_percent": 41.44,
+        "avg_directional_return_7d_percent": -0.9463
+      },
+      "v04_actionable_only": {
+        "observations": 9,
+        "coverage_percent_of_all": 3.37,
+        "retention_percent_of_v01_directional": 5.62,
+        "hit_rate_1d_percent": 22.22,
+        "avg_directional_return_1d_percent": -0.6086,
+        "hit_rate_3d_percent": 33.33,
+        "avg_directional_return_3d_percent": -1.1467,
+        "hit_rate_7d_percent": 44.44,
+        "avg_directional_return_7d_percent": -1.157
+      }
+    },
+    {
+      "asset": "XRP",
+      "v01_all_directional": {
+        "observations": 147,
+        "coverage_percent_of_all": 55.06,
+        "retention_percent_of_v01_directional": 100.0,
+        "hit_rate_1d_percent": 48.98,
+        "avg_directional_return_1d_percent": -0.1293,
+        "hit_rate_3d_percent": 51.7,
+        "avg_directional_return_3d_percent": -0.0998,
+        "hit_rate_7d_percent": 49.66,
+        "avg_directional_return_7d_percent": -0.286
+      },
+      "v04_selective_or_actionable": {
+        "observations": 101,
+        "coverage_percent_of_all": 37.83,
+        "retention_percent_of_v01_directional": 68.71,
+        "hit_rate_1d_percent": 49.5,
+        "avg_directional_return_1d_percent": 0.1187,
+        "hit_rate_3d_percent": 51.49,
+        "avg_directional_return_3d_percent": 0.0866,
+        "hit_rate_7d_percent": 47.52,
+        "avg_directional_return_7d_percent": -0.5211
+      },
+      "v04_actionable_only": {
+        "observations": 16,
+        "coverage_percent_of_all": 5.99,
+        "retention_percent_of_v01_directional": 10.88,
+        "hit_rate_1d_percent": 56.25,
+        "avg_directional_return_1d_percent": 0.6856,
+        "hit_rate_3d_percent": 56.25,
+        "avg_directional_return_3d_percent": 0.9175,
+        "hit_rate_7d_percent": 62.5,
+        "avg_directional_return_7d_percent": 1.1985
+      }
+    },
+    {
+      "asset": "BNB",
+      "v01_all_directional": {
+        "observations": 104,
+        "coverage_percent_of_all": 38.95,
+        "retention_percent_of_v01_directional": 100.0,
+        "hit_rate_1d_percent": 47.12,
+        "avg_directional_return_1d_percent": -0.1809,
+        "hit_rate_3d_percent": 42.31,
+        "avg_directional_return_3d_percent": -0.5325,
+        "hit_rate_7d_percent": 38.46,
+        "avg_directional_return_7d_percent": -1.0512
+      },
+      "v04_selective_or_actionable": {
+        "observations": 85,
+        "coverage_percent_of_all": 31.84,
+        "retention_percent_of_v01_directional": 81.73,
+        "hit_rate_1d_percent": 42.35,
+        "avg_directional_return_1d_percent": -0.3051,
+        "hit_rate_3d_percent": 38.82,
+        "avg_directional_return_3d_percent": -0.7654,
+        "hit_rate_7d_percent": 37.65,
+        "avg_directional_return_7d_percent": -1.119
+      },
+      "v04_actionable_only": {
+        "observations": 12,
+        "coverage_percent_of_all": 4.49,
+        "retention_percent_of_v01_directional": 11.54,
+        "hit_rate_1d_percent": 58.33,
+        "avg_directional_return_1d_percent": 0.4775,
+        "hit_rate_3d_percent": 33.33,
+        "avg_directional_return_3d_percent": 0.0052,
+        "hit_rate_7d_percent": 33.33,
+        "avg_directional_return_7d_percent": -0.352
+      }
+    },
+    {
+      "asset": "ADA",
+      "v01_all_directional": {
+        "observations": 193,
+        "coverage_percent_of_all": 72.28,
+        "retention_percent_of_v01_directional": 100.0,
+        "hit_rate_1d_percent": 51.3,
+        "avg_directional_return_1d_percent": -0.1642,
+        "hit_rate_3d_percent": 51.3,
+        "avg_directional_return_3d_percent": -0.1472,
+        "hit_rate_7d_percent": 47.15,
+        "avg_directional_return_7d_percent": 0.2374
+      },
+      "v04_selective_or_actionable": {
+        "observations": 136,
+        "coverage_percent_of_all": 50.94,
+        "retention_percent_of_v01_directional": 70.47,
+        "hit_rate_1d_percent": 52.94,
+        "avg_directional_return_1d_percent": 0.3608,
+        "hit_rate_3d_percent": 52.21,
+        "avg_directional_return_3d_percent": 0.3093,
+        "hit_rate_7d_percent": 48.53,
+        "avg_directional_return_7d_percent": 0.702
+      },
+      "v04_actionable_only": {
+        "observations": 8,
+        "coverage_percent_of_all": 3.0,
+        "retention_percent_of_v01_directional": 4.15,
+        "hit_rate_1d_percent": 12.5,
+        "avg_directional_return_1d_percent": -0.1771,
+        "hit_rate_3d_percent": 50.0,
+        "avg_directional_return_3d_percent": 1.2266,
+        "hit_rate_7d_percent": 37.5,
+        "avg_directional_return_7d_percent": -0.1028
+      }
+    },
+    {
+      "asset": "DOGE",
+      "v01_all_directional": {
+        "observations": 195,
+        "coverage_percent_of_all": 73.03,
+        "retention_percent_of_v01_directional": 100.0,
+        "hit_rate_1d_percent": 52.82,
+        "avg_directional_return_1d_percent": 0.075,
+        "hit_rate_3d_percent": 56.92,
+        "avg_directional_return_3d_percent": 0.3941,
+        "hit_rate_7d_percent": 59.49,
+        "avg_directional_return_7d_percent": 1.1647
+      },
+      "v04_selective_or_actionable": {
+        "observations": 134,
+        "coverage_percent_of_all": 50.19,
+        "retention_percent_of_v01_directional": 68.72,
+        "hit_rate_1d_percent": 50.75,
+        "avg_directional_return_1d_percent": 0.3214,
+        "hit_rate_3d_percent": 55.97,
+        "avg_directional_return_3d_percent": 0.4823,
+        "hit_rate_7d_percent": 56.72,
+        "avg_directional_return_7d_percent": 1.0114
+      },
+      "v04_actionable_only": {
+        "observations": 13,
+        "coverage_percent_of_all": 4.87,
+        "retention_percent_of_v01_directional": 6.67,
+        "hit_rate_1d_percent": 61.54,
+        "avg_directional_return_1d_percent": 1.282,
+        "hit_rate_3d_percent": 61.54,
+        "avg_directional_return_3d_percent": 0.358,
+        "hit_rate_7d_percent": 61.54,
+        "avg_directional_return_7d_percent": -0.3776
+      }
+    },
+    {
+      "asset": "LINK",
+      "v01_all_directional": {
+        "observations": 154,
+        "coverage_percent_of_all": 57.68,
+        "retention_percent_of_v01_directional": 100.0,
+        "hit_rate_1d_percent": 46.1,
+        "avg_directional_return_1d_percent": -0.416,
+        "hit_rate_3d_percent": 41.56,
+        "avg_directional_return_3d_percent": -0.7551,
+        "hit_rate_7d_percent": 38.31,
+        "avg_directional_return_7d_percent": -1.0478
+      },
+      "v04_selective_or_actionable": {
+        "observations": 103,
+        "coverage_percent_of_all": 38.58,
+        "retention_percent_of_v01_directional": 66.88,
+        "hit_rate_1d_percent": 45.63,
+        "avg_directional_return_1d_percent": -0.2456,
+        "hit_rate_3d_percent": 41.75,
+        "avg_directional_return_3d_percent": -0.4997,
+        "hit_rate_7d_percent": 40.78,
+        "avg_directional_return_7d_percent": -0.5434
+      },
+      "v04_actionable_only": {
+        "observations": 11,
+        "coverage_percent_of_all": 4.12,
+        "retention_percent_of_v01_directional": 7.14,
+        "hit_rate_1d_percent": 36.36,
+        "avg_directional_return_1d_percent": -1.3054,
+        "hit_rate_3d_percent": 18.18,
+        "avg_directional_return_3d_percent": -1.8358,
+        "hit_rate_7d_percent": 27.27,
+        "avg_directional_return_7d_percent": -3.151
+      }
+    }
+  ],
+  "regimes": {
+    "volatility": {
+      "HIGH_VOL": {
+        "v01_all_directional": {
+          "observations": 383,
+          "coverage_percent_of_all": 79.3,
+          "retention_percent_of_v01_directional": 100.0,
+          "hit_rate_1d_percent": 52.74,
+          "avg_directional_return_1d_percent": -0.4476,
+          "hit_rate_3d_percent": 50.13,
+          "avg_directional_return_3d_percent": -0.6168,
+          "hit_rate_7d_percent": 47.0,
+          "avg_directional_return_7d_percent": -0.714
+        },
+        "v04_selective_or_actionable": {
+          "observations": 160,
+          "coverage_percent_of_all": 33.13,
+          "retention_percent_of_v01_directional": 41.78,
+          "hit_rate_1d_percent": 55.62,
+          "avg_directional_return_1d_percent": 0.046,
+          "hit_rate_3d_percent": 50.62,
+          "avg_directional_return_3d_percent": -0.5756,
+          "hit_rate_7d_percent": 48.12,
+          "avg_directional_return_7d_percent": -0.6441
+        },
+        "v04_actionable_only": {
+          "observations": 0,
+          "coverage_percent_of_all": 0.0,
+          "retention_percent_of_v01_directional": 0.0,
+          "hit_rate_1d_percent": null,
+          "avg_directional_return_1d_percent": null,
+          "hit_rate_3d_percent": null,
+          "avg_directional_return_3d_percent": null,
+          "hit_rate_7d_percent": null,
+          "avg_directional_return_7d_percent": null
+        }
+      },
+      "LOW_VOL": {
+        "v01_all_directional": {
+          "observations": 304,
+          "coverage_percent_of_all": 43.3,
+          "retention_percent_of_v01_directional": 100.0,
+          "hit_rate_1d_percent": 52.96,
+          "avg_directional_return_1d_percent": 0.2049,
+          "hit_rate_3d_percent": 49.34,
+          "avg_directional_return_3d_percent": 0.4039,
+          "hit_rate_7d_percent": 56.91,
+          "avg_directional_return_7d_percent": 1.6084
+        },
+        "v04_selective_or_actionable": {
+          "observations": 268,
+          "coverage_percent_of_all": 38.18,
+          "retention_percent_of_v01_directional": 88.16,
+          "hit_rate_1d_percent": 52.61,
+          "avg_directional_return_1d_percent": 0.2149,
+          "hit_rate_3d_percent": 48.88,
+          "avg_directional_return_3d_percent": 0.4174,
+          "hit_rate_7d_percent": 55.6,
+          "avg_directional_return_7d_percent": 1.6007
+        },
+        "v04_actionable_only": {
+          "observations": 92,
+          "coverage_percent_of_all": 13.11,
+          "retention_percent_of_v01_directional": 30.26,
+          "hit_rate_1d_percent": 53.26,
+          "avg_directional_return_1d_percent": 0.3575,
+          "hit_rate_3d_percent": 48.91,
+          "avg_directional_return_3d_percent": 0.4314,
+          "hit_rate_7d_percent": 57.61,
+          "avg_directional_return_7d_percent": 1.1104
+        }
+      },
+      "MODERATE_VOL": {
+        "v01_all_directional": {
+          "observations": 582,
+          "coverage_percent_of_all": 61.2,
+          "retention_percent_of_v01_directional": 100.0,
+          "hit_rate_1d_percent": 47.59,
+          "avg_directional_return_1d_percent": -0.015,
+          "hit_rate_3d_percent": 47.08,
+          "avg_directional_return_3d_percent": -0.0545,
+          "hit_rate_7d_percent": 43.81,
+          "avg_directional_return_7d_percent": -0.2284
+        },
+        "v04_selective_or_actionable": {
+          "observations": 483,
+          "coverage_percent_of_all": 50.79,
+          "retention_percent_of_v01_directional": 82.99,
+          "hit_rate_1d_percent": 47.62,
+          "avg_directional_return_1d_percent": 0.1083,
+          "hit_rate_3d_percent": 47.41,
+          "avg_directional_return_3d_percent": 0.0958,
+          "hit_rate_7d_percent": 42.44,
+          "avg_directional_return_7d_percent": -0.39
+        },
+        "v04_actionable_only": {
+          "observations": 28,
+          "coverage_percent_of_all": 2.94,
+          "retention_percent_of_v01_directional": 4.81,
+          "hit_rate_1d_percent": 42.86,
+          "avg_directional_return_1d_percent": 0.1713,
+          "hit_rate_3d_percent": 39.29,
+          "avg_directional_return_3d_percent": -0.539,
+          "hit_rate_7d_percent": 25.0,
+          "avg_directional_return_7d_percent": -2.7025
+        }
+      }
+    },
+    "drawdown": {
+      "MATERIAL_DRAWDOWN": {
+        "v01_all_directional": {
+          "observations": 379,
+          "coverage_percent_of_all": 50.67,
+          "retention_percent_of_v01_directional": 100.0,
+          "hit_rate_1d_percent": 50.66,
+          "avg_directional_return_1d_percent": 0.0881,
+          "hit_rate_3d_percent": 47.76,
+          "avg_directional_return_3d_percent": 0.3633,
+          "hit_rate_7d_percent": 50.92,
+          "avg_directional_return_7d_percent": 1.3422
+        },
+        "v04_selective_or_actionable": {
+          "observations": 309,
+          "coverage_percent_of_all": 41.31,
+          "retention_percent_of_v01_directional": 81.53,
+          "hit_rate_1d_percent": 51.78,
+          "avg_directional_return_1d_percent": 0.2288,
+          "hit_rate_3d_percent": 48.54,
+          "avg_directional_return_3d_percent": 0.5427,
+          "hit_rate_7d_percent": 50.16,
+          "avg_directional_return_7d_percent": 1.3832
+        },
+        "v04_actionable_only": {
+          "observations": 69,
+          "coverage_percent_of_all": 9.22,
+          "retention_percent_of_v01_directional": 18.21,
+          "hit_rate_1d_percent": 52.17,
+          "avg_directional_return_1d_percent": 0.6009,
+          "hit_rate_3d_percent": 46.38,
+          "avg_directional_return_3d_percent": 0.8774,
+          "hit_rate_7d_percent": 52.17,
+          "avg_directional_return_7d_percent": 1.2655
+        }
+      },
+      "NORMAL_DRAWDOWN": {
+        "v01_all_directional": {
+          "observations": 108,
+          "coverage_percent_of_all": 47.58,
+          "retention_percent_of_v01_directional": 100.0,
+          "hit_rate_1d_percent": 50.0,
+          "avg_directional_return_1d_percent": 0.0124,
+          "hit_rate_3d_percent": 49.07,
+          "avg_directional_return_3d_percent": -0.1745,
+          "hit_rate_7d_percent": 51.85,
+          "avg_directional_return_7d_percent": -0.3163
+        },
+        "v04_selective_or_actionable": {
+          "observations": 101,
+          "coverage_percent_of_all": 44.49,
+          "retention_percent_of_v01_directional": 93.52,
+          "hit_rate_1d_percent": 49.5,
+          "avg_directional_return_1d_percent": -0.0133,
+          "hit_rate_3d_percent": 49.5,
+          "avg_directional_return_3d_percent": -0.1434,
+          "hit_rate_7d_percent": 51.49,
+          "avg_directional_return_7d_percent": -0.4516
+        },
+        "v04_actionable_only": {
+          "observations": 42,
+          "coverage_percent_of_all": 18.5,
+          "retention_percent_of_v01_directional": 38.89,
+          "hit_rate_1d_percent": 50.0,
+          "avg_directional_return_1d_percent": -0.0055,
+          "hit_rate_3d_percent": 45.24,
+          "avg_directional_return_3d_percent": -0.77,
+          "hit_rate_7d_percent": 50.0,
+          "avg_directional_return_7d_percent": -1.0856
+        }
+      },
+      "STRESSED_DRAWDOWN": {
+        "v01_all_directional": {
+          "observations": 782,
+          "coverage_percent_of_all": 67.36,
+          "retention_percent_of_v01_directional": 100.0,
+          "hit_rate_1d_percent": 50.38,
+          "avg_directional_return_1d_percent": -0.1951,
+          "hit_rate_3d_percent": 48.85,
+          "avg_directional_return_3d_percent": -0.3376,
+          "hit_rate_7d_percent": 45.91,
+          "avg_directional_return_7d_percent": -0.5012
+        },
+        "v04_selective_or_actionable": {
+          "observations": 501,
+          "coverage_percent_of_all": 43.15,
+          "retention_percent_of_v01_directional": 64.07,
+          "hit_rate_1d_percent": 49.9,
+          "avg_directional_return_1d_percent": 0.0957,
+          "hit_rate_3d_percent": 48.1,
+          "avg_directional_return_3d_percent": -0.174,
+          "hit_rate_7d_percent": 44.71,
+          "avg_directional_return_7d_percent": -0.4876
+        },
+        "v04_actionable_only": {
+          "observations": 9,
+          "coverage_percent_of_all": 0.78,
+          "retention_percent_of_v01_directional": 1.15,
+          "hit_rate_1d_percent": 44.44,
+          "avg_directional_return_1d_percent": -0.3937,
+          "hit_rate_3d_percent": 55.56,
+          "avg_directional_return_3d_percent": -0.4004,
+          "hit_rate_7d_percent": 33.33,
+          "avg_directional_return_7d_percent": -1.6933
+        }
+      }
+    }
+  },
+  "limiter_distribution": {
+    "regime_guardrail": 676,
+    "asset_mtf_readiness": 593
+  },
+  "actionability_state_distribution": {
+    "SELECTIVE": 791,
+    "ACTIONABLE": 120,
+    "FILTERED": 1225
+  },
+  "diagnostic_flags": [
+    {
+      "severity": "HIGH",
+      "code": "SELECTIVE_GATE_DEGRADES_7D",
+      "message": "SELECTIVE+ACTIONABLE market-only gate has lower 7D directional hit rate than raw v0.1 directional observations."
+    }
+  ],
   "guardrails": {
     "canonical_direction_is_exact_v01": true,
     "mtf_does_not_reverse_direction": true,
@@ -13,11 +613,8 @@
     "consumed_historical_window": true,
     "fresh_oos_remains_primary_validation": true,
     "no_buy_sell": true,
+    "no_profit_probability": true,
     "trade_execution": "OFF"
   },
-  "summary": null,
-  "per_asset": [],
-  "regimes": {},
-  "limiter_distribution": {},
-  "next_gate": "RUN_V04_DIAGNOSTIC_THEN_11C5_REVIEW"
+  "next_gate": "11C5_PRE_FREEZE_CROSS_CHECK_AFTER_V04_REVIEW"
 }
