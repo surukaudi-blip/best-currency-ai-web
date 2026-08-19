@@ -1,0 +1,62 @@
+{
+  "version": "1.0",
+  "updated_at": "2026-08-19",
+  "principles": [
+    "Do not fabricate unavailable market data.",
+    "Keep market data separate from news evidence.",
+    "Prefer primary and official sources.",
+    "Each asset vertical must earn production status independently.",
+    "Trade execution remains OFF.",
+    "Unified News Intelligence is the final shared layer after core asset adapters are established."
+  ],
+  "phases": [
+    {
+      "id": "10",
+      "name": "Stocks Intelligence",
+      "status": "IN_PROGRESS",
+      "scope": "U.S.-listed equities v1",
+      "steps": [
+        {"id": "10A", "name": "SEC Official Evidence Adapter", "status": "BUILDING", "output": "Filings, XBRL fundamentals, source freshness, company identity"},
+        {"id": "10B", "name": "Licensed Market Data Adapter", "status": "PLANNED", "output": "Daily OHLCV first; delayed/realtime only when entitlement permits"},
+        {"id": "10C", "name": "Stocks Decision Intelligence", "status": "PLANNED", "output": "Market View, Decision Readiness, Risk, Counter-Thesis, AI Reasoner"},
+        {"id": "10D", "name": "Stocks Watch, Timeline & Prospective Validation", "status": "PLANNED", "output": "Material-change alerts, decision history, immutable forward validation"}
+      ]
+    },
+    {
+      "id": "11",
+      "name": "Crypto Intelligence",
+      "status": "PLANNED",
+      "scope": "Market data + official protocol/regulatory evidence"
+    },
+    {
+      "id": "12",
+      "name": "Oil Intelligence",
+      "status": "PLANNED",
+      "scope": "EIA price/inventory/supply-demand + OPEC/IEA official evidence"
+    },
+    {
+      "id": "13",
+      "name": "Gold Intelligence",
+      "status": "PLANNED",
+      "scope": "Licence-aware price feed + rates/USD/macro evidence"
+    },
+    {
+      "id": "14",
+      "name": "Unified News Intelligence",
+      "status": "FINAL_SHARED_LAYER",
+      "scope": "Cross-asset source-normalized news and event intelligence",
+      "requirements": [
+        "Tiered source authority",
+        "Primary-source confirmation",
+        "Licensed Reuters/Bloomberg only when approved access exists",
+        "Deduplication and event clustering",
+        "Entity and asset mapping",
+        "Recency and materiality scoring",
+        "Contradiction detection",
+        "Independent-source counting",
+        "No single headline may confirm a material decision",
+        "Full provenance and audit trail"
+      ]
+    }
+  ]
+}

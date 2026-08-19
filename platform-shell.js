@@ -10,6 +10,7 @@
     ['Overview','index.html'],
     ['Markets','markets.html'],
     ['Forex','strength.html'],
+    ['Stocks','stocks.html'],
     ['Intelligence','intelligence.html'],
     ['Decision Watch','decision-watch.html'],
     ['Timeline','timeline.html'],
@@ -38,7 +39,12 @@
         const marketLink=document.createElement('a');marketLink.href='markets.html';marketLink.textContent='Markets';if(current==='markets.html')marketLink.classList.add('active');
         if(overview&&overview.nextSibling)desktopLinks.insertBefore(marketLink,overview.nextSibling);else if(overview)desktopLinks.appendChild(marketLink);
       }
-      const strength=desktopLinks.querySelector('a[href="strength.html"]');if(strength)strength.textContent='Forex';
+      const strength=desktopLinks.querySelector('a[href="strength.html"]');
+      if(strength)strength.textContent='Forex';
+      if(!desktopLinks.querySelector('a[href="stocks.html"]')){
+        const stocksLink=document.createElement('a');stocksLink.href='stocks.html';stocksLink.textContent='Stocks';if(current==='stocks.html')stocksLink.classList.add('active');
+        if(strength&&strength.nextSibling)desktopLinks.insertBefore(stocksLink,strength.nextSibling);else if(strength)desktopLinks.appendChild(stocksLink);
+      }
     }
     const nav=document.querySelector('header .nav');
     if(nav){
@@ -89,14 +95,14 @@
   if(current==='index.html'&&!embeddedDemo){
     const eyebrow=document.querySelector('.hero .eyebrow');if(eyebrow)eyebrow.textContent='Explainable AI Intelligence for Global Markets';
     const h1=document.querySelector('.hero h1');if(h1)h1.textContent='Know what is moving markets — and what could invalidate the view.';
-    const heroP=document.querySelector('.hero p');if(heroP)heroP.textContent='One explainable decision-intelligence platform expanding across Forex, Stocks, Crypto, Gold, and Oil. Forex is the first live vertical; every new market must pass source-integrity, risk, counter-thesis, auditability, and prospective-validation guardrails before being promoted.';
+    const heroP=document.querySelector('.hero p');if(heroP)heroP.textContent='One explainable decision-intelligence platform expanding across Forex, Stocks, Crypto, Gold, and Oil. Forex is the first live vertical; Stocks is now building its SEC-first official evidence layer, and every market must pass source-integrity, risk, counter-thesis, auditability, and prospective-validation guardrails before promotion.';
     const heroMeta=document.querySelector('.heroMeta');
-    if(heroMeta&&!document.querySelector('.platform-home-cta'))heroMeta.insertAdjacentHTML('afterend',`<div class="platform-home-cta"><a class="primary" href="markets.html">Explore Multi-Asset Markets</a><a class="secondary" href="demo.html">Launch FX Competition Demo</a><a class="secondary" href="intelligence.html">Open FX Intelligence</a></div><div class="platform-pitch-thesis"><b>The signal is not the product.</b> Across markets, the product is the decision discipline around the signal: source it, explain it, challenge it, constrain it, trace it, and validate it prospectively.</div>`);
+    if(heroMeta&&!document.querySelector('.platform-home-cta'))heroMeta.insertAdjacentHTML('afterend',`<div class="platform-home-cta"><a class="primary" href="markets.html">Explore Multi-Asset Markets</a><a class="secondary" href="stocks.html">Open Stocks Intelligence</a><a class="secondary" href="demo.html">Launch FX Competition Demo</a></div><div class="platform-pitch-thesis"><b>The signal is not the product.</b> Across markets, the product is the decision discipline around the signal: source it, explain it, challenge it, constrain it, trace it, and validate it prospectively.</div>`);
     const footer=document.querySelector('footer');
     if(footer&&!document.querySelector('.platform-flow')){
-      const flow=document.createElement('section');flow.className='platform-flow';flow.innerHTML=`<div class="platform-flow-wrap"><div class="platform-flow-head"><div><h2>One architecture. Multiple markets. Explainable decisions.</h2><p>Forex is live today; Stocks, Crypto, Gold and Oil inherit the same evidence and governance standards.</p></div><a class="platform-demo-link" href="markets.html">Explore market universe</a></div><div class="platform-flow-grid">
+      const flow=document.createElement('section');flow.className='platform-flow';flow.innerHTML=`<div class="platform-flow-wrap"><div class="platform-flow-head"><div><h2>One architecture. Multiple markets. Explainable decisions.</h2><p>Forex is live; Stocks is building official evidence; Crypto, Oil and Gold follow before Unified News Intelligence.</p></div><a class="platform-demo-link" href="markets.html">Explore market universe</a></div><div class="platform-flow-grid">
       <div class="platform-flow-card"><div class="n">01 · UNIVERSE</div><h3>Multi-Asset Markets</h3><p>Forex, Stocks, Crypto, Gold and Oil share one transparent source and evidence architecture.</p><a href="markets.html">Open Markets →</a></div>
-      <div class="platform-flow-card"><div class="n">02 · SIGNAL</div><h3>Canonical Market View</h3><p>Each asset starts from auditable market data; missing feeds fail closed instead of being replaced by headlines.</p><a href="strength.html">View live Forex →</a></div>
+      <div class="platform-flow-card"><div class="n">02 · STOCKS</div><h3>SEC-First Evidence</h3><p>Stocks begins with official filings and XBRL evidence before a licensed price layer is allowed to create a Market View.</p><a href="stocks.html">Open Stocks →</a></div>
       <div class="platform-flow-card"><div class="n">03 · EXPLAIN</div><h3>Evidence Intelligence</h3><p>Official data, licensed wires and reputable financial press are separated by trust tier and relevance.</p><a href="intelligence.html">Open Intelligence →</a></div>
       <div class="platform-flow-card"><div class="n">04 · CHALLENGE</div><h3>Risk + Counter-Thesis</h3><p>The AI must show why a market view could fail before it is promoted to higher decision priority.</p><a href="intelligence.html">Review reasoning →</a></div>
       <div class="platform-flow-card"><div class="n">05 · WATCH & TRACE</div><h3>Decision Watch + Timeline</h3><p>Escalate material change, preserve raw history, and explain how the decision evolved through time.</p><a href="decision-watch.html">Open Watch →</a></div>
