@@ -36,12 +36,13 @@ def load_json(path: Path) -> Dict[str, Any]:
 
 
 def get_json(url: str, user_agent: str) -> Dict[str, Any]:
+    # Do not request compressed transfer encoding here: urllib does not transparently
+    # decode gzip in all environments. Identity transfer keeps this build deterministic.
     req = urllib.request.Request(
         url,
         headers={
             "User-Agent": user_agent,
             "Accept": "application/json",
-            "Accept-Encoding": "gzip, deflate",
         },
     )
     try:
@@ -133,6 +134,16 @@ def fact_candidates(
     return None, None, []
 
 
+def form_family(form: Optional[str]) -> Optional[str]:
+    if not form:
+        return None
+    if form.startswith("10-Q"):
+        return "QUARTERLY"
+    if form.startswith("10-K"):
+        return "ANNUAL"
+    return form
+
+
 def summarize_fact(
     companyfacts: Dict[str, Any],
     tags: Iterable[str],
@@ -142,7 +153,7 @@ def summarize_fact(
     if not values or tag is None or unit is None:
         return None
 
-    # Keep one latest filed observation per reporting end date.
+    # Latest filed observation per reporting end date.
     unique: List[Dict[str, Any]] = []
     seen_ends = set()
     for item in values:
@@ -151,11 +162,20 @@ def summarize_fact(
             continue
         seen_ends.add(end)
         unique.append(item)
-        if len(unique) >= 2:
-            break
 
     latest = unique[0]
-    previous = unique[1] if len(unique) > 1 else None
+    latest_family = form_family(latest.get("form"))
+    # Compare only with the same reporting family (quarterly-to-quarterly or annual-to-annual)
+    # to avoid presenting a quarter-vs-year percentage as a meaningful trend.
+    previous = next(
+        (
+            item
+            for item in unique[1:]
+            if form_family(item.get("form")) == latest_family
+        ),
+        None,
+    )
+
     growth_percent = None
     if previous and previous.get("val") not in (None, 0):
         growth_percent = round((latest["val"] - previous["val"]) / abs(previous["val"]) * 100, 2)
@@ -171,7 +191,8 @@ def summarize_fact(
         "fiscal_period": latest.get("fp"),
         "previous_value": previous.get("val") if previous else None,
         "previous_period_end": previous.get("end") if previous else None,
-        "change_percent_vs_previous_reported_period": growth_percent,
+        "comparison_family": latest_family,
+        "change_percent_vs_comparable_reported_period": growth_percent,
     }
 
 
@@ -230,13 +251,13 @@ def build_company(entry: Dict[str, Any], user_agent: str) -> Dict[str, Any]:
         "evidence_completeness_percent": completeness,
         "market_data": {
             "status": "UNAVAILABLE",
-            "reason": "Licensed price/volume adapter not configured yet."
+            "reason": "Licensed price/volume adapter not configured yet.",
         },
         "decision_state": {
             "status": "OFFICIAL_EVIDENCE_READY",
             "market_view": "UNAVAILABLE",
             "decision_readiness": "NOT_ELIGIBLE_WITHOUT_MARKET_DATA",
-            "trade_execution": "OFF"
+            "trade_execution": "OFF",
         },
     }
 
