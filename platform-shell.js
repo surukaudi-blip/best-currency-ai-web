@@ -35,6 +35,11 @@
 
   const status=document.createElement('div');status.className='platform-statusbar';status.innerHTML=`<div class="platform-status-inner"><div class="platform-status-items"><span><i class="platform-dot"></i><b id="platform-session">ECB session —</b></span><span id="platform-gate">Decision gate —</span><span id="platform-oos">Fresh OOS —</span><span>Trade Execution <b>OFF</b></span></div><a class="platform-demo-link" href="demo.html">Launch Demo Mode</a></div>`;
   const header=document.querySelector('header');if(header)header.insertAdjacentElement('afterend',status);
+  if(current==='strength.html'){
+    const workspace=document.querySelector('.workspace');
+    const fitWorkspace=()=>{if(workspace)workspace.style.height=Math.max(320,window.innerHeight-(header?header.offsetHeight:66)-status.offsetHeight)+'px'};
+    fitWorkspace();window.addEventListener('resize',fitWorkspace);
+  }
 
   Promise.allSettled([
     fetch('./data/currency-strength.json',{cache:'no-store'}).then(r=>r.ok?r.json():null),
