@@ -2,9 +2,9 @@
   "version": "0.4.1",
   "status": "CRYPTO_DECISION_INTELLIGENCE_READY",
   "scope": "MAJOR_LIQUID_CRYPTO_ASSETS_V1",
-  "generated_at": "2026-08-19T15:53:05.038767Z",
-  "model_status": "EXPERIMENTAL_V01_CORE_MTF_ACTIONABILITY_V041_PREVALIDATION",
-  "frozen": false,
+  "generated_at": "2026-08-19T16:16:15.071085Z",
+  "model_status": "FROZEN_PROSPECTIVE",
+  "frozen": true,
   "market_session": "2026-08-18",
   "global_context": {
     "state": "NEUTRAL_SNAPSHOT",
@@ -1869,7 +1869,7 @@
   ],
   "errors": [],
   "guardrails": {
-    "model_is_unfrozen": true,
+    "model_is_unfrozen": false,
     "v01_canonical_direction_preserved": true,
     "mtf_confirmation_only": true,
     "actionability_does_not_reverse_direction": true,
@@ -1877,7 +1877,11 @@
     "no_asset_specific_rules": true,
     "no_buy_sell": true,
     "trade_execution": "OFF",
-    "v041_diagnostic_required_before_11c5": true
+    "v041_diagnostic_required_before_11c5": true,
+    "model_frozen": true,
+    "fresh_oos_prospective_only": true,
+    "historical_backfill": "PROHIBITED",
+    "threshold_tuning_after_freeze": "PROHIBITED"
   },
   "canonical_direction_model": {
     "version": "0.1",
@@ -1966,5 +1970,14 @@
     "actionability_primary_gate_changed": false,
     "direction_mtf_regime_risk_changed": false,
     "trade_execution": "OFF"
+  },
+  "model_id": "CRYPTO_DECISION_0.4.1_FROZEN_20260819",
+  "freeze": {
+    "model_id": "CRYPTO_DECISION_0.4.1_FROZEN_20260819",
+    "freeze_declared_at": "2026-08-19T15:58:29Z",
+    "baseline_market_session": "2026-08-18",
+    "frozen_methodology_sha256": "df53ab8895519a4b43520b22561015687d75b5b402be3a12c29cd8fa1dcca5a6",
+    "fresh_oos_status": "ACTIVE_PROSPECTIVE_ONLY",
+    "historical_backfill": "PROHIBITED"
   }
 }
