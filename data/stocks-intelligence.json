@@ -1,0 +1,20 @@
+{
+  "version": "1.0",
+  "status": "SEC_ADAPTER_NOT_RUN",
+  "scope": "US_LISTED_EQUITIES_V1",
+  "generated_at": null,
+  "source_readiness": {
+    "sec_official_evidence": "READY_TO_RUN_AFTER_USER_AGENT_CONFIG",
+    "market_price": "UNAVAILABLE",
+    "news": "DEFERRED_TO_UNIFIED_NEWS_INTELLIGENCE",
+    "decision_intelligence": "NOT_ELIGIBLE"
+  },
+  "guardrails": {
+    "market_view_requires_price_data": true,
+    "no_buy_sell_without_market_layer": true,
+    "no_single_filing_is_trade_instruction": true,
+    "missing_data_fail_closed": true,
+    "trade_execution": "OFF"
+  },
+  "companies": []
+}
