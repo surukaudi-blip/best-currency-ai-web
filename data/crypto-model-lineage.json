@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "status": "ACTIVE_COMPACT_LINEAGE",
   "updated_at": "2026-08-19",
   "scope": "CRYPTO_STAGE_11C",
@@ -66,17 +66,69 @@
         "hit_rate_7d_percent": 50.0
       },
       "finding": "Canonical v0.1 and D/W/M architecture are retained. Actionability requires regime-aware refinement before 11C.5."
+    },
+    "v0.4.1": {
+      "role": "v0.1_core_plus_dwm_mtf_plus_regime_aware_actionability",
+      "actionable_only": {
+        "observations": 83,
+        "retention_percent": 6.54,
+        "hit_rate_1d_percent": 54.22,
+        "hit_rate_3d_percent": 48.19,
+        "hit_rate_7d_percent": 60.24,
+        "avg_directional_return_7d_percent": 1.4144
+      },
+      "finding": "Regime-aware Actionability retained as Primary Gate candidate. Consumed diagnostic only; Fresh OOS remains required."
+    },
+    "counter_thesis_v0.2": {
+      "role": "11C5_semantic_qa_correction",
+      "change_type": "SEMANTIC_CORRECTION_NOT_THRESHOLD_TUNING",
+      "semantics": {
+        "LOW": "No material active counter-thesis factor; PASS.",
+        "MODERATE": "One or more moderate challenge factors and no high factor; CAUTION.",
+        "HIGH": "At least one high-severity challenge factor; FAIL."
+      },
+      "counter_thesis_pass": {
+        "observations": 258,
+        "hit_rate_7d_percent": 55.04,
+        "avg_directional_return_7d_percent": 1.6595
+      },
+      "counter_thesis_not_pass": {
+        "observations": 1011,
+        "hit_rate_7d_percent": 46.09,
+        "avg_directional_return_7d_percent": -0.3418
+      },
+      "strict_6_of_6_before_semantic_correction": {
+        "observations": 16,
+        "hit_rate_7d_percent": 43.75,
+        "avg_directional_return_7d_percent": -0.6386
+      },
+      "strict_6_of_6_after_semantic_correction": {
+        "observations": 60,
+        "hit_rate_7d_percent": 65.0,
+        "avg_directional_return_7d_percent": 2.1751
+      },
+      "readiness_5plus_primary_gate_pass": {
+        "observations": 81,
+        "hit_rate_7d_percent": 61.73,
+        "avg_directional_return_7d_percent": 1.5861
+      },
+      "decision": "KEEP_SEMANTIC_CORRECTION_PENDING_11C5_FINAL_QA",
+      "evidence_status": "CONSUMED_DIAGNOSTIC_NOT_FRESH_OOS"
     }
   },
   "source_commits": {
     "v0.4_model_merge": "f56f725e6b77753f1fae07b1ae1acd6ef81f2d3f",
     "v0.4_production_refresh": "6d8737a32e147e5141bd4c3d67342bbcbd1e42a3",
     "v0.4_diagnostic": "1e4617d6e025928ee55468d3f554db03d74c2579",
-    "workspace_cleanup": "c8d9a959e39f5e23eee43a108814c483e9d636ac"
+    "workspace_cleanup": "c8d9a959e39f5e23eee43a108814c483e9d636ac",
+    "counter_thesis_v0.2_merge": "644ff55d664d72625ab864e1dbf8b65b0599c508",
+    "counter_thesis_v0.2_qa_artifacts": "c1b1cfc42fe3afce3cf1b42637f719950c1f2e6c"
   },
   "guardrails": {
     "no_asset_specific_rules_from_consumed_backtest": true,
     "no_directional_threshold_search": true,
+    "counter_thesis_revision_is_semantic_not_optimized": true,
+    "actionability_remains_primary_gate": true,
     "no_buy_sell": true,
     "no_profit_probability": true,
     "trade_execution": "OFF"
