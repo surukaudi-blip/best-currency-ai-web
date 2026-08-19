@@ -1,12 +1,20 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "scope": "US_LISTED_EQUITIES_V1",
   "market_data_policy": {
     "price_layer_required_for_market_view": true,
-    "current_price_provider": null,
-    "current_status": "AWAITING_LICENSED_PRICE_ADAPTER",
-    "preferred_initial_adapter": "Alpha Vantage daily OHLCV with server-side API key",
-    "realtime_policy": "Do not display realtime or delayed US exchange data unless provider entitlement and redistribution terms permit it."
+    "current_price_provider": "Alpha Vantage",
+    "current_function": "TIME_SERIES_DAILY",
+    "current_status": "ADAPTER_READY_AWAITING_API_KEY",
+    "transport": "BUILD_TIME_SERVER_SIDE",
+    "api_key_secret": "ALPHA_VANTAGE_API_KEY",
+    "data_mode": "HISTORICAL_DAILY_RAW_OHLCV",
+    "outputsize": "compact",
+    "expected_requests_per_run": 8,
+    "free_tier_reference_limit_per_day": 25,
+    "publication_policy": "Publish latest OHLCV plus derived short-horizon metrics only; do not republish the full raw provider series.",
+    "adjustment_policy": "10B v1 uses raw as-traded daily prices. Split/dividend-adjusted inference remains constrained until an approved adjusted-data layer is available.",
+    "realtime_policy": "Do not display realtime or 15-minute delayed US exchange data unless provider entitlement and redistribution terms permit it."
   },
   "sec_policy": {
     "provider": "U.S. Securities and Exchange Commission EDGAR",

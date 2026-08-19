@@ -1,0 +1,33 @@
+{
+  "version": "1.0",
+  "status": "MARKET_ADAPTER_NOT_RUN",
+  "scope": "US_LISTED_EQUITIES_V1",
+  "generated_at": null,
+  "provider": {
+    "name": "Alpha Vantage",
+    "function": "TIME_SERIES_DAILY",
+    "mode": "HISTORICAL_DAILY_RAW_OHLCV",
+    "outputsize": "compact",
+    "entitlement": "historical_default",
+    "api_key_env": "ALPHA_VANTAGE_API_KEY"
+  },
+  "source_readiness": {
+    "daily_ohlcv": "READY_TO_RUN_AFTER_API_KEY_CONFIG",
+    "realtime": "DISABLED",
+    "delayed_15m": "DISABLED",
+    "adjusted_prices": "NOT_INCLUDED_IN_10B_V1",
+    "decision_intelligence": "DEFERRED_TO_STAGE_10C"
+  },
+  "guardrails": {
+    "raw_series_not_published": true,
+    "derived_metrics_only_plus_latest_bar": true,
+    "as_traded_unadjusted_prices": true,
+    "corporate_action_adjustment_required_before_long_horizon_inference": true,
+    "realtime_claims_prohibited": true,
+    "no_buy_sell_from_market_data_alone": true,
+    "provider_terms_apply": true,
+    "trade_execution": "OFF"
+  },
+  "symbols": [],
+  "errors": []
+}

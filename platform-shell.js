@@ -92,6 +92,12 @@
     }
   });
 
+  if(current==='stocks.html'){
+    const plugin=document.createElement('script');
+    plugin.src='stocks-market-layer.js?v=20260819-stage10b';
+    document.body.appendChild(plugin);
+  }
+
   if(current==='index.html'&&!embeddedDemo){
     const eyebrow=document.querySelector('.hero .eyebrow');if(eyebrow)eyebrow.textContent='Explainable AI Intelligence for Global Markets';
     const h1=document.querySelector('.hero h1');if(h1)h1.textContent='Know what is moving markets — and what could invalidate the view.';
