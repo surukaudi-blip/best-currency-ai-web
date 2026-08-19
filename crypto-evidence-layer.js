@@ -41,4 +41,11 @@
     const events=d.regulatory_evidence||[];document.getElementById('ceEventList').innerHTML=events.length?events.slice(0,15).map(e=>`<div class="ce-event"><div class="meta">${esc(e.source)} · ${esc(e.published_at||'—')} · Tier ${esc(e.tier)}</div><a href="${esc(e.url||'#')}" target="_blank" rel="noopener">${esc(e.title)}</a><div class="scope">${esc(e.scope)}${Array.isArray(e.asset_scope)&&e.asset_scope.length?' · '+esc(e.asset_scope.join(', ')):''} · direction UNSCORED</div></div>`).join(''):'<div class="empty">No crypto-specific regulatory headlines matched in the currently scanned official feeds.</div>';
     const net=d.network_evidence||[];document.getElementById('ceNetworkBody').innerHTML=net.length?net.map(x=>`<tr><td><b>${esc(x.symbol)}</b></td><td>${esc(x.name)}</td><td>${esc(x.tier)}</td><td class="${x.status==='READY'?'ce-ready':x.status==='ERROR'?'ce-bad':'ce-warn'}">${esc(clean(x.status))}</td><td>${esc(telemetry(x.metrics))}</td></tr>`).join(''):'<tr><td colspan="5">No network evidence.</td></tr>';
   }).catch(err=>{document.getElementById('ceBadge').textContent='EVIDENCE DATA UNAVAILABLE';console.error(err)});
+
+  if(!document.querySelector('script[data-crypto-decision-layer]')){
+    const decisionScript=document.createElement('script');
+    decisionScript.src='crypto-decision-layer.js?v=20260819-stage11c';
+    decisionScript.dataset.cryptoDecisionLayer='true';
+    document.body.appendChild(decisionScript);
+  }
 })();
