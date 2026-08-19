@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "DECISION_HISTORY_COLLECTION_ACTIVE",
   "started_at": "2026-08-17T02:50:18.076Z",
-  "updated_at": "2026-08-18T17:03:17.036Z",
+  "updated_at": "2026-08-19T17:01:29.532Z",
   "policy": {
     "start_policy": "prospective_only_no_historical_backfill",
     "capture_policy": "one_immutable_snapshot_per_complete_ecb_session",
@@ -11,22 +11,22 @@
     "frozen_model_policy": "timeline_does_not_modify_currency_strength_actionability_risk_counter_thesis_or_final_reasoner"
   },
   "summary": {
-    "captured": 3,
+    "captured": 4,
     "first_session": "2026-08-14",
-    "last_session": "2026-08-18",
+    "last_session": "2026-08-19",
     "buy_count": 2,
-    "sell_count": 1,
+    "sell_count": 2,
     "risk_states": {
       "MODERATE": 2,
-      "HIGH": 1
+      "HIGH": 2
     },
     "final_statuses": {
       "MIXED_CONTEXT": 2,
-      "RISK_CONSTRAINED": 1
+      "RISK_CONSTRAINED": 2
     },
     "decisions": {
       "REVIEW_SELECTIVELY": 1,
-      "DEPRIORITIZE": 2
+      "DEPRIORITIZE": 3
     }
   },
   "entries": [
@@ -400,6 +400,132 @@
           "key": "final_reasoner",
           "label": "Final Reasoner berubah",
           "detail": "MIXED_CONTEXT/DEPRIORITIZE → RISK_CONSTRAINED/DEPRIORITIZE"
+        }
+      ]
+    },
+    {
+      "id": "DECISION-0004-2026-08-19",
+      "captured_at": "2026-08-19T17:01:29.532Z",
+      "snapshot": {
+        "session_date": "2026-08-19",
+        "pair": "USDJPY",
+        "canonical_bias": "SELL",
+        "currency_strength": {
+          "strongest_currency": "JPY",
+          "weakest_currency": "USD",
+          "strength_difference": -0.96,
+          "provider_agreement": 44.3,
+          "multi_timeframe_alignment": 50.2
+        },
+        "actionability": {
+          "version": "1.1",
+          "score": 40.7,
+          "state": "FILTERED",
+          "decision": "DEPRIORITIZE",
+          "primary_limiter": "EVIDENCE_QUALITY",
+          "regime": "PROVIDER_DIVERGENCE"
+        },
+        "context": {
+          "macro_yield": {
+            "available": true,
+            "state": "OPPOSES",
+            "score": 33.3,
+            "provider": "FRED (OECD / Federal Reserve source series)"
+          },
+          "cross_market": {
+            "available": false,
+            "state": "UNAVAILABLE",
+            "score": 0,
+            "provider": null
+          },
+          "news": {
+            "available": true,
+            "state": "NEUTRAL",
+            "score": 52.8,
+            "provider": "Google News RSS fallback",
+            "event_risk": "HIGH"
+          },
+          "coverage_percent": 67,
+          "counts": {
+            "supports": 0,
+            "opposes": 1,
+            "mixed_or_neutral": 1,
+            "available": 2,
+            "expected": 3
+          }
+        },
+        "risk": {
+          "version": "0.2",
+          "score": 77.2,
+          "state": "HIGH",
+          "primary_driver": {
+            "key": "actionability",
+            "label": "Actionability",
+            "contribution": 22
+          }
+        },
+        "counter_thesis": {
+          "version": "0.2",
+          "state": "ACTIVE",
+          "challenge_level": "HIGH",
+          "primary_objection_source": "risk",
+          "primary_objection_severity": "HIGH",
+          "triggered_conditions": [
+            "provider_agreement_below_60",
+            "mtf_alignment_below_60",
+            "actionability_below_60",
+            "high_event_risk",
+            "risk_high_70"
+          ]
+        },
+        "final_reasoner": {
+          "version": "0.2",
+          "explainability_version": "0.2",
+          "decision_logic_version": "0.1_frozen",
+          "status": "RISK_CONSTRAINED",
+          "outlook": "CAUTION",
+          "decision": "DEPRIORITIZE",
+          "key_risk": {
+            "key": "actionability",
+            "label": "Actionability",
+            "contribution": 22
+          },
+          "active_invalidation_triggers": [
+            "provider_agreement_below_60",
+            "mtf_alignment_below_60",
+            "actionability_below_60",
+            "high_event_risk",
+            "risk_high_70"
+          ],
+          "final_assessment": "USDJPY SELL retains its canonical Currency Strength bias, but Risk v0.2 HIGH at 77.2/100 constrains promotion of the setup. Supporting context: none. Opposing context: Macro & Yield. Primary challenge: Risk v0.2 is HIGH at 77.2/100."
+        }
+      },
+      "snapshot_hash": "25e6f44e8fa882bb0966f2f094a93a15c3274c7a0962990b67435b4f04584ed3",
+      "changes_vs_previous": [
+        {
+          "key": "canonical_signal",
+          "label": "Sinyal ECB berubah",
+          "detail": "NZDUSD SELL → USDJPY SELL"
+        },
+        {
+          "key": "strength_leadership",
+          "label": "Leadership berubah",
+          "detail": "USD/NZD → JPY/USD"
+        },
+        {
+          "key": "actionability",
+          "label": "Actionability berubah",
+          "detail": "50 FILTERED → 40.7 FILTERED"
+        },
+        {
+          "key": "macro_yield",
+          "label": "macro yield berubah",
+          "detail": "83.3 SUPPORTS → 33.3 OPPOSES"
+        },
+        {
+          "key": "cross_market",
+          "label": "cross market berubah",
+          "detail": "12.5 OPPOSES → 0 UNAVAILABLE"
         }
       ]
     }

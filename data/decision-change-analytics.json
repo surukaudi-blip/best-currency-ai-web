@@ -1,12 +1,12 @@
 {
   "schema_version": "1.0",
   "status": "DECISION_CHANGE_ANALYTICS_ACTIVE",
-  "generated_at": "2026-08-19T15:55:46.790Z",
+  "generated_at": "2026-08-19T17:01:29.718Z",
   "source": {
     "decision_history_status": "DECISION_HISTORY_COLLECTION_ACTIVE",
-    "decision_history_sessions": 3,
+    "decision_history_sessions": 4,
     "first_session": "2026-08-14",
-    "last_session": "2026-08-18",
+    "last_session": "2026-08-19",
     "fresh_oos_status": "FRESH_OOS_COLLECTION_ACTIVE"
   },
   "policy": {
@@ -18,21 +18,21 @@
     "interpretation": "Descriptive transition analytics only. Counts, streaks and lead/lag observations are not probabilities of profit or causal evidence."
   },
   "sample": {
-    "captured_sessions": 3,
-    "transitions": 2,
+    "captured_sessions": 4,
+    "transitions": 3,
     "analytics_gate": "COLLECTING_TRANSITIONS",
     "settled_oos_links": 0
   },
   "current_state": {
-    "session_date": "2026-08-18",
-    "pair": "NZDUSD",
+    "session_date": "2026-08-19",
+    "pair": "USDJPY",
     "canonical_bias": "SELL",
     "actionability": {
-      "score": 50,
+      "score": 40.7,
       "state": "FILTERED"
     },
     "risk": {
-      "score": 81,
+      "score": 77.2,
       "state": "HIGH"
     },
     "final_reasoner": {
@@ -42,39 +42,39 @@
   },
   "current_streaks": {
     "canonical_signal": {
-      "value": "NZDUSD SELL",
+      "value": "USDJPY SELL",
       "sessions": 1,
-      "start_session": "2026-08-18",
-      "end_session": "2026-08-18"
+      "start_session": "2026-08-19",
+      "end_session": "2026-08-19"
     },
     "bias": {
       "value": "SELL",
-      "sessions": 1,
+      "sessions": 2,
       "start_session": "2026-08-18",
-      "end_session": "2026-08-18"
+      "end_session": "2026-08-19"
     },
     "risk_state": {
       "value": "HIGH",
-      "sessions": 1,
+      "sessions": 2,
       "start_session": "2026-08-18",
-      "end_session": "2026-08-18"
+      "end_session": "2026-08-19"
     },
     "final_decision": {
       "value": "DEPRIORITIZE",
-      "sessions": 2,
+      "sessions": 3,
       "start_session": "2026-08-17",
-      "end_session": "2026-08-18"
+      "end_session": "2026-08-19"
     }
   },
   "transition_counts": {
-    "transitions": 2,
-    "canonical_signal_changes": 2,
-    "pair_changes": 2,
+    "transitions": 3,
+    "canonical_signal_changes": 3,
+    "pair_changes": 3,
     "bias_changes": 1,
-    "leadership_changes": 2,
+    "leadership_changes": 3,
     "actionability_state_changes": 1,
-    "macro_state_changes": 1,
-    "cross_market_state_changes": 1,
+    "macro_state_changes": 2,
+    "cross_market_state_changes": 2,
     "news_state_changes": 2,
     "news_event_risk_changes": 0,
     "risk_state_changes": 1,
@@ -85,24 +85,24 @@
   "transition_rates_percent": {
     "canonical_signal_changes": 100,
     "pair_changes": 100,
-    "bias_changes": 50,
+    "bias_changes": 33.3,
     "leadership_changes": 100,
-    "actionability_state_changes": 50,
-    "macro_state_changes": 50,
-    "cross_market_state_changes": 50,
-    "news_state_changes": 100,
+    "actionability_state_changes": 33.3,
+    "macro_state_changes": 66.7,
+    "cross_market_state_changes": 66.7,
+    "news_state_changes": 66.7,
     "news_event_risk_changes": 0,
-    "risk_state_changes": 50,
+    "risk_state_changes": 33.3,
     "counter_thesis_changes": 0,
-    "final_status_changes": 50,
-    "final_decision_changes": 50
+    "final_status_changes": 33.3,
+    "final_decision_changes": 33.3
   },
   "score_movement": {
-    "avg_abs_actionability_change": 18.8,
-    "avg_abs_macro_change": 33.3,
-    "avg_abs_cross_market_change": 37.5,
-    "avg_abs_news_change": 12.6,
-    "avg_abs_risk_change": 16.3
+    "avg_abs_actionability_change": 15.6,
+    "avg_abs_macro_change": 38.9,
+    "avg_abs_cross_market_change": 29.2,
+    "avg_abs_news_change": 10,
+    "avg_abs_risk_change": 12.1
   },
   "runs": {
     "canonical_signal": [
@@ -126,6 +126,13 @@
         "start_session": "2026-08-18",
         "end_session": "2026-08-18",
         "sessions": 1
+      },
+      {
+        "type": "canonical_signal",
+        "value": "USDJPY SELL",
+        "start_session": "2026-08-19",
+        "end_session": "2026-08-19",
+        "sessions": 1
       }
     ],
     "bias": [
@@ -140,8 +147,8 @@
         "type": "bias",
         "value": "SELL",
         "start_session": "2026-08-18",
-        "end_session": "2026-08-18",
-        "sessions": 1
+        "end_session": "2026-08-19",
+        "sessions": 2
       }
     ],
     "risk_state": [
@@ -156,8 +163,8 @@
         "type": "risk_state",
         "value": "HIGH",
         "start_session": "2026-08-18",
-        "end_session": "2026-08-18",
-        "sessions": 1
+        "end_session": "2026-08-19",
+        "sessions": 2
       }
     ],
     "final_decision": [
@@ -172,8 +179,8 @@
         "type": "final_decision",
         "value": "DEPRIORITIZE",
         "start_session": "2026-08-17",
-        "end_session": "2026-08-18",
-        "sessions": 2
+        "end_session": "2026-08-19",
+        "sessions": 3
       }
     ]
   },
@@ -217,6 +224,27 @@
         "macro_yield": "SUPPORTS",
         "cross_market": "SUPPORTS",
         "news": "SUPPORTS",
+        "news_event_risk": "HIGH"
+      }
+    },
+    {
+      "from_session": "2026-08-18",
+      "to_session": "2026-08-19",
+      "from_signal": "NZDUSD SELL",
+      "to_signal": "USDJPY SELL",
+      "risk_before_flip": {
+        "score": 81,
+        "state": "HIGH"
+      },
+      "risk_at_flip": {
+        "score": 77.2,
+        "state": "HIGH"
+      },
+      "risk_delta": -3.8,
+      "context_before_flip": {
+        "macro_yield": "SUPPORTS",
+        "cross_market": "OPPOSES",
+        "news": "NEUTRAL",
         "news_event_risk": "HIGH"
       }
     }

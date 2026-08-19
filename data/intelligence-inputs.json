@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-19T15:55:46.671Z",
+  "generated_at": "2026-08-19T17:01:29.191Z",
   "pair": "USDJPY",
   "canonical_bias": "SELL",
   "macro_yield": {
@@ -7,7 +7,7 @@
     "direction": "OPPOSES",
     "score": 33.3,
     "provider": "FRED (OECD / Federal Reserve source series)",
-    "updated_at": "2026-08-19T15:55:22.833Z",
+    "updated_at": "2026-08-19T17:00:41.425Z",
     "evidence": [
       "10Y yield spread: USD 4.470% (2026-06-01) vs JPY 2.670% (2026-06-01); spread +1.800 pp => OPPOSES canonical SELL.",
       "10Y spread momentum: -0.030 pp versus prior observations (2026-05-01/2026-05-01) => SUPPORTS canonical SELL.",
@@ -53,7 +53,7 @@
     "direction": "UNAVAILABLE",
     "score": null,
     "provider": "FRED (Federal Reserve / EIA source series)",
-    "updated_at": "2026-08-19T15:55:23.929Z",
+    "updated_at": "2026-08-19T17:00:41.736Z",
     "evidence": [],
     "missing_evidence": [
       "Broad financial-conditions proxy is non-directional for this pair because both currencies share the same cyclical/defensive tier."
@@ -106,107 +106,107 @@
   "news": {
     "available": true,
     "direction": "NEUTRAL",
-    "score": 50,
-    "provider": "GDELT DOC 2.0",
-    "updated_at": "2026-08-19T15:55:46.671Z",
+    "score": 52.8,
+    "provider": "Google News RSS fallback",
+    "updated_at": "2026-08-19T17:01:29.191Z",
     "evidence": [
-      "Headline-stance differential USDJPY SELL: 0 after directional-headline reliability 0% => NEUTRAL.",
-      "USD: 0 supportive vs 0 opposing directional headline(s); balance 0 from 40 recent articles via GDELT DOC 2.0.",
-      "JPY: 3 supportive vs 0 opposing directional headline(s); balance 1 from 40 recent articles via GDELT DOC 2.0.",
-      "High-impact headline risk: HIGH; 8 relevant headline(s) detected within 24h."
+      "Headline-stance differential USDJPY SELL: 0.056 after directional-headline reliability 100% => NEUTRAL.",
+      "USD: 9 supportive vs 2 opposing directional headline(s); balance 0.636 from 40 recent articles via Google News RSS fallback.",
+      "JPY: 11 supportive vs 2 opposing directional headline(s); balance 0.692 from 40 recent articles via Google News RSS fallback.",
+      "High-impact headline risk: HIGH; 6 relevant headline(s) detected within 24h."
     ],
     "missing_evidence": [],
     "headlines": [
       {
-        "title": "US treasury doubles debt buyback to steady bond market amid inflation fears",
-        "url": "https://www.theguardian.com/business/2026/aug/19/us-treasury-doubles-debt-buyback-bond-market",
-        "domain": "theguardian.com",
-        "sourcecountry": "United Kingdom",
-        "language": "English",
-        "seen_at": "2026-08-19T15:30:00.000Z"
-      },
-      {
-        "title": "US treasury doubles debt buyback to steady bond market amid inflation fears",
-        "url": "https://finance.yahoo.com/economy/policy/articles/us-treasury-doubles-debt-buyback-145721001.html",
-        "domain": "finance.yahoo.com",
-        "sourcecountry": "United States",
-        "language": "English",
-        "seen_at": "2026-08-19T15:30:00.000Z"
-      },
-      {
-        "title": "US treasury doubles debt buyback to steady bond market amid inflation fears",
-        "url": "https://www.theguardian.com/business/2026/aug/19/us-treasury-doubles-debt-buyback-bond-market",
-        "domain": "theguardian.com",
-        "sourcecountry": "United Kingdom",
-        "language": "English",
-        "seen_at": "2026-08-19T15:30:00.000Z"
-      },
-      {
-        "title": "US treasury doubles debt buyback to steady bond market amid inflation fears",
-        "url": "https://finance.yahoo.com/economy/policy/articles/us-treasury-doubles-debt-buyback-145721001.html",
-        "domain": "finance.yahoo.com",
-        "sourcecountry": "United States",
-        "language": "English",
-        "seen_at": "2026-08-19T15:30:00.000Z"
-      },
-      {
-        "title": "Ethiopia Nominal GDP Dropped By USD 50bln After Floating - EU Chamber Report",
-        "url": "https://allafrica.com/stories/202608190451.html",
-        "domain": "allafrica.com",
-        "sourcecountry": "Nigeria",
-        "language": "English",
-        "seen_at": "2026-08-19T14:45:00.000Z"
-      },
-      {
-        "title": "Ringgit firms against greenback at close on late buying ahead of FOMC minutes",
-        "url": "https://www.thestar.com.my/business/business-news/2026/08/19/ringgit-firms-against-greenback-at-close-on-late-buying-ahead-of-fomc-minutes",
-        "domain": "thestar.com.my",
-        "sourcecountry": "Malaysia",
+        "title": "Fed Minutes set to provide clues over last FOMC divisive meeting - FXStreet",
+        "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQaEp0VHAxS2ladUF3ODhub3dMZDJ4bDhxOW1lWHlibklmbFBvT0VmS1d0V09qakEwSlR2cU10TWcwMWFxYUVzWmxxUFFLMDdpdk16bDBkaXJqN2FHa1ZHV1dwR1U3aWQtVDBYQVNaZ0FKLURDZFJ5aDBhRVVmQkRyRWoyWlozckxRSEZ6SmUzSDBRVndZMFBmZkZnS3pWdk5zTmtNcHh6aUxsQkI2ZVJTZF93?oc=5",
+        "domain": "FXStreet",
+        "sourcecountry": null,
         "language": "English",
         "seen_at": "2026-08-19T14:00:00.000Z"
       },
       {
-        "title": "Leading first BI meeting , Destry stresses growth , vigilance - Regulations",
-        "url": "http://www.thejakartapost.com/business/2026/08/19/leading-first-bi-meeting-destry-stresses-growth-vigilance",
-        "domain": "thejakartapost.com",
-        "sourcecountry": "Indonesia",
+        "title": "FOMC interest-rate minutes come into focus as BTC price holds steady, bond yields surge: Crypto Daily - CoinDesk",
+        "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPMEstMHl5U0twNG5RNGpTa0lNQXVTU3ktQWdaVk40QTJpZHoyaTRjN1drOFRtWm1HclY2RjFrNnlXQ0Q5bnA0T2hoaHF2OWVnYkZaV2IxR2hobXYyNXNZcTdaOVA4c3o0M0FyM1JjbVphRWNuVlZtczZyNm1EbzZIa0VlRU9SYUV0SDJxTlREMDExWmFHeDhXamxZZ2pHYXpyYVlIWVRMaXVsV3BFRDd4c2hic2UwUXNrejdUanBBNnN0ZmM?oc=5",
+        "domain": "CoinDesk",
+        "sourcecountry": null,
         "language": "English",
-        "seen_at": "2026-08-19T14:00:00.000Z"
+        "seen_at": "2026-08-19T11:14:50.000Z"
       },
       {
-        "title": "Ringgit firms against greenback at close on late buying ahead of FOMC minutes",
-        "url": "https://www.thestar.com.my/business/business-news/2026/08/19/ringgit-firms-against-greenback-at-close-on-late-buying-ahead-of-fomc-minutes",
-        "domain": "thestar.com.my",
-        "sourcecountry": "Malaysia",
+        "title": "Inflation prints and FOMC Minutes take centre stage - FXStreet",
+        "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxQZU5CWDhSczBRcDJGSDY3VUs3VFJzTnp5ZEhhR2JUWGlmbExQVXpwRHVqRXRXMEtXX2VUanRGSlR1MThpeXZTUkQ4Qkc3dDVxYU5PVFlKQUFuUTQwVDBkM1FQQTJ4ZnNjcG53bzBSczU3QUFJaGxtVUtraXNqYlMxRGc1MnBoNTh4RHZXRWpyTlpfVURsOVFCaEZ6UTlsTWs?oc=5",
+        "domain": "FXStreet",
+        "sourcecountry": null,
         "language": "English",
-        "seen_at": "2026-08-19T14:00:00.000Z"
+        "seen_at": "2026-08-19T06:05:33.000Z"
+      },
+      {
+        "title": "US Dollar Price Forecast: DXY Near 99.38 as Fed Minutes and UK Inflation Loom; EUR/USD and GBP/USD Hold Firm - FXEmpire",
+        "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxQQ0JGUnBwVUFqZl9XOW04Zi1zeEdhS2hZU19Fam9uU0tTNnh6TWlfV2hLbmtfRV9TX243d0Jma0Nyano3UGJiMGI2UHZCVWo4b0lCLVV2YUVfaFNvbXB3cVE3NlotLWUwOGwtYTIyaHFsSUtXdjVIMEZzeVZRbzFqZEdCNk5mWGVzcTZSaDRsTGVaeXBGWHM5X2VDVnBLT1JnRXBrN0gtMzk3TndUVkVnXzlNUmEzZlFHWndXdTVNM2lVWmNmRDN1TGZPV25LOVJCa0E0aS0zaEZQSmRtSG1PZmRVWFo1Rm96S05GN2ln?oc=5",
+        "domain": "FXEmpire",
+        "sourcecountry": null,
+        "language": "English",
+        "seen_at": "2026-08-19T06:00:00.000Z"
+      },
+      {
+        "title": "Japan bond yields near 3% as inflation, fiscal worries mount - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxNUVliSFc4NzVQTGlyM0ZZbzR6dWQyUWV2RWpfR3JCYmxzZDlnRW1zM2czNnZhd3RHVC1TdW9FQ25WZko0MlFpeExLMWZHYTdwcl96ZzFydlY3T3duWDNGZDhiR1VhRHExTndrYWlSNUVSX0xodjluUk1aOThRYmlBTkg5X0ZBcE13ckpxMWVDSkFsdWVvdEFiM3ZSSHpkbFduaXBheUx4SEtaNWl1Ujc4?oc=5",
+        "domain": "Reuters",
+        "sourcecountry": null,
+        "language": "English",
+        "seen_at": "2026-08-19T02:35:00.000Z"
+      },
+      {
+        "title": "Mizuho forecasts that the Bank of Japan may accelerate interest rate hikes: Embrace inflation-hedging assets as long-term bond yields face pressure - Moomoo",
+        "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxPYmE2MmN0SzUyNVdKOHI2b3N4Q0o5ZmJHZjdnbDlMYzhQSFRJTldqSkRjLVlBeDdUbVlRTFRtOWRBaDFpQU55MjMwR3pBY3ByN05nblFKd3BuMG9OMWNtdF9qTDZ5bGkyMWMzREtzU2VHQlJjc0ZGbjhNaXhTaXppdERYX0tUSDc1VW9QMUxFNDFkbXZUZDNWcVVEcGlVWWtFbWNKd01tSEo?oc=5",
+        "domain": "Moomoo",
+        "sourcecountry": null,
+        "language": "English",
+        "seen_at": "2026-08-18T23:28:27.000Z"
+      },
+      {
+        "title": "Monetary Policy and Financial Conditions - Atlanta - Federal Reserve Bank",
+        "url": "https://news.google.com/rss/articles/CBMi0wFBVV95cUxQSE1GZlhQcm1pUk9Ga3ZIOG5RVmhLTzZTRnlQTHpnVkhLU19pX0pjcnowSkQxMkxqbGNBN2dMV1poc3BPd2hGNDRpY2FEbGpZRThHeVJwSEVBekZDVlBIMjF0SU1DSHdkZk5haFFpNXo3UzBYbUEwb0c5enBnRElvbkx0cERNQ0V6b1lmSjBYZ0JzQko3N1ZlQ1BQSlFFU0M4U3FVTVF4VUN6cC1GSzhrYjVleWswSm4taXJtVXFLNzJHbVFkV0FucnppOEQ4Z0tJcUhB?oc=5",
+        "domain": "Atlanta - Federal Reserve Bank",
+        "sourcecountry": null,
+        "language": "English",
+        "seen_at": "2026-08-18T14:36:50.000Z"
+      },
+      {
+        "title": "Rate hikes may be a blunt tool, but they're all the Fed has to cool inflation - Reuters",
+        "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQSkx4M1hZeWx5Mnp2endmVlRLNnltcERaNG55Sk9YSmpOU2lQaUhxLUtnRGNJal9KcEtwTG1kdS1HMlRHcGE3amwzRl84LVNWT3JUMmlQWE5VZ3JaQ0VqMUpFNEJRV2U3bjUyLVY0dzFWVndmS3lTcUt6OWluLTQxeVc0cmU2TGRFdlJMVjV1QXZDSkJhM2JTNW12S0JVZmJya1YyRGdMQzloN2FqeFplWEtibVU1T3BWc09Gb0h2SkxvYjFNSjFYa0ZWdw?oc=5",
+        "domain": "Reuters",
+        "sourcecountry": null,
+        "language": "English",
+        "seen_at": "2026-08-17T23:30:32.000Z"
       }
     ],
     "event_risk": {
       "level": "HIGH",
-      "recent_high_impact_24h": 8
+      "recent_high_impact_24h": 6
     },
     "note": "Live News adapter using real macro/central-bank headlines. GDELT DOC 2.0 is primary; Google News RSS is a failover when the public GDELT endpoint is rate-limited or unavailable. Direction uses a transparent local headline-stance lexicon and pair differential with reliability damping. The score is contextual alignment, not a probability of profit or a forecast of headline impact.",
     "provenance": [
       {
-        "provider": "GDELT DOC 2.0",
+        "provider": "Google News RSS fallback",
         "currency": "USD",
-        "query": "(\"US dollar\" OR \"U.S. dollar\" OR \"Federal Reserve\" OR FOMC) (inflation OR \"interest rate\" OR rates OR economy OR growth OR employment OR monetary OR \"central bank\") sourcelang:english",
-        "latest_seen_at": "2026-08-19T15:30:00.000Z",
+        "query": "\"US dollar\" OR \"Federal Reserve\" OR FOMC inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
+        "latest_seen_at": "2026-08-19T15:12:05.000Z",
         "article_count": 40,
-        "supportive_headline_count": 0,
-        "opposing_headline_count": 0,
-        "classified_headline_count": 0
+        "supportive_headline_count": 9,
+        "opposing_headline_count": 2,
+        "classified_headline_count": 11
       },
       {
-        "provider": "GDELT DOC 2.0",
+        "provider": "Google News RSS fallback",
         "currency": "JPY",
-        "query": "(yen OR \"Japanese yen\" OR \"Bank of Japan\") (inflation OR \"interest rate\" OR rates OR economy OR growth OR employment OR monetary OR \"central bank\") sourcelang:english",
-        "latest_seen_at": "2026-08-19T15:30:00.000Z",
+        "query": "yen OR \"Bank of Japan\" inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
+        "latest_seen_at": "2026-08-19T13:01:25.000Z",
         "article_count": 40,
-        "supportive_headline_count": 3,
-        "opposing_headline_count": 0,
-        "classified_headline_count": 3
+        "supportive_headline_count": 11,
+        "opposing_headline_count": 2,
+        "classified_headline_count": 13
       }
     ],
     "methodology": {
@@ -218,11 +218,11 @@
       "directional_headlines_are_optional": true,
       "max_article_age_hours": 96,
       "high_impact_headline_window_hours": 24,
-      "base_headline_balance": 0,
-      "quote_headline_balance": 1,
-      "raw_pair_headline_differential": 1,
-      "reliability": 0,
-      "adjusted_pair_headline_differential": 0,
+      "base_headline_balance": 0.636,
+      "quote_headline_balance": 0.692,
+      "raw_pair_headline_differential": 0.056,
+      "reliability": 1,
+      "adjusted_pair_headline_differential": 0.056,
       "support_threshold": 62,
       "oppose_threshold": 38,
       "neutral_band": [
