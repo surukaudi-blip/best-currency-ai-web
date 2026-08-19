@@ -44,7 +44,7 @@
       const status=step.querySelector('.status');
       if(!status)return;
       if(key==='10A')status.textContent='COMPLETE';
-      if(key==='10B')status.textContent=ready?'DAILY DATA READY':'READY TO ACTIVATE';
+      if(key==='10B')status.textContent=ready?'COMPLETE':'READY TO ACTIVATE';
     });
   }
 
@@ -81,4 +81,8 @@
       selected=symbols[0].ticker;renderTabs();renderSymbol();
     })
     .catch(()=>{badge.textContent='DATA UNAVAILABLE';enforceMarketKpi('Data unavailable');patchRoadmap(false)});
+
+  const decisionPlugin=document.createElement('script');
+  decisionPlugin.src='stocks-decision-layer.js?v=20260819-stage10c';
+  document.body.appendChild(decisionPlugin);
 })();
