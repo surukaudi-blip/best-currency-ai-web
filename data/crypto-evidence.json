@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "status": "CRYPTO_EVIDENCE_NOT_RUN",
+  "scope": "CRYPTO_STAGE_11B_EVIDENCE",
+  "generated_at": null,
+  "protocol_evidence": [],
+  "regulatory_evidence": [],
+  "network_evidence": [],
+  "coverage": {
+    "protocol_assets_ready": 0,
+    "protocol_assets_total": 8,
+    "regulatory_sources_ready": 0,
+    "regulatory_sources_total": 3,
+    "network_assets_ready": 0,
+    "network_assets_total": 8,
+    "network_assets_deferred_or_not_applicable": 0
+  },
+  "errors": [],
+  "guardrails": {
+    "evidence_layer_only": true,
+    "no_buy_sell": true,
+    "no_profit_probability": true,
+    "no_cross_chain_imputation": true,
+    "no_universal_onchain_score": true,
+    "news_intelligence_not_yet_enabled": true,
+    "trade_execution": "OFF"
+  }
+}
