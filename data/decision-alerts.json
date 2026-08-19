@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "DECISION_ALERT_WATCH_ACTIVE",
   "created_at": "2026-08-17T03:19:49.195Z",
-  "updated_at": "2026-08-18T17:03:17.313Z",
+  "updated_at": "2026-08-19T09:03:24.112Z",
   "policy": {
     "mode": "material_change_notification_and_explainability_watch",
     "no_historical_backfill": true,
@@ -28,8 +28,8 @@
         "regime": "PROVIDER_DIVERGENCE"
       },
       "first_seen": "2026-08-17T15:48:17.857Z",
-      "last_seen": "2026-08-18T17:03:17.313Z",
-      "occurrences": 9
+      "last_seen": "2026-08-19T09:03:24.112Z",
+      "occurrences": 10
     },
     {
       "key": "FINAL_RISK_CONSTRAINED",
@@ -47,8 +47,8 @@
         "decision": "DEPRIORITIZE"
       },
       "first_seen": "2026-08-18T15:56:00.036Z",
-      "last_seen": "2026-08-18T17:03:17.313Z",
-      "occurrences": 2
+      "last_seen": "2026-08-19T09:03:24.112Z",
+      "occurrences": 3
     },
     {
       "key": "PROVIDER_AGREEMENT_LOW",
@@ -60,8 +60,8 @@
       "trigger": "Provider Agreement < 60.",
       "evidence": null,
       "first_seen": "2026-08-18T15:56:00.036Z",
-      "last_seen": "2026-08-18T17:03:17.313Z",
-      "occurrences": 2
+      "last_seen": "2026-08-19T09:03:24.112Z",
+      "occurrences": 3
     },
     {
       "key": "RISK_HIGH",
@@ -77,8 +77,8 @@
         "state": "HIGH"
       },
       "first_seen": "2026-08-18T15:56:00.036Z",
-      "last_seen": "2026-08-18T17:03:17.313Z",
-      "occurrences": 2
+      "last_seen": "2026-08-19T09:03:24.112Z",
+      "occurrences": 3
     },
     {
       "key": "CONTEXT_DISAGREEMENT_EXTREME",
@@ -90,8 +90,8 @@
       "trigger": "Context disagreement >= 60 points.",
       "evidence": null,
       "first_seen": "2026-08-18T15:56:00.036Z",
-      "last_seen": "2026-08-18T17:03:17.313Z",
-      "occurrences": 2
+      "last_seen": "2026-08-19T09:03:24.112Z",
+      "occurrences": 3
     },
     {
       "key": "COUNTER_THESIS_HIGH",
@@ -114,25 +114,25 @@
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-18T17:03:17.313Z",
-      "occurrences": 25
+      "last_seen": "2026-08-19T09:03:24.112Z",
+      "occurrences": 26
     },
     {
       "key": "NEWS_EVENT_HIGH",
       "severity": "MODERATE",
       "title": "High-impact News Event Risk",
-      "detail": "News Event Risk HIGH sementara News 47.9 · NEUTRAL.",
+      "detail": "News Event Risk HIGH sementara News 53.6 · NEUTRAL.",
       "source": "news",
       "session_date": "2026-08-18",
       "trigger": "News event-risk level = HIGH.",
       "evidence": {
         "state": "NEUTRAL",
-        "score": 47.9,
+        "score": 53.6,
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T09:57:27.459Z",
-      "last_seen": "2026-08-18T17:03:17.313Z",
-      "occurrences": 14
+      "last_seen": "2026-08-19T09:03:24.112Z",
+      "occurrences": 15
     }
   ],
   "events": [
@@ -1132,7 +1132,7 @@
     "moderate_active": 3,
     "info_active": 0,
     "event_count": 76,
-    "new_events_this_run": 8,
+    "new_events_this_run": 0,
     "latest_event_at": "2026-08-18T17:03:17.313Z",
     "latest_event_id": "ALERT-EVENT-0076"
   },
@@ -1156,7 +1156,7 @@
       },
       "news": {
         "state": "NEUTRAL",
-        "score": 47.9,
+        "score": 53.6,
         "event_risk": "HIGH"
       },
       "counts": {
@@ -1192,20 +1192,11 @@
       "decision": "DEPRIORITIZE"
     },
     "intraday": {
-      "id": "DRIFT-0019-2026-08-18",
-      "captured_at": "2026-08-18T15:55:59.892Z",
-      "drift_level": "BASELINE",
-      "snapshot_hash": "23733d75ef31a0e99ee72552faad38424b5bf7848e8d71a91534fd72f956ee5a",
-      "drift_vs_previous": [
-        {
-          "key": "session_baseline",
-          "severity": "NONE",
-          "label": "Session baseline",
-          "from": null,
-          "to": "NZDUSD SELL",
-          "delta": null
-        }
-      ]
+      "id": "DRIFT-0020-2026-08-18",
+      "captured_at": "2026-08-19T09:03:23.876Z",
+      "drift_level": "NONE",
+      "snapshot_hash": "46737aa8694204752a28f63dc0d431b4f4ccf9017ba55ae22aaf6b6cccd28159",
+      "drift_vs_previous": []
     },
     "anchors": {
       "decision_history": {

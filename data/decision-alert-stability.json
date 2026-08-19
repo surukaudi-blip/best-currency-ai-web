@@ -3,7 +3,7 @@
   "status": "DECISION_ALERT_STABILITY_ACTIVE",
   "stability_version": "0.1",
   "created_at": "2026-08-17T03:36:34.650Z",
-  "updated_at": "2026-08-18T17:03:17.458Z",
+  "updated_at": "2026-08-19T09:03:24.303Z",
   "config": {
     "persistence_default": 1,
     "persistence_overrides": {
@@ -769,6 +769,36 @@
       "cooldown_minutes": 90,
       "reason": "Persistent condition confirmed after 2/2 observations.",
       "delivery_hash": "be00f89df282eb2d4df371cb523bb246b732581626149fb7b6d61ad7cde7b575"
+    },
+    {
+      "id": "STABILITY-EVENT-0050",
+      "evaluated_at": "2026-08-19T09:03:24.303Z",
+      "source_event_id": null,
+      "source_occurred_at": null,
+      "source_event_type": "CONFIRMED",
+      "family": "PERSISTENT:COUNTER_THESIS_HIGH",
+      "severity": "MODERATE",
+      "title": "Counter-Thesis challenge HIGH",
+      "detail": "Counter-Thesis ACTIVE · challenge HIGH.",
+      "decision": "ELIGIBLE",
+      "cooldown_minutes": 90,
+      "reason": "Persistent condition confirmed after 2/2 observations.",
+      "delivery_hash": "699198625b74ef7a14cd3dc3796750ef07dc374cf4d01a2c75d4acf28525ae2f"
+    },
+    {
+      "id": "STABILITY-EVENT-0050",
+      "evaluated_at": "2026-08-19T09:03:24.303Z",
+      "source_event_id": null,
+      "source_occurred_at": null,
+      "source_event_type": "CONFIRMED",
+      "family": "PERSISTENT:NEWS_EVENT_HIGH",
+      "severity": "MODERATE",
+      "title": "High-impact News Event Risk",
+      "detail": "News Event Risk HIGH sementara News 53.6 · NEUTRAL.",
+      "decision": "ELIGIBLE",
+      "cooldown_minutes": 90,
+      "reason": "Persistent condition confirmed after 2/2 observations.",
+      "delivery_hash": "0e093a8d277a8bcb01208c2e96493fa97ced2dd5897e234f846e80869934ae28"
     }
   ],
   "cursor": {
@@ -780,16 +810,19 @@
       "FINAL_RISK_CONSTRAINED",
       "PROVIDER_AGREEMENT_LOW",
       "RISK_HIGH",
-      "CONTEXT_DISAGREEMENT_EXTREME"
+      "CONTEXT_DISAGREEMENT_EXTREME",
+      "COUNTER_THESIS_HIGH",
+      "NEWS_EVENT_HIGH"
     ]
   },
   "raw_alert_status": "DECISION_ALERT_WATCH_ACTIVE",
-  "raw_alert_updated_at": "2026-08-18T17:03:17.313Z",
+  "raw_alert_updated_at": "2026-08-19T09:03:24.112Z",
   "oscillation": {
     "detected": false,
     "classification": "INSUFFICIENT_CAPTURES",
     "window": [
-      "DRIFT-0019-2026-08-18"
+      "DRIFT-0019-2026-08-18",
+      "DRIFT-0020-2026-08-18"
     ],
     "affected": []
   },
@@ -808,11 +841,11 @@
         "regime": "PROVIDER_DIVERGENCE"
       },
       "first_seen": "2026-08-17T15:48:17.857Z",
-      "last_seen": "2026-08-18T17:03:17.313Z",
-      "occurrences": 9,
+      "last_seen": "2026-08-19T09:03:24.112Z",
+      "occurrences": 10,
       "stability": {
         "required_confirmations": 1,
-        "observed_confirmations": 9,
+        "observed_confirmations": 10,
         "immediate_structural": true,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -836,11 +869,11 @@
         "decision": "DEPRIORITIZE"
       },
       "first_seen": "2026-08-18T15:56:00.036Z",
-      "last_seen": "2026-08-18T17:03:17.313Z",
-      "occurrences": 2,
+      "last_seen": "2026-08-19T09:03:24.112Z",
+      "occurrences": 3,
       "stability": {
         "required_confirmations": 1,
-        "observed_confirmations": 2,
+        "observed_confirmations": 3,
         "immediate_structural": true,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -858,11 +891,11 @@
       "trigger": "Provider Agreement < 60.",
       "evidence": null,
       "first_seen": "2026-08-18T15:56:00.036Z",
-      "last_seen": "2026-08-18T17:03:17.313Z",
-      "occurrences": 2,
+      "last_seen": "2026-08-19T09:03:24.112Z",
+      "occurrences": 3,
       "stability": {
         "required_confirmations": 1,
-        "observed_confirmations": 2,
+        "observed_confirmations": 3,
         "immediate_structural": true,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -884,11 +917,11 @@
         "state": "HIGH"
       },
       "first_seen": "2026-08-18T15:56:00.036Z",
-      "last_seen": "2026-08-18T17:03:17.313Z",
-      "occurrences": 2,
+      "last_seen": "2026-08-19T09:03:24.112Z",
+      "occurrences": 3,
       "stability": {
         "required_confirmations": 1,
-        "observed_confirmations": 2,
+        "observed_confirmations": 3,
         "immediate_structural": true,
         "persistence_confirmed": true,
         "suppression_reason": null,
@@ -906,20 +939,18 @@
       "trigger": "Context disagreement >= 60 points.",
       "evidence": null,
       "first_seen": "2026-08-18T15:56:00.036Z",
-      "last_seen": "2026-08-18T17:03:17.313Z",
-      "occurrences": 2,
+      "last_seen": "2026-08-19T09:03:24.112Z",
+      "occurrences": 3,
       "stability": {
         "required_confirmations": 2,
-        "observed_confirmations": 2,
+        "observed_confirmations": 3,
         "immediate_structural": false,
         "persistence_confirmed": true,
         "suppression_reason": null,
         "effective_severity": "MODERATE",
         "notification_eligible": true
       }
-    }
-  ],
-  "pending_alerts": [
+    },
     {
       "key": "COUNTER_THESIS_HIGH",
       "severity": "MODERATE",
@@ -941,45 +972,46 @@
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-18T17:03:17.313Z",
-      "occurrences": 25,
+      "last_seen": "2026-08-19T09:03:24.112Z",
+      "occurrences": 26,
       "stability": {
         "required_confirmations": 2,
-        "observed_confirmations": 1,
+        "observed_confirmations": 2,
         "immediate_structural": false,
-        "persistence_confirmed": false,
-        "suppression_reason": "PERSISTENCE_CONFIRMATION_PENDING",
+        "persistence_confirmed": true,
+        "suppression_reason": null,
         "effective_severity": "MODERATE",
-        "notification_eligible": false
+        "notification_eligible": true
       }
     },
     {
       "key": "NEWS_EVENT_HIGH",
       "severity": "MODERATE",
       "title": "High-impact News Event Risk",
-      "detail": "News Event Risk HIGH sementara News 47.9 · NEUTRAL.",
+      "detail": "News Event Risk HIGH sementara News 53.6 · NEUTRAL.",
       "source": "news",
       "session_date": "2026-08-18",
       "trigger": "News event-risk level = HIGH.",
       "evidence": {
         "state": "NEUTRAL",
-        "score": 47.9,
+        "score": 53.6,
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T09:57:27.459Z",
-      "last_seen": "2026-08-18T17:03:17.313Z",
-      "occurrences": 14,
+      "last_seen": "2026-08-19T09:03:24.112Z",
+      "occurrences": 15,
       "stability": {
         "required_confirmations": 2,
-        "observed_confirmations": 1,
+        "observed_confirmations": 2,
         "immediate_structural": false,
-        "persistence_confirmed": false,
-        "suppression_reason": "PERSISTENCE_CONFIRMATION_PENDING",
+        "persistence_confirmed": true,
+        "suppression_reason": null,
         "effective_severity": "MODERATE",
-        "notification_eligible": false
+        "notification_eligible": true
       }
     }
   ],
+  "pending_alerts": [],
   "suppressed_alerts": [],
   "current_watch": {
     "session_date": "2026-08-18",
@@ -1001,7 +1033,7 @@
       },
       "news": {
         "state": "NEUTRAL",
-        "score": 47.9,
+        "score": 53.6,
         "event_risk": "HIGH"
       },
       "counts": {
@@ -1037,20 +1069,11 @@
       "decision": "DEPRIORITIZE"
     },
     "intraday": {
-      "id": "DRIFT-0019-2026-08-18",
-      "captured_at": "2026-08-18T15:55:59.892Z",
-      "drift_level": "BASELINE",
-      "snapshot_hash": "23733d75ef31a0e99ee72552faad38424b5bf7848e8d71a91534fd72f956ee5a",
-      "drift_vs_previous": [
-        {
-          "key": "session_baseline",
-          "severity": "NONE",
-          "label": "Session baseline",
-          "from": null,
-          "to": "NZDUSD SELL",
-          "delta": null
-        }
-      ]
+      "id": "DRIFT-0020-2026-08-18",
+      "captured_at": "2026-08-19T09:03:23.876Z",
+      "drift_level": "NONE",
+      "snapshot_hash": "46737aa8694204752a28f63dc0d431b4f4ccf9017ba55ae22aaf6b6cccd28159",
+      "drift_vs_previous": []
     },
     "anchors": {
       "decision_history": {
@@ -1070,14 +1093,14 @@
     "raw_gate": "REVIEW_NOW",
     "stable_gate": "REVIEW_NOW",
     "raw_active_total": 7,
-    "confirmed_total": 5,
-    "pending_total": 2,
+    "confirmed_total": 7,
+    "pending_total": 0,
     "suppressed_total": 0,
     "confirmed_high": 4,
-    "confirmed_moderate": 1,
+    "confirmed_moderate": 3,
     "oscillation_detected": false,
-    "notification_eligible_this_run": 9,
+    "notification_eligible_this_run": 2,
     "notification_suppressed_this_run": 0,
-    "delivery_log_count": 49
+    "delivery_log_count": 51
   }
 }
