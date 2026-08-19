@@ -63,5 +63,6 @@ function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;',
 Promise.all([fetch('./data/currency-strength.json',{cache:'no-store'}).then(r=>r.json()),fetch('./data/decision-alert-stability.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null),fetch('./data/fresh-oos-tracker.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)]).then(([c,a,o])=>{renderCurrency(c);renderAlerts(a);renderOOS(o)}).catch(()=>{$('updated').textContent='Data unavailable';});
 })();
 </script>
+<script src="platform-shell.js?v=20260819-stage6"></script>
 </body>
 </html>

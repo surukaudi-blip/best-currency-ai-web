@@ -60,5 +60,6 @@ function renderPolicy(h){const p=h.policy||{};$('historyPolicy').innerHTML=line(
 Promise.all([fetch('./data/decision-history.json',{cache:'no-store'}).then(r=>r.json()),fetch('./data/decision-change-analytics.json',{cache:'no-store'}).then(r=>r.json())]).then(([h,a])=>{renderHistory(h,a);renderAnalytics(a);renderPolicy(h)}).catch(()=>{document.getElementById('timeline').innerHTML='<div class="sub">Timeline data is temporarily unavailable.</div>';});
 })();
 </script>
+<script src="platform-shell.js?v=20260819-stage6"></script>
 </body>
 </html>
