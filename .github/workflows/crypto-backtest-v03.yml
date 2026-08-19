@@ -1,0 +1,42 @@
+name: Run Crypto Hybrid Backtest v0.3
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crypto-hybrid-backtest-v03
+  cancel-in-progress: false
+
+jobs:
+  backtest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      COINGECKO_DEMO_API_KEY: ${{ secrets.COINGECKO_DEMO_API_KEY }}
+      COINGECKO_PRO_API_KEY: ${{ secrets.COINGECKO_PRO_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Run Stage 11C v0.3 hybrid diagnostic retest
+        run: python scripts/build-crypto-backtest-v03.py
+
+      - name: Commit aggregated v0.3 diagnostics when changed
+        run: |
+          if git diff --quiet -- data/crypto-backtest-v03.json; then
+            echo "No Crypto v0.3 retest changes."
+            exit 0
+          fi
+          git config user.name "best-currency-ai-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/crypto-backtest-v03.json
+          git commit -m "data: run crypto Stage 11C hybrid v0.3 retest"
+          git push
