@@ -21,14 +21,18 @@
   let artifact=null,selected=null;
 
   function patchRoadmap(){
-    if(!roadmap)return;
-    roadmap.querySelectorAll('.step').forEach(step=>{
-      const key=step.querySelector('.stepN')&&step.querySelector('.stepN').textContent.trim();
-      const h=step.querySelector('h3');if(!h)return;
-      if(key==='11B')h.textContent='Protocol, On-Chain & Regulatory Evidence · COMPLETE';
-      if(key==='11C')h.textContent='Crypto Decision Intelligence · READY TO VERIFY';
-      if(key==='C.4')h.textContent='Historical Backtest · NEXT AFTER 11C QA';
-    });
+    window.__BC_CRYPTO_DECISION_READY__=true;
+    if(roadmap){
+      roadmap.querySelectorAll('.step').forEach(step=>{
+        const key=step.querySelector('.stepN')&&step.querySelector('.stepN').textContent.trim();
+        const h=step.querySelector('h3');if(!h)return;
+        if(key==='11B')h.textContent='Protocol, On-Chain & Regulatory Evidence · COMPLETE';
+        if(key==='11C')h.textContent='Crypto Decision Intelligence · READY TO VERIFY';
+        if(key==='C.4')h.textContent='Historical Backtest · NEXT AFTER 11C QA';
+      });
+    }
+    const s=document.getElementById('ce11cStatus'),n=document.getElementById('ce11cNote');
+    if(s){s.textContent='READY';s.classList.add('ce-ready')}if(n)n.textContent='11C built · pre-validation · unfrozen';
   }
   function tabs(){const rows=artifact&&artifact.symbols||[];document.getElementById('cdTabs').innerHTML=rows.map(x=>`<button class="cd-tab ${x.symbol===selected?'active':''}" data-s="${esc(x.symbol)}">${esc(x.symbol)}</button>`).join('')}
   function drivers(x){const m=(x.market_structure||{}).components||{};return Object.entries(m).map(([k,v])=>({k,v:Number(v)})).filter(r=>Number.isFinite(r.v)).sort((a,b)=>Math.abs(b.v-50)-Math.abs(a.v-50)).slice(0,4)}
