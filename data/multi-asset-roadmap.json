@@ -1,5 +1,5 @@
 {
-  "version": "1.2",
+  "version": "1.3",
   "updated_at": "2026-08-19",
   "principles": [
     "Do not fabricate unavailable market data.",
@@ -18,8 +18,8 @@
       "steps": [
         {"id": "10A", "name": "SEC Official Evidence Adapter", "status": "COMPLETE", "output": "Filings, XBRL fundamentals, source freshness, company identity"},
         {"id": "10B", "name": "Daily Market Data Adapter", "status": "COMPLETE", "output": "Alpha Vantage raw daily OHLCV plus derived short-horizon market context; full raw series not published"},
-        {"id": "10C", "name": "Stocks Decision Intelligence", "status": "READY_TO_ACTIVATE", "output": "Explainable Market View, Decision Readiness, Fundamental Evidence, Market Structure, Decision Risk, Counter-Thesis, and AI Decision Reasoner; no BUY/SELL"},
-        {"id": "10D", "name": "Stocks Watch, Timeline & Prospective Validation", "status": "PLANNED", "output": "Freeze Stage 10C logic, material-change alerts, decision history, immutable forward validation"}
+        {"id": "10C", "name": "Stocks Decision Intelligence", "status": "COMPLETE", "output": "Explainable Market View, Decision Readiness, Fundamental Evidence, Market Structure, Decision Risk, Counter-Thesis, and AI Decision Reasoner; no BUY/SELL"},
+        {"id": "10D", "name": "Stocks Watch, Timeline & Prospective Validation", "status": "READY_TO_ACTIVATE", "output": "Frozen Stage 10C methodology hash, material-change alerts, append-only decision history, and immutable forward validation beginning strictly after the freeze baseline"}
       ]
     },
     {

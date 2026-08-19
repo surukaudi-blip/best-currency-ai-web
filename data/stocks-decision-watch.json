@@ -1,0 +1,22 @@
+{
+  "version": "1.0",
+  "status": "STOCKS_DECISION_WATCH_NOT_RUN",
+  "scope": "US_LISTED_EQUITIES_V1",
+  "generated_at": null,
+  "model_id": "STOCKS_DECISION_0.1_FROZEN_20260819",
+  "model_hash": "f55ea9c47271313aa335ac53f22c7e947f84b3ded1fd7127923602202fc95303",
+  "summary": {
+    "gate": "AWAITING_FIRST_RUN",
+    "high": 0,
+    "moderate": 0,
+    "informational": 0,
+    "total": 0
+  },
+  "alerts": [],
+  "guardrails": {
+    "material_change_only": true,
+    "alerts_are_review_priority_not_profit_probability": true,
+    "no_buy_sell": true,
+    "trade_execution": "OFF"
+  }
+}

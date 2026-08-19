@@ -1,0 +1,44 @@
+name: Refresh Stocks Watch Timeline and Validation
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '25 23 * * 1-5'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: stocks-observability-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Rebuild frozen Stocks decision intelligence
+        run: python scripts/build-stocks-decision-safe.py
+
+      - name: Build Decision Watch Timeline and Fresh OOS
+        run: python scripts/build-stocks-observability.py
+
+      - name: Commit updated Stocks observability data when changed
+        run: |
+          if git diff --quiet -- data/stocks-decision-intelligence.json data/stocks-decision-history.json data/stocks-decision-watch.json data/stocks-oos-tracker.json; then
+            echo "No Stocks observability changes."
+            exit 0
+          fi
+          git config user.name "best-currency-ai-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/stocks-decision-intelligence.json data/stocks-decision-history.json data/stocks-decision-watch.json data/stocks-oos-tracker.json
+          git commit -m "data: refresh stocks watch timeline and prospective validation"
+          git push
