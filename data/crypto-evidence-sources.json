@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "scope": "CRYPTO_STAGE_11B_EVIDENCE",
   "policy": {
     "market_data_is_separate": true,
@@ -7,6 +7,7 @@
     "regulatory_feeds_are_primary_authority_for_regulatory_events": true,
     "network_telemetry_is_heterogeneous_and_not_directly_comparable_across_chains": true,
     "missing_network_telemetry_must_not_be_imputed": true,
+    "regulatory_asset_matching_uses_word_boundaries_for_short_symbols": true,
     "no_single_event_confirms_a_decision": true,
     "trade_execution": "OFF"
   },
@@ -18,7 +19,7 @@
     {"symbol":"BNB","repository":"bnb-chain/bsc","classification":"PRIMARY_CORE_IMPLEMENTATION","tier":"A","keywords":["bnb","bnb chain","bsc","binance smart chain"]},
     {"symbol":"ADA","repository":"IntersectMBO/cardano-node","classification":"PRIMARY_CORE_IMPLEMENTATION","tier":"A","keywords":["cardano","ada"]},
     {"symbol":"DOGE","repository":"dogecoin/dogecoin","classification":"PRIMARY_CORE_IMPLEMENTATION","tier":"A","keywords":["dogecoin","doge"]},
-    {"symbol":"LINK","repository":"smartcontractkit/chainlink","classification":"PRIMARY_CORE_IMPLEMENTATION","tier":"A","keywords":["chainlink","link"]}
+    {"symbol":"LINK","repository":"smartcontractkit/chainlink","classification":"PRIMARY_CORE_IMPLEMENTATION","tier":"A","keywords":["chainlink"]}
   ],
   "regulatory_sources": [
     {"name":"U.S. Securities and Exchange Commission","short":"SEC","tier":"A","type":"RSS","url":"https://www.sec.gov/news/pressreleases.rss","classification":"PRIMARY_REGULATORY"},
