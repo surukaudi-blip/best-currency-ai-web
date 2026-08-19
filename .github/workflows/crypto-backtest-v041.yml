@@ -24,8 +24,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Run Stage 11C v0.4.1 regime-aware Actionability diagnostic
-        run: python scripts/build-crypto-backtest-v041.py
+      - name: Run Stage 11C v0.4.1 diagnostic with production rounding parity
+        run: python scripts/build-crypto-backtest-v041-safe.py
       - name: Commit aggregated v0.4.1 diagnostic when changed
         run: |
           if [ -z "$(git status --porcelain -- data/crypto-backtest-v041.json)" ]; then
