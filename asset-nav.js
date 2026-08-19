@@ -32,8 +32,7 @@
 
   var currentPage=pageName();
   if(currentPage!=='index.html' && currentPage!==''){
-    var directAsset=assetForPage(currentPage);
-    location.replace('index.html#asset='+directAsset);
+    location.replace('index.html#asset='+assetForPage(currentPage));
     return;
   }
 
@@ -41,6 +40,13 @@
     var nav=document.querySelector('.analysis-nav, header .links');
     var forexMain=document.querySelector('body > main');
     if(!nav || !forexMain) return;
+
+    // beta-program.js intentionally loads this helper twice. On the second pass,
+    // keep the existing router and only remove legacy/non-asset navigation links.
+    if(document.getElementById('asset-workspace-shell')){
+      Array.from(nav.querySelectorAll('a:not([data-primary-asset-nav])')).forEach(function(a){a.remove();});
+      return;
+    }
 
     var style=document.createElement('style');
     style.id='single-shell-asset-style';
@@ -70,10 +76,7 @@
       a.textContent=items[key].label;
       a.dataset.primaryAssetNav='true';
       a.dataset.asset=key;
-      a.addEventListener('click',function(ev){
-        ev.preventDefault();
-        setAsset(key,true);
-      });
+      a.addEventListener('click',function(ev){ev.preventDefault();setAsset(key,true);});
       links[key]=a;
       if(freeze) nav.insertBefore(a,freeze); else nav.appendChild(a);
     });
@@ -98,9 +101,7 @@
         dot.style.boxShadow='0 0 0 3px var(--green-dim)';
       }
     }
-    function markActive(key){
-      order.forEach(function(k){links[k].classList.toggle('active',k===key);});
-    }
+    function markActive(key){order.forEach(function(k){links[k].classList.toggle('active',k===key);});}
     function resizeFrame(){
       try{
         var doc=frame.contentDocument;
@@ -123,10 +124,8 @@
       }catch(e){resizeFrame();}
     });
 
-    var active='forex';
     function setAsset(key,push){
       if(!items[key]) key='forex';
-      active=key;
       markActive(key);
       setStatus(key);
       if(key==='forex'){
