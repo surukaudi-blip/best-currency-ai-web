@@ -1,6 +1,6 @@
 (function(){
   var navScript=document.createElement('script');
-  navScript.src='asset-nav.js?v=20260819-asset-first';
+  navScript.src='asset-nav.js?v=20260819-readiness-fix2';
   navScript.async=false;
   document.body.appendChild(navScript);
 
@@ -9,7 +9,7 @@
   core.async=false;
   core.onload=function(){
     var refresh=document.createElement('script');
-    refresh.src='asset-nav.js?v=20260819-asset-first-2';
+    refresh.src='asset-nav.js?v=20260819-readiness-fix2b';
     refresh.async=false;
     document.body.appendChild(refresh);
   };

@@ -29,7 +29,7 @@
       if(pageName()==='crypto.html' && !document.getElementById('crypto-readiness-loader')){
         var s=document.createElement('script');
         s.id='crypto-readiness-loader';
-        s.src='crypto-readiness.js?v=20260819-final-readiness';
+        s.src='crypto-readiness.js?v=20260819-readiness-fix2';
         s.async=false;
         document.body.appendChild(s);
       }
