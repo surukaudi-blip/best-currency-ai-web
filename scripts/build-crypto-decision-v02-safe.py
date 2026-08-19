@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Hardening wrapper for Stage 11C v0.2 refinement.
 
-Checks that the consumed v0.1 diagnostic backtest belongs to the exact current
-v0.1 methodology before refinement, then ensures Counter-Thesis challenges the
-underlying raw directional state even when a v0.2 guardrail suppresses the
-published effective Market View to MIXED.
+First activation verifies that the consumed v0.1 diagnostic backtest belongs to the
+exact v0.1 methodology being refined. Subsequent v0.2 refreshes verify the embedded
+refinement lineage metadata instead of requiring the artifact to revert to v0.1.
+Counter-Thesis also challenges the underlying raw directional state when an active
+v0.2 guardrail suppresses the published effective Market View to MIXED.
 """
 
 from __future__ import annotations
@@ -32,14 +33,23 @@ def canonical_hash(value) -> str:
 
 current = json.loads(DECISION_PATH.read_text(encoding="utf-8"))
 backtest = json.loads(BACKTEST_PATH.read_text(encoding="utf-8"))
-if current.get("version") != "0.1":
-    raise SystemExit("v0.2 refinement lineage check expects the current production artifact to still be v0.1 before first activation.")
-current_methodology_hash = canonical_hash(current.get("methodology") or {})
 source_methodology_hash = (backtest.get("model_snapshot") or {}).get("methodology_sha256")
-if not source_methodology_hash or source_methodology_hash != current_methodology_hash:
-    raise SystemExit(
-        f"Refinement lineage mismatch: v0.1 artifact={current_methodology_hash}, backtest source={source_methodology_hash}"
-    )
+if not source_methodology_hash:
+    raise SystemExit("Consumed v0.1 backtest has no methodology lineage hash.")
+
+if current.get("version") == "0.1":
+    current_methodology_hash = canonical_hash(current.get("methodology") or {})
+    if source_methodology_hash != current_methodology_hash:
+        raise SystemExit(
+            f"Refinement lineage mismatch: v0.1 artifact={current_methodology_hash}, backtest source={source_methodology_hash}"
+        )
+elif current.get("version") == "0.2":
+    refinement = current.get("refinement") or {}
+    embedded_source = refinement.get("source_backtest_model_methodology_sha256")
+    if embedded_source != source_methodology_hash or refinement.get("consumed_historical_holdout") is not True:
+        raise SystemExit("Existing v0.2 artifact failed persistent refinement-lineage validation.")
+else:
+    raise SystemExit(f"Unsupported Crypto decision artifact version for v0.2 refresh: {current.get('version')}")
 
 
 def counter_thesis_hardened(symbol, asset, m, risk, evidence_readiness):
