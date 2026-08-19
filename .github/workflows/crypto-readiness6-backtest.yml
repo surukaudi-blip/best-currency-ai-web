@@ -1,0 +1,49 @@
+# Audit rerun marker: final pre-freeze backtest rerun requested 2026-08-19
+name: Run Crypto 6-Check Trend Qualification Diagnostic
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - scripts/build-crypto-decision-v041-counterfix.py
+      - scripts/build-crypto-backtest-readiness6-v11.py
+      - .github/workflows/crypto-readiness6-backtest.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crypto-counter-thesis-qa
+  cancel-in-progress: false
+
+jobs:
+  diagnostic:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      COINGECKO_DEMO_API_KEY: ${{ secrets.COINGECKO_DEMO_API_KEY }}
+      COINGECKO_PRO_API_KEY: ${{ secrets.COINGECKO_PRO_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Rebuild production decision artifact with Counter-Thesis v0.2
+        run: python scripts/build-crypto-decision-v041-counterfix.py
+      - name: Run 6-check diagnostic with Counter-Thesis v0.2 semantics
+        run: python scripts/build-crypto-backtest-readiness6-v11.py
+      - name: Commit Counter-Thesis QA artifacts when changed
+        run: |
+          if [ -z "$(git status --porcelain -- data/crypto-decision-intelligence.json data/crypto-backtest-readiness6.json)" ]; then
+            echo "No Counter-Thesis QA artifact changes."
+            exit 0
+          fi
+          git config user.name "best-currency-ai-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/crypto-decision-intelligence.json data/crypto-backtest-readiness6.json
+          git commit -m "data: apply Crypto Counter-Thesis v0.2 QA"
+          git push

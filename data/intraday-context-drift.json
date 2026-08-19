@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "INTRADAY_CONTEXT_DRIFT_ACTIVE",
   "created_at": "2026-08-17T03:10:50.566Z",
-  "updated_at": "2026-08-19T15:55:46.996Z",
+  "updated_at": "2026-08-19T13:24:24.682Z",
   "policy": {
     "mode": "prospective_intraday_context_audit",
     "capture_scope": "multiple_context_captures_within_same_complete_ecb_session",
@@ -1993,116 +1993,34 @@
         },
         "fresh_oos": null
       }
-    },
-    {
-      "id": "DRIFT-0022-2026-08-19",
-      "captured_at": "2026-08-19T15:55:46.996Z",
-      "source_event": "schedule",
-      "source_run_id": "32272893917",
-      "source_run_attempt": "1",
-      "snapshot": {
-        "session_date": "2026-08-19",
-        "pair": "USDJPY",
-        "canonical_bias": "SELL",
-        "actionability": {
-          "score": 39.2,
-          "state": "FILTERED",
-          "regime": "PROVIDER_DIVERGENCE"
-        },
-        "context": {
-          "macro_yield": {
-            "available": true,
-            "state": "OPPOSES",
-            "score": 33.3,
-            "provider": "FRED (OECD / Federal Reserve source series)",
-            "updated_at": "2026-08-19T15:55:22.833Z"
-          },
-          "cross_market": {
-            "available": false,
-            "state": "UNAVAILABLE",
-            "score": 0,
-            "provider": null,
-            "updated_at": null
-          },
-          "news": {
-            "available": true,
-            "state": "NEUTRAL",
-            "score": 50,
-            "provider": "GDELT DOC 2.0",
-            "updated_at": "2026-08-19T15:55:46.671Z",
-            "event_risk": "HIGH",
-            "recent_high_impact_24h": 8
-          },
-          "coverage_percent": 67
-        },
-        "risk": {
-          "version": "0.2",
-          "score": 77.2,
-          "state": "HIGH",
-          "primary_driver": {
-            "key": "actionability",
-            "label": "Actionability",
-            "contribution": 22
-          }
-        },
-        "counter_thesis": {
-          "version": "0.2",
-          "state": "ACTIVE",
-          "challenge_level": "HIGH",
-          "active_trigger_count": 5
-        },
-        "final_reasoner": {
-          "version": "0.2",
-          "decision_logic_version": "0.1_frozen",
-          "status": "RISK_CONSTRAINED",
-          "outlook": "CAUTION",
-          "decision": "DEPRIORITIZE",
-          "evidence_for_count": 0,
-          "evidence_against_count": 6
-        }
-      },
-      "snapshot_hash": "00dc6728d5cc92ab046af928813bc3330611716869fd389615b1ec3b35954383",
-      "drift_level": "BASELINE",
-      "drift_vs_previous": [
-        {
-          "key": "session_baseline",
-          "severity": "NONE",
-          "label": "Session baseline",
-          "from": null,
-          "to": "USDJPY SELL",
-          "delta": null
-        }
-      ],
-      "frozen_anchors": {
-        "decision_history": null,
-        "fresh_oos": null
-      }
     }
   ],
   "current_session": {
-    "session_date": "2026-08-19",
-    "captures": 1,
-    "first_capture_at": "2026-08-19T15:55:46.996Z",
-    "last_capture_at": "2026-08-19T15:55:46.996Z",
-    "current_drift_level": "BASELINE",
-    "total_drift_events": 0,
-    "drift_event_counts": {},
+    "session_date": "2026-08-18",
+    "captures": 3,
+    "first_capture_at": "2026-08-18T15:55:59.892Z",
+    "last_capture_at": "2026-08-19T13:24:24.682Z",
+    "current_drift_level": "MODERATE",
+    "total_drift_events": 1,
+    "drift_event_counts": {
+      "news_state": 1
+    },
     "first_to_latest": {
       "macro_score_delta": 0,
       "cross_market_score_delta": 0,
-      "news_score_delta": 0,
+      "news_score_delta": 26.9,
       "risk_score_delta": 0,
-      "macro_state": "OPPOSES → OPPOSES",
-      "cross_market_state": "UNAVAILABLE → UNAVAILABLE",
-      "news_state": "NEUTRAL → NEUTRAL",
+      "macro_state": "SUPPORTS → SUPPORTS",
+      "cross_market_state": "OPPOSES → OPPOSES",
+      "news_state": "NEUTRAL → SUPPORTS",
       "risk_state": "HIGH → HIGH",
       "final_reasoner": "RISK_CONSTRAINED/DEPRIORITIZE → RISK_CONSTRAINED/DEPRIORITIZE"
     }
   },
   "summary": {
-    "total_captures": 22,
-    "distinct_ecb_sessions": 4,
-    "current_session_captures": 1,
+    "total_captures": 21,
+    "distinct_ecb_sessions": 3,
+    "current_session_captures": 3,
     "high_drift_captures": 6,
     "moderate_drift_captures": 3,
     "low_drift_captures": 0

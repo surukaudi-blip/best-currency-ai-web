@@ -10,115 +10,115 @@
     "provider_name": "European Central Bank",
     "provider_url": "api.frankfurter.dev",
     "module": "Currency Strength Agent",
-    "received_at": "2026-08-19T15:55:17.463Z",
-    "generated_at": "2026-08-19T15:55:17.463Z",
-    "data_updated_at": "2026-08-19",
-    "session_date": "2026-08-19",
-    "comparison_date": "2026-08-18",
+    "received_at": "2026-08-19T13:23:53.784Z",
+    "generated_at": "2026-08-19T13:23:53.784Z",
+    "data_updated_at": "2026-08-18",
+    "session_date": "2026-08-18",
+    "comparison_date": "2026-08-17",
     "timeframe": "1D",
     "data_frequency": "ECB working-day reference rates",
     "methodology": "Primary Currency Strength uses ECB-only reference rates via Frankfurter. Multi-provider data is confirmation only. Multi-Timeframe Alignment compares Daily/Weekly/Monthly ECB rankings, while Strength Percentile compares the current ECB score with prior same-timeframe ECB observations.",
     "strength_timeframes": {
       "daily": {
         "timeframe": "daily",
-        "from_date": "2026-08-18",
-        "to_date": "2026-08-19",
+        "from_date": "2026-08-17",
+        "to_date": "2026-08-18",
         "currency_strength": {
-          "USD": -0.577717,
-          "EUR": 0.250667,
-          "GBP": 0.223674,
-          "JPY": 0.381966,
-          "CHF": 0.291678,
-          "CAD": 0.014415,
-          "AUD": -0.50237,
-          "NZD": -0.082314
+          "USD": 1.863051,
+          "EUR": -0.147015,
+          "GBP": -0.246169,
+          "JPY": -0.295171,
+          "CHF": -0.327205,
+          "CAD": -0.108233,
+          "AUD": -0.192007,
+          "NZD": -0.547252
         },
         "ranking": [
+          "USD",
+          "CAD",
+          "EUR",
+          "AUD",
+          "GBP",
           "JPY",
           "CHF",
-          "EUR",
-          "GBP",
-          "CAD",
-          "NZD",
-          "AUD",
-          "USD"
+          "NZD"
         ],
-        "strongest_currency": "JPY",
-        "strongest_score": 0.381966,
-        "weakest_currency": "USD",
-        "weakest_score": -0.577717,
+        "strongest_currency": "USD",
+        "strongest_score": 1.863051,
+        "weakest_currency": "NZD",
+        "weakest_score": -0.547252,
         "pair_analysis": {
-          "pair": "USDJPY",
-          "base": "USD",
-          "quote": "JPY",
-          "strength_difference": -0.96,
+          "pair": "NZDUSD",
+          "base": "NZD",
+          "quote": "USD",
+          "strength_difference": -2.41,
           "bias": "SELL",
           "confidence": "HIGH",
           "relative_strength": 1
         },
         "top_pair_opportunities": [
           {
-            "pair": "USDJPY",
-            "base": "USD",
-            "quote": "JPY",
-            "strength_difference": -0.96,
+            "pair": "NZDUSD",
+            "base": "NZD",
+            "quote": "USD",
+            "strength_difference": -2.41,
             "bias": "SELL",
             "confidence": "HIGH",
             "relative_strength": 1
           },
           {
-            "pair": "AUDJPY",
-            "base": "AUD",
-            "quote": "JPY",
-            "strength_difference": -0.884,
-            "bias": "SELL",
-            "confidence": "HIGH",
-            "relative_strength": 0.921
-          },
-          {
             "pair": "USDCHF",
             "base": "USD",
             "quote": "CHF",
-            "strength_difference": -0.869,
-            "bias": "SELL",
-            "confidence": "HIGH",
-            "relative_strength": 0.906
-          },
-          {
-            "pair": "EURUSD",
-            "base": "EUR",
-            "quote": "USD",
-            "strength_difference": 0.828,
+            "strength_difference": 2.19,
             "bias": "BUY",
             "confidence": "HIGH",
-            "relative_strength": 0.863
+            "relative_strength": 0.909
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 2.158,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.895
           },
           {
             "pair": "GBPUSD",
             "base": "GBP",
             "quote": "USD",
-            "strength_difference": 0.801,
-            "bias": "BUY",
+            "strength_difference": -2.109,
+            "bias": "SELL",
             "confidence": "HIGH",
-            "relative_strength": 0.835
+            "relative_strength": 0.875
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": -2.055,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.853
           }
         ],
         "pair_threshold": {
           "method": "dynamic_cross_sectional",
           "timeframe": "daily",
-          "wait_threshold": 0.192,
+          "wait_threshold": 0.482,
           "absolute_floor": 0.005,
           "relative_fraction": 0.2,
-          "max_cross_currency_gap": 0.96
+          "max_cross_currency_gap": 2.41
         },
         "pair_returns": {
-          "EURUSD": 0.250667,
-          "GBPUSD": 0.223674,
-          "AUDUSD": -0.50237,
-          "NZDUSD": -0.082314,
-          "USDJPY": -0.381966,
-          "USDCHF": -0.291678,
-          "USDCAD": -0.014415
+          "EURUSD": -0.147015,
+          "GBPUSD": -0.246169,
+          "AUDUSD": -0.192007,
+          "NZDUSD": -0.547252,
+          "USDJPY": 0.295171,
+          "USDCHF": 0.327205,
+          "USDCAD": 0.108233
         },
         "strength_percentile": {
           "methodology": "Current ECB strength is ranked against prior same-timeframe ECB observations; directional percentile uses signed score, magnitude percentile uses absolute score.",
@@ -126,154 +126,154 @@
           "lookback_periods": 60,
           "currency_percentiles": {
             "USD": {
-              "directional_percentile": 33.3,
-              "magnitude_percentile": 23.3
+              "directional_percentile": 86.7,
+              "magnitude_percentile": 68.3
             },
             "EUR": {
-              "directional_percentile": 81.7,
-              "magnitude_percentile": 66.7
+              "directional_percentile": 21.7,
+              "magnitude_percentile": 51.7
             },
             "GBP": {
-              "directional_percentile": 75,
-              "magnitude_percentile": 53.3
+              "directional_percentile": 16.7,
+              "magnitude_percentile": 61.7
             },
             "JPY": {
-              "directional_percentile": 93.3,
-              "magnitude_percentile": 88.3
+              "directional_percentile": 13.3,
+              "magnitude_percentile": 78.3
             },
             "CHF": {
-              "directional_percentile": 81.7,
-              "magnitude_percentile": 60
+              "directional_percentile": 16.7,
+              "magnitude_percentile": 71.7
             },
             "CAD": {
-              "directional_percentile": 55,
-              "magnitude_percentile": 5
+              "directional_percentile": 31.7,
+              "magnitude_percentile": 45
             },
             "AUD": {
-              "directional_percentile": 8.3,
-              "magnitude_percentile": 80
+              "directional_percentile": 25,
+              "magnitude_percentile": 48.3
             },
             "NZD": {
-              "directional_percentile": 43.3,
-              "magnitude_percentile": 11.7
+              "directional_percentile": 11.7,
+              "magnitude_percentile": 75
             }
           },
           "strongest": {
-            "currency": "JPY",
-            "score": 0.381966,
-            "directional_percentile": 93.3,
-            "magnitude_percentile": 88.3
+            "currency": "USD",
+            "score": 1.863051,
+            "directional_percentile": 86.7,
+            "magnitude_percentile": 68.3
           },
           "weakest": {
-            "currency": "USD",
-            "score": -0.577717,
-            "directional_percentile": 33.3,
-            "magnitude_percentile": 23.3
+            "currency": "NZD",
+            "score": -0.547252,
+            "directional_percentile": 11.7,
+            "magnitude_percentile": 75
           },
-          "cross_currency_gap": 0.96,
-          "gap_percentile": 21.7
+          "cross_currency_gap": 2.41,
+          "gap_percentile": 68.3
         }
       },
       "weekly": {
         "timeframe": "weekly",
         "from_date": "2026-08-17",
-        "to_date": "2026-08-19",
+        "to_date": "2026-08-18",
         "currency_strength": {
-          "USD": 1.282741,
-          "EUR": 0.103284,
-          "GBP": -0.023045,
-          "JPY": 0.087923,
-          "CHF": -0.034573,
-          "CAD": -0.093802,
-          "AUD": -0.693413,
-          "NZD": -0.629116
+          "USD": 1.863051,
+          "EUR": -0.147015,
+          "GBP": -0.246169,
+          "JPY": -0.295171,
+          "CHF": -0.327205,
+          "CAD": -0.108233,
+          "AUD": -0.192007,
+          "NZD": -0.547252
         },
         "ranking": [
           "USD",
-          "EUR",
-          "JPY",
-          "GBP",
-          "CHF",
           "CAD",
-          "NZD",
-          "AUD"
+          "EUR",
+          "AUD",
+          "GBP",
+          "JPY",
+          "CHF",
+          "NZD"
         ],
         "strongest_currency": "USD",
-        "strongest_score": 1.282741,
-        "weakest_currency": "AUD",
-        "weakest_score": -0.693413,
+        "strongest_score": 1.863051,
+        "weakest_currency": "NZD",
+        "weakest_score": -0.547252,
         "pair_analysis": {
-          "pair": "AUDUSD",
-          "base": "AUD",
+          "pair": "NZDUSD",
+          "base": "NZD",
           "quote": "USD",
-          "strength_difference": -1.976,
+          "strength_difference": -2.41,
           "bias": "SELL",
           "confidence": "HIGH",
           "relative_strength": 1
         },
         "top_pair_opportunities": [
           {
-            "pair": "AUDUSD",
-            "base": "AUD",
+            "pair": "NZDUSD",
+            "base": "NZD",
             "quote": "USD",
-            "strength_difference": -1.976,
+            "strength_difference": -2.41,
             "bias": "SELL",
             "confidence": "HIGH",
             "relative_strength": 1
           },
           {
-            "pair": "NZDUSD",
-            "base": "NZD",
-            "quote": "USD",
-            "strength_difference": -1.912,
-            "bias": "SELL",
-            "confidence": "HIGH",
-            "relative_strength": 0.967
-          },
-          {
-            "pair": "USDCAD",
-            "base": "USD",
-            "quote": "CAD",
-            "strength_difference": 1.377,
-            "bias": "BUY",
-            "confidence": "MODERATE_HIGH",
-            "relative_strength": 0.697
-          },
-          {
             "pair": "USDCHF",
             "base": "USD",
             "quote": "CHF",
-            "strength_difference": 1.317,
+            "strength_difference": 2.19,
             "bias": "BUY",
-            "confidence": "MODERATE_HIGH",
-            "relative_strength": 0.667
+            "confidence": "HIGH",
+            "relative_strength": 0.909
+          },
+          {
+            "pair": "USDJPY",
+            "base": "USD",
+            "quote": "JPY",
+            "strength_difference": 2.158,
+            "bias": "BUY",
+            "confidence": "HIGH",
+            "relative_strength": 0.895
           },
           {
             "pair": "GBPUSD",
             "base": "GBP",
             "quote": "USD",
-            "strength_difference": -1.306,
+            "strength_difference": -2.109,
             "bias": "SELL",
-            "confidence": "MODERATE_HIGH",
-            "relative_strength": 0.661
+            "confidence": "HIGH",
+            "relative_strength": 0.875
+          },
+          {
+            "pair": "AUDUSD",
+            "base": "AUD",
+            "quote": "USD",
+            "strength_difference": -2.055,
+            "bias": "SELL",
+            "confidence": "HIGH",
+            "relative_strength": 0.853
           }
         ],
         "pair_threshold": {
           "method": "dynamic_cross_sectional",
           "timeframe": "weekly",
-          "wait_threshold": 0.395,
+          "wait_threshold": 0.482,
           "absolute_floor": 0.02,
           "relative_fraction": 0.2,
-          "max_cross_currency_gap": 1.976
+          "max_cross_currency_gap": 2.41
         },
         "pair_returns": {
-          "EURUSD": 0.103284,
-          "GBPUSD": -0.023045,
-          "AUDUSD": -0.693413,
-          "NZDUSD": -0.629116,
-          "USDJPY": -0.087923,
-          "USDCHF": 0.034573,
-          "USDCAD": 0.093802
+          "EURUSD": -0.147015,
+          "GBPUSD": -0.246169,
+          "AUDUSD": -0.192007,
+          "NZDUSD": -0.547252,
+          "USDJPY": 0.295171,
+          "USDCHF": 0.327205,
+          "USDCAD": 0.108233
         },
         "strength_percentile": {
           "methodology": "Current ECB strength is ranked against prior same-timeframe ECB observations; directional percentile uses signed score, magnitude percentile uses absolute score.",
@@ -281,32 +281,32 @@
           "lookback_periods": 16,
           "currency_percentiles": {
             "USD": {
-              "directional_percentile": 56.3,
-              "magnitude_percentile": 25
+              "directional_percentile": 62.5,
+              "magnitude_percentile": 31.3
             },
             "EUR": {
-              "directional_percentile": 62.5,
-              "magnitude_percentile": 25
+              "directional_percentile": 37.5,
+              "magnitude_percentile": 37.5
             },
             "GBP": {
-              "directional_percentile": 43.8,
-              "magnitude_percentile": 6.3
+              "directional_percentile": 31.3,
+              "magnitude_percentile": 31.3
             },
             "JPY": {
-              "directional_percentile": 68.8,
-              "magnitude_percentile": 6.3
+              "directional_percentile": 25,
+              "magnitude_percentile": 56.3
             },
             "CHF": {
-              "directional_percentile": 75,
-              "magnitude_percentile": 0
+              "directional_percentile": 31.3,
+              "magnitude_percentile": 43.8
             },
             "CAD": {
               "directional_percentile": 56.3,
               "magnitude_percentile": 12.5
             },
             "AUD": {
-              "directional_percentile": 18.8,
-              "magnitude_percentile": 75
+              "directional_percentile": 50,
+              "magnitude_percentile": 6.3
             },
             "NZD": {
               "directional_percentile": 37.5,
@@ -315,64 +315,64 @@
           },
           "strongest": {
             "currency": "USD",
-            "score": 1.282741,
-            "directional_percentile": 56.3,
-            "magnitude_percentile": 25
+            "score": 1.863051,
+            "directional_percentile": 62.5,
+            "magnitude_percentile": 31.3
           },
           "weakest": {
-            "currency": "AUD",
-            "score": -0.693413,
-            "directional_percentile": 18.8,
-            "magnitude_percentile": 75
+            "currency": "NZD",
+            "score": -0.547252,
+            "directional_percentile": 37.5,
+            "magnitude_percentile": 25
           },
-          "cross_currency_gap": 1.976,
-          "gap_percentile": 12.5
+          "cross_currency_gap": 2.41,
+          "gap_percentile": 18.8
         }
       },
       "monthly": {
         "timeframe": "monthly",
         "from_date": "2026-08-03",
-        "to_date": "2026-08-19",
+        "to_date": "2026-08-18",
         "currency_strength": {
-          "USD": -1.618628,
-          "EUR": 0.60694,
-          "GBP": 0.637133,
-          "JPY": -1.538167,
-          "CHF": -0.271046,
-          "CAD": 1.112062,
-          "AUD": 0.983514,
-          "NZD": 0.088194
+          "USD": -1.037891,
+          "EUR": 0.355382,
+          "GBP": 0.412536,
+          "JPY": -1.927496,
+          "CHF": -0.56437,
+          "CAD": 1.097804,
+          "AUD": 1.493386,
+          "NZD": 0.170648
         },
         "ranking": [
-          "CAD",
           "AUD",
+          "CAD",
           "GBP",
           "EUR",
           "NZD",
           "CHF",
-          "JPY",
-          "USD"
+          "USD",
+          "JPY"
         ],
-        "strongest_currency": "CAD",
-        "strongest_score": 1.112062,
-        "weakest_currency": "USD",
-        "weakest_score": -1.618628,
+        "strongest_currency": "AUD",
+        "strongest_score": 1.493386,
+        "weakest_currency": "JPY",
+        "weakest_score": -1.927496,
         "pair_analysis": {
-          "pair": "USDCAD",
-          "base": "USD",
-          "quote": "CAD",
-          "strength_difference": -2.731,
-          "bias": "SELL",
+          "pair": "AUDJPY",
+          "base": "AUD",
+          "quote": "JPY",
+          "strength_difference": 3.421,
+          "bias": "BUY",
           "confidence": "HIGH",
           "relative_strength": 1
         },
         "top_pair_opportunities": [
           {
-            "pair": "USDCAD",
-            "base": "USD",
-            "quote": "CAD",
-            "strength_difference": -2.731,
-            "bias": "SELL",
+            "pair": "AUDJPY",
+            "base": "AUD",
+            "quote": "JPY",
+            "strength_difference": 3.421,
+            "bias": "BUY",
             "confidence": "HIGH",
             "relative_strength": 1
           },
@@ -380,55 +380,55 @@
             "pair": "CADJPY",
             "base": "CAD",
             "quote": "JPY",
-            "strength_difference": 2.65,
+            "strength_difference": 3.025,
             "bias": "BUY",
             "confidence": "HIGH",
-            "relative_strength": 0.971
+            "relative_strength": 0.884
           },
           {
             "pair": "AUDUSD",
             "base": "AUD",
             "quote": "USD",
-            "strength_difference": 2.602,
+            "strength_difference": 2.531,
             "bias": "BUY",
-            "confidence": "HIGH",
-            "relative_strength": 0.953
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.74
           },
           {
-            "pair": "AUDJPY",
-            "base": "AUD",
-            "quote": "JPY",
-            "strength_difference": 2.522,
-            "bias": "BUY",
-            "confidence": "HIGH",
-            "relative_strength": 0.923
-          },
-          {
-            "pair": "GBPUSD",
+            "pair": "GBPJPY",
             "base": "GBP",
-            "quote": "USD",
-            "strength_difference": 2.256,
+            "quote": "JPY",
+            "strength_difference": 2.34,
             "bias": "BUY",
-            "confidence": "HIGH",
-            "relative_strength": 0.826
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.684
+          },
+          {
+            "pair": "EURJPY",
+            "base": "EUR",
+            "quote": "JPY",
+            "strength_difference": 2.283,
+            "bias": "BUY",
+            "confidence": "MODERATE_HIGH",
+            "relative_strength": 0.667
           }
         ],
         "pair_threshold": {
           "method": "dynamic_cross_sectional",
           "timeframe": "monthly",
-          "wait_threshold": 0.546,
+          "wait_threshold": 0.684,
           "absolute_floor": 0.05,
           "relative_fraction": 0.2,
-          "max_cross_currency_gap": 2.731
+          "max_cross_currency_gap": 3.421
         },
         "pair_returns": {
-          "EURUSD": 0.60694,
-          "GBPUSD": 0.637133,
-          "AUDUSD": 0.983514,
-          "NZDUSD": 0.088194,
-          "USDJPY": 1.538167,
-          "USDCHF": 0.271046,
-          "USDCAD": -1.112062
+          "EURUSD": 0.355382,
+          "GBPUSD": 0.412536,
+          "AUDUSD": 1.493386,
+          "NZDUSD": 0.170648,
+          "USDJPY": 1.927496,
+          "USDCHF": 0.56437,
+          "USDCAD": -1.097804
         },
         "strength_percentile": {
           "methodology": "Current ECB strength is ranked against prior same-timeframe ECB observations; directional percentile uses signed score, magnitude percentile uses absolute score.",
@@ -441,15 +441,15 @@
             },
             "EUR": {
               "directional_percentile": 66.7,
-              "magnitude_percentile": 33.3
+              "magnitude_percentile": 16.7
             },
             "GBP": {
               "directional_percentile": 66.7,
               "magnitude_percentile": 0
             },
             "JPY": {
-              "directional_percentile": 16.7,
-              "magnitude_percentile": 83.3
+              "directional_percentile": 0,
+              "magnitude_percentile": 100
             },
             "CHF": {
               "directional_percentile": 33.3,
@@ -469,135 +469,135 @@
             }
           },
           "strongest": {
-            "currency": "CAD",
-            "score": 1.112062,
-            "directional_percentile": 66.7,
+            "currency": "AUD",
+            "score": 1.493386,
+            "directional_percentile": 50,
             "magnitude_percentile": 16.7
           },
           "weakest": {
-            "currency": "USD",
-            "score": -1.618628,
-            "directional_percentile": 33.3,
-            "magnitude_percentile": 16.7
+            "currency": "JPY",
+            "score": -1.927496,
+            "directional_percentile": 0,
+            "magnitude_percentile": 100
           },
-          "cross_currency_gap": 2.731,
+          "cross_currency_gap": 3.421,
           "gap_percentile": 0
         }
       }
     },
     "multi_timeframe_alignment": {
-      "score": 50.2,
-      "state": "LOW",
+      "score": 73.1,
+      "state": "MODERATE",
       "methodology": "55% pairwise rank alignment + 25% currency direction consensus + 10% strongest consensus + 10% weakest consensus across Daily, Weekly and Monthly ECB strength.",
-      "rank_alignment_score": 40.9,
-      "direction_alignment_score": 70.8,
+      "rank_alignment_score": 74.6,
+      "direction_alignment_score": 75,
       "pairwise_rank_correlation": {
-        "daily_weekly": 0.214,
-        "daily_monthly": -0.143,
-        "weekly_monthly": -0.619
+        "daily_weekly": 1,
+        "daily_monthly": 0.238,
+        "weekly_monthly": 0.238
       },
       "strongest_consensus": {
-        "currency": null,
-        "count": 1
+        "currency": "USD",
+        "count": 2
       },
       "weakest_consensus": {
-        "currency": "USD",
+        "currency": "NZD",
         "count": 2
       },
       "timeframe_leaders": {
         "daily": {
-          "strongest": "JPY",
-          "weakest": "USD"
+          "strongest": "USD",
+          "weakest": "NZD"
         },
         "weekly": {
           "strongest": "USD",
-          "weakest": "AUD"
+          "weakest": "NZD"
         },
         "monthly": {
-          "strongest": "CAD",
-          "weakest": "USD"
+          "strongest": "AUD",
+          "weakest": "JPY"
         }
       },
       "daily_pair_alignment": {
-        "pair": "USDJPY",
+        "pair": "NZDUSD",
         "directions": {
           "daily": "SELL",
-          "weekly": "BUY",
-          "monthly": "SELL"
+          "weekly": "SELL",
+          "monthly": "BUY"
         },
         "all_three_aligned": false,
         "aligned_timeframes": 2
       },
       "currencies": {
         "USD": {
-          "daily_rank": 8,
+          "daily_rank": 1,
           "weekly_rank": 1,
-          "monthly_rank": 8,
-          "average_rank": 5.67,
-          "rank_spread": 7,
+          "monthly_rank": 7,
+          "average_rank": 3,
+          "rank_spread": 6,
           "direction_consensus": 0.667,
           "direction_state": "PARTIAL"
         },
         "EUR": {
           "daily_rank": 3,
-          "weekly_rank": 2,
+          "weekly_rank": 3,
           "monthly_rank": 4,
-          "average_rank": 3,
-          "rank_spread": 2,
-          "direction_consensus": 1,
-          "direction_state": "ALIGNED"
-        },
-        "GBP": {
-          "daily_rank": 4,
-          "weekly_rank": 4,
-          "monthly_rank": 3,
-          "average_rank": 3.67,
+          "average_rank": 3.33,
           "rank_spread": 1,
           "direction_consensus": 0.667,
           "direction_state": "PARTIAL"
         },
-        "JPY": {
-          "daily_rank": 1,
-          "weekly_rank": 3,
-          "monthly_rank": 7,
-          "average_rank": 3.67,
-          "rank_spread": 6,
+        "GBP": {
+          "daily_rank": 5,
+          "weekly_rank": 5,
+          "monthly_rank": 3,
+          "average_rank": 4.33,
+          "rank_spread": 2,
           "direction_consensus": 0.667,
           "direction_state": "PARTIAL"
+        },
+        "JPY": {
+          "daily_rank": 6,
+          "weekly_rank": 6,
+          "monthly_rank": 8,
+          "average_rank": 6.67,
+          "rank_spread": 2,
+          "direction_consensus": 1,
+          "direction_state": "ALIGNED"
         },
         "CHF": {
-          "daily_rank": 2,
-          "weekly_rank": 5,
+          "daily_rank": 7,
+          "weekly_rank": 7,
           "monthly_rank": 6,
-          "average_rank": 4.33,
-          "rank_spread": 4,
-          "direction_consensus": 0.667,
-          "direction_state": "PARTIAL"
+          "average_rank": 6.67,
+          "rank_spread": 1,
+          "direction_consensus": 1,
+          "direction_state": "ALIGNED"
         },
         "CAD": {
-          "daily_rank": 5,
-          "weekly_rank": 6,
-          "monthly_rank": 1,
-          "average_rank": 4,
-          "rank_spread": 5,
+          "daily_rank": 2,
+          "weekly_rank": 2,
+          "monthly_rank": 2,
+          "average_rank": 2,
+          "rank_spread": 0,
           "direction_consensus": 0.667,
           "direction_state": "PARTIAL"
         },
         "AUD": {
-          "daily_rank": 7,
-          "weekly_rank": 8,
-          "monthly_rank": 2,
-          "average_rank": 5.67,
-          "rank_spread": 6,
+          "daily_rank": 4,
+          "weekly_rank": 4,
+          "monthly_rank": 1,
+          "average_rank": 3,
+          "rank_spread": 3,
           "direction_consensus": 0.667,
           "direction_state": "PARTIAL"
         },
         "NZD": {
-          "daily_rank": 6,
-          "weekly_rank": 7,
+          "daily_rank": 8,
+          "weekly_rank": 8,
           "monthly_rank": 5,
-          "average_rank": 6,
-          "rank_spread": 2,
+          "average_rank": 7,
+          "rank_spread": 3,
           "direction_consensus": 0.667,
           "direction_state": "PARTIAL"
         }
@@ -614,48 +614,15 @@
         "daily": {
           "available": true,
           "agreement": "LOW",
-          "agreement_score": 40.4,
+          "agreement_score": 56.1,
           "confidence_adjustment": "REDUCE",
-          "rank_correlation": 0.143,
-          "rank_agreement_score": 0.571,
+          "rank_correlation": 0.429,
+          "rank_agreement_score": 0.714,
           "direction_agreement": 0.625,
-          "strongest_match": false,
-          "weakest_match": false,
-          "pair_match": false,
-          "bias_match": true,
-          "score_components": {
-            "ranking_weight": 0.4,
-            "direction_weight": 0.2,
-            "strongest_weight": 0.15,
-            "weakest_weight": 0.15,
-            "pair_weight": 0.05,
-            "bias_weight": 0.05
-          },
-          "primary": {
-            "strongest": "JPY",
-            "weakest": "USD",
-            "pair": "USDJPY",
-            "bias": "SELL"
-          },
-          "confirmation": {
-            "strongest": "USD",
-            "weakest": "AUD",
-            "pair": "AUDUSD",
-            "bias": "SELL"
-          }
-        },
-        "weekly": {
-          "available": true,
-          "agreement": "MODERATE",
-          "agreement_score": 68.8,
-          "confidence_adjustment": "CAUTION",
-          "rank_correlation": 0.69,
-          "rank_agreement_score": 0.845,
-          "direction_agreement": 0.75,
           "strongest_match": true,
           "weakest_match": false,
           "pair_match": false,
-          "bias_match": true,
+          "bias_match": false,
           "score_components": {
             "ranking_weight": 0.4,
             "direction_weight": 0.2,
@@ -665,29 +632,62 @@
             "bias_weight": 0.05
           },
           "primary": {
-            "strongest": "USD",
-            "weakest": "AUD",
-            "pair": "AUDUSD",
-            "bias": "SELL"
-          },
-          "confirmation": {
             "strongest": "USD",
             "weakest": "NZD",
             "pair": "NZDUSD",
             "bias": "SELL"
+          },
+          "confirmation": {
+            "strongest": "USD",
+            "weakest": "JPY",
+            "pair": "USDJPY",
+            "bias": "BUY"
+          }
+        },
+        "weekly": {
+          "available": true,
+          "agreement": "LOW",
+          "agreement_score": 56.1,
+          "confidence_adjustment": "REDUCE",
+          "rank_correlation": 0.429,
+          "rank_agreement_score": 0.714,
+          "direction_agreement": 0.625,
+          "strongest_match": true,
+          "weakest_match": false,
+          "pair_match": false,
+          "bias_match": false,
+          "score_components": {
+            "ranking_weight": 0.4,
+            "direction_weight": 0.2,
+            "strongest_weight": 0.15,
+            "weakest_weight": 0.15,
+            "pair_weight": 0.05,
+            "bias_weight": 0.05
+          },
+          "primary": {
+            "strongest": "USD",
+            "weakest": "NZD",
+            "pair": "NZDUSD",
+            "bias": "SELL"
+          },
+          "confirmation": {
+            "strongest": "USD",
+            "weakest": "JPY",
+            "pair": "USDJPY",
+            "bias": "BUY"
           }
         },
         "monthly": {
           "available": true,
-          "agreement": "HIGH",
-          "agreement_score": 100,
-          "confidence_adjustment": "NONE",
-          "rank_correlation": 1,
-          "rank_agreement_score": 1,
+          "agreement": "MODERATE",
+          "agreement_score": 79.5,
+          "confidence_adjustment": "CAUTION",
+          "rank_correlation": 0.976,
+          "rank_agreement_score": 0.988,
           "direction_agreement": 1,
           "strongest_match": true,
-          "weakest_match": true,
-          "pair_match": true,
+          "weakest_match": false,
+          "pair_match": false,
           "bias_match": true,
           "score_components": {
             "ranking_weight": 0.4,
@@ -698,114 +698,114 @@
             "bias_weight": 0.05
           },
           "primary": {
-            "strongest": "CAD",
-            "weakest": "USD",
-            "pair": "USDCAD",
-            "bias": "SELL"
+            "strongest": "AUD",
+            "weakest": "JPY",
+            "pair": "AUDJPY",
+            "bias": "BUY"
           },
           "confirmation": {
-            "strongest": "CAD",
+            "strongest": "AUD",
             "weakest": "USD",
-            "pair": "USDCAD",
-            "bias": "SELL"
+            "pair": "AUDUSD",
+            "bias": "BUY"
           }
         }
       }
     },
     "currency_strength": {
-      "USD": -0.577717,
-      "EUR": 0.250667,
-      "GBP": 0.223674,
-      "JPY": 0.381966,
-      "CHF": 0.291678,
-      "CAD": 0.014415,
-      "AUD": -0.50237,
-      "NZD": -0.082314
+      "USD": 1.863051,
+      "EUR": -0.147015,
+      "GBP": -0.246169,
+      "JPY": -0.295171,
+      "CHF": -0.327205,
+      "CAD": -0.108233,
+      "AUD": -0.192007,
+      "NZD": -0.547252
     },
     "ranking": [
+      "USD",
+      "CAD",
+      "EUR",
+      "AUD",
+      "GBP",
       "JPY",
       "CHF",
-      "EUR",
-      "GBP",
-      "CAD",
-      "NZD",
-      "AUD",
-      "USD"
+      "NZD"
     ],
-    "strongest_currency": "JPY",
-    "weakest_currency": "USD",
+    "strongest_currency": "USD",
+    "weakest_currency": "NZD",
     "pair_analysis": {
-      "pair": "USDJPY",
-      "base": "USD",
-      "quote": "JPY",
-      "strength_difference": -0.96,
+      "pair": "NZDUSD",
+      "base": "NZD",
+      "quote": "USD",
+      "strength_difference": -2.41,
       "bias": "SELL",
       "confidence": "HIGH",
       "relative_strength": 1
     },
     "top_pair_opportunities": [
       {
-        "pair": "USDJPY",
-        "base": "USD",
-        "quote": "JPY",
-        "strength_difference": -0.96,
+        "pair": "NZDUSD",
+        "base": "NZD",
+        "quote": "USD",
+        "strength_difference": -2.41,
         "bias": "SELL",
         "confidence": "HIGH",
         "relative_strength": 1
       },
       {
-        "pair": "AUDJPY",
-        "base": "AUD",
-        "quote": "JPY",
-        "strength_difference": -0.884,
-        "bias": "SELL",
-        "confidence": "HIGH",
-        "relative_strength": 0.921
-      },
-      {
         "pair": "USDCHF",
         "base": "USD",
         "quote": "CHF",
-        "strength_difference": -0.869,
-        "bias": "SELL",
-        "confidence": "HIGH",
-        "relative_strength": 0.906
-      },
-      {
-        "pair": "EURUSD",
-        "base": "EUR",
-        "quote": "USD",
-        "strength_difference": 0.828,
+        "strength_difference": 2.19,
         "bias": "BUY",
         "confidence": "HIGH",
-        "relative_strength": 0.863
+        "relative_strength": 0.909
+      },
+      {
+        "pair": "USDJPY",
+        "base": "USD",
+        "quote": "JPY",
+        "strength_difference": 2.158,
+        "bias": "BUY",
+        "confidence": "HIGH",
+        "relative_strength": 0.895
       },
       {
         "pair": "GBPUSD",
         "base": "GBP",
         "quote": "USD",
-        "strength_difference": 0.801,
-        "bias": "BUY",
+        "strength_difference": -2.109,
+        "bias": "SELL",
         "confidence": "HIGH",
-        "relative_strength": 0.835
+        "relative_strength": 0.875
+      },
+      {
+        "pair": "AUDUSD",
+        "base": "AUD",
+        "quote": "USD",
+        "strength_difference": -2.055,
+        "bias": "SELL",
+        "confidence": "HIGH",
+        "relative_strength": 0.853
       }
     ],
     "pair_threshold": {
       "method": "dynamic_cross_sectional",
       "timeframe": "daily",
-      "wait_threshold": 0.192,
+      "wait_threshold": 0.482,
       "absolute_floor": 0.005,
       "relative_fraction": 0.2,
-      "max_cross_currency_gap": 0.96
+      "max_cross_currency_gap": 2.41
     },
     "pair_returns": {
-      "EURUSD": 0.250667,
-      "GBPUSD": 0.223674,
-      "AUDUSD": -0.50237,
-      "NZDUSD": -0.082314,
-      "USDJPY": -0.381966,
-      "USDCHF": -0.291678,
-      "USDCAD": -0.014415
+      "EURUSD": -0.147015,
+      "GBPUSD": -0.246169,
+      "AUDUSD": -0.192007,
+      "NZDUSD": -0.547252,
+      "USDJPY": 0.295171,
+      "USDCHF": 0.327205,
+      "USDCAD": 0.108233
     },
     "strength_percentile": {
       "methodology": "Current ECB strength is ranked against prior same-timeframe ECB observations; directional percentile uses signed score, magnitude percentile uses absolute score.",
@@ -813,80 +813,80 @@
       "lookback_periods": 60,
       "currency_percentiles": {
         "USD": {
-          "directional_percentile": 33.3,
-          "magnitude_percentile": 23.3
+          "directional_percentile": 86.7,
+          "magnitude_percentile": 68.3
         },
         "EUR": {
-          "directional_percentile": 81.7,
-          "magnitude_percentile": 66.7
+          "directional_percentile": 21.7,
+          "magnitude_percentile": 51.7
         },
         "GBP": {
-          "directional_percentile": 75,
-          "magnitude_percentile": 53.3
+          "directional_percentile": 16.7,
+          "magnitude_percentile": 61.7
         },
         "JPY": {
-          "directional_percentile": 93.3,
-          "magnitude_percentile": 88.3
+          "directional_percentile": 13.3,
+          "magnitude_percentile": 78.3
         },
         "CHF": {
-          "directional_percentile": 81.7,
-          "magnitude_percentile": 60
+          "directional_percentile": 16.7,
+          "magnitude_percentile": 71.7
         },
         "CAD": {
-          "directional_percentile": 55,
-          "magnitude_percentile": 5
+          "directional_percentile": 31.7,
+          "magnitude_percentile": 45
         },
         "AUD": {
-          "directional_percentile": 8.3,
-          "magnitude_percentile": 80
+          "directional_percentile": 25,
+          "magnitude_percentile": 48.3
         },
         "NZD": {
-          "directional_percentile": 43.3,
-          "magnitude_percentile": 11.7
+          "directional_percentile": 11.7,
+          "magnitude_percentile": 75
         }
       },
       "strongest": {
-        "currency": "JPY",
-        "score": 0.381966,
-        "directional_percentile": 93.3,
-        "magnitude_percentile": 88.3
+        "currency": "USD",
+        "score": 1.863051,
+        "directional_percentile": 86.7,
+        "magnitude_percentile": 68.3
       },
       "weakest": {
-        "currency": "USD",
-        "score": -0.577717,
-        "directional_percentile": 33.3,
-        "magnitude_percentile": 23.3
+        "currency": "NZD",
+        "score": -0.547252,
+        "directional_percentile": 11.7,
+        "magnitude_percentile": 75
       },
-      "cross_currency_gap": 0.96,
-      "gap_percentile": 21.7
+      "cross_currency_gap": 2.41,
+      "gap_percentile": 68.3
     },
     "next_day_prediction": {
       "strongest_candidates": [
         {
           "currency": "USD",
-          "probability": 27.93
+          "probability": 65.86
         },
         {
           "currency": "JPY",
-          "probability": 21.77
+          "probability": 9.31
         },
         {
-          "currency": "CHF",
-          "probability": 12.62
+          "currency": "CAD",
+          "probability": 6.21
         }
       ],
       "weakest_candidates": [
         {
           "currency": "USD",
-          "probability": 43.68
-        },
-        {
-          "currency": "AUD",
-          "probability": 19.5
+          "probability": 24.83
         },
         {
           "currency": "NZD",
-          "probability": 18.2
+          "probability": 23.56
+        },
+        {
+          "currency": "JPY",
+          "probability": 21.53
         }
       ],
       "model": "frequency_plus_momentum",
@@ -899,12 +899,12 @@
     },
     "reversal_intelligence": {
       "timeframe": "daily",
-      "current_strong": "JPY",
-      "current_weak": "USD",
-      "strong_continuation_probability": 21.77,
-      "strong_to_weak_probability": 15.52,
-      "weak_continuation_probability": 43.68,
-      "weak_to_strong_probability": 27.93
+      "current_strong": "USD",
+      "current_weak": "NZD",
+      "strong_continuation_probability": 65.86,
+      "strong_to_weak_probability": 24.83,
+      "weak_continuation_probability": 23.56,
+      "weak_to_strong_probability": 6.21
     },
     "notice": "ECB-only remains canonical. Blended multi-provider is confirmation only. Percentiles are historical context, not probabilities of profit. Reference rates are not real-time executable trading quotes.",
     "composite_currency_strength_confidence": {
@@ -925,22 +925,22 @@
       "timeframes": {
         "daily": {
           "timeframe": "daily",
-          "score": 39.2,
-          "state": "LOW",
+          "score": 65.1,
+          "state": "MODERATE",
           "methodology": "Evidence-quality score: 40% Provider Agreement + 35% Multi-Timeframe Alignment + 25% cross-currency Strength Percentile. Missing components are excluded and remaining weights are normalized. This is not a probability of profit.",
           "components": {
             "provider_agreement": {
-              "score": 40.4,
+              "score": 56.1,
               "base_weight": 0.4,
               "available": true
             },
             "mtf_alignment": {
-              "score": 50.2,
+              "score": 73.1,
               "base_weight": 0.35,
               "available": true
             },
             "strength_percentile": {
-              "score": 21.7,
+              "score": 68.3,
               "base_weight": 0.25,
               "metric": "cross_currency_gap_percentile",
               "sample_size": 60,
@@ -951,14 +951,13 @@
           "effective_weight_sum": 1,
           "data_completeness": 100,
           "signal": {
-            "pair": "USDJPY",
+            "pair": "NZDUSD",
             "bias": "SELL",
-            "strongest": "JPY",
-            "weakest": "USD"
+            "strongest": "USD",
+            "weakest": "NZD"
           },
           "warnings": [
-            "LOW_PROVIDER_AGREEMENT",
-            "LOW_MTF_ALIGNMENT"
+            "LOW_PROVIDER_AGREEMENT"
           ],
           "regime": {
             "regime": "PROVIDER_DIVERGENCE",
@@ -969,22 +968,22 @@
         },
         "weekly": {
           "timeframe": "weekly",
-          "score": 48.2,
+          "score": 52.7,
           "state": "LOW",
           "methodology": "Evidence-quality score: 40% Provider Agreement + 35% Multi-Timeframe Alignment + 25% cross-currency Strength Percentile. Missing components are excluded and remaining weights are normalized. This is not a probability of profit.",
           "components": {
             "provider_agreement": {
-              "score": 68.8,
+              "score": 56.1,
               "base_weight": 0.4,
               "available": true
             },
             "mtf_alignment": {
-              "score": 50.2,
+              "score": 73.1,
               "base_weight": 0.35,
               "available": true
             },
             "strength_percentile": {
-              "score": 12.5,
+              "score": 18.8,
               "base_weight": 0.25,
               "metric": "cross_currency_gap_percentile",
               "sample_size": 16,
@@ -995,35 +994,35 @@
           "effective_weight_sum": 1,
           "data_completeness": 100,
           "signal": {
-            "pair": "AUDUSD",
+            "pair": "NZDUSD",
             "bias": "SELL",
             "strongest": "USD",
-            "weakest": "AUD"
+            "weakest": "NZD"
           },
           "warnings": [
-            "LOW_MTF_ALIGNMENT",
+            "LOW_PROVIDER_AGREEMENT",
             "LOW_HISTORICAL_SEPARATION"
           ],
           "regime": {
-            "regime": "LOW_ALIGNMENT",
+            "regime": "PROVIDER_DIVERGENCE",
             "guardrail_pass": false,
             "continuation_status": "FILTERED",
-            "reason": "Multi-Timeframe Alignment is below 60, so Daily/Weekly/Monthly evidence is not sufficiently aligned."
+            "reason": "Provider Agreement is below 60, so cross-provider confirmation is weak."
           }
         },
         "monthly": {
           "timeframe": "monthly",
-          "score": 57.6,
+          "score": 57.4,
           "state": "LOW",
           "methodology": "Evidence-quality score: 40% Provider Agreement + 35% Multi-Timeframe Alignment + 25% cross-currency Strength Percentile. Missing components are excluded and remaining weights are normalized. This is not a probability of profit.",
           "components": {
             "provider_agreement": {
-              "score": 100,
+              "score": 79.5,
               "base_weight": 0.4,
               "available": true
             },
             "mtf_alignment": {
-              "score": 50.2,
+              "score": 73.1,
               "base_weight": 0.35,
               "available": true
             },
@@ -1039,41 +1038,40 @@
           "effective_weight_sum": 1,
           "data_completeness": 100,
           "signal": {
-            "pair": "USDCAD",
-            "bias": "SELL",
-            "strongest": "CAD",
-            "weakest": "USD"
+            "pair": "AUDJPY",
+            "bias": "BUY",
+            "strongest": "AUD",
+            "weakest": "JPY"
           },
           "warnings": [
-            "LOW_MTF_ALIGNMENT",
             "LOW_HISTORICAL_SEPARATION"
           ],
           "regime": {
-            "regime": "LOW_ALIGNMENT",
+            "regime": "LOW_SEPARATION",
             "guardrail_pass": false,
             "continuation_status": "FILTERED",
-            "reason": "Multi-Timeframe Alignment is below 60, so Daily/Weekly/Monthly evidence is not sufficiently aligned."
+            "reason": "Strength gap percentile is below 20, indicating weak historical separation."
           }
         }
       },
       "current": {
         "timeframe": "daily",
-        "score": 39.2,
-        "state": "LOW",
+        "score": 65.1,
+        "state": "MODERATE",
         "methodology": "Evidence-quality score: 40% Provider Agreement + 35% Multi-Timeframe Alignment + 25% cross-currency Strength Percentile. Missing components are excluded and remaining weights are normalized. This is not a probability of profit.",
         "components": {
           "provider_agreement": {
-            "score": 40.4,
+            "score": 56.1,
             "base_weight": 0.4,
             "available": true
           },
           "mtf_alignment": {
-            "score": 50.2,
+            "score": 73.1,
             "base_weight": 0.35,
             "available": true
           },
           "strength_percentile": {
-            "score": 21.7,
+            "score": 68.3,
             "base_weight": 0.25,
             "metric": "cross_currency_gap_percentile",
             "sample_size": 60,
@@ -1084,14 +1082,13 @@
         "effective_weight_sum": 1,
         "data_completeness": 100,
         "signal": {
-          "pair": "USDJPY",
+          "pair": "NZDUSD",
           "bias": "SELL",
-          "strongest": "JPY",
-          "weakest": "USD"
+          "strongest": "USD",
+          "weakest": "NZD"
         },
         "warnings": [
-          "LOW_PROVIDER_AGREEMENT",
-          "LOW_MTF_ALIGNMENT"
+          "LOW_PROVIDER_AGREEMENT"
         ],
         "regime": {
           "regime": "PROVIDER_DIVERGENCE",
@@ -1122,16 +1119,16 @@
           "reason": "Provider Agreement is below 60, so cross-provider confirmation is weak."
         },
         "weekly": {
-          "regime": "LOW_ALIGNMENT",
+          "regime": "PROVIDER_DIVERGENCE",
           "guardrail_pass": false,
           "continuation_status": "FILTERED",
-          "reason": "Multi-Timeframe Alignment is below 60, so Daily/Weekly/Monthly evidence is not sufficiently aligned."
+          "reason": "Provider Agreement is below 60, so cross-provider confirmation is weak."
         },
         "monthly": {
-          "regime": "LOW_ALIGNMENT",
+          "regime": "LOW_SEPARATION",
           "guardrail_pass": false,
           "continuation_status": "FILTERED",
-          "reason": "Multi-Timeframe Alignment is below 60, so Daily/Weekly/Monthly evidence is not sufficiently aligned."
+          "reason": "Strength gap percentile is below 20, indicating weak historical separation."
         }
       },
       "current": {
@@ -1191,16 +1188,16 @@
       "timeframes": {
         "daily": {
           "timeframe": "daily",
-          "score": 39.2,
+          "score": 50,
           "state": "FILTERED",
           "decision": "DEPRIORITIZE",
           "scope": "continuation_readiness",
-          "base_evidence_score": 39.2,
+          "base_evidence_score": 65.1,
           "methodology": "Actionability Score is the minimum of four interpretable ceilings: evidence quality, regime guardrail, pair readiness, and data readiness. Pair readiness now requires pair-specific Daily/Weekly/Monthly directional alignment; data readiness also checks evidence completeness, historical percentile sample adequacy, and business-day freshness. The score does not reverse the canonical ECB bias and is not a probability of profit.",
           "dimensions": {
             "evidence_quality": {
-              "score": 39.2,
-              "state": "LOW",
+              "score": 65.1,
+              "state": "MODERATE",
               "source": "Composite Currency Strength Confidence"
             },
             "regime_guardrail": {
@@ -1210,17 +1207,17 @@
               "ceiling": 50
             },
             "pair_readiness": {
-              "pair": "USDJPY",
+              "pair": "NZDUSD",
               "confidence": "HIGH",
               "bias": "SELL",
               "confidence_ceiling": 100,
               "alignment": {
-                "pair": "USDJPY",
+                "pair": "NZDUSD",
                 "active_bias": "SELL",
                 "directions": {
                   "daily": "SELL",
-                  "weekly": "BUY",
-                  "monthly": "SELL"
+                  "weekly": "SELL",
+                  "monthly": "BUY"
                 },
                 "aligned_count": 2,
                 "available_timeframes": 3,
@@ -1236,7 +1233,7 @@
               "history_sample_target": 60,
               "history_sample_ratio_percent": 100,
               "history_ceiling": 100,
-              "business_day_age": 0,
+              "business_day_age": 1,
               "freshness_ceiling": 100,
               "ceiling": 100
             }
@@ -1244,7 +1241,7 @@
           "gates": {
             "evidence": {
               "pass": false,
-              "score": 39.2,
+              "score": 65.1,
               "threshold": 80
             },
             "regime": {
@@ -1264,163 +1261,64 @@
               "pass": true,
               "completeness_percent": 100,
               "history_sample_ratio_percent": 100,
-              "business_day_age": 0,
+              "business_day_age": 1,
               "ceiling": 100
             }
           },
           "score_candidates": {
-            "evidence_quality": 39.2,
+            "evidence_quality": 65.1,
             "regime_guardrail": 50,
             "pair_readiness": 79,
             "data_readiness": 100
           },
-          "primary_limiter": "EVIDENCE_QUALITY",
+          "primary_limiter": "REGIME_GUARDRAIL",
           "limiting_factors": [
-            "EVIDENCE_QUALITY"
+            "REGIME_GUARDRAIL"
           ],
           "constraints": [
+            "REGIME_PROVIDER_DIVERGENCE",
             "EVIDENCE_BELOW_ACTIONABLE_THRESHOLD"
           ],
           "reason": "The signal is filtered from actionability by evidence quality or an operational guardrail; the canonical ECB strength signal itself is not reversed.",
           "signal": {
-            "pair": "USDJPY",
+            "pair": "NZDUSD",
             "bias": "SELL",
-            "strongest": "JPY",
-            "weakest": "USD"
+            "strongest": "USD",
+            "weakest": "NZD"
           }
         },
         "weekly": {
           "timeframe": "weekly",
-          "score": 48.2,
+          "score": 50,
           "state": "FILTERED",
           "decision": "DEPRIORITIZE",
           "scope": "continuation_readiness",
-          "base_evidence_score": 48.2,
+          "base_evidence_score": 52.7,
           "methodology": "Actionability Score is the minimum of four interpretable ceilings: evidence quality, regime guardrail, pair readiness, and data readiness. Pair readiness now requires pair-specific Daily/Weekly/Monthly directional alignment; data readiness also checks evidence completeness, historical percentile sample adequacy, and business-day freshness. The score does not reverse the canonical ECB bias and is not a probability of profit.",
           "dimensions": {
             "evidence_quality": {
-              "score": 48.2,
+              "score": 52.7,
               "state": "LOW",
               "source": "Composite Currency Strength Confidence"
             },
             "regime_guardrail": {
-              "code": "LOW_ALIGNMENT",
+              "code": "PROVIDER_DIVERGENCE",
               "pass": false,
               "continuation_status": "FILTERED",
-              "ceiling": 55
+              "ceiling": 50
             },
             "pair_readiness": {
-              "pair": "AUDUSD",
+              "pair": "NZDUSD",
               "confidence": "HIGH",
               "bias": "SELL",
               "confidence_ceiling": 100,
               "alignment": {
-                "pair": "AUDUSD",
-                "active_bias": "SELL",
-                "directions": {
-                  "daily": "BUY",
-                  "weekly": "SELL",
-                  "monthly": "BUY"
-                },
-                "aligned_count": 1,
-                "available_timeframes": 3,
-                "all_three_aligned": false,
-                "ceiling": 55
-              },
-              "ceiling": 55
-            },
-            "data_readiness": {
-              "completeness_percent": 100,
-              "completeness_ceiling": 100,
-              "history_sample_size": 16,
-              "history_sample_target": 16,
-              "history_sample_ratio_percent": 100,
-              "history_ceiling": 100,
-              "business_day_age": 0,
-              "freshness_ceiling": 100,
-              "ceiling": 100
-            }
-          },
-          "gates": {
-            "evidence": {
-              "pass": false,
-              "score": 48.2,
-              "threshold": 80
-            },
-            "regime": {
-              "pass": false,
-              "code": "LOW_ALIGNMENT",
-              "ceiling": 55
-            },
-            "pair": {
-              "pass": false,
-              "confidence": "HIGH",
-              "bias": "SELL",
-              "confidence_ceiling": 100,
-              "alignment_ceiling": 55,
-              "ceiling": 55
-            },
-            "data": {
-              "pass": true,
-              "completeness_percent": 100,
-              "history_sample_ratio_percent": 100,
-              "business_day_age": 0,
-              "ceiling": 100
-            }
-          },
-          "score_candidates": {
-            "evidence_quality": 48.2,
-            "regime_guardrail": 55,
-            "pair_readiness": 55,
-            "data_readiness": 100
-          },
-          "primary_limiter": "EVIDENCE_QUALITY",
-          "limiting_factors": [
-            "EVIDENCE_QUALITY"
-          ],
-          "constraints": [
-            "EVIDENCE_BELOW_ACTIONABLE_THRESHOLD"
-          ],
-          "reason": "The signal is filtered from actionability by evidence quality or an operational guardrail; the canonical ECB strength signal itself is not reversed.",
-          "signal": {
-            "pair": "AUDUSD",
-            "bias": "SELL",
-            "strongest": "USD",
-            "weakest": "AUD"
-          }
-        },
-        "monthly": {
-          "timeframe": "monthly",
-          "score": 55,
-          "state": "FILTERED",
-          "decision": "DEPRIORITIZE",
-          "scope": "continuation_readiness",
-          "base_evidence_score": 57.6,
-          "methodology": "Actionability Score is the minimum of four interpretable ceilings: evidence quality, regime guardrail, pair readiness, and data readiness. Pair readiness now requires pair-specific Daily/Weekly/Monthly directional alignment; data readiness also checks evidence completeness, historical percentile sample adequacy, and business-day freshness. The score does not reverse the canonical ECB bias and is not a probability of profit.",
-          "dimensions": {
-            "evidence_quality": {
-              "score": 57.6,
-              "state": "LOW",
-              "source": "Composite Currency Strength Confidence"
-            },
-            "regime_guardrail": {
-              "code": "LOW_ALIGNMENT",
-              "pass": false,
-              "continuation_status": "FILTERED",
-              "ceiling": 55
-            },
-            "pair_readiness": {
-              "pair": "USDCAD",
-              "confidence": "HIGH",
-              "bias": "SELL",
-              "confidence_ceiling": 100,
-              "alignment": {
-                "pair": "USDCAD",
+                "pair": "NZDUSD",
                 "active_bias": "SELL",
                 "directions": {
                   "daily": "SELL",
-                  "weekly": "BUY",
-                  "monthly": "SELL"
+                  "weekly": "SELL",
+                  "monthly": "BUY"
                 },
                 "aligned_count": 2,
                 "available_timeframes": 3,
@@ -1432,11 +1330,11 @@
             "data_readiness": {
               "completeness_percent": 100,
               "completeness_ceiling": 100,
-              "history_sample_size": 6,
-              "history_sample_target": 6,
+              "history_sample_size": 16,
+              "history_sample_target": 16,
               "history_sample_ratio_percent": 100,
               "history_ceiling": 100,
-              "business_day_age": 0,
+              "business_day_age": 1,
               "freshness_ceiling": 100,
               "ceiling": 100
             }
@@ -1444,13 +1342,13 @@
           "gates": {
             "evidence": {
               "pass": false,
-              "score": 57.6,
+              "score": 52.7,
               "threshold": 80
             },
             "regime": {
               "pass": false,
-              "code": "LOW_ALIGNMENT",
-              "ceiling": 55
+              "code": "PROVIDER_DIVERGENCE",
+              "ceiling": 50
             },
             "pair": {
               "pass": false,
@@ -1464,13 +1362,13 @@
               "pass": true,
               "completeness_percent": 100,
               "history_sample_ratio_percent": 100,
-              "business_day_age": 0,
+              "business_day_age": 1,
               "ceiling": 100
             }
           },
           "score_candidates": {
-            "evidence_quality": 57.6,
-            "regime_guardrail": 55,
+            "evidence_quality": 52.7,
+            "regime_guardrail": 50,
             "pair_readiness": 79,
             "data_readiness": 100
           },
@@ -1479,30 +1377,131 @@
             "REGIME_GUARDRAIL"
           ],
           "constraints": [
-            "REGIME_LOW_ALIGNMENT",
+            "REGIME_PROVIDER_DIVERGENCE",
             "EVIDENCE_BELOW_ACTIONABLE_THRESHOLD"
           ],
           "reason": "The signal is filtered from actionability by evidence quality or an operational guardrail; the canonical ECB strength signal itself is not reversed.",
           "signal": {
-            "pair": "USDCAD",
+            "pair": "NZDUSD",
             "bias": "SELL",
-            "strongest": "CAD",
-            "weakest": "USD"
+            "strongest": "USD",
+            "weakest": "NZD"
+          }
+        },
+        "monthly": {
+          "timeframe": "monthly",
+          "score": 55,
+          "state": "FILTERED",
+          "decision": "DEPRIORITIZE",
+          "scope": "continuation_readiness",
+          "base_evidence_score": 57.4,
+          "methodology": "Actionability Score is the minimum of four interpretable ceilings: evidence quality, regime guardrail, pair readiness, and data readiness. Pair readiness now requires pair-specific Daily/Weekly/Monthly directional alignment; data readiness also checks evidence completeness, historical percentile sample adequacy, and business-day freshness. The score does not reverse the canonical ECB bias and is not a probability of profit.",
+          "dimensions": {
+            "evidence_quality": {
+              "score": 57.4,
+              "state": "LOW",
+              "source": "Composite Currency Strength Confidence"
+            },
+            "regime_guardrail": {
+              "code": "LOW_SEPARATION",
+              "pass": false,
+              "continuation_status": "FILTERED",
+              "ceiling": 55
+            },
+            "pair_readiness": {
+              "pair": "AUDJPY",
+              "confidence": "HIGH",
+              "bias": "BUY",
+              "confidence_ceiling": 100,
+              "alignment": {
+                "pair": "AUDJPY",
+                "active_bias": "BUY",
+                "directions": {
+                  "daily": "BUY",
+                  "weekly": "BUY",
+                  "monthly": "BUY"
+                },
+                "aligned_count": 3,
+                "available_timeframes": 3,
+                "all_three_aligned": true,
+                "ceiling": 100
+              },
+              "ceiling": 100
+            },
+            "data_readiness": {
+              "completeness_percent": 100,
+              "completeness_ceiling": 100,
+              "history_sample_size": 6,
+              "history_sample_target": 6,
+              "history_sample_ratio_percent": 100,
+              "history_ceiling": 100,
+              "business_day_age": 1,
+              "freshness_ceiling": 100,
+              "ceiling": 100
+            }
+          },
+          "gates": {
+            "evidence": {
+              "pass": false,
+              "score": 57.4,
+              "threshold": 80
+            },
+            "regime": {
+              "pass": false,
+              "code": "LOW_SEPARATION",
+              "ceiling": 55
+            },
+            "pair": {
+              "pass": true,
+              "confidence": "HIGH",
+              "bias": "BUY",
+              "confidence_ceiling": 100,
+              "alignment_ceiling": 100,
+              "ceiling": 100
+            },
+            "data": {
+              "pass": true,
+              "completeness_percent": 100,
+              "history_sample_ratio_percent": 100,
+              "business_day_age": 1,
+              "ceiling": 100
+            }
+          },
+          "score_candidates": {
+            "evidence_quality": 57.4,
+            "regime_guardrail": 55,
+            "pair_readiness": 100,
+            "data_readiness": 100
+          },
+          "primary_limiter": "REGIME_GUARDRAIL",
+          "limiting_factors": [
+            "REGIME_GUARDRAIL"
+          ],
+          "constraints": [
+            "REGIME_LOW_SEPARATION",
+            "EVIDENCE_BELOW_ACTIONABLE_THRESHOLD"
+          ],
+          "reason": "The signal is filtered from actionability by evidence quality or an operational guardrail; the canonical ECB strength signal itself is not reversed.",
+          "signal": {
+            "pair": "AUDJPY",
+            "bias": "BUY",
+            "strongest": "AUD",
+            "weakest": "JPY"
           }
         }
       },
       "current": {
         "timeframe": "daily",
-        "score": 39.2,
+        "score": 50,
         "state": "FILTERED",
         "decision": "DEPRIORITIZE",
         "scope": "continuation_readiness",
-        "base_evidence_score": 39.2,
+        "base_evidence_score": 65.1,
         "methodology": "Actionability Score is the minimum of four interpretable ceilings: evidence quality, regime guardrail, pair readiness, and data readiness. Pair readiness now requires pair-specific Daily/Weekly/Monthly directional alignment; data readiness also checks evidence completeness, historical percentile sample adequacy, and business-day freshness. The score does not reverse the canonical ECB bias and is not a probability of profit.",
         "dimensions": {
           "evidence_quality": {
-            "score": 39.2,
-            "state": "LOW",
+            "score": 65.1,
+            "state": "MODERATE",
             "source": "Composite Currency Strength Confidence"
           },
           "regime_guardrail": {
@@ -1512,17 +1511,17 @@
             "ceiling": 50
           },
           "pair_readiness": {
-            "pair": "USDJPY",
+            "pair": "NZDUSD",
             "confidence": "HIGH",
             "bias": "SELL",
             "confidence_ceiling": 100,
             "alignment": {
-              "pair": "USDJPY",
+              "pair": "NZDUSD",
               "active_bias": "SELL",
               "directions": {
                 "daily": "SELL",
-                "weekly": "BUY",
-                "monthly": "SELL"
+                "weekly": "SELL",
+                "monthly": "BUY"
               },
               "aligned_count": 2,
               "available_timeframes": 3,
@@ -1538,7 +1537,7 @@
             "history_sample_target": 60,
             "history_sample_ratio_percent": 100,
             "history_ceiling": 100,
-            "business_day_age": 0,
+            "business_day_age": 1,
             "freshness_ceiling": 100,
             "ceiling": 100
           }
@@ -1546,7 +1545,7 @@
         "gates": {
           "evidence": {
             "pass": false,
-            "score": 39.2,
+            "score": 65.1,
             "threshold": 80
           },
           "regime": {
@@ -1566,29 +1565,30 @@
             "pass": true,
             "completeness_percent": 100,
             "history_sample_ratio_percent": 100,
-            "business_day_age": 0,
+            "business_day_age": 1,
             "ceiling": 100
           }
         },
         "score_candidates": {
-          "evidence_quality": 39.2,
+          "evidence_quality": 65.1,
           "regime_guardrail": 50,
           "pair_readiness": 79,
           "data_readiness": 100
         },
-        "primary_limiter": "EVIDENCE_QUALITY",
+        "primary_limiter": "REGIME_GUARDRAIL",
         "limiting_factors": [
-          "EVIDENCE_QUALITY"
+          "REGIME_GUARDRAIL"
         ],
         "constraints": [
+          "REGIME_PROVIDER_DIVERGENCE",
           "EVIDENCE_BELOW_ACTIONABLE_THRESHOLD"
         ],
         "reason": "The signal is filtered from actionability by evidence quality or an operational guardrail; the canonical ECB strength signal itself is not reversed.",
         "signal": {
-          "pair": "USDJPY",
+          "pair": "NZDUSD",
           "bias": "SELL",
-          "strongest": "JPY",
-          "weakest": "USD"
+          "strongest": "USD",
+          "weakest": "NZD"
         }
       },
       "research_summary": {
@@ -1614,11 +1614,11 @@
         "final_reasoner"
       ],
       "input_policy": "evidence_grounded_fail_closed",
-      "current_pair": "USDJPY",
+      "current_pair": "NZDUSD",
       "canonical_bias": "SELL",
       "upstream_actionability": {
         "version": "1.1",
-        "score": 39.2,
+        "score": 50,
         "state": "FILTERED",
         "decision": "DEPRIORITIZE",
         "regime": "PROVIDER_DIVERGENCE"
@@ -1626,12 +1626,12 @@
       "source_input": {
         "connected": true,
         "path": "dist/data/intelligence-inputs.json",
-        "external_layers_available": 2,
+        "external_layers_available": 3,
         "external_layers_expected": 3
       },
       "readiness": {
         "state": "CONTEXT_READY",
-        "external_coverage_percent": 67,
+        "external_coverage_percent": 100,
         "final_reasoner_status": "RISK_CONSTRAINED"
       },
       "layers": {
@@ -1639,19 +1639,25 @@
           "key": "macro_yield",
           "label": "Macro & Yield",
           "available": true,
-          "state": "OPPOSES",
-          "score": 33.3,
+          "state": "SUPPORTS",
+          "score": 83.3,
           "provider": "FRED (OECD / Federal Reserve source series)",
-          "updated_at": "2026-08-19T15:55:22.833Z",
+          "updated_at": "2026-08-19T13:23:56.287Z",
           "evidence": [
-            "10Y yield spread: USD 4.470% (2026-06-01) vs JPY 2.670% (2026-06-01); spread +1.800 pp => OPPOSES canonical SELL.",
-            "10Y spread momentum: -0.030 pp versus prior observations (2026-05-01/2026-05-01) => SUPPORTS canonical SELL.",
-            "Short-rate spread: USD 3.630% (2026-08-18; EFFR) vs JPY 0.841% (2026-06-01; IRSTCI01JPM156N); spread +2.789 pp => OPPOSES canonical SELL."
+            "10Y yield spread: NZD 4.460% (2026-06-01) vs USD 4.470% (2026-06-01); spread -0.010 pp => NEUTRAL canonical SELL.",
+            "10Y spread momentum: -0.210 pp versus prior observations (2026-05-01/2026-05-01) => SUPPORTS canonical SELL.",
+            "Short-rate spread: NZD 2.680% (2026-06-01; IR3TIB01NZM156N) vs USD 3.630% (2026-08-18; EFFR); spread -0.950 pp => SUPPORTS canonical SELL."
           ],
           "missing_evidence": [],
           "headlines": [],
           "event_risk": null,
           "provenance": [
+            {
+              "provider": "FRED",
+              "series_id": "IRLTLT01NZM156N",
+              "url": "https://fred.stlouisfed.org/series/IRLTLT01NZM156N",
+              "latest_date": "2026-06-01"
+            },
             {
               "provider": "FRED",
               "series_id": "IRLTLT01USM156N",
@@ -1660,8 +1666,8 @@
             },
             {
               "provider": "FRED",
-              "series_id": "IRLTLT01JPM156N",
-              "url": "https://fred.stlouisfed.org/series/IRLTLT01JPM156N",
+              "series_id": "IR3TIB01NZM156N",
+              "url": "https://fred.stlouisfed.org/series/IR3TIB01NZM156N",
               "latest_date": "2026-06-01"
             },
             {
@@ -1669,12 +1675,6 @@
               "series_id": "EFFR",
               "url": "https://fred.stlouisfed.org/series/EFFR",
               "latest_date": "2026-08-18"
-            },
-            {
-              "provider": "FRED",
-              "series_id": "IRSTCI01JPM156N",
-              "url": "https://fred.stlouisfed.org/series/IRSTCI01JPM156N",
-              "latest_date": "2026-06-01"
             }
           ],
           "methodology": {
@@ -1688,126 +1688,146 @@
         "cross_market": {
           "key": "cross_market",
           "label": "Cross-Market",
-          "available": false,
-          "state": "UNAVAILABLE",
-          "score": null,
-          "provider": null,
-          "updated_at": null,
-          "evidence": [],
-          "missing_evidence": [
-            "Cross-Market provider has not been connected to the static intelligence build yet."
+          "available": true,
+          "state": "OPPOSES",
+          "score": 12.5,
+          "provider": "FRED (Federal Reserve / EIA source series)",
+          "updated_at": "2026-08-19T13:23:57.276Z",
+          "evidence": [
+            "NFCI: level -0.5590 (2026-08-14) => OPPOSES canonical bias berdasarkan profil cyclical/defensive pasangan.",
+            "NFCI: perubahan -0.0040 dari 2026-08-07 ke 2026-08-14 => NEUTRAL canonical bias.",
+            "STLFSI4: level -0.7709 (2026-08-07) => OPPOSES canonical bias berdasarkan profil cyclical/defensive pasangan.",
+            "STLFSI4: perubahan -0.2650 dari 2026-07-31 ke 2026-08-07 => OPPOSES canonical bias."
           ],
+          "missing_evidence": [],
           "headlines": [],
           "event_risk": null,
-          "provenance": [],
-          "methodology": null,
-          "note": "Cross-Market is fail-closed: no directional claim is created until a real provider adapter supplies evidence."
+          "provenance": [
+            {
+              "provider": "FRED",
+              "series_id": "NFCI",
+              "label": "Chicago Fed National Financial Conditions Index",
+              "url": "https://fred.stlouisfed.org/series/NFCI",
+              "latest_date": "2026-08-14"
+            },
+            {
+              "provider": "FRED",
+              "series_id": "STLFSI4",
+              "label": "St. Louis Fed Financial Stress Index",
+              "url": "https://fred.stlouisfed.org/series/STLFSI4",
+              "latest_date": "2026-08-07"
+            },
+            {
+              "provider": "FRED",
+              "series_id": "DCOILWTICO",
+              "label": "WTI Crude Oil Spot Price",
+              "url": "https://fred.stlouisfed.org/series/DCOILWTICO",
+              "latest_date": "2026-08-11"
+            }
+          ],
+          "methodology": {
+            "risk_tier": {
+              "NZD": 1,
+              "AUD": 1,
+              "CAD": 1,
+              "EUR": 0,
+              "GBP": 0,
+              "USD": -1,
+              "JPY": -1,
+              "CHF": -1
+            },
+            "risk_differential": 2,
+            "nfci_level_deadband": 0.1,
+            "nfci_momentum_deadband": 0.015,
+            "stlfsi_level_deadband": 0.1,
+            "stlfsi_momentum_deadband": 0.03,
+            "cad_wti_5_observation_deadband_percent": 1,
+            "minimum_components": 2,
+            "score_range": "0=fully opposes canonical bias, 50=neutral/mixed, 100=fully supports canonical bias"
+          },
+          "note": "Live Cross-Market adapter using real financial-conditions/stress and commodity data. The score measures contextual alignment with the canonical ECB pair bias, not probability of profit. Cyclical/defensive currency tiers are a transparent heuristic used only to interpret real market-condition data; stale series are excluded."
         },
         "news": {
           "key": "news",
           "label": "News",
           "available": true,
-          "state": "NEUTRAL",
-          "score": 50,
-          "provider": "GDELT DOC 2.0",
-          "updated_at": "2026-08-19T15:55:46.671Z",
+          "state": "SUPPORTS",
+          "score": 75,
+          "provider": "Google News RSS fallback + GDELT DOC 2.0",
+          "updated_at": "2026-08-19T13:24:24.348Z",
           "evidence": [
-            "Headline-stance differential USDJPY SELL: 0 after directional-headline reliability 0% => NEUTRAL.",
-            "USD: 0 supportive vs 0 opposing directional headline(s); balance 0 from 40 recent articles via GDELT DOC 2.0.",
-            "JPY: 3 supportive vs 0 opposing directional headline(s); balance 1 from 40 recent articles via GDELT DOC 2.0.",
-            "High-impact headline risk: HIGH; 8 relevant headline(s) detected within 24h."
+            "Headline-stance differential NZDUSD SELL: 0.5 after directional-headline reliability 75% => SUPPORTS.",
+            "NZD: 2 supportive vs 1 opposing directional headline(s); balance 0.333 from 35 recent articles via Google News RSS fallback.",
+            "USD: 5 supportive vs 0 opposing directional headline(s); balance 1 from 40 recent articles via GDELT DOC 2.0.",
+            "High-impact headline risk: HIGH; 3 relevant headline(s) detected within 24h."
           ],
           "missing_evidence": [],
           "headlines": [
             {
-              "title": "US treasury doubles debt buyback to steady bond market amid inflation fears",
-              "url": "https://www.theguardian.com/business/2026/aug/19/us-treasury-doubles-debt-buyback-bond-market",
-              "domain": "theguardian.com",
-              "sourcecountry": "United Kingdom",
+              "title": "U . S . Dollar Falls Ahead Of U . S . FOMC Minutes",
+              "url": "https://www.finanznachrichten.de/nachrichten-2026-08/69351070-u-s-dollar-falls-ahead-of-u-s-fomc-minutes-020.htm",
+              "domain": "finanznachrichten.de",
+              "sourcecountry": "Germany",
               "language": "English",
-              "seen_at": "2026-08-19T15:30:00.000Z"
+              "seen_at": "2026-08-19T10:00:00.000Z"
             },
             {
-              "title": "US treasury doubles debt buyback to steady bond market amid inflation fears",
-              "url": "https://finance.yahoo.com/economy/policy/articles/us-treasury-doubles-debt-buyback-145721001.html",
-              "domain": "finance.yahoo.com",
-              "sourcecountry": "United States",
-              "language": "English",
-              "seen_at": "2026-08-19T15:30:00.000Z"
-            },
-            {
-              "title": "US treasury doubles debt buyback to steady bond market amid inflation fears",
-              "url": "https://www.theguardian.com/business/2026/aug/19/us-treasury-doubles-debt-buyback-bond-market",
-              "domain": "theguardian.com",
-              "sourcecountry": "United Kingdom",
-              "language": "English",
-              "seen_at": "2026-08-19T15:30:00.000Z"
-            },
-            {
-              "title": "US treasury doubles debt buyback to steady bond market amid inflation fears",
-              "url": "https://finance.yahoo.com/economy/policy/articles/us-treasury-doubles-debt-buyback-145721001.html",
-              "domain": "finance.yahoo.com",
-              "sourcecountry": "United States",
-              "language": "English",
-              "seen_at": "2026-08-19T15:30:00.000Z"
-            },
-            {
-              "title": "Ethiopia Nominal GDP Dropped By USD 50bln After Floating - EU Chamber Report",
-              "url": "https://allafrica.com/stories/202608190451.html",
-              "domain": "allafrica.com",
-              "sourcecountry": "Nigeria",
-              "language": "English",
-              "seen_at": "2026-08-19T14:45:00.000Z"
-            },
-            {
-              "title": "Ringgit firms against greenback at close on late buying ahead of FOMC minutes",
-              "url": "https://www.thestar.com.my/business/business-news/2026/08/19/ringgit-firms-against-greenback-at-close-on-late-buying-ahead-of-fomc-minutes",
-              "domain": "thestar.com.my",
-              "sourcecountry": "Malaysia",
-              "language": "English",
-              "seen_at": "2026-08-19T14:00:00.000Z"
-            },
-            {
-              "title": "Leading first BI meeting , Destry stresses growth , vigilance - Regulations",
-              "url": "http://www.thejakartapost.com/business/2026/08/19/leading-first-bi-meeting-destry-stresses-growth-vigilance",
-              "domain": "thejakartapost.com",
+              "title": "Indonesia Central Bank Holds Rates Steady at 5 . 75 %, as Expected",
+              "url": "https://english.kontan.co.id/news/indonesia-central-bank-holds-rates-steady-at-575-as-expected",
+              "domain": "english.kontan.co.id",
               "sourcecountry": "Indonesia",
               "language": "English",
-              "seen_at": "2026-08-19T14:00:00.000Z"
+              "seen_at": "2026-08-19T08:15:00.000Z"
             },
             {
-              "title": "Ringgit firms against greenback at close on late buying ahead of FOMC minutes",
-              "url": "https://www.thestar.com.my/business/business-news/2026/08/19/ringgit-firms-against-greenback-at-close-on-late-buying-ahead-of-fomc-minutes",
-              "domain": "thestar.com.my",
-              "sourcecountry": "Malaysia",
+              "title": "New Zealand Dollar declines to weekly low as USD holds firm ahead of FOMC Minutes - tmgm.com",
+              "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPYmNzbmktVWJuWVVCRnZkcU1raHA5NGE3UDM5ZnJJcjJHbEJXclZBM0RfN21jbVhWSXZIQkVoMllSZ2Y1a2VJcGpxZ0VMZ0hQeVBmVW1iRGpBSkRVOXdXQ0pyZUFoa0s1UGswMm4zR0JVWXlFaVpNcWhBNF9xWXhoWTdvb3hXeElZTWNTSUU0WEhVNkpHeWxocW9zS0pfV1NDSjFud0prZlpwbmtzSlNvd1ZPZmpHVlpzOWZzSU1GbWVmeUtOUmh6dU1xREE5QUZoU0J1MHp0TkNmSGNjUjJPRQ?oc=5",
+              "domain": "tmgm.com",
+              "sourcecountry": null,
               "language": "English",
-              "seen_at": "2026-08-19T14:00:00.000Z"
+              "seen_at": "2026-08-19T02:40:00.000Z"
+            },
+            {
+              "title": "Indonesian Rupiah Gains Ground on Prabowo’s Growth Ambitions and Dollar Weakness - CryptoRank",
+              "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQanFndlp4Xzd1WW0xNmY1a2JOUnhZaGZRNmo0RzFlMXBzeWlrLXRsbEEtOThUQnpQbUVJR3gzZW5yYWhwZ1R2Vnlka2tQLTBLc0F2THNUb2pfaEp6QVpoUTd6WGRXQk9XYVBWWDlMZHkwdTNlTW1KU21NV21temJuNkFsQ09nbmFFdDRMelVGUkE5eGxkcDhMdk9MVmdQV2pOUTZ5ZXBja0M?oc=5",
+              "domain": "CryptoRank",
+              "sourcecountry": null,
+              "language": "English",
+              "seen_at": "2026-08-18T01:32:13.000Z"
+            },
+            {
+              "title": "New Zealand Food Prices Rise 0.1% in July, Annual Inflation Eases - CryptoRank",
+              "url": "https://news.google.com/rss/articles/CBMiekFVX3lxTFBDODh6cjNjRVlESWo2cDZLQ0RCU3JKSDREaC1wVmx0NHBBczVwWUJLMG1ONWczT29OLVZXdDF5ejdBOTl2d1VqY1NpS3JhM2wtbmhnajhsQlVHaTJQdUMyVjRycnA0anl3SjByeWFpWHhBOUl0YVBYLVBB?oc=5",
+              "domain": "CryptoRank",
+              "sourcecountry": null,
+              "language": "English",
+              "seen_at": "2026-08-17T11:24:46.000Z"
             }
           ],
           "event_risk": {
             "level": "HIGH",
-            "recent_high_impact_24h": 8
+            "recent_high_impact_24h": 3
           },
           "provenance": [
+            {
+              "provider": "Google News RSS fallback",
+              "currency": "NZD",
+              "query": "\"New Zealand dollar\" OR RBNZ OR \"Reserve Bank of New Zealand\" inflation OR \"interest rate\" OR economy OR growth OR employment OR monetary when:3d",
+              "latest_seen_at": "2026-08-19T12:55:15.000Z",
+              "article_count": 35,
+              "supportive_headline_count": 2,
+              "opposing_headline_count": 1,
+              "classified_headline_count": 3
+            },
             {
               "provider": "GDELT DOC 2.0",
               "currency": "USD",
               "query": "(\"US dollar\" OR \"U.S. dollar\" OR \"Federal Reserve\" OR FOMC) (inflation OR \"interest rate\" OR rates OR economy OR growth OR employment OR monetary OR \"central bank\") sourcelang:english",
-              "latest_seen_at": "2026-08-19T15:30:00.000Z",
+              "latest_seen_at": "2026-08-19T12:45:00.000Z",
               "article_count": 40,
-              "supportive_headline_count": 0,
+              "supportive_headline_count": 5,
               "opposing_headline_count": 0,
-              "classified_headline_count": 0
-            },
-            {
-              "provider": "GDELT DOC 2.0",
-              "currency": "JPY",
-              "query": "(yen OR \"Japanese yen\" OR \"Bank of Japan\") (inflation OR \"interest rate\" OR rates OR economy OR growth OR employment OR monetary OR \"central bank\") sourcelang:english",
-              "latest_seen_at": "2026-08-19T15:30:00.000Z",
-              "article_count": 40,
-              "supportive_headline_count": 3,
-              "opposing_headline_count": 0,
-              "classified_headline_count": 3
+              "classified_headline_count": 5
             }
           ],
           "methodology": {
@@ -1819,11 +1839,11 @@
             "directional_headlines_are_optional": true,
             "max_article_age_hours": 96,
             "high_impact_headline_window_hours": 24,
-            "base_headline_balance": 0,
+            "base_headline_balance": 0.333,
             "quote_headline_balance": 1,
-            "raw_pair_headline_differential": 1,
-            "reliability": 0,
-            "adjusted_pair_headline_differential": 0,
+            "raw_pair_headline_differential": 0.667,
+            "reliability": 0.75,
+            "adjusted_pair_headline_differential": 0.5,
             "support_threshold": 62,
             "oppose_threshold": 38,
             "neutral_band": [
@@ -1840,10 +1860,10 @@
           "version": "0.2",
           "available": true,
           "state": "HIGH",
-          "score": 77.2,
+          "score": 81,
           "scope": "contextual_decision_risk",
           "baseline": 15,
-          "raw_score_before_cap": 77.2,
+          "raw_score_before_cap": 81,
           "thresholds": {
             "low_below": 45,
             "moderate_from": 45,
@@ -1855,9 +1875,9 @@
               "label": "Actionability",
               "contribution": 22,
               "max_contribution": 30,
-              "reason": "Actionability is filtered at 39.2/100.",
+              "reason": "Actionability is filtered at 50/100.",
               "detail": {
-                "score": 39.2
+                "score": 50
               }
             },
             "regime": {
@@ -1873,29 +1893,29 @@
             "context_coverage": {
               "key": "context_coverage",
               "label": "Context Coverage",
-              "contribution": 6,
+              "contribution": 0,
               "max_contribution": 18,
-              "reason": "1 contextual layer(s) are unavailable.",
+              "reason": "All contextual layers are available.",
               "detail": {
-                "available": 2,
+                "available": 3,
                 "expected": 3,
-                "coverage_percent": 67
+                "coverage_percent": 100
               }
             },
             "context_opposition": {
               "key": "context_opposition",
               "label": "Context Opposition",
-              "contribution": 10.7,
+              "contribution": 14,
               "max_contribution": 24,
-              "reason": "Macro & Yield OPPOSES increases contextual contradiction risk.",
+              "reason": "Cross-Market OPPOSES increases contextual contradiction risk.",
               "detail": {
                 "layers": [
                   {
-                    "layer": "macro_yield",
-                    "label": "Macro & Yield",
+                    "layer": "cross_market",
+                    "label": "Cross-Market",
                     "state": "OPPOSES",
-                    "score": 33.3,
-                    "contribution": 10.7
+                    "score": 12.5,
+                    "contribution": 14
                   }
                 ]
               }
@@ -1903,21 +1923,26 @@
             "context_dispersion": {
               "key": "context_dispersion",
               "label": "Context Disagreement",
-              "contribution": 0,
+              "contribution": 8,
               "max_contribution": 8,
-              "reason": "Context score dispersion is contained at 16.7 points.",
+              "reason": "Context scores are dispersed by 70.8 points.",
               "detail": {
-                "spread": 16.7,
+                "spread": 70.8,
                 "scores": [
                   {
                     "key": "macro_yield",
                     "label": "Macro & Yield",
-                    "score": 33.3
+                    "score": 83.3
+                  },
+                  {
+                    "key": "cross_market",
+                    "label": "Cross-Market",
+                    "score": 12.5
                   },
                   {
                     "key": "news",
                     "label": "News",
-                    "score": 50
+                    "score": 75
                   }
                 ]
               }
@@ -1930,17 +1955,17 @@
               "reason": "News event risk is HIGH based on recent high-impact macro/central-bank headlines.",
               "detail": {
                 "level": "HIGH",
-                "recent_high_impact_24h": 8
+                "recent_high_impact_24h": 3
               }
             },
             "reversal": {
               "key": "reversal",
               "label": "Reversal Risk",
-              "contribution": 1.5,
+              "contribution": 0,
               "max_contribution": 15,
-              "reason": "Reversal-risk indicator is 27.9/100.",
+              "reason": "Reversal-risk indicator is 6.2/100.",
               "detail": {
-                "indicator": 27.9
+                "indicator": 6.2
               }
             },
             "data_uncertainty": {
@@ -1959,19 +1984,19 @@
               "key": "actionability",
               "label": "Actionability",
               "contribution": 22,
-              "reason": "Actionability is filtered at 39.2/100."
+              "reason": "Actionability is filtered at 50/100."
+            },
+            {
+              "key": "context_opposition",
+              "label": "Context Opposition",
+              "contribution": 14,
+              "reason": "Cross-Market OPPOSES increases contextual contradiction risk."
             },
             {
               "key": "regime",
               "label": "Market Regime",
               "contribution": 12,
               "reason": "Market regime is PROVIDER_DIVERGENCE."
-            },
-            {
-              "key": "context_opposition",
-              "label": "Context Opposition",
-              "contribution": 10.7,
-              "reason": "Macro & Yield OPPOSES increases contextual contradiction risk."
             },
             {
               "key": "news_event",
@@ -1981,24 +2006,24 @@
             }
           ],
           "context_snapshot": {
-            "external_context_coverage": "2/3",
-            "supports": 0,
+            "external_context_coverage": "3/3",
+            "supports": 2,
             "opposes": 1,
-            "mixed_or_neutral": 1,
-            "scored_layers": 2
+            "mixed_or_neutral": 0,
+            "scored_layers": 3
           },
           "gates": {
-            "full_context": false,
+            "full_context": true,
             "multiple_context_opposition": false,
             "high_news_event_risk": true,
             "risk_constrained": true
           },
-          "reversal_risk_indicator": 27.93,
-          "external_context_coverage": "2/3",
+          "reversal_risk_indicator": 6.21,
+          "external_context_coverage": "3/3",
           "reasons": [
-            "Actionability: +22 · Actionability is filtered at 39.2/100.",
+            "Actionability: +22 · Actionability is filtered at 50/100.",
+            "Context Opposition: +14 · Cross-Market OPPOSES increases contextual contradiction risk.",
             "Market Regime: +12 · Market regime is PROVIDER_DIVERGENCE.",
-            "Context Opposition: +10.7 · Macro & Yield OPPOSES increases contextual contradiction risk.",
             "News Event Risk: +10 · News event risk is HIGH based on recent high-impact macro/central-bank headlines."
           ],
           "methodology": "Risk v0.2 uses a conservative additive risk budget: 15-point baseline plus transparent contributions from Actionability weakness, regime weakness, missing context, contextual opposition, cross-context score dispersion, high-impact news-event density, reversal risk, and evidence gaps. Contributions are capped and the final score is bounded to 0-100.",
@@ -2015,80 +2040,78 @@
           "role": "adversarial_evidence_review",
           "scope": "failure_case_detection_not_signal_reversal",
           "current_case": {
-            "pair": "USDJPY",
+            "pair": "NZDUSD",
             "canonical_bias": "SELL",
-            "actionability_score": 39.2,
+            "actionability_score": 50,
             "regime": "PROVIDER_DIVERGENCE",
             "risk_version": "0.2",
-            "risk_score": 77.2,
+            "risk_score": 81,
             "risk_state": "HIGH"
           },
           "primary_objection": {
-            "id": "risk_high",
-            "category": "RISK_CONSTRAINT",
-            "source_layer": "risk",
+            "id": "cross_market_opposes",
+            "category": "EXTERNAL_OPPOSITION",
+            "source_layer": "cross_market",
             "severity": "HIGH",
-            "statement": "Risk v0.2 is HIGH at 77.2/100.",
+            "statement": "Cross-Market explicitly opposes the NZDUSD SELL setup at 12.5/100.",
             "detail": {
-              "score": 77.2,
-              "state": "HIGH",
-              "primary_drivers": [
-                {
-                  "key": "actionability",
-                  "label": "Actionability",
-                  "contribution": 22,
-                  "reason": "Actionability is filtered at 39.2/100."
-                },
-                {
-                  "key": "regime",
-                  "label": "Market Regime",
-                  "contribution": 12,
-                  "reason": "Market regime is PROVIDER_DIVERGENCE."
-                },
-                {
-                  "key": "context_opposition",
-                  "label": "Context Opposition",
-                  "contribution": 10.7,
-                  "reason": "Macro & Yield OPPOSES increases contextual contradiction risk."
-                },
-                {
-                  "key": "news_event",
-                  "label": "News Event Risk",
-                  "contribution": 10,
-                  "reason": "News event risk is HIGH based on recent high-impact macro/central-bank headlines."
-                }
-              ]
+              "state": "OPPOSES",
+              "score": 12.5,
+              "provider": "FRED (Federal Reserve / EIA source series)",
+              "updated_at": "2026-08-19T13:23:57.276Z"
             },
-            "evidence": []
+            "evidence": [
+              "NFCI: level -0.5590 (2026-08-14) => OPPOSES canonical bias berdasarkan profil cyclical/defensive pasangan.",
+              "NFCI: perubahan -0.0040 dari 2026-08-07 ke 2026-08-14 => NEUTRAL canonical bias.",
+              "STLFSI4: level -0.7709 (2026-08-07) => OPPOSES canonical bias berdasarkan profil cyclical/defensive pasangan."
+            ]
           },
           "structured_objections": [
+            {
+              "id": "cross_market_opposes",
+              "category": "EXTERNAL_OPPOSITION",
+              "source_layer": "cross_market",
+              "severity": "HIGH",
+              "statement": "Cross-Market explicitly opposes the NZDUSD SELL setup at 12.5/100.",
+              "detail": {
+                "state": "OPPOSES",
+                "score": 12.5,
+                "provider": "FRED (Federal Reserve / EIA source series)",
+                "updated_at": "2026-08-19T13:23:57.276Z"
+              },
+              "evidence": [
+                "NFCI: level -0.5590 (2026-08-14) => OPPOSES canonical bias berdasarkan profil cyclical/defensive pasangan.",
+                "NFCI: perubahan -0.0040 dari 2026-08-07 ke 2026-08-14 => NEUTRAL canonical bias.",
+                "STLFSI4: level -0.7709 (2026-08-07) => OPPOSES canonical bias berdasarkan profil cyclical/defensive pasangan."
+              ]
+            },
             {
               "id": "risk_high",
               "category": "RISK_CONSTRAINT",
               "source_layer": "risk",
               "severity": "HIGH",
-              "statement": "Risk v0.2 is HIGH at 77.2/100.",
+              "statement": "Risk v0.2 is HIGH at 81/100.",
               "detail": {
-                "score": 77.2,
+                "score": 81,
                 "state": "HIGH",
                 "primary_drivers": [
                   {
                     "key": "actionability",
                     "label": "Actionability",
                     "contribution": 22,
-                    "reason": "Actionability is filtered at 39.2/100."
+                    "reason": "Actionability is filtered at 50/100."
+                  },
+                  {
+                    "key": "context_opposition",
+                    "label": "Context Opposition",
+                    "contribution": 14,
+                    "reason": "Cross-Market OPPOSES increases contextual contradiction risk."
                   },
                   {
                     "key": "regime",
                     "label": "Market Regime",
                     "contribution": 12,
                     "reason": "Market regime is PROVIDER_DIVERGENCE."
-                  },
-                  {
-                    "key": "context_opposition",
-                    "label": "Context Opposition",
-                    "contribution": 10.7,
-                    "reason": "Macro & Yield OPPOSES increases contextual contradiction risk."
                   },
                   {
                     "key": "news_event",
@@ -2108,13 +2131,41 @@
               "statement": "Recent high-impact news density is HIGH and can invalidate continuation timing even when directional evidence is otherwise supportive.",
               "detail": {
                 "level": "HIGH",
-                "recent_high_impact_24h": 8
+                "recent_high_impact_24h": 3
               },
               "evidence": [
-                "US treasury doubles debt buyback to steady bond market amid inflation fears",
-                "US treasury doubles debt buyback to steady bond market amid inflation fears",
-                "US treasury doubles debt buyback to steady bond market amid inflation fears"
+                "U . S . Dollar Falls Ahead Of U . S . FOMC Minutes",
+                "Indonesia Central Bank Holds Rates Steady at 5 . 75 %, as Expected",
+                "New Zealand Dollar declines to weekly low as USD holds firm ahead of FOMC Minutes - tmgm.com"
               ]
+            },
+            {
+              "id": "context_dispersion",
+              "category": "INTERNAL_DISAGREEMENT",
+              "source_layer": "risk.context_dispersion",
+              "severity": "HIGH",
+              "statement": "Contextual intelligence is internally dispersed by 70.8 score points.",
+              "detail": {
+                "spread": 70.8,
+                "scores": [
+                  {
+                    "key": "macro_yield",
+                    "label": "Macro & Yield",
+                    "score": 83.3
+                  },
+                  {
+                    "key": "cross_market",
+                    "label": "Cross-Market",
+                    "score": 12.5
+                  },
+                  {
+                    "key": "news",
+                    "label": "News",
+                    "score": 75
+                  }
+                ]
+              },
+              "evidence": []
             },
             {
               "id": "regime_not_confirmed",
@@ -2132,103 +2183,67 @@
               "category": "UPSTREAM_READINESS",
               "source_layer": "actionability",
               "severity": "HIGH",
-              "statement": "Actionability is filtered at 39.2/100.",
+              "statement": "Actionability is filtered at 50/100.",
               "detail": {
-                "score": 39.2,
-                "limiter": "EVIDENCE_QUALITY"
-              },
-              "evidence": []
-            },
-            {
-              "id": "macro_yield_opposes",
-              "category": "EXTERNAL_OPPOSITION",
-              "source_layer": "macro_yield",
-              "severity": "MODERATE",
-              "statement": "Macro & Yield explicitly opposes the USDJPY SELL setup at 33.3/100.",
-              "detail": {
-                "state": "OPPOSES",
-                "score": 33.3,
-                "provider": "FRED (OECD / Federal Reserve source series)",
-                "updated_at": "2026-08-19T15:55:22.833Z"
-              },
-              "evidence": [
-                "10Y yield spread: USD 4.470% (2026-06-01) vs JPY 2.670% (2026-06-01); spread +1.800 pp => OPPOSES canonical SELL.",
-                "10Y spread momentum: -0.030 pp versus prior observations (2026-05-01/2026-05-01) => SUPPORTS canonical SELL.",
-                "Short-rate spread: USD 3.630% (2026-08-18; EFFR) vs JPY 0.841% (2026-06-01; IRSTCI01JPM156N); spread +2.789 pp => OPPOSES canonical SELL."
-              ]
-            },
-            {
-              "id": "weak_currency_reversal",
-              "category": "REVERSAL_RISK",
-              "source_layer": "reversal_intelligence",
-              "severity": "LOW",
-              "statement": "The current weak currency has a reversal-risk indicator of 27.9/100.",
-              "detail": {
-                "indicator": 27.9,
-                "interpretation": "risk indicator, not profit probability"
+                "score": 50,
+                "limiter": "REGIME_GUARDRAIL"
               },
               "evidence": []
             }
           ],
           "objections": [
-            "Risk v0.2 is HIGH at 77.2/100.",
+            "Cross-Market explicitly opposes the NZDUSD SELL setup at 12.5/100.",
+            "Risk v0.2 is HIGH at 81/100.",
             "Recent high-impact news density is HIGH and can invalidate continuation timing even when directional evidence is otherwise supportive.",
+            "Contextual intelligence is internally dispersed by 70.8 score points.",
             "The market regime is PROVIDER_DIVERGENCE, not CONFIRMED_TREND.",
-            "Actionability is filtered at 39.2/100.",
-            "Macro & Yield explicitly opposes the USDJPY SELL setup at 33.3/100.",
-            "The current weak currency has a reversal-risk indicator of 27.9/100."
+            "Actionability is filtered at 50/100."
           ],
           "severity_counts": {
-            "HIGH": 4,
-            "MODERATE": 1,
-            "LOW": 1
+            "HIGH": 6,
+            "MODERATE": 0,
+            "LOW": 0
           },
           "evidence_balance": {
-            "supports": 0,
+            "supports": 2,
             "opposes": 1,
-            "mixed_or_neutral": 1,
-            "available": 2,
+            "mixed_or_neutral": 0,
+            "available": 3,
             "expected": 3,
-            "missing": 1,
-            "net_context": "OPPOSITION_BIASED"
+            "missing": 0,
+            "net_context": "SUPPORT_BIASED"
           },
-          "missing_context": [
-            {
-              "key": "cross_market",
-              "label": "Cross-Market",
-              "reason": "Cross-Market provider has not been connected to the static intelligence build yet."
-            }
-          ],
+          "missing_context": [],
           "monitoring_triggers": [
             {
               "key": "strength_leadership_flip",
               "label": "Currency Strength leadership changes",
               "triggered": false,
               "current": {
-                "strongest": "JPY",
-                "weakest": "USD"
+                "strongest": "USD",
+                "weakest": "NZD"
               },
-              "trigger": "Strongest/weakest leadership changes materially from JPY/USD."
+              "trigger": "Strongest/weakest leadership changes materially from USD/NZD."
             },
             {
               "key": "provider_agreement_below_60",
               "label": "Provider Agreement below 60",
               "triggered": true,
-              "current": 40.4,
+              "current": 56.1,
               "trigger": "Provider Agreement < 60."
             },
             {
               "key": "mtf_alignment_below_60",
               "label": "MTF Alignment below 60",
-              "triggered": true,
-              "current": 50.2,
+              "triggered": false,
+              "current": 73.1,
               "trigger": "Multi-Timeframe Alignment < 60."
             },
             {
               "key": "actionability_below_60",
               "label": "Actionability becomes filtered",
               "triggered": true,
-              "current": 39.2,
+              "current": 50,
               "trigger": "Actionability < 60."
             },
             {
@@ -2241,8 +2256,8 @@
             {
               "key": "context_dispersion_60",
               "label": "Context disagreement becomes extreme",
-              "triggered": false,
-              "current": 16.7,
+              "triggered": true,
+              "current": 70.8,
               "trigger": "Context score spread >= 60 points."
             },
             {
@@ -2256,19 +2271,20 @@
               "key": "risk_high_70",
               "label": "Risk becomes HIGH",
               "triggered": true,
-              "current": 77.2,
+              "current": 81,
               "trigger": "Risk v0.2 >= 70."
             }
           ],
           "triggered_conditions": [
             "provider_agreement_below_60",
-            "mtf_alignment_below_60",
             "actionability_below_60",
+            "context_dispersion_60",
             "high_event_risk",
             "risk_high_70"
           ],
           "rebuttal_conditions": [
             "Current OPPOSES contextual layer(s) improve to NEUTRAL or SUPPORTS without deterioration elsewhere.",
+            "Cross-context score dispersion falls below 25 points.",
             "High-impact event risk normalizes to LOW while directional context remains stable.",
             "Risk v0.2 falls below 45 without changing the frozen Risk formula."
           ],
@@ -2299,20 +2315,20 @@
           "status": "RISK_CONSTRAINED",
           "outlook": "CAUTION",
           "decision": "DEPRIORITIZE",
-          "pair": "USDJPY",
+          "pair": "NZDUSD",
           "canonical_bias": "SELL",
-          "actionability_score": 39.2,
+          "actionability_score": 50,
           "regime": "PROVIDER_DIVERGENCE",
-          "contextual_coverage_percent": 67,
+          "contextual_coverage_percent": 100,
           "context_counts": {
-            "supports": 0,
+            "supports": 2,
             "opposes": 1,
-            "mixed_or_neutral": 1,
-            "available": 2,
+            "mixed_or_neutral": 0,
+            "available": 3,
             "expected": 3
           },
           "risk_level": "HIGH",
-          "risk_score": 77.2,
+          "risk_score": 81,
           "risk_version": "0.2",
           "counter_thesis_state": "ACTIVE",
           "counter_thesis_version": "0.2",
@@ -2326,41 +2342,74 @@
           "decision_logic_frozen": true,
           "role": "evidence_synthesis_and_explainable_decision_support",
           "thesis_anchor": {
-            "pair": "USDJPY",
+            "pair": "NZDUSD",
             "canonical_bias": "SELL",
-            "strongest_currency": "JPY",
-            "weakest_currency": "USD",
-            "strength_difference": -0.96
+            "strongest_currency": "USD",
+            "weakest_currency": "NZD",
+            "strength_difference": -2.41
           },
-          "evidence_for": [],
+          "evidence_for": [
+            {
+              "source": "macro_yield",
+              "category": "EXTERNAL_SUPPORT",
+              "statement": "Macro & Yield supports the canonical NZDUSD SELL at 83.3/100.",
+              "detail": {
+                "score": 83.3,
+                "provider": "FRED (OECD / Federal Reserve source series)"
+              }
+            },
+            {
+              "source": "news",
+              "category": "EXTERNAL_SUPPORT",
+              "statement": "News supports the canonical NZDUSD SELL at 75/100.",
+              "detail": {
+                "score": 75,
+                "provider": "Google News RSS fallback + GDELT DOC 2.0"
+              }
+            }
+          ],
           "evidence_against": [
             {
-              "source": "risk",
-              "category": "RISK_CONSTRAINT",
-              "statement": "Risk v0.2 is HIGH at 77.2/100.",
+              "source": "cross_market",
+              "category": "EXTERNAL_OPPOSITION",
+              "statement": "Cross-Market explicitly opposes the NZDUSD SELL setup at 12.5/100.",
               "detail": {
                 "severity": "HIGH",
                 "detail": {
-                  "score": 77.2,
+                  "state": "OPPOSES",
+                  "score": 12.5,
+                  "provider": "FRED (Federal Reserve / EIA source series)",
+                  "updated_at": "2026-08-19T13:23:57.276Z"
+                }
+              }
+            },
+            {
+              "source": "risk",
+              "category": "RISK_CONSTRAINT",
+              "statement": "Risk v0.2 is HIGH at 81/100.",
+              "detail": {
+                "severity": "HIGH",
+                "detail": {
+                  "score": 81,
                   "state": "HIGH",
                   "primary_drivers": [
                     {
                       "key": "actionability",
                       "label": "Actionability",
                       "contribution": 22,
-                      "reason": "Actionability is filtered at 39.2/100."
+                      "reason": "Actionability is filtered at 50/100."
+                    },
+                    {
+                      "key": "context_opposition",
+                      "label": "Context Opposition",
+                      "contribution": 14,
+                      "reason": "Cross-Market OPPOSES increases contextual contradiction risk."
                     },
                     {
                       "key": "regime",
                       "label": "Market Regime",
                       "contribution": 12,
                       "reason": "Market regime is PROVIDER_DIVERGENCE."
-                    },
-                    {
-                      "key": "context_opposition",
-                      "label": "Context Opposition",
-                      "contribution": 10.7,
-                      "reason": "Macro & Yield OPPOSES increases contextual contradiction risk."
                     },
                     {
                       "key": "news_event",
@@ -2380,7 +2429,35 @@
                 "severity": "HIGH",
                 "detail": {
                   "level": "HIGH",
-                  "recent_high_impact_24h": 8
+                  "recent_high_impact_24h": 3
+                }
+              }
+            },
+            {
+              "source": "risk.context_dispersion",
+              "category": "INTERNAL_DISAGREEMENT",
+              "statement": "Contextual intelligence is internally dispersed by 70.8 score points.",
+              "detail": {
+                "severity": "HIGH",
+                "detail": {
+                  "spread": 70.8,
+                  "scores": [
+                    {
+                      "key": "macro_yield",
+                      "label": "Macro & Yield",
+                      "score": 83.3
+                    },
+                    {
+                      "key": "cross_market",
+                      "label": "Cross-Market",
+                      "score": 12.5
+                    },
+                    {
+                      "key": "news",
+                      "label": "News",
+                      "score": 75
+                    }
+                  ]
                 }
               }
             },
@@ -2398,71 +2475,39 @@
             {
               "source": "actionability",
               "category": "UPSTREAM_READINESS",
-              "statement": "Actionability is filtered at 39.2/100.",
+              "statement": "Actionability is filtered at 50/100.",
               "detail": {
                 "severity": "HIGH",
                 "detail": {
-                  "score": 39.2,
-                  "limiter": "EVIDENCE_QUALITY"
-                }
-              }
-            },
-            {
-              "source": "macro_yield",
-              "category": "EXTERNAL_OPPOSITION",
-              "statement": "Macro & Yield explicitly opposes the USDJPY SELL setup at 33.3/100.",
-              "detail": {
-                "severity": "MODERATE",
-                "detail": {
-                  "state": "OPPOSES",
-                  "score": 33.3,
-                  "provider": "FRED (OECD / Federal Reserve source series)",
-                  "updated_at": "2026-08-19T15:55:22.833Z"
-                }
-              }
-            },
-            {
-              "source": "reversal_intelligence",
-              "category": "REVERSAL_RISK",
-              "statement": "The current weak currency has a reversal-risk indicator of 27.9/100.",
-              "detail": {
-                "severity": "LOW",
-                "detail": {
-                  "indicator": 27.9,
-                  "interpretation": "risk indicator, not profit probability"
+                  "score": 50,
+                  "limiter": "REGIME_GUARDRAIL"
                 }
               }
             }
           ],
-          "evidence_gaps": [
-            {
-              "source": "cross_market",
-              "label": "Cross-Market",
-              "reason": "Cross-Market provider has not been connected to the static intelligence build yet."
-            }
-          ],
+          "evidence_gaps": [],
           "evidence_balance": {
-            "supporting_items": 0,
+            "supporting_items": 2,
             "opposing_items": 6,
-            "contextual_supports": 0,
+            "contextual_supports": 2,
             "contextual_opposes": 1,
-            "contextual_mixed_or_neutral": 1,
-            "contextual_available": 2,
+            "contextual_mixed_or_neutral": 0,
+            "contextual_available": 3,
             "contextual_expected": 3
           },
           "key_risk": {
             "key": "actionability",
             "label": "Actionability",
             "contribution": 22,
-            "reason": "Actionability is filtered at 39.2/100.",
+            "reason": "Actionability is filtered at 50/100.",
             "risk_state": "HIGH",
-            "risk_score": 77.2
+            "risk_score": 81
           },
           "primary_counter_thesis": {
-            "category": "RISK_CONSTRAINT",
-            "source_layer": "risk",
+            "category": "EXTERNAL_OPPOSITION",
+            "source_layer": "cross_market",
             "severity": "HIGH",
-            "statement": "Risk v0.2 is HIGH at 77.2/100."
+            "statement": "Cross-Market explicitly opposes the NZDUSD SELL setup at 12.5/100."
           },
           "invalidation_conditions": [
             {
@@ -2470,30 +2515,30 @@
               "label": "Currency Strength leadership changes",
               "triggered": false,
               "current": {
-                "strongest": "JPY",
-                "weakest": "USD"
+                "strongest": "USD",
+                "weakest": "NZD"
               },
-              "condition": "Strongest/weakest leadership changes materially from JPY/USD."
+              "condition": "Strongest/weakest leadership changes materially from USD/NZD."
             },
             {
               "key": "provider_agreement_below_60",
               "label": "Provider Agreement below 60",
               "triggered": true,
-              "current": 40.4,
+              "current": 56.1,
               "condition": "Provider Agreement < 60."
             },
             {
               "key": "mtf_alignment_below_60",
               "label": "MTF Alignment below 60",
-              "triggered": true,
-              "current": 50.2,
+              "triggered": false,
+              "current": 73.1,
               "condition": "Multi-Timeframe Alignment < 60."
             },
             {
               "key": "actionability_below_60",
               "label": "Actionability becomes filtered",
               "triggered": true,
-              "current": 39.2,
+              "current": 50,
               "condition": "Actionability < 60."
             },
             {
@@ -2506,8 +2551,8 @@
             {
               "key": "context_dispersion_60",
               "label": "Context disagreement becomes extreme",
-              "triggered": false,
-              "current": 16.7,
+              "triggered": true,
+              "current": 70.8,
               "condition": "Context score spread >= 60 points."
             },
             {
@@ -2521,34 +2566,35 @@
               "key": "risk_high_70",
               "label": "Risk becomes HIGH",
               "triggered": true,
-              "current": 77.2,
+              "current": 81,
               "condition": "Risk v0.2 >= 70."
             }
           ],
           "active_invalidation_triggers": [
             "provider_agreement_below_60",
-            "mtf_alignment_below_60",
             "actionability_below_60",
+            "context_dispersion_60",
             "high_event_risk",
             "risk_high_70"
           ],
           "rebuttal_conditions": [
             "Current OPPOSES contextual layer(s) improve to NEUTRAL or SUPPORTS without deterioration elsewhere.",
+            "Cross-context score dispersion falls below 25 points.",
             "High-impact event risk normalizes to LOW while directional context remains stable.",
             "Risk v0.2 falls below 45 without changing the frozen Risk formula."
           ],
-          "final_assessment": "USDJPY SELL retains its canonical Currency Strength bias, but Risk v0.2 HIGH at 77.2/100 constrains promotion of the setup. Supporting context: none. Opposing context: Macro & Yield. Primary challenge: Risk v0.2 is HIGH at 77.2/100.",
+          "final_assessment": "NZDUSD SELL retains its canonical Currency Strength bias, but Risk v0.2 HIGH at 81/100 constrains promotion of the setup. Supporting context: Macro & Yield, News. Opposing context: Cross-Market. Primary challenge: Cross-Market explicitly opposes the NZDUSD SELL setup at 12.5/100.",
           "decision_trace": [
             {
               "gate": "actionability_available",
               "passed": true,
-              "current": 39.2,
+              "current": 50,
               "rule": "Actionability must be available before Final Reasoner can assess the setup."
             },
             {
               "gate": "minimum_external_context",
               "passed": true,
-              "current": "2/3",
+              "current": "3/3",
               "rule": "At least 2 of 3 contextual layers must be available."
             },
             {
@@ -2556,7 +2602,7 @@
               "passed": false,
               "current": {
                 "state": "HIGH",
-                "score": 77.2
+                "score": 81
               },
               "rule": "Risk HIGH constrains the final directional outlook."
             },
@@ -2564,16 +2610,16 @@
               "gate": "context_vote",
               "passed": true,
               "current": {
-                "supports": 0,
+                "supports": 2,
                 "opposes": 1,
-                "mixed_or_neutral": 1
+                "mixed_or_neutral": 0
               },
               "rule": "OPPOSES > SUPPORTS => CONTEXT_CONTRADICTED; SUPPORTS > OPPOSES with Actionability >=80 => CONTEXT_CONFIRMED; otherwise MIXED_CONTEXT."
             },
             {
               "gate": "strong_actionability_for_confirmation",
               "passed": false,
-              "current": 39.2,
+              "current": 50,
               "rule": "CONTEXT_CONFIRMED requires Actionability >=80 in addition to net contextual support."
             }
           ],
@@ -2598,7 +2644,7 @@
         }
       },
       "methodology": "Sequential intelligence architecture: Macro & Yield → Cross-Market → News → Risk → Counter-Thesis → Final Reasoner. Risk v0.2 remains frozen during Fresh OOS collection. Counter-Thesis v0.2 performs structured adversarial review. Final Reasoner v0.2 adds Evidence For, Evidence Against, Key Risk, invalidation conditions, decision trace, and a deterministic final assessment while preserving the frozen v0.1 status/outlook/decision logic.",
-      "research_status": "MACRO_YIELD_LIVE_CROSS_MARKET_NEWS_PENDING"
+      "research_status": "CONTEXT_STACK_LIVE_RESEARCH_VALIDATION_PENDING"
     }
   }
 }

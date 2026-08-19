@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "status": "DECISION_ALERT_WATCH_ACTIVE",
   "created_at": "2026-08-17T03:19:49.195Z",
-  "updated_at": "2026-08-19T15:55:47.201Z",
+  "updated_at": "2026-08-19T13:24:24.885Z",
   "policy": {
     "mode": "material_change_notification_and_explainability_watch",
     "no_historical_backfill": true,
@@ -18,18 +18,18 @@
       "key": "ACTIONABILITY_FILTERED",
       "severity": "HIGH",
       "title": "Actionability terfilter",
-      "detail": "Actionability 39.2 · FILTERED.",
+      "detail": "Actionability 50 · FILTERED.",
       "source": "actionability",
-      "session_date": "2026-08-19",
+      "session_date": "2026-08-18",
       "trigger": "Actionability < 60 or state FILTERED.",
       "evidence": {
-        "score": 39.2,
+        "score": 50,
         "state": "FILTERED",
         "regime": "PROVIDER_DIVERGENCE"
       },
       "first_seen": "2026-08-17T15:48:17.857Z",
-      "last_seen": "2026-08-19T15:55:47.201Z",
-      "occurrences": 12
+      "last_seen": "2026-08-19T13:24:24.885Z",
+      "occurrences": 11
     },
     {
       "key": "FINAL_RISK_CONSTRAINED",
@@ -37,7 +37,7 @@
       "title": "Final Reasoner dibatasi Risk",
       "detail": "Status RISK_CONSTRAINED; keputusan DEPRIORITIZE.",
       "source": "final_reasoner",
-      "session_date": "2026-08-19",
+      "session_date": "2026-08-18",
       "trigger": "Final Reasoner status = RISK_CONSTRAINED.",
       "evidence": {
         "version": "0.2",
@@ -47,21 +47,8 @@
         "decision": "DEPRIORITIZE"
       },
       "first_seen": "2026-08-18T15:56:00.036Z",
-      "last_seen": "2026-08-19T15:55:47.201Z",
-      "occurrences": 5
-    },
-    {
-      "key": "MTF_ALIGNMENT_LOW",
-      "severity": "HIGH",
-      "title": "MTF Alignment di bawah guardrail",
-      "detail": "Multi-Timeframe Alignment turun di bawah 60.",
-      "source": "counter_thesis",
-      "session_date": "2026-08-19",
-      "trigger": "MTF Alignment < 60.",
-      "evidence": null,
-      "first_seen": "2026-08-19T15:55:47.201Z",
-      "last_seen": "2026-08-19T15:55:47.201Z",
-      "occurrences": 1
+      "last_seen": "2026-08-19T13:24:24.885Z",
+      "occurrences": 4
     },
     {
       "key": "PROVIDER_AGREEMENT_LOW",
@@ -69,29 +56,42 @@
       "title": "Provider Agreement di bawah guardrail",
       "detail": "Provider Agreement turun di bawah 60.",
       "source": "counter_thesis",
-      "session_date": "2026-08-19",
+      "session_date": "2026-08-18",
       "trigger": "Provider Agreement < 60.",
       "evidence": null,
       "first_seen": "2026-08-18T15:56:00.036Z",
-      "last_seen": "2026-08-19T15:55:47.201Z",
-      "occurrences": 5
+      "last_seen": "2026-08-19T13:24:24.885Z",
+      "occurrences": 4
     },
     {
       "key": "RISK_HIGH",
       "severity": "HIGH",
       "title": "Risk v0.2 HIGH",
-      "detail": "Risk v0.2 berada di 77.2/100.",
+      "detail": "Risk v0.2 berada di 81/100.",
       "source": "risk",
-      "session_date": "2026-08-19",
+      "session_date": "2026-08-18",
       "trigger": "Risk state = HIGH / score >= 70.",
       "evidence": {
         "version": "0.2",
-        "score": 77.2,
+        "score": 81,
         "state": "HIGH"
       },
       "first_seen": "2026-08-18T15:56:00.036Z",
-      "last_seen": "2026-08-19T15:55:47.201Z",
-      "occurrences": 5
+      "last_seen": "2026-08-19T13:24:24.885Z",
+      "occurrences": 4
+    },
+    {
+      "key": "CONTEXT_DISAGREEMENT_EXTREME",
+      "severity": "MODERATE",
+      "title": "Context disagreement ekstrem",
+      "detail": "Context score spread mencapai atau melampaui 60 poin.",
+      "source": "counter_thesis",
+      "session_date": "2026-08-18",
+      "trigger": "Context disagreement >= 60 points.",
+      "evidence": null,
+      "first_seen": "2026-08-18T15:56:00.036Z",
+      "last_seen": "2026-08-19T13:24:24.885Z",
+      "occurrences": 4
     },
     {
       "key": "COUNTER_THESIS_HIGH",
@@ -99,7 +99,7 @@
       "title": "Counter-Thesis challenge HIGH",
       "detail": "Counter-Thesis ACTIVE · challenge HIGH.",
       "source": "counter_thesis",
-      "session_date": "2026-08-19",
+      "session_date": "2026-08-18",
       "trigger": "Counter-Thesis challenge level = HIGH.",
       "evidence": {
         "version": "0.2",
@@ -107,32 +107,60 @@
         "challenge_level": "HIGH",
         "triggered_conditions": [
           "provider_agreement_below_60",
-          "mtf_alignment_below_60",
           "actionability_below_60",
+          "context_dispersion_60",
           "high_event_risk",
           "risk_high_70"
         ]
       },
       "first_seen": "2026-08-17T03:19:49.195Z",
-      "last_seen": "2026-08-19T15:55:47.201Z",
-      "occurrences": 28
+      "last_seen": "2026-08-19T13:24:24.885Z",
+      "occurrences": 27
+    },
+    {
+      "key": "INTRADAY_MODERATE_DRIFT",
+      "severity": "MODERATE",
+      "title": "Intraday context drift moderat",
+      "detail": "Capture DRIFT-0021-2026-08-18 mendeteksi MODERATE drift.",
+      "source": "intraday_context_drift",
+      "session_date": "2026-08-18",
+      "trigger": "Latest intraday drift level = MODERATE.",
+      "evidence": {
+        "id": "DRIFT-0021-2026-08-18",
+        "captured_at": "2026-08-19T13:24:24.682Z",
+        "drift_level": "MODERATE",
+        "snapshot_hash": "da101f0afbeeebc4293176ed3a497ff8a589f68dfd53049b9e97d79bfaa14e59",
+        "drift_vs_previous": [
+          {
+            "key": "news_state",
+            "severity": "MODERATE",
+            "label": "News state",
+            "from": "NEUTRAL",
+            "to": "SUPPORTS",
+            "delta": 21.4
+          }
+        ]
+      },
+      "first_seen": "2026-08-19T13:24:24.885Z",
+      "last_seen": "2026-08-19T13:24:24.885Z",
+      "occurrences": 1
     },
     {
       "key": "NEWS_EVENT_HIGH",
       "severity": "MODERATE",
       "title": "High-impact News Event Risk",
-      "detail": "News Event Risk HIGH sementara News 50 · NEUTRAL.",
+      "detail": "News Event Risk HIGH sementara News 75 · SUPPORTS.",
       "source": "news",
-      "session_date": "2026-08-19",
+      "session_date": "2026-08-18",
       "trigger": "News event-risk level = HIGH.",
       "evidence": {
-        "state": "NEUTRAL",
-        "score": 50,
+        "state": "SUPPORTS",
+        "score": 75,
         "event_risk": "HIGH"
       },
       "first_seen": "2026-08-17T09:57:27.459Z",
-      "last_seen": "2026-08-19T15:55:47.201Z",
-      "occurrences": 17
+      "last_seen": "2026-08-19T13:24:24.885Z",
+      "occurrences": 16
     }
   ],
   "events": [
@@ -1149,92 +1177,53 @@
       "session_date": "2026-08-18",
       "dedupe_key": "DRIFT:DRIFT-0021-2026-08-18:news_state",
       "event_hash": "908a689ab79a93a41f1349840f76945bfe289d50198c400127f25e4cfd6aeca4"
-    },
-    {
-      "id": "ALERT-EVENT-0079",
-      "occurred_at": "2026-08-19T15:55:47.201Z",
-      "event_type": "OPEN",
-      "alert_key": "MTF_ALIGNMENT_LOW",
-      "severity": "HIGH",
-      "title": "MTF Alignment di bawah guardrail",
-      "detail": "Multi-Timeframe Alignment turun di bawah 60.",
-      "source": "counter_thesis",
-      "session_date": "2026-08-19",
-      "dedupe_key": "OPEN:MTF_ALIGNMENT_LOW:2026-08-19",
-      "event_hash": "933513ccee58b662152dcebf216cbc304776d7b793eacba00787a06141f4b794"
-    },
-    {
-      "id": "ALERT-EVENT-0080",
-      "occurred_at": "2026-08-19T15:55:47.201Z",
-      "event_type": "RESOLVED",
-      "alert_key": "CONTEXT_DISAGREEMENT_EXTREME",
-      "severity": "MODERATE",
-      "title": "Context disagreement ekstrem",
-      "detail": "Resolved: Context score spread mencapai atau melampaui 60 poin.",
-      "source": "counter_thesis",
-      "session_date": "2026-08-19",
-      "dedupe_key": "RESOLVED:CONTEXT_DISAGREEMENT_EXTREME:2026-08-19:2026-08-19T15:55:47.201Z",
-      "event_hash": "8868e620a70e28846a7a2cb615a578afdacb04b194ad9fef0a84b19ff366dc7c"
-    },
-    {
-      "id": "ALERT-EVENT-0081",
-      "occurred_at": "2026-08-19T15:55:47.201Z",
-      "event_type": "RESOLVED",
-      "alert_key": "INTRADAY_MODERATE_DRIFT",
-      "severity": "MODERATE",
-      "title": "Intraday context drift moderat",
-      "detail": "Resolved: Capture DRIFT-0021-2026-08-18 mendeteksi MODERATE drift.",
-      "source": "intraday_context_drift",
-      "session_date": "2026-08-19",
-      "dedupe_key": "RESOLVED:INTRADAY_MODERATE_DRIFT:2026-08-19:2026-08-19T15:55:47.201Z",
-      "event_hash": "7383ed9a9744fcde6595a765dfa5803cf883ab464d8415e30dd52532db9cf719"
     }
   ],
   "summary": {
     "alert_gate": "REVIEW_NOW",
-    "active_total": 7,
-    "high_active": 5,
-    "moderate_active": 2,
+    "active_total": 8,
+    "high_active": 4,
+    "moderate_active": 4,
     "info_active": 0,
-    "event_count": 81,
-    "new_events_this_run": 3,
-    "latest_event_at": "2026-08-19T15:55:47.201Z",
-    "latest_event_id": "ALERT-EVENT-0081"
+    "event_count": 78,
+    "new_events_this_run": 2,
+    "latest_event_at": "2026-08-19T13:24:24.885Z",
+    "latest_event_id": "ALERT-EVENT-0078"
   },
   "current_watch": {
-    "session_date": "2026-08-19",
-    "pair": "USDJPY",
+    "session_date": "2026-08-18",
+    "pair": "NZDUSD",
     "canonical_bias": "SELL",
     "actionability": {
-      "score": 39.2,
+      "score": 50,
       "state": "FILTERED",
       "regime": "PROVIDER_DIVERGENCE"
     },
     "context": {
       "macro_yield": {
-        "state": "OPPOSES",
-        "score": 33.3
+        "state": "SUPPORTS",
+        "score": 83.3
       },
       "cross_market": {
-        "state": "UNAVAILABLE",
-        "score": 0
+        "state": "OPPOSES",
+        "score": 12.5
       },
       "news": {
-        "state": "NEUTRAL",
-        "score": 50,
+        "state": "SUPPORTS",
+        "score": 75,
         "event_risk": "HIGH"
       },
       "counts": {
-        "supports": 0,
+        "supports": 2,
         "opposes": 1,
-        "mixed_or_neutral": 1,
-        "available": 2,
+        "mixed_or_neutral": 0,
+        "available": 3,
         "expected": 3
       }
     },
     "risk": {
       "version": "0.2",
-      "score": 77.2,
+      "score": 81,
       "state": "HIGH"
     },
     "counter_thesis": {
@@ -1243,8 +1232,8 @@
       "challenge_level": "HIGH",
       "triggered_conditions": [
         "provider_agreement_below_60",
-        "mtf_alignment_below_60",
         "actionability_below_60",
+        "context_dispersion_60",
         "high_event_risk",
         "risk_high_70"
       ]
@@ -1257,18 +1246,18 @@
       "decision": "DEPRIORITIZE"
     },
     "intraday": {
-      "id": "DRIFT-0022-2026-08-19",
-      "captured_at": "2026-08-19T15:55:46.996Z",
-      "drift_level": "BASELINE",
-      "snapshot_hash": "00dc6728d5cc92ab046af928813bc3330611716869fd389615b1ec3b35954383",
+      "id": "DRIFT-0021-2026-08-18",
+      "captured_at": "2026-08-19T13:24:24.682Z",
+      "drift_level": "MODERATE",
+      "snapshot_hash": "da101f0afbeeebc4293176ed3a497ff8a589f68dfd53049b9e97d79bfaa14e59",
       "drift_vs_previous": [
         {
-          "key": "session_baseline",
-          "severity": "NONE",
-          "label": "Session baseline",
-          "from": null,
-          "to": "USDJPY SELL",
-          "delta": null
+          "key": "news_state",
+          "severity": "MODERATE",
+          "label": "News state",
+          "from": "NEUTRAL",
+          "to": "SUPPORTS",
+          "delta": 21.4
         }
       ]
     },
