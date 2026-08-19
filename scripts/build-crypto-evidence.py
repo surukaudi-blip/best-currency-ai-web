@@ -15,8 +15,7 @@ import email.utils
 import hashlib
 import json
 import os
-import urllib.error
-import urllib.parse
+import re
 import urllib.request
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
@@ -117,11 +116,7 @@ def fetch_protocol(source: Dict[str, Any]) -> Dict[str, Any]:
             "url": c.get("html_url"),
         }
     freshest = None
-    candidates = [
-        latest_release.get("published_at") if latest_release else None,
-        latest_commit.get("committed_at") if latest_commit else None,
-    ]
-    for candidate in candidates:
+    for candidate in [latest_release.get("published_at") if latest_release else None, latest_commit.get("committed_at") if latest_commit else None]:
         if candidate and (freshest is None or candidate > freshest):
             freshest = candidate
     return {
@@ -159,7 +154,7 @@ def parse_rss(source: Dict[str, Any]) -> Tuple[Dict[str, Any], List[Dict[str, An
                 published_at = pub
         if title:
             parsed.append({"title": title[:400], "url": link, "published_at": published_at})
-    meta = {
+    return ({
         "source": source.get("short"),
         "name": source.get("name"),
         "tier": source.get("tier"),
@@ -167,23 +162,45 @@ def parse_rss(source: Dict[str, Any]) -> Tuple[Dict[str, Any], List[Dict[str, An
         "status": "READY",
         "items_scanned": len(parsed),
         "url": source.get("url"),
-    }
-    return meta, parsed
+    }, parsed)
 
 
-def match_regulatory_events(sources: List[Dict[str, Any]], protocol_sources: List[Dict[str, Any]], general_keywords: List[str]) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]]]:
+def keyword_match(text: str, keyword: str) -> bool:
+    key = keyword.strip().lower()
+    if not key:
+        return False
+    # Short ticker-like tokens must match whole words to avoid SOL in resolution,
+    # ADA in Canada, ETH in whether, etc. Longer phrases remain substring matches.
+    if len(key) <= 4 and re.fullmatch(r"[a-z0-9]+", key):
+        return re.search(rf"(?<![a-z0-9]){re.escape(key)}(?![a-z0-9])", text) is not None
+    return key in text
+
+
+def match_regulatory_events(
+    sources: List[Dict[str, Any]], protocol_sources: List[Dict[str, Any]], general_keywords: List[str]
+) -> Tuple[List[Dict[str, Any]], List[Dict[str, Any]], List[Dict[str, str]]]:
     source_statuses: List[Dict[str, Any]] = []
     events: List[Dict[str, Any]] = []
+    feed_errors: List[Dict[str, str]] = []
     seen = set()
     asset_keywords = {s["symbol"]: [k.lower() for k in s.get("keywords", [])] for s in protocol_sources}
     general = [k.lower() for k in general_keywords]
     for source in sources:
-        meta, items = parse_rss(source)
+        try:
+            meta, items = parse_rss(source)
+        except Exception as exc:
+            source_statuses.append({
+                "source": source.get("short"), "name": source.get("name"), "tier": source.get("tier"),
+                "classification": source.get("classification"), "status": "ERROR", "items_scanned": 0,
+                "url": source.get("url"), "error": str(exc)[:400]
+            })
+            feed_errors.append({"layer": "regulatory", "source": source.get("short"), "error": str(exc)[:500]})
+            continue
         source_statuses.append(meta)
         for item in items:
             text = (item.get("title") or "").lower()
-            matched_assets = sorted({sym for sym, kws in asset_keywords.items() if any(k in text for k in kws)})
-            crypto_general = any(k in text for k in general)
+            matched_assets = sorted({sym for sym, kws in asset_keywords.items() if any(keyword_match(text, k) for k in kws)})
+            crypto_general = any(keyword_match(text, k) for k in general)
             if not matched_assets and not crypto_general:
                 continue
             key = item.get("url") or item.get("title")
@@ -206,19 +223,19 @@ def match_regulatory_events(sources: List[Dict[str, Any]], protocol_sources: Lis
                 "directional_interpretation": "NOT_ASSIGNED_IN_11B",
             })
     events.sort(key=lambda x: x.get("published_at") or "", reverse=True)
-    return source_statuses, events[:50]
+    return source_statuses, events[:50], feed_errors
 
 
 def json_rpc(url: str, method: str, params: Optional[List[Any]] = None) -> Any:
-    payload = {"jsonrpc": "2.0", "id": 1, "method": method, "params": params or []}
-    return request_json(url, data=payload)
+    return request_json(url, data={"jsonrpc": "2.0", "id": 1, "method": method, "params": params or []})
 
 
 def network_btc(source: Dict[str, Any]) -> Dict[str, Any]:
     base = source["endpoint"].rstrip("/")
     height = int(request_bytes(f"{base}/blocks/tip/height", headers={"Accept": "text/plain"}).decode("utf-8").strip())
     fees = request_json(f"{base}/fee-estimates")
-    return {"tip_height": height, "fee_estimates_sat_vb": fees}
+    selected = {k: fees.get(k) for k in ("1", "3", "6", "12", "24", "144") if k in fees}
+    return {"tip_height": height, "fee_estimates_sat_vb": selected}
 
 
 def network_sol(source: Dict[str, Any]) -> Dict[str, Any]:
@@ -231,54 +248,41 @@ def network_xrp(source: Dict[str, Any]) -> Dict[str, Any]:
     result = json_rpc(source["endpoint"], "server_info", [{}]).get("result") or {}
     info = result.get("info") or {}
     validated = info.get("validated_ledger") or {}
-    return {
-        "server_state": info.get("server_state"),
-        "validated_ledger_seq": validated.get("seq"),
-        "validated_ledger_age_seconds": validated.get("age"),
-    }
+    return {"server_state": info.get("server_state"), "validated_ledger_seq": validated.get("seq"), "validated_ledger_age_seconds": validated.get("age")}
 
 
 def network_bnb(source: Dict[str, Any]) -> Dict[str, Any]:
     block_hex = json_rpc(source["endpoint"], "eth_blockNumber").get("result")
     chain_hex = json_rpc(source["endpoint"], "eth_chainId").get("result")
-    return {
-        "block_number": int(block_hex, 16) if isinstance(block_hex, str) else None,
-        "chain_id": int(chain_hex, 16) if isinstance(chain_hex, str) else None,
-    }
+    return {"block_number": int(block_hex, 16) if isinstance(block_hex, str) else None, "chain_id": int(chain_hex, 16) if isinstance(chain_hex, str) else None}
 
 
 def collect_network(sources: List[Dict[str, Any]]) -> List[Dict[str, Any]]:
     out: List[Dict[str, Any]] = []
     handlers = {"BTC": network_btc, "SOL": network_sol, "XRP": network_xrp, "BNB": network_bnb}
     for source in sources:
-        base = {
-            "symbol": source.get("symbol"),
-            "name": source.get("name"),
-            "tier": source.get("tier"),
-            "classification": source.get("classification"),
-            "source_status": source.get("status"),
-            "endpoint": source.get("endpoint"),
-            "note": source.get("note"),
-            "captured_at": iso_now(),
-            "cross_chain_comparable": False,
-            "directional_interpretation": "NOT_ASSIGNED_IN_11B",
+        row = {
+            "symbol": source.get("symbol"), "name": source.get("name"), "tier": source.get("tier"),
+            "classification": source.get("classification"), "source_status": source.get("status"),
+            "endpoint": source.get("endpoint"), "note": source.get("note"), "captured_at": iso_now(),
+            "cross_chain_comparable": False, "directional_interpretation": "NOT_ASSIGNED_IN_11B",
         }
         if source.get("status") != "ENABLED":
-            base["status"] = source.get("status")
-            base["metrics"] = None
-            out.append(base)
+            row["status"] = source.get("status")
+            row["metrics"] = None
+            out.append(row)
             continue
         try:
             handler = handlers.get(source.get("symbol"))
             if not handler:
                 raise RuntimeError("No approved telemetry handler configured")
-            base["metrics"] = handler(source)
-            base["status"] = "READY"
+            row["metrics"] = handler(source)
+            row["status"] = "READY"
         except Exception as exc:
-            base["status"] = "ERROR"
-            base["error"] = str(exc)[:400]
-            base["metrics"] = None
-        out.append(base)
+            row["status"] = "ERROR"
+            row["error"] = str(exc)[:400]
+            row["metrics"] = None
+        out.append(row)
     return out
 
 
@@ -291,19 +295,12 @@ def main() -> int:
             protocol.append(fetch_protocol(source))
         except Exception as exc:
             errors.append({"layer": "protocol", "symbol": source.get("symbol"), "source": source.get("repository"), "error": str(exc)[:500]})
-            protocol.append({
-                "symbol": source.get("symbol"), "tier": source.get("tier"), "classification": source.get("classification"),
-                "repository": source.get("repository"), "status": "ERROR", "error": str(exc)[:400]
-            })
+            protocol.append({"symbol": source.get("symbol"), "tier": source.get("tier"), "classification": source.get("classification"), "repository": source.get("repository"), "status": "ERROR", "error": str(exc)[:400]})
 
-    regulatory_sources: List[Dict[str, Any]] = []
-    regulatory_events: List[Dict[str, Any]] = []
-    try:
-        regulatory_sources, regulatory_events = match_regulatory_events(
-            cfg.get("regulatory_sources", []), cfg.get("protocol_sources", []), cfg.get("regulatory_crypto_keywords", [])
-        )
-    except Exception as exc:
-        errors.append({"layer": "regulatory", "source": "SEC/CFTC RSS", "error": str(exc)[:500]})
+    regulatory_sources, regulatory_events, regulatory_errors = match_regulatory_events(
+        cfg.get("regulatory_sources", []), cfg.get("protocol_sources", []), cfg.get("regulatory_crypto_keywords", [])
+    )
+    errors.extend(regulatory_errors)
 
     network = collect_network(cfg.get("network_sources", []))
     for row in network:
@@ -326,7 +323,7 @@ def main() -> int:
         status = "FAILED"
 
     artifact = {
-        "version": "0.1",
+        "version": "0.2",
         "status": status,
         "scope": cfg.get("scope"),
         "generated_at": iso_now(),
@@ -350,6 +347,7 @@ def main() -> int:
             "evidence_layer_only": True,
             "protocol_activity_is_not_automatically_market_direction": True,
             "regulatory_event_direction_is_not_assigned_in_11B": True,
+            "regulatory_short_symbol_matching_uses_word_boundaries": True,
             "network_telemetry_is_heterogeneous": True,
             "no_cross_chain_imputation": True,
             "no_universal_onchain_score": True,
@@ -360,11 +358,7 @@ def main() -> int:
         },
     }
     OUTPUT_PATH.write_text(json.dumps(artifact, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(
-        f"11B: {status}; protocol={protocol_ready}/{len(cfg.get('protocol_sources', []))}; "
-        f"regulators={regulator_ready}/{len(cfg.get('regulatory_sources', []))}; "
-        f"network_ready={network_ready}/{enabled_network_total} enabled; events={len(regulatory_events)}; errors={len(errors)}"
-    )
+    print(f"11B: {status}; protocol={protocol_ready}/{len(cfg.get('protocol_sources', []))}; regulators={regulator_ready}/{len(cfg.get('regulatory_sources', []))}; network_ready={network_ready}/{enabled_network_total} enabled; events={len(regulatory_events)}; errors={len(errors)}")
     return 0 if status == "CRYPTO_EVIDENCE_READY_PARTIAL_NETWORK" else 2
 
 
