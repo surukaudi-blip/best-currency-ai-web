@@ -2,7 +2,7 @@
   "version": "0.2",
   "status": "CRYPTO_EVIDENCE_READY_PARTIAL_NETWORK",
   "scope": "CRYPTO_STAGE_11B_EVIDENCE",
-  "generated_at": "2026-08-19T11:47:03.861452Z",
+  "generated_at": "2026-08-19T13:08:21.875052Z",
   "protocol_evidence": [
     {
       "symbol": "BTC",
@@ -24,7 +24,7 @@
         "url": "https://github.com/bitcoin/bitcoin/commit/59224b66aa1db43adc61c15ee41b413951f22f80"
       },
       "freshest_evidence_at": "2026-08-18T22:53:00Z",
-      "freshness_hours": 12.9,
+      "freshness_hours": 14.25,
       "provenance": "GitHub REST API /repos/bitcoin/bitcoin/releases and /commits",
       "interpretation": "Core implementation activity is primary technical evidence, not a universal governance decision or directional market signal."
     },
@@ -48,7 +48,7 @@
         "url": "https://github.com/ethereum/go-ethereum/commit/26d0b2171c17339bb8fd164d8ed6830738d3bf13"
       },
       "freshest_evidence_at": "2026-08-18T01:40:10Z",
-      "freshness_hours": 34.11,
+      "freshness_hours": 35.47,
       "provenance": "GitHub REST API /repos/ethereum/go-ethereum/releases and /commits",
       "interpretation": "Core implementation activity is primary technical evidence, not a universal governance decision or directional market signal."
     },
@@ -72,7 +72,7 @@
         "url": "https://github.com/anza-xyz/agave/commit/f19959a0c1ee970ce1c82263a0c00232597c97d3"
       },
       "freshest_evidence_at": "2026-08-19T10:38:52Z",
-      "freshness_hours": 1.14,
+      "freshness_hours": 2.49,
       "provenance": "GitHub REST API /repos/anza-xyz/agave/releases and /commits",
       "interpretation": "Core implementation activity is primary technical evidence, not a universal governance decision or directional market signal."
     },
@@ -96,7 +96,7 @@
         "url": "https://github.com/XRPLF/rippled/commit/a6983f8bf3ff37e8d379963bfb8702bb21d94ed4"
       },
       "freshest_evidence_at": "2026-08-19T00:25:46Z",
-      "freshness_hours": 11.35,
+      "freshness_hours": 12.71,
       "provenance": "GitHub REST API /repos/XRPLF/rippled/releases and /commits",
       "interpretation": "Core implementation activity is primary technical evidence, not a universal governance decision or directional market signal."
     },
@@ -120,7 +120,7 @@
         "url": "https://github.com/bnb-chain/bsc/commit/c5533ab5b7244dc474add10740834417a2c605d7"
       },
       "freshest_evidence_at": "2026-08-13T02:21:26Z",
-      "freshness_hours": 153.43,
+      "freshness_hours": 154.78,
       "provenance": "GitHub REST API /repos/bnb-chain/bsc/releases and /commits",
       "interpretation": "Core implementation activity is primary technical evidence, not a universal governance decision or directional market signal."
     },
@@ -144,7 +144,7 @@
         "url": "https://github.com/IntersectMBO/cardano-node/commit/94ec4195f15f1fd290ab647be5e518b4e8b82e39"
       },
       "freshest_evidence_at": "2026-08-18T16:04:40Z",
-      "freshness_hours": 19.71,
+      "freshness_hours": 21.06,
       "provenance": "GitHub REST API /repos/IntersectMBO/cardano-node/releases and /commits",
       "interpretation": "Core implementation activity is primary technical evidence, not a universal governance decision or directional market signal."
     },
@@ -168,7 +168,7 @@
         "url": "https://github.com/dogecoin/dogecoin/commit/cf0888a55bc685d03e2b90e5659a5c119d1d7ee5"
       },
       "freshest_evidence_at": "2026-08-15T21:17:47Z",
-      "freshness_hours": 86.49,
+      "freshness_hours": 87.84,
       "provenance": "GitHub REST API /repos/dogecoin/dogecoin/releases and /commits",
       "interpretation": "Core implementation activity is primary technical evidence, not a universal governance decision or directional market signal."
     },
@@ -192,7 +192,7 @@
         "url": "https://github.com/smartcontractkit/chainlink/commit/fdf71117cbe082cf735cce4e3bd72fa64a43b615"
       },
       "freshest_evidence_at": "2026-08-19T11:34:46Z",
-      "freshness_hours": 0.2,
+      "freshness_hours": 1.56,
       "provenance": "GitHub REST API /repos/smartcontractkit/chainlink/releases and /commits",
       "interpretation": "Core implementation activity is primary technical evidence, not a universal governance decision or directional market signal."
     }
@@ -234,7 +234,7 @@
       "tier": "A",
       "classification": "PRIMARY_REGULATORY_EVENT",
       "published_at": "2026-08-18T17:15:48Z",
-      "freshness_hours": 18.52,
+      "freshness_hours": 19.88,
       "title": "SEC Proposes New Regulation Crypto Assets",
       "url": "https://www.sec.gov/newsroom/press-releases/2026-76-sec-proposes-new-regulation-crypto-assets",
       "asset_scope": [],
@@ -252,15 +252,15 @@
       "source_status": "ENABLED",
       "endpoint": "https://blockstream.info/api",
       "note": "Independent telemetry; not Bitcoin protocol governance authority.",
-      "captured_at": "2026-08-19T11:47:01.096990Z",
+      "captured_at": "2026-08-19T13:08:19.009826Z",
       "cross_chain_comparable": false,
       "directional_interpretation": "NOT_ASSIGNED_IN_11B",
       "metrics": {
-        "tip_height": 963166,
+        "tip_height": 963171,
         "fee_estimates_sat_vb": {
-          "1": 1.9029999999999998,
-          "3": 1.222,
-          "6": 0.9700000000000001,
+          "1": 2.114,
+          "3": 2.114,
+          "6": 1.0030000000000001,
           "12": 0.417,
           "24": 0.38500000000000006,
           "144": 0.315
@@ -276,7 +276,7 @@
       "source_status": "DEFERRED",
       "endpoint": null,
       "note": "No unauthenticated primary production RPC is assumed. Add a licensed/dedicated provider before scoring network telemetry.",
-      "captured_at": "2026-08-19T11:47:01.634926Z",
+      "captured_at": "2026-08-19T13:08:19.829327Z",
       "cross_chain_comparable": false,
       "directional_interpretation": "NOT_ASSIGNED_IN_11B",
       "status": "DEFERRED",
@@ -290,12 +290,12 @@
       "source_status": "ENABLED",
       "endpoint": "https://api.mainnet-beta.solana.com",
       "note": "Official public endpoint is rate-limited and used only for low-frequency evidence collection.",
-      "captured_at": "2026-08-19T11:47:01.634945Z",
+      "captured_at": "2026-08-19T13:08:19.829395Z",
       "cross_chain_comparable": false,
       "directional_interpretation": "NOT_ASSIGNED_IN_11B",
       "metrics": {
         "health": "ok",
-        "finalized_slot": 440259442
+        "finalized_slot": 440271145
       },
       "status": "READY"
     },
@@ -307,13 +307,13 @@
       "source_status": "ENABLED",
       "endpoint": "https://s1.ripple.com:51234/",
       "note": "General-purpose public server listed by XRPL documentation.",
-      "captured_at": "2026-08-19T11:47:03.127882Z",
+      "captured_at": "2026-08-19T13:08:21.017868Z",
       "cross_chain_comparable": false,
       "directional_interpretation": "NOT_ASSIGNED_IN_11B",
       "metrics": {
         "server_state": null,
-        "validated_ledger_seq": 106399837,
-        "validated_ledger_age_seconds": 3
+        "validated_ledger_seq": 106401102,
+        "validated_ledger_age_seconds": 1
       },
       "status": "READY"
     },
@@ -325,11 +325,11 @@
       "source_status": "ENABLED",
       "endpoint": "https://bsc-dataseed.bnbchain.org",
       "note": "Official BNB Chain public RPC endpoint.",
-      "captured_at": "2026-08-19T11:47:03.699639Z",
+      "captured_at": "2026-08-19T13:08:21.558493Z",
       "cross_chain_comparable": false,
       "directional_interpretation": "NOT_ASSIGNED_IN_11B",
       "metrics": {
-        "block_number": 116842758,
+        "block_number": 116853597,
         "chain_id": 56
       },
       "status": "READY"
@@ -342,7 +342,7 @@
       "source_status": "DEFERRED",
       "endpoint": null,
       "note": "No unauthenticated primary endpoint is assumed in v1; do not impute from third-party data.",
-      "captured_at": "2026-08-19T11:47:03.861411Z",
+      "captured_at": "2026-08-19T13:08:21.875002Z",
       "cross_chain_comparable": false,
       "directional_interpretation": "NOT_ASSIGNED_IN_11B",
       "status": "DEFERRED",
@@ -356,7 +356,7 @@
       "source_status": "DEFERRED",
       "endpoint": null,
       "note": "No unauthenticated primary endpoint is assumed in v1; do not impute from third-party data.",
-      "captured_at": "2026-08-19T11:47:03.861427Z",
+      "captured_at": "2026-08-19T13:08:21.875021Z",
       "cross_chain_comparable": false,
       "directional_interpretation": "NOT_ASSIGNED_IN_11B",
       "status": "DEFERRED",
@@ -370,7 +370,7 @@
       "source_status": "NOT_APPLICABLE_NATIVE_CHAIN",
       "endpoint": null,
       "note": "LINK/Chainlink is multi-chain and does not have one native chain tip metric comparable to L1 assets.",
-      "captured_at": "2026-08-19T11:47:03.861431Z",
+      "captured_at": "2026-08-19T13:08:21.875026Z",
       "cross_chain_comparable": false,
       "directional_interpretation": "NOT_ASSIGNED_IN_11B",
       "status": "NOT_APPLICABLE_NATIVE_CHAIN",
