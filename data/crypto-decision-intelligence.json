@@ -1,0 +1,20 @@
+{
+  "version": "0.1",
+  "status": "CRYPTO_DECISION_INTELLIGENCE_NOT_RUN",
+  "scope": "MAJOR_LIQUID_CRYPTO_ASSETS_V1",
+  "generated_at": null,
+  "model_status": "EXPERIMENTAL_PREVALIDATION",
+  "frozen": false,
+  "symbols": [],
+  "guardrails": {
+    "market_direction_comes_only_from_completed_market_data": true,
+    "protocol_activity_not_directional": true,
+    "regulatory_events_not_directional": true,
+    "network_telemetry_not_cross_chain_scored": true,
+    "no_buy_sell": true,
+    "no_profit_probability": true,
+    "backtest_required_before_freeze": true,
+    "pre_freeze_cross_check_required": true,
+    "trade_execution": "OFF"
+  }
+}
