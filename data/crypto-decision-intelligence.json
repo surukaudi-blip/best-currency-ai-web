@@ -1,9 +1,9 @@
 {
-  "version": "0.3",
+  "version": "0.4",
   "status": "CRYPTO_DECISION_INTELLIGENCE_READY",
   "scope": "MAJOR_LIQUID_CRYPTO_ASSETS_V1",
-  "generated_at": "2026-08-19T08:14:32.183684Z",
-  "model_status": "EXPERIMENTAL_HYBRID_PREVALIDATION",
+  "generated_at": "2026-08-19T08:40:46.903058Z",
+  "model_status": "EXPERIMENTAL_V01_CORE_MTF_ACTIONABILITY_PREVALIDATION",
   "frozen": false,
   "market_session": "2026-08-18",
   "global_context": {
@@ -15,39 +15,40 @@
   },
   "methodology": {
     "market_structure": {
-      "hybrid_weights": {
-        "v01_absolute": 0.5,
-        "v02_volatility_normalized": 0.5
+      "weights": {
+        "return_30d": 0.3,
+        "close_vs_sma20": 0.25,
+        "close_vs_sma50": 0.3,
+        "return_7d": 0.15
       },
-      "v01_component": "Absolute percentage spans from v0.1.",
-      "v02_component": "30-day realized-volatility-normalized score from v0.2.",
+      "score_spans_percent": {
+        "return_30d": 25,
+        "close_vs_sma20": 12,
+        "close_vs_sma50": 20,
+        "return_7d": 12
+      },
       "state_thresholds": {
-        "supportive_gte": 62.0,
-        "pressured_lte": 38.0,
+        "supportive_gte": 62,
+        "pressured_lte": 38,
         "otherwise": "MIXED"
       },
-      "directional_policy": "Directional eligibility requires hybrid direction plus non-conflicting v0.1/v0.2 model agreement; no automatic 3-of-4 suppression.",
-      "direct_conflict_policy": "Opposite directional states between v0.1 and v0.2 suppress effective Market View to MIXED.",
-      "extremity_policy": "Extreme hybrid score raises reversal/exhaustion risk but does not automatically suppress descriptive Market View."
+      "direction_source": "COMPLETED_MARKET_DATA_ONLY"
+    },
+    "evidence_readiness": {
+      "weights": {
+        "protocol_freshness": 0.45,
+        "network_telemetry_readiness": 0.2,
+        "regulatory_source_readiness": 0.35
+      },
+      "network_policy": "READY=100, NOT_APPLICABLE=75, DEFERRED=60, ERROR=20; network metrics themselves are not cross-chain scored"
     },
     "decision_readiness": {
       "weights": {
-        "market_data_quality": 0.18,
+        "market_data_quality": 0.2,
         "market_freshness": 0.15,
-        "evidence_readiness": 0.22,
-        "model_agreement": 0.2,
-        "market_participation": 0.1,
-        "horizon_alignment": 0.15
-      },
-      "risk_multipliers": {
-        "LOW": 1.0,
-        "MODERATE": 0.84,
-        "HIGH": 0.62
-      },
-      "agreement_multipliers": {
-        "direct_conflict": 0.7,
-        "unconfirmed_direction": 0.9,
-        "otherwise": 1.0
+        "evidence_readiness": 0.25,
+        "directional_clarity": 0.25,
+        "market_participation": 0.15
       },
       "thresholds": {
         "ready_for_review_gte": 70,
@@ -56,29 +57,19 @@
     },
     "decision_risk": {
       "weights": {
-        "volatility": 0.22,
-        "drawdown": 0.14,
-        "one_day_shock": 0.1,
-        "regulatory_uncertainty": 0.14,
+        "volatility": 0.3,
+        "drawdown": 0.2,
+        "one_day_shock": 0.15,
+        "regulatory_uncertainty": 0.15,
         "evidence_gap": 0.1,
-        "horizon_conflict": 0.12,
-        "reversal_exhaustion": 0.18
+        "horizon_conflict": 0.1
       },
       "thresholds": {
         "low_lt": 35,
         "high_gte": 65
-      },
-      "reversal_exhaustion_policy": "Extreme hybrid score or direct model conflict raises risk; it is not a directional vote."
+      }
     },
-    "evidence_readiness": {
-      "weights": {
-        "protocol_freshness": 0.45,
-        "network_telemetry_readiness": 0.2,
-        "regulatory_source_readiness": 0.35
-      },
-      "directional_policy": "Evidence readiness does not vote bullish/bearish."
-    },
-    "regulatory_policy": "Primary regulatory events can raise uncertainty/risk but are not assigned bullish/bearish direction."
+    "regulatory_policy": "Primary regulatory events can raise uncertainty/risk but are not assigned bullish/bearish direction in 11C."
   },
   "symbols": [
     {
@@ -86,68 +77,16 @@
       "name": "Bitcoin",
       "market_session": "2026-08-18",
       "market_structure": {
-        "score": 52.41,
+        "score": 52.16,
         "state": "MIXED",
-        "raw_state": "MIXED",
-        "directional_eligible": false,
-        "hybrid": {
-          "blend": {
-            "v01_absolute": 0.5,
-            "v02_volatility_normalized": 0.5
-          },
-          "v01_absolute_score": 52.16,
-          "v01_state": "MIXED",
-          "v02_volatility_normalized_score": 52.66,
-          "v02_raw_state": "MIXED",
-          "agreement": {
-            "state": "MIXED_CONSENSUS",
-            "score": 75.0,
-            "supports_directional": false
-          },
-          "extremity": {
-            "state": "NORMAL",
-            "risk_score": 20.0
-          }
-        },
         "components": {
-          "v01_absolute": {
-            "return_30d": 48.95,
-            "close_vs_sma20": 54.11,
-            "close_vs_sma50": 53.07,
-            "return_7d": 53.52
-          },
-          "v02_volatility_normalized": {
-            "return_30d": 47.98,
-            "close_vs_sma20": 54.64,
-            "close_vs_sma50": 53.66,
-            "return_7d": 56.71
-          }
+          "return_30d": 48.95,
+          "close_vs_sma20": 54.11,
+          "close_vs_sma50": 53.07,
+          "return_7d": 53.52
         },
-        "normalized_z": {
-          "return_30d": -0.0807,
-          "close_vs_sma20": 0.1858,
-          "close_vs_sma50": 0.1462,
-          "return_7d": 0.2685
-        },
-        "volatility_scale_annualized_percent": 22.7076,
-        "alignment": {
-          "positive_count": 3,
-          "negative_count": 1,
-          "valid_count": 4,
-          "aligned_count": 3,
-          "required_for_directional_state": 3,
-          "dominant_direction": "POSITIVE",
-          "score": 80.0,
-          "components": {
-            "return_30d": -1,
-            "close_vs_sma20": 1,
-            "close_vs_sma50": 1,
-            "return_7d": 1
-          }
-        },
-        "guardrails": [],
         "completed_session": "2026-08-18",
-        "basis": "SYMMETRIC_50_50_V01_ABSOLUTE_PLUS_V02_VOLATILITY_NORMALIZED"
+        "basis": "COMPLETED_UTC_DAILY_CONTEXT_ONLY"
       },
       "evidence_readiness": {
         "score": 100.0,
@@ -164,26 +103,14 @@
         "directional_interpretation": "NOT_ASSIGNED"
       },
       "decision_readiness": {
-        "score": 88.5,
-        "base_score_before_risk_guardrails": 88.5,
-        "state": "READY_FOR_REVIEW",
-        "directional_gate": "WATCH_ONLY",
-        "components": {
-          "market_data_quality": 100.0,
-          "market_freshness": 100.0,
-          "evidence_readiness": 100.0,
-          "model_agreement": 75.0,
-          "market_participation": 65.0,
-          "horizon_alignment": 80.0
-        },
-        "adjustments": {
-          "risk_multiplier": 1.0,
-          "agreement_multiplier": 1.0,
-          "readiness_is_not_profit_probability": true
-        }
+        "score": 45.0,
+        "state": "FILTERED",
+        "decision": "DEPRIORITIZE",
+        "role": "ACTIONABILITY_ALIAS_FOR_OPERATIONAL_READINESS",
+        "readiness_is_not_profit_probability": true
       },
       "decision_risk": {
-        "score": 31.68,
+        "score": 32.58,
         "state": "LOW",
         "components": {
           "volatility": 20.0,
@@ -191,8 +118,7 @@
           "one_day_shock": 25.5,
           "regulatory_uncertainty": 60.0,
           "evidence_gap": 20.0,
-          "horizon_conflict": 50.0,
-          "reversal_exhaustion": 20.0
+          "horizon_conflict": 50.0
         },
         "horizon_conflict_count": 1,
         "relevant_regulatory_events": [
@@ -219,23 +145,135 @@
         ]
       },
       "ai_decision_reasoner": {
-        "status": "HYBRID_MIXED_STRUCTURE",
+        "status": "V01_MIXED_STRUCTURE",
         "decision": "WATCH",
         "market_view": "MIXED",
-        "raw_market_view": "MIXED",
-        "directional_eligible": false,
         "readiness_state": "READY_FOR_REVIEW",
-        "directional_gate": "WATCH_ONLY",
         "risk_state": "LOW",
         "counter_thesis_strength": "MODERATE",
         "buy_sell": "NOT_GENERATED",
         "profit_probability": "NOT_ESTIMATED",
-        "trade_execution": "OFF"
+        "trade_execution": "OFF",
+        "canonical_market_view": "MIXED",
+        "canonical_direction_source": "V0_1_ABSOLUTE_CORE",
+        "mtf_alignment_state": "LOW",
+        "mtf_alignment_score": 45.0,
+        "actionability_state": "FILTERED",
+        "actionability_score": 45.0
       },
       "provenance": {
         "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
-        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry",
-        "hybrid": "Stage 11C v0.3 symmetric v0.1 absolute + v0.2 volatility-normalized decision model"
+        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry"
+      },
+      "multi_timeframe_alignment": {
+        "score": 45.0,
+        "state": "LOW",
+        "primary_timeframe": "daily",
+        "methodology": "Forex-inspired confirmation layer: Daily/Weekly/Monthly completed UTC returns are mapped with fixed absolute v0.1-style spans; 45% Daily + 35% Weekly + 20% Monthly canonical-relation score. MTF never reverses the v0.1 canonical Market View.",
+        "canonical_state": "MIXED",
+        "supporting_timeframes": 0,
+        "opposing_timeframes": 0,
+        "neutral_timeframes": 0,
+        "constraints": [
+          "CANONICAL_V01_MIXED",
+          "MTF_ALIGNMENT_LOW"
+        ],
+        "timeframes": {
+          "daily": {
+            "timeframe": "daily",
+            "return_percent": 2.5496,
+            "score": 45.0,
+            "state": "SUPPORTIVE",
+            "span_percent": 6.0,
+            "weight": 0.45,
+            "relation": "CANONICAL_NOT_DIRECTIONAL"
+          },
+          "weekly": {
+            "timeframe": "weekly",
+            "return_percent": 0.8443,
+            "score": 45.0,
+            "state": "MIXED",
+            "span_percent": 12.0,
+            "weight": 0.35,
+            "relation": "CANONICAL_NOT_DIRECTIONAL"
+          },
+          "monthly": {
+            "timeframe": "monthly",
+            "return_percent": -0.5252,
+            "score": 45.0,
+            "state": "MIXED",
+            "span_percent": 25.0,
+            "weight": 0.2,
+            "relation": "CANONICAL_NOT_DIRECTIONAL"
+          }
+        }
+      },
+      "actionability": {
+        "version": "CRYPTO_ACTIONABILITY_0.1",
+        "role": "primary_operational_readiness_layer",
+        "scope": "continuation_readiness",
+        "score": 45.0,
+        "state": "FILTERED",
+        "decision": "DEPRIORITIZE",
+        "limiter": "canonical_gate",
+        "thresholds": {
+          "actionable": 80,
+          "selective": 60,
+          "filtered": 0
+        },
+        "methodology": "Forex-style interpretable ceiling model: Actionability is the minimum of evidence quality, regime guardrail, asset/MTF readiness, data readiness, and the v0.1 canonical-direction gate. It never reverses canonical direction and is not a probability of profit.",
+        "dimensions": {
+          "evidence_quality": {
+            "score": 100.0,
+            "reason": "Stage 11B official/protocol/network evidence readiness; evidence does not vote direction."
+          },
+          "regime_guardrail": {
+            "score": 100.0,
+            "reasons": [
+              "Decision Risk is LOW."
+            ]
+          },
+          "asset_mtf_readiness": {
+            "score": 49.0,
+            "mtf_alignment": 45.0,
+            "market_participation": 65.0,
+            "methodology": "80% MTF canonical alignment + 20% market participation; this is a readiness ceiling, not a directional score."
+          },
+          "data_readiness": {
+            "score": 100.0,
+            "market_data_quality": 100.0,
+            "market_freshness": 100.0,
+            "reason": "Minimum of market-data quality and completed-session freshness."
+          },
+          "canonical_gate": {
+            "score": 45.0,
+            "reason": "v0.1 canonical Market View must be directional before Actionability can become actionable."
+          }
+        },
+        "constraints": [
+          "CANONICAL_V01_MIXED",
+          "MTF_ALIGNMENT_LOW",
+          "MTF_ASSET_READINESS_LOW"
+        ],
+        "signal": {
+          "asset": "BTC",
+          "canonical_market_view": "MIXED",
+          "canonical_score": 52.16
+        },
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF"
+      },
+      "v01_decision_readiness": {
+        "score": 70.83,
+        "state": "READY_FOR_REVIEW",
+        "components": {
+          "market_data_quality": 100.0,
+          "market_freshness": 100.0,
+          "evidence_readiness": 100.0,
+          "directional_clarity": 4.32,
+          "market_participation": 65.0
+        }
       }
     },
     {
@@ -243,68 +281,16 @@
       "name": "Ethereum",
       "market_session": "2026-08-18",
       "market_structure": {
-        "score": 57.44,
+        "score": 57.01,
         "state": "MIXED",
-        "raw_state": "MIXED",
-        "directional_eligible": false,
-        "hybrid": {
-          "blend": {
-            "v01_absolute": 0.5,
-            "v02_volatility_normalized": 0.5
-          },
-          "v01_absolute_score": 57.01,
-          "v01_state": "MIXED",
-          "v02_volatility_normalized_score": 57.86,
-          "v02_raw_state": "MIXED",
-          "agreement": {
-            "state": "MIXED_CONSENSUS",
-            "score": 75.0,
-            "supports_directional": false
-          },
-          "extremity": {
-            "state": "NORMAL",
-            "risk_score": 20.0
-          }
-        },
         "components": {
-          "v01_absolute": {
-            "return_30d": 55.27,
-            "close_vs_sma20": 55.28,
-            "close_vs_sma50": 59.24,
-            "return_7d": 58.9
-          },
-          "v02_volatility_normalized": {
-            "return_30d": 57.67,
-            "close_vs_sma20": 54.52,
-            "close_vs_sma50": 58.34,
-            "return_7d": 62.88
-          }
+          "return_30d": 55.27,
+          "close_vs_sma20": 55.28,
+          "close_vs_sma50": 59.24,
+          "return_7d": 58.9
         },
-        "normalized_z": {
-          "return_30d": 0.3068,
-          "close_vs_sma20": 0.1807,
-          "close_vs_sma50": 0.3335,
-          "return_7d": 0.5151
-        },
-        "volatility_scale_annualized_percent": 29.9504,
-        "alignment": {
-          "positive_count": 4,
-          "negative_count": 0,
-          "valid_count": 4,
-          "aligned_count": 4,
-          "required_for_directional_state": 3,
-          "dominant_direction": "POSITIVE",
-          "score": 100.0,
-          "components": {
-            "return_30d": 1,
-            "close_vs_sma20": 1,
-            "close_vs_sma50": 1,
-            "return_7d": 1
-          }
-        },
-        "guardrails": [],
         "completed_session": "2026-08-18",
-        "basis": "SYMMETRIC_50_50_V01_ABSOLUTE_PLUS_V02_VOLATILITY_NORMALIZED"
+        "basis": "COMPLETED_UTC_DAILY_CONTEXT_ONLY"
       },
       "evidence_readiness": {
         "score": 92.0,
@@ -321,26 +307,14 @@
         "directional_interpretation": "NOT_ASSIGNED"
       },
       "decision_readiness": {
-        "score": 89.74,
-        "base_score_before_risk_guardrails": 89.74,
-        "state": "READY_FOR_REVIEW",
-        "directional_gate": "WATCH_ONLY",
-        "components": {
-          "market_data_quality": 100.0,
-          "market_freshness": 100.0,
-          "evidence_readiness": 92.0,
-          "model_agreement": 75.0,
-          "market_participation": 65.0,
-          "horizon_alignment": 100.0
-        },
-        "adjustments": {
-          "risk_multiplier": 1.0,
-          "agreement_multiplier": 1.0,
-          "readiness_is_not_profit_probability": true
-        }
+        "score": 45.0,
+        "state": "FILTERED",
+        "decision": "DEPRIORITIZE",
+        "role": "ACTIONABILITY_ALIAS_FOR_OPERATIONAL_READINESS",
+        "readiness_is_not_profit_probability": true
       },
       "decision_risk": {
-        "score": 25.67,
+        "score": 26.1,
         "state": "LOW",
         "components": {
           "volatility": 20.0,
@@ -348,8 +322,7 @@
           "one_day_shock": 19.72,
           "regulatory_uncertainty": 60.0,
           "evidence_gap": 20.0,
-          "horizon_conflict": 20.0,
-          "reversal_exhaustion": 20.0
+          "horizon_conflict": 20.0
         },
         "horizon_conflict_count": 0,
         "relevant_regulatory_events": [
@@ -372,23 +345,135 @@
         ]
       },
       "ai_decision_reasoner": {
-        "status": "HYBRID_MIXED_STRUCTURE",
+        "status": "V01_MIXED_STRUCTURE",
         "decision": "WATCH",
         "market_view": "MIXED",
-        "raw_market_view": "MIXED",
-        "directional_eligible": false,
         "readiness_state": "READY_FOR_REVIEW",
-        "directional_gate": "WATCH_ONLY",
         "risk_state": "LOW",
         "counter_thesis_strength": "LOW",
         "buy_sell": "NOT_GENERATED",
         "profit_probability": "NOT_ESTIMATED",
-        "trade_execution": "OFF"
+        "trade_execution": "OFF",
+        "canonical_market_view": "MIXED",
+        "canonical_direction_source": "V0_1_ABSOLUTE_CORE",
+        "mtf_alignment_state": "LOW",
+        "mtf_alignment_score": 45.0,
+        "actionability_state": "FILTERED",
+        "actionability_score": 45.0
       },
       "provenance": {
         "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
-        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry",
-        "hybrid": "Stage 11C v0.3 symmetric v0.1 absolute + v0.2 volatility-normalized decision model"
+        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry"
+      },
+      "multi_timeframe_alignment": {
+        "score": 45.0,
+        "state": "LOW",
+        "primary_timeframe": "daily",
+        "methodology": "Forex-inspired confirmation layer: Daily/Weekly/Monthly completed UTC returns are mapped with fixed absolute v0.1-style spans; 45% Daily + 35% Weekly + 20% Monthly canonical-relation score. MTF never reverses the v0.1 canonical Market View.",
+        "canonical_state": "MIXED",
+        "supporting_timeframes": 0,
+        "opposing_timeframes": 0,
+        "neutral_timeframes": 0,
+        "constraints": [
+          "CANONICAL_V01_MIXED",
+          "MTF_ALIGNMENT_LOW"
+        ],
+        "timeframes": {
+          "daily": {
+            "timeframe": "daily",
+            "return_percent": 1.9725,
+            "score": 45.0,
+            "state": "SUPPORTIVE",
+            "span_percent": 6.0,
+            "weight": 0.45,
+            "relation": "CANONICAL_NOT_DIRECTIONAL"
+          },
+          "weekly": {
+            "timeframe": "weekly",
+            "return_percent": 2.1366,
+            "score": 45.0,
+            "state": "MIXED",
+            "span_percent": 12.0,
+            "weight": 0.35,
+            "relation": "CANONICAL_NOT_DIRECTIONAL"
+          },
+          "monthly": {
+            "timeframe": "monthly",
+            "return_percent": 2.6343,
+            "score": 45.0,
+            "state": "MIXED",
+            "span_percent": 25.0,
+            "weight": 0.2,
+            "relation": "CANONICAL_NOT_DIRECTIONAL"
+          }
+        }
+      },
+      "actionability": {
+        "version": "CRYPTO_ACTIONABILITY_0.1",
+        "role": "primary_operational_readiness_layer",
+        "scope": "continuation_readiness",
+        "score": 45.0,
+        "state": "FILTERED",
+        "decision": "DEPRIORITIZE",
+        "limiter": "canonical_gate",
+        "thresholds": {
+          "actionable": 80,
+          "selective": 60,
+          "filtered": 0
+        },
+        "methodology": "Forex-style interpretable ceiling model: Actionability is the minimum of evidence quality, regime guardrail, asset/MTF readiness, data readiness, and the v0.1 canonical-direction gate. It never reverses canonical direction and is not a probability of profit.",
+        "dimensions": {
+          "evidence_quality": {
+            "score": 92.0,
+            "reason": "Stage 11B official/protocol/network evidence readiness; evidence does not vote direction."
+          },
+          "regime_guardrail": {
+            "score": 100.0,
+            "reasons": [
+              "Decision Risk is LOW."
+            ]
+          },
+          "asset_mtf_readiness": {
+            "score": 49.0,
+            "mtf_alignment": 45.0,
+            "market_participation": 65.0,
+            "methodology": "80% MTF canonical alignment + 20% market participation; this is a readiness ceiling, not a directional score."
+          },
+          "data_readiness": {
+            "score": 100.0,
+            "market_data_quality": 100.0,
+            "market_freshness": 100.0,
+            "reason": "Minimum of market-data quality and completed-session freshness."
+          },
+          "canonical_gate": {
+            "score": 45.0,
+            "reason": "v0.1 canonical Market View must be directional before Actionability can become actionable."
+          }
+        },
+        "constraints": [
+          "CANONICAL_V01_MIXED",
+          "MTF_ALIGNMENT_LOW",
+          "MTF_ASSET_READINESS_LOW"
+        ],
+        "signal": {
+          "asset": "ETH",
+          "canonical_market_view": "MIXED",
+          "canonical_score": 57.01
+        },
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF"
+      },
+      "v01_decision_readiness": {
+        "score": 71.25,
+        "state": "READY_FOR_REVIEW",
+        "components": {
+          "market_data_quality": 100.0,
+          "market_freshness": 100.0,
+          "evidence_readiness": 92.0,
+          "directional_clarity": 14.02,
+          "market_participation": 65.0
+        }
       }
     },
     {
@@ -396,68 +481,16 @@
       "name": "Solana",
       "market_session": "2026-08-18",
       "market_structure": {
-        "score": 52.01,
+        "score": 52.06,
         "state": "MIXED",
-        "raw_state": "MIXED",
-        "directional_eligible": false,
-        "hybrid": {
-          "blend": {
-            "v01_absolute": 0.5,
-            "v02_volatility_normalized": 0.5
-          },
-          "v01_absolute_score": 52.06,
-          "v01_state": "MIXED",
-          "v02_volatility_normalized_score": 51.96,
-          "v02_raw_state": "MIXED",
-          "agreement": {
-            "state": "MIXED_CONSENSUS",
-            "score": 75.0,
-            "supports_directional": false
-          },
-          "extremity": {
-            "state": "NORMAL",
-            "risk_score": 20.0
-          }
-        },
         "components": {
-          "v01_absolute": {
-            "return_30d": 51.19,
-            "close_vs_sma20": 57.68,
-            "close_vs_sma50": 49.26,
-            "return_7d": 50.02
-          },
-          "v02_volatility_normalized": {
-            "return_30d": 51.72,
-            "close_vs_sma20": 56.56,
-            "close_vs_sma50": 49.33,
-            "return_7d": 50.04
-          }
+          "return_30d": 51.19,
+          "close_vs_sma20": 57.68,
+          "close_vs_sma50": 49.26,
+          "return_7d": 50.02
         },
-        "normalized_z": {
-          "return_30d": 0.069,
-          "close_vs_sma20": 0.2623,
-          "close_vs_sma50": -0.0267,
-          "return_7d": 0.0014
-        },
-        "volatility_scale_annualized_percent": 30.0207,
-        "alignment": {
-          "positive_count": 3,
-          "negative_count": 1,
-          "valid_count": 4,
-          "aligned_count": 3,
-          "required_for_directional_state": 3,
-          "dominant_direction": "POSITIVE",
-          "score": 80.0,
-          "components": {
-            "return_30d": 1,
-            "close_vs_sma20": 1,
-            "close_vs_sma50": -1,
-            "return_7d": 1
-          }
-        },
-        "guardrails": [],
         "completed_session": "2026-08-18",
-        "basis": "SYMMETRIC_50_50_V01_ABSOLUTE_PLUS_V02_VOLATILITY_NORMALIZED"
+        "basis": "COMPLETED_UTC_DAILY_CONTEXT_ONLY"
       },
       "evidence_readiness": {
         "score": 100.0,
@@ -474,26 +507,14 @@
         "directional_interpretation": "NOT_ASSIGNED"
       },
       "decision_readiness": {
-        "score": 88.5,
-        "base_score_before_risk_guardrails": 88.5,
-        "state": "READY_FOR_REVIEW",
-        "directional_gate": "WATCH_ONLY",
-        "components": {
-          "market_data_quality": 100.0,
-          "market_freshness": 100.0,
-          "evidence_readiness": 100.0,
-          "model_agreement": 75.0,
-          "market_participation": 65.0,
-          "horizon_alignment": 80.0
-        },
-        "adjustments": {
-          "risk_multiplier": 1.0,
-          "agreement_multiplier": 1.0,
-          "readiness_is_not_profit_probability": true
-        }
+        "score": 45.0,
+        "state": "FILTERED",
+        "decision": "DEPRIORITIZE",
+        "role": "ACTIONABILITY_ALIAS_FOR_OPERATIONAL_READINESS",
+        "readiness_is_not_profit_probability": true
       },
       "decision_risk": {
-        "score": 29.86,
+        "score": 29.93,
         "state": "LOW",
         "components": {
           "volatility": 20.0,
@@ -501,8 +522,7 @@
           "one_day_shock": 18.45,
           "regulatory_uncertainty": 60.0,
           "evidence_gap": 20.0,
-          "horizon_conflict": 50.0,
-          "reversal_exhaustion": 20.0
+          "horizon_conflict": 50.0
         },
         "horizon_conflict_count": 1,
         "relevant_regulatory_events": [
@@ -525,23 +545,135 @@
         ]
       },
       "ai_decision_reasoner": {
-        "status": "HYBRID_MIXED_STRUCTURE",
+        "status": "V01_MIXED_STRUCTURE",
         "decision": "WATCH",
         "market_view": "MIXED",
-        "raw_market_view": "MIXED",
-        "directional_eligible": false,
         "readiness_state": "READY_FOR_REVIEW",
-        "directional_gate": "WATCH_ONLY",
         "risk_state": "LOW",
         "counter_thesis_strength": "LOW",
         "buy_sell": "NOT_GENERATED",
         "profit_probability": "NOT_ESTIMATED",
-        "trade_execution": "OFF"
+        "trade_execution": "OFF",
+        "canonical_market_view": "MIXED",
+        "canonical_direction_source": "V0_1_ABSOLUTE_CORE",
+        "mtf_alignment_state": "LOW",
+        "mtf_alignment_score": 45.0,
+        "actionability_state": "FILTERED",
+        "actionability_score": 45.0
       },
       "provenance": {
         "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
-        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry",
-        "hybrid": "Stage 11C v0.3 symmetric v0.1 absolute + v0.2 volatility-normalized decision model"
+        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry"
+      },
+      "multi_timeframe_alignment": {
+        "score": 45.0,
+        "state": "LOW",
+        "primary_timeframe": "daily",
+        "methodology": "Forex-inspired confirmation layer: Daily/Weekly/Monthly completed UTC returns are mapped with fixed absolute v0.1-style spans; 45% Daily + 35% Weekly + 20% Monthly canonical-relation score. MTF never reverses the v0.1 canonical Market View.",
+        "canonical_state": "MIXED",
+        "supporting_timeframes": 0,
+        "opposing_timeframes": 0,
+        "neutral_timeframes": 0,
+        "constraints": [
+          "CANONICAL_V01_MIXED",
+          "MTF_ALIGNMENT_LOW"
+        ],
+        "timeframes": {
+          "daily": {
+            "timeframe": "daily",
+            "return_percent": 1.8452,
+            "score": 45.0,
+            "state": "SUPPORTIVE",
+            "span_percent": 6.0,
+            "weight": 0.45,
+            "relation": "CANONICAL_NOT_DIRECTIONAL"
+          },
+          "weekly": {
+            "timeframe": "weekly",
+            "return_percent": 0.006,
+            "score": 45.0,
+            "state": "MIXED",
+            "span_percent": 12.0,
+            "weight": 0.35,
+            "relation": "CANONICAL_NOT_DIRECTIONAL"
+          },
+          "monthly": {
+            "timeframe": "monthly",
+            "return_percent": 0.5938,
+            "score": 45.0,
+            "state": "MIXED",
+            "span_percent": 25.0,
+            "weight": 0.2,
+            "relation": "CANONICAL_NOT_DIRECTIONAL"
+          }
+        }
+      },
+      "actionability": {
+        "version": "CRYPTO_ACTIONABILITY_0.1",
+        "role": "primary_operational_readiness_layer",
+        "scope": "continuation_readiness",
+        "score": 45.0,
+        "state": "FILTERED",
+        "decision": "DEPRIORITIZE",
+        "limiter": "canonical_gate",
+        "thresholds": {
+          "actionable": 80,
+          "selective": 60,
+          "filtered": 0
+        },
+        "methodology": "Forex-style interpretable ceiling model: Actionability is the minimum of evidence quality, regime guardrail, asset/MTF readiness, data readiness, and the v0.1 canonical-direction gate. It never reverses canonical direction and is not a probability of profit.",
+        "dimensions": {
+          "evidence_quality": {
+            "score": 100.0,
+            "reason": "Stage 11B official/protocol/network evidence readiness; evidence does not vote direction."
+          },
+          "regime_guardrail": {
+            "score": 100.0,
+            "reasons": [
+              "Decision Risk is LOW."
+            ]
+          },
+          "asset_mtf_readiness": {
+            "score": 49.0,
+            "mtf_alignment": 45.0,
+            "market_participation": 65.0,
+            "methodology": "80% MTF canonical alignment + 20% market participation; this is a readiness ceiling, not a directional score."
+          },
+          "data_readiness": {
+            "score": 100.0,
+            "market_data_quality": 100.0,
+            "market_freshness": 100.0,
+            "reason": "Minimum of market-data quality and completed-session freshness."
+          },
+          "canonical_gate": {
+            "score": 45.0,
+            "reason": "v0.1 canonical Market View must be directional before Actionability can become actionable."
+          }
+        },
+        "constraints": [
+          "CANONICAL_V01_MIXED",
+          "MTF_ALIGNMENT_LOW",
+          "MTF_ASSET_READINESS_LOW"
+        ],
+        "signal": {
+          "asset": "SOL",
+          "canonical_market_view": "MIXED",
+          "canonical_score": 52.06
+        },
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF"
+      },
+      "v01_decision_readiness": {
+        "score": 70.78,
+        "state": "READY_FOR_REVIEW",
+        "components": {
+          "market_data_quality": 100.0,
+          "market_freshness": 100.0,
+          "evidence_readiness": 100.0,
+          "directional_clarity": 4.12,
+          "market_participation": 65.0
+        }
       }
     },
     {
@@ -549,68 +681,16 @@
       "name": "XRP",
       "market_session": "2026-08-18",
       "market_structure": {
-        "score": 35.3,
+        "score": 36.01,
         "state": "PRESSURED",
-        "raw_state": "PRESSURED",
-        "directional_eligible": true,
-        "hybrid": {
-          "blend": {
-            "v01_absolute": 0.5,
-            "v02_volatility_normalized": 0.5
-          },
-          "v01_absolute_score": 36.01,
-          "v01_state": "PRESSURED",
-          "v02_volatility_normalized_score": 34.59,
-          "v02_raw_state": "PRESSURED",
-          "agreement": {
-            "state": "STRONG_CONSENSUS",
-            "score": 100.0,
-            "supports_directional": true
-          },
-          "extremity": {
-            "state": "NORMAL",
-            "risk_score": 20.0
-          }
-        },
         "components": {
-          "v01_absolute": {
-            "return_30d": 33.54,
-            "close_vs_sma20": 36.15,
-            "close_vs_sma50": 33.2,
-            "return_7d": 46.33
-          },
-          "v02_volatility_normalized": {
-            "return_30d": 26.17,
-            "close_vs_sma20": 38.21,
-            "close_vs_sma50": 34.93,
-            "return_7d": 44.71
-          }
+          "return_30d": 33.54,
+          "close_vs_sma20": 36.15,
+          "close_vs_sma50": 33.2,
+          "return_7d": 46.33
         },
-        "normalized_z": {
-          "return_30d": -0.9531,
-          "close_vs_sma20": -0.4714,
-          "close_vs_sma50": -0.603,
-          "return_7d": -0.2115
-        },
-        "volatility_scale_annualized_percent": 30.113,
-        "alignment": {
-          "positive_count": 0,
-          "negative_count": 4,
-          "valid_count": 4,
-          "aligned_count": 4,
-          "required_for_directional_state": 3,
-          "dominant_direction": "NEGATIVE",
-          "score": 100.0,
-          "components": {
-            "return_30d": -1,
-            "close_vs_sma20": -1,
-            "close_vs_sma50": -1,
-            "return_7d": -1
-          }
-        },
-        "guardrails": [],
         "completed_session": "2026-08-18",
-        "basis": "SYMMETRIC_50_50_V01_ABSOLUTE_PLUS_V02_VOLATILITY_NORMALIZED"
+        "basis": "COMPLETED_UTC_DAILY_CONTEXT_ONLY"
       },
       "evidence_readiness": {
         "score": 100.0,
@@ -627,26 +707,14 @@
         "directional_interpretation": "NOT_ASSIGNED"
       },
       "decision_readiness": {
-        "score": 96.5,
-        "base_score_before_risk_guardrails": 96.5,
-        "state": "READY_FOR_REVIEW",
-        "directional_gate": "ELIGIBLE_FOR_SELECTIVE_REVIEW",
-        "components": {
-          "market_data_quality": 100.0,
-          "market_freshness": 100.0,
-          "evidence_readiness": 100.0,
-          "model_agreement": 100.0,
-          "market_participation": 65.0,
-          "horizon_alignment": 100.0
-        },
-        "adjustments": {
-          "risk_multiplier": 1.0,
-          "agreement_multiplier": 1.0,
-          "readiness_is_not_profit_probability": true
-        }
+        "score": 64.2,
+        "state": "SELECTIVE",
+        "decision": "REVIEW_SELECTIVELY",
+        "role": "ACTIONABILITY_ALIAS_FOR_OPERATIONAL_READINESS",
+        "readiness_is_not_profit_probability": true
       },
       "decision_risk": {
-        "score": 28.95,
+        "score": 30.71,
         "state": "LOW",
         "components": {
           "volatility": 20.0,
@@ -654,8 +722,7 @@
           "one_day_shock": 9.63,
           "regulatory_uncertainty": 60.0,
           "evidence_gap": 20.0,
-          "horizon_conflict": 20.0,
-          "reversal_exhaustion": 20.0
+          "horizon_conflict": 20.0
         },
         "horizon_conflict_count": 0,
         "relevant_regulatory_events": [
@@ -682,23 +749,128 @@
         ]
       },
       "ai_decision_reasoner": {
-        "status": "HYBRID_STRUCTURE_PRESSURED",
+        "status": "ACTIONABILITY_SELECTIVE",
         "decision": "REVIEW_SELECTIVELY",
         "market_view": "PRESSURED",
-        "raw_market_view": "PRESSURED",
-        "directional_eligible": true,
         "readiness_state": "READY_FOR_REVIEW",
-        "directional_gate": "ELIGIBLE_FOR_SELECTIVE_REVIEW",
         "risk_state": "LOW",
         "counter_thesis_strength": "MODERATE",
         "buy_sell": "NOT_GENERATED",
         "profit_probability": "NOT_ESTIMATED",
-        "trade_execution": "OFF"
+        "trade_execution": "OFF",
+        "canonical_market_view": "PRESSURED",
+        "canonical_direction_source": "V0_1_ABSOLUTE_CORE",
+        "mtf_alignment_state": "MODERATE",
+        "mtf_alignment_score": 64.0,
+        "actionability_state": "SELECTIVE",
+        "actionability_score": 64.2
       },
       "provenance": {
         "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
-        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry",
-        "hybrid": "Stage 11C v0.3 symmetric v0.1 absolute + v0.2 volatility-normalized decision model"
+        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry"
+      },
+      "multi_timeframe_alignment": {
+        "score": 64.0,
+        "state": "MODERATE",
+        "primary_timeframe": "daily",
+        "methodology": "Forex-inspired confirmation layer: Daily/Weekly/Monthly completed UTC returns are mapped with fixed absolute v0.1-style spans; 45% Daily + 35% Weekly + 20% Monthly canonical-relation score. MTF never reverses the v0.1 canonical Market View.",
+        "canonical_state": "PRESSURED",
+        "supporting_timeframes": 1,
+        "opposing_timeframes": 0,
+        "neutral_timeframes": 2,
+        "constraints": [],
+        "timeframes": {
+          "daily": {
+            "timeframe": "daily",
+            "return_percent": 0.9634,
+            "score": 55.0,
+            "state": "MIXED",
+            "span_percent": 6.0,
+            "weight": 0.45,
+            "relation": "NEUTRAL_TO_CANONICAL"
+          },
+          "weekly": {
+            "timeframe": "weekly",
+            "return_percent": -0.8818,
+            "score": 55.0,
+            "state": "MIXED",
+            "span_percent": 12.0,
+            "weight": 0.35,
+            "relation": "NEUTRAL_TO_CANONICAL"
+          },
+          "monthly": {
+            "timeframe": "monthly",
+            "return_percent": -8.2283,
+            "score": 100.0,
+            "state": "PRESSURED",
+            "span_percent": 25.0,
+            "weight": 0.2,
+            "relation": "SUPPORTS_CANONICAL"
+          }
+        }
+      },
+      "actionability": {
+        "version": "CRYPTO_ACTIONABILITY_0.1",
+        "role": "primary_operational_readiness_layer",
+        "scope": "continuation_readiness",
+        "score": 64.2,
+        "state": "SELECTIVE",
+        "decision": "REVIEW_SELECTIVELY",
+        "limiter": "asset_mtf_readiness",
+        "thresholds": {
+          "actionable": 80,
+          "selective": 60,
+          "filtered": 0
+        },
+        "methodology": "Forex-style interpretable ceiling model: Actionability is the minimum of evidence quality, regime guardrail, asset/MTF readiness, data readiness, and the v0.1 canonical-direction gate. It never reverses canonical direction and is not a probability of profit.",
+        "dimensions": {
+          "evidence_quality": {
+            "score": 100.0,
+            "reason": "Stage 11B official/protocol/network evidence readiness; evidence does not vote direction."
+          },
+          "regime_guardrail": {
+            "score": 100.0,
+            "reasons": [
+              "Decision Risk is LOW."
+            ]
+          },
+          "asset_mtf_readiness": {
+            "score": 64.2,
+            "mtf_alignment": 64.0,
+            "market_participation": 65.0,
+            "methodology": "80% MTF canonical alignment + 20% market participation; this is a readiness ceiling, not a directional score."
+          },
+          "data_readiness": {
+            "score": 100.0,
+            "market_data_quality": 100.0,
+            "market_freshness": 100.0,
+            "reason": "Minimum of market-data quality and completed-session freshness."
+          },
+          "canonical_gate": {
+            "score": 100.0,
+            "reason": "v0.1 canonical Market View must be directional before Actionability can become actionable."
+          }
+        },
+        "constraints": [],
+        "signal": {
+          "asset": "XRP",
+          "canonical_market_view": "PRESSURED",
+          "canonical_score": 36.01
+        },
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF"
+      },
+      "v01_decision_readiness": {
+        "score": 76.75,
+        "state": "READY_FOR_REVIEW",
+        "components": {
+          "market_data_quality": 100.0,
+          "market_freshness": 100.0,
+          "evidence_readiness": 100.0,
+          "directional_clarity": 27.98,
+          "market_participation": 65.0
+        }
       }
     },
     {
@@ -706,68 +878,16 @@
       "name": "BNB",
       "market_session": "2026-08-18",
       "market_structure": {
-        "score": 61.55,
+        "score": 59.06,
         "state": "MIXED",
-        "raw_state": "MIXED",
-        "directional_eligible": false,
-        "hybrid": {
-          "blend": {
-            "v01_absolute": 0.5,
-            "v02_volatility_normalized": 0.5
-          },
-          "v01_absolute_score": 59.06,
-          "v01_state": "MIXED",
-          "v02_volatility_normalized_score": 64.04,
-          "v02_raw_state": "SUPPORTIVE",
-          "agreement": {
-            "state": "SOFT_DISAGREEMENT",
-            "score": 60.0,
-            "supports_directional": false
-          },
-          "extremity": {
-            "state": "NORMAL",
-            "risk_score": 20.0
-          }
-        },
         "components": {
-          "v01_absolute": {
-            "return_30d": 62.27,
-            "close_vs_sma20": 56.09,
-            "close_vs_sma50": 60.55,
-            "return_7d": 54.64
-          },
-          "v02_volatility_normalized": {
-            "return_30d": 73.84,
-            "close_vs_sma20": 56.95,
-            "close_vs_sma50": 62.7,
-            "return_7d": 58.96
-          }
+          "return_30d": 62.27,
+          "close_vs_sma20": 56.09,
+          "close_vs_sma50": 60.55,
+          "return_7d": 54.64
         },
-        "normalized_z": {
-          "return_30d": 0.9538,
-          "close_vs_sma20": 0.2782,
-          "close_vs_sma50": 0.5081,
-          "return_7d": 0.3583
-        },
-        "volatility_scale_annualized_percent": 22.4304,
-        "alignment": {
-          "positive_count": 4,
-          "negative_count": 0,
-          "valid_count": 4,
-          "aligned_count": 4,
-          "required_for_directional_state": 3,
-          "dominant_direction": "POSITIVE",
-          "score": 100.0,
-          "components": {
-            "return_30d": 1,
-            "close_vs_sma20": 1,
-            "close_vs_sma50": 1,
-            "return_7d": 1
-          }
-        },
-        "guardrails": [],
         "completed_session": "2026-08-18",
-        "basis": "SYMMETRIC_50_50_V01_ABSOLUTE_PLUS_V02_VOLATILITY_NORMALIZED"
+        "basis": "COMPLETED_UTC_DAILY_CONTEXT_ONLY"
       },
       "evidence_readiness": {
         "score": 93.25,
@@ -784,26 +904,14 @@
         "directional_interpretation": "NOT_ASSIGNED"
       },
       "decision_readiness": {
-        "score": 88.52,
-        "base_score_before_risk_guardrails": 88.52,
-        "state": "READY_FOR_REVIEW",
-        "directional_gate": "WATCH_ONLY",
-        "components": {
-          "market_data_quality": 100.0,
-          "market_freshness": 100.0,
-          "evidence_readiness": 93.25,
-          "model_agreement": 60.0,
-          "market_participation": 80.0,
-          "horizon_alignment": 100.0
-        },
-        "adjustments": {
-          "risk_multiplier": 1.0,
-          "agreement_multiplier": 1.0,
-          "readiness_is_not_profit_probability": true
-        }
+        "score": 45.0,
+        "state": "FILTERED",
+        "decision": "DEPRIORITIZE",
+        "role": "ACTIONABILITY_ALIAS_FOR_OPERATIONAL_READINESS",
+        "readiness_is_not_profit_probability": true
       },
       "decision_risk": {
-        "score": 25.75,
+        "score": 26.1,
         "state": "LOW",
         "components": {
           "volatility": 20.0,
@@ -811,8 +919,7 @@
           "one_day_shock": 5.08,
           "regulatory_uncertainty": 60.0,
           "evidence_gap": 20.0,
-          "horizon_conflict": 20.0,
-          "reversal_exhaustion": 20.0
+          "horizon_conflict": 20.0
         },
         "horizon_conflict_count": 0,
         "relevant_regulatory_events": [
@@ -835,23 +942,135 @@
         ]
       },
       "ai_decision_reasoner": {
-        "status": "HYBRID_MIXED_STRUCTURE",
+        "status": "V01_MIXED_STRUCTURE",
         "decision": "WATCH",
         "market_view": "MIXED",
-        "raw_market_view": "MIXED",
-        "directional_eligible": false,
         "readiness_state": "READY_FOR_REVIEW",
-        "directional_gate": "WATCH_ONLY",
         "risk_state": "LOW",
         "counter_thesis_strength": "LOW",
         "buy_sell": "NOT_GENERATED",
         "profit_probability": "NOT_ESTIMATED",
-        "trade_execution": "OFF"
+        "trade_execution": "OFF",
+        "canonical_market_view": "MIXED",
+        "canonical_direction_source": "V0_1_ABSOLUTE_CORE",
+        "mtf_alignment_state": "LOW",
+        "mtf_alignment_score": 45.0,
+        "actionability_state": "FILTERED",
+        "actionability_score": 45.0
       },
       "provenance": {
         "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
-        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry",
-        "hybrid": "Stage 11C v0.3 symmetric v0.1 absolute + v0.2 volatility-normalized decision model"
+        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry"
+      },
+      "multi_timeframe_alignment": {
+        "score": 45.0,
+        "state": "LOW",
+        "primary_timeframe": "daily",
+        "methodology": "Forex-inspired confirmation layer: Daily/Weekly/Monthly completed UTC returns are mapped with fixed absolute v0.1-style spans; 45% Daily + 35% Weekly + 20% Monthly canonical-relation score. MTF never reverses the v0.1 canonical Market View.",
+        "canonical_state": "MIXED",
+        "supporting_timeframes": 0,
+        "opposing_timeframes": 0,
+        "neutral_timeframes": 0,
+        "constraints": [
+          "CANONICAL_V01_MIXED",
+          "MTF_ALIGNMENT_LOW"
+        ],
+        "timeframes": {
+          "daily": {
+            "timeframe": "daily",
+            "return_percent": 0.5076,
+            "score": 45.0,
+            "state": "MIXED",
+            "span_percent": 6.0,
+            "weight": 0.45,
+            "relation": "CANONICAL_NOT_DIRECTIONAL"
+          },
+          "weekly": {
+            "timeframe": "weekly",
+            "return_percent": 1.1131,
+            "score": 45.0,
+            "state": "MIXED",
+            "span_percent": 12.0,
+            "weight": 0.35,
+            "relation": "CANONICAL_NOT_DIRECTIONAL"
+          },
+          "monthly": {
+            "timeframe": "monthly",
+            "return_percent": 6.1335,
+            "score": 45.0,
+            "state": "SUPPORTIVE",
+            "span_percent": 25.0,
+            "weight": 0.2,
+            "relation": "CANONICAL_NOT_DIRECTIONAL"
+          }
+        }
+      },
+      "actionability": {
+        "version": "CRYPTO_ACTIONABILITY_0.1",
+        "role": "primary_operational_readiness_layer",
+        "scope": "continuation_readiness",
+        "score": 45.0,
+        "state": "FILTERED",
+        "decision": "DEPRIORITIZE",
+        "limiter": "canonical_gate",
+        "thresholds": {
+          "actionable": 80,
+          "selective": 60,
+          "filtered": 0
+        },
+        "methodology": "Forex-style interpretable ceiling model: Actionability is the minimum of evidence quality, regime guardrail, asset/MTF readiness, data readiness, and the v0.1 canonical-direction gate. It never reverses canonical direction and is not a probability of profit.",
+        "dimensions": {
+          "evidence_quality": {
+            "score": 93.25,
+            "reason": "Stage 11B official/protocol/network evidence readiness; evidence does not vote direction."
+          },
+          "regime_guardrail": {
+            "score": 100.0,
+            "reasons": [
+              "Decision Risk is LOW."
+            ]
+          },
+          "asset_mtf_readiness": {
+            "score": 52.0,
+            "mtf_alignment": 45.0,
+            "market_participation": 80.0,
+            "methodology": "80% MTF canonical alignment + 20% market participation; this is a readiness ceiling, not a directional score."
+          },
+          "data_readiness": {
+            "score": 100.0,
+            "market_data_quality": 100.0,
+            "market_freshness": 100.0,
+            "reason": "Minimum of market-data quality and completed-session freshness."
+          },
+          "canonical_gate": {
+            "score": 45.0,
+            "reason": "v0.1 canonical Market View must be directional before Actionability can become actionable."
+          }
+        },
+        "constraints": [
+          "CANONICAL_V01_MIXED",
+          "MTF_ALIGNMENT_LOW",
+          "MTF_ASSET_READINESS_LOW"
+        ],
+        "signal": {
+          "asset": "BNB",
+          "canonical_market_view": "MIXED",
+          "canonical_score": 59.06
+        },
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF"
+      },
+      "v01_decision_readiness": {
+        "score": 74.84,
+        "state": "READY_FOR_REVIEW",
+        "components": {
+          "market_data_quality": 100.0,
+          "market_freshness": 100.0,
+          "evidence_readiness": 93.25,
+          "directional_clarity": 18.12,
+          "market_participation": 80.0
+        }
       }
     },
     {
@@ -859,68 +1078,16 @@
       "name": "Cardano",
       "market_session": "2026-08-18",
       "market_structure": {
-        "score": 43.47,
+        "score": 41.68,
         "state": "MIXED",
-        "raw_state": "MIXED",
-        "directional_eligible": false,
-        "hybrid": {
-          "blend": {
-            "v01_absolute": 0.5,
-            "v02_volatility_normalized": 0.5
-          },
-          "v01_absolute_score": 41.68,
-          "v01_state": "MIXED",
-          "v02_volatility_normalized_score": 45.25,
-          "v02_raw_state": "MIXED",
-          "agreement": {
-            "state": "MIXED_CONSENSUS",
-            "score": 75.0,
-            "supports_directional": false
-          },
-          "extremity": {
-            "state": "NORMAL",
-            "risk_score": 20.0
-          }
-        },
         "components": {
-          "v01_absolute": {
-            "return_30d": 58.93,
-            "close_vs_sma20": 27.07,
-            "close_vs_sma50": 50.62,
-            "return_7d": 13.68
-          },
-          "v02_volatility_normalized": {
-            "return_30d": 57.09,
-            "close_vs_sma20": 39.31,
-            "close_vs_sma50": 50.31,
-            "return_7d": 21.36
-          }
+          "return_30d": 58.93,
+          "close_vs_sma20": 27.07,
+          "close_vs_sma50": 50.62,
+          "return_7d": 13.68
         },
-        "normalized_z": {
-          "return_30d": 0.2834,
-          "close_vs_sma20": -0.4278,
-          "close_vs_sma50": 0.0123,
-          "return_7d": -1.1457
-        },
-        "volatility_scale_annualized_percent": 54.948,
-        "alignment": {
-          "positive_count": 2,
-          "negative_count": 2,
-          "valid_count": 4,
-          "aligned_count": 2,
-          "required_for_directional_state": 3,
-          "dominant_direction": "BALANCED",
-          "score": 50.0,
-          "components": {
-            "return_30d": 1,
-            "close_vs_sma20": -1,
-            "close_vs_sma50": 1,
-            "return_7d": -1
-          }
-        },
-        "guardrails": [],
         "completed_session": "2026-08-18",
-        "basis": "SYMMETRIC_50_50_V01_ABSOLUTE_PLUS_V02_VOLATILITY_NORMALIZED"
+        "basis": "COMPLETED_UTC_DAILY_CONTEXT_ONLY"
       },
       "evidence_readiness": {
         "score": 92.0,
@@ -937,26 +1104,14 @@
         "directional_interpretation": "NOT_ASSIGNED"
       },
       "decision_readiness": {
-        "score": 67.82,
-        "base_score_before_risk_guardrails": 80.74,
-        "state": "CONDITIONAL_REVIEW",
-        "directional_gate": "WATCH_ONLY",
-        "components": {
-          "market_data_quality": 100.0,
-          "market_freshness": 100.0,
-          "evidence_readiness": 92.0,
-          "model_agreement": 75.0,
-          "market_participation": 50.0,
-          "horizon_alignment": 50.0
-        },
-        "adjustments": {
-          "risk_multiplier": 0.84,
-          "agreement_multiplier": 1.0,
-          "readiness_is_not_profit_probability": true
-        }
+        "score": 45.0,
+        "state": "FILTERED",
+        "decision": "DEPRIORITIZE",
+        "role": "ACTIONABILITY_ALIAS_FOR_OPERATIONAL_READINESS",
+        "readiness_is_not_profit_probability": true
       },
       "decision_risk": {
-        "score": 40.39,
+        "score": 42.81,
         "state": "MODERATE",
         "components": {
           "volatility": 39.95,
@@ -964,8 +1119,7 @@
           "one_day_shock": 5.63,
           "regulatory_uncertainty": 60.0,
           "evidence_gap": 20.0,
-          "horizon_conflict": 75.0,
-          "reversal_exhaustion": 20.0
+          "horizon_conflict": 75.0
         },
         "horizon_conflict_count": 2,
         "relevant_regulatory_events": [
@@ -996,23 +1150,136 @@
         ]
       },
       "ai_decision_reasoner": {
-        "status": "HYBRID_MIXED_STRUCTURE",
+        "status": "V01_MIXED_STRUCTURE",
         "decision": "WATCH",
         "market_view": "MIXED",
-        "raw_market_view": "MIXED",
-        "directional_eligible": false,
         "readiness_state": "CONDITIONAL_REVIEW",
-        "directional_gate": "WATCH_ONLY",
         "risk_state": "MODERATE",
         "counter_thesis_strength": "MODERATE",
         "buy_sell": "NOT_GENERATED",
         "profit_probability": "NOT_ESTIMATED",
-        "trade_execution": "OFF"
+        "trade_execution": "OFF",
+        "canonical_market_view": "MIXED",
+        "canonical_direction_source": "V0_1_ABSOLUTE_CORE",
+        "mtf_alignment_state": "LOW",
+        "mtf_alignment_score": 45.0,
+        "actionability_state": "FILTERED",
+        "actionability_score": 45.0
       },
       "provenance": {
         "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
-        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry",
-        "hybrid": "Stage 11C v0.3 symmetric v0.1 absolute + v0.2 volatility-normalized decision model"
+        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry"
+      },
+      "multi_timeframe_alignment": {
+        "score": 45.0,
+        "state": "LOW",
+        "primary_timeframe": "daily",
+        "methodology": "Forex-inspired confirmation layer: Daily/Weekly/Monthly completed UTC returns are mapped with fixed absolute v0.1-style spans; 45% Daily + 35% Weekly + 20% Monthly canonical-relation score. MTF never reverses the v0.1 canonical Market View.",
+        "canonical_state": "MIXED",
+        "supporting_timeframes": 0,
+        "opposing_timeframes": 0,
+        "neutral_timeframes": 0,
+        "constraints": [
+          "CANONICAL_V01_MIXED",
+          "MTF_ALIGNMENT_LOW"
+        ],
+        "timeframes": {
+          "daily": {
+            "timeframe": "daily",
+            "return_percent": -0.563,
+            "score": 45.0,
+            "state": "MIXED",
+            "span_percent": 6.0,
+            "weight": 0.45,
+            "relation": "CANONICAL_NOT_DIRECTIONAL"
+          },
+          "weekly": {
+            "timeframe": "weekly",
+            "return_percent": -8.718,
+            "score": 45.0,
+            "state": "PRESSURED",
+            "span_percent": 12.0,
+            "weight": 0.35,
+            "relation": "CANONICAL_NOT_DIRECTIONAL"
+          },
+          "monthly": {
+            "timeframe": "monthly",
+            "return_percent": 4.4646,
+            "score": 45.0,
+            "state": "MIXED",
+            "span_percent": 25.0,
+            "weight": 0.2,
+            "relation": "CANONICAL_NOT_DIRECTIONAL"
+          }
+        }
+      },
+      "actionability": {
+        "version": "CRYPTO_ACTIONABILITY_0.1",
+        "role": "primary_operational_readiness_layer",
+        "scope": "continuation_readiness",
+        "score": 45.0,
+        "state": "FILTERED",
+        "decision": "DEPRIORITIZE",
+        "limiter": "canonical_gate",
+        "thresholds": {
+          "actionable": 80,
+          "selective": 60,
+          "filtered": 0
+        },
+        "methodology": "Forex-style interpretable ceiling model: Actionability is the minimum of evidence quality, regime guardrail, asset/MTF readiness, data readiness, and the v0.1 canonical-direction gate. It never reverses canonical direction and is not a probability of profit.",
+        "dimensions": {
+          "evidence_quality": {
+            "score": 92.0,
+            "reason": "Stage 11B official/protocol/network evidence readiness; evidence does not vote direction."
+          },
+          "regime_guardrail": {
+            "score": 70.0,
+            "reasons": [
+              "Decision Risk is MODERATE."
+            ]
+          },
+          "asset_mtf_readiness": {
+            "score": 46.0,
+            "mtf_alignment": 45.0,
+            "market_participation": 50.0,
+            "methodology": "80% MTF canonical alignment + 20% market participation; this is a readiness ceiling, not a directional score."
+          },
+          "data_readiness": {
+            "score": 100.0,
+            "market_data_quality": 100.0,
+            "market_freshness": 100.0,
+            "reason": "Minimum of market-data quality and completed-session freshness."
+          },
+          "canonical_gate": {
+            "score": 45.0,
+            "reason": "v0.1 canonical Market View must be directional before Actionability can become actionable."
+          }
+        },
+        "constraints": [
+          "CANONICAL_V01_MIXED",
+          "MTF_ALIGNMENT_LOW",
+          "MTF_ASSET_READINESS_LOW",
+          "REGIME_GUARDRAIL"
+        ],
+        "signal": {
+          "asset": "ADA",
+          "canonical_market_view": "MIXED",
+          "canonical_score": 41.68
+        },
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF"
+      },
+      "v01_decision_readiness": {
+        "score": 69.66,
+        "state": "CONDITIONAL_REVIEW",
+        "components": {
+          "market_data_quality": 100.0,
+          "market_freshness": 100.0,
+          "evidence_readiness": 92.0,
+          "directional_clarity": 16.64,
+          "market_participation": 50.0
+        }
       }
     },
     {
@@ -1020,68 +1287,16 @@
       "name": "Dogecoin",
       "market_session": "2026-08-18",
       "market_structure": {
-        "score": 47.78,
+        "score": 47.81,
         "state": "MIXED",
-        "raw_state": "MIXED",
-        "directional_eligible": false,
-        "hybrid": {
-          "blend": {
-            "v01_absolute": 0.5,
-            "v02_volatility_normalized": 0.5
-          },
-          "v01_absolute_score": 47.81,
-          "v01_state": "MIXED",
-          "v02_volatility_normalized_score": 47.76,
-          "v02_raw_state": "MIXED",
-          "agreement": {
-            "state": "MIXED_CONSENSUS",
-            "score": 75.0,
-            "supports_directional": false
-          },
-          "extremity": {
-            "state": "NORMAL",
-            "risk_score": 20.0
-          }
-        },
         "components": {
-          "v01_absolute": {
-            "return_30d": 44.05,
-            "close_vs_sma20": 52.25,
-            "close_vs_sma50": 44.7,
-            "return_7d": 54.13
-          },
-          "v02_volatility_normalized": {
-            "return_30d": 42.68,
-            "close_vs_sma20": 51.63,
-            "close_vs_sma50": 45.96,
-            "return_7d": 55.05
-          }
+          "return_30d": 44.05,
+          "close_vs_sma20": 52.25,
+          "close_vs_sma50": 44.7,
+          "return_7d": 54.13
         },
-        "normalized_z": {
-          "return_30d": -0.2929,
-          "close_vs_sma20": 0.065,
-          "close_vs_sma50": -0.1617,
-          "return_7d": 0.202
-        },
-        "volatility_scale_annualized_percent": 35.4142,
-        "alignment": {
-          "positive_count": 2,
-          "negative_count": 2,
-          "valid_count": 4,
-          "aligned_count": 2,
-          "required_for_directional_state": 3,
-          "dominant_direction": "BALANCED",
-          "score": 50.0,
-          "components": {
-            "return_30d": -1,
-            "close_vs_sma20": 1,
-            "close_vs_sma50": -1,
-            "return_7d": 1
-          }
-        },
-        "guardrails": [],
         "completed_session": "2026-08-18",
-        "basis": "SYMMETRIC_50_50_V01_ABSOLUTE_PLUS_V02_VOLATILITY_NORMALIZED"
+        "basis": "COMPLETED_UTC_DAILY_CONTEXT_ONLY"
       },
       "evidence_readiness": {
         "score": 85.25,
@@ -1098,26 +1313,14 @@
         "directional_interpretation": "NOT_ASSIGNED"
       },
       "decision_readiness": {
-        "score": 66.57,
-        "base_score_before_risk_guardrails": 79.25,
-        "state": "CONDITIONAL_REVIEW",
-        "directional_gate": "WATCH_ONLY",
-        "components": {
-          "market_data_quality": 100.0,
-          "market_freshness": 100.0,
-          "evidence_readiness": 85.25,
-          "model_agreement": 75.0,
-          "market_participation": 50.0,
-          "horizon_alignment": 50.0
-        },
-        "adjustments": {
-          "risk_multiplier": 0.84,
-          "agreement_multiplier": 1.0,
-          "readiness_is_not_profit_probability": true
-        }
+        "score": 45.0,
+        "state": "FILTERED",
+        "decision": "DEPRIORITIZE",
+        "role": "ACTIONABILITY_ALIAS_FOR_OPERATIONAL_READINESS",
+        "readiness_is_not_profit_probability": true
       },
       "decision_risk": {
-        "score": 37.29,
+        "score": 38.7,
         "state": "MODERATE",
         "components": {
           "volatility": 20.41,
@@ -1125,8 +1328,7 @@
           "one_day_shock": 10.9,
           "regulatory_uncertainty": 60.0,
           "evidence_gap": 20.0,
-          "horizon_conflict": 75.0,
-          "reversal_exhaustion": 20.0
+          "horizon_conflict": 75.0
         },
         "horizon_conflict_count": 2,
         "relevant_regulatory_events": [
@@ -1157,23 +1359,136 @@
         ]
       },
       "ai_decision_reasoner": {
-        "status": "HYBRID_MIXED_STRUCTURE",
+        "status": "V01_MIXED_STRUCTURE",
         "decision": "WATCH",
         "market_view": "MIXED",
-        "raw_market_view": "MIXED",
-        "directional_eligible": false,
         "readiness_state": "CONDITIONAL_REVIEW",
-        "directional_gate": "WATCH_ONLY",
         "risk_state": "MODERATE",
         "counter_thesis_strength": "MODERATE",
         "buy_sell": "NOT_GENERATED",
         "profit_probability": "NOT_ESTIMATED",
-        "trade_execution": "OFF"
+        "trade_execution": "OFF",
+        "canonical_market_view": "MIXED",
+        "canonical_direction_source": "V0_1_ABSOLUTE_CORE",
+        "mtf_alignment_state": "LOW",
+        "mtf_alignment_score": 45.0,
+        "actionability_state": "FILTERED",
+        "actionability_score": 45.0
       },
       "provenance": {
         "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
-        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry",
-        "hybrid": "Stage 11C v0.3 symmetric v0.1 absolute + v0.2 volatility-normalized decision model"
+        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry"
+      },
+      "multi_timeframe_alignment": {
+        "score": 45.0,
+        "state": "LOW",
+        "primary_timeframe": "daily",
+        "methodology": "Forex-inspired confirmation layer: Daily/Weekly/Monthly completed UTC returns are mapped with fixed absolute v0.1-style spans; 45% Daily + 35% Weekly + 20% Monthly canonical-relation score. MTF never reverses the v0.1 canonical Market View.",
+        "canonical_state": "MIXED",
+        "supporting_timeframes": 0,
+        "opposing_timeframes": 0,
+        "neutral_timeframes": 0,
+        "constraints": [
+          "CANONICAL_V01_MIXED",
+          "MTF_ALIGNMENT_LOW"
+        ],
+        "timeframes": {
+          "daily": {
+            "timeframe": "daily",
+            "return_percent": 1.0904,
+            "score": 45.0,
+            "state": "MIXED",
+            "span_percent": 6.0,
+            "weight": 0.45,
+            "relation": "CANONICAL_NOT_DIRECTIONAL"
+          },
+          "weekly": {
+            "timeframe": "weekly",
+            "return_percent": 0.9909,
+            "score": 45.0,
+            "state": "MIXED",
+            "span_percent": 12.0,
+            "weight": 0.35,
+            "relation": "CANONICAL_NOT_DIRECTIONAL"
+          },
+          "monthly": {
+            "timeframe": "monthly",
+            "return_percent": -2.9741,
+            "score": 45.0,
+            "state": "MIXED",
+            "span_percent": 25.0,
+            "weight": 0.2,
+            "relation": "CANONICAL_NOT_DIRECTIONAL"
+          }
+        }
+      },
+      "actionability": {
+        "version": "CRYPTO_ACTIONABILITY_0.1",
+        "role": "primary_operational_readiness_layer",
+        "scope": "continuation_readiness",
+        "score": 45.0,
+        "state": "FILTERED",
+        "decision": "DEPRIORITIZE",
+        "limiter": "canonical_gate",
+        "thresholds": {
+          "actionable": 80,
+          "selective": 60,
+          "filtered": 0
+        },
+        "methodology": "Forex-style interpretable ceiling model: Actionability is the minimum of evidence quality, regime guardrail, asset/MTF readiness, data readiness, and the v0.1 canonical-direction gate. It never reverses canonical direction and is not a probability of profit.",
+        "dimensions": {
+          "evidence_quality": {
+            "score": 85.25,
+            "reason": "Stage 11B official/protocol/network evidence readiness; evidence does not vote direction."
+          },
+          "regime_guardrail": {
+            "score": 70.0,
+            "reasons": [
+              "Decision Risk is MODERATE."
+            ]
+          },
+          "asset_mtf_readiness": {
+            "score": 46.0,
+            "mtf_alignment": 45.0,
+            "market_participation": 50.0,
+            "methodology": "80% MTF canonical alignment + 20% market participation; this is a readiness ceiling, not a directional score."
+          },
+          "data_readiness": {
+            "score": 100.0,
+            "market_data_quality": 100.0,
+            "market_freshness": 100.0,
+            "reason": "Minimum of market-data quality and completed-session freshness."
+          },
+          "canonical_gate": {
+            "score": 45.0,
+            "reason": "v0.1 canonical Market View must be directional before Actionability can become actionable."
+          }
+        },
+        "constraints": [
+          "CANONICAL_V01_MIXED",
+          "MTF_ALIGNMENT_LOW",
+          "MTF_ASSET_READINESS_LOW",
+          "REGIME_GUARDRAIL"
+        ],
+        "signal": {
+          "asset": "DOGE",
+          "canonical_market_view": "MIXED",
+          "canonical_score": 47.81
+        },
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF"
+      },
+      "v01_decision_readiness": {
+        "score": 64.91,
+        "state": "CONDITIONAL_REVIEW",
+        "components": {
+          "market_data_quality": 100.0,
+          "market_freshness": 100.0,
+          "evidence_readiness": 85.25,
+          "directional_clarity": 4.38,
+          "market_participation": 50.0
+        }
       }
     },
     {
@@ -1181,74 +1496,16 @@
       "name": "Chainlink",
       "market_session": "2026-08-18",
       "market_structure": {
-        "score": 84.21,
+        "score": 89.64,
         "state": "SUPPORTIVE",
-        "raw_state": "SUPPORTIVE",
-        "directional_eligible": true,
-        "hybrid": {
-          "blend": {
-            "v01_absolute": 0.5,
-            "v02_volatility_normalized": 0.5
-          },
-          "v01_absolute_score": 89.64,
-          "v01_state": "SUPPORTIVE",
-          "v02_volatility_normalized_score": 78.78,
-          "v02_raw_state": "SUPPORTIVE",
-          "agreement": {
-            "state": "STRONG_CONSENSUS",
-            "score": 100.0,
-            "supports_directional": true
-          },
-          "extremity": {
-            "state": "EXTREME",
-            "risk_score": 70.0
-          }
-        },
         "components": {
-          "v01_absolute": {
-            "return_30d": 78.53,
-            "close_vs_sma20": 98.95,
-            "close_vs_sma50": 87.8,
-            "return_7d": 100.0
-          },
-          "v02_volatility_normalized": {
-            "return_30d": 76.65,
-            "close_vs_sma20": 76.88,
-            "close_vs_sma50": 71.88,
-            "return_7d": 100.0
-          }
+          "return_30d": 78.53,
+          "close_vs_sma20": 98.95,
+          "close_vs_sma50": 87.8,
+          "return_7d": 100.0
         },
-        "normalized_z": {
-          "return_30d": 1.0661,
-          "close_vs_sma20": 1.075,
-          "close_vs_sma50": 0.875,
-          "return_7d": 2.3233
-        },
-        "volatility_scale_annualized_percent": 46.6799,
-        "alignment": {
-          "positive_count": 4,
-          "negative_count": 0,
-          "valid_count": 4,
-          "aligned_count": 4,
-          "required_for_directional_state": 3,
-          "dominant_direction": "POSITIVE",
-          "score": 100.0,
-          "components": {
-            "return_30d": 1,
-            "close_vs_sma20": 1,
-            "close_vs_sma50": 1,
-            "return_7d": 1
-          }
-        },
-        "guardrails": [
-          {
-            "code": "STRUCTURE_EXTREMITY_RISK",
-            "severity": "MODERATE",
-            "message": "Hybrid score is extremely extended. The Market View remains descriptive, while Decision Risk and readiness carry the reversal/exhaustion concern."
-          }
-        ],
         "completed_session": "2026-08-18",
-        "basis": "SYMMETRIC_50_50_V01_ABSOLUTE_PLUS_V02_VOLATILITY_NORMALIZED"
+        "basis": "COMPLETED_UTC_DAILY_CONTEXT_ONLY"
       },
       "evidence_readiness": {
         "score": 95.0,
@@ -1265,35 +1522,22 @@
         "directional_interpretation": "NOT_ASSIGNED"
       },
       "decision_readiness": {
-        "score": 82.24,
-        "base_score_before_risk_guardrails": 97.9,
-        "state": "READY_FOR_REVIEW",
-        "directional_gate": "ELIGIBLE_FOR_SELECTIVE_REVIEW",
-        "components": {
-          "market_data_quality": 100.0,
-          "market_freshness": 100.0,
-          "evidence_readiness": 95.0,
-          "model_agreement": 100.0,
-          "market_participation": 90.0,
-          "horizon_alignment": 100.0
-        },
-        "adjustments": {
-          "risk_multiplier": 0.84,
-          "agreement_multiplier": 1.0,
-          "readiness_is_not_profit_probability": true
-        }
+        "score": 95.0,
+        "state": "ACTIONABLE",
+        "decision": "EVALUATE_SETUP",
+        "role": "ACTIONABILITY_ALIAS_FOR_OPERATIONAL_READINESS",
+        "readiness_is_not_profit_probability": true
       },
       "decision_risk": {
-        "score": 36.87,
-        "state": "MODERATE",
+        "score": 29.06,
+        "state": "LOW",
         "components": {
           "volatility": 31.68,
           "drawdown": 20.0,
           "one_day_shock": 17.04,
           "regulatory_uncertainty": 60.0,
           "evidence_gap": 20.0,
-          "horizon_conflict": 20.0,
-          "reversal_exhaustion": 70.0
+          "horizon_conflict": 20.0
         },
         "horizon_conflict_count": 0,
         "relevant_regulatory_events": [
@@ -1307,74 +1551,211 @@
       },
       "counter_thesis": {
         "status": "ACTIVE",
-        "strength": "MODERATE",
+        "strength": "LOW",
         "factors": [
           {
             "severity": "MODERATE",
             "text": "A recent primary regulatory event raises uncertainty; Stage 11C does not assign it a bullish or bearish direction."
-          },
-          {
-            "severity": "MODERATE",
-            "text": "Hybrid score is extremely extended. The Market View remains descriptive, while Decision Risk and readiness carry the reversal/exhaustion concern."
           }
         ]
       },
       "ai_decision_reasoner": {
-        "status": "HYBRID_STRUCTURE_SUPPORTIVE",
-        "decision": "REVIEW_SELECTIVELY",
+        "status": "ACTIONABILITY_CONFIRMED",
+        "decision": "EVALUATE_SETUP",
         "market_view": "SUPPORTIVE",
-        "raw_market_view": "SUPPORTIVE",
-        "directional_eligible": true,
         "readiness_state": "READY_FOR_REVIEW",
-        "directional_gate": "ELIGIBLE_FOR_SELECTIVE_REVIEW",
-        "risk_state": "MODERATE",
-        "counter_thesis_strength": "MODERATE",
+        "risk_state": "LOW",
+        "counter_thesis_strength": "LOW",
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF",
+        "canonical_market_view": "SUPPORTIVE",
+        "canonical_direction_source": "V0_1_ABSOLUTE_CORE",
+        "mtf_alignment_state": "STRONG",
+        "mtf_alignment_score": 100.0,
+        "actionability_state": "ACTIONABLE",
+        "actionability_score": 95.0
+      },
+      "provenance": {
+        "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
+        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry"
+      },
+      "multi_timeframe_alignment": {
+        "score": 100.0,
+        "state": "STRONG",
+        "primary_timeframe": "daily",
+        "methodology": "Forex-inspired confirmation layer: Daily/Weekly/Monthly completed UTC returns are mapped with fixed absolute v0.1-style spans; 45% Daily + 35% Weekly + 20% Monthly canonical-relation score. MTF never reverses the v0.1 canonical Market View.",
+        "canonical_state": "SUPPORTIVE",
+        "supporting_timeframes": 3,
+        "opposing_timeframes": 0,
+        "neutral_timeframes": 0,
+        "constraints": [],
+        "timeframes": {
+          "daily": {
+            "timeframe": "daily",
+            "return_percent": 1.7042,
+            "score": 100.0,
+            "state": "SUPPORTIVE",
+            "span_percent": 6.0,
+            "weight": 0.45,
+            "relation": "SUPPORTS_CANONICAL"
+          },
+          "weekly": {
+            "timeframe": "weekly",
+            "return_percent": 15.0191,
+            "score": 100.0,
+            "state": "SUPPORTIVE",
+            "span_percent": 12.0,
+            "weight": 0.35,
+            "relation": "SUPPORTS_CANONICAL"
+          },
+          "monthly": {
+            "timeframe": "monthly",
+            "return_percent": 14.2672,
+            "score": 100.0,
+            "state": "SUPPORTIVE",
+            "span_percent": 25.0,
+            "weight": 0.2,
+            "relation": "SUPPORTS_CANONICAL"
+          }
+        }
+      },
+      "actionability": {
+        "version": "CRYPTO_ACTIONABILITY_0.1",
+        "role": "primary_operational_readiness_layer",
+        "scope": "continuation_readiness",
+        "score": 95.0,
+        "state": "ACTIONABLE",
+        "decision": "EVALUATE_SETUP",
+        "limiter": "evidence_quality",
+        "thresholds": {
+          "actionable": 80,
+          "selective": 60,
+          "filtered": 0
+        },
+        "methodology": "Forex-style interpretable ceiling model: Actionability is the minimum of evidence quality, regime guardrail, asset/MTF readiness, data readiness, and the v0.1 canonical-direction gate. It never reverses canonical direction and is not a probability of profit.",
+        "dimensions": {
+          "evidence_quality": {
+            "score": 95.0,
+            "reason": "Stage 11B official/protocol/network evidence readiness; evidence does not vote direction."
+          },
+          "regime_guardrail": {
+            "score": 100.0,
+            "reasons": [
+              "Decision Risk is LOW."
+            ]
+          },
+          "asset_mtf_readiness": {
+            "score": 98.0,
+            "mtf_alignment": 100.0,
+            "market_participation": 90.0,
+            "methodology": "80% MTF canonical alignment + 20% market participation; this is a readiness ceiling, not a directional score."
+          },
+          "data_readiness": {
+            "score": 100.0,
+            "market_data_quality": 100.0,
+            "market_freshness": 100.0,
+            "reason": "Minimum of market-data quality and completed-session freshness."
+          },
+          "canonical_gate": {
+            "score": 100.0,
+            "reason": "v0.1 canonical Market View must be directional before Actionability can become actionable."
+          }
+        },
+        "constraints": [],
+        "signal": {
+          "asset": "LINK",
+          "canonical_market_view": "SUPPORTIVE",
+          "canonical_score": 89.64
+        },
         "buy_sell": "NOT_GENERATED",
         "profit_probability": "NOT_ESTIMATED",
         "trade_execution": "OFF"
       },
-      "provenance": {
-        "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
-        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry",
-        "hybrid": "Stage 11C v0.3 symmetric v0.1 absolute + v0.2 volatility-normalized decision model"
+      "v01_decision_readiness": {
+        "score": 92.07,
+        "state": "READY_FOR_REVIEW",
+        "components": {
+          "market_data_quality": 100.0,
+          "market_freshness": 100.0,
+          "evidence_readiness": 95.0,
+          "directional_clarity": 79.28,
+          "market_participation": 90.0
+        }
       }
     }
   ],
   "errors": [],
   "guardrails": {
-    "market_direction_comes_only_from_completed_market_data": true,
-    "current_global_snapshot_is_context_not_direction_vote": true,
-    "protocol_activity_not_directional": true,
-    "regulatory_events_not_directional": true,
-    "network_telemetry_not_cross_chain_scored": true,
-    "missing_network_telemetry_not_imputed": true,
-    "no_buy_sell": true,
-    "no_profit_probability": true,
-    "backtest_required_before_freeze": true,
-    "pre_freeze_cross_check_required": true,
     "model_is_unfrozen": true,
+    "v01_canonical_direction_preserved": true,
+    "mtf_confirmation_only": true,
+    "actionability_does_not_reverse_direction": true,
+    "actionability_is_not_profit_probability": true,
+    "no_buy_sell": true,
     "trade_execution": "OFF",
-    "v01_and_v02_history_are_consumed_diagnostics": true,
-    "v03_requires_separate_diagnostic_retest": true,
-    "no_freeze_before_v03_retest_and_11c5": true,
-    "hybrid_weight_search_prohibited": true,
-    "model_remains_unfrozen": true
+    "backtest_required_before_11c5": true
   },
-  "hybrid_refinement": {
-    "decision": "HYBRID_AFTER_V01_V02_DIAGNOSTIC_COMPARISON",
-    "source_v01_backtest_generated_at": "2026-08-19T07:17:33.085176Z",
-    "source_v02_retest_generated_at": "2026-08-19T07:44:33.466963Z",
-    "historical_windows_consumed": true,
-    "optimization_policy": "SYMMETRIC_STRUCTURAL_BLEND_NO_BEST_WEIGHT_SEARCH",
-    "changes": [
-      "50/50 symmetric blend of v0.1 absolute and v0.2 volatility-normalized market scores.",
-      "Model agreement replaces directional clarity as a Decision Readiness component.",
-      "Hard 3-of-4 horizon suppression is removed; alignment remains explanatory/readiness context.",
-      "Extreme structure is carried as reversal/exhaustion risk instead of automatic Market View suppression.",
-      "Direct v0.1/v0.2 directional conflict fails closed to MIXED."
+  "canonical_direction_model": {
+    "version": "0.1",
+    "role": "CANONICAL_DIRECTIONAL_CORE",
+    "methodology_sha256": "2e58009070741bf6e2cb4c2b0c3b7dff154c5b8250651bc0963a15eef00b7be4",
+    "historical_diagnostic_status": "BEST_DIRECTIONAL_CORE_AMONG_V01_V02_V03_ON_CONSUMED_WINDOW",
+    "policy": "Canonical Market View is rebuilt from exact v0.1 logic; MTF and Actionability may filter priority but may not reverse direction."
+  },
+  "multi_timeframe_policy": {
+    "timeframes": [
+      "daily",
+      "weekly",
+      "monthly"
     ],
-    "source_v01_methodology_sha256": "2e58009070741bf6e2cb4c2b0c3b7dff154c5b8250651bc0963a15eef00b7be4",
-    "source_v02_methodology_sha256": "9e8ffdc0258927ec7b338432802c74f07d4f0fdff10b6279ffccd9fad3f03b09",
-    "fixed_hybrid_weights_verified": true
+    "weights": {
+      "daily": 0.45,
+      "weekly": 0.35,
+      "monthly": 0.2
+    },
+    "return_spans_percent": {
+      "daily": 6.0,
+      "weekly": 12.0,
+      "monthly": 25.0
+    },
+    "state_thresholds": {
+      "supportive_gte": 62,
+      "pressured_lte": 38
+    },
+    "role": "CONFIRMATION_ONLY_NOT_DIRECTION_SOURCE"
+  },
+  "actionability_policy": {
+    "version": "CRYPTO_ACTIONABILITY_0.1",
+    "thresholds": {
+      "actionable": 80,
+      "selective": 60,
+      "filtered": 0
+    },
+    "ceiling_dimensions": [
+      "evidence_quality",
+      "regime_guardrail",
+      "asset_mtf_readiness",
+      "data_readiness",
+      "canonical_gate"
+    ],
+    "role": "PRIMARY_OPERATIONAL_READINESS_LAYER",
+    "not_profit_probability": true,
+    "does_not_reverse_canonical_direction": true
+  },
+  "summary": {
+    "actionability_counts": {
+      "ACTIONABLE": 1,
+      "SELECTIVE": 1,
+      "FILTERED": 6
+    },
+    "symbols_total": 8
+  },
+  "refinement_history": {
+    "v01": "Best directional coverage/hit-rate balance on consumed 365-day diagnostic window.",
+    "v02": "Volatility-normalized refinement was too conservative and did not improve overall directional hit rate.",
+    "v03": "50/50 hybrid restored coverage but did not improve v0.1 accuracy and worsened extremity miss rate.",
+    "v04": "Returns canonical direction to exact v0.1 and moves MTF/risk/evidence into a Forex-style Actionability quality overlay.",
+    "historical_windows_consumed": true
   }
 }
