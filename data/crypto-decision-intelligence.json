@@ -2,7 +2,7 @@
   "version": "0.4.1",
   "status": "CRYPTO_DECISION_INTELLIGENCE_READY",
   "scope": "MAJOR_LIQUID_CRYPTO_ASSETS_V1",
-  "generated_at": "2026-08-19T11:48:12.754998Z",
+  "generated_at": "2026-08-19T15:28:00.346299Z",
   "model_status": "EXPERIMENTAL_V01_CORE_MTF_ACTIONABILITY_V041_PREVALIDATION",
   "frozen": false,
   "market_session": "2026-08-18",
@@ -142,7 +142,9 @@
             "severity": "MODERATE",
             "text": "A recent primary regulatory event raises uncertainty; Stage 11C does not assign it a bullish or bearish direction."
           }
-        ]
+        ],
+        "semantics_version": "COUNTER_THESIS_0.2",
+        "semantic_definition": "Counter-Thesis measures active challenge strength: LOW means no material active challenge factor; MODERATE means one or more moderate factors; HIGH means at least one high-severity factor."
       },
       "ai_decision_reasoner": {
         "status": "V01_MIXED_STRUCTURE",
@@ -356,13 +358,15 @@
       },
       "counter_thesis": {
         "status": "ACTIVE",
-        "strength": "LOW",
+        "strength": "MODERATE",
         "factors": [
           {
             "severity": "MODERATE",
             "text": "A recent primary regulatory event raises uncertainty; Stage 11C does not assign it a bullish or bearish direction."
           }
-        ]
+        ],
+        "semantics_version": "COUNTER_THESIS_0.2",
+        "semantic_definition": "Counter-Thesis measures active challenge strength: LOW means no material active challenge factor; MODERATE means one or more moderate factors; HIGH means at least one high-severity factor."
       },
       "ai_decision_reasoner": {
         "status": "V01_MIXED_STRUCTURE",
@@ -370,7 +374,7 @@
         "market_view": "MIXED",
         "readiness_state": "READY_FOR_REVIEW",
         "risk_state": "LOW",
-        "counter_thesis_strength": "LOW",
+        "counter_thesis_strength": "MODERATE",
         "buy_sell": "NOT_GENERATED",
         "profit_probability": "NOT_ESTIMATED",
         "trade_execution": "OFF",
@@ -576,13 +580,15 @@
       },
       "counter_thesis": {
         "status": "ACTIVE",
-        "strength": "LOW",
+        "strength": "MODERATE",
         "factors": [
           {
             "severity": "MODERATE",
             "text": "A recent primary regulatory event raises uncertainty; Stage 11C does not assign it a bullish or bearish direction."
           }
-        ]
+        ],
+        "semantics_version": "COUNTER_THESIS_0.2",
+        "semantic_definition": "Counter-Thesis measures active challenge strength: LOW means no material active challenge factor; MODERATE means one or more moderate factors; HIGH means at least one high-severity factor."
       },
       "ai_decision_reasoner": {
         "status": "V01_MIXED_STRUCTURE",
@@ -590,7 +596,7 @@
         "market_view": "MIXED",
         "readiness_state": "READY_FOR_REVIEW",
         "risk_state": "LOW",
-        "counter_thesis_strength": "LOW",
+        "counter_thesis_strength": "MODERATE",
         "buy_sell": "NOT_GENERATED",
         "profit_probability": "NOT_ESTIMATED",
         "trade_execution": "OFF",
@@ -806,7 +812,9 @@
             "severity": "MODERATE",
             "text": "A recent primary regulatory event raises uncertainty; Stage 11C does not assign it a bullish or bearish direction."
           }
-        ]
+        ],
+        "semantics_version": "COUNTER_THESIS_0.2",
+        "semantic_definition": "Counter-Thesis measures active challenge strength: LOW means no material active challenge factor; MODERATE means one or more moderate factors; HIGH means at least one high-severity factor."
       },
       "ai_decision_reasoner": {
         "status": "ACTIONABILITY_SELECTIVE",
@@ -1013,13 +1021,15 @@
       },
       "counter_thesis": {
         "status": "ACTIVE",
-        "strength": "LOW",
+        "strength": "MODERATE",
         "factors": [
           {
             "severity": "MODERATE",
             "text": "A recent primary regulatory event raises uncertainty; Stage 11C does not assign it a bullish or bearish direction."
           }
-        ]
+        ],
+        "semantics_version": "COUNTER_THESIS_0.2",
+        "semantic_definition": "Counter-Thesis measures active challenge strength: LOW means no material active challenge factor; MODERATE means one or more moderate factors; HIGH means at least one high-severity factor."
       },
       "ai_decision_reasoner": {
         "status": "V01_MIXED_STRUCTURE",
@@ -1027,7 +1037,7 @@
         "market_view": "MIXED",
         "readiness_state": "READY_FOR_REVIEW",
         "risk_state": "LOW",
-        "counter_thesis_strength": "LOW",
+        "counter_thesis_strength": "MODERATE",
         "buy_sell": "NOT_GENERATED",
         "profit_probability": "NOT_ESTIMATED",
         "trade_execution": "OFF",
@@ -1247,7 +1257,9 @@
             "severity": "MODERATE",
             "text": "A recent primary regulatory event raises uncertainty; Stage 11C does not assign it a bullish or bearish direction."
           }
-        ]
+        ],
+        "semantics_version": "COUNTER_THESIS_0.2",
+        "semantic_definition": "Counter-Thesis measures active challenge strength: LOW means no material active challenge factor; MODERATE means one or more moderate factors; HIGH means at least one high-severity factor."
       },
       "ai_decision_reasoner": {
         "status": "V01_MIXED_STRUCTURE",
@@ -1478,7 +1490,9 @@
             "severity": "MODERATE",
             "text": "A recent primary regulatory event raises uncertainty; Stage 11C does not assign it a bullish or bearish direction."
           }
-        ]
+        ],
+        "semantics_version": "COUNTER_THESIS_0.2",
+        "semantic_definition": "Counter-Thesis measures active challenge strength: LOW means no material active challenge factor; MODERATE means one or more moderate factors; HIGH means at least one high-severity factor."
       },
       "ai_decision_reasoner": {
         "status": "V01_MIXED_STRUCTURE",
@@ -1694,13 +1708,15 @@
       },
       "counter_thesis": {
         "status": "ACTIVE",
-        "strength": "LOW",
+        "strength": "MODERATE",
         "factors": [
           {
             "severity": "MODERATE",
             "text": "A recent primary regulatory event raises uncertainty; Stage 11C does not assign it a bullish or bearish direction."
           }
-        ]
+        ],
+        "semantics_version": "COUNTER_THESIS_0.2",
+        "semantic_definition": "Counter-Thesis measures active challenge strength: LOW means no material active challenge factor; MODERATE means one or more moderate factors; HIGH means at least one high-severity factor."
       },
       "ai_decision_reasoner": {
         "status": "ACTIONABILITY_SELECTIVE",
@@ -1708,7 +1724,7 @@
         "market_view": "SUPPORTIVE",
         "readiness_state": "READY_FOR_REVIEW",
         "risk_state": "LOW",
-        "counter_thesis_strength": "LOW",
+        "counter_thesis_strength": "MODERATE",
         "buy_sell": "NOT_GENERATED",
         "profit_probability": "NOT_ESTIMATED",
         "trade_execution": "OFF",
@@ -1937,5 +1953,18 @@
     "directional_thresholds_changed": false,
     "asset_specific_rules_added": false,
     "historical_windows_consumed": true
+  },
+  "counter_thesis_semantics": {
+    "version": "COUNTER_THESIS_0.2",
+    "change_type": "SEMANTIC_QA_CORRECTION_NOT_THRESHOLD_TUNING",
+    "states": {
+      "LOW": "No material active counter-thesis factor detected; dashboard PASS.",
+      "MODERATE": "One or more moderate challenge factors are active; dashboard CAUTION.",
+      "HIGH": "At least one high-severity challenge factor is active; dashboard FAIL."
+    },
+    "readiness_mapping": "LOW=PASS; MODERATE=CAUTION; HIGH=FAIL",
+    "actionability_primary_gate_changed": false,
+    "direction_mtf_regime_risk_changed": false,
+    "trade_execution": "OFF"
   }
 }

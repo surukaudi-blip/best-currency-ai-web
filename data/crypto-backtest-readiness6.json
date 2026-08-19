@@ -1,7 +1,7 @@
 {
-  "version": "1.0",
-  "status": "CRYPTO_6CHECK_TREND_QUALIFICATION_DIAGNOSTIC_COMPLETE",
-  "generated_at": "2026-08-19T14:50:11.517965Z",
+  "version": "1.1",
+  "status": "CRYPTO_6CHECK_COUNTER_THESIS_SEMANTIC_REVISION_DIAGNOSTIC_COMPLETE",
+  "generated_at": "2026-08-19T15:28:16.174035Z",
   "scope": "MAJOR_LIQUID_CRYPTO_ASSETS_V1",
   "model_frozen": false,
   "test_design": {
@@ -22,14 +22,21 @@
     "counter_thesis_reconstruction": "MARKET_ONLY_SUBSET_OF_PRODUCTION_FACTORS",
     "actionability_reconstruction": "V041_MARKET_ONLY_PROXY",
     "readiness_scoring": "ONE_POINT_PER_PASS_SIX_CHECKS; CAUTION_AND_FAIL_ZERO_POINTS",
-    "primary_gate": "ACTIONABILITY_GATE"
+    "primary_gate": "ACTIONABILITY_GATE",
+    "counter_thesis_semantics": {
+      "version": "COUNTER_THESIS_0.2",
+      "change_type": "SEMANTIC_QA_CORRECTION_NOT_THRESHOLD_TUNING",
+      "LOW": "No material active market-reconstructable counter-thesis factor.",
+      "MODERATE": "One or more moderate challenge factors and no high factor.",
+      "HIGH": "At least one high-severity challenge factor."
+    }
   },
   "check_rules": {
     "direction": "PASS if canonical v0.1 is SUPPORTIVE or PRESSURED",
     "mtf": "PASS >=80; CAUTION 60-79.99; FAIL <60",
     "regime": "PASS ceiling >=80; CAUTION 60-79.99; FAIL <60",
     "risk": "PASS LOW; CAUTION MODERATE; FAIL HIGH",
-    "counter_thesis": "PASS LOW; CAUTION MODERATE; LIMITED/HIGH fail closed under current dashboard semantics",
+    "counter_thesis": "PASS LOW (no material active challenge); CAUTION MODERATE; FAIL HIGH.",
     "actionability": "PRIMARY GATE: PASS ACTIONABLE >=80; CAUTION SELECTIVE; FAIL FILTERED"
   },
   "lineage": {
@@ -41,12 +48,12 @@
     "directional_rows": 1269,
     "errors": [],
     "check_pass_counts_directional": {
-      "1": 467,
-      "2": 427,
-      "3": 250,
-      "4": 47,
-      "5": 62,
-      "6": 16
+      "1": 504,
+      "2": 444,
+      "3": 100,
+      "4": 140,
+      "5": 21,
+      "6": 60
     }
   },
   "baseline_reference": {
@@ -246,50 +253,50 @@
     },
     "counter_thesis": {
       "pass": {
-        "observations": 206,
-        "coverage_percent_of_all": 9.64,
-        "retention_percent_of_directional": 16.23,
-        "hit_rate_1d_percent": 50.0,
+        "observations": 258,
+        "coverage_percent_of_all": 12.08,
+        "retention_percent_of_directional": 20.33,
+        "hit_rate_1d_percent": 53.49,
         "hit_rate_1d_wilson95": {
-          "low_percent": 43.23,
-          "high_percent": 56.77
+          "low_percent": 47.4,
+          "high_percent": 59.48
         },
-        "avg_directional_return_1d_percent": 0.2909,
-        "hit_rate_3d_percent": 47.09,
+        "avg_directional_return_1d_percent": 0.2532,
+        "hit_rate_3d_percent": 49.61,
         "hit_rate_3d_wilson95": {
-          "low_percent": 40.39,
-          "high_percent": 53.89
+          "low_percent": 43.56,
+          "high_percent": 55.67
         },
-        "avg_directional_return_3d_percent": 0.1505,
-        "hit_rate_7d_percent": 41.75,
+        "avg_directional_return_3d_percent": 0.6418,
+        "hit_rate_7d_percent": 55.04,
         "hit_rate_7d_wilson95": {
-          "low_percent": 35.22,
-          "high_percent": 48.57
+          "low_percent": 48.94,
+          "high_percent": 60.99
         },
-        "avg_directional_return_7d_percent": -0.3606
+        "avg_directional_return_7d_percent": 1.6595
       },
       "not_pass": {
-        "observations": 1063,
-        "coverage_percent_of_all": 49.77,
-        "retention_percent_of_directional": 83.77,
-        "hit_rate_1d_percent": 50.52,
+        "observations": 1011,
+        "coverage_percent_of_all": 47.33,
+        "retention_percent_of_directional": 79.67,
+        "hit_rate_1d_percent": 49.65,
         "hit_rate_1d_wilson95": {
-          "low_percent": 47.52,
-          "high_percent": 53.52
+          "low_percent": 46.58,
+          "high_percent": 52.73
         },
-        "avg_directional_return_1d_percent": -0.1672,
-        "hit_rate_3d_percent": 48.82,
+        "avg_directional_return_1d_percent": -0.1812,
+        "hit_rate_3d_percent": 48.27,
         "hit_rate_3d_wilson95": {
-          "low_percent": 45.83,
-          "high_percent": 51.83
+          "low_percent": 45.2,
+          "high_percent": 51.35
         },
-        "avg_directional_return_3d_percent": -0.1657,
-        "hit_rate_7d_percent": 49.11,
+        "avg_directional_return_3d_percent": -0.3074,
+        "hit_rate_7d_percent": 46.09,
         "hit_rate_7d_wilson95": {
-          "low_percent": 46.11,
-          "high_percent": 52.11
+          "low_percent": 43.04,
+          "high_percent": 49.17
         },
-        "avg_directional_return_7d_percent": 0.1476
+        "avg_directional_return_7d_percent": -0.3418
       }
     },
     "actionability": {
@@ -343,142 +350,142 @@
   },
   "exact_checks_passed": {
     "1": {
-      "observations": 467,
-      "coverage_percent_of_all": 21.86,
-      "retention_percent_of_directional": 36.8,
-      "hit_rate_1d_percent": 51.39,
+      "observations": 504,
+      "coverage_percent_of_all": 23.6,
+      "retention_percent_of_directional": 39.72,
+      "hit_rate_1d_percent": 51.59,
       "hit_rate_1d_wilson95": {
-        "low_percent": 46.87,
-        "high_percent": 55.9
+        "low_percent": 47.23,
+        "high_percent": 55.92
       },
-      "avg_directional_return_1d_percent": -0.2912,
-      "hit_rate_3d_percent": 53.53,
+      "avg_directional_return_1d_percent": -0.2782,
+      "hit_rate_3d_percent": 53.37,
       "hit_rate_3d_wilson95": {
-        "low_percent": 49.0,
-        "high_percent": 58.01
+        "low_percent": 49.01,
+        "high_percent": 57.69
       },
-      "avg_directional_return_3d_percent": 0.1416,
-      "hit_rate_7d_percent": 49.68,
+      "avg_directional_return_3d_percent": 0.1154,
+      "hit_rate_7d_percent": 49.21,
       "hit_rate_7d_wilson95": {
-        "low_percent": 45.17,
-        "high_percent": 54.2
+        "low_percent": 44.86,
+        "high_percent": 53.56
       },
-      "avg_directional_return_7d_percent": -0.4241
+      "avg_directional_return_7d_percent": -0.424
     },
     "2": {
-      "observations": 427,
-      "coverage_percent_of_all": 19.99,
-      "retention_percent_of_directional": 33.65,
-      "hit_rate_1d_percent": 48.48,
+      "observations": 444,
+      "coverage_percent_of_all": 20.79,
+      "retention_percent_of_directional": 34.99,
+      "hit_rate_1d_percent": 47.07,
       "hit_rate_1d_wilson95": {
-        "low_percent": 43.77,
-        "high_percent": 53.21
+        "low_percent": 42.47,
+        "high_percent": 51.72
       },
-      "avg_directional_return_1d_percent": -0.2606,
-      "hit_rate_3d_percent": 42.15,
+      "avg_directional_return_1d_percent": -0.1185,
+      "hit_rate_3d_percent": 43.02,
       "hit_rate_3d_wilson95": {
-        "low_percent": 37.56,
-        "high_percent": 46.89
+        "low_percent": 38.49,
+        "high_percent": 47.66
       },
-      "avg_directional_return_3d_percent": -0.9209,
-      "hit_rate_7d_percent": 43.33,
+      "avg_directional_return_3d_percent": -0.8564,
+      "hit_rate_7d_percent": 42.34,
       "hit_rate_7d_wilson95": {
-        "low_percent": 38.71,
-        "high_percent": 48.06
+        "low_percent": 37.83,
+        "high_percent": 46.98
       },
-      "avg_directional_return_7d_percent": -0.4197
+      "avg_directional_return_7d_percent": -0.2082
     },
     "3": {
-      "observations": 250,
-      "coverage_percent_of_all": 11.7,
-      "retention_percent_of_directional": 19.7,
-      "hit_rate_1d_percent": 50.0,
+      "observations": 100,
+      "coverage_percent_of_all": 4.68,
+      "retention_percent_of_directional": 7.88,
+      "hit_rate_1d_percent": 57.0,
       "hit_rate_1d_wilson95": {
-        "low_percent": 43.85,
-        "high_percent": 56.15
+        "low_percent": 47.22,
+        "high_percent": 66.27
       },
-      "avg_directional_return_1d_percent": 0.3623,
-      "hit_rate_3d_percent": 51.2,
+      "avg_directional_return_1d_percent": 0.1452,
+      "hit_rate_3d_percent": 42.0,
       "hit_rate_3d_wilson95": {
-        "low_percent": 45.03,
-        "high_percent": 57.33
+        "low_percent": 32.8,
+        "high_percent": 51.79
       },
-      "avg_directional_return_3d_percent": 0.5335,
-      "hit_rate_7d_percent": 48.0,
+      "avg_directional_return_3d_percent": 0.355,
+      "hit_rate_7d_percent": 46.0,
       "hit_rate_7d_wilson95": {
-        "low_percent": 41.88,
-        "high_percent": 54.18
+        "low_percent": 36.56,
+        "high_percent": 55.74
       },
-      "avg_directional_return_7d_percent": 1.4633
+      "avg_directional_return_7d_percent": -1.0332
     },
     "4": {
-      "observations": 47,
-      "coverage_percent_of_all": 2.2,
-      "retention_percent_of_directional": 3.7,
-      "hit_rate_1d_percent": 57.45,
+      "observations": 140,
+      "coverage_percent_of_all": 6.55,
+      "retention_percent_of_directional": 11.03,
+      "hit_rate_1d_percent": 49.29,
       "hit_rate_1d_wilson95": {
-        "low_percent": 43.28,
-        "high_percent": 70.49
+        "low_percent": 41.13,
+        "high_percent": 57.48
       },
-      "avg_directional_return_1d_percent": 0.2816,
-      "hit_rate_3d_percent": 46.81,
+      "avg_directional_return_1d_percent": 0.1026,
+      "hit_rate_3d_percent": 52.86,
       "hit_rate_3d_wilson95": {
-        "low_percent": 33.33,
-        "high_percent": 60.77
+        "low_percent": 44.62,
+        "high_percent": 60.94
       },
-      "avg_directional_return_3d_percent": 0.5133,
-      "hit_rate_7d_percent": 53.19,
+      "avg_directional_return_3d_percent": 0.6624,
+      "hit_rate_7d_percent": 54.29,
       "hit_rate_7d_wilson95": {
-        "low_percent": 39.23,
-        "high_percent": 66.67
+        "low_percent": 46.03,
+        "high_percent": 62.31
       },
-      "avg_directional_return_7d_percent": -0.3227
+      "avg_directional_return_7d_percent": 2.5969
     },
     "5": {
-      "observations": 62,
-      "coverage_percent_of_all": 2.9,
-      "retention_percent_of_directional": 4.89,
-      "hit_rate_1d_percent": 54.84,
+      "observations": 21,
+      "coverage_percent_of_all": 0.98,
+      "retention_percent_of_directional": 1.65,
+      "hit_rate_1d_percent": 52.38,
       "hit_rate_1d_wilson95": {
-        "low_percent": 42.53,
-        "high_percent": 66.58
+        "low_percent": 32.37,
+        "high_percent": 71.66
       },
-      "avg_directional_return_1d_percent": 0.2385,
-      "hit_rate_3d_percent": 45.16,
+      "avg_directional_return_1d_percent": 1.0311,
+      "hit_rate_3d_percent": 57.14,
       "hit_rate_3d_wilson95": {
-        "low_percent": 33.42,
-        "high_percent": 57.47
+        "low_percent": 36.55,
+        "high_percent": 75.53
       },
-      "avg_directional_return_3d_percent": 0.272,
-      "hit_rate_7d_percent": 62.9,
+      "avg_directional_return_3d_percent": 1.2588,
+      "hit_rate_7d_percent": 52.38,
       "hit_rate_7d_wilson95": {
-        "low_percent": 50.46,
-        "high_percent": 73.84
+        "low_percent": 32.37,
+        "high_percent": 71.66
       },
-      "avg_directional_return_7d_percent": 1.9263
+      "avg_directional_return_7d_percent": -0.097
     },
     "6": {
-      "observations": 16,
-      "coverage_percent_of_all": 0.75,
-      "retention_percent_of_directional": 1.26,
-      "hit_rate_1d_percent": 43.75,
+      "observations": 60,
+      "coverage_percent_of_all": 2.81,
+      "retention_percent_of_directional": 4.73,
+      "hit_rate_1d_percent": 56.67,
       "hit_rate_1d_wilson95": {
-        "low_percent": 23.1,
-        "high_percent": 66.82
+        "low_percent": 44.1,
+        "high_percent": 68.43
       },
-      "avg_directional_return_1d_percent": 0.6769,
-      "hit_rate_3d_percent": 50.0,
+      "avg_directional_return_1d_percent": 0.407,
+      "hit_rate_3d_percent": 46.67,
       "hit_rate_3d_wilson95": {
-        "low_percent": 28.0,
-        "high_percent": 72.0
+        "low_percent": 34.63,
+        "high_percent": 59.11
       },
-      "avg_directional_return_3d_percent": 0.4738,
-      "hit_rate_7d_percent": 43.75,
+      "avg_directional_return_3d_percent": 0.3703,
+      "hit_rate_7d_percent": 65.0,
       "hit_rate_7d_wilson95": {
-        "low_percent": 23.1,
-        "high_percent": 66.82
+        "low_percent": 52.36,
+        "high_percent": 75.83
       },
-      "avg_directional_return_7d_percent": -0.6386
+      "avg_directional_return_7d_percent": 2.1751
     }
   },
   "at_least_checks_passed": {
@@ -506,119 +513,119 @@
       "avg_directional_return_7d_percent": 0.0651
     },
     "2": {
-      "observations": 802,
-      "coverage_percent_of_all": 37.55,
-      "retention_percent_of_directional": 63.2,
-      "hit_rate_1d_percent": 49.88,
+      "observations": 765,
+      "coverage_percent_of_all": 35.81,
+      "retention_percent_of_directional": 60.28,
+      "hit_rate_1d_percent": 49.67,
       "hit_rate_1d_wilson95": {
-        "low_percent": 46.42,
-        "high_percent": 53.33
+        "low_percent": 46.14,
+        "high_percent": 53.21
       },
-      "avg_directional_return_1d_percent": 0.0226,
-      "hit_rate_3d_percent": 45.64,
+      "avg_directional_return_1d_percent": 0.0292,
+      "hit_rate_3d_percent": 45.36,
       "hit_rate_3d_wilson95": {
-        "low_percent": 42.22,
-        "high_percent": 49.1
+        "low_percent": 41.86,
+        "high_percent": 48.9
       },
-      "avg_directional_return_3d_percent": -0.2634,
-      "hit_rate_7d_percent": 46.88,
+      "avg_directional_return_3d_percent": -0.2658,
+      "hit_rate_7d_percent": 47.06,
       "hit_rate_7d_wilson95": {
-        "low_percent": 43.45,
-        "high_percent": 50.34
+        "low_percent": 43.55,
+        "high_percent": 50.6
       },
-      "avg_directional_return_7d_percent": 0.3499
+      "avg_directional_return_7d_percent": 0.3873
     },
     "3": {
-      "observations": 375,
-      "coverage_percent_of_all": 17.56,
-      "retention_percent_of_directional": 29.55,
-      "hit_rate_1d_percent": 51.47,
+      "observations": 321,
+      "coverage_percent_of_all": 15.03,
+      "retention_percent_of_directional": 25.3,
+      "hit_rate_1d_percent": 53.27,
       "hit_rate_1d_wilson95": {
-        "low_percent": 46.42,
-        "high_percent": 56.48
+        "low_percent": 47.81,
+        "high_percent": 58.66
       },
-      "avg_directional_return_1d_percent": 0.3451,
-      "hit_rate_3d_percent": 49.6,
+      "avg_directional_return_1d_percent": 0.2335,
+      "hit_rate_3d_percent": 48.6,
       "hit_rate_3d_wilson95": {
-        "low_percent": 44.57,
-        "high_percent": 54.64
+        "low_percent": 43.18,
+        "high_percent": 54.05
       },
-      "avg_directional_return_3d_percent": 0.4852,
-      "hit_rate_7d_percent": 50.93,
+      "avg_directional_return_3d_percent": 0.5511,
+      "hit_rate_7d_percent": 53.58,
       "hit_rate_7d_wilson95": {
-        "low_percent": 45.89,
-        "high_percent": 55.96
+        "low_percent": 48.12,
+        "high_percent": 58.96
       },
-      "avg_directional_return_7d_percent": 1.2263
+      "avg_directional_return_7d_percent": 1.211
     },
     "4": {
-      "observations": 125,
-      "coverage_percent_of_all": 5.85,
-      "retention_percent_of_directional": 9.85,
-      "hit_rate_1d_percent": 54.4,
+      "observations": 221,
+      "coverage_percent_of_all": 10.35,
+      "retention_percent_of_directional": 17.42,
+      "hit_rate_1d_percent": 51.58,
       "hit_rate_1d_wilson95": {
-        "low_percent": 45.67,
-        "high_percent": 62.87
+        "low_percent": 45.02,
+        "high_percent": 58.09
       },
-      "avg_directional_return_1d_percent": 0.3108,
-      "hit_rate_3d_percent": 46.4,
+      "avg_directional_return_1d_percent": 0.2735,
+      "hit_rate_3d_percent": 51.58,
       "hit_rate_3d_wilson95": {
-        "low_percent": 37.9,
-        "high_percent": 55.12
+        "low_percent": 45.02,
+        "high_percent": 58.09
       },
-      "avg_directional_return_3d_percent": 0.3885,
-      "hit_rate_7d_percent": 56.8,
+      "avg_directional_return_3d_percent": 0.6398,
+      "hit_rate_7d_percent": 57.01,
       "hit_rate_7d_wilson95": {
-        "low_percent": 48.04,
-        "high_percent": 65.15
+        "low_percent": 50.42,
+        "high_percent": 63.37
       },
-      "avg_directional_return_7d_percent": 0.7524
+      "avg_directional_return_7d_percent": 2.2264
     },
     "5": {
-      "observations": 78,
-      "coverage_percent_of_all": 3.65,
-      "retention_percent_of_directional": 6.15,
-      "hit_rate_1d_percent": 52.56,
+      "observations": 81,
+      "coverage_percent_of_all": 3.79,
+      "retention_percent_of_directional": 6.38,
+      "hit_rate_1d_percent": 55.56,
       "hit_rate_1d_wilson95": {
-        "low_percent": 41.62,
-        "high_percent": 63.26
+        "low_percent": 44.73,
+        "high_percent": 65.88
       },
-      "avg_directional_return_1d_percent": 0.3284,
-      "hit_rate_3d_percent": 46.15,
+      "avg_directional_return_1d_percent": 0.5688,
+      "hit_rate_3d_percent": 49.38,
       "hit_rate_3d_wilson95": {
-        "low_percent": 35.53,
-        "high_percent": 57.14
+        "low_percent": 38.77,
+        "high_percent": 60.05
       },
-      "avg_directional_return_3d_percent": 0.3134,
-      "hit_rate_7d_percent": 58.97,
+      "avg_directional_return_3d_percent": 0.6006,
+      "hit_rate_7d_percent": 61.73,
       "hit_rate_7d_wilson95": {
-        "low_percent": 47.89,
-        "high_percent": 69.22
+        "low_percent": 50.84,
+        "high_percent": 71.55
       },
-      "avg_directional_return_7d_percent": 1.4002
+      "avg_directional_return_7d_percent": 1.5861
     },
     "6": {
-      "observations": 16,
-      "coverage_percent_of_all": 0.75,
-      "retention_percent_of_directional": 1.26,
-      "hit_rate_1d_percent": 43.75,
+      "observations": 60,
+      "coverage_percent_of_all": 2.81,
+      "retention_percent_of_directional": 4.73,
+      "hit_rate_1d_percent": 56.67,
       "hit_rate_1d_wilson95": {
-        "low_percent": 23.1,
-        "high_percent": 66.82
+        "low_percent": 44.1,
+        "high_percent": 68.43
       },
-      "avg_directional_return_1d_percent": 0.6769,
-      "hit_rate_3d_percent": 50.0,
+      "avg_directional_return_1d_percent": 0.407,
+      "hit_rate_3d_percent": 46.67,
       "hit_rate_3d_wilson95": {
-        "low_percent": 28.0,
-        "high_percent": 72.0
+        "low_percent": 34.63,
+        "high_percent": 59.11
       },
-      "avg_directional_return_3d_percent": 0.4738,
-      "hit_rate_7d_percent": 43.75,
+      "avg_directional_return_3d_percent": 0.3703,
+      "hit_rate_7d_percent": 65.0,
       "hit_rate_7d_wilson95": {
-        "low_percent": 23.1,
-        "high_percent": 66.82
+        "low_percent": 52.36,
+        "high_percent": 75.83
       },
-      "avg_directional_return_7d_percent": -0.6386
+      "avg_directional_return_7d_percent": 2.1751
     }
   },
   "primary_gate_analysis": {
@@ -669,27 +676,27 @@
       "avg_directional_return_7d_percent": -0.0293
     },
     "readiness_5plus_primary_pass": {
-      "observations": 78,
-      "coverage_percent_of_all": 3.65,
-      "retention_percent_of_directional": 6.15,
-      "hit_rate_1d_percent": 52.56,
+      "observations": 81,
+      "coverage_percent_of_all": 3.79,
+      "retention_percent_of_directional": 6.38,
+      "hit_rate_1d_percent": 55.56,
       "hit_rate_1d_wilson95": {
-        "low_percent": 41.62,
-        "high_percent": 63.26
+        "low_percent": 44.73,
+        "high_percent": 65.88
       },
-      "avg_directional_return_1d_percent": 0.3284,
-      "hit_rate_3d_percent": 46.15,
+      "avg_directional_return_1d_percent": 0.5688,
+      "hit_rate_3d_percent": 49.38,
       "hit_rate_3d_wilson95": {
-        "low_percent": 35.53,
-        "high_percent": 57.14
+        "low_percent": 38.77,
+        "high_percent": 60.05
       },
-      "avg_directional_return_3d_percent": 0.3134,
-      "hit_rate_7d_percent": 58.97,
+      "avg_directional_return_3d_percent": 0.6006,
+      "hit_rate_7d_percent": 61.73,
       "hit_rate_7d_wilson95": {
-        "low_percent": 47.89,
-        "high_percent": 69.22
+        "low_percent": 50.84,
+        "high_percent": 71.55
       },
-      "avg_directional_return_7d_percent": 1.4002
+      "avg_directional_return_7d_percent": 1.5861
     },
     "readiness_5plus_primary_not_pass": {
       "observations": 0,
@@ -720,65 +727,57 @@
       "avg_directional_return_7d_percent": null
     },
     "strict_6_of_6": {
-      "observations": 16,
-      "coverage_percent_of_all": 0.75,
-      "retention_percent_of_directional": 1.26,
-      "hit_rate_1d_percent": 43.75,
+      "observations": 60,
+      "coverage_percent_of_all": 2.81,
+      "retention_percent_of_directional": 4.73,
+      "hit_rate_1d_percent": 56.67,
       "hit_rate_1d_wilson95": {
-        "low_percent": 23.1,
-        "high_percent": 66.82
+        "low_percent": 44.1,
+        "high_percent": 68.43
       },
-      "avg_directional_return_1d_percent": 0.6769,
-      "hit_rate_3d_percent": 50.0,
+      "avg_directional_return_1d_percent": 0.407,
+      "hit_rate_3d_percent": 46.67,
       "hit_rate_3d_wilson95": {
-        "low_percent": 28.0,
-        "high_percent": 72.0
+        "low_percent": 34.63,
+        "high_percent": 59.11
       },
-      "avg_directional_return_3d_percent": 0.4738,
-      "hit_rate_7d_percent": 43.75,
+      "avg_directional_return_3d_percent": 0.3703,
+      "hit_rate_7d_percent": 65.0,
       "hit_rate_7d_wilson95": {
-        "low_percent": 23.1,
-        "high_percent": 66.82
+        "low_percent": 52.36,
+        "high_percent": 75.83
       },
-      "avg_directional_return_7d_percent": -0.6386
+      "avg_directional_return_7d_percent": 2.1751
     }
   },
-  "counter_thesis_semantics_sensitivity": {
-    "counter_thesis_LIMITED_treated_as_PASS_strict_6_of_6": {
-      "observations": 76,
-      "coverage_percent_of_all": 3.56,
-      "retention_percent_of_directional": 5.99,
-      "hit_rate_1d_percent": 53.95,
-      "hit_rate_1d_wilson95": {
-        "low_percent": 42.82,
-        "high_percent": 64.69
-      },
-      "avg_directional_return_1d_percent": 0.4638,
-      "hit_rate_3d_percent": 47.37,
-      "hit_rate_3d_wilson95": {
-        "low_percent": 36.54,
-        "high_percent": 58.45
-      },
-      "avg_directional_return_3d_percent": 0.3921,
-      "hit_rate_7d_percent": 60.53,
-      "hit_rate_7d_wilson95": {
-        "low_percent": 49.29,
-        "high_percent": 70.75
-      },
-      "avg_directional_return_7d_percent": 1.5828
-    },
-    "counter_thesis_LIMITED_count": 258,
-    "note": "Sensitivity only. Official dashboard currently passes Counter-Thesis only when strength=LOW; LIMITED fails closed. No rule is changed by this diagnostic."
-  },
   "diagnostic_deltas": {
-    "strict_6of6_7d_vs_v01_baseline_pp": -4.16,
-    "strict_6of6_7d_vs_prior_v041_actionable_pp": -16.49
+    "strict_6of6_7d_vs_v01_baseline_pp": 17.09,
+    "strict_6of6_7d_vs_prior_v041_actionable_pp": 4.76
   },
   "governance": [
     "Diagnostic uses an already-consumed historical window and is not Fresh OOS.",
     "No historical protocol/regulatory/network evidence is fabricated or backfilled.",
     "Results must not be used for threshold search or asset-specific rules on this consumed window.",
     "Readiness and hit rates are not probabilities of profit.",
-    "Trade execution remains OFF and the Crypto model remains unfrozen."
-  ]
+    "Trade execution remains OFF and the Crypto model remains unfrozen.",
+    "Counter-Thesis v0.2 is a semantic correction: no material active challenge maps to LOW/PASS; no threshold was searched."
+  ],
+  "counter_thesis_semantic_revision_evaluation": {
+    "previous_official_semantics": {
+      "strict_6_of_6_observations": 16,
+      "strict_6_of_6_hit_rate_7d_percent": 43.75,
+      "strict_6_of_6_avg_directional_return_7d_percent": -0.6386
+    },
+    "previous_sensitivity_reference": {
+      "observations": 76,
+      "hit_rate_7d_percent": 60.53,
+      "avg_directional_return_7d_percent": 1.5828
+    },
+    "revised_semantics_official_diagnostic": {
+      "strict_6_of_6_observations": 60,
+      "strict_6_of_6_hit_rate_7d_percent": 65.0,
+      "strict_6_of_6_avg_directional_return_7d_percent": 2.1751
+    },
+    "interpretation": "Semantic parity check only. The consumed historical window cannot be used as fresh proof or for additional threshold tuning; Fresh OOS is still required after freeze."
+  }
 }
