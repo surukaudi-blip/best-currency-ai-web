@@ -4,12 +4,6 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '35 0 * * *'
-  push:
-    branches:
-      - main
-    paths:
-      - scripts/build-crypto-decision-v041-counterfix.py
-      - .github/workflows/crypto-decision-refresh.yml
 
 permissions:
   contents: write
