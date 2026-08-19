@@ -1,4 +1,4 @@
-name: Run Crypto Historical Backtest
+name: Run Crypto Refinement Backtest v0.2
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: crypto-historical-backtest
+  group: crypto-refinement-backtest-v02
   cancel-in-progress: false
 
 jobs:
@@ -26,17 +26,17 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Run Stage 11C.4 historical backtest with production parity
-        run: python scripts/build-crypto-backtest-safe.py
+      - name: Run refined Stage 11C v0.2 diagnostic retest
+        run: python scripts/build-crypto-backtest-v02.py
 
-      - name: Commit aggregated backtest diagnostics when changed
+      - name: Commit aggregated v0.2 retest diagnostics when changed
         run: |
-          if git diff --quiet -- data/crypto-backtest.json; then
-            echo "No Crypto backtest changes."
+          if git diff --quiet -- data/crypto-backtest-v02.json; then
+            echo "No Crypto v0.2 retest changes."
             exit 0
           fi
           git config user.name "best-currency-ai-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/crypto-backtest.json
-          git commit -m "data: run crypto Stage 11C.4 historical backtest"
+          git add data/crypto-backtest-v02.json
+          git commit -m "data: run crypto v0.2 refinement diagnostic retest"
           git push
