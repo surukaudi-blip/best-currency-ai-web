@@ -1,9 +1,9 @@
 {
-  "version": "0.1",
+  "version": "0.2",
   "status": "CRYPTO_DECISION_INTELLIGENCE_READY",
   "scope": "MAJOR_LIQUID_CRYPTO_ASSETS_V1",
-  "generated_at": "2026-08-19T06:55:42.266869Z",
-  "model_status": "EXPERIMENTAL_PREVALIDATION",
+  "generated_at": "2026-08-19T07:38:51.646288Z",
+  "model_status": "EXPERIMENTAL_REFINED_PREVALIDATION",
   "frozen": false,
   "market_session": "2026-08-18",
   "global_context": {
@@ -21,18 +21,26 @@
         "close_vs_sma50": 0.3,
         "return_7d": 0.15
       },
-      "score_spans_percent": {
-        "return_30d": 25,
-        "close_vs_sma20": 12,
-        "close_vs_sma50": 20,
-        "return_7d": 12
+      "normalization": "Each percent input is divided by its expected horizon volatility derived from 30-day annualized realized volatility; z-like +/-2 maps to score 0/100.",
+      "normalization_horizons_days": {
+        "return_30d": 30,
+        "close_vs_sma20": 20,
+        "close_vs_sma50": 50,
+        "return_7d": 7
       },
       "state_thresholds": {
-        "supportive_gte": 62,
-        "pressured_lte": 38,
+        "supportive_gte": 62.0,
+        "pressured_lte": 38.0,
         "otherwise": "MIXED"
       },
-      "direction_source": "COMPLETED_MARKET_DATA_ONLY"
+      "horizon_alignment_required": "3_OF_4",
+      "direction_source": "COMPLETED_MARKET_DATA_ONLY",
+      "directional_gate": "Raw SUPPORTIVE/PRESSURED becomes effective directional state only when alignment is confirmed and no extension/exhaustion guardrail blocks it."
+    },
+    "exhaustion_guardrails": {
+      "downside": "Raw PRESSURED score <=20 while 90-day drawdown <=-30% suppresses directional eligibility.",
+      "upside": "Raw SUPPORTIVE score >=80 while within 5% of 90-day high suppresses directional eligibility.",
+      "purpose": "Reduce false confidence at extreme extension; not selected by maximizing the consumed holdout."
     },
     "evidence_readiness": {
       "weights": {
@@ -40,15 +48,26 @@
         "network_telemetry_readiness": 0.2,
         "regulatory_source_readiness": 0.35
       },
-      "network_policy": "READY=100, NOT_APPLICABLE=75, DEFERRED=60, ERROR=20; network metrics themselves are not cross-chain scored"
+      "directional_policy": "Evidence readiness does not vote bullish/bearish."
     },
     "decision_readiness": {
       "weights": {
-        "market_data_quality": 0.2,
+        "market_data_quality": 0.18,
         "market_freshness": 0.15,
-        "evidence_readiness": 0.25,
-        "directional_clarity": 0.25,
-        "market_participation": 0.15
+        "evidence_readiness": 0.22,
+        "directional_clarity": 0.15,
+        "market_participation": 0.1,
+        "horizon_alignment": 0.2
+      },
+      "risk_multipliers": {
+        "LOW": 1.0,
+        "MODERATE": 0.82,
+        "HIGH": 0.6
+      },
+      "guardrail_multipliers": {
+        "extension_or_exhaustion": 0.65,
+        "alignment_not_confirmed": 0.8,
+        "none": 1.0
       },
       "thresholds": {
         "ready_for_review_gte": 70,
@@ -57,19 +76,21 @@
     },
     "decision_risk": {
       "weights": {
-        "volatility": 0.3,
-        "drawdown": 0.2,
-        "one_day_shock": 0.15,
-        "regulatory_uncertainty": 0.15,
+        "volatility": 0.22,
+        "drawdown": 0.14,
+        "one_day_shock": 0.1,
+        "regulatory_uncertainty": 0.14,
         "evidence_gap": 0.1,
-        "horizon_conflict": 0.1
+        "horizon_conflict": 0.12,
+        "reversal_exhaustion": 0.18
       },
       "thresholds": {
         "low_lt": 35,
         "high_gte": 65
-      }
+      },
+      "reversal_exhaustion_component": true
     },
-    "regulatory_policy": "Primary regulatory events can raise uncertainty/risk but are not assigned bullish/bearish direction in 11C."
+    "regulatory_policy": "Primary regulatory events can raise uncertainty/risk but are not assigned bullish/bearish direction."
   },
   "symbols": [
     {
@@ -77,16 +98,41 @@
       "name": "Bitcoin",
       "market_session": "2026-08-18",
       "market_structure": {
-        "score": 52.16,
+        "score": 52.66,
         "state": "MIXED",
+        "raw_state": "MIXED",
+        "directional_eligible": false,
         "components": {
-          "return_30d": 48.95,
-          "close_vs_sma20": 54.11,
-          "close_vs_sma50": 53.07,
-          "return_7d": 53.52
+          "return_30d": 47.98,
+          "close_vs_sma20": 54.64,
+          "close_vs_sma50": 53.66,
+          "return_7d": 56.71
         },
+        "normalized_z": {
+          "return_30d": -0.0807,
+          "close_vs_sma20": 0.1858,
+          "close_vs_sma50": 0.1462,
+          "return_7d": 0.2685
+        },
+        "volatility_scale_annualized_percent": 22.7076,
+        "alignment": {
+          "positive_count": 3,
+          "negative_count": 1,
+          "valid_count": 4,
+          "aligned_count": 3,
+          "required_for_directional_state": 3,
+          "dominant_direction": "POSITIVE",
+          "score": 80.0,
+          "components": {
+            "return_30d": -1,
+            "close_vs_sma20": 1,
+            "close_vs_sma50": 1,
+            "return_7d": 1
+          }
+        },
+        "guardrails": [],
         "completed_session": "2026-08-18",
-        "basis": "COMPLETED_UTC_DAILY_CONTEXT_ONLY"
+        "basis": "COMPLETED_UTC_DAILY_CONTEXT_VOLATILITY_NORMALIZED"
       },
       "evidence_readiness": {
         "score": 100.0,
@@ -103,18 +149,26 @@
         "directional_interpretation": "NOT_ASSIGNED"
       },
       "decision_readiness": {
-        "score": 70.83,
+        "score": 78.3,
+        "base_score_before_risk_guardrails": 78.3,
         "state": "READY_FOR_REVIEW",
+        "directional_gate": "WATCH_ONLY",
         "components": {
           "market_data_quality": 100.0,
           "market_freshness": 100.0,
           "evidence_readiness": 100.0,
-          "directional_clarity": 4.32,
-          "market_participation": 65.0
+          "directional_clarity": 5.32,
+          "market_participation": 65.0,
+          "horizon_alignment": 80.0
+        },
+        "adjustments": {
+          "risk_multiplier": 1.0,
+          "guardrail_multiplier": 1.0,
+          "readiness_is_not_profit_probability": true
         }
       },
       "decision_risk": {
-        "score": 32.58,
+        "score": 31.68,
         "state": "LOW",
         "components": {
           "volatility": 20.0,
@@ -122,7 +176,8 @@
           "one_day_shock": 25.5,
           "regulatory_uncertainty": 60.0,
           "evidence_gap": 20.0,
-          "horizon_conflict": 50.0
+          "horizon_conflict": 50.0,
+          "reversal_exhaustion": 20.0
         },
         "horizon_conflict_count": 1,
         "relevant_regulatory_events": [
@@ -152,7 +207,10 @@
         "status": "MIXED_MARKET_STRUCTURE",
         "decision": "WATCH",
         "market_view": "MIXED",
+        "raw_market_view": "MIXED",
+        "directional_eligible": false,
         "readiness_state": "READY_FOR_REVIEW",
+        "directional_gate": "WATCH_ONLY",
         "risk_state": "LOW",
         "counter_thesis_strength": "MODERATE",
         "buy_sell": "NOT_GENERATED",
@@ -161,7 +219,8 @@
       },
       "provenance": {
         "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
-        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry"
+        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry",
+        "refinement": "Stage 11C v0.2 structural refinement after 11C.4 v0.1 diagnostic findings"
       }
     },
     {
@@ -169,16 +228,41 @@
       "name": "Ethereum",
       "market_session": "2026-08-18",
       "market_structure": {
-        "score": 57.01,
+        "score": 57.86,
         "state": "MIXED",
+        "raw_state": "MIXED",
+        "directional_eligible": false,
         "components": {
-          "return_30d": 55.27,
-          "close_vs_sma20": 55.28,
-          "close_vs_sma50": 59.24,
-          "return_7d": 58.9
+          "return_30d": 57.67,
+          "close_vs_sma20": 54.52,
+          "close_vs_sma50": 58.34,
+          "return_7d": 62.88
         },
+        "normalized_z": {
+          "return_30d": 0.3068,
+          "close_vs_sma20": 0.1807,
+          "close_vs_sma50": 0.3335,
+          "return_7d": 0.5151
+        },
+        "volatility_scale_annualized_percent": 29.9504,
+        "alignment": {
+          "positive_count": 4,
+          "negative_count": 0,
+          "valid_count": 4,
+          "aligned_count": 4,
+          "required_for_directional_state": 3,
+          "dominant_direction": "POSITIVE",
+          "score": 100.0,
+          "components": {
+            "return_30d": 1,
+            "close_vs_sma20": 1,
+            "close_vs_sma50": 1,
+            "return_7d": 1
+          }
+        },
+        "guardrails": [],
         "completed_session": "2026-08-18",
-        "basis": "COMPLETED_UTC_DAILY_CONTEXT_ONLY"
+        "basis": "COMPLETED_UTC_DAILY_CONTEXT_VOLATILITY_NORMALIZED"
       },
       "evidence_readiness": {
         "score": 92.0,
@@ -195,18 +279,26 @@
         "directional_interpretation": "NOT_ASSIGNED"
       },
       "decision_readiness": {
-        "score": 71.25,
+        "score": 82.1,
+        "base_score_before_risk_guardrails": 82.1,
         "state": "READY_FOR_REVIEW",
+        "directional_gate": "WATCH_ONLY",
         "components": {
           "market_data_quality": 100.0,
           "market_freshness": 100.0,
           "evidence_readiness": 92.0,
-          "directional_clarity": 14.02,
-          "market_participation": 65.0
+          "directional_clarity": 15.72,
+          "market_participation": 65.0,
+          "horizon_alignment": 100.0
+        },
+        "adjustments": {
+          "risk_multiplier": 1.0,
+          "guardrail_multiplier": 1.0,
+          "readiness_is_not_profit_probability": true
         }
       },
       "decision_risk": {
-        "score": 26.1,
+        "score": 25.67,
         "state": "LOW",
         "components": {
           "volatility": 20.0,
@@ -214,7 +306,8 @@
           "one_day_shock": 19.72,
           "regulatory_uncertainty": 60.0,
           "evidence_gap": 20.0,
-          "horizon_conflict": 20.0
+          "horizon_conflict": 20.0,
+          "reversal_exhaustion": 20.0
         },
         "horizon_conflict_count": 0,
         "relevant_regulatory_events": [
@@ -240,7 +333,10 @@
         "status": "MIXED_MARKET_STRUCTURE",
         "decision": "WATCH",
         "market_view": "MIXED",
+        "raw_market_view": "MIXED",
+        "directional_eligible": false,
         "readiness_state": "READY_FOR_REVIEW",
+        "directional_gate": "WATCH_ONLY",
         "risk_state": "LOW",
         "counter_thesis_strength": "LOW",
         "buy_sell": "NOT_GENERATED",
@@ -249,7 +345,8 @@
       },
       "provenance": {
         "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
-        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry"
+        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry",
+        "refinement": "Stage 11C v0.2 structural refinement after 11C.4 v0.1 diagnostic findings"
       }
     },
     {
@@ -257,16 +354,41 @@
       "name": "Solana",
       "market_session": "2026-08-18",
       "market_structure": {
-        "score": 52.06,
+        "score": 51.96,
         "state": "MIXED",
+        "raw_state": "MIXED",
+        "directional_eligible": false,
         "components": {
-          "return_30d": 51.19,
-          "close_vs_sma20": 57.68,
-          "close_vs_sma50": 49.26,
-          "return_7d": 50.02
+          "return_30d": 51.72,
+          "close_vs_sma20": 56.56,
+          "close_vs_sma50": 49.33,
+          "return_7d": 50.04
         },
+        "normalized_z": {
+          "return_30d": 0.069,
+          "close_vs_sma20": 0.2623,
+          "close_vs_sma50": -0.0267,
+          "return_7d": 0.0014
+        },
+        "volatility_scale_annualized_percent": 30.0207,
+        "alignment": {
+          "positive_count": 3,
+          "negative_count": 1,
+          "valid_count": 4,
+          "aligned_count": 3,
+          "required_for_directional_state": 3,
+          "dominant_direction": "POSITIVE",
+          "score": 80.0,
+          "components": {
+            "return_30d": 1,
+            "close_vs_sma20": 1,
+            "close_vs_sma50": -1,
+            "return_7d": 1
+          }
+        },
+        "guardrails": [],
         "completed_session": "2026-08-18",
-        "basis": "COMPLETED_UTC_DAILY_CONTEXT_ONLY"
+        "basis": "COMPLETED_UTC_DAILY_CONTEXT_VOLATILITY_NORMALIZED"
       },
       "evidence_readiness": {
         "score": 100.0,
@@ -283,18 +405,26 @@
         "directional_interpretation": "NOT_ASSIGNED"
       },
       "decision_readiness": {
-        "score": 70.78,
+        "score": 78.09,
+        "base_score_before_risk_guardrails": 78.09,
         "state": "READY_FOR_REVIEW",
+        "directional_gate": "WATCH_ONLY",
         "components": {
           "market_data_quality": 100.0,
           "market_freshness": 100.0,
           "evidence_readiness": 100.0,
-          "directional_clarity": 4.12,
-          "market_participation": 65.0
+          "directional_clarity": 3.92,
+          "market_participation": 65.0,
+          "horizon_alignment": 80.0
+        },
+        "adjustments": {
+          "risk_multiplier": 1.0,
+          "guardrail_multiplier": 1.0,
+          "readiness_is_not_profit_probability": true
         }
       },
       "decision_risk": {
-        "score": 29.93,
+        "score": 29.86,
         "state": "LOW",
         "components": {
           "volatility": 20.0,
@@ -302,7 +432,8 @@
           "one_day_shock": 18.45,
           "regulatory_uncertainty": 60.0,
           "evidence_gap": 20.0,
-          "horizon_conflict": 50.0
+          "horizon_conflict": 50.0,
+          "reversal_exhaustion": 20.0
         },
         "horizon_conflict_count": 1,
         "relevant_regulatory_events": [
@@ -328,7 +459,10 @@
         "status": "MIXED_MARKET_STRUCTURE",
         "decision": "WATCH",
         "market_view": "MIXED",
+        "raw_market_view": "MIXED",
+        "directional_eligible": false,
         "readiness_state": "READY_FOR_REVIEW",
+        "directional_gate": "WATCH_ONLY",
         "risk_state": "LOW",
         "counter_thesis_strength": "LOW",
         "buy_sell": "NOT_GENERATED",
@@ -337,7 +471,8 @@
       },
       "provenance": {
         "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
-        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry"
+        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry",
+        "refinement": "Stage 11C v0.2 structural refinement after 11C.4 v0.1 diagnostic findings"
       }
     },
     {
@@ -345,16 +480,41 @@
       "name": "XRP",
       "market_session": "2026-08-18",
       "market_structure": {
-        "score": 36.01,
+        "score": 34.59,
         "state": "PRESSURED",
+        "raw_state": "PRESSURED",
+        "directional_eligible": true,
         "components": {
-          "return_30d": 33.54,
-          "close_vs_sma20": 36.15,
-          "close_vs_sma50": 33.2,
-          "return_7d": 46.33
+          "return_30d": 26.17,
+          "close_vs_sma20": 38.21,
+          "close_vs_sma50": 34.93,
+          "return_7d": 44.71
         },
+        "normalized_z": {
+          "return_30d": -0.9531,
+          "close_vs_sma20": -0.4714,
+          "close_vs_sma50": -0.603,
+          "return_7d": -0.2115
+        },
+        "volatility_scale_annualized_percent": 30.113,
+        "alignment": {
+          "positive_count": 0,
+          "negative_count": 4,
+          "valid_count": 4,
+          "aligned_count": 4,
+          "required_for_directional_state": 3,
+          "dominant_direction": "NEGATIVE",
+          "score": 100.0,
+          "components": {
+            "return_30d": -1,
+            "close_vs_sma20": -1,
+            "close_vs_sma50": -1,
+            "return_7d": -1
+          }
+        },
+        "guardrails": [],
         "completed_session": "2026-08-18",
-        "basis": "COMPLETED_UTC_DAILY_CONTEXT_ONLY"
+        "basis": "COMPLETED_UTC_DAILY_CONTEXT_VOLATILITY_NORMALIZED"
       },
       "evidence_readiness": {
         "score": 100.0,
@@ -371,18 +531,26 @@
         "directional_interpretation": "NOT_ASSIGNED"
       },
       "decision_readiness": {
-        "score": 76.75,
+        "score": 86.12,
+        "base_score_before_risk_guardrails": 86.12,
         "state": "READY_FOR_REVIEW",
+        "directional_gate": "ELIGIBLE_FOR_SELECTIVE_REVIEW",
         "components": {
           "market_data_quality": 100.0,
           "market_freshness": 100.0,
           "evidence_readiness": 100.0,
-          "directional_clarity": 27.98,
-          "market_participation": 65.0
+          "directional_clarity": 30.82,
+          "market_participation": 65.0,
+          "horizon_alignment": 100.0
+        },
+        "adjustments": {
+          "risk_multiplier": 1.0,
+          "guardrail_multiplier": 1.0,
+          "readiness_is_not_profit_probability": true
         }
       },
       "decision_risk": {
-        "score": 30.71,
+        "score": 28.95,
         "state": "LOW",
         "components": {
           "volatility": 20.0,
@@ -390,7 +558,8 @@
           "one_day_shock": 9.63,
           "regulatory_uncertainty": 60.0,
           "evidence_gap": 20.0,
-          "horizon_conflict": 20.0
+          "horizon_conflict": 20.0,
+          "reversal_exhaustion": 20.0
         },
         "horizon_conflict_count": 0,
         "relevant_regulatory_events": [
@@ -420,7 +589,10 @@
         "status": "STRUCTURE_PRESSURED",
         "decision": "REVIEW_SELECTIVELY",
         "market_view": "PRESSURED",
+        "raw_market_view": "PRESSURED",
+        "directional_eligible": true,
         "readiness_state": "READY_FOR_REVIEW",
+        "directional_gate": "ELIGIBLE_FOR_SELECTIVE_REVIEW",
         "risk_state": "LOW",
         "counter_thesis_strength": "MODERATE",
         "buy_sell": "NOT_GENERATED",
@@ -429,7 +601,8 @@
       },
       "provenance": {
         "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
-        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry"
+        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry",
+        "refinement": "Stage 11C v0.2 structural refinement after 11C.4 v0.1 diagnostic findings"
       }
     },
     {
@@ -437,16 +610,41 @@
       "name": "BNB",
       "market_session": "2026-08-18",
       "market_structure": {
-        "score": 59.06,
-        "state": "MIXED",
+        "score": 64.04,
+        "state": "SUPPORTIVE",
+        "raw_state": "SUPPORTIVE",
+        "directional_eligible": true,
         "components": {
-          "return_30d": 62.27,
-          "close_vs_sma20": 56.09,
-          "close_vs_sma50": 60.55,
-          "return_7d": 54.64
+          "return_30d": 73.84,
+          "close_vs_sma20": 56.95,
+          "close_vs_sma50": 62.7,
+          "return_7d": 58.96
         },
+        "normalized_z": {
+          "return_30d": 0.9538,
+          "close_vs_sma20": 0.2782,
+          "close_vs_sma50": 0.5081,
+          "return_7d": 0.3583
+        },
+        "volatility_scale_annualized_percent": 22.4304,
+        "alignment": {
+          "positive_count": 4,
+          "negative_count": 0,
+          "valid_count": 4,
+          "aligned_count": 4,
+          "required_for_directional_state": 3,
+          "dominant_direction": "POSITIVE",
+          "score": 100.0,
+          "components": {
+            "return_30d": 1,
+            "close_vs_sma20": 1,
+            "close_vs_sma50": 1,
+            "return_7d": 1
+          }
+        },
+        "guardrails": [],
         "completed_session": "2026-08-18",
-        "basis": "COMPLETED_UTC_DAILY_CONTEXT_ONLY"
+        "basis": "COMPLETED_UTC_DAILY_CONTEXT_VOLATILITY_NORMALIZED"
       },
       "evidence_readiness": {
         "score": 93.25,
@@ -463,18 +661,26 @@
         "directional_interpretation": "NOT_ASSIGNED"
       },
       "decision_readiness": {
-        "score": 74.84,
+        "score": 85.73,
+        "base_score_before_risk_guardrails": 85.73,
         "state": "READY_FOR_REVIEW",
+        "directional_gate": "ELIGIBLE_FOR_SELECTIVE_REVIEW",
         "components": {
           "market_data_quality": 100.0,
           "market_freshness": 100.0,
           "evidence_readiness": 93.25,
-          "directional_clarity": 18.12,
-          "market_participation": 80.0
+          "directional_clarity": 28.08,
+          "market_participation": 80.0,
+          "horizon_alignment": 100.0
+        },
+        "adjustments": {
+          "risk_multiplier": 1.0,
+          "guardrail_multiplier": 1.0,
+          "readiness_is_not_profit_probability": true
         }
       },
       "decision_risk": {
-        "score": 26.1,
+        "score": 25.75,
         "state": "LOW",
         "components": {
           "volatility": 20.0,
@@ -482,287 +688,8 @@
           "one_day_shock": 5.08,
           "regulatory_uncertainty": 60.0,
           "evidence_gap": 20.0,
-          "horizon_conflict": 20.0
-        },
-        "horizon_conflict_count": 0,
-        "relevant_regulatory_events": [
-          {
-            "source": "SEC",
-            "published_at": "2026-08-18T17:15:48Z",
-            "scope": "CRYPTO_GENERAL",
-            "title": "SEC Proposes New Regulation Crypto Assets"
-          }
-        ]
-      },
-      "counter_thesis": {
-        "status": "ACTIVE",
-        "strength": "LOW",
-        "factors": [
-          {
-            "severity": "MODERATE",
-            "text": "A recent primary regulatory event raises uncertainty; Stage 11C does not assign it a bullish or bearish direction."
-          }
-        ]
-      },
-      "ai_decision_reasoner": {
-        "status": "MIXED_MARKET_STRUCTURE",
-        "decision": "WATCH",
-        "market_view": "MIXED",
-        "readiness_state": "READY_FOR_REVIEW",
-        "risk_state": "LOW",
-        "counter_thesis_strength": "LOW",
-        "buy_sell": "NOT_GENERATED",
-        "profit_probability": "NOT_ESTIMATED",
-        "trade_execution": "OFF"
-      },
-      "provenance": {
-        "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
-        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry"
-      }
-    },
-    {
-      "symbol": "ADA",
-      "name": "Cardano",
-      "market_session": "2026-08-18",
-      "market_structure": {
-        "score": 41.68,
-        "state": "MIXED",
-        "components": {
-          "return_30d": 58.93,
-          "close_vs_sma20": 27.07,
-          "close_vs_sma50": 50.62,
-          "return_7d": 13.68
-        },
-        "completed_session": "2026-08-18",
-        "basis": "COMPLETED_UTC_DAILY_CONTEXT_ONLY"
-      },
-      "evidence_readiness": {
-        "score": 92.0,
-        "state": "READY",
-        "components": {
-          "protocol_freshness": 100.0,
-          "network_telemetry_readiness": 60.0,
-          "regulatory_source_readiness": 100.0
-        },
-        "protocol_status": "READY",
-        "network_status": "DEFERRED",
-        "regulatory_sources_ready": 3,
-        "regulatory_sources_total": 3,
-        "directional_interpretation": "NOT_ASSIGNED"
-      },
-      "decision_readiness": {
-        "score": 69.66,
-        "state": "CONDITIONAL_REVIEW",
-        "components": {
-          "market_data_quality": 100.0,
-          "market_freshness": 100.0,
-          "evidence_readiness": 92.0,
-          "directional_clarity": 16.64,
-          "market_participation": 50.0
-        }
-      },
-      "decision_risk": {
-        "score": 42.81,
-        "state": "MODERATE",
-        "components": {
-          "volatility": 39.95,
-          "drawdown": 57.4,
-          "one_day_shock": 5.63,
-          "regulatory_uncertainty": 60.0,
-          "evidence_gap": 20.0,
-          "horizon_conflict": 75.0
-        },
-        "horizon_conflict_count": 2,
-        "relevant_regulatory_events": [
-          {
-            "source": "SEC",
-            "published_at": "2026-08-18T17:15:48Z",
-            "scope": "CRYPTO_GENERAL",
-            "title": "SEC Proposes New Regulation Crypto Assets"
-          }
-        ]
-      },
-      "counter_thesis": {
-        "status": "ACTIVE",
-        "strength": "MODERATE",
-        "factors": [
-          {
-            "severity": "MODERATE",
-            "text": "7-day and 30-day returns point in opposite directions."
-          },
-          {
-            "severity": "MODERATE",
-            "text": "The asset remains materially below its 90-day high."
-          },
-          {
-            "severity": "MODERATE",
-            "text": "A recent primary regulatory event raises uncertainty; Stage 11C does not assign it a bullish or bearish direction."
-          }
-        ]
-      },
-      "ai_decision_reasoner": {
-        "status": "MIXED_MARKET_STRUCTURE",
-        "decision": "WATCH",
-        "market_view": "MIXED",
-        "readiness_state": "CONDITIONAL_REVIEW",
-        "risk_state": "MODERATE",
-        "counter_thesis_strength": "MODERATE",
-        "buy_sell": "NOT_GENERATED",
-        "profit_probability": "NOT_ESTIMATED",
-        "trade_execution": "OFF"
-      },
-      "provenance": {
-        "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
-        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry"
-      }
-    },
-    {
-      "symbol": "DOGE",
-      "name": "Dogecoin",
-      "market_session": "2026-08-18",
-      "market_structure": {
-        "score": 47.81,
-        "state": "MIXED",
-        "components": {
-          "return_30d": 44.05,
-          "close_vs_sma20": 52.25,
-          "close_vs_sma50": 44.7,
-          "return_7d": 54.13
-        },
-        "completed_session": "2026-08-18",
-        "basis": "COMPLETED_UTC_DAILY_CONTEXT_ONLY"
-      },
-      "evidence_readiness": {
-        "score": 85.25,
-        "state": "READY",
-        "components": {
-          "protocol_freshness": 85.0,
-          "network_telemetry_readiness": 60.0,
-          "regulatory_source_readiness": 100.0
-        },
-        "protocol_status": "READY",
-        "network_status": "DEFERRED",
-        "regulatory_sources_ready": 3,
-        "regulatory_sources_total": 3,
-        "directional_interpretation": "NOT_ASSIGNED"
-      },
-      "decision_readiness": {
-        "score": 64.91,
-        "state": "CONDITIONAL_REVIEW",
-        "components": {
-          "market_data_quality": 100.0,
-          "market_freshness": 100.0,
-          "evidence_readiness": 85.25,
-          "directional_clarity": 4.38,
-          "market_participation": 50.0
-        }
-      },
-      "decision_risk": {
-        "score": 38.7,
-        "state": "MODERATE",
-        "components": {
-          "volatility": 20.41,
-          "drawdown": 62.21,
-          "one_day_shock": 10.9,
-          "regulatory_uncertainty": 60.0,
-          "evidence_gap": 20.0,
-          "horizon_conflict": 75.0
-        },
-        "horizon_conflict_count": 2,
-        "relevant_regulatory_events": [
-          {
-            "source": "SEC",
-            "published_at": "2026-08-18T17:15:48Z",
-            "scope": "CRYPTO_GENERAL",
-            "title": "SEC Proposes New Regulation Crypto Assets"
-          }
-        ]
-      },
-      "counter_thesis": {
-        "status": "ACTIVE",
-        "strength": "MODERATE",
-        "factors": [
-          {
-            "severity": "MODERATE",
-            "text": "7-day and 30-day returns point in opposite directions."
-          },
-          {
-            "severity": "MODERATE",
-            "text": "The asset remains materially below its 90-day high."
-          },
-          {
-            "severity": "MODERATE",
-            "text": "A recent primary regulatory event raises uncertainty; Stage 11C does not assign it a bullish or bearish direction."
-          }
-        ]
-      },
-      "ai_decision_reasoner": {
-        "status": "MIXED_MARKET_STRUCTURE",
-        "decision": "WATCH",
-        "market_view": "MIXED",
-        "readiness_state": "CONDITIONAL_REVIEW",
-        "risk_state": "MODERATE",
-        "counter_thesis_strength": "MODERATE",
-        "buy_sell": "NOT_GENERATED",
-        "profit_probability": "NOT_ESTIMATED",
-        "trade_execution": "OFF"
-      },
-      "provenance": {
-        "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
-        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry"
-      }
-    },
-    {
-      "symbol": "LINK",
-      "name": "Chainlink",
-      "market_session": "2026-08-18",
-      "market_structure": {
-        "score": 89.64,
-        "state": "SUPPORTIVE",
-        "components": {
-          "return_30d": 78.53,
-          "close_vs_sma20": 98.95,
-          "close_vs_sma50": 87.8,
-          "return_7d": 100.0
-        },
-        "completed_session": "2026-08-18",
-        "basis": "COMPLETED_UTC_DAILY_CONTEXT_ONLY"
-      },
-      "evidence_readiness": {
-        "score": 95.0,
-        "state": "READY",
-        "components": {
-          "protocol_freshness": 100.0,
-          "network_telemetry_readiness": 75.0,
-          "regulatory_source_readiness": 100.0
-        },
-        "protocol_status": "READY",
-        "network_status": "NOT_APPLICABLE_NATIVE_CHAIN",
-        "regulatory_sources_ready": 3,
-        "regulatory_sources_total": 3,
-        "directional_interpretation": "NOT_ASSIGNED"
-      },
-      "decision_readiness": {
-        "score": 92.07,
-        "state": "READY_FOR_REVIEW",
-        "components": {
-          "market_data_quality": 100.0,
-          "market_freshness": 100.0,
-          "evidence_readiness": 95.0,
-          "directional_clarity": 79.28,
-          "market_participation": 90.0
-        }
-      },
-      "decision_risk": {
-        "score": 29.06,
-        "state": "LOW",
-        "components": {
-          "volatility": 31.68,
-          "drawdown": 20.0,
-          "one_day_shock": 17.04,
-          "regulatory_uncertainty": 60.0,
-          "evidence_gap": 20.0,
-          "horizon_conflict": 20.0
+          "horizon_conflict": 20.0,
+          "reversal_exhaustion": 20.0
         },
         "horizon_conflict_count": 0,
         "relevant_regulatory_events": [
@@ -788,7 +715,10 @@
         "status": "STRUCTURE_SUPPORTIVE",
         "decision": "REVIEW_SELECTIVELY",
         "market_view": "SUPPORTIVE",
+        "raw_market_view": "SUPPORTIVE",
+        "directional_eligible": true,
         "readiness_state": "READY_FOR_REVIEW",
+        "directional_gate": "ELIGIBLE_FOR_SELECTIVE_REVIEW",
         "risk_state": "LOW",
         "counter_thesis_strength": "LOW",
         "buy_sell": "NOT_GENERATED",
@@ -797,7 +727,402 @@
       },
       "provenance": {
         "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
-        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry"
+        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry",
+        "refinement": "Stage 11C v0.2 structural refinement after 11C.4 v0.1 diagnostic findings"
+      }
+    },
+    {
+      "symbol": "ADA",
+      "name": "Cardano",
+      "market_session": "2026-08-18",
+      "market_structure": {
+        "score": 45.25,
+        "state": "MIXED",
+        "raw_state": "MIXED",
+        "directional_eligible": false,
+        "components": {
+          "return_30d": 57.09,
+          "close_vs_sma20": 39.31,
+          "close_vs_sma50": 50.31,
+          "return_7d": 21.36
+        },
+        "normalized_z": {
+          "return_30d": 0.2834,
+          "close_vs_sma20": -0.4278,
+          "close_vs_sma50": 0.0123,
+          "return_7d": -1.1457
+        },
+        "volatility_scale_annualized_percent": 54.948,
+        "alignment": {
+          "positive_count": 2,
+          "negative_count": 2,
+          "valid_count": 4,
+          "aligned_count": 2,
+          "required_for_directional_state": 3,
+          "dominant_direction": "BALANCED",
+          "score": 50.0,
+          "components": {
+            "return_30d": 1,
+            "close_vs_sma20": -1,
+            "close_vs_sma50": 1,
+            "return_7d": -1
+          }
+        },
+        "guardrails": [],
+        "completed_session": "2026-08-18",
+        "basis": "COMPLETED_UTC_DAILY_CONTEXT_VOLATILITY_NORMALIZED"
+      },
+      "evidence_readiness": {
+        "score": 92.0,
+        "state": "READY",
+        "components": {
+          "protocol_freshness": 100.0,
+          "network_telemetry_readiness": 60.0,
+          "regulatory_source_readiness": 100.0
+        },
+        "protocol_status": "READY",
+        "network_status": "DEFERRED",
+        "regulatory_sources_ready": 3,
+        "regulatory_sources_total": 3,
+        "directional_interpretation": "NOT_ASSIGNED"
+      },
+      "decision_readiness": {
+        "score": 57.12,
+        "base_score_before_risk_guardrails": 69.66,
+        "state": "CONDITIONAL_REVIEW",
+        "directional_gate": "WATCH_ONLY",
+        "components": {
+          "market_data_quality": 100.0,
+          "market_freshness": 100.0,
+          "evidence_readiness": 92.0,
+          "directional_clarity": 9.5,
+          "market_participation": 50.0,
+          "horizon_alignment": 50.0
+        },
+        "adjustments": {
+          "risk_multiplier": 0.82,
+          "guardrail_multiplier": 1.0,
+          "readiness_is_not_profit_probability": true
+        }
+      },
+      "decision_risk": {
+        "score": 40.39,
+        "state": "MODERATE",
+        "components": {
+          "volatility": 39.95,
+          "drawdown": 57.4,
+          "one_day_shock": 5.63,
+          "regulatory_uncertainty": 60.0,
+          "evidence_gap": 20.0,
+          "horizon_conflict": 75.0,
+          "reversal_exhaustion": 20.0
+        },
+        "horizon_conflict_count": 2,
+        "relevant_regulatory_events": [
+          {
+            "source": "SEC",
+            "published_at": "2026-08-18T17:15:48Z",
+            "scope": "CRYPTO_GENERAL",
+            "title": "SEC Proposes New Regulation Crypto Assets"
+          }
+        ]
+      },
+      "counter_thesis": {
+        "status": "ACTIVE",
+        "strength": "MODERATE",
+        "factors": [
+          {
+            "severity": "MODERATE",
+            "text": "7-day and 30-day returns point in opposite directions."
+          },
+          {
+            "severity": "MODERATE",
+            "text": "The asset remains materially below its 90-day high."
+          },
+          {
+            "severity": "MODERATE",
+            "text": "A recent primary regulatory event raises uncertainty; Stage 11C does not assign it a bullish or bearish direction."
+          }
+        ]
+      },
+      "ai_decision_reasoner": {
+        "status": "MIXED_MARKET_STRUCTURE",
+        "decision": "WATCH",
+        "market_view": "MIXED",
+        "raw_market_view": "MIXED",
+        "directional_eligible": false,
+        "readiness_state": "CONDITIONAL_REVIEW",
+        "directional_gate": "WATCH_ONLY",
+        "risk_state": "MODERATE",
+        "counter_thesis_strength": "MODERATE",
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF"
+      },
+      "provenance": {
+        "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
+        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry",
+        "refinement": "Stage 11C v0.2 structural refinement after 11C.4 v0.1 diagnostic findings"
+      }
+    },
+    {
+      "symbol": "DOGE",
+      "name": "Dogecoin",
+      "market_session": "2026-08-18",
+      "market_structure": {
+        "score": 47.76,
+        "state": "MIXED",
+        "raw_state": "MIXED",
+        "directional_eligible": false,
+        "components": {
+          "return_30d": 42.68,
+          "close_vs_sma20": 51.63,
+          "close_vs_sma50": 45.96,
+          "return_7d": 55.05
+        },
+        "normalized_z": {
+          "return_30d": -0.2929,
+          "close_vs_sma20": 0.065,
+          "close_vs_sma50": -0.1617,
+          "return_7d": 0.202
+        },
+        "volatility_scale_annualized_percent": 35.4142,
+        "alignment": {
+          "positive_count": 2,
+          "negative_count": 2,
+          "valid_count": 4,
+          "aligned_count": 2,
+          "required_for_directional_state": 3,
+          "dominant_direction": "BALANCED",
+          "score": 50.0,
+          "components": {
+            "return_30d": -1,
+            "close_vs_sma20": 1,
+            "close_vs_sma50": -1,
+            "return_7d": 1
+          }
+        },
+        "guardrails": [],
+        "completed_session": "2026-08-18",
+        "basis": "COMPLETED_UTC_DAILY_CONTEXT_VOLATILITY_NORMALIZED"
+      },
+      "evidence_readiness": {
+        "score": 85.25,
+        "state": "READY",
+        "components": {
+          "protocol_freshness": 85.0,
+          "network_telemetry_readiness": 60.0,
+          "regulatory_source_readiness": 100.0
+        },
+        "protocol_status": "READY",
+        "network_status": "DEFERRED",
+        "regulatory_sources_ready": 3,
+        "regulatory_sources_total": 3,
+        "directional_interpretation": "NOT_ASSIGNED"
+      },
+      "decision_readiness": {
+        "score": 55.29,
+        "base_score_before_risk_guardrails": 67.43,
+        "state": "CONDITIONAL_REVIEW",
+        "directional_gate": "WATCH_ONLY",
+        "components": {
+          "market_data_quality": 100.0,
+          "market_freshness": 100.0,
+          "evidence_readiness": 85.25,
+          "directional_clarity": 4.48,
+          "market_participation": 50.0,
+          "horizon_alignment": 50.0
+        },
+        "adjustments": {
+          "risk_multiplier": 0.82,
+          "guardrail_multiplier": 1.0,
+          "readiness_is_not_profit_probability": true
+        }
+      },
+      "decision_risk": {
+        "score": 37.29,
+        "state": "MODERATE",
+        "components": {
+          "volatility": 20.41,
+          "drawdown": 62.21,
+          "one_day_shock": 10.9,
+          "regulatory_uncertainty": 60.0,
+          "evidence_gap": 20.0,
+          "horizon_conflict": 75.0,
+          "reversal_exhaustion": 20.0
+        },
+        "horizon_conflict_count": 2,
+        "relevant_regulatory_events": [
+          {
+            "source": "SEC",
+            "published_at": "2026-08-18T17:15:48Z",
+            "scope": "CRYPTO_GENERAL",
+            "title": "SEC Proposes New Regulation Crypto Assets"
+          }
+        ]
+      },
+      "counter_thesis": {
+        "status": "ACTIVE",
+        "strength": "MODERATE",
+        "factors": [
+          {
+            "severity": "MODERATE",
+            "text": "7-day and 30-day returns point in opposite directions."
+          },
+          {
+            "severity": "MODERATE",
+            "text": "The asset remains materially below its 90-day high."
+          },
+          {
+            "severity": "MODERATE",
+            "text": "A recent primary regulatory event raises uncertainty; Stage 11C does not assign it a bullish or bearish direction."
+          }
+        ]
+      },
+      "ai_decision_reasoner": {
+        "status": "MIXED_MARKET_STRUCTURE",
+        "decision": "WATCH",
+        "market_view": "MIXED",
+        "raw_market_view": "MIXED",
+        "directional_eligible": false,
+        "readiness_state": "CONDITIONAL_REVIEW",
+        "directional_gate": "WATCH_ONLY",
+        "risk_state": "MODERATE",
+        "counter_thesis_strength": "MODERATE",
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF"
+      },
+      "provenance": {
+        "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
+        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry",
+        "refinement": "Stage 11C v0.2 structural refinement after 11C.4 v0.1 diagnostic findings"
+      }
+    },
+    {
+      "symbol": "LINK",
+      "name": "Chainlink",
+      "market_session": "2026-08-18",
+      "market_structure": {
+        "score": 78.78,
+        "state": "SUPPORTIVE",
+        "raw_state": "SUPPORTIVE",
+        "directional_eligible": true,
+        "components": {
+          "return_30d": 76.65,
+          "close_vs_sma20": 76.88,
+          "close_vs_sma50": 71.88,
+          "return_7d": 100.0
+        },
+        "normalized_z": {
+          "return_30d": 1.0661,
+          "close_vs_sma20": 1.075,
+          "close_vs_sma50": 0.875,
+          "return_7d": 2.3233
+        },
+        "volatility_scale_annualized_percent": 46.6799,
+        "alignment": {
+          "positive_count": 4,
+          "negative_count": 0,
+          "valid_count": 4,
+          "aligned_count": 4,
+          "required_for_directional_state": 3,
+          "dominant_direction": "POSITIVE",
+          "score": 100.0,
+          "components": {
+            "return_30d": 1,
+            "close_vs_sma20": 1,
+            "close_vs_sma50": 1,
+            "return_7d": 1
+          }
+        },
+        "guardrails": [],
+        "completed_session": "2026-08-18",
+        "basis": "COMPLETED_UTC_DAILY_CONTEXT_VOLATILITY_NORMALIZED"
+      },
+      "evidence_readiness": {
+        "score": 95.0,
+        "state": "READY",
+        "components": {
+          "protocol_freshness": 100.0,
+          "network_telemetry_readiness": 75.0,
+          "regulatory_source_readiness": 100.0
+        },
+        "protocol_status": "READY",
+        "network_status": "NOT_APPLICABLE_NATIVE_CHAIN",
+        "regulatory_sources_ready": 3,
+        "regulatory_sources_total": 3,
+        "directional_interpretation": "NOT_ASSIGNED"
+      },
+      "decision_readiness": {
+        "score": 91.53,
+        "base_score_before_risk_guardrails": 91.53,
+        "state": "READY_FOR_REVIEW",
+        "directional_gate": "ELIGIBLE_FOR_SELECTIVE_REVIEW",
+        "components": {
+          "market_data_quality": 100.0,
+          "market_freshness": 100.0,
+          "evidence_readiness": 95.0,
+          "directional_clarity": 57.56,
+          "market_participation": 90.0,
+          "horizon_alignment": 100.0
+        },
+        "adjustments": {
+          "risk_multiplier": 1.0,
+          "guardrail_multiplier": 1.0,
+          "readiness_is_not_profit_probability": true
+        }
+      },
+      "decision_risk": {
+        "score": 27.87,
+        "state": "LOW",
+        "components": {
+          "volatility": 31.68,
+          "drawdown": 20.0,
+          "one_day_shock": 17.04,
+          "regulatory_uncertainty": 60.0,
+          "evidence_gap": 20.0,
+          "horizon_conflict": 20.0,
+          "reversal_exhaustion": 20.0
+        },
+        "horizon_conflict_count": 0,
+        "relevant_regulatory_events": [
+          {
+            "source": "SEC",
+            "published_at": "2026-08-18T17:15:48Z",
+            "scope": "CRYPTO_GENERAL",
+            "title": "SEC Proposes New Regulation Crypto Assets"
+          }
+        ]
+      },
+      "counter_thesis": {
+        "status": "ACTIVE",
+        "strength": "LOW",
+        "factors": [
+          {
+            "severity": "MODERATE",
+            "text": "A recent primary regulatory event raises uncertainty; Stage 11C does not assign it a bullish or bearish direction."
+          }
+        ]
+      },
+      "ai_decision_reasoner": {
+        "status": "STRUCTURE_SUPPORTIVE",
+        "decision": "REVIEW_SELECTIVELY",
+        "market_view": "SUPPORTIVE",
+        "raw_market_view": "SUPPORTIVE",
+        "directional_eligible": true,
+        "readiness_state": "READY_FOR_REVIEW",
+        "directional_gate": "ELIGIBLE_FOR_SELECTIVE_REVIEW",
+        "risk_state": "LOW",
+        "counter_thesis_strength": "LOW",
+        "buy_sell": "NOT_GENERATED",
+        "profit_probability": "NOT_ESTIMATED",
+        "trade_execution": "OFF"
+      },
+      "provenance": {
+        "market_data": "Stage 11A CoinGecko keyed server-side completed UTC context",
+        "evidence": "Stage 11B curated protocol/core repositories + SEC/CFTC + approved chain-specific telemetry",
+        "refinement": "Stage 11C v0.2 structural refinement after 11C.4 v0.1 diagnostic findings"
       }
     }
   ],
@@ -814,6 +1139,24 @@
     "backtest_required_before_freeze": true,
     "pre_freeze_cross_check_required": true,
     "model_is_unfrozen": true,
-    "trade_execution": "OFF"
+    "trade_execution": "OFF",
+    "v01_diagnostic_holdout_is_consumed": true,
+    "v02_requires_new_diagnostic_retest": true,
+    "no_freeze_before_v02_retest_and_11c5": true
+  },
+  "refinement": {
+    "decision": "REFINE_AFTER_11C4_V01",
+    "source_backtest_generated_at": "2026-08-19T07:17:33.085176Z",
+    "source_backtest_model_methodology_sha256": "2e58009070741bf6e2cb4c2b0c3b7dff154c5b8250651bc0963a15eef00b7be4",
+    "consumed_historical_holdout": true,
+    "optimization_policy": "STRUCTURAL_REFINEMENT_ONLY_NO_BEST_THRESHOLD_SELECTION",
+    "changes": [
+      "Volatility-normalized directional components replace fixed percent spans.",
+      "At least 3 of 4 market horizons must align before a directional state is eligible.",
+      "Extreme downside inside deep drawdown triggers a reversal/exhaustion guardrail.",
+      "A symmetric upside-extension guardrail suppresses extreme trend confidence near the 90-day high.",
+      "Decision Readiness is explicitly reduced by risk and active guardrails.",
+      "Decision Risk includes reversal/exhaustion risk."
+    ]
   }
 }
