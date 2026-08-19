@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "status": "MULTI_ASSET_SOURCE_POLICY_ACTIVE",
   "principles": {
     "market_data_separate_from_news": true,
@@ -27,10 +27,10 @@
     },
     {
       "tier": "C",
-      "label": "Reputable Financial Press",
+      "label": "Reputable Financial Press / Independent Market Aggregation",
       "trust_weight": 85,
-      "examples": ["Financial Times", "Wall Street Journal", "CNBC"],
-      "policy": "Strong contextual evidence; material claims should be cross-checked against primary sources or another independent high-quality source."
+      "examples": ["Financial Times", "Wall Street Journal", "CNBC", "CoinGecko market aggregation"],
+      "policy": "Strong market/context evidence; cannot substitute for primary-source authority on official events."
     },
     {
       "tier": "D",
@@ -64,11 +64,10 @@
     },
     "stocks": {
       "label": "Stocks",
-      "production_status": "SOURCE_ONBOARDING",
+      "production_status": "LIVE_FROZEN_PROSPECTIVE",
       "market_data": [
-        {"name": "SEC EDGAR", "tier": "A", "role": "filings, XBRL fundamentals and material disclosures", "status": "READY_NO_KEY"},
-        {"name": "Nasdaq Data Link", "tier": "A", "role": "licensed/free market datasets depending dataset", "status": "PLANNED"},
-        {"name": "Alpha Vantage", "tier": "C", "role": "quote/time-series adapter where licensing permits", "status": "PLANNED_SERVER_SIDE_KEY"}
+        {"name": "SEC EDGAR", "tier": "A", "role": "filings, XBRL fundamentals and material disclosures", "status": "ACTIVE"},
+        {"name": "Alpha Vantage", "tier": "C", "role": "daily market-data adapter", "status": "ACTIVE_SERVER_SIDE_KEY"}
       ],
       "news": [
         {"name": "SEC filings and company Investor Relations", "tier": "A", "status": "PREFERRED"},
@@ -80,18 +79,26 @@
     },
     "crypto": {
       "label": "Crypto",
-      "production_status": "SOURCE_ONBOARDING",
+      "production_status": "STAGE_11A_READY_TO_ACTIVATE",
       "market_data": [
-        {"name": "CoinGecko", "tier": "C", "role": "independent aggregated crypto market data", "status": "PLANNED_SERVER_SIDE_KEY"},
-        {"name": "Official chain/project sources", "tier": "A", "role": "protocol releases and governance events", "status": "PLANNED"}
+        {"name": "CoinGecko Demo/Pro API", "tier": "C", "role": "keyed aggregated spot, market-cap, volume and historical market context", "status": "ADAPTER_READY_KEY_REQUIRED"},
+        {"name": "CoinGecko keyless public pool", "tier": "C", "role": "light experimentation only", "status": "NOT_USED_BY_STAGE_11A_PIPELINE"},
+        {"name": "Official chain/project sources", "tier": "A", "role": "protocol releases, governance and official project events", "status": "PLANNED_11B"},
+        {"name": "SEC / CFTC / other relevant regulators", "tier": "A", "role": "regulatory and enforcement evidence", "status": "PLANNED_11B"}
       ],
       "news": [
-        {"name": "SEC / CFTC / official regulators", "tier": "A", "status": "PREFERRED"},
-        {"name": "Official project or foundation releases", "tier": "A", "status": "PREFERRED"},
+        {"name": "SEC / CFTC / official regulators", "tier": "A", "status": "PREFERRED_11B"},
+        {"name": "Official project or foundation releases", "tier": "A", "status": "PREFERRED_11B"},
         {"name": "Reuters", "tier": "B", "status": "LICENSE_REQUIRED"},
         {"name": "Bloomberg", "tier": "B", "status": "LICENSE_REQUIRED"},
-        {"name": "Alpha Vantage News & Sentiment", "tier": "D", "status": "DISCOVERY_ONLY"}
-      ]
+        {"name": "Alpha Vantage News & Sentiment", "tier": "D", "status": "DISCOVERY_ONLY_FINAL_NEWS_LAYER"}
+      ],
+      "governance": {
+        "coin_gecko_is_market_data_not_official_event_authority": true,
+        "backtest_required_before_freeze": true,
+        "pre_freeze_cross_check_required": true,
+        "freeze_status": "BLOCKED"
+      }
     },
     "gold": {
       "label": "Gold",

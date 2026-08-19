@@ -1,0 +1,28 @@
+{
+  "version": "0.1",
+  "status": "CRYPTO_MARKET_ADAPTER_NOT_RUN",
+  "scope": "MAJOR_LIQUID_CRYPTO_ASSETS_V1",
+  "generated_at": null,
+  "provider": {
+    "name": "CoinGecko",
+    "mode": "KEYED_SERVER_SIDE",
+    "api_mode": null,
+    "raw_series_published": false
+  },
+  "market_clock": {
+    "market": "24_7",
+    "completed_daily_session_basis": "UTC_DAY",
+    "latest_completed_session": null
+  },
+  "global_market": null,
+  "assets": [],
+  "errors": [],
+  "guardrails": {
+    "market_data_only": true,
+    "news_not_included": true,
+    "official_protocol_and_regulatory_evidence_deferred_to_11B": true,
+    "no_buy_sell": true,
+    "no_profit_probability": true,
+    "trade_execution": "OFF"
+  }
+}

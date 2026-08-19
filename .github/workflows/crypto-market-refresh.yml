@@ -1,0 +1,44 @@
+name: Refresh Crypto Market Data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '25 0 * * *'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: crypto-market-refresh
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      COINGECKO_DEMO_API_KEY: ${{ secrets.COINGECKO_DEMO_API_KEY }}
+      COINGECKO_PRO_API_KEY: ${{ secrets.COINGECKO_PRO_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Build Stage 11A Crypto Market Data
+        run: python scripts/build-crypto-market.py
+
+      - name: Commit Crypto market data when changed
+        run: |
+          if git diff --quiet -- data/crypto-market-data.json; then
+            echo "No Crypto market-data changes."
+            exit 0
+          fi
+          git config user.name "best-currency-ai-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/crypto-market-data.json
+          git commit -m "data: refresh crypto market context"
+          git push
