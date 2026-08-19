@@ -20,7 +20,7 @@ import urllib.parse
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Tuple
+from typing import Any, Dict, List, Optional
 
 ROOT = Path(__file__).resolve().parents[1]
 UNIVERSE_PATH = ROOT / "data" / "crypto-universe.json"
@@ -45,6 +45,8 @@ HEADERS = {
     "User-Agent": "Best-Currency-AI/Stage11A",
     **AUTH_HEADER,
 }
+MIN_REQUEST_INTERVAL_SECONDS = 2.2 if API_MODE == "DEMO" else 0.15
+_LAST_REQUEST_AT = 0.0
 
 
 def now_utc() -> datetime:
@@ -55,11 +57,20 @@ def iso_now() -> str:
     return now_utc().isoformat().replace("+00:00", "Z")
 
 
+def throttle() -> None:
+    global _LAST_REQUEST_AT
+    wait = (_LAST_REQUEST_AT + MIN_REQUEST_INTERVAL_SECONDS) - time.monotonic()
+    if wait > 0:
+        time.sleep(wait)
+    _LAST_REQUEST_AT = time.monotonic()
+
+
 def fetch_json(path: str, params: Optional[Dict[str, Any]] = None, retries: int = 4) -> Any:
     qs = urllib.parse.urlencode(params or {}, doseq=True)
     url = f"{BASE_URL}{path}" + (f"?{qs}" if qs else "")
     last_error: Optional[Exception] = None
     for attempt in range(retries):
+        throttle()
         req = urllib.request.Request(url, headers=HEADERS)
         try:
             with urllib.request.urlopen(req, timeout=30) as res:
@@ -71,7 +82,7 @@ def fetch_json(path: str, params: Optional[Dict[str, Any]] = None, retries: int 
                 continue
             body = exc.read().decode("utf-8", errors="replace")[:300]
             raise RuntimeError(f"CoinGecko HTTP {exc.code}: {body}") from exc
-        except Exception as exc:  # network/transient
+        except Exception as exc:
             last_error = exc
             time.sleep(min(12, 2 ** attempt))
     raise RuntimeError(f"CoinGecko request failed after retries: {last_error}")
@@ -253,7 +264,6 @@ def main() -> int:
             )
         except Exception as exc:
             errors.append({"asset": asset_id, "error": str(exc)[:500]})
-        time.sleep(0.8)
 
     status = "CRYPTO_MARKET_DATA_READY" if len(output_assets) == len(ids) and not errors else ("PARTIAL" if output_assets else "FAILED")
     latest_session = max(sessions) if sessions else None
@@ -268,6 +278,7 @@ def main() -> int:
             "api_mode": API_MODE,
             "base_url": BASE_URL,
             "raw_series_published": False,
+            "demo_rate_limit_guard": "<= approximately 28 requests/minute" if API_MODE == "DEMO" else None,
         },
         "market_clock": {
             "market": "24_7",
