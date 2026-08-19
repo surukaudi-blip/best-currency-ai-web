@@ -28,11 +28,13 @@
         const key=step.querySelector('.stepN')&&step.querySelector('.stepN').textContent.trim();
         const h=step.querySelector('h3');
         if(key==='11B'&&h)h.textContent='Protocol, On-Chain & Regulatory Evidence · COMPLETE';
-        if(key==='11C'&&h)h.textContent='Crypto Decision Intelligence · NEXT';
+        if(key==='11C'&&h&&!window.__BC_CRYPTO_DECISION_READY__)h.textContent='Crypto Decision Intelligence · NEXT';
       });
     }
-    const s=document.getElementById('ce11cStatus');const n=document.getElementById('ce11cNote');
-    if(s){s.textContent='NEXT';s.classList.add('ce-ready')}if(n)n.textContent='11A + 11B verified · still unfrozen';
+    if(!window.__BC_CRYPTO_DECISION_READY__){
+      const s=document.getElementById('ce11cStatus'),n=document.getElementById('ce11cNote');
+      if(s){s.textContent='NEXT';s.classList.add('ce-ready')}if(n)n.textContent='11A + 11B verified · still unfrozen';
+    }
   };
   fetch('./data/crypto-evidence.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}).then(d=>{
     const c=d.coverage||{};document.getElementById('ceProtocol').textContent=(c.protocol_assets_ready??0)+'/'+(c.protocol_assets_total??8);document.getElementById('ceRegs').textContent=(c.regulatory_sources_ready??0)+'/'+(c.regulatory_sources_total??3);document.getElementById('ceEvents').textContent=c.regulatory_events_matched??0;document.getElementById('ceNetwork').textContent=(c.network_assets_ready??0)+'/'+(c.network_enabled_sources_total??0)+' enabled';
