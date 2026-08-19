@@ -1,17 +1,17 @@
 (function(){
-  var nav=document.querySelector('.analysis-nav');
-  if(nav && !document.getElementById('market-tools-nav')){
-    var link=document.createElement('a');
-    link.id='market-tools-nav';
-    link.href='markets.html';
-    link.textContent='Market Tools';
-    link.title='Forex, Stocks, dan Crypto Intelligence';
-    var freeze=nav.querySelector('.analysis-freeze');
-    if(freeze) nav.insertBefore(link,freeze); else nav.appendChild(link);
-  }
+  var navScript=document.createElement('script');
+  navScript.src='asset-nav.js?v=20260819-asset-first';
+  navScript.async=false;
+  document.body.appendChild(navScript);
 
   var core=document.createElement('script');
   core.src='beta-program-core.js?v=20260819-market-tools';
   core.async=false;
+  core.onload=function(){
+    var refresh=document.createElement('script');
+    refresh.src='asset-nav.js?v=20260819-asset-first-2';
+    refresh.async=false;
+    document.body.appendChild(refresh);
+  };
   document.body.appendChild(core);
 })();
