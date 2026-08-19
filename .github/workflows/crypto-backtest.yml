@@ -26,8 +26,8 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Run Stage 11C.4 historical backtest
-        run: python scripts/build-crypto-backtest.py
+      - name: Run Stage 11C.4 historical backtest with production parity
+        run: python scripts/build-crypto-backtest-safe.py
 
       - name: Commit aggregated backtest diagnostics when changed
         run: |
