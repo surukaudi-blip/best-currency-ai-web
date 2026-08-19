@@ -1,0 +1,127 @@
+{
+  "version": "1.0",
+  "status": "MULTI_ASSET_SOURCE_POLICY_ACTIVE",
+  "principles": {
+    "market_data_separate_from_news": true,
+    "primary_sources_preferred": true,
+    "licensed_publisher_content_only": true,
+    "aggregators_are_discovery_not_authority": true,
+    "single_headline_cannot_confirm_decision": true,
+    "missing_sources_fail_closed": true,
+    "trade_execution": "OFF"
+  },
+  "trust_tiers": [
+    {
+      "tier": "A",
+      "label": "Primary / Official",
+      "trust_weight": 100,
+      "examples": ["central banks", "regulators", "government agencies", "exchanges", "company investor relations", "official project foundations"],
+      "policy": "Eligible to establish a factual event when the source is directly relevant."
+    },
+    {
+      "tier": "B",
+      "label": "Licensed Global Financial Wire",
+      "trust_weight": 95,
+      "examples": ["Reuters", "Bloomberg"],
+      "policy": "Use only through an approved subscription, licensed feed, or permitted API. Never scrape or republish restricted content."
+    },
+    {
+      "tier": "C",
+      "label": "Reputable Financial Press",
+      "trust_weight": 85,
+      "examples": ["Financial Times", "Wall Street Journal", "CNBC"],
+      "policy": "Strong contextual evidence; material claims should be cross-checked against primary sources or another independent high-quality source."
+    },
+    {
+      "tier": "D",
+      "label": "Aggregator / Discovery",
+      "trust_weight": 60,
+      "examples": ["Alpha Vantage News & Sentiment", "Google News RSS"],
+      "policy": "Discovery and breadth only. Cannot independently confirm a material decision or override higher-tier evidence."
+    },
+    {
+      "tier": "E",
+      "label": "Social / Unverified",
+      "trust_weight": 20,
+      "examples": ["social posts", "forums", "anonymous commentary"],
+      "policy": "Monitoring only. Never treated as confirmation without an authoritative source."
+    }
+  ],
+  "assets": {
+    "forex": {
+      "label": "Forex",
+      "production_status": "LIVE",
+      "market_data": [
+        {"name": "ECB via Frankfurter", "tier": "A", "role": "canonical reference-rate strength", "status": "ACTIVE"},
+        {"name": "FRED / Federal Reserve distributed series", "tier": "A", "role": "macro, yield and cross-market context", "status": "ACTIVE"}
+      ],
+      "news": [
+        {"name": "Central banks and official statistics", "tier": "A", "status": "PREFERRED"},
+        {"name": "Reuters", "tier": "B", "status": "LICENSE_REQUIRED"},
+        {"name": "Bloomberg", "tier": "B", "status": "LICENSE_REQUIRED"},
+        {"name": "Google News RSS", "tier": "D", "status": "DISCOVERY_FALLBACK"}
+      ]
+    },
+    "stocks": {
+      "label": "Stocks",
+      "production_status": "SOURCE_ONBOARDING",
+      "market_data": [
+        {"name": "SEC EDGAR", "tier": "A", "role": "filings, XBRL fundamentals and material disclosures", "status": "READY_NO_KEY"},
+        {"name": "Nasdaq Data Link", "tier": "A", "role": "licensed/free market datasets depending dataset", "status": "PLANNED"},
+        {"name": "Alpha Vantage", "tier": "C", "role": "quote/time-series adapter where licensing permits", "status": "PLANNED_SERVER_SIDE_KEY"}
+      ],
+      "news": [
+        {"name": "SEC filings and company Investor Relations", "tier": "A", "status": "PREFERRED"},
+        {"name": "Reuters", "tier": "B", "status": "LICENSE_REQUIRED"},
+        {"name": "Bloomberg", "tier": "B", "status": "LICENSE_REQUIRED"},
+        {"name": "Financial Times / Wall Street Journal / CNBC", "tier": "C", "status": "CONTEXTUAL"},
+        {"name": "Alpha Vantage News & Sentiment", "tier": "D", "status": "DISCOVERY_ONLY"}
+      ]
+    },
+    "crypto": {
+      "label": "Crypto",
+      "production_status": "SOURCE_ONBOARDING",
+      "market_data": [
+        {"name": "CoinGecko", "tier": "C", "role": "independent aggregated crypto market data", "status": "PLANNED_SERVER_SIDE_KEY"},
+        {"name": "Official chain/project sources", "tier": "A", "role": "protocol releases and governance events", "status": "PLANNED"}
+      ],
+      "news": [
+        {"name": "SEC / CFTC / official regulators", "tier": "A", "status": "PREFERRED"},
+        {"name": "Official project or foundation releases", "tier": "A", "status": "PREFERRED"},
+        {"name": "Reuters", "tier": "B", "status": "LICENSE_REQUIRED"},
+        {"name": "Bloomberg", "tier": "B", "status": "LICENSE_REQUIRED"},
+        {"name": "Alpha Vantage News & Sentiment", "tier": "D", "status": "DISCOVERY_ONLY"}
+      ]
+    },
+    "gold": {
+      "label": "Gold",
+      "production_status": "SOURCE_ONBOARDING",
+      "market_data": [
+        {"name": "LBMA Gold Price / ICE Benchmark Administration", "tier": "A", "role": "benchmark reference", "status": "LICENSE_REQUIRED_FOR_PRICING_USE"},
+        {"name": "FRED / Federal Reserve distributed macro series", "tier": "A", "role": "rates, dollar and macro context", "status": "READY"}
+      ],
+      "news": [
+        {"name": "Federal Reserve and official central-bank releases", "tier": "A", "status": "PREFERRED"},
+        {"name": "LBMA / World Gold Council official material", "tier": "A", "status": "CONTEXTUAL"},
+        {"name": "Reuters", "tier": "B", "status": "LICENSE_REQUIRED"},
+        {"name": "Bloomberg", "tier": "B", "status": "LICENSE_REQUIRED"}
+      ]
+    },
+    "oil": {
+      "label": "Oil",
+      "production_status": "SOURCE_ONBOARDING",
+      "market_data": [
+        {"name": "U.S. Energy Information Administration (EIA)", "tier": "A", "role": "prices, inventories, supply and demand", "status": "READY_SERVER_SIDE_KEY"},
+        {"name": "OPEC", "tier": "A", "role": "official production policy and releases", "status": "READY_PUBLIC"},
+        {"name": "International Energy Agency (IEA)", "tier": "A", "role": "oil-market analysis and public report highlights subject to licence", "status": "READY_WITH_LICENCE_GUARDRAIL"},
+        {"name": "FRED", "tier": "A", "role": "macro and selected energy series", "status": "READY_SERVER_SIDE_KEY"}
+      ],
+      "news": [
+        {"name": "EIA / OPEC / IEA official releases", "tier": "A", "status": "PREFERRED"},
+        {"name": "Reuters", "tier": "B", "status": "LICENSE_REQUIRED"},
+        {"name": "Bloomberg", "tier": "B", "status": "LICENSE_REQUIRED"},
+        {"name": "Financial Times / CNBC", "tier": "C", "status": "CONTEXTUAL"}
+      ]
+    }
+  }
+}
