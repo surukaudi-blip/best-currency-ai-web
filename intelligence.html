@@ -41,7 +41,7 @@ footer{margin-top:25px;border-top:1px solid var(--line);padding:28px 0 42px;font
 <script>
 (function(){
 const $=id=>document.getElementById(id);const num=n=>Number.isFinite(Number(n))?Number(n):null;const fmt=n=>num(n)!==null?num(n).toFixed(1):'—';
-function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]));}
+function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
 function cls(s){s=String(s||'').toUpperCase();if(['SUPPORTS','LOW','ACTIONABLE','CONTEXT_CONFIRMED','EVALUATE_SETUP'].includes(s))return'ok';if(['OPPOSES','HIGH','FILTERED','CONTEXT_CONTRADICTED','RISK_CONSTRAINED','DEPRIORITIZE'].includes(s))return'bad';if(['MIXED','NEUTRAL','MODERATE','SELECTIVE','MIXED_CONTEXT','REVIEW_SELECTIVELY','WAIT_FOR_CONTEXT'].includes(s))return'warn';return'neutral'}
 function badge(el,text,state){el.textContent=String(text||'—').replaceAll('_',' ');el.className='badge '+cls(state||text)}
 function labelDecision(x){return({EVALUATE_SETUP:'EVALUATE SETUP',REVIEW_SELECTIVELY:'REVIEW SELECTIVELY',DEPRIORITIZE:'DEPRIORITIZE',WAIT_FOR_CONTEXT:'WAIT FOR CONTEXT'})[x]||String(x||'—').replaceAll('_',' ')}
