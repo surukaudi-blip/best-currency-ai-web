@@ -1,0 +1,27 @@
+{
+  "version": "2.0",
+  "status": "CRYPTO_V02_RETEST_NOT_RUN",
+  "scope": "MAJOR_LIQUID_CRYPTO_ASSETS_V1",
+  "generated_at": null,
+  "model_version": "0.2",
+  "prior_diagnostic_artifact": "data/crypto-backtest.json",
+  "prior_holdout_status": "CONSUMED",
+  "guardrails": {
+    "diagnostic_only": true,
+    "no_lookahead": true,
+    "no_best_threshold_selection": true,
+    "same_historical_window_is_not_untouched_holdout": true,
+    "fresh_oos_remains_primary_validation": true,
+    "no_buy_sell": true,
+    "trade_execution": "OFF"
+  },
+  "summary": null,
+  "development": null,
+  "reused_diagnostic_window": null,
+  "per_asset": [],
+  "regimes": {},
+  "guardrail_diagnostics": {},
+  "failure_cases": [],
+  "diagnostic_flags": [],
+  "next_gate": "RUN_V02_RETEST_THEN_11C5_REVIEW"
+}
