@@ -1,5 +1,5 @@
 {
-  "version": "2.0",
+  "version": "2.1",
   "updated_at": "2026-08-19",
   "principles": [
     "Do not fabricate unavailable market data.",
@@ -34,9 +34,9 @@
       "steps": [
         {"id": "11A", "name": "Crypto Market Data & Source Adapter", "status": "COMPLETE", "output": "Keyed CoinGecko Demo market snapshot, global context, and derived metrics from completed UTC daily observations; 8/8 initial assets READY; raw historical series not republished"},
         {"id": "11B", "name": "Protocol, On-Chain & Regulatory Evidence", "status": "COMPLETE", "output": "Operationally verified: 8/8 curated protocol/core repositories, 3/3 SEC/CFTC primary regulatory feeds, 4/4 explicitly enabled network endpoints, deferred/N/A telemetry preserved without imputation, and no universal on-chain score"},
-        {"id": "11C", "name": "Crypto Decision Intelligence", "status": "READY_TO_ACTIVATE", "output": "Experimental pre-validation engine combining completed market structure with evidence readiness, Decision Readiness, Decision Risk, Counter-Thesis and AI Decision Reasoner; protocol/regulatory/network evidence is not used as a forced directional vote; model remains unfrozen"},
-        {"id": "11C.4", "name": "Historical Backtest", "status": "BLOCKED_UNTIL_11C_VERIFIED", "output": "Mandatory diagnostic backtest with no look-ahead leakage, test-set tuning or outcome optimization"},
-        {"id": "11C.5", "name": "Pre-Freeze Cross-Check & Model QA", "status": "MANDATORY_AFTER_BACKTEST", "output": "Cross-check data integrity, thresholds, weights, risk, counter-thesis, regime stability and failure cases before any freeze decision"},
+        {"id": "11C", "name": "Crypto Decision Intelligence", "status": "COMPLETE", "output": "Operationally verified across 8/8 assets: explainable Market View, Evidence Readiness, Decision Readiness, Decision Risk, Counter-Thesis and AI Decision Reasoner; model remains experimental, pre-validation and unfrozen; no BUY/SELL or profit probability"},
+        {"id": "11C.4", "name": "Historical Backtest", "status": "NEXT", "output": "Mandatory diagnostic backtest with no look-ahead leakage, test-set tuning or outcome optimization; evaluate state distribution, forward outcomes, regime stability and failure cases"},
+        {"id": "11C.5", "name": "Pre-Freeze Cross-Check & Model QA", "status": "BLOCKED_UNTIL_BACKTEST_COMPLETE", "output": "Cross-check data integrity, thresholds, weights, risk, counter-thesis, regime stability and failure cases before any freeze decision"},
         {"id": "11D", "name": "Freeze, Watch, Timeline & Fresh OOS", "status": "BLOCKED_UNTIL_C4_C5_PASS"}
       ]
     },
