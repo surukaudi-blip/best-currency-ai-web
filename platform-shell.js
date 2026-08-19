@@ -98,21 +98,38 @@
     document.body.appendChild(plugin);
   }
 
+  if(current==='markets.html'){
+    const pills=[...document.querySelectorAll('.heroMeta .pill')];
+    const stocksPill=pills.find(x=>x.textContent.trim().startsWith('Stocks'));
+    if(stocksPill)stocksPill.textContent='Stocks · LIVE · MODEL FROZEN';
+    const assets=[...document.querySelectorAll('.asset')];
+    const stockCard=assets.find(x=>x.querySelector('.assetName')&&x.querySelector('.assetName').textContent.trim()==='Stocks');
+    if(stockCard){
+      const role=stockCard.querySelector('.assetRole');if(role)role.textContent='SEC evidence + daily market data + frozen decision intelligence';
+      const badge=stockCard.querySelector('.badge');if(badge){badge.textContent='STAGE 10 COMPLETE';badge.classList.remove('statusBuild');badge.classList.add('statusLive')}
+      const metric=stockCard.querySelector('.metric');if(metric)metric.textContent='FROZEN · ACTIVE';
+      const sub=stockCard.querySelector('.sub');if(sub)sub.textContent='Decision Watch, immutable Timeline, and Fresh OOS monitoring';
+      const sources=stockCard.querySelectorAll('.source');
+      if(sources[1]){const b=sources[1].querySelector('b');const s=sources[1].querySelector('span');if(b)b.textContent='Alpha Vantage + 10C/10D';if(s)s.textContent='Daily OHLCV · frozen reasoning · prospective validation'}
+      const action=stockCard.querySelector('.action');if(action){action.textContent='Open Stocks Intelligence →';action.insertAdjacentHTML('afterend','<br><a class="action" href="stocks-observability.html">Open Stocks Observability →</a>')}
+    }
+  }
+
   if(current==='index.html'&&!embeddedDemo){
     const eyebrow=document.querySelector('.hero .eyebrow');if(eyebrow)eyebrow.textContent='Explainable AI Intelligence for Global Markets';
     const h1=document.querySelector('.hero h1');if(h1)h1.textContent='Know what is moving markets — and what could invalidate the view.';
-    const heroP=document.querySelector('.hero p');if(heroP)heroP.textContent='One explainable decision-intelligence platform expanding across Forex, Stocks, Crypto, Gold, and Oil. Forex is the first live vertical; Stocks is now building its SEC-first official evidence layer, and every market must pass source-integrity, risk, counter-thesis, auditability, and prospective-validation guardrails before promotion.';
+    const heroP=document.querySelector('.hero p');if(heroP)heroP.textContent='One explainable decision-intelligence platform expanding across Forex, Stocks, Crypto, Gold, and Oil. Forex and Stocks are now governed verticals; Stocks has completed SEC evidence, daily market data, frozen reasoning, Decision Watch, Timeline, and prospective-validation infrastructure. Crypto is next on the roadmap.';
     const heroMeta=document.querySelector('.heroMeta');
     if(heroMeta&&!document.querySelector('.platform-home-cta'))heroMeta.insertAdjacentHTML('afterend',`<div class="platform-home-cta"><a class="primary" href="markets.html">Explore Multi-Asset Markets</a><a class="secondary" href="stocks.html">Open Stocks Intelligence</a><a class="secondary" href="demo.html">Launch FX Competition Demo</a></div><div class="platform-pitch-thesis"><b>The signal is not the product.</b> Across markets, the product is the decision discipline around the signal: source it, explain it, challenge it, constrain it, trace it, and validate it prospectively.</div>`);
     const footer=document.querySelector('footer');
     if(footer&&!document.querySelector('.platform-flow')){
-      const flow=document.createElement('section');flow.className='platform-flow';flow.innerHTML=`<div class="platform-flow-wrap"><div class="platform-flow-head"><div><h2>One architecture. Multiple markets. Explainable decisions.</h2><p>Forex is live; Stocks is building official evidence; Crypto, Oil and Gold follow before Unified News Intelligence.</p></div><a class="platform-demo-link" href="markets.html">Explore market universe</a></div><div class="platform-flow-grid">
+      const flow=document.createElement('section');flow.className='platform-flow';flow.innerHTML=`<div class="platform-flow-wrap"><div class="platform-flow-head"><div><h2>One architecture. Multiple markets. Explainable decisions.</h2><p>Forex and Stocks are active governed verticals; Crypto follows next, then Oil and Gold before Unified News Intelligence.</p></div><a class="platform-demo-link" href="markets.html">Explore market universe</a></div><div class="platform-flow-grid">
       <div class="platform-flow-card"><div class="n">01 · UNIVERSE</div><h3>Multi-Asset Markets</h3><p>Forex, Stocks, Crypto, Gold and Oil share one transparent source and evidence architecture.</p><a href="markets.html">Open Markets →</a></div>
-      <div class="platform-flow-card"><div class="n">02 · STOCKS</div><h3>SEC-First Evidence</h3><p>Stocks begins with official filings and XBRL evidence before a licensed price layer is allowed to create a Market View.</p><a href="stocks.html">Open Stocks →</a></div>
+      <div class="platform-flow-card"><div class="n">02 · STOCKS</div><h3>Frozen Stocks Intelligence</h3><p>Official SEC evidence and daily OHLCV feed a frozen explainable reasoning model with Watch, Timeline and Fresh OOS monitoring.</p><a href="stocks.html">Open Stocks →</a></div>
       <div class="platform-flow-card"><div class="n">03 · EXPLAIN</div><h3>Evidence Intelligence</h3><p>Official data, licensed wires and reputable financial press are separated by trust tier and relevance.</p><a href="intelligence.html">Open Intelligence →</a></div>
       <div class="platform-flow-card"><div class="n">04 · CHALLENGE</div><h3>Risk + Counter-Thesis</h3><p>The AI must show why a market view could fail before it is promoted to higher decision priority.</p><a href="intelligence.html">Review reasoning →</a></div>
-      <div class="platform-flow-card"><div class="n">05 · WATCH & TRACE</div><h3>Decision Watch + Timeline</h3><p>Escalate material change, preserve raw history, and explain how the decision evolved through time.</p><a href="decision-watch.html">Open Watch →</a></div>
-      <div class="platform-flow-card"><div class="n">06 · VALIDATE</div><h3>Prospective Validation</h3><p>New asset models must earn trust prospectively under frozen logic before performance claims are promoted.</p><a href="validation.html">Open Validation →</a></div>
+      <div class="platform-flow-card"><div class="n">05 · WATCH & TRACE</div><h3>Decision Watch + Timeline</h3><p>Escalate material change, preserve raw history, and explain how the decision evolved through time.</p><a href="stocks-observability.html">Open Stocks Watch →</a></div>
+      <div class="platform-flow-card"><div class="n">06 · VALIDATE</div><h3>Prospective Validation</h3><p>Asset models must earn trust prospectively under frozen logic before performance claims are promoted.</p><a href="stocks-validation.html">Open Stocks Validation →</a></div>
       </div></div>`;footer.parentNode.insertBefore(flow,footer);
     }
   }
