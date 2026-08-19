@@ -25,8 +25,8 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Build refined Stage 11C v0.2 Crypto Decision Intelligence
-        run: python scripts/build-crypto-decision-v02.py
+      - name: Build refined Stage 11C v0.2 with lineage hardening
+        run: python scripts/build-crypto-decision-v02-safe.py
 
       - name: Commit Crypto decision intelligence when changed
         run: |
