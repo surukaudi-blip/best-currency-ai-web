@@ -1,12 +1,6 @@
 name: Run Crypto 6-Check Trend Qualification Diagnostic
 
 on:
-  push:
-    branches:
-      - agent/crypto-readiness6-backtest
-    paths:
-      - scripts/build-crypto-backtest-readiness6.py
-      - .github/workflows/crypto-readiness6-backtest.yml
   workflow_dispatch:
 
 permissions:
