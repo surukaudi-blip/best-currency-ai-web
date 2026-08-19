@@ -2,6 +2,11 @@ name: Update Crypto Fresh OOS
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - data/crypto-decision-intelligence.json
   schedule:
     - cron: '55 0 * * *'
 
