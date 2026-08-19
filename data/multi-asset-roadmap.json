@@ -1,11 +1,14 @@
 {
-  "version": "1.4",
+  "version": "1.5",
   "updated_at": "2026-08-19",
   "principles": [
     "Do not fabricate unavailable market data.",
     "Keep market data separate from news evidence.",
     "Prefer primary and official sources.",
     "Each asset vertical must earn production status independently.",
+    "Historical backtests are diagnostic evidence, not final proof.",
+    "No new asset model may freeze before backtest and Pre-Freeze Cross-Check both pass.",
+    "Fresh OOS after freeze remains the primary validation evidence.",
     "Trade execution remains OFF.",
     "Unified News Intelligence is the final shared layer after core asset adapters are established."
   ],
@@ -20,25 +23,50 @@
         {"id": "10B", "name": "Daily Market Data Adapter", "status": "COMPLETE", "output": "Alpha Vantage raw daily OHLCV plus derived short-horizon market context; full raw series not published"},
         {"id": "10C", "name": "Stocks Decision Intelligence", "status": "COMPLETE", "output": "Explainable Market View, Decision Readiness, Fundamental Evidence, Market Structure, Decision Risk, Counter-Thesis, and AI Decision Reasoner; no BUY/SELL"},
         {"id": "10D", "name": "Stocks Watch, Timeline & Prospective Validation", "status": "COMPLETE", "output": "Frozen Stage 10C methodology and core engine, material-change alerts, append-only decision history, and Fresh OOS collection strictly after the 2026-08-18 freeze baseline"}
-      ]
+      ],
+      "note": "Stocks was frozen before the mandatory cross-asset C4/C5 governance rule was adopted. Its ongoing Fresh OOS remains primary validation evidence; future major Stocks model revisions should follow the new policy before a new freeze version."
     },
     {
       "id": "11",
       "name": "Crypto Intelligence",
       "status": "NEXT",
-      "scope": "Market data + official protocol/regulatory evidence"
+      "scope": "Market data + official protocol/regulatory evidence",
+      "steps": [
+        {"id": "11A", "name": "Crypto Market Data & Source Adapter", "status": "PLANNED"},
+        {"id": "11B", "name": "Protocol, On-Chain & Regulatory Evidence", "status": "PLANNED"},
+        {"id": "11C", "name": "Crypto Decision Intelligence", "status": "PLANNED"},
+        {"id": "11C.4", "name": "Historical Backtest", "status": "MANDATORY_BEFORE_FREEZE"},
+        {"id": "11C.5", "name": "Pre-Freeze Cross-Check & Model QA", "status": "MANDATORY_BEFORE_FREEZE"},
+        {"id": "11D", "name": "Freeze, Watch, Timeline & Fresh OOS", "status": "BLOCKED_UNTIL_C4_C5_PASS"}
+      ]
     },
     {
       "id": "12",
       "name": "Oil Intelligence",
       "status": "PLANNED",
-      "scope": "EIA price/inventory/supply-demand + OPEC/IEA official evidence"
+      "scope": "EIA price/inventory/supply-demand + OPEC/IEA official evidence",
+      "steps": [
+        {"id": "12A", "name": "Oil Market Data & Source Adapter", "status": "PLANNED"},
+        {"id": "12B", "name": "Inventory, Supply-Demand & Policy Evidence", "status": "PLANNED"},
+        {"id": "12C", "name": "Oil Decision Intelligence", "status": "PLANNED"},
+        {"id": "12C.4", "name": "Historical Backtest", "status": "MANDATORY_BEFORE_FREEZE"},
+        {"id": "12C.5", "name": "Pre-Freeze Cross-Check & Model QA", "status": "MANDATORY_BEFORE_FREEZE"},
+        {"id": "12D", "name": "Freeze, Watch, Timeline & Fresh OOS", "status": "BLOCKED_UNTIL_C4_C5_PASS"}
+      ]
     },
     {
       "id": "13",
       "name": "Gold Intelligence",
       "status": "PLANNED",
-      "scope": "Licence-aware price feed + rates/USD/macro evidence"
+      "scope": "Licence-aware price feed + rates/USD/macro evidence",
+      "steps": [
+        {"id": "13A", "name": "Gold Market Data & Source Adapter", "status": "PLANNED"},
+        {"id": "13B", "name": "Rates, Real Yields, USD & Macro Evidence", "status": "PLANNED"},
+        {"id": "13C", "name": "Gold Decision Intelligence", "status": "PLANNED"},
+        {"id": "13C.4", "name": "Historical Backtest", "status": "MANDATORY_BEFORE_FREEZE"},
+        {"id": "13C.5", "name": "Pre-Freeze Cross-Check & Model QA", "status": "MANDATORY_BEFORE_FREEZE"},
+        {"id": "13D", "name": "Freeze, Watch, Timeline & Fresh OOS", "status": "BLOCKED_UNTIL_C4_C5_PASS"}
+      ]
     },
     {
       "id": "14",
