@@ -54,5 +54,6 @@ $('guardrails').innerHTML=line('Historical backfill','NOT ALLOWED')+line('Model 
 Promise.all([fetch('./data/fresh-oos-tracker.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('oos');return r.json()}),fetch('./data/decision-change-analytics.json',{cache:'no-store'}).then(r=>r.ok?r.json():null).catch(()=>null)]).then(([t,a])=>render(t,a)).catch(()=>{$('readiness').textContent='DATA UNAVAILABLE';$('readinessText').textContent='Validation artifacts are temporarily unavailable.'});
 })();
 </script>
+<script src="platform-shell.js?v=20260819-stage6"></script>
 </body>
 </html>

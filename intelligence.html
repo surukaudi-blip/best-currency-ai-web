@@ -62,5 +62,6 @@ $('assessment').textContent=f.final_assessment||f.assessment||f.summary||f.reaso
 fetch('./data/currency-strength.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('HTTP '+r.status);return r.json()}).then(render).catch(()=>{$('decisionReason').textContent='FX Intelligence data is temporarily unavailable.';$('updated').textContent='Data unavailable'});
 })();
 </script>
+<script src="platform-shell.js?v=20260819-stage6"></script>
 </body>
 </html>
