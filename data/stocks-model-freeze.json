@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "status": "STOCKS_MODEL_FROZEN",
+  "model_id": "STOCKS_DECISION_0.1_FROZEN_20260819",
+  "source_stage": "10C",
+  "source_model_version": "0.1",
+  "source_merge_commit": "a84e947eca7fb1be764573a351da496e7284e117",
+  "freeze_declared_at": "2026-08-19T05:22:14Z",
+  "baseline_market_session": "2026-08-18",
+  "methodology_sha256": "f55ea9c47271313aa335ac53f22c7e947f84b3ded1fd7127923602202fc95303",
+  "prospective_start_rule": "Only complete market sessions strictly after baseline_market_session may create Fresh OOS predictions.",
+  "outcome_definition": "For eligible directional Market View states only: SUPPORTIVE expects the next complete market-session close to be higher; PRESSURED expects it to be lower. MIXED and unavailable states are not scored.",
+  "change_policy": {
+    "methodology_weights_thresholds": "IMMUTABLE_DURING_PRIMARY_EVALUATION",
+    "ui_monitoring_observability": "MAY_CHANGE_WITHOUT_CHANGING_MODEL_HASH",
+    "historical_backfill": "PROHIBITED",
+    "outcome_tuning": "PROHIBITED",
+    "news_layer": "DEFERRED_TO_UNIFIED_NEWS_INTELLIGENCE",
+    "trade_execution": "OFF"
+  },
+  "sample_policy": {
+    "unit": "eligible_symbol_session",
+    "preliminary_settled_target": 20,
+    "primary_settled_target": 60,
+    "note": "Targets are sample-sufficiency gates, not proof of predictive validity; cross-sectional correlation between stocks remains a limitation."
+  }
+}
