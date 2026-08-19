@@ -2,7 +2,7 @@
   var items={
     forex:{label:'Forex',page:'index.html',status:'FRESH OOS · MODEL FROZEN',tone:'green'},
     stocks:{label:'Stocks',page:'stocks.html',status:'FRESH OOS · MODEL FROZEN',tone:'green'},
-    crypto:{label:'Crypto',page:'crypto.html',status:'PRE-FREEZE · v0.4.1',tone:'amber'},
+    crypto:{label:'Crypto',page:'crypto.html',status:'FRESH OOS · MODEL FROZEN',tone:'green'},
     indices:{label:'Indeks',page:'indices.html',status:'PLANNED',tone:'amber'},
     oil:{label:'Oil',page:'oil.html',status:'PLANNED',tone:'amber'},
     gold:{label:'Gold',page:'gold.html',status:'PLANNED',tone:'amber'}
@@ -26,12 +26,21 @@
       if(h) h.style.display='none';
       document.documentElement.style.scrollBehavior='auto';
       document.body.style.minHeight='0';
-      if(pageName()==='crypto.html' && !document.getElementById('crypto-readiness-loader')){
-        var s=document.createElement('script');
-        s.id='crypto-readiness-loader';
-        s.src='crypto-readiness.js?v=20260819-readiness-fix2';
-        s.async=false;
-        document.body.appendChild(s);
+      if(pageName()==='crypto.html'){
+        if(!document.getElementById('crypto-readiness-loader')){
+          var s=document.createElement('script');
+          s.id='crypto-readiness-loader';
+          s.src='crypto-readiness.js?v=20260819-readiness-fix2';
+          s.async=false;
+          document.body.appendChild(s);
+        }
+        if(!document.getElementById('crypto-freeze-ui-loader')){
+          var f=document.createElement('script');
+          f.id='crypto-freeze-ui-loader';
+          f.src='crypto-freeze-ui.js?v=20260819-freeze-v041';
+          f.async=false;
+          document.body.appendChild(f);
+        }
       }
     });
     return;
@@ -138,7 +147,7 @@
       }else{
         forexMain.style.display='none';
         shell.style.display='block';
-        var target=items[key].page+'?embed=1&shell=20260819-final';
+        var target=items[key].page+'?embed=1&shell=20260819-freeze-v041';
         if(frame.getAttribute('src')!==target) frame.setAttribute('src',target);
       }
       if(push){
