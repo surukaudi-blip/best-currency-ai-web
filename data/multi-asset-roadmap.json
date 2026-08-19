@@ -1,5 +1,5 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "updated_at": "2026-08-19",
   "principles": [
     "Do not fabricate unavailable market data.",
@@ -16,8 +16,8 @@
       "status": "IN_PROGRESS",
       "scope": "U.S.-listed equities v1",
       "steps": [
-        {"id": "10A", "name": "SEC Official Evidence Adapter", "status": "BUILDING", "output": "Filings, XBRL fundamentals, source freshness, company identity"},
-        {"id": "10B", "name": "Licensed Market Data Adapter", "status": "PLANNED", "output": "Daily OHLCV first; delayed/realtime only when entitlement permits"},
+        {"id": "10A", "name": "SEC Official Evidence Adapter", "status": "COMPLETE", "output": "Filings, XBRL fundamentals, source freshness, company identity"},
+        {"id": "10B", "name": "Daily Market Data Adapter", "status": "READY_TO_ACTIVATE", "output": "Alpha Vantage raw daily OHLCV plus derived short-horizon market context; full raw series not published"},
         {"id": "10C", "name": "Stocks Decision Intelligence", "status": "PLANNED", "output": "Market View, Decision Readiness, Risk, Counter-Thesis, AI Reasoner"},
         {"id": "10D", "name": "Stocks Watch, Timeline & Prospective Validation", "status": "PLANNED", "output": "Material-change alerts, decision history, immutable forward validation"}
       ]
