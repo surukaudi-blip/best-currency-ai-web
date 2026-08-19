@@ -109,31 +109,6 @@ def recent_filings(submissions: Dict[str, Any], limit: int = 12) -> List[Dict[st
     return out
 
 
-def fact_candidates(
-    companyfacts: Dict[str, Any],
-    tags: Iterable[str],
-    preferred_units: Iterable[str],
-    forms: Tuple[str, ...] = ("10-K", "10-Q", "10-K/A", "10-Q/A"),
-) -> Tuple[Optional[str], Optional[str], List[Dict[str, Any]]]:
-    facts = ((companyfacts.get("facts") or {}).get("us-gaap") or {})
-    for tag in tags:
-        concept = facts.get(tag)
-        if not concept:
-            continue
-        units = concept.get("units") or {}
-        unit_order = list(preferred_units) + [u for u in units.keys() if u not in preferred_units]
-        for unit in unit_order:
-            values = units.get(unit) or []
-            filtered = [
-                x for x in values
-                if x.get("form") in forms and x.get("filed") and x.get("end") and isinstance(x.get("val"), (int, float))
-            ]
-            if filtered:
-                filtered.sort(key=lambda x: (x.get("end") or "", x.get("filed") or ""), reverse=True)
-                return tag, unit, filtered
-    return None, None, []
-
-
 def form_family(form: Optional[str]) -> Optional[str]:
     if not form:
         return None
@@ -144,42 +119,124 @@ def form_family(form: Optional[str]) -> Optional[str]:
     return form
 
 
+def fact_candidates(
+    companyfacts: Dict[str, Any],
+    tags: Iterable[str],
+    preferred_units: Iterable[str],
+    forms: Tuple[str, ...] = ("10-K", "10-Q", "10-K/A", "10-Q/A"),
+) -> List[Dict[str, Any]]:
+    """Collect valid observations across all candidate tags, then sort by recency.
+
+    Companies can migrate from older US-GAAP concepts to newer concepts. Selecting the
+    first tag with any historical data can therefore surface a stale value. We instead
+    consider all semantically acceptable tags and choose the freshest filed observation.
+    """
+    facts = ((companyfacts.get("facts") or {}).get("us-gaap") or {})
+    preferred = list(preferred_units)
+    candidates: List[Dict[str, Any]] = []
+
+    for tag in tags:
+        concept = facts.get(tag)
+        if not concept:
+            continue
+        units = concept.get("units") or {}
+        unit_order = preferred + [u for u in units.keys() if u not in preferred]
+        chosen_unit = next((u for u in unit_order if units.get(u)), None)
+        if not chosen_unit:
+            continue
+        for item in units.get(chosen_unit) or []:
+            if (
+                item.get("form") in forms
+                and item.get("filed")
+                and item.get("end")
+                and isinstance(item.get("val"), (int, float))
+            ):
+                enriched = dict(item)
+                enriched["_tag"] = tag
+                enriched["_unit"] = chosen_unit
+                candidates.append(enriched)
+
+    candidates.sort(
+        key=lambda x: (x.get("end") or "", x.get("filed") or ""),
+        reverse=True,
+    )
+    return candidates
+
+
+def comparable_previous(latest: Dict[str, Any], candidates: List[Dict[str, Any]]) -> Optional[Dict[str, Any]]:
+    """Return a same-concept, same-fiscal-period prior-year observation when available."""
+    latest_tag = latest.get("_tag")
+    latest_unit = latest.get("_unit")
+    latest_fp = latest.get("fp")
+    latest_fy = latest.get("fy")
+    latest_family = form_family(latest.get("form"))
+    latest_end = latest.get("end")
+
+    pool = [
+        item
+        for item in candidates
+        if item.get("end") != latest_end
+        and item.get("_tag") == latest_tag
+        and item.get("_unit") == latest_unit
+        and form_family(item.get("form")) == latest_family
+    ]
+
+    # Strongest comparison: same SEC fiscal period in immediately prior fiscal year.
+    if latest_fp is not None and isinstance(latest_fy, int):
+        exact = [
+            item
+            for item in pool
+            if item.get("fp") == latest_fp and item.get("fy") == latest_fy - 1
+        ]
+        if exact:
+            exact.sort(key=lambda x: (x.get("end") or "", x.get("filed") or ""), reverse=True)
+            return exact[0]
+
+    # Conservative fallback: same fiscal-period label, most recent older observation.
+    if latest_fp is not None:
+        same_fp = [item for item in pool if item.get("fp") == latest_fp]
+        if same_fp:
+            same_fp.sort(key=lambda x: (x.get("end") or "", x.get("filed") or ""), reverse=True)
+            return same_fp[0]
+
+    return None
+
+
 def summarize_fact(
     companyfacts: Dict[str, Any],
     tags: Iterable[str],
     preferred_units: Iterable[str],
 ) -> Optional[Dict[str, Any]]:
-    tag, unit, values = fact_candidates(companyfacts, tags, preferred_units)
-    if not values or tag is None or unit is None:
+    candidates = fact_candidates(companyfacts, tags, preferred_units)
+    if not candidates:
         return None
 
+    # Deduplicate equivalent observations while preserving the freshest filing.
     unique: List[Dict[str, Any]] = []
-    seen_ends = set()
-    for item in values:
-        end = item.get("end")
-        if end in seen_ends:
+    seen = set()
+    for item in candidates:
+        key = (
+            item.get("_tag"),
+            item.get("_unit"),
+            item.get("end"),
+            item.get("fp"),
+            item.get("fy"),
+            item.get("val"),
+        )
+        if key in seen:
             continue
-        seen_ends.add(end)
+        seen.add(key)
         unique.append(item)
 
     latest = unique[0]
-    latest_family = form_family(latest.get("form"))
-    previous = next(
-        (
-            item
-            for item in unique[1:]
-            if form_family(item.get("form")) == latest_family
-        ),
-        None,
-    )
-
+    previous = comparable_previous(latest, unique)
     growth_percent = None
     if previous and previous.get("val") not in (None, 0):
         growth_percent = round((latest["val"] - previous["val"]) / abs(previous["val"]) * 100, 2)
 
     return {
-        "tag": tag,
-        "unit": unit,
+        "tag": latest.get("_tag"),
+        "unit": latest.get("_unit"),
         "value": latest.get("val"),
         "period_end": latest.get("end"),
         "filed": latest.get("filed"),
@@ -188,8 +245,8 @@ def summarize_fact(
         "fiscal_period": latest.get("fp"),
         "previous_value": previous.get("val") if previous else None,
         "previous_period_end": previous.get("end") if previous else None,
-        "comparison_family": latest_family,
-        "change_percent_vs_previous_reported_period": growth_percent,
+        "comparison_family": form_family(latest.get("form")),
+        "comparison_basis": "SAME_FISCAL_PERIOD_PRIOR_YEAR" if previous else None,
         "change_percent_vs_comparable_reported_period": growth_percent,
     }
 
@@ -207,14 +264,31 @@ def build_company(entry: Dict[str, Any], user_agent: str) -> Dict[str, Any]:
     filings = recent_filings(submissions)
     latest_filing = filings[0] if filings else None
     filing_date = latest_filing.get("filing_date") if latest_filing else None
-    event_30d = sum(1 for f in filings if f.get("form", "").startswith("8-K") and (days_since(f.get("filing_date")) or 9999) <= 30)
+    event_30d = sum(
+        1
+        for f in filings
+        if f.get("form", "").startswith("8-K")
+        and (days_since(f.get("filing_date")) or 9999) <= 30
+    )
 
     metrics = {
-        "revenue": summarize_fact(companyfacts, ["RevenueFromContractWithCustomerExcludingAssessedTax", "SalesRevenueNet", "Revenues"], ["USD"]),
+        "revenue": summarize_fact(
+            companyfacts,
+            ["RevenueFromContractWithCustomerExcludingAssessedTax", "SalesRevenueNet", "Revenues"],
+            ["USD"],
+        ),
         "net_income": summarize_fact(companyfacts, ["NetIncomeLoss", "ProfitLoss"], ["USD"]),
         "operating_income": summarize_fact(companyfacts, ["OperatingIncomeLoss"], ["USD"]),
-        "operating_cash_flow": summarize_fact(companyfacts, ["NetCashProvidedByUsedInOperatingActivities"], ["USD"]),
-        "cash": summarize_fact(companyfacts, ["CashAndCashEquivalentsAtCarryingValue", "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents"], ["USD"]),
+        "operating_cash_flow": summarize_fact(
+            companyfacts,
+            ["NetCashProvidedByUsedInOperatingActivities"],
+            ["USD"],
+        ),
+        "cash": summarize_fact(
+            companyfacts,
+            ["CashAndCashEquivalentsAtCarryingValue", "CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents"],
+            ["USD"],
+        ),
         "assets": summarize_fact(companyfacts, ["Assets"], ["USD"]),
         "liabilities": summarize_fact(companyfacts, ["Liabilities"], ["USD"]),
         "stockholders_equity": summarize_fact(companyfacts, ["StockholdersEquity"], ["USD"]),
@@ -263,7 +337,10 @@ def build_company(entry: Dict[str, Any], user_agent: str) -> Dict[str, Any]:
 def main() -> int:
     user_agent = os.getenv("SEC_USER_AGENT", "").strip()
     if not user_agent:
-        print("SEC_USER_AGENT is required. Example: 'Best Currency AI Name contact@example.com'", file=sys.stderr)
+        print(
+            "SEC_USER_AGENT is required. Example: 'Best Currency AI Name contact@example.com'",
+            file=sys.stderr,
+        )
         return 2
 
     config = load_json(CONFIG_PATH)
@@ -280,7 +357,7 @@ def main() -> int:
     generated_at = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
     status = "OFFICIAL_EVIDENCE_READY" if companies and not errors else ("PARTIAL" if companies else "UNAVAILABLE")
     artifact = {
-        "version": "1.0",
+        "version": "1.1",
         "status": status,
         "scope": config.get("scope"),
         "generated_at": generated_at,
@@ -295,12 +372,17 @@ def main() -> int:
             "no_buy_sell_without_market_layer": True,
             "no_single_filing_is_trade_instruction": True,
             "missing_data_fail_closed": True,
+            "xbrl_latest_across_accepted_tags": True,
+            "fundamental_comparison_same_fiscal_period_prior_year": True,
             "trade_execution": "OFF",
         },
         "companies": companies,
         "errors": errors,
     }
-    OUTPUT_PATH.write_text(json.dumps(artifact, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    OUTPUT_PATH.write_text(
+        json.dumps(artifact, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
+    )
     print(f"Wrote {OUTPUT_PATH.relative_to(ROOT)} with status {status}")
     return 0 if companies else 1
 
