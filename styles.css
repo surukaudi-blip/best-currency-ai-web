@@ -1,0 +1,236 @@
+/* ============================================================
+   BEST CURRENCY AI — SHARED STYLES
+   Dark theme for Forex & Crypto intelligence dashboard
+   ============================================================ */
+
+:root {
+  --bg: #070B14;
+  --bg-2: #0D1420;
+  --bg-3: #131C2C;
+  --border: rgba(148,163,184,.14);
+  --border-2: rgba(148,163,184,.28);
+  --text: #E7ECF4;
+  --muted: #97A5BA;
+  --muted-2: #6B7A90;
+  --accent: #2FD3EE;
+  --accent-dim: rgba(47,211,238,.12);
+  --amber: #F0A32F;
+  --amber-dim: rgba(240,163,47,.12);
+  --green: #3BD69A;
+  --green-dim: rgba(59,214,154,.12);
+  --red: #F26D6D;
+  --red-dim: rgba(242,109,109,.12);
+  --radius: 14px;
+  --radius-sm: 10px;
+  --maxw: 1140px;
+  --font: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Layout */
+.container { max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+section { padding: 72px 0; }
+
+/* Typography */
+.kicker {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+h1, h2, h3 { line-height: 1.15; letter-spacing: -.02em; }
+h2 { font-size: clamp(1.7rem, 4vw, 2.5rem); font-weight: 700; margin-bottom: 16px; }
+.lead { color: var(--muted); font-size: clamp(1rem, 2vw, 1.12rem); max-width: 640px; }
+.section-head { margin-bottom: 44px; }
+.section-head.center { text-align: center; }
+.section-head.center .lead { margin: 0 auto; }
+.micro { color: var(--muted-2); font-size: .85rem; }
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: .95rem;
+  padding: 14px 26px;
+  transition: .18s;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.btn-primary { background: var(--accent); color: #04121a; }
+.btn-primary:hover { background: #5adff4; text-decoration: none; transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--text); border-color: var(--border-2); }
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); text-decoration: none; }
+.btn-sm { padding: 9px 18px; font-size: .85rem; }
+
+/* Header */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(7,11,20,.82);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.02rem;
+}
+.logo:hover { text-decoration: none; }
+.logo-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), #1f7fa8);
+  display: grid;
+  place-items: center;
+  font-size: .8rem;
+  color: #04121a;
+  font-weight: 800;
+}
+.nav-links { display: none; gap: 28px; align-items: center; font-size: .9rem; }
+.nav-links a { color: var(--muted); }
+.nav-links a:hover { color: var(--text); text-decoration: none; }
+@media(min-width: 900px) { .nav-links { display: flex; } }
+
+/* TradingView Widget Container */
+.tv-widget {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+.tv-widget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-bottom: 1px solid var(--border);
+}
+.tv-widget-header h3 {
+  font-size: .9rem;
+  font-weight: 600;
+}
+.tv-widget-header .badge {
+  font-size: .7rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid rgba(47,211,238,.2);
+  border-radius: 999px;
+  padding: 4px 10px;
+}
+
+/* News Feed */
+.news-feed {
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+}
+.news-feed-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.news-feed-header h3 {
+  font-size: .9rem;
+  font-weight: 600;
+}
+.news-source-badge {
+  font-size: .65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+.news-source-badge.ct { background: rgba(47,211,238,.1); color: var(--accent); }
+.news-source-badge.dc { background: rgba(240,163,47,.1); color: var(--amber); }
+.news-source-badge.tv { background: rgba(59,214,154,.1); color: var(--green); }
+
+.news-item {
+  display: flex;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.news-item:last-child { border-bottom: none; }
+.news-item-img {
+  width: 80px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+.news-item-content { flex: 1; min-width: 0; }
+.news-item-title {
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.news-item-meta {
+  font-size: .72rem;
+  color: var(--muted-2);
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--border);
+  padding: 40px 0;
+}
+.footer-legal {
+  font-size: .78rem;
+  color: var(--muted-2);
+  max-width: 760px;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+.footer-copy {
+  font-size: .78rem;
+  color: var(--muted-2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav { height: 56px; }
+  .logo { font-size: .9rem; }
+  .logo-mark { width: 26px; height: 26px; font-size: .7rem; }
+  section { padding: 48px 0; }
+}
