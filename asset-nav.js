@@ -65,6 +65,8 @@
     forexMain.insertAdjacentElement('afterend',shell);
 
     var freeze=nav.querySelector('.analysis-freeze, .freeze, .status');
+    // Preserve "Cara Pakai" link from intelligence-workspace-layout.js before clearing
+    var howToUseLink=document.getElementById('how-to-use-nav');
     Array.from(nav.querySelectorAll('a')).forEach(function(a){a.remove();});
     var links={};
     order.forEach(function(key){
@@ -77,6 +79,10 @@
       links[key]=a;
       if(freeze) nav.insertBefore(a,freeze); else nav.appendChild(a);
     });
+    // Re-add "Cara Pakai" link after asset tabs
+    if(howToUseLink && !nav.querySelector('#how-to-use-nav')){
+      if(freeze) nav.insertBefore(howToUseLink,freeze); else nav.appendChild(howToUseLink);
+    }
 
     function ensureFreeze(){
       if(freeze) return freeze;
