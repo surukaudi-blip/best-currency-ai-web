@@ -1,0 +1,30 @@
+{
+  "name": "best-currency-ai-web",
+  "version": "1.0.0",
+  "description": "Best Currency AI — Multi-timeframe Currency Strength Intelligence",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node test/test-engine.js && node test/test-mtf.js && node test/test-api.js",
+    "test:engine": "node test/test-engine.js",
+    "test:mtf": "node test/test-mtf.js",
+    "test:api": "node test/test-api.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/surukaudi-blip/best-currency-ai-web.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/surukaudi-blip/best-currency-ai-web/issues"
+  },
+  "homepage": "https://github.com/surukaudi-blip/best-currency-ai-web#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "node-fetch": "^2.7.0"
+  }
+}

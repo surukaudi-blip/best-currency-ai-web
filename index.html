@@ -48,16 +48,49 @@
         <div class="section-head center">
           <div class="kicker">Currency Strength Agent</div>
           <h2>Multi-Timeframe Currency Strength</h2>
-          <p class="lead">Relative strength for USD, EUR, GBP, JPY, CHF, CAD, AUD, and NZD across Daily, Weekly, and Monthly horizons.</p>
+          <p class="lead">Relative strength for USD, EUR, GBP, JPY, CHF, CAD, AUD, and NZD across 1H, 4H, Daily, Weekly, and Monthly horizons.</p>
         </div>
 
+        <!-- Timeframe Tabs -->
+        <div class="cs-tabs" id="cs-tabs">
+          <button class="cs-tab" data-tf="1h">1H</button>
+          <button class="cs-tab" data-tf="4h">4H</button>
+          <button class="cs-tab active" data-tf="1d">1D</button>
+          <button class="cs-tab" data-tf="1w">1W</button>
+          <button class="cs-tab" data-tf="1m">1M</button>
+          <button class="cs-tab cs-tab-mtf" data-tf="mtf">MTF</button>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="cs-summary" id="cs-summary">
+          <div class="cs-card">
+            <div class="cs-card-label">Strongest</div>
+            <div class="cs-card-value" id="cs-strongest">—</div>
+            <div class="cs-card-score" id="cs-strongest-score"></div>
+          </div>
+          <div class="cs-card">
+            <div class="cs-card-label">Weakest</div>
+            <div class="cs-card-value" id="cs-weakest">—</div>
+            <div class="cs-card-score" id="cs-weakest-score"></div>
+          </div>
+          <div class="cs-card" id="cs-spread-card">
+            <div class="cs-card-label">Spread</div>
+            <div class="cs-card-value" id="cs-spread">—</div>
+          </div>
+          <div class="cs-card" id="cs-alignment-card">
+            <div class="cs-card-label">MTF Alignment</div>
+            <div class="cs-card-value" id="cs-alignment">—</div>
+          </div>
+        </div>
+
+        <!-- Rankings Table -->
         <div class="tv-widget">
           <div class="tv-widget-header">
-            <h3>Currency Strength Dashboard</h3>
-            <span class="badge">LIVE DATA</span>
+            <h3 id="cs-table-title">Currency Strength Rankings — 1D</h3>
+            <span class="badge" id="cs-source-badge">TWELVE DATA</span>
           </div>
-          <div style="padding:20px;">
-            <div id="strength-body" style="text-align:center;color:var(--muted);">Loading currency strength data...</div>
+          <div style="padding:0;">
+            <div id="strength-body" style="text-align:center;color:var(--muted);padding:40px;">Loading currency strength data...</div>
           </div>
         </div>
       </div>
@@ -100,59 +133,181 @@
     </footer>
   </main>
 
-  <!-- Currency Strength Loader -->
+  <!-- Currency Strength Interactive Dashboard -->
   <script>
     (function() {
-      var endpoint = './data/currency-strength.json';
+      'use strict';
+
+      var API_BASE = '/api/currency-strength';
+      var allData = null;
+      var currentTF = '1d';
       var body = document.getElementById('strength-body');
-      
+
+      /* ---- helpers ---- */
       function fmt(n) {
         var v = Number(n);
         if (!Number.isFinite(v)) return '—';
-        return (v > 0 ? '+' : '') + v.toFixed(3);
+        return v.toFixed(2);
       }
-      
-      function scoreClass(n) {
-        return n > 0 ? 'color:var(--green)' : n < 0 ? 'color:var(--red)' : 'color:var(--muted)';
+
+      function scoreBar(score) {
+        var width = Math.max(0, Math.min(100, score));
+        var color = score > 55 ? 'var(--green)' : score < 45 ? 'var(--red)' : 'var(--muted-2)';
+        return '<div style="background:var(--bg-3);border-radius:4px;height:6px;width:100%;overflow:hidden;">' +
+               '<div style="background:' + color + ';height:100%;width:' + width + '%;border-radius:4px;transition:width .3s;"></div></div>';
       }
-      
-      function render(data) {
-        var tf = data.strength_timeframes ? data.strength_timeframes.daily : data;
-        var scores = tf.currency_strength || {};
-        var ranking = tf.ranking || Object.keys(scores).sort(function(a, b) { return scores[b] - scores[a]; });
-        
+
+      function scoreColor(score) {
+        if (score > 55) return 'color:var(--green)';
+        if (score < 45) return 'color:var(--red)';
+        return 'color:var(--muted)';
+      }
+
+      /* ---- render table ---- */
+      function renderTable(data, tf) {
+        var isMTF = tf === 'mtf';
+        var scores, ranking, strongest, weakest, spread, alignment;
+
+        if (isMTF && data.mtf_composite) {
+          var mtf = data.mtf_composite;
+          scores = mtf.mtf_scores;
+          ranking = mtf.ranking;
+          strongest = mtf.strongest_currency;
+          weakest = mtf.weakest_currency;
+          spread = mtf.strength_spread;
+          alignment = mtf.alignment;
+        } else if (data.timeframes && data.timeframes[tf]) {
+          var tfData = data.timeframes[tf];
+          scores = tfData.currency_strength;
+          ranking = tfData.ranking;
+          strongest = tfData.strongest_currency;
+          weakest = tfData.weakest_currency;
+          spread = null;
+          alignment = null;
+        } else if (data.currency_strength) {
+          scores = data.currency_strength;
+          ranking = data.ranking;
+          strongest = data.strongest_currency;
+          weakest = data.weakest_currency;
+          spread = null;
+          alignment = null;
+        } else {
+          body.innerHTML = '<p style="color:var(--muted);padding:20px;">No data available for this timeframe.</p>';
+          return;
+        }
+
+        // Update summary cards
+        document.getElementById('cs-strongest').textContent = strongest || '—';
+        document.getElementById('cs-strongest').style.color = 'var(--green)';
+        document.getElementById('cs-strongest-score').textContent = fmt(scores[strongest]);
+        document.getElementById('cs-strongest-score').style.color = 'var(--green)';
+
+        document.getElementById('cs-weakest').textContent = weakest || '—';
+        document.getElementById('cs-weakest').style.color = 'var(--red)';
+        document.getElementById('cs-weakest-score').textContent = fmt(scores[weakest]);
+        document.getElementById('cs-weakest-score').style.color = 'var(--red)';
+
+        // Spread & Alignment
+        var spreadCard = document.getElementById('cs-spread-card');
+        var alignCard = document.getElementById('cs-alignment-card');
+        if (isMTF && spread !== null) {
+          spreadCard.style.display = '';
+          alignCard.style.display = '';
+          document.getElementById('cs-spread').textContent = fmt(spread);
+          document.getElementById('cs-alignment').textContent = alignment ? alignment.display : '—';
+        } else {
+          spreadCard.style.display = 'none';
+          alignCard.style.display = 'none';
+        }
+
+        // Table title
+        var labels = { '1h': '1 Hour', '4h': '4 Hour', '1d': '1 Day', '1w': '1 Week', '1m': '1 Month', 'mtf': 'Multi-Timeframe Composite' };
+        document.getElementById('cs-table-title').textContent = 'Currency Strength Rankings — ' + (labels[tf] || tf.toUpperCase());
+
+        // Build table
         var html = '<table style="width:100%;border-collapse:collapse;">';
         html += '<thead><tr style="border-bottom:1px solid var(--border);">';
-        html += '<th style="text-align:left;padding:10px;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-2);">#</th>';
-        html += '<th style="text-align:left;padding:10px;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-2);">Currency</th>';
-        html += '<th style="text-align:left;padding:10px;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-2);">Score</th>';
-        html += '<th style="text-align:left;padding:10px;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-2);">Status</th>';
+        html += '<th style="text-align:left;padding:12px 16px;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-2);width:50px;">#</th>';
+        html += '<th style="text-align:left;padding:12px 16px;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-2);">Currency</th>';
+        html += '<th style="text-align:left;padding:12px 16px;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-2);width:100px;">Score</th>';
+        html += '<th style="text-align:left;padding:12px 16px;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-2);flex:1;">Strength</th>';
+        html += '<th style="text-align:left;padding:12px 16px;font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted-2);width:100px;">Status</th>';
         html += '</tr></thead><tbody>';
-        
-        ranking.forEach(function(ccy, i) {
-          var score = scores[ccy];
-          var status = 'NETRAL';
-          if (ccy === tf.strongest_currency) status = '<span style="color:var(--green);font-weight:700;">TERKUAT</span>';
-          else if (ccy === tf.weakest_currency) status = '<span style="color:var(--red);font-weight:700;">TERLEMAH</span>';
-          
-          html += '<tr style="border-bottom:1px solid var(--border);">';
-          html += '<td style="padding:10px;color:var(--muted-2);">#' + (i + 1) + '</td>';
-          html += '<td style="padding:10px;font-weight:600;">' + ccy + '</td>';
-          html += '<td style="padding:10px;' + scoreClass(score) + ';">' + fmt(score) + '</td>';
-          html += '<td style="padding:10px;">' + status + '</td>';
-          html += '</tr>';
-        });
-        
+
+        if (ranking && scores) {
+          for (var i = 0; i < ranking.length; i++) {
+            var ccy = ranking[i];
+            var score = scores[ccy];
+            var status = '—';
+            var statusStyle = 'color:var(--muted)';
+            if (ccy === strongest) { status = 'STRONGEST'; statusStyle = 'color:var(--green);font-weight:700'; }
+            else if (ccy === weakest) { status = 'WEAKEST'; statusStyle = 'color:var(--red);font-weight:700'; }
+
+            var barWidth = Math.max(2, Math.min(98, score));
+            var barColor = score > 55 ? 'var(--green)' : score < 45 ? 'var(--red)' : 'var(--muted-2)';
+
+            html += '<tr style="border-bottom:1px solid var(--border);transition:background .15s;" onmouseover="this.style.background=\'var(--bg-3)\'" onmouseout="this.style.background=\'transparent\'">';
+            html += '<td style="padding:12px 16px;color:var(--muted-2);font-size:.85rem;">#' + (i + 1) + '</td>';
+            html += '<td style="padding:12px 16px;font-weight:600;font-size:.95rem;">' + ccy + '</td>';
+            html += '<td style="padding:12px 16px;' + scoreColor(score) + ';font-weight:600;font-size:.95rem;">' + fmt(score) + '</td>';
+            html += '<td style="padding:12px 16px;"><div style="background:var(--bg-3);border-radius:4px;height:8px;width:100%;overflow:hidden;">';
+            html += '<div style="background:' + barColor + ';height:100%;width:' + barWidth + '%;border-radius:4px;transition:width .4s ease;"></div></div></td>';
+            html += '<td style="padding:12px 16px;font-size:.82rem;font-weight:600;' + statusStyle + ';">' + status + '</td>';
+            html += '</tr>';
+          }
+        }
+
         html += '</tbody></table>';
         body.innerHTML = html;
       }
-      
-      fetch(endpoint, { cache: 'no-store' })
-        .then(function(r) { return r.json(); })
-        .then(render)
-        .catch(function() {
-          body.innerHTML = '<p style="color:var(--muted);">Currency strength data unavailable.</p>';
-        });
+
+      /* ---- tab switching ---- */
+      function setupTabs() {
+        var tabs = document.querySelectorAll('.cs-tab');
+        for (var i = 0; i < tabs.length; i++) {
+          tabs[i].addEventListener('click', function() {
+            var tf = this.getAttribute('data-tf');
+            currentTF = tf;
+            // Update active tab
+            var allTabs = document.querySelectorAll('.cs-tab');
+            for (var j = 0; j < allTabs.length; j++) allTabs[j].classList.remove('active');
+            this.classList.add('active');
+            // Render
+            if (allData) renderTable(allData, tf);
+          });
+        }
+      }
+
+      /* ---- fetch data ---- */
+      function loadData() {
+        fetch(API_BASE + '?timeframe=all', { cache: 'no-store' })
+          .then(function(r) { return r.json(); })
+          .then(function(data) {
+            if (!data.ok) throw new Error(data.error || 'API error');
+            allData = data;
+            renderTable(data, currentTF);
+          })
+          .catch(function(err) {
+            console.warn('[cs] API unavailable, trying static JSON:', err.message);
+            // Fallback to static JSON
+            fetch('./data/currency-strength.json', { cache: 'no-store' })
+              .then(function(r) { return r.json(); })
+              .then(function(data) {
+                allData = data;
+                renderTable(data, currentTF);
+              })
+              .catch(function() {
+                body.innerHTML = '<p style="color:var(--muted);padding:20px;">Currency strength data unavailable. Start the server with <code>npm start</code> to enable live data.</p>';
+              });
+          });
+      }
+
+      /* ---- init ---- */
+      setupTabs();
+      loadData();
+
+      // Auto-refresh every 5 minutes
+      setInterval(loadData, 300000);
     })();
   </script>
 
