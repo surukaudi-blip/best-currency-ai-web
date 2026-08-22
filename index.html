@@ -41,33 +41,6 @@
       </div>
     </section>
 
-    <!-- TradingView Ticker Tape -->
-    <div style="background:var(--bg-2);border-bottom:1px solid var(--border);">
-      <div class="tradingview-widget-container">
-        <div class="tradingview-widget-container__widget"></div>
-        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener" target="_blank"><span class="blue-text">TradingView</span></a></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-        {
-          "symbols": [
-            {"proName": "FOREXCOM:EURUSD", "title": "EUR/USD"},
-            {"proName": "FOREXCOM:GBPUSD", "title": "GBP/USD"},
-            {"proName": "FOREXCOM:USDJPY", "title": "USD/JPY"},
-            {"proName": "FOREXCOM:USDCHF", "title": "USD/CHF"},
-            {"proName": "FOREXCOM:USDCAD", "title": "USD/CAD"},
-            {"proName": "FOREXCOM:AUDUSD", "title": "AUD/USD"},
-            {"proName": "FOREXCOM:NZDUSD", "title": "NZD/USD"},
-            {"proName": "TVC:DXY", "title": "US Dollar Index"}
-          ],
-          "showSymbolLogo": true,
-          "colorTheme": "dark",
-          "isTransparent": false,
-          "displayMode": "adaptive",
-          "width": "100%",
-          "height": 56
-        }
-        </script>
-      </div>
-    </div>
 
     <!-- Currency Strength Section -->
     <section id="strength">
@@ -90,96 +63,7 @@
       </div>
     </section>
 
-    <!-- TradingView Mini Charts -->
-    <section style="background:var(--bg-2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);">
-      <div class="container">
-        <div class="section-head center">
-          <div class="kicker">Live Charts</div>
-          <h2>Major Forex Pairs</h2>
-          <p class="lead">Real-time mini charts for the most traded currency pairs.</p>
-        </div>
-        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;">
-          <div class="tradingview-widget-container" style="height:300px;">
-            <div class="tradingview-widget-container__widget" style="height:100%;"></div>
-        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener" target="_blank"><span class="blue-text">TradingView</span></a></div>
-            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-chart.js" async>
-            {
-              "symbol": "FX:EURUSD",
-              "colorTheme": "dark",
-              "isTransparent": false,
-              "autosize": true,
-              "locale": "en"
-            }
-            </script>
-          </div>
-          <div class="tradingview-widget-container" style="height:300px;">
-            <div class="tradingview-widget-container__widget" style="height:100%;"></div>
-        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener" target="_blank"><span class="blue-text">TradingView</span></a></div>
-            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-chart.js" async>
-            {
-              "symbol": "FX:GBPUSD",
-              "colorTheme": "dark",
-              "isTransparent": false,
-              "autosize": true,
-              "locale": "en"
-            }
-            </script>
-          </div>
-          <div class="tradingview-widget-container" style="height:300px;">
-            <div class="tradingview-widget-container__widget" style="height:100%;"></div>
-        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener" target="_blank"><span class="blue-text">TradingView</span></a></div>
-            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-chart.js" async>
-            {
-              "symbol": "FX:USDJPY",
-              "colorTheme": "dark",
-              "isTransparent": false,
-              "autosize": true,
-              "locale": "en"
-            }
-            </script>
-          </div>
-          <div class="tradingview-widget-container" style="height:300px;">
-            <div class="tradingview-widget-container__widget" style="height:100%;"></div>
-        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener" target="_blank"><span class="blue-text">TradingView</span></a></div>
-            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-chart.js" async>
-            {
-              "symbol": "TVC:DXY",
-              "colorTheme": "dark",
-              "isTransparent": false,
-              "autosize": true,
-              "locale": "en"
-            }
-            </script>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- TradingView News Widget -->
-    <section id="news">
-      <div class="container">
-        <div class="section-head center">
-          <div class="kicker">Market News</div>
-          <h2>Forex News & Analysis</h2>
-          <p class="lead">Stay informed with the latest forex market news from TradingView.</p>
-        </div>
-        <div class="tradingview-widget-container" style="height:400px;">
-          <div class="tradingview-widget-container__widget" style="height:100%;"></div>
-        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener" target="_blank"><span class="blue-text">TradingView</span></a></div>
-          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-news.js" async>
-          {
-            "autoplay": false,
-            "locale": "en",
-            "width": "100%",
-            "height": "100%",
-            "colorTheme": "dark",
-            "isTransparent": false,
-            "exchange": "FOREX"
-          }
-          </script>
-        </div>
-      </div>
-    </section>
 
     <!-- Footer -->
     <footer>
